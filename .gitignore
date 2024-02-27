@@ -2,3 +2,6 @@
 /htdocs/wp-content/updraft
 
 /htdocs/wp-config.php
+mariadb-init/*
+htdocs/wp-content/cache
+htdocs/wp-content/wpo-cache
