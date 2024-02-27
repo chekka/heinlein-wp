@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   id="svg3540"
+   viewBox="0 0 26.589999 26.589999"
+   height="7.5042887mm"
+   width="7.5042887mm">
+  <defs
+     id="defs3542" />
+  <g
+     transform="translate(-398.13357,-490.49578)"
+     id="layer1">
+    <path
+       id="path48"
+       style="fill:none;stroke:#3d4d70;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 411.42857,516.71078 c 7.13625,0 12.92,-5.78375 12.92,-12.92 0,-7.135 -5.78375,-12.92 -12.92,-12.92 -7.13625,0 -12.92,5.785 -12.92,12.92 0,7.13625 5.78375,12.92 12.92,12.92 z" />
+    <path
+       id="path52"
+       style="fill:none;stroke:#3d4d70;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 411.49081,494.94616 0,13.265 m 4.5675,-4.81375 -4.5675,4.81375 -4.565,-4.81375 m 0.0863,8.075 9.2375,0" />
+  </g>
+</svg>
