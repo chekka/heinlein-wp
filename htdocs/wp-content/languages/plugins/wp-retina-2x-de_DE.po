@@ -1,0 +1,126 @@
+# Translation of Plugins - Perfect Images (Manage Image Sizes, Thumbnails, Replace, Retina) - Stable (latest release) in German
+# This file is distributed under the same license as the Plugins - Perfect Images (Manage Image Sizes, Thumbnails, Replace, Retina) - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2024-02-25 20:00:09+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-beta.2\n"
+"Language: de\n"
+"Project-Id-Version: Plugins - Perfect Images (Manage Image Sizes, Thumbnails, Replace, Retina) - Stable (latest release)\n"
+
+#: common/ratings.php:107
+msgid "Hide"
+msgstr "Ausblenden"
+
+#: common/news.php:96
+msgid "❌ Delete"
+msgstr "❌ Löschen"
+
+#: common/news.php:91 common/ratings.php:101
+msgid "⏰ Remind me later"
+msgstr "⏰ Später erinnern"
+
+#: classes/dashboard.php:15
+msgid "Perfect Images %s"
+msgstr "Perfect Images %s"
+
+#: classes/admin.php:120 classes/dashboard.php:14
+msgid "Perfect Images"
+msgstr "Perfect Images"
+
+#: common/admin.php:78
+msgid "<a target=\"_blank\" href=\"https://meowapps.com\">Get the <u>Pro Version</u></a>"
+msgstr "<a target=\"_blank\" href=\"https://meowapps.com\">Hol dir die <u>Pro-Version</u></a>"
+
+#: common/admin.php:78
+msgid "License Issue"
+msgstr "Lizenzproblem"
+
+#: common/admin.php:74
+msgid "<a href=\"admin.php?page=%s_settings\">Settings</a>"
+msgstr "<a href=\"admin.php?page=%s_settings\">Einstellungen</a>"
+
+#. translators: %1$s is the version of the interface; %2$s is a file path.
+#: common/admin.php:179
+msgid "Thanks for using <a href=\"https://meowapps.com\">Meow Apps</a>! This is the Meow Admin %1$s <br /><i>Loaded from %2$s </i>"
+msgstr "Vielen Dank für die Verwendung von <a href=\"https://meowapps.com\">Meow Apps</a>! Dies ist der Meow Admin %1$s <br /><i>Geladen von %2$s </i>"
+
+#: common/admin.php:77
+msgid "Pro Version"
+msgstr "Pro-Version"
+
+#: common/admin.php:115
+msgid "Remove the license"
+msgstr "Lizenz entfernen"
+
+#: common/admin.php:109
+msgid "<p>It looks like you are using the free version of the plugin (<b>%s</b>) but a license for the Pro version was also found. The Pro version might have been replaced by the Free version during an update (might be caused by a temporarily issue). If it is the case, <b>please download it again</b> from the <a target=\"_blank\" href=\"https://meowapps.com\">Meow Store</a>. If you wish to continue using the free version and clear this message, click on this button."
+msgstr "<p>Es sieht so aus, als ob du die kostenlose Version des Plugins verwendest (<b>%s</b>), aber es wurde auch eine Lizenz für die Pro-Version gefunden. Möglicherweise wurde die Pro-Version während eines Aktualisierungsvorgangs durch die kostenlose Version ersetzt (dies könnte auf ein vorübergehendes Problem zurückzuführen sein). Sollte dies der Fall sein, <b>lade es bitte erneut</b> aus dem <a target=\"_blank\" href=\"https://meowapps.com\">Meow Store</a> herunter. Wenn du die kostenlose Version weiter verwenden und diese Meldung entfernen möchtest, klicke auf diese Schaltfläche."
+
+#: classes/admin.php:73
+msgid "JetPack's <b>Photon</b> module breaks features built in WP Retina 2x (as Photos moves the files away). A common and better alternative to Photon is to use <a href='http://tracking.maxcdn.com/c/97349/3982/378'>MaxCDN</a> (very popular), CloudFlare or Fastly."
+msgstr "JetPack's <b>Photon</b>-Modul bricht die in WP Retina 2x integrierten Funktionen ab (wenn Photon die Dateien entfernt). Eine gängige und bessere Alternative zu Photon ist die Verwendung von <a href='http://tracking.maxcdn.com/c/97349/3982/378'>MaxCDN</a> (sehr beliebt), CloudFlare oder Fastly."
+
+#: common/admin.php:135 common/admin.php:136
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://meowapps.com"
+msgstr "https://meowapps.com "
+
+#: classes/core.php:927
+msgid "PRO VERSION ONLY"
+msgstr "Nur in der Pro-Version verfügbar"
+
+#. Author of the plugin
+msgid "Jordy Meow"
+msgstr "Jordy Meow"
+
+#: classes/rest.php:167
+msgid "You cannot use this file (wrong extension? wrong type?)."
+msgstr "Du kannst diese Datei nicht hochladen (Falsche Dateierweiterung? Falscher Dateityp?). "
+
+#: classes/rest.php:161
+msgid "The file is not an image or the upload went wrong."
+msgstr "Das Hochladen ist fehlgeschlagen. Womöglich ist die ausgewählte Datei kein Bild."
+
+#: classes/rest.php:155 classes/rest.php:604 classes/rest.php:648
+msgid "You do not have permission to upload files."
+msgstr "Du hast keine Berechtigung um Dateien hochzuladen."
+
+#: classes/core.php:1012
+msgid "This size is ignored by your retina settings."
+msgstr "Diese Größe wird von deinen Retina-Einstellungen ignoriert."
+
+#: classes/core.php:1007
+msgid "The standard image normally created by WordPress is missing."
+msgstr "Das normalerweise von WordPress erstellte Standardbild fehlt."
+
+#: classes/core.php:1002
+msgid "The retina image can be created. Please use the 'GENERATE' button."
+msgstr "Das Retina-Bild kann erstellt werden. Bitte drücke dazu den Button 'GENERIEREN'."
+
+#: classes/core.php:992
+msgid "The Full-Size image is too small (<b>%dx%d</b>) and this size cannot be generated.<br />Please upload an image of at least <b>%dx%d</b>."
+msgstr "Das Vollbild ist zu klein (<b>%dx%d</b>) und diese Größe kann nicht generiert werden.<br />Bitte lade ein Bild mit mindestens <b>%dx%d</b> hoch."
+
+#: classes/core.php:988
+msgid "The retina version of the Full-Size image is missing.<br />Full Size Retina has been checked in the Settings and this image is therefore required.<br />Please drag & drop an image of at least <b>%dx%d</b> in the <b>Full-Size Retina Upload</b> column."
+msgstr "Die Retina-Version des Vollbildes fehlt.<br />Vollbild-Retina wurde in den Einstellungen ausgewählt und dieses Bild ist daher erforderlich.<br />Bitte ziehe ein Bild von mindestens <b>%dx%d</b> in die Spalte <b>Vollbild-Retina-Upload</b>."
+
+#: classes/core.php:970
+msgid "The image size '%s' could not be found. You probably changed your image sizes but this specific image was not re-build. This is not related to the retina plugin. You should probably use a plugin to re-generate the missing metadata and images."
+msgstr "Die Bildgröße '%s' konnte nicht gefunden werden. Du hast wahrscheinlich die Bildgrößen geändert, aber dieses spezielle Bild wurde nicht neu erstellt. Dies hat nichts mit dem Retina-Plugin zu tun. Eventuell solltest du ein anderes Plugin verwenden, um die fehlenden Metadaten und Bilder neu zu generieren."
+
+#: classes/core.php:966
+msgid "The metadata is broken! This is not related to the retina plugin. You should probably use a plugin to re-generate the missing metadata and images."
+msgstr "Die Metadaten sind defekt! Dies hat nichts mit dem Retina-Plugin zu tun. Eventuell solltest du ein anderes Plugin verwenden, um die fehlenden Metadaten und Bilder neu zu generieren."
+
+#: classes/core.php:856
+msgid "N/A"
+msgstr "n.&nbsp;a."

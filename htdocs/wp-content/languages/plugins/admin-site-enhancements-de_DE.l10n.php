@@ -1,0 +1,2 @@
+<?php
+return ['x-generator'=>'GlotPress/4.0.0-beta.2','translation-revision-date'=>'2023-10-11 17:45:59+0000','plural-forms'=>'nplurals=2; plural=n != 1;','project-id-version'=>'Plugins - Admin and Site Enhancements (ASE) - Stable (latest release)','language'=>'de','messages'=>['Admin and Site Enhancements (ASE)'=>'Admin and Site Enhancements (ASE)','Easily enable enhancements and features that usually require multiple plugins.'=>'Einfache Aktivierung von Erweiterungen und Funktionen, die ansonsten mehrere Plugins erfordern.']];
