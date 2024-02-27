@@ -1,0 +1,193 @@
+@import "_mixins";
+
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 501;
+  min-height: 130px;
+  height: auto;
+  overflow: hidden;
+  background-color: transparent;
+  border-radius: 0 0 36px 36px;
+  transition: all 0.5s ease;
+
+  background-image: url(../images/heinlein-plastiktechnik-logo.svg);
+  background-repeat: no-repeat;
+  background-size: 240px;
+  background-position: calc(100% - #{$pvw-3}) top;
+
+  &:hover,
+  &.active {
+    background-color: #fff;
+    box-shadow: 0 0 30px -12px rgba(0, 0, 0, 0.3);
+  }
+
+  > div > .row > div {
+    background-color: transparent;
+    z-index: 2;
+    border-radius: 0;
+  }
+
+  div.nav {
+    border-radius: 0 0 0 36px;
+    transition: border-radius 0.333s;
+  }
+}
+
+.menu-hauptmenue-container {
+  padding: 68px 0rem 0 $pvw-3;
+
+  .menu {
+    display: inline-flex;
+    position: relative;
+    flex-direction: column;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+
+    @include min-desktop {
+      flex-direction: row;
+    }
+
+    li.separator {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #fff;
+      box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+      border-radius: var(--r1) 0 var(--r1) 0;
+      padding: 6px 21px 6px 12px;
+      z-index: 100;
+      margin-right: -7px;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #fff;
+        background-image: url(../images/icons/icon-x.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      &.show {
+        display: block;
+      }
+    }
+
+    li.menu-item:last-child {
+      width: 21px;
+      height: 30px;
+      background-image: url(../images/icons/icon-phone.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      a {
+        font-size: 0;
+        line-height: 0;
+        display: block;
+        height: 100%;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: $blau-dunkel;
+      text-transform: uppercase;
+      font-family: "Encode Sans", sans-serif;
+      font-weight: 400;
+      font-size: 13.75px;
+      padding: 7px 12px;
+      letter-spacing: 0.05em;
+
+      &:hover {
+        color: $gold !important;
+      }
+    }
+  }
+
+  .nav-desktop {
+    position: absolute;
+    z-index: 1 !important;
+    background: #fff;
+    box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.3);
+    padding: 130px 0 0 0;
+    height: 530px;
+    top: 0;
+    transition: all 0.5s;
+    border-radius: 0 0 36px 36px;
+    opacity: 0;
+  }
+}
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+.show {
+  background: -moz-linear-gradient(top, #ffffff 130px, #c9d1db 100%);
+  background: -webkit-linear-gradient(top, #ffffff 130px, #c9d1db 100%);
+  background: linear-gradient(to bottom, #ffffff 130px, #c9d1db 100%);
+  top: 0;
+  opacity: 1;
+}
+
+.heine-menu-link,
+.dropdown-menu a,
+.navbar-expand-lg .navbar-nav a.nav-link,
+#block-sprachumschaltercontent ul li a,
+#block-sprachumschaltercontent ul li span {
+  color: $blau-dunkel;
+  text-transform: uppercase;
+  font-family: "Encode Sans", sans-serif;
+  font-weight: 400;
+  font-size: 13.75px;
+  padding-right: 10px;
+  padding-left: 10px;
+  letter-spacing: 0.05em;
+}
+
+a.nav-link:hover,
+a.language-link:hover {
+  color: $gold !important;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .heine-menu-link,
+  .dropdown-menu a,
+  .navbar-expand-lg .navbar-nav a,
+  #block-sprachumschaltercontent ul li a,
+  #block-sprachumschaltercontent ul li span {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+}
+
+@media (min-width: 1px) and (max-width: 991px) {
+  .heine-menu-link,
+  .dropdown-menu a,
+  .navbar-expand-lg .navbar-nav a.nav-link,
+  #block-sprachumschaltercontent ul li a.nav-link,
+  #block-sprachumschaltercontent ul li span {
+    font-size: 16px;
+  }
+}

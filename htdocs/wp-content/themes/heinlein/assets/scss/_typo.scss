@@ -1,0 +1,24 @@
+@import "_variables";
+
+$font-size-default: 15px;
+
+body {
+  font-family: "Encode Sans Expanded", sans-serif !important;
+  color: $blau-mittel-3;
+  font-size: $font-size-default;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Gotham, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}

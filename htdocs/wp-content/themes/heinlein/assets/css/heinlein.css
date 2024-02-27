@@ -1,32 +1,92 @@
-:root {
-  --blau-light-0: #f5f6f9;
-  --blau-light-1: #eff2f7;
-  --blau-light-2: #e4ecf1;
-  --blau-light-3: #dde4ec;
-  --blau-light-4: #cfd5e3;
-  --blau-light-5: #b7beca;
-  --blau-light-6: #adb6ca;
-  --blau-light-7: #9aa6bd;
-  --blau-mittel-1: #5c6c90;
-  --blau-mittel-2: #4a5c80;
-  --blau-mittel-typo: #434d6e;
-  --blau-mittel-3: #3c4c70;
-  --blau-dunkel: #001e4b;
-  --gold-dunkel: #7f6445;
-  --gold: #aa8461;
-  --ivory-hell-1: #f4f2ef;
-  --ivory-hell-2: #eae5e1;
-  --ivory-dark: #e4d8ce;
-  --green-text: #00AF35;
-  --orange: #ff6b37;
-  --r1: 18px;
-  --r2: 24px;
-  --r3: 36px;
-  --margin-1: 48px;
-  --margin-2: 70px;
-  --box-hover-shadow: 0 12px 24px -3px rgba(0, 0, 0, 0.2);
+/*
+/* General */
+@font-face {
+  font-family: "Encode Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/encode-sans/encode-sans-v4-latin-300.woff2") format("woff2"), url("../fonts/encode-sans/encode-sans-v4-latin-300.woff") format("woff");
+  font-display: swap;
 }
-
+@font-face {
+  font-family: "Encode Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/encode-sans/encode-sans-v4-latin-regular.woff2") format("woff2"), url("../fonts/encode-sans/encode-sans-v4-latin-regular.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Encode Sans Expanded";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/encode-sans-expanded/encode-sans-expanded-v4-latin-300.woff2") format("woff2"), url("../fonts/encode-sans-expanded/encode-sans-expanded-v4-latin-300.woff") format("woff");
+}
+@font-face {
+  font-family: "Encode Sans Expanded";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/encode-sans-expanded/encode-sans-expanded-v4-latin-regular.woff2") format("woff2"), url("../fonts/encode-sans-expanded/encode-sans-expanded-v4-latin-regular.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Encode Sans Expanded", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/encode-sans-expanded/encode-sans-expanded-v4-latin-600.woff2") format("woff2"), url("../fonts/encode-sans-expanded/encode-sans-expanded-v4-latin-600.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Encode Sans Semi Expanded", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/encode-sans-semi-expanded/encode-sans-semi-expanded-v5-latin-500.woff2") format("woff2"), url("../fonts/encode-sans-semi-expanded/encode-sans-semi-expanded-v5-latin-500.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: Gotham;
+  font-style: normal;
+  font-weight: 200;
+  src: url("../fonts/gotham-extra-light/gotham-extra-light.woff2") format("woff2"), url("../fonts/gotham-extra-light/gotham-extra-light.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: Gotham;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/gotham-light/gotham-light.woff2") format("woff2"), url("../fonts/gotham-light/gotham-light.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: Gotham;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/gotham-medium/Gotham-Medium_Web.woff2") format("woff2"), url("../fonts/gotham-medium/Gotham-Medium_Web.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: Gotham;
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/gotham-black/gotham-black.woff2") format("woff2"), url("../fonts/gotham-black/gotham-black.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  src: local(""), url("../fonts/montserrat/montserrat-v25-latin-300.woff2") format("woff2"), url("../fonts/montserrat/montserrat-v25-latin-300.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/montserrat/montserrat-v25-latin-500.woff2") format("woff2"), url("../fonts/montserrat/montserrat-v25-latin-500.woff") format("woff");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/montserrat/montserrat-v25-latin-600.woff2") format("woff2"), url("../fonts/montserrat/montserrat-v25-latin-600.woff") format("woff");
+}
 * {
   -moz-outline-style: none;
   outline-style: none;
@@ -35,4 +95,201 @@
   background-origin: content-box;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
+}
+
+html {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+
+body {
+  font-family: "Encode Sans Expanded", sans-serif !important;
+  color: #3c4c70;
+  font-size: 15px;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Gotham, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*
+/* Layout */
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 501;
+  min-height: 130px;
+  height: auto;
+  overflow: hidden;
+  background-color: transparent;
+  border-radius: 0 0 36px 36px;
+  transition: all 0.5s ease;
+  background-image: url(../images/heinlein-plastiktechnik-logo.svg);
+  background-repeat: no-repeat;
+  background-size: 240px;
+  background-position: calc(100% - 3vw) top;
+}
+.site-header:hover, .site-header.active {
+  background-color: #fff;
+  box-shadow: 0 0 30px -12px rgba(0, 0, 0, 0.3);
+}
+.site-header > div > .row > div {
+  background-color: transparent;
+  z-index: 2;
+  border-radius: 0;
+}
+.site-header div.nav {
+  border-radius: 0 0 0 36px;
+  transition: border-radius 0.333s;
+}
+
+.menu-hauptmenue-container {
+  padding: 68px 0rem 0 3vw;
+}
+.menu-hauptmenue-container .menu {
+  display: inline-flex;
+  position: relative;
+  flex-direction: column;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+@media (min-width: 1000px) {
+  .menu-hauptmenue-container .menu {
+    flex-direction: row;
+  }
+}
+.menu-hauptmenue-container .menu li.separator {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+  border-radius: var(--r1) 0 var(--r1) 0;
+  padding: 6px 21px 6px 12px;
+  z-index: 100;
+  margin-right: -7px;
+}
+.menu-hauptmenue-container .menu li.separator:after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #fff;
+  background-image: url(../images/icons/icon-x.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.menu-hauptmenue-container .menu li.separator.show {
+  display: block;
+}
+.menu-hauptmenue-container .menu li.menu-item:last-child {
+  width: 21px;
+  height: 30px;
+  background-image: url(../images/icons/icon-phone.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.menu-hauptmenue-container .menu li.menu-item:last-child a {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  height: 100%;
+}
+.menu-hauptmenue-container .menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #001e4b;
+  text-transform: uppercase;
+  font-family: "Encode Sans", sans-serif;
+  font-weight: 400;
+  font-size: 13.75px;
+  padding: 7px 12px;
+  letter-spacing: 0.05em;
+}
+.menu-hauptmenue-container .menu a:hover {
+  color: #aa8461 !important;
+}
+.menu-hauptmenue-container .nav-desktop {
+  position: absolute;
+  z-index: 1 !important;
+  background: #fff;
+  box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.3);
+  padding: 130px 0 0 0;
+  height: 530px;
+  top: 0;
+  transition: all 0.5s;
+  border-radius: 0 0 36px 36px;
+  opacity: 0;
+}
+
+.show {
+  background: -moz-linear-gradient(top, #ffffff 130px, #c9d1db 100%);
+  background: -webkit-linear-gradient(top, #ffffff 130px, #c9d1db 100%);
+  background: linear-gradient(to bottom, #ffffff 130px, #c9d1db 100%);
+  top: 0;
+  opacity: 1;
+}
+
+.heine-menu-link,
+.dropdown-menu a,
+.navbar-expand-lg .navbar-nav a.nav-link,
+#block-sprachumschaltercontent ul li a,
+#block-sprachumschaltercontent ul li span {
+  color: #001e4b;
+  text-transform: uppercase;
+  font-family: "Encode Sans", sans-serif;
+  font-weight: 400;
+  font-size: 13.75px;
+  padding-right: 10px;
+  padding-left: 10px;
+  letter-spacing: 0.05em;
+}
+
+a.nav-link:hover,
+a.language-link:hover {
+  color: #aa8461 !important;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .heine-menu-link,
+.dropdown-menu a,
+.navbar-expand-lg .navbar-nav a,
+#block-sprachumschaltercontent ul li a,
+#block-sprachumschaltercontent ul li span {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+}
+@media (min-width: 1px) and (max-width: 991px) {
+  .heine-menu-link,
+.dropdown-menu a,
+.navbar-expand-lg .navbar-nav a.nav-link,
+#block-sprachumschaltercontent ul li a.nav-link,
+#block-sprachumschaltercontent ul li span {
+    font-size: 16px;
+  }
 }

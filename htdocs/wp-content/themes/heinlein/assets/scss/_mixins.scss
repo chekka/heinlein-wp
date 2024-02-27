@@ -1,0 +1,32 @@
+@mixin min-mobile {
+   @media (min-width: $mobile) { @content; }
+}
+
+@mixin min-tablet {
+   @media (min-width: $tablet) { @content; }
+}
+
+@mixin max-mobile {
+   @media (max-width: $mobile) { @content; }
+}
+
+@mixin max-tablet {
+   @media (max-width: $tablet) { @content; }
+}
+
+@mixin min-desktop {
+   @media (min-width: $tablet) { @content; }
+}
+
+
+
+
+@mixin corner {
+   content: "";
+   position: absolute;
+   z-index: 0;
+   width: var(--r3);
+   height: var(--r3);
+   border-radius: 50%;
+   background-color: #fff;
+}

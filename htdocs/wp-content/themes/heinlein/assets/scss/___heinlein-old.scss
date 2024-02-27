@@ -1,203 +1,4 @@
-@charset "UTF-8";
 
-div#toolbar-administration {
-    display: none;
-}
-@font-face {
-    font-family: 'Encode Sans';
-    font-style: normal;
-    font-weight: 300;
-    src: url('../fonts/encode-sans/encode-sans-v4-latin-300.woff2') format('woff2'), url('../fonts/encode-sans/encode-sans-v4-latin-300.woff') format('woff');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Encode Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/encode-sans/encode-sans-v4-latin-regular.woff2') format('woff2'), url('../fonts/encode-sans/encode-sans-v4-latin-regular.woff') format('woff');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Encode Sans Expanded';
-    font-style: normal;
-    font-weight: 300;
-    src: url('../fonts/encode-sans-expanded/encode-sans-expanded-v4-latin-300.woff2') format('woff2'), url('../fonts/encode-sans-expanded/encode-sans-expanded-v4-latin-300.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Encode Sans Expanded';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/encode-sans-expanded/encode-sans-expanded-v4-latin-regular.woff2') format('woff2'), url('../fonts/encode-sans-expanded/encode-sans-expanded-v4-latin-regular.woff') format('woff');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Encode Sans Expanded', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    src: url('../fonts/encode-sans-expanded/encode-sans-expanded-v4-latin-600.woff2') format('woff2'), url('../fonts/encode-sans-expanded/encode-sans-expanded-v4-latin-600.woff') format('woff');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Encode Sans Semi Expanded', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    src: url('../fonts/encode-sans-semi-expanded/encode-sans-semi-expanded-v5-latin-500.woff2') format('woff2'), url('../fonts/encode-sans-semi-expanded/encode-sans-semi-expanded-v5-latin-500.woff') format('woff');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: Gotham;
-    font-style: normal;
-    font-weight: 200;
-    src: url('../fonts/gotham-extra-light/gotham-extra-light.woff2') format('woff2'), url('../fonts/gotham-extra-light/gotham-extra-light.woff') format('woff');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: Gotham;
-    font-style: normal;
-    font-weight: 300;
-    src: url('../fonts/gotham-light/gotham-light.woff2') format('woff2'), url('../fonts/gotham-light/gotham-light.woff') format('woff');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: Gotham;
-    font-style: normal;
-    font-weight: 500;
-    src: url('../fonts/gotham-medium/Gotham-Medium_Web.woff2') format('woff2'), url('../fonts/gotham-medium/Gotham-Medium_Web.woff') format('woff');
-    font-display: swap;
-}
-
-
-@font-face {
-    font-family: Gotham;
-    font-style: normal;
-    font-weight: 800;
-    src: url('../fonts/gotham-black/gotham-black.woff2') format('woff2'), url('../fonts/gotham-black/gotham-black.woff') format('woff');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 300;
-    src: local(''),
-        url('../fonts/montserrat/montserrat-v25-latin-300.woff2') format('woff2'),
-        url('../fonts/montserrat/montserrat-v25-latin-300.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 500;
-    src: local(''),
-        url('../fonts/montserrat/montserrat-v25-latin-500.woff2') format('woff2'),
-        url('../fonts/montserrat/montserrat-v25-latin-500.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    src: local(''),
-        url('../fonts/montserrat/montserrat-v25-latin-600.woff2') format('woff2'),
-        url('../fonts/montserrat/montserrat-v25-latin-600.woff') format('woff');
-}
-
-:root {
-    --blau-light-0: #f5f6f9;
-    --blau-light-1: #eff2f7;
-    --blau-light-2: #e4ecf1;
-    --blau-light-3: #dde4ec;
-    --blau-light-4: #cfd5e3;
-    --blau-light-5: #b7beca;
-    --blau-light-6: #adb6ca;
-    --blau-light-7: #9aa6bd;
-    --blau-mittel-1: #5c6c90;
-    --blau-mittel-2: #4a5c80;
-    --blau-mittel-typo: #434d6e;
-    --blau-mittel-3: #3c4c70;
-    --blau-dunkel: #001e4b;
-    --gold-dunkel: #7f6445;
-    --gold: #aa8461;
-    --ivory-hell-1: #f4f2ef;
-    --ivory-hell-2: #eae5e1;
-    --ivory-dark: #e4d8ce;
-    --green-text: #00AF35;
-    --orange: #ff6b37;
-    --r1: 18px;
-    --r2: 24px;
-    --r3: 36px;
-    --margin-1: 48px;
-    --margin-2: 70px;
-    --box-hover-shadow: 0 12px 24px -3px rgba(0, 0, 0, 0.2);
-}
-
-@mixin corner {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    width: var(--r3);
-    height: var(--r3);
-    border-radius: 50%;
-    background-color: #fff;
-}
-
-.col-6 {
-    flex: 0 0 100%;
-    max-width: 100%;
-}
-
-@media (min-width:900px) {
-    .col-6 {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-}
-
-.highlighted {
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    z-index: 1;
-}
-
-* {
-    -moz-outline-style: none;
-    outline-style: none;
-    outline: none;
-    box-sizing: border-box;
-    background-origin: content-box;
-    text-rendering: optimizeLegibility !important;
-    -webkit-font-smoothing: antialiased !important;
-}
-
-.heine-font-sans-regular,
-body,
-div.white-border-box ul li,
-.heine-menu-link,
-.dropdown-menu a,
-.navbar-expand--lg .navbar-nav a.nav-link,
-#block-sprachumschaltercontent ul li a,
-#block-sprachumschaltercontent ul li span,
-#desktop-menu .paragraph.type--_-column h2,
-#produktuebersicht li,
-#newsletter-download span,
-.paragraph.type--text.stil--white-border ul li,
-.paragraph.type--text.stil--gray-border ul li,
-.paragraph.type--time-line .time-line-item .time-line-item-inner .text ul li {
-    font-family: "Encode Sans Expanded", sans-serif !important;
-    color: #3c4c70;
-    font-size: 15px;
-    letter-spacing: 0;
-    font-weight: 400;
-}
 
 .heine-font-sans-semi-bold {
     font-family: "Encode Sans Expanded", sans-serif;
@@ -1564,47 +1365,6 @@ form#user-login-form {
     margin: auto;
 }
 
-#header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 501;
-    min-height: 130px;
-    height: auto;
-    overflow: hidden;
-    background-color: transparent;
-    border-radius: 0 0 36px 36px;
-    transition: all 0.5s ease;
-}
-
-#header:hover,
-#header.active,
-.scrolled #header {
-    background-color: #fff;
-    box-shadow: 0 0 30px -12px rgba(0, 0, 0, 0.3);
-}
-
-#header>div>.row>div {
-    // min-height: 130px;
-    background-color: transparent;
-    z-index: 2;
-    border-radius: 0;
-}
-
-#header div.nav {
-    border-radius: 0 0 0 36px;
-    transition: border-radius 0.333s;
-}
-
-#header div.xs-logo {
-    border-radius: 0 0 36px 0;
-    transition: border-radius 0.333s;
-}
-
-#header.active>div>.row>div {
-    background-color: #fff;
-    border-radius: 0;
-}
 
 .main-nav {
     border-radius: 0 0 36px 0;
@@ -1912,27 +1672,6 @@ form#user-login-form {
     .parallax-window .field--type-text-long {
         display: none;
     }
-}
-
-#desktop-menu {
-    position: absolute;
-    z-index: 1 !important;
-    background: #fff;
-    box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.3);
-    padding: 130px 0 0 0;
-    height: 530px;
-    top: 0;
-    transition: all 0.5s;
-    border-radius: 0 0 36px 36px;
-    opacity: 0;
-}
-
-.show #desktop-menu {
-    background: -moz-linear-gradient(top, #ffffff 130px, #c9d1db 100%);
-    background: -webkit-linear-gradient(top, #ffffff 130px, #c9d1db 100%);
-    background: linear-gradient(to bottom, #ffffff 130px, #c9d1db 100%);
-    top: 0;
-    opacity: 1;
 }
 
 #block-menudesktop {
@@ -4358,10 +4097,6 @@ main .paragraph.type--container[id*="-form"] {
 
 .paragraph.type--container#staff {
     padding: 7.777vh 0 0 0;
-}
-
-.node__content>.field--name-field-seitenabschnitt>.field__item>.paragraph.type--container {
-    // padding-bottom: inherit;
 }
 
 @media (min-width: 768px) {
@@ -6881,8 +6616,6 @@ html .form-required::after {
 .site-footer div[id^=block-findcontact] .shs-widget-container,
 .site-footer div[id^=block-findcontact] .select-wrapper {
     position: relative;
-    -moz-appearance: none !important;
-    -webkit-appearance: none !important;
     background-image: url(../images/select-drop.svg);
     background-size: 44px;
     background-repeat: no-repeat;
