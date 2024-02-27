@@ -1,0 +1,4 @@
+/* Prevent Page Builder from covering Pikaday date picker */
+.pika-single {
+	z-index: 999999 !important;
+}

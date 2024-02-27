@@ -1,0 +1,34 @@
+@pagination_border_width: default;
+@pagination_capitalize_links: default;
+@pagination_letter_spacing: default;
+@pagination_padding: default;
+@pagination_type: default;
+
+&.so-widget-sow-blog .sow-post-navigation {
+
+	.sow-nav-links {
+
+		&.sow-post-pagination-links a,
+		.sow-blog-load-more,
+		.sow-blog-infinite {
+			background: @pagination_background;
+			border: @pagination_border_width solid @pagination_border_color;
+			border-radius: @pagination_border_radius;
+			color: @pagination_link_color;
+			font-family: @pagination_font;
+			font-size: @pagination_font_size;
+			font-style: @pagination_font_style;
+			font-weight: @pagination_font_weight;
+			letter-spacing: @pagination_letter_spacing;
+			padding: @pagination_padding;
+			text-transform: @pagination_capitalize_links;
+
+			&:hover,
+			&:focus {
+				background: @pagination_background_hover;
+				border: @pagination_border_width solid @pagination_border_color_hover;
+				color: @pagination_link_color_hover;
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+#siteorigin_premium_metabox .sow-tabs-smaller-show {
+	display: block !important;
+}
+
+#side-sortables #siteorigin_premium_metabox .media-fallback-external {
+	clear: both;
+	margin-left: 0;
+	max-width: 200px;
+}
+
+#side-sortables #siteorigin_premium_metabox .media-remove-button {
+	margin: 0;
+	padding-top: 5px;
+	padding-left: 0;
+}
+
+#side-sortables #siteorigin_premium_metabox .media-remove-button.remove-hide {
+	display: none !important;
+}

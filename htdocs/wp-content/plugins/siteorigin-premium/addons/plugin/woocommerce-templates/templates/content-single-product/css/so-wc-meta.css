@@ -1,0 +1,8 @@
+.woocommerce .product .product_meta {
+	font-size: 13px;
+	padding: 25px 0;
+}
+
+.woocommerce .product .product_meta > span {
+	display: block;
+}

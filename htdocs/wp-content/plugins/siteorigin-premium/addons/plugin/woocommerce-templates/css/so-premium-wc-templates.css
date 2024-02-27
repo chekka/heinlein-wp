@@ -1,0 +1,254 @@
+.so-wc-templates-nav {
+  background: #f1f1f1;
+  border-bottom: 1px solid #d6d6d6;
+  padding: 5px 0 0 30px;
+  margin: 0;
+  font-size: 0;
+}
+.so-wc-templates-nav li {
+  background: #f6f6f6;
+  border: 1px solid #d6d6d6;
+  border-width: 1px 0 1px 1px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1em;
+  margin: 0 0 -1px 0;
+  position: relative;
+  transition: all 0.2s;
+}
+.so-wc-templates-nav li:last-child {
+  border-right-width: 1px;
+}
+.so-wc-templates-nav li a {
+  box-shadow: none !important;
+  color: #555;
+  display: block;
+  font-weight: bold;
+  padding: 12px 25px;
+  text-decoration: none;
+}
+.so-wc-templates-nav li a > span.so-wc-templates-tooltip {
+  height: inherit;
+  line-height: inherit;
+  position: relative;
+}
+.so-wc-templates-nav li a > span.so-wc-templates-tooltip:before {
+  font-size: 18px;
+  height: 18px;
+  vertical-align: bottom;
+  width: 18px;
+}
+.so-wc-templates-nav li a > span.so-wc-templates-tooltip:hover .so-wc-templates-tooltip-contents {
+  display: block;
+}
+.so-wc-templates-nav li a > span.so-wc-templates-tooltip .so-wc-templates-tooltip-contents {
+  background: rgba(0, 0, 0, 0.83);
+  color: #f1f1f1;
+  display: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 0.8125rem;
+  left: -110px;
+  line-height: 1.4;
+  padding: 10px 15px 12px;
+  position: absolute;
+  text-align: left;
+  top: 24px;
+  transition: all 0.2s ease-in-out;
+  width: 220px;
+  z-index: 102;
+}
+.so-wc-templates-nav li:hover {
+  background: #f3f3f3;
+}
+.so-wc-templates-nav li.active {
+  background: #f0f0f0;
+  border-bottom-color: #f0f0f0;
+}
+.so-wc-templates-missing-plugin {
+  padding: 15px;
+}
+.so-wc-template-input-container #so-wc-template-name {
+  font-size: 24px;
+  margin-top: 10px;
+  width: 100%;
+}
+#so-premium-wc-template-form .action-button {
+  line-height: 25px;
+  padding-top: 3px;
+}
+#so-premium-wc-template-form.so-premium-wc-tab-content-product > h4 {
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+#so-premium-wc-template-form.so-premium-wc-tab-content-product .wctb-builder p {
+  margin-bottom: 23px;
+  margin-top: 10px;
+}
+.so-panels-dialog.so-panels-dialog-add-widget .widget-type-list .widget-type .widget-icon.so-wc-widget-icon {
+  background-image: url('../../../../img/menu-icon.svg');
+  background-position: -6px 0;
+  background-size: 40px;
+  width: 28px;
+}
+.so-panels-dialog.so-panels-dialog-edit-widget .so-wc-widget-form-input {
+  padding: 10px 0px;
+}
+.so-panels-dialog.so-panels-dialog-edit-widget .so-wc-widget-form-input label:first-child {
+  display: block;
+}
+#so-premium-wc-template-preview-dialog {
+  display: none;
+}
+#so-premium-wc-template-preview-dialog .siteorigin-widget-form-no-styles {
+  display: none !important;
+}
+#so-premium-wc-template-preview-dialog .so-overlay,
+#so-premium-wc-template-preview-dialog .so-content,
+#so-premium-wc-template-preview-dialog .so-title-bar,
+#so-premium-wc-template-preview-dialog .so-toolbar,
+#so-premium-wc-template-preview-dialog .so-left-sidebar,
+#so-premium-wc-template-preview-dialog .so-right-sidebar {
+  box-sizing: border-box;
+  padding: 15px;
+  position: fixed;
+  z-index: 100001;
+}
+#so-premium-wc-template-preview-dialog .so-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+#so-premium-wc-template-preview-dialog .so-content {
+  background-color: #fdfdfd;
+  bottom: 88px;
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.03);
+  left: 30px;
+  overflow: hidden;
+  padding: 0;
+  right: 30px;
+  top: 80px;
+}
+#so-premium-wc-template-preview-dialog .so-content > *:first-child,
+#so-premium-wc-template-preview-dialog .so-content form > *:first-child {
+  margin-top: 0;
+}
+#so-premium-wc-template-preview-dialog .so-content > *:last-child,
+#so-premium-wc-template-preview-dialog .so-content form > *:last-child {
+  margin-bottom: 0;
+}
+#so-premium-wc-template-preview-dialog .so-content .so-content-tabs > * {
+  display: none;
+}
+#so-premium-wc-template-preview-dialog .so-content.so-loading {
+  background-image: url(../../../../admin/img/wpspin_light.gif);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  #so-premium-wc-template-preview-dialog .so-content.so-loading {
+    background-image: url(../../../../admin/img/wpspin_light-2x.gif);
+    background-size: 16px 16px;
+  }
+}
+#so-premium-wc-template-preview-dialog .so-title-bar {
+  background-color: #fafafa;
+  border-bottom: 1px solid #d8d8d8;
+  height: 50px;
+  left: 30px;
+  right: 30px;
+  top: 30px;
+  /* These are the action buttons in the title bar */
+}
+#so-premium-wc-template-preview-dialog .so-title-bar h3.so-title {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#so-premium-wc-template-preview-dialog .so-title-bar a {
+  background: #fafafa;
+  border-bottom: 1px solid #d8d8d8;
+  border-left: 1px solid #d8d8d8;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+}
+#so-premium-wc-template-preview-dialog .so-title-bar a:hover {
+  background: #e9e9e9;
+}
+#so-premium-wc-template-preview-dialog .so-title-bar a:hover .so-dialog-icon {
+  color: #333;
+}
+#so-premium-wc-template-preview-dialog .so-title-bar a .so-dialog-icon {
+  color: #666;
+  height: 20px;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  top: 50%;
+  width: 20px;
+}
+#so-premium-wc-template-preview-dialog .so-title-bar a .so-dialog-icon:before {
+  font: 400 20px/1em dashicons;
+  left: 13px;
+  top: 7px;
+}
+#so-premium-wc-template-preview-dialog .so-title-bar a.so-close {
+  right: 0;
+}
+#so-premium-wc-template-preview-dialog .so-title-bar a.so-close .so-dialog-icon:before {
+  content: "\f335";
+}
+#so-premium-wc-template-preview-dialog .so-toolbar {
+  background-color: #fafafa;
+  border-top: 1px solid #d8d8d8;
+  bottom: 30px;
+  height: 58px;
+  left: 30px;
+  right: 30px;
+  z-index: 100002;
+}
+#so-premium-wc-template-preview-dialog .so-toolbar .so-status {
+  color: #999;
+  float: left;
+  font-style: italic;
+  line-height: 1em;
+  padding-bottom: 6px;
+  padding-top: 6px;
+}
+#so-premium-wc-template-preview-dialog .so-toolbar .so-status.so-panels-loading {
+  background-position: left center;
+  padding-left: 26px;
+}
+#so-premium-wc-template-preview-dialog .so-toolbar .so-buttons {
+  float: right;
+}
+#so-premium-wc-template-preview-dialog .so-toolbar .so-buttons .action-buttons {
+  left: 15px;
+  margin-top: -0.65em;
+  position: absolute;
+  top: 50%;
+}
+#so-premium-wc-template-preview-dialog .so-toolbar .so-buttons .action-buttons a {
+  cursor: pointer;
+  display: inline;
+  line-height: 1em;
+  margin-right: 0.5em;
+  padding: 0.2em 0.5em;
+  text-decoration: none;
+}
+#so-premium-wc-template-preview-dialog .siteorigin-widget-help-link {
+  display: none;
+}
+#so-premium-wc-template-preview-dialog iframe {
+  height: 100%;
+  width: 100%;
+}

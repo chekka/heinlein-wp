@@ -1,0 +1,120 @@
+@background_display: background;
+@background_style: cover;
+@content_align: top;
+@button_align: right;
+@button_align_mobile: default;
+@gutter: default;
+@image: default;
+
+.sow-cta-base {
+	background-image: @image;
+	gap: @gutter;
+
+	&:before,
+	&:after {
+		content: none; // Backwards compatibility.
+	}
+
+	& when ( @background_display = background ) {
+
+		& when not ( @background_style = fixed ) {
+			// Due to a technical limitation, we have to separate these two checks.
+			& when not (@background_style = parallax) {
+				background-size: @background_style;
+			}
+		}
+
+		& when ( @background_style = fixed ) {
+			background-attachment: fixed;
+			background-size: cover;
+		}
+
+
+		& when ( @background_style = parallax ) {
+			background: transparent;
+			overflow: hidden;
+			position: relative;
+
+			.sow-cta-wrapper {
+				position: relative;
+				z-index: 1;
+			}
+		}
+	}
+
+	& when not ( @background_display = background ) {
+		display: flex;
+
+		& when ( @background_display = left ) {
+			flex-direction: row-reverse;
+		}
+
+		.siteorigin-premium-cta-image {
+			height: auto;
+			max-width: 100%;
+			overflow: hidden;
+		}
+
+		@media (min-width: @responsive_breakpoint) {
+			& when ( @content_align = start ) {
+				align-items: flex-start;
+			}
+
+			& when ( @content_align = center ) {
+				align-items: center;
+			}
+
+			& when ( @content_align = end ) {
+				align-items: flex-end;
+			}
+
+			& when ( @button_align = top ),
+			( @button_align = bottom ) {
+				justify-content: center;
+			}
+
+			& when ( @button_align = left ) {
+				flex-direction: row;
+			}
+
+			& when ( @button_align = right ) {
+				flex-direction: row-reverse;
+			}
+
+			.sow-cta-wrapper {
+				& when ( @background_display = right ) {
+					margin-right: 2px;
+				}
+
+				& when ( @background_display = left ) {
+					margin-left: 2px;
+				}
+			}
+		}
+
+		@media (max-width: @responsive_breakpoint) {
+			flex-direction: column-reverse;
+
+			// No mobile alignment.
+			& when ( @button_align_mobile = default ) {
+				// Center if the desktop alignment isn't left or right.
+				& when not ( @button_align = left ),
+				( @button_align = right ) {
+					.siteorigin-premium-cta-image {
+						margin-inline: auto;
+					}
+				}
+			}
+
+			// Mobile alignment.
+			& when ( @button_align_mobile = above ),
+			( @button_align_mobile = below ) {
+				justify-content: center;
+
+				.siteorigin-premium-cta-image {
+					margin-inline: auto;
+				}
+			}
+		}
+	}
+}

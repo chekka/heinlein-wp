@@ -1,0 +1,49 @@
+@media ( max-width: 1024px ) {
+	.so-addon[data-id="plugin/cross-domain-copy-paste"] .so-addon-settings {
+		display: none !important;
+	}
+}
+
+/* Broswer Storage. */
+.siteorigin-premium-cross-domain-copy-paste-container {
+	display: none;
+	position: relative;
+	z-index: 100003;
+}
+
+.siteorigin-premium-cross-domain-copy-paste {
+	background: #fefefe;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	left: 50%;
+	max-width: 90%;
+	min-height: 455px;
+	padding: 15px;
+	position: fixed;
+	top: 20%;
+	transform: translateX(-50%);
+	width: 450px;
+	z-index: 100004;
+}
+
+.siteorigin-premium-cross-domain-copy-paste-overlay {
+	background: rgba( 0, 0, 0, 0.8 );
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 100003;
+}
+
+/* Browser Clipboard. */
+.siteorigin-widget-field-copy_paste .siteorigin-widget-html-field,
+.siteorigin-widget-field-copy_paste .siteorigin-widget-html-field a {
+	font-size: 12px;
+}
+
+@media ( min-width: 1024px ) {
+	.siteorigin-widget-field-copy_paste .siteorigin-widget-html-field {
+		display: flex;
+		justify-content: space-between;
+	}
+}

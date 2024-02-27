@@ -1,0 +1,72 @@
+.mce-container .mce-so-premium-font-selector,
+.mce-container .siteorigin-premium-variant-field-wrapper {
+  margin-left: 5px;
+  margin-top: 1px;
+  position: relative;
+}
+.mce-container .mce-so-premium-font-selector .chosen-single,
+.mce-container .siteorigin-premium-variant-field-wrapper .chosen-single {
+  min-height: 0;
+}
+.mce-container .mce-so-premium-font-selector .chosen-single abbr,
+.mce-container .siteorigin-premium-variant-field-wrapper .chosen-single abbr {
+  bottom: inherit;
+}
+.mce-container .mce-so-premium-font-selector .chosen-single span,
+.mce-container .siteorigin-premium-variant-field-wrapper .chosen-single span {
+  line-height: 24px;
+}
+.mce-container .mce-so-premium-font-selector .chosen-drop,
+.mce-container .siteorigin-premium-variant-field-wrapper .chosen-drop {
+  top: 0;
+  width: 100%;
+}
+.mce-container .mce-so-premium-font-selector .chosen-drop .chosen-search .chosen-search-input,
+.mce-container .siteorigin-premium-variant-field-wrapper .chosen-drop .chosen-search .chosen-search-input {
+  box-sizing: border-box;
+}
+.mce-container .mce-so-premium-font-selector .field-wrapper,
+.mce-container .siteorigin-premium-variant-field-wrapper .field-wrapper {
+  display: inline-block;
+  margin-left: 5px;
+}
+.mce-container .mce-so-premium-font-selector .field-wrapper label,
+.mce-container .siteorigin-premium-variant-field-wrapper .field-wrapper label {
+  display: none;
+}
+.mce-container .mce-so-premium-font-selector .field-wrapper select,
+.mce-container .siteorigin-premium-variant-field-wrapper .field-wrapper select {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  height: auto;
+}
+.mce-container .mce-so-premium-font-selector.chosen-container-single .chosen-search input[type="text"],
+.mce-container .siteorigin-premium-variant-field-wrapper.chosen-container-single .chosen-search input[type="text"] {
+  background: none !important;
+}
+.mce-container .mce-so-premium-font-selector.chosen-container-single .chosen-search::after,
+.mce-container .siteorigin-premium-variant-field-wrapper select.font-variant::after {
+  background: url('lib/chosen/chosen-sprite.png') no-repeat 100% -20px;
+  content: ' ';
+  display: block;
+  height: 19px;
+  position: absolute;
+  right: 4px;
+  top: 9px;
+  width: 19px;
+}
+.mce-container .siteorigin-premium-variant-field-wrapper {
+  margin: 1px 5px 0 8px;
+}
+.mce-container .siteorigin-premium-variant-field-wrapper label {
+  font-size: 13px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.mce-container .siteorigin-premium-variant-field-wrapper .chosen-container {
+  text-transform: capitalize;
+  width: 102px !important;
+}
+.fl-lightbox .mce-container .mce-so-premium-font-selector {
+  width: auto !important;
+}

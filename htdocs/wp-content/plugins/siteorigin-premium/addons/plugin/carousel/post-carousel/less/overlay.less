@@ -1,0 +1,202 @@
+// Post Carousel Defaults. Not all are used by the Overlay theme, but all must be present.
+@thumbnail_width: default;
+@thumbnail_height: default;
+
+@thumbnail_hover_width: default;
+@thumbnail_hover_height: default;
+
+@thumbnail_overlay_hover_opacity: 0.5;
+@thumbnail_overlay_hover_color: #3279BB;
+@navigation_color: #fff;
+@navigation_color_hover: default;
+@navigation_background: #333;
+@navigation_hover_background: #444;
+
+@breakpoint_tablet_landscape: default;
+@breakpoint_tablet_portrait: default;
+@breakpoint_mobile: default;
+@navigation_desktop: default;
+@navigation_tablet_landscape: default;
+@navigation_tablet_portrait: default;
+@navigation_mobile: default;
+@item_title_tag: default;
+@item_title_font_size: 15px;
+@item_title_color: #474747;
+
+@navigation_navigation_color: default;
+@navigation_navigation_color_hover: default;
+@navigation_arrow_margin: default;
+
+@navigation_arrows: default;
+@desktop_slides_to_scroll: 1;
+@tablet_landscape_breakpoint: 1366px;
+@tablet_landscape_slides_to_scroll: 2;
+@tablet_portrait_breakpoint: 1025px;
+@tablet_portrait_slides_to_scroll: 2;
+@mobile_breakpoint: 480px;
+@mobile_slides_to_scroll: 1;
+@desktop_slides_to_show: 3;
+@tablet_landscape_slides_to_show: 3;
+@tablet_portrait_slides_to_show: 2;
+@mobile_slides_to_show: 1;
+
+// Overlay.
+@title_font: default;
+@title_font_style: default;
+@title_font_weight: default;
+
+@thumbnail_overlay_color: default;
+@thumbnail_border_radius: default;
+
+@category_color: default;
+@category_size: default;
+@category_background: default;
+
+@navigation_dots_color: default;
+@navigation_dots_color_hover: default;
+@navigation_dots_top_margin: default;
+@navigation_dots_desktop: default;
+@navigation_dots_tablet_landscape: default;
+@navigation_dots_tablet_portrait: default;
+@navigation_dots_mobile: default;
+
+.sow-carousel-wrapper {
+
+	.sow-carousel-items {
+
+		.slick-track .sow-carousel-item {
+			border-radius: @thumbnail_border_radius;
+			height: @thumbnail_hover_height;
+
+			&:before {
+				background: linear-gradient(180deg, rgba(0, 0, 0, 0) 59.98%, @thumbnail_overlay_color 100%);
+				border-radius: @thumbnail_border_radius;
+			}
+
+			&:not(.sow-carousel-default-thumbnail)::before {
+				background: #e0e0e0;
+			}
+
+			.sow-entry-categories a {
+				background: @category_background;
+				color: @category_color;
+
+				&:focus,
+				&:hover {
+					background: @category_color;
+					color: @category_background;
+				}
+			}
+
+			@{item_title_tag}.sow-carousel-item-title {
+				color: @item_title_color;
+				font-family: @title_font;
+				font-size: @item_title_font_size;
+				font-style: @title_font_style;
+				font-weight: @title_font_weight;
+
+				@media (max-width: @breakpoint_mobile) {
+					line-height: normal;
+				}
+			}
+		}
+	}
+
+	.sow-carousel-nav .sow-carousel-nav-arrows {
+
+		& when not ( isnumber( @navigation_desktop ) ) {
+			@media (min-width: @breakpoint_tablet_landscape) {
+				display: none;
+			}
+		}
+
+		& when not ( isnumber( @navigation_tablet_landscape ) ) {
+			@media (min-width: @breakpoint_tablet_portrait) and (max-width: @breakpoint_tablet_landscape) {
+				display: none;
+			}
+		}
+
+		& when not ( isnumber( @navigation_tablet_portrait ) ) {
+			@media (min-width: @breakpoint_mobile) and (max-width: @breakpoint_tablet_portrait) {
+				display: none;
+			}
+		}
+
+		& when not ( isnumber( @navigation_mobile ) ) {
+			@media (max-width: @breakpoint_mobile) {
+				display: none;
+			}
+		}
+
+		a.sow-carousel-next,
+		a.sow-carousel-previous {
+			color: @navigation_color;
+
+			&:focus,
+			&:hover {
+				color: @navigation_color_hover;
+			}
+		}
+	}
+
+	& when( @navigation_arrows = 1 ) {
+		.sow-carousel-nav,
+		.sow-carousel-nav-arrows {
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-between;
+
+			body.rtl & {
+				flex-direction: row;
+			}
+		}
+	}
+
+	.sow-carousel-nav {
+		margin: @navigation_dots_top_margin 0 0;
+	}
+
+	.slick-dots {
+
+		& when not ( isnumber( @navigation_dots_desktop ) ) {
+			@media (min-width: @breakpoint_tablet_landscape) {
+				display: none !important;
+			}
+		}
+
+		& when not ( isnumber( @navigation_dots_tablet_landscape ) ) {
+			@media (min-width: @breakpoint_tablet_portrait) and (max-width: @breakpoint_tablet_landscape) {
+				display: none !important;
+			}
+		}
+
+		& when not ( isnumber( @navigation_dots_tablet_portrait ) ) {
+			@media (min-width: @breakpoint_mobile) and (max-width: @breakpoint_tablet_portrait) {
+				display: none !important;
+			}
+		}
+
+		& when not ( isnumber( @navigation_dots_mobile ) ) {
+			@media (max-width: @breakpoint_mobile) {
+				display: none !important;
+			}
+		}
+
+		li {
+			&.slick-active button:before {
+				color: @navigation_dots_color_hover;
+			}
+
+			button {
+
+				&:hover:before {
+					color: @navigation_dots_color_hover;
+				}
+
+				&:before {
+					color: @navigation_dots_color;
+				}
+			}
+		}
+	}
+}

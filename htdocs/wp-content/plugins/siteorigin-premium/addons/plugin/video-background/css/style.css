@@ -1,0 +1,13 @@
+.panel-background-overlay iframe,
+.panel-background-overlay video {
+	max-height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+.panel-video-background-cover .so-premium-video-background,
+.panel-video-background-cover .so-premium-video-background video,
+.panel-video-background-cover .so-premium-video-background iframe {
+	height: 100%;
+	max-height: none !important;
+}

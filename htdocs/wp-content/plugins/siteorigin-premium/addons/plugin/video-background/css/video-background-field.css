@@ -1,0 +1,50 @@
+.style-field-video_background .so-video-selector {
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  border: 1px solid #8c8f94;
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  height: 28px;
+}
+.style-field-video_background .so-video-selector:focus {
+  border: 1px solid #007cba;
+  box-shadow: 0 0 0 1px #007cba;
+}
+.style-field-video_background .so-video-selector .so-video-placeholder {
+  background: #fff;
+  border-bottom-left-radius: 3px;
+  border-right: 1px solid #8c8f94;
+  border-top-left-radius: 3px;
+  box-sizing: border-box;
+  float: left;
+  padding: 3px;
+  height: 28px;
+  width: 28px;
+}
+.style-field-video_background .so-video-selector .so-video-placeholder img {
+  height: 22px;
+  width: 22px;
+}
+.style-field-video_background .so-video-selector .select-video {
+  color: #555;
+  float: left;
+  font-size: 12px;
+  line-height: 28px;
+  padding: 0 8px;
+}
+.style-field-video_background .remove-video {
+  color: #666;
+  display: inline-block;
+  float: left;
+  font-size: 12px;
+  margin-left: 15px;
+  margin-top: 4px;
+  text-decoration: none;
+}
+.style-field-video_background .remove-video.hidden {
+  display: none;
+}
+.style-field-video_background .video-fallback {
+  margin-top: 4px;
+}

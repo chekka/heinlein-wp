@@ -1,0 +1,6 @@
+.edit-post-meta-boxes-area #poststuff *[id^='siteorigin-premium-'] h2.hndle {
+	font-size: 13px;
+	font-weight: 500;
+	padding: 16px 48px 16px 16px;
+	text-transform: capitalize;
+}
