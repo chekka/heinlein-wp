@@ -6,7 +6,7 @@ Requires at least: 5.9
 License: GPL2
 Requires PHP: 7.2
 Tested up to: 6.4
-Stable tag: 7.0.1
+Stable tag: 7.0.4
 
 Configure your Cookie Banner, Cookie Consent and Cookie Policy with our Wizard and Cookie Scan.
 
@@ -133,7 +133,18 @@ Check out other plugins developed by Really Simple Plugins as well: [Really Simp
 Complianz is on [GitHub](https://github.com/Really-Simple-Plugins/complianz-gdpr) as well!
 
 IMPORTANT! Complianz | GDPR/CCPA Cookie Consent can help you meet compliance requirements, but the user must ensure that all requirements are met.
-Complianz needs to connect with Cookiedatabase.org to collect and synchronize with the most recent descriptions for cookies and related services. This will ensure that your cookie policy always contains the most up to date cookie descriptions. Cookiedatabase.org is being operated by Complianz BV and the offered service can be used for free within our plugin under the following [Terms of Use](https://creativecommons.org/licenses/by-nc-nd/4.0/).
+
+Complianz provides your Cookie Policy with comprehensive cookie descriptions, supplied by cookiedatabase.org, operated by Complianz B.V. The plugin sends the results of the (local) site scan to Cookiedatabase.org, for the sole purpose of providing you with accurate descriptions and keeping them up-to-date on a regular basis. We collect for research purposes:
+
+* Cookie names
+* Domain that provides the cookie names
+* Plugin list on the domain
+
+For more information:
+
+* Privacy Statement - [Privacy Statement](https://cookiedatabase.org/plugin-use-of-cookiedatabase-org-privacy-terms/) - Cookiedatabase.org
+* Terms and Conditions Database - [Terms of Use](https://cookiedatabase.org/terms-of-use/) - Cookiedatabase.org
+* Terms of Use API - [Terms of Use](https://cookiedatabase.org/terms-of-use-api/) - API - Cookiedatabase.org
 
 [Contact](https://complianz.io/support/) us if you have any questions, issues, or suggestions. Complianz | GDPR/CCPA Cookie Consent is developed by [Complianz B.V.](https://complianz.io). Leave your feature requests [here]().
 
@@ -174,6 +185,24 @@ The Brazilian General Data Protection Law is similar to the GDPR, the UK-GDPR it
 With some custom CSS this is possible, but we do not consider a cookie wall to be GDPR compliant, so it's not actively supported. We do, however, have the option to create a Soft Cookie Wall. Which blocks interaction with the website, but dismissing remains a possibility.
 
 == Changelog ==
+= 7.0.4 =
+* March 9th, 2024
+* Fix: Purposes were incorrectly set to 'disabled', while there should only be a condition limiting it to the US region only, props @cdhodgdon
+* Fix: Pixelyoursite + pinterest function name incorrect, props @theogk
+
+= 7.0.3 =
+* March 5th, 2024
+* Improvement: clean up MPDF temp directory after pdf generation
+* Improvement: set aria label on x close button from banner
+* Fix: deleting cookies with disallowed cookie names causing fatal error, props @baffled
+* Fix: missing cmplz_deny_all() function for expired cookies with a changed cookie policy id.
+* Fix: cmplz_set_category_as_body_class() also iterating over objects instead of just class names, when parsing the body classes, props @tomnoir
+* Fix: due to changed setting usage, Complianz assumed TCF active in some situations, causing the banner editor not to function properly, props @vania2008, @jeanfrancois7
+
+= 7.0.2 =
+* February 28th, 2024
+* Fix: force the 'wizard_completed_once' to be true for upgrades to 7.0.2, to prevent issues with banner not showing after upgrade, props @cometto, @riroweb2022, @katynen, @julianulmer, @iviadvagency
+
 = 7.0.1 =
 * February 27th, 2024
 * Fix: catch COMPLIANZ class not loaded yet in cmplz_get_option, props @sizilianischekueche, @franktomas, @martinellimarco, @boinich

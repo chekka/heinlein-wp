@@ -1,0 +1,58 @@
+@container_background_image: default;
+@container_background: default;
+@container_border_color: default;
+@container_border_radius: default;
+@container_padding: default;
+
+@text_color: default;
+@text_font: default;
+@text_link_hover: default;
+@text_link: default;
+@text_margin: default;
+@text_size: default;
+@text_style: default;
+@text_weight: default;
+
+.siteorigin-premium-embed-blocker-message {
+	background-image: @container_background_image;
+	background-size: cover;
+	border-radius: @container_border_radius;
+	border: @container_border_color;
+	color: @text_color;
+	font-family: @text_font;
+	font-size: @text_size;
+	margin: 15px 0;
+	padding: @container_padding;
+	position: relative;
+
+	.siteorigin-premium-embed-blocker-message-content {
+		position: relative;
+		z-index: 1;
+	}
+
+	& when not (@container_background = default) {
+		&::after {
+			background-color: @container_background;
+			border-radius: @container_border_radius;
+			bottom: 0;
+			content: ' ';
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+
+	a {
+		color: @text_link;
+
+		&:hover,
+		&:hover {
+			color: @text_link_hover;
+		}
+	}
+
+	p:not(:last-of-type) {
+		margin: @text_margin;
+	}
+}

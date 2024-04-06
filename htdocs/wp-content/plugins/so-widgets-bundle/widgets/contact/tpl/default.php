@@ -1,7 +1,7 @@
 <?php
 // Display the title.
 if ( $instance['display_title'] && ! empty( $instance['title'] ) ) {
-	echo $args['before_title'] . $instance['title'] . $args['after_title'];
+	echo $args['before_title'] . wp_kses_post( $instance['title'] ) . $args['after_title'];
 }
 $short_hash = substr( $instance_hash, 0, 4 );
 
@@ -57,23 +57,29 @@ if ( is_array( $result ) && $result['status'] == 'success' ) {
 
 		if ( ! empty( $really_simple_spam ) ) {
 			if ( $really_simple_spam == 'missing' ) {
-				echo __( 'Unable to detect Really Simple CAPTCHA plugin.', 'so-widgets-bundle' );
+				esc_html_e( 'Unable to detect Really Simple CAPTCHA plugin.', 'so-widgets-bundle' );
 			} else {
 				require 'simple.php';
 			}
 		}
+
+		do_action( 'siteorigin_widgets_contact_before_submit', $instance, $result );
 		?>
 
 		<div class="sow-submit-wrapper <?php if ( $instance['design']['submit']['styled'] ) {
 			echo 'sow-submit-styled';
 		} ?>">
 
-			<button class="sow-submit<?php if ( $recaptcha && empty( $recaptcha_v2 ) ) {
-				echo ' g-recaptcha';
-			} ?>"
+			<button
+				type="submit"
+				class="sow-submit<?php
+				if ( $recaptcha && empty( $recaptcha_v2 ) ) {
+					echo ' g-recaptcha';
+				}
+				?>"
 				<?php
 				foreach ( $submit_attributes as $name => $val ) {
-					echo $name . '="' . esc_attr( $val ) . '" ';
+					echo esc_attr( $name ) . '="' . esc_attr( $val ) . '" ';
 				}
 
 				if ( ! empty( $onclick ) ) {
@@ -81,9 +87,10 @@ if ( is_array( $result ) && $result['status'] == 'success' ) {
 				}
 				?>
 			>
-				<?php echo esc_attr( $instance['settings']['submit_text'] ); ?>
+				<?php echo esc_html( $instance['settings']['submit_text'] ); ?>
 			</button>
 		</div>
+		<?php do_action( 'siteorigin_widgets_contact_after_submit', $instance, $result ); ?>
 		<input type="hidden" name="instance_hash" value="<?php echo esc_attr( $instance_hash ); ?>" />
 		<?php wp_nonce_field( '_contact_form_submit' ); ?>
 	</form>

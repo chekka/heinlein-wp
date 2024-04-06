@@ -335,7 +335,12 @@ class SiteOrigin_Premium_Plugin_Image_Overlay {
 	private function overlay_enabled_for_instance( $instance, $widget ) {
 		$overlay_settings = $this->get_overlay_settings();
 
-		$overlay_global_is_enabled = in_array( $widget->id_base, $overlay_settings['enabled_for_widgets'] );
+		if (
+			! empty( $overlay_settings ) &&
+			is_array( $overlay_settings['enabled_for_widgets'] )
+		) {
+			$overlay_global_is_enabled = in_array( $widget->id_base, $overlay_settings['enabled_for_widgets'] );
+		}
 
 		$overlay_instance_is_enabled = ( empty( $instance['overlay'] ) || empty( $instance['overlay']['is_enabled'] ) ) ?
 			'global' :

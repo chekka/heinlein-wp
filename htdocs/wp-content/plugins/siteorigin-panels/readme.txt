@@ -3,8 +3,8 @@ Tags: page builder, responsive, parallax, widgets, blocks, gallery, layout, grid
 Requires at least: 4.7
 Tested up to: 6.4
 Requires PHP: 5.6.20
-Stable tag: 2.29.5
-Build time: 2024-02-16T20:40:57+00:00
+Stable tag: 2.29.11
+Build time: 2024-03-31T15:30:39+01:00
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Donate link: https://siteorigin.com/downloads/premium/
@@ -120,6 +120,40 @@ Page Builder is compatible with the vast majority of third-party plugins and wid
 SiteOrigin offers a single premium plugin that enhances and extends Page Builder, the Widgets Bundle, SiteOrigin CSS and all of our free themes. Find out more about [SiteOrigin Premium](https://siteorigin.com/downloads/premium/) and the powerful addons it offers.
 
 == Changelog ==
+
+= 2.29.11 - 31 March 2024 =
+* Post Content Widget: Fixed post featured image output.
+* Post Content Widget: Remove unused content and improved title output.
+* Block-Based Widgets Editor: Resolved JavaScript error.
+* Legacy PB Widgets: Resolved `lessphp` notices.
+
+= 2.29.10 - 29 March 2024 =
+* SiteOrigin Layout Block: Update to prevent a potential issue during rendering and saving.
+* Legacy Widgets: Update to resolve styles not outputting correctly.
+* Excerpt Generation: Update to prevent potential warnings. Expanded the list of supported widgets.
+* Recommended Widgets: Update to ensure the tab doesn't display if there are no widgets to recommend.
+* Resolved column preset sizes display issue.
+* Sortable: Update to prevent third-party plugins from misaligning text.
+
+= 2.29.9 - 23 March 2024 =
+* Layouts: Resolved import error.
+* Inline CSS Generation: Resolved inline CSS potentially printing on the site front-end.
+* Block Editor: Removed redundant shortcode fallback.
+
+= 2.29.8 - 19 March 2024 =
+* Post Loop: Update to allow HTML formatting in the widget title.
+
+= 2.29.7 - 18 March 2024 =
+* ACF: Added gallery field support.
+* Resolved a potential layout import error.
+* Inline Styles: Aligned widget margin value output with non-inline value output.
+* Updated the SiteOrigin Installer submodule.
+* Added additional data sanitization.
+
+= 2.29.6 - 05 March 2024 =
+* Added a dismiss button to the Classic Editor notice in the admin panel.
+* Improved saving functionality of the Layouts Block with server-side validation for post types, enhanced rendering, block sanitization methods, and improved functionality for locating layout blocks.
+* Ensured that errors are not processed and returned as part of the layout in the Layouts Block.
 
 = 2.29.5 - 16 February 2024 =
 * Media Style: Adjust border color to match other fields.

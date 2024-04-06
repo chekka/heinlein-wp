@@ -190,7 +190,7 @@ class SiteOrigin_Premium_Plugin_Map_Styles {
 		if ( ! isset( $form_options['map_consent_design'] ) ) {
 			$form_options['map_consent_design'] = array(
 				'type' => 'section',
-				'label' => __( 'Consent prompt design', 'siteorigin-premium' ),
+				'label' => __( 'Consent Prompt Design', 'siteorigin-premium' ),
 				'hide' => true,
 				'fields' => array(),
 			);
@@ -203,12 +203,13 @@ class SiteOrigin_Premium_Plugin_Map_Styles {
 			'fields' => array(
 				'color' => array(
 					'type' => 'color',
-					'label' => __( 'Consent prompt background color', 'siteorigin-premium' ),
-					'default' => '#000',
+					'label' => __( 'Consent Prompt Background Color', 'siteorigin-premium' ),
+					'default' => 'rgba(0, 0, 0, 0.85)',
+					'alpha' => true,
 				),
 				'image' => array(
 					'type' => 'media',
-					'label' => __( 'Consent prompt background image', 'siteorigin-premium' ),
+					'label' => __( 'Consent Prompt Background Image', 'siteorigin-premium' ),
 					'library' => 'image',
 					'fallback' => true,
 				),
@@ -222,17 +223,17 @@ class SiteOrigin_Premium_Plugin_Map_Styles {
 			'fields' => array(
 				'color' => array(
 					'type' => 'color',
-					'label' => __( 'Consent prompt text color', 'siteorigin-premium' ),
+					'label' => __( 'Consent Prompt Text Color', 'siteorigin-premium' ),
 					'default' => '#fff',
 				),
 				'link' => array(
 					'type' => 'color',
-					'label' => __( 'Consent prompt link color', 'siteorigin-premium' ),
+					'label' => __( 'Consent Prompt Link Color', 'siteorigin-premium' ),
 					'default' => '#41a9d5',
 				),
 				'link_hover' => array(
 					'type' => 'color',
-					'label' => __( 'Consent prompt link color hover', 'siteorigin-premium' ),
+					'label' => __( 'Consent Prompt Link Color hover', 'siteorigin-premium' ),
 					'default' => '#298fba',
 				),
 			),

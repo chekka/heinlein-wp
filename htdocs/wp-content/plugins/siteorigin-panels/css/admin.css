@@ -646,6 +646,9 @@
 .siteorigin-panels-builder.so-display-narrow .so-builder-toolbar .so-switch-to-standard {
   display: none !important;
 }
+.siteorigin-panels-builder .ui-sortable-handle {
+  text-align: left;
+}
 .so-widget.ui-sortable-helper.widget-being-dragged {
   z-index: 500002 !important;
   opacity: 0.9;
@@ -3685,4 +3688,26 @@
   padding: 0 24px 0 8px;
   vertical-align: middle;
   width: auto;
+}
+#siteorigin-panels-use-classic-notice {
+  padding-right: 25px;
+  position: relative;
+}
+#siteorigin-panels-use-classic-notice .siteorigin-notice-dismiss {
+  background: none;
+  border: none;
+  color: #787c82;
+  cursor: pointer;
+  margin: 9px;
+  position: absolute;
+  right: 1px;
+  text-decoration: none;
+  top: 0;
+}
+#siteorigin-panels-use-classic-notice .siteorigin-notice-dismiss:focus,
+#siteorigin-panels-use-classic-notice .siteorigin-notice-dismiss:hover {
+  color: #d63638;
+}
+#siteorigin-panels-use-classic-notice .siteorigin-notice-dismiss .dashicons {
+  font-size: 17px;
 }

@@ -149,6 +149,9 @@ class SiteOrigin_Premium_Updater {
 		) {
 			if ( version_compare( $this->version, $version_info->new_version, '<' ) ) {
 				$_transient_data->response[ $this->name ] = $version_info;
+			} else {
+				// Required for automatic updates.
+				$_transient_data->no_update[ $this->name ] = $version_info;
 			}
 
 			$_transient_data->last_checked = time();
@@ -170,6 +173,23 @@ class SiteOrigin_Premium_Updater {
 			return $update;
 		}
 
+		// This will only ever be needed during a cron.
+		$doing_cron = defined( 'DOING_CRON' ) && DOING_CRON;
+		if ( ! $doing_cron ) {
+			return $update;
+		}
+
+		// To bypass the update cache without enforcing automatic updates,
+		// we need to check if the plugin is set to automatically update first.
+		if ( ! wp_is_auto_update_enabled_for_type( 'plugin' ) ) {
+			return $update;
+		}
+		$auto_updates = get_site_option( 'auto_update_plugins', array() );
+		if ( ! in_array( $this->name, $auto_updates ) ) {
+			return $update;
+		}
+
+		// Fetch the latest data to prevent the update cache from being used.
 		$version_info = $this->get_repo_api_data( true );
 
 		if ( ! $version_info ) {
@@ -664,13 +684,17 @@ class SiteOrigin_Premium_Updater {
 	}
 
 	public function get_cached_version_info( $cache_key = '', $force = false ) {
+		if ( $force ) {
+			return false;
+		}
+
 		if ( empty( $cache_key ) ) {
 			$cache_key = $this->get_cache_key();
 		}
 
 		$version = get_transient( $cache_key );
 
-		if ( ! $force && empty( $version ) ) {
+		if ( empty( $version ) ) {
 			return false;
 		}
 

@@ -66,42 +66,49 @@ abstract class SiteOrigin_Widget_Base_Carousel extends SiteOrigin_Widget {
 			return $this->global_settings;
 		}
 
+		$defaults = array(
+			'breakpoints' => array(
+				'tablet_landscape' => 1366,
+				'tablet_portrait' => 1025,
+				'mobile' => 480,
+			),
+			'slides_to_scroll' => array(
+				'desktop' => 3,
+				'tablet_landscape' => 3,
+				'tablet_portrait' => 2,
+				'mobile' => 1,
+			),
+			'slides_to_show' => array(
+				'desktop' => 3,
+				'tablet_landscape' => 3,
+				'tablet_portrait' => 2,
+				'mobile' => 1,
+			),
+			'navigation' => array(
+				'desktop' => true,
+				'tablet_landscape' => true,
+				'tablet_portrait' => true,
+				'mobile' => true,
+			),
+			'navigation_label' => __( 'Navigation arrows', 'so-widgets-bundle' ),
+			'navigation_dots' => array(
+				'desktop' => true,
+				'tablet_landscape' => true,
+				'tablet_portrait' => true,
+				'mobile' => true,
+			),
+			'navigation_dots_label' => __( 'Navigation dots', 'so-widgets-bundle' ),
+		);
+
 		$this->global_settings = wp_parse_args(
 			$this->override_carousel_settings(),
-			array(
-				'breakpoints' => array(
-					'tablet_landscape' => 1366,
-					'tablet_portrait' => 1025,
-					'mobile' => 480,
-				),
-				'slides_to_scroll' => array(
-					'desktop' => 3,
-					'tablet_landscape' => 3,
-					'tablet_portrait' => 2,
-					'mobile' => 1,
-				),
-				'slides_to_show' => array(
-					'desktop' => 3,
-					'tablet_landscape' => 3,
-					'tablet_portrait' => 2,
-					'mobile' => 1,
-				),
-				'navigation' => array(
-					'desktop' => true,
-					'tablet_landscape' => true,
-					'tablet_portrait' => true,
-					'mobile' => true,
-				),
-				'navigation_label' => __( 'Navigation arrows', 'so-widgets-bundle' ),
-				'navigation_dots' => array(
-					'desktop' => true,
-					'tablet_landscape' => true,
-					'tablet_portrait' => true,
-					'mobile' => true,
-				),
-				'navigation_dots_label' => __( 'Navigation dots', 'so-widgets-bundle' ),
-			)
+			$defaults
 		);
+
+		// If the global settings are somehow empty, return the defaults.
+		if ( empty( $this->global_settings ) ) {
+			$this->global_settings = $defaults;
+		}
 
 		return $this->global_settings;
 	}
@@ -200,7 +207,6 @@ abstract class SiteOrigin_Widget_Base_Carousel extends SiteOrigin_Widget {
 				'label' => __( 'Desktop', 'so-widgets-bundle' ),
 				'slides_to_scroll' => $carousel_settings['slides_to_scroll']['desktop'],
 				'navigation' => $carousel_settings['navigation']['desktop'],
-				'navigation_dots' => $carousel_settings['navigation_dots']['desktop'],
 			),
 			'tablet' => array(
 				'label' => __( 'Tablet', 'so-widgets-bundle' ),
@@ -210,14 +216,12 @@ abstract class SiteOrigin_Widget_Base_Carousel extends SiteOrigin_Widget {
 						'breakpoint' => $carousel_settings['breakpoints']['tablet_landscape'],
 						'slides_to_scroll' => $carousel_settings['slides_to_scroll']['tablet_landscape'],
 						'navigation' => $carousel_settings['navigation']['tablet_landscape'],
-						'navigation_dots' => $carousel_settings['navigation_dots']['tablet_landscape'],
 					),
 					'portrait' => array(
 						'label' => __( 'Portrait', 'so-widgets-bundle' ),
 						'breakpoint' => $carousel_settings['breakpoints']['tablet_portrait'],
 						'slides_to_scroll' => $carousel_settings['slides_to_scroll']['tablet_portrait'],
 						'navigation' => $carousel_settings['navigation']['tablet_portrait'],
-						'navigation_dots' => $carousel_settings['navigation_dots']['tablet_portrait'],
 					),
 				),
 			),
@@ -229,6 +233,13 @@ abstract class SiteOrigin_Widget_Base_Carousel extends SiteOrigin_Widget {
 				'navigation_dots' => $carousel_settings['navigation_dots']['mobile'],
 			),
 		);
+
+		if ( ! empty( $carousel_settings['navigation_dots'] ) ) {
+			$fields['desktop']['navigation_dots'] = $carousel_settings['navigation_dots']['desktop'];
+			$fields['tablet']['fields']['landscape']['navigation_dots'] = $carousel_settings['navigation_dots']['tablet_landscape'];
+			$fields['tablet']['fields']['portrait']['navigation_dots'] = $carousel_settings['navigation_dots']['tablet_portrait'];
+			$fields['mobile']['navigation_dots'] = $carousel_settings['navigation_dots']['mobile'];
+		}
 
 		// Add slides to show settings if this widget uses them.
 		if ( ! empty( $carousel_settings['slides_to_show'] ) ) {
@@ -443,7 +454,7 @@ abstract class SiteOrigin_Widget_Base_Carousel extends SiteOrigin_Widget {
 		$less_vars['breakpoint_mobile'] = ( ! empty( $instance['responsive']['mobile']['breakpoint'] ) ? $instance['responsive']['mobile']['breakpoint'] : $carousel_settings['breakpoints']['mobile'] ) . 'px';
 
 		// Navigation.
-		$less_vars['navigation_arrows'] = isset( $instance['carousel_settings']['arrows'] ) ? ! empty( $instance['carousel_settings']['arrows'] ) : $carousel_settings['carousel_settings']['arrows'];
+		$less_vars['navigation_arrows'] = isset( $instance['carousel_settings']['arrows'] ) ? ! empty( $instance['carousel_settings']['arrows'] ) : false;
 		$less_vars['navigation_desktop'] = isset( $instance['responsive']['desktop']['navigation'] ) ? ! empty( $instance['responsive']['desktop']['navigation'] ) : $carousel_settings['navigation']['desktop'];
 		$less_vars['navigation_tablet_landscape'] = isset( $instance['responsive']['tablet']['landscape']['navigation'] ) ? ! empty( $instance['responsive']['tablet']['landscape']['navigation'] ) : $carousel_settings['navigation']['tablet_landscape'];
 		$less_vars['navigation_tablet_portrait'] = isset( $instance['responsive']['tablet']['portrait']['navigation'] ) ? ! empty( $instance['responsive']['tablet']['portrait']['navigation'] ) : $carousel_settings['navigation']['tablet_portrait'];

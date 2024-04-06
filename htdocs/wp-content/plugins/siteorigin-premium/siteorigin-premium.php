@@ -2,7 +2,7 @@
 /*
 Plugin Name: SiteOrigin Premium
 Description: A collection of powerful addons that enhance every aspect of SiteOrigin plugins and themes.
-Version: 1.59.1
+Version: 1.60.0
 Requires at least: 4.7
 Tested up to: 6.4
 Requires PHP: 5.6.20
@@ -15,7 +15,7 @@ License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 */
 
-define( 'SITEORIGIN_PREMIUM_VERSION', '1.59.1' );
+define( 'SITEORIGIN_PREMIUM_VERSION', '1.60.0' );
 define( 'SITEORIGIN_PREMIUM_JS_SUFFIX', '.min' );
 define( 'SITEORIGIN_PREMIUM_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SITEORIGIN_PREMIUM_URL', plugin_dir_url( __FILE__ ) );
@@ -56,6 +56,7 @@ if ( ! class_exists( 'SiteOrigin_Premium' ) ) {
 			}
 
 			if ( ! self::is_theme_mode() ) {
+				add_action( 'init', array( $this, 'setup_updater' ) );
 				add_action( 'admin_init', array( $this, 'load_metabox' ) );
 
 				// Initialize all the extra components.
@@ -63,19 +64,6 @@ if ( ! class_exists( 'SiteOrigin_Premium' ) ) {
 				SiteOrigin_Premium_Options::single();
 
 				add_action( 'admin_init', array( $this, 'plugin_version_check' ) );
-
-				$key = get_option( 'siteorigin_premium_key' );
-
-				if ( ! empty( $key ) ) {
-					// Set up the updater if the user has entered a key
-					$this->updater = new SiteOrigin_Premium_Updater( self::update_url(), __FILE__, array(
-						'version' => SITEORIGIN_PREMIUM_VERSION,
-						'license' => ! empty( $key ) ? trim( $key ) : false,
-						'item_id' => SiteOrigin_Premium_EDD_Actions::EDD_ITEM_ID,
-						'author' => 'SiteOrigin',
-						'url' => home_url(),
-					) );
-				}
 
 				add_action( 'siteorigin_premium_update_check', array( $this, 'check_license' ) );
 			}
@@ -117,6 +105,35 @@ if ( ! class_exists( 'SiteOrigin_Premium' ) ) {
 					include $filename;
 				}
 			}
+		}
+
+		public function setup_updater() {
+			// Only set up the updater if the current user is actually able to
+			// update the plugin.
+			$doing_cron = defined( 'DOING_CRON' ) && DOING_CRON;
+			if ( ! current_user_can( 'manage_options' ) && ! $doing_cron ) {
+				return;
+			}
+
+			$key = get_option( 'siteorigin_premium_key' );
+
+			if ( empty( $key ) ) {
+				return;
+			}
+
+			// Set up the updater if the user has entered a key
+			$this->updater = new SiteOrigin_Premium_Updater(
+				self::update_url(),
+				__FILE__,
+				array(
+					'version' => SITEORIGIN_PREMIUM_VERSION,
+					'license' => trim( $key ),
+					'item_id' => SiteOrigin_Premium_EDD_Actions::EDD_ITEM_ID,
+					'author' => 'SiteOrigin',
+					'beta' => false,
+					'url' => home_url(),
+				)
+			);
 		}
 
 		/**

@@ -2,7 +2,7 @@
 Contributors: burlingtonbytes, gschoppe
 Tags: image, crop, cropping, resize, aspect ratio, fit, size, advanced, simple, media, library, photography, featured image, content, responsive, design, smart, intelligent, live
 Requires at least: 3.5.0
-Tested up to: 6.3.2
+Tested up to: 6.4.3
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -104,6 +104,9 @@ A. That's not really a question, but at least our moms like us. Feel free to sen
 
 
 == Changelog ==
+
+= 2.0.9 =
+* Fix attribute parsing issue
 
 = 2.0.8 =
 * Add support for generic img tags with the default url format

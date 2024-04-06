@@ -195,6 +195,13 @@ class SiteOrigin_Premium_Plugin_Lightbox {
 	}
 
 	public function update_form_instance( $instance, $widget = array() ) {
+		if ( empty( $instance ) || ! is_array( $instance ) ) {
+			return array();
+		}
+
+		if ( ! isset( $instance['lightbox'] ) || ! is_array( $instance['lightbox'] ) ) {
+			$instance['lightbox'] = array();
+		}
 
 		// Migrate Lightbox settings to dedicated section.
 		if ( isset( $instance['enable_lightbox'] ) ) {

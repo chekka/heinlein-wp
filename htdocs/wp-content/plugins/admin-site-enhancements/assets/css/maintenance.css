@@ -26,8 +26,20 @@ body {
 	/* background-image: linear-gradient(to bottom, #ffffff, #eeeeee, #dddddd, #cccccc, #bbbbbb); */
 }
 
+.page-overlay {
+	position: absolute;
+	display: block;
+	z-index: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
 .message-box {
+	position: relative;
 	display: flex;
+	z-index: 1;
 	flex-direction: column;
 	align-items: center;
 	width: 50%;
@@ -38,6 +50,13 @@ body {
 .message-box h1 {
 	font-size: 3em;
 	font-weight: 500;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.message-box h1 p {
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .message-box .description {

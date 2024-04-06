@@ -3,8 +3,8 @@ Tags: widget, button, slider, hero, google maps, image, carousel, lottie, featur
 Requires at least: 4.2
 Tested up to: 6.4
 Requires PHP: 5.6.20
-Stable tag: 1.58.7
-Build time: 2024-02-25T12:41:46+00:00
+Stable tag: 1.58.12
+Build time: 2024-03-24T10:54:57+00:00
 License: GPLv3 or later
 Contributors: gpriday, braam-genis, alexgso
 Donate link: https://siteorigin.com/downloads/premium/
@@ -105,6 +105,43 @@ SiteOrigin Premium includes access to our professional email support service, pe
 The Widgets Bundle global interface is available at Plugins > SiteOrigin Widgets. Widgets can be enabled or disabled as needed. If a widget offers global settings, you can access those via the Settings button next to each applicable widget.
 
 == Changelog ==
+
+= 1.58.12 - 24 March 2024 =
+* Post Loop: Resolved a potential `post__in` error.
+* Post Loop: Resolved a potential post selector `post__not_in` deprecated warning.
+
+= 1.58.11 - 23 March 2024 =
+* Carousel: Resolved a potential warning.
+* Features: Correct HTML tag output.
+* Slider: Replaced `$.isFunction` usage.
+* Social Media Buttons: Updated Tripadvisor title label.
+* Video Player: Resolved potential warning.
+* Block Editor: Always process shortcodes.
+* Color Field: Added support for color hexadecimal values with alpha channel notation (e.g., #RRGGBBAA). Enhanced validation for RGBA color values.
+* Post Selector: Resolved a potential deprecated notice.
+* Updated SiteOrigin Installer.
+* Developer: Added new Contact Form hooks.
+
+= 1.58.10 - 05 March 2024 =
+* Enhanced the saving process and validation for widgets and blocks in the Widgets Block.
+* Loaded defaults for the widget form field.
+* Removed the `unfiltered_html` check in the Editor Widget.
+
+= 1.58.9 - 03 March 2024 =
+* Editor: Resolved shortcode output.
+
+= 1.58.8 - 02 March 2024 =
+* Button: Resolved a potential alignment warning.
+* Contact Form: Resolved a potential deprecated notice.
+* Editor: Resolved a potential noreferrer empty text deprecated notice.
+* Features: Prevent a potential feature width CSS miscalculation.
+* Google Maps: Resolved a potential PHP 8.2+ warning.
+* Sliders: Resolved a potential FitVids related error.
+* Color Fields: Resolved a potential deprecated notice.
+* Text Input: Resolved undesired HTML removal on multisite installations.
+* Shifted control for lazy loading images to WordPress.
+* Added additional data sanitization.
+* Beaver Builder: Resolved an issue on save.
 
 = 1.58.7 - 25 February 2024 =
 * Anything Carousel: Corrected global responsive settings propagation.

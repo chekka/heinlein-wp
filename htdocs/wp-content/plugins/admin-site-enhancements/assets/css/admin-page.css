@@ -580,6 +580,28 @@ p.nudge-description.nudge-closing {
     align-items: center;
 }
 
+.asenha-checkboxes .wrapper-for-checkboxes {
+    display: flex;
+    flex-direction: row;
+}
+
+.asenha-checkboxes .wrapper-for-checkboxes div {
+    margin-bottom: 9px;
+}
+
+.asenha-checkboxes .wrapper-for-checkboxes div:last-child {
+    margin-bottom: 4px;
+}
+
+.asenha-checkboxes .wrapper-for-checkboxes.horizontal div {
+    margin-right: 16px;
+    margin-bottom: 4px;
+}
+
+.asenha-checkboxes .wrapper-for-checkboxes.vertical {
+    flex-direction: column;
+}
+
 .asenha-field-checkbox {
   width: 0 !important;
   height: 0 !important;
@@ -767,7 +789,7 @@ p.nudge-description.nudge-closing {
     content: '';
     display: block;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     font-size: 12px;
     left: 0;
     right: 0;
@@ -808,6 +830,11 @@ p.nudge-description.nudge-closing {
     border-top: 1px solid #eee;
 }
 
+.form-table .asenha-subfields tr.asenha-th-border-bottom {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
 .asenha-subfields-heading,
 .form-table .asenha-subfields th {
     width: 100%;
@@ -828,6 +855,9 @@ p.nudge-description.nudge-closing {
     top: -2px;
 }
 
+.form-table .asenha-subfields .bold-label td:not(.datatable-td) label {
+    font-weight: 600;
+}
 .form-table .asenha-subfields td:not(.datatable-td) .wp-picker-input-wrap label {
     top: 0px;
 }
@@ -1020,6 +1050,10 @@ p.nudge-description.nudge-closing {
     margin-bottom: 16px !important;
 }
 
+.form-table .asenha-subfields tr:not(.datatable-tr).padding-top-0 {
+    padding-top: 0 !important;
+}
+
 .form-table .asenha-subfields tr:not(.datatable-tr).padding-top-8 {
     padding-top: 8px !important;
 }
@@ -1059,6 +1093,10 @@ p.nudge-description.nudge-closing {
 .asenha-subfields .faded,
 .form-table .asenha-subfields td:not(.datatable-td) label .faded {
     color: #bbb;
+}
+
+.asenha-subfields th .faded {
+    font-weight: normal;
 }
 
 .asenha-subfield-status {
@@ -1272,6 +1310,10 @@ p.nudge-description.nudge-closing {
 
 .datatable table.dataTable thead th {
     font-weight: 500 ;
+}
+
+#login-attempts-log .unixtime {
+    display: none;
 }
 
 /* Description subfield */

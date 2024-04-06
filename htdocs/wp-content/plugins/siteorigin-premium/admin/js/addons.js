@@ -1,12 +1,12 @@
 jQuery( function( $ ) {
 
-	//  Fill in the missing addon images
+	//  Fill in the missing addon images.
 	$( '.so-addon-banner' ).each( function() {
 		var $$ = $( this ),
 			$img = $$.find( 'img' );
 
 		if (  !$img.length ) {
-			// Create an SVG image as a placeholder icon
+			// Create an SVG image as a placeholder icon.
 			var pattern = Trianglify( {
 				width: 128,
 				height: 128,
@@ -55,7 +55,7 @@ jQuery( function( $ ) {
 					$( 'body' ).trigger( 'siteorigin_addon_status_changed', { id, status } );
 
 					if ( typeof response.action_links !== 'undefined' && response.action_links.length ) {
-						// Add the action links
+						// Add the action links.
 						var $links = $$.find( '.so-addon-links' ).empty();
 						if ( ! $links.length ) {
 							$links = $( '<div class="so-addon-links"></div>' ).insertAfter( $$.find( '.so-addon-name' ) );
@@ -64,7 +64,7 @@ jQuery( function( $ ) {
 					}
 
 					if ( typeof response.submenu_links !== 'undefined' && response.submenu_links.length ) {
-						// Add temporary submenu links that would normally be visible
+						// Add temporary submenu links that would normally be visible.
 						for ( i = 0; i < response.submenu_links.length; ++i ) {
 							if ( response.status == 'enabled' ) {
 								$( '.toplevel_page_' + response.submenu_links[ i ].section + ' .wp-submenu' ).append(
@@ -83,7 +83,7 @@ jQuery( function( $ ) {
 		} );
 	} );
 
-	// Addon tags
+	// Addon tags.
 	$( '.so-addon .so-addon-tags a' ).on( 'click', function( e ) {
 		e.preventDefault();
 
@@ -97,7 +97,7 @@ jQuery( function( $ ) {
 		}, 200 );
 	} );
 
-	// Addon search
+	// Addon search.
 	var currentSection = '';
 	$( '.page-sections a' ).on( 'click', function( e ) {
 		e.preventDefault();
@@ -132,7 +132,7 @@ jQuery( function( $ ) {
 					text += $( this ).data( 'tag' ) + ' ';
 				} );
 
-				if(
+				if (
 					text.toLowerCase().indexOf( q ) > -1 &&
 					( section === '' || $$.data( 'section' ) === section )
 				) {
@@ -174,7 +174,7 @@ jQuery( function( $ ) {
 
 	} ).trigger( 'resize' );
 
-	// Addon settings dialog
+	// Addon settings dialog.
 	var $dialog = $( '#siteorigin-premium-settings-dialog' );
 	var $settingsButton = $( '#addons-list .so-addon-settings' );
 
@@ -256,7 +256,7 @@ jQuery( function( $ ) {
 		}
 	} );
 
-	// Create the video iframes for the video modal
+	// Create the video iframes for the video modal.
 	$( '.js-modal-video' )
 		.each( function() {
 			var $$ = $( this ),
@@ -266,7 +266,7 @@ jQuery( function( $ ) {
 
 			frame = $( 'iframe#video_' + videoId );
 			if ( frame.length === 0 ) {
-				// Create the iframe if it doesn't exist
+				// Create the iframe if it doesn't exist.
 				frame =  $( '<iframe >' ).attr( {
 					'id': 'video_' + videoId,
 					'src': videoUrl,

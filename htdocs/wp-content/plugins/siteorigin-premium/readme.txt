@@ -2,8 +2,8 @@
 Requires at least: 4.7
 Tested up to: 6.4
 Requires PHP: 5.6.20
-Stable tag: 1.59.1
-Build time: 2024-02-24T12:31:59+00:00
+Stable tag: 1.60.0
+Build time: 2024-03-07T23:00:17+00:00
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -28,6 +28,17 @@ The SiteOrigin Premium plugin can be downloaded via the link provided in your or
 [Documentation](https://siteorigin.com/premium-documentation/) is available on SiteOrigin.com.
 
 == Changelog ==
+
+= 1.60.0 - 07 March 2024 =
+* New Addon! Introducing the Embed Blocker Addon. Effortlessly make your website GDPR and DSGVO compliant by controlling embeds from platforms like YouTube, Vimeo, Twitter, Instagram, Facebook, Google Maps, Reddit, Soundcloud, Spotify, and TikTok until user consent is given.
+* Carousel: Resolved `BuilderType` warning.
+* Image Overlay: Prevented error if global settings are empty.
+
+= 1.59.2 - 02 March 2024 =
+* Improved automatic update support.
+* Google Maps Consent: Updated background color setting to support transparency.
+* Lightbox: Resolved a potential PHP 8.2+ related error.
+* WooCommerce Template Builder: Resolved an error that can occur when editing the cart page directly.
 
 = 1.59.1 - 24 February 2024 =
 * Parallax Sliders: Resolved Jetpack Photon related `Uncaught TypeError`.

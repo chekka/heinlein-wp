@@ -1021,7 +1021,15 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 			return $content;
 		}
 
-		$template = $current_page == 'cart' && WC()->cart->is_empty() ? 'cart-empty' : $current_page;
+		$template = $current_page;
+		if (
+			$current_page == 'cart' &&
+			! empty( WC()->cart ) &&
+			WC()->cart->is_empty()
+		) {
+			$template = 'cart-empty';
+		}
+
 		if ( ! empty( $template ) ) {
 			if (
 				$current_page == 'checkout' ||

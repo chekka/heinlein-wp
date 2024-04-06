@@ -62,6 +62,7 @@ class SiteOrigin_Premium_Plugin_Carousel {
 		// To prevent display issues, we need to remove Row Layout options.
 		if (
 			! empty( $args ) &&
+			! empty( $args['builderType'] ) &&
 			$args['builderType'] === 'anything_carousel_panel_builder' &&
 			isset( $fields['row_stretch'] )
 		) {

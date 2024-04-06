@@ -2,14 +2,51 @@
 # This file is distributed under the same license as the Plugins - Admin and Site Enhancements (ASE) - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-11 17:45:59+0000\n"
+"PO-Revision-Date: 2024-03-14 19:33:23+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/4.0.0-beta.2\n"
+"X-Generator: GlotPress/4.0.0\n"
 "Language: de\n"
 "Project-Id-Version: Plugins - Admin and Site Enhancements (ASE) - Stable (latest release)\n"
+
+#. Author of the plugin
+#: admin-site-enhancements.php
+msgid "wpase.com"
+msgstr "wpase.com"
+
+#. Author URI of the plugin
+#: admin-site-enhancements.php
+msgid "https://www.wpase.com/author-uri"
+msgstr "https://www.wpase.com/author-uri"
+
+#. Plugin URI of the plugin
+#: admin-site-enhancements.php
+msgid "https://www.wpase.com/plugin-uri"
+msgstr "https://www.wpase.com/plugin-uri"
+
+#: classes/class-admin-columns-manager.php:186
+msgid "Someone"
+msgstr "Jemand"
+
+#: classes/class-admin-columns-manager.php:178
+msgid "Sorry, you are not allowed to edit this post."
+msgstr "Du bist leider nicht berechtigt, diesen Beitrag zu bearbeiten."
+
+#: classes/class-admin-columns-manager.php:174
+msgid "Sorry, you are not allowed to edit this page."
+msgstr "Du bist leider nicht berechtigt, diese Seite zu bearbeiten."
+
+#. translators: %s: User's display name.
+#: classes/class-admin-columns-manager.php:191
+msgid "Saving is disabled: %s is currently editing this page."
+msgstr "Speichern nicht möglich: %s bearbeitet diese Seite gerade."
+
+#. translators: %s: User's display name.
+#: classes/class-admin-columns-manager.php:188
+msgid "Saving is disabled: %s is currently editing this post."
+msgstr "Speichern nicht möglich: %s bearbeitet diesen Beitrag gerade."
 
 #. Plugin Name of the plugin
 #: admin-site-enhancements.php
@@ -20,3 +57,11 @@ msgstr "Admin and Site Enhancements (ASE)"
 #: admin-site-enhancements.php
 msgid "Easily enable enhancements and features that usually require multiple plugins."
 msgstr "Einfache Aktivierung von Erweiterungen und Funktionen, die ansonsten mehrere Plugins erfordern."
+
+#: settings.php:80
+msgid "Review"
+msgstr "Rezension"
+
+#: settings.php:83
+msgid "Feedback"
+msgstr "Feedback"
