@@ -72,16 +72,10 @@
 
    <header class="site-header">
       <div class="container">
- <?php     wp_nav_menu(
-  array(
-    'menu' => 'primary-menu',
-    'theme_location' => 'primary-menu',
-    'fallback_cb' => false
-  )
-);
-?>
-         <?php if ( is_active_sidebar( 'header' )): ?>
-         <?php dynamic_sidebar( 'header' ); ?>
-         <?php endif; ?>
+         <?php 
+            if ( is_active_sidebar( 'header' )):
+               dynamic_sidebar( 'header' );
+            endif; 
+         ?>
       </div>
    </header>

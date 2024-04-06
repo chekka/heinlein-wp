@@ -8,3 +8,10 @@
    -webkit-font-smoothing: antialiased !important;
 }
 
+.deepblue {
+   background-color: $blau-dunkel;
+
+   * {
+      color: #fff;
+   }
+}

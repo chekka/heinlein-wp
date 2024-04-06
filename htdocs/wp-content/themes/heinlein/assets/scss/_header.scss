@@ -30,12 +30,14 @@
   }
 
   div.nav {
-    border-radius: 0 0 0 36px;
+    border-radius: 0 0 0 $r3;
     transition: border-radius 0.333s;
   }
 }
 
 .menu-hauptmenue-container {
+  position: relative;
+  z-index: 12;
   padding: 68px 0rem 0 $pvw-3;
 
   .menu {
@@ -53,16 +55,22 @@
     li.separator {
       display: none;
       position: absolute;
-      right: 0;
+      right: 0;      
       background-color: #fff;
       box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
-      border-radius: var(--r1) 0 var(--r1) 0;
+      border-radius: $r1 0 $r1 0;
       padding: 6px 21px 6px 12px;
       z-index: 100;
       margin-right: -7px;
 
+      a {
+        font-size: 15px;
+        padding: 0 0 0 7px;
+      }
+
       &:after {
         content: "";
+        cursor: pointer;
         position: absolute;
         top: -12px;
         right: -12px;
@@ -73,7 +81,7 @@
         background-image: url(../images/icons/icon-x.svg);
         background-size: contain;
         background-position: center;
-        background-repeat: no-repeat;
+        background-repeat: no-repeat;        
       }
 
       &.show {
@@ -128,66 +136,102 @@
   }
 }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-.show {
-  background: -moz-linear-gradient(top, #ffffff 130px, #c9d1db 100%);
-  background: -webkit-linear-gradient(top, #ffffff 130px, #c9d1db 100%);
-  background: linear-gradient(to bottom, #ffffff 130px, #c9d1db 100%);
+#desktop-menu {
+  z-index: 1 !important;
+  background: #fff;
+  box-shadow: 0 30px 33px 0 rgba(0, 0, 0, 0.1);
+  padding: 0 3vw;
   top: 0;
-  opacity: 1;
-}
+  transition: all 0.5s;
+  border-radius: 0 0 $r3 $r3;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
 
-.heine-menu-link,
-.dropdown-menu a,
-.navbar-expand-lg .navbar-nav a.nav-link,
-#block-sprachumschaltercontent ul li a,
-#block-sprachumschaltercontent ul li span {
-  color: $blau-dunkel;
-  text-transform: uppercase;
-  font-family: "Encode Sans", sans-serif;
-  font-weight: 400;
-  font-size: 13.75px;
-  padding-right: 10px;
-  padding-left: 10px;
-  letter-spacing: 0.05em;
-}
+  &.show {
+    height: auto;
+    background: -moz-linear-gradient(top, #ffffff 130px, #c9d1db 100%);
+    background: -webkit-linear-gradient(top, #ffffff 130px, #c9d1db 100%);
+    background: linear-gradient(to bottom, #ffffff 130px, #c9d1db 100%);
+    opacity: 1;
 
-a.nav-link:hover,
-a.language-link:hover {
-  color: $gold !important;
-}
+    .panel-layout {
+      padding: 30px 12px 12px 12px;
 
-@media (min-width: 992px) and (max-width: 1199px) {
-  .heine-menu-link,
-  .dropdown-menu a,
-  .navbar-expand-lg .navbar-nav a,
-  #block-sprachumschaltercontent ul li a,
-  #block-sprachumschaltercontent ul li span {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+      & > .panel-grid {
+        height: 0;
+        overflow: hidden;
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+        margin-bottom: 0;
+
+        &.active {
+          border-top: 1px solid #c9d1db;
+          padding: 30px 0;
+          position: relative;
+          height: auto;
+          z-index: 3;
+          transform: translateX(0);
+          height: auto;
+        }
+      }      
+    }
   }
 }
 
-@media (min-width: 1px) and (max-width: 991px) {
-  .heine-menu-link,
-  .dropdown-menu a,
-  .navbar-expand-lg .navbar-nav a.nav-link,
-  #block-sprachumschaltercontent ul li a.nav-link,
-  #block-sprachumschaltercontent ul li span {
-    font-size: 16px;
+.mainnav-desktop {  
+  justify-content: flex-start !important;
+  top: 0;
+
+  .widget-title {
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-bottom: 7px;
+    margin-left: 1px;
+    line-height: 1.5;
+    transition: all 0.5s;
+    white-space: nowrap;
+  }
+
+  .sow-image-container img {
+    border-top-right-radius: $r0;
+    border-bottom-left-radius: $r0;
+    text-align: end;
+  }
+
+  .panel-grid-cell {
+    max-width: 210px;
+    margin-right: 30px;
+
+    &.wide {
+      max-width: 450px;
+      
+      > div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+
+    & .widget {
+      img {
+        transition-duration: 0.3s;
+      }
+      &:hover {
+        .widget-title {
+          color: #001e4b;
+          margin-left: -1px;
+          text-shadow: 0 0 1px #001e4b;
+          letter-spacing: 0.05em;
+        }
+        img {
+          box-shadow: 0 12px 24px -3px rgba(0, 0, 0, 0.2);
+          border-top-right-radius: 0;
+          border-bottom-left-radius: 0;
+          border-top-left-radius: $r0;
+          border-bottom-right-radius: $r0;
+        }
+      }
+    }
   }
 }

@@ -5,18 +5,37 @@
 //
 function heinlein_scripts_styles(){
     // ENQUEUE Styles
+    wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/slick/slick.css', array(), null, 'all' );
     wp_enqueue_style( 'heinlein', get_template_directory_uri() . '/assets/css/heinlein.css', array(), null, 'all' );
+    if ( is_front_page() ) :
+      wp_enqueue_style( 'product-slider', get_template_directory_uri() . '/assets/css/product-slider.css', array(), null, 'all' );
+      wp_enqueue_style( 'counter', get_template_directory_uri() . '/assets/css/counter.css', array(), null, 'all' );
+    endif;
 
     // ENQUEUE Scripts
-    wp_enqueue_script('jquery');    
-//    wp_enqueue_script( 'heinlein', get_template_directory_uri() . '/assets/js/heinlein-global.js', array(), null, true );  
-//    wp_enqueue_script( 'heinlein-menu', get_template_directory_uri() . '/assets/js/heinlein-menu.js', array(), null, true );  
+    wp_enqueue_script( 'jquery' );
+    wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/slick/slick.js', array(), null, true );
+    wp_enqueue_script( 'colorbox', get_template_directory_uri() . '/assets/colorbox/jquery.colorbox-min.js', array(), null, true );
+    wp_enqueue_script( 'heinlein', get_template_directory_uri() . '/assets/js/heinlein-global.js', array(), null, true );  
+    wp_enqueue_script( 'heinlein-menu', get_template_directory_uri() . '/assets/js/heinlein-menu.js', array(), null, true );
+    if ( is_front_page() ) :
+      wp_enqueue_script( 'product-slider', get_template_directory_uri() . '/assets/js/product-slider.js', array(), null, true );
+      wp_enqueue_script( 'counter', get_template_directory_uri() . '/assets/js/jquery.counterup.min.js', array(), null, true );
+    endif;
 
     // DEQUEUE Styles
     wp_dequeue_style( 'contact-form-7' );
     wp_dequeue_style( 'wp-smartcrop' );
 }
 add_action('wp_enqueue_scripts', 'heinlein_scripts_styles');
+// 
+//
+// Tiny MCE Editor Font
+//
+function heinlein_add_editor_styles() {
+  add_editor_style( 'assets/css/tinymce.css' );
+}
+add_action( 'after_setup_theme', 'heinlein_add_editor_styles' );
 // 
 //
 // SIDEBARS
@@ -48,6 +67,14 @@ function heinlein_widgets_init() {
 add_action('widgets_init', 'heinlein_widgets_init');
 //
 //
+// Media Sizes
+//
+add_image_size( 'mainnav@2', 420, 250, true );
+add_image_size( 'mainnav', 210, 125, true );
+add_image_size( 'mainnav-wide@2', 900, 250, true );
+add_image_size( 'mainnav-wide', 450, 125, true );
+//
+//
 // NAVIGATION
 //
 function heinlein_register_nav_menu(){
@@ -61,8 +88,8 @@ add_action( 'after_setup_theme', 'heinlein_register_nav_menu', 0 );
 /* Add phone to main nav */
 function phone_menu_item( $items, $args ) {
   if( $args->theme_location == 'primary-menu' ){
-      $items .= '<li class="separator"><a href="tel: +49 (0) 981 950 20"> <span class="link-description">+49 (0) 981 950 20</span></a></li>';
-      $items .= '<li class="menu-item"> <a href="https://www.heinlein-plastik.de/" title="+49 (0) 981 950 20" class="nav-link">Telefon</a></li>';
+      // $items .= '<li class="separator"><a href="tel: +49 (0) 981 950 20"> <span class="link-description">+49 (0) 981 950 20</span></a></li>';
+      // $items .= '<li class="menu-item"> <a href="https://www.heinlein-plastik.de/" title="+49 (0) 981 950 20" class="nav-link">Telefon</a></li>';
   }
   return $items;
 }

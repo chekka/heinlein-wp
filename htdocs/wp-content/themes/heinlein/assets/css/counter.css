@@ -1,0 +1,19 @@
+.counter {
+  text-align: center;
+
+  var {
+    font-style: normal;
+    font-size: 5.7rem;
+    font-family: Gotham, sans-serif;
+    font-weight: 100;
+    margin-top: 2rem;
+    display: inline-block;
+    color: #fff;
+  }
+
+  p {
+    line-height: 1.5rem;
+    font-family: "Encode Sans Semi Expanded", sans-serif;
+    color: var(--blau-light-6);
+  }
+}

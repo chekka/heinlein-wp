@@ -1,10 +1,125 @@
+@media (min-width: 1px) and (max-width: 991px) {
+  .content {
+    max-width: 95%;
+  }
+}
+
+@media (min-width: 1px) and (max-width: 575px) {
+  .content {
+    max-width: 100%;
+  }
+}
+
+.content--lg {
+  max-width: 880px;
+}
+
+@media (min-width: 1px) and (max-width: 991px) {
+  .content--lg {
+    max-width: 95%;
+  }
+}
+
+@media (min-width: 1px) and (max-width: 575px) {
+  .content--lg {
+    max-width: 100%;
+  }
+}
+
+.content--md,
+.paragraph.width--md {
+  max-width: 620px;
+}
+
+@media (min-width: 1px) and (max-width: 991px) {
+  .content--md {
+    max-width: 95%;
+  }
+}
+
+@media (min-width: 1px) and (max-width: 575px) {
+  .content--md {
+    max-width: 100%;
+  }
+}
+
+.content--xs {
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content--xxs {
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//
+//
+//
+
 html {
-   width: 100%;
-   min-height: 100vh;
+  width: 100%;
+  min-height: 100vh;
 }
 
 body {
-   width: 100%;
-   min-height: 100vh;
-   margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.content {
+  max-width: 992px;
+  position: relative;
+  margin: 0 auto;
+}
+
+#main {
+  > .panel-layout {
+    > .panel-grid {
+      position: relative;
+    }
+    > .panel-grid:first-child {
+      z-index: -1;
+    }
+  }
+}
+
+.stil--gray {
+  background: radial-gradient(
+      30vw circle at 90% 70%,
+      $blau-light-5,
+      transparent
+    ),
+    radial-gradient(30vw circle at 0% 90%, $blau-light-5, transparent),
+    radial-gradient(at 0% 0%, $blau-light-1, $blau-light-4);
+}
+
+.siteorigin-panels-stretch {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+}
+
+.widget_sow-hero {
+  > .fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 75vh;
+  }
+}
+
+.single-video .sow-video-wrapper {
+  width: 76%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.single-video iframe {
+  border-radius: 0 $r3 0 $r3;
+  margin: auto;
 }

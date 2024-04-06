@@ -1,0 +1,113 @@
+.sow-slider-image-wrapper {
+  position: relative;
+}
+
+.hero-box {
+  padding: 14px 34px 14px 44px;
+  width: 260px;
+
+  background-color: $blau-dunkel;
+  border-radius: 0 $r3 0 $r3;
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  bottom: 0;
+  text-align: left !important;
+
+  & ul {
+    display: block;
+    color: #fff;
+    margin: 1em 0em 1em -21px !important;
+    padding: 0;
+
+    li {
+      display: block;
+      position: relative;
+      padding: 0 0 0 21px;
+
+      &:before {
+        content: "+" !important;
+        font-family: initial !important;
+        font-size: 1em !important;
+        line-height: 0.8em !important;
+      }
+    }
+  }
+
+  p {
+    color: #fff;
+    line-height: 1.5;
+    margin-bottom: 1em;
+
+    a,
+    & > strong {
+      color: $blau-light-7;
+      text-transform: uppercase;
+      font-family: Gotham;
+      font-weight: 500;
+      font-size: 22px;
+      margin-bottom: 0.5em;
+      max-width: 200px;
+
+      text-decoration: none;
+      padding-right: 0.25em;
+      position: relative;
+      line-height: 1.4em;
+      display: inline;
+      white-space: pre-wrap;
+    }
+
+    a {
+      background-color: $gold;
+      border: 0 solid $gold;
+      border-width: 0.25em 0;
+      text-decoration: none;
+      padding-right: 0.25em;
+      position: relative;
+      color: #fff;
+      line-height: 1.4em;
+      display: inline;
+      white-space: pre-wrap;
+      border: 0 solid $gold;
+      border-width: 0.25em 0;
+
+      &:before {
+        content: "";
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 55px;
+        height: 55px;
+        left: 136px;
+        background-image: url(../images/icons/icon-hero-circle-arrow.svg);
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: -0.25em;
+        left: -0.22em;
+        bottom: -0.23em;
+        width: 0.25em;
+        background-color: $gold;
+      }
+    }
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -48px;
+    right: 0;
+    width: 0px;
+    height: 0px;
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    border-style: solid;
+    border-width: 0 50px 50px 0;
+    border-color: transparent $blau-dunkel transparent transparent;
+  }
+}
