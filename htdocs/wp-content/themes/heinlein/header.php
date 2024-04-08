@@ -77,5 +77,6 @@
                dynamic_sidebar( 'header' );
             endif; 
          ?>
+         <a href="/" class="site-logo"><img src="/wp-content/themes/heinlein/assets/images/heinlein-plastiktechnik-logo.svg"></a>
       </div>
    </header>
