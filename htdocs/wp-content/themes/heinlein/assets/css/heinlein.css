@@ -397,6 +397,13 @@ h3 {
   border-color: transparent #001e4b transparent transparent;
 }
 
+.popmake .sow-video-wrapper.use-fitvids {
+  width: 1066px;
+  height: 600px;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
 /*
 /* Layout */
 .site-header {
