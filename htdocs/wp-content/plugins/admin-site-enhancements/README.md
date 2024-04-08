@@ -5,7 +5,7 @@ Donate link: https://bowo.io/asenha-sp-rdm
 Tags: enhancements, tweaks, optimizations, tools  
 Requires at least: 4.6  
 Tested up to: 6.4.3  
-Stable tag: 6.9.6  
+Stable tag: 6.9.7  
 Requires PHP: 5.6  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -42,22 +42,22 @@ _"ASE is an amazing plugin! **Time and money saver**. Thank you!"_ ~[Iulian Baci
 
 ### FEATURES & MODULES
 
-**60 modules** in total:
-**52** free modules (16 has Pro features) | **8** Pro modules
+**62 modules** in total:
+**54** free modules (19 has Pro features) | **8** Pro modules
 
 [**See all features >>**](https://www.wpase.com/features/)
 
 ### Content Management
 
-* **[[Pro](https://www.wpase.com/rdme-to-web)] Custom Content Types**. Conveniently register and edit custom post types, custom taxonomies, custom field groups and options pages that integrates with Bricks, Breakdance, Oxygen and Elementor.
-* **Content Duplication**. One-click duplication of pages, posts and CPTs. [ASE Pro](https://www.wpase.com/rdme-to-web) enables duplication only for certain user roles and adds location option for duplication link.
+* **[[ASE Pro](https://www.wpase.com/rdme-to-web)] Custom Content Types**. Conveniently register and edit custom post types, custom taxonomies, custom field groups and options pages that integrates with Bricks, Breakdance, Oxygen and Elementor.
+* **Content Duplication**. One-click duplication of pages, posts and CPTs. [ASE Pro](https://www.wpase.com/rdme-to-web) enables duplication only for certain user roles and post types, and adds location option for duplication link.
 * **Content Order**. Enable custom ordering of various post types that are hierarchical or support page attributes, in wp-admin and on the frontend. [ASE Pro](https://www.wpase.com/rdme-to-web) enables ordering of post types that are non-hierarchical and does not support page attributes, and also enable toggling taxonomy terms and / or excerpt on the ordering page.
-* **[[Pro](https://www.wpase.com/rdme-to-web)] Terms Order**. Enable custom ordering of terms from various taxonomies in wp-admin and on the frontend.
-* **[[Pro](https://www.wpase.com/rdme-to-web)] Media Categories**. Add categories for the media library and enable drag-and-drop categorization of media items.
+* **[[ASE Pro](https://www.wpase.com/rdme-to-web)] Terms Order**. Enable custom ordering of terms from various taxonomies in wp-admin and on the frontend.
+* **[[ASE Pro](https://www.wpase.com/rdme-to-web)] Media Categories**. Add categories for the media library and enable drag-and-drop categorization of media items.
 * **Media Replacement**. Easily replace any type of media file with a new one while ensuring no existing links will break. [ASE Pro](https://www.wpase.com/rdme-to-web) allows replacing media from the grid view of media library as well.
 * **Media Library Infinite Scrolling**. Re-enable infinite scrolling in the grid view of the media library. 
 * **SVG Upload**. Allow some or all user roles to upload SVG files, which will then be sanitized to keep things secure.
-* **[[Pro](https://www.wpase.com/rdme-to-web)] AVIF Upload**. Enable uploading AVIF files in the Media Library.
+* **[[ASE Pro](https://www.wpase.com/rdme-to-web)] AVIF Upload**. Enable uploading AVIF files in the Media Library.
 * **External Permalinks**. Enable pages, posts and/or custom post types to have permalinks that point to external URLs.
 * **Open All External Links in New Tab**. Force all links to external sites to open in new browser tab via target="\_blank" attribute.
 * **Allow Custom Navigation Menu Items to Open in New Tab**. Allow custom navigation menu items to have links that open in new browser tab via target="\_blank" attribute.
@@ -71,7 +71,8 @@ _"ASE is an amazing plugin! **Time and money saver**. Thank you!"_ ~[Iulian Baci
 * **Hide Admin Bar**. Hide admin bar on the frontend for all or some user roles. [ASE Pro](https://www.wpase.com/rdme-to-web) also allows hiding the admin bar on the backend for all or some user roles.
 * **Wider Admin Menu**. Give the admin menu more room to better accommodate wider items.
 * **Admin Menu Editor / Organizer**. Customize the order of the admin menu and optionally change menu item title or hide some items. [ASE Pro](https://www.wpase.com/rdme-to-web) enables always hiding menu items for some or all user roles and reorder submenu items.
-* **[[Pro](https://www.wpase.com/rdme-to-web)] Admin Columns Manager**. Manage and organize columns in the admin listing for pages, posts and custom post types. Currently supports ASE, ACF and Meta Box custom fields.
+* **[[ASE Pro](https://www.wpase.com/rdme-to-web)] Admin Columns Manager**. Manage and organize columns in the admin listing for pages, posts and custom post types. Currently supports ASE, ACF and Meta Box custom fields.
+* **Show Custom Taxonomy Filters**. Show additional filter(s) on list tables for hierarchical, custom taxonomies. [ASE Pro](https://www.wpase.com/rdme-to-web) adds option to show additional filter(s) for non-hierarchical taxonomies.
 * **Enhance List Tables**. Improve the usefulness of listing pages of various post types by adding / removing columns and elements, e.g. featured image, excerpt, ID columns.
 * **Display Active Plugins First**: Display active / activated plugins at the top of the Installed Plugins list.
 * **Custom Admin Footer Text**: Customize the text you see on the footer of wp-admin pages. [ASE Pro](https://www.wpase.com/rdme-to-web) enables media upload / insertion.
@@ -87,7 +88,7 @@ _"ASE is an amazing plugin! **Time and money saver**. Thank you!"_ ~[Iulian Baci
 
 ### Custom Code
 
-* **[[Pro](https://www.wpase.com/rdme-to-web)] Code Snippets Manager**. Conveniently add and manage CSS / SCSS, JS, HTML and PHP code snippets to modify your site's content, design, behaviour and functionalities
+* **[[ASE Pro](https://www.wpase.com/rdme-to-web)] Code Snippets Manager**. Conveniently add and manage CSS / SCSS, JS, HTML and PHP code snippets to modify your site's content, design, behaviour and functionalities
 * **Custom Admin CSS**.
 * **Custom Frontend CSS**.
 * **Insert &lt;head&gt;, &lt;body&gt; and &lt;footer&gt; Code**. Easily insert &lt;meta&gt;, &lt;link&gt;, &lt;script&gt; and &lt;style&gt; tags for tracking, analytics, etc.
@@ -120,13 +121,13 @@ _"ASE is an amazing plugin! **Time and money saver**. Thank you!"_ ~[Iulian Baci
 ### Utilities
 
 * **Email Delivery**. Set custom sender name and email. Optionally use external SMTP service to ensure notification and transactional emails from your site are being delivered to inboxes.
-* **[[Pro](https://www.wpase.com/rdme-to-web)] Local User Avatar**. Enable usage of any image from WordPress Media Library as user avatars.
+* **[[ASE Pro](https://www.wpase.com/rdme-to-web)] Local User Avatar**. Enable usage of any image from WordPress Media Library as user avatars.
 * **Multiple User Roles**. Enable assignment of multiple roles during user account creation and editing.
 * **Image Sizes Panel**. Display a panel showing and linking to all available sizes when viewing an image in the media library. [ASE Pro](https://www.wpase.com/rdme-to-web) adds a convenient button to copy the image URL on click.
 * **View Admin as Role**. View admin pages and the site (logged-in) as one of the non-administrator user roles.
 * **Password Protection**. Password-protect the entire site to hide the content from public view and search engine bots / crawlers. [ASE Pro](https://www.wpase.com/rdme-to-web) adds IP whitelisting and bypassing via URL parameter.
 * **Maintenance Mode**. Show a simple maintenance message. [ASE Pro](https://www.wpase.com/rdme-to-web) adds option to set custom page / browser tab title and use WYSIWYG editor, image / solid color background and custom CSS.
-* **Redirect 404 to Homepage**. Perform 301 (permanent) redirect to the homepage for all 404 (not found) pages.
+* **Redirect 404**. Perform 301 (permanent) redirect to the homepage for all 404 (not found) pages. [ASE Pro](https://www.wpase.com/rdme-to-web) adds option to set custom redirect URL.
 * **Display System Summary**. Show web server software, PHP version, database software and server IP address in the "At a Glance" dashboard widget.
 * **Search Engines Visibility Status**. Show admin bar status and admin notice when search engines are set to be discouraged from indexing the site.
 
@@ -175,34 +176,34 @@ You can skip step 1 and 2 if you still have access to your wp-admin dashboard.
 
 ## Changelog
 
-**Admin and Site Enhancements (ASE) v1.0.0** was released on October 17, 2022. Since then, there have been **69 _point_ releases** (e.g. 1.1.0 ) and **86 _patch_ releases** (e.g. 4.9.1). 
+**Admin and Site Enhancements (ASE) v1.0.0** was released on October 17, 2022. Since then, there have been **69 _point_ releases** (e.g. 1.1.0 ) and **87 _patch_ releases** (e.g. 4.9.1). 
 
 Each **_point release_** usually corresponds with the addition of one new module/feature. Each module/feature usually is the equivalent of one (or more) single-purpose plugin. Each **_patch release_** usually contain one or more bugfix or improvements to existing modules/features.
 
 [**Upgrade to ASE Pro**](https://www.wpase.com/chnlg-to-web) now. Lifetime Deal (LTD) available.
 
-### 6.9.6.2 (2024.04.01) - ASE Pro
+### 6.9.7 (2024.04.07) - ASE Free and Pro
 
-* **[FIXED in Pro] Content Management >> Content Order**: fixed PHP warnings as reported by Yoshihiro T. and a developer at mez#####e.co.
+* **[TRANSLATE ASE] Are you interested to see ASE in your language?**: ASE has been fully internationalized and ready for localization / translation. If you're interested to get involved, please head over to [https://translate.wpase.com](https://translate.wpase.com/) for more info. Props to [Toine R.](https://wordpress.org/support/users/toineenzo/) for leading the Dutch translation efforts and [@radicsjg](https://profiles.wordpress.org/radicsjg/) for the Hungarian translation.
 
-### 6.9.6.1 (2024.04.01) - ASE Pro
+* **[IMPROVED in Pro] Content Management >> Content Duplication**: added an option to choose on which post type(s) duplication is enabled. Props to Paul R. for prompting the improvement after reporting seeing double 'Duplicate' link on the ads listing of Advanced Ads plugin, which has it's own 'Duplicate' feature for their ads.
 
-* **[FIXED in Pro] Content Management >> Custom Content Types >> Options Pages**: fixed an issue where getting an option page's option value in the frontend returns empty value. Props to Darren for reporting this with a short but clear screencast that illustrates the issue in Breakdance builder.
+* **[IMPROVED in Pro] Utilities >> Redirect 404**: added an option to redirect to a custom URL instead of the homepage.
 
-### 6.9.6 (2024.04.01) - ASE Free and Pro
+* **[CHANGED in Free and Pro] Utilities >> Search Engines Visibility Status**: Removed visibility status notice. Admin bar status should be enough. Props to Marco R. for prompting the change.
 
-* **[IMPROVED in Free and Pro] Log In | Log Out >> Redirect After Login & Logout**: make it possible to redirect to the homepage by leaving the redirection slug input blank. Props to [@mateuszkalamarz](https://wordpress.org/support/users/mateuszkalamarz/) for [reporting the issue](https://wordpress.org/support/topic/redirect-after-login-doesnt-allow-front-page/) and prompting the improvement.
+* **[CHANGED and IMPROVED in Free and Pro] Admin Interface >> Show Custom Taxonomy Filter**: this has been taken out of Enhance List Tables module and is now it's own module. In ASE Pro, it's also possible to show additional filter(s) for non-hierarchical taxonomies, e.g. Post Tags.
 
-* **[IMPROVED in Free and Pro] Log In | Log Out >> Change Login URL**: properly redirect /wp-login (without .php) to the /not_found/ URL. It was showing the login form on some scenarios. Props to Artur M. for reporting this and help with troubleshooting.
+* **[CHANGED in Free] ASE Settings**: removed sponsorship ask/nudge. Simplify this nudge into an ask to add a review or share about ASE.
 
-* **[IMPROVED in Pro] Content Management >> Content Order**: it's now possible to enable custom ordering for post types that are not hierarchical and don't support page attributes, e.g. posts and WooCommerce products. Props to Kay L., Eirini Z. and Hampus E. for suggesting this improvement.
+* **[FIXED in Pro] Content Management >> Custom Content Types >> Options Pages**: fixed an issue where WYSIWYG field that is part of an options page will output the wrong content when rendered inside Breakdance builder's header. Props to Darren L. for reporting the issue with screencasts and facilitating troubleshooting further.
 
-* **[IMPROVED in Pro] Admin Interface >> Admin Columns Manager**: Post Parent and Menu Order are now included in Default columns for all post types.
+* **[FIXED in Pro] Content Management >> Custom Content Types >> Custom Field Groups**: Fixed PHP warning in WYSIWYG field. Fixed true/false field not showing SVG icon in Elementor.
 
-* **[FIXED in Free and Pro] Disable Components >> Disable Gutenberg**: fixed an issue where the "Add Form" button from Gravity Forms is not present next to "Add Media" button in the post/page edit screen when gutenberg / block editor is disabled for a post type. Props to [Kazam Creative](https://wordpress.org/support/users/goldenagemedia/) for [reporting the issue](https://wordpress.org/support/topic/bug-add-shortcode-to-visual-editor-buttons-disappear/).
+* **[FIXED in Pro] Admin Interface >> Admin Columns Manager**: fix for Elementor Templates >> Types column having duplicate values. Props to Steven Y. for reporting the issue.
 
-* **[FIXED in Pro] Content Management >> Custom Content Types**: in some scenarios, the WYSIWYG field is not responsive, and thus, not usable when editing a post using that field type with the block editor. This is now fixed. Props to Philipp Z. for reporting the issue and facilitating the troubleshooting.
+* **[FIXED in Pro] Custom Code >> Code Snippets Manager**: fix activate / deactivate toggle on snippets listing page not working properly, i.e. returning 'yes' / 'no' page instead of actually toggling and stays on the listing page. Props to Darren L. for reporting the issue.
 
-* **[FIXED in Free and Pro] ASE Settings**: fixed PHP warning reported by [@osblaga](https://wordpress.org/support/users/osblaga/) in [this thread](https://wordpress.org/support/topic/error-when-activating-wp-ase-plugin/).
+* **[FIXED in Pro] Admin Interface >> Admin Menu Organizer**: fixed PHP deprecation notice.
 
 [**See the full changelog >>**](https://www.wpase.com/documentation/changelog/)
