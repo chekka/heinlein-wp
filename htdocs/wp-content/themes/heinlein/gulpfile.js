@@ -39,10 +39,6 @@ gulp.task('watch', watchSass);
 
 // Static Server + watching scss/html files
 function serve () {
-  browserSync.init({
-    proxy: 'http://heinlein-wp.local',
-  })
-
   gulp.watch([paths.scss.watch], styles).on('change', browserSync.reload)
 }
 
