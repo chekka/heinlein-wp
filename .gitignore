@@ -9,3 +9,5 @@ htdocs/wp-content/cache/*
 htdocs/wp-content/wpo-cache/*
 htdocs/wp-content/ewww/*
 htdocs/wp-content/wflogs/*
+htdocs/wp-content/upgrade/*
+htdocs/wp-content/upgrade-temp-backup/*
