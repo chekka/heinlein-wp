@@ -63,7 +63,13 @@ class Settings_Fields_Render {
         }
         $field_name = $args['field_name'];
         $field_label = $args['field_label'];
-        $field_option_value = ( isset( $options[$args['field_id']] ) ? $options[$args['field_id']] : false );
+        $default_value = false;
+        switch ( $args['field_id'] ) {
+            case 'login_page_disable_registration':
+                $default_value = ( 1 == get_option( 'users_can_register' ) ? false : true );
+                break;
+        }
+        $field_option_value = ( isset( $options[$args['field_id']] ) ? $options[$args['field_id']] : $default_value );
         echo '<input type="checkbox" id="' . esc_attr( $field_name ) . '" class="asenha-subfield-checkbox" name="' . esc_attr( $field_name ) . '" ' . checked( $field_option_value, true, false ) . '>';
         echo '<label for="' . esc_attr( $field_name ) . '" class="asenha-subfield-checkbox-label">' . wp_kses_post( $field_label ) . '</label>';
     }
@@ -114,10 +120,16 @@ class Settings_Fields_Render {
         } else {
             $default_value = false;
         }
+        $field_description = ( isset( $args['field_description'] ) ? $args['field_description'] : '' );
         $field_option_value = ( isset( $options[$field_id] ) ? $options[$field_id] : $default_value );
+        echo '<div class="asenha-subfield-radio-button-wrapper">';
         foreach ( $field_radios as $radio_label => $radio_value ) {
             echo '<input type="radio" id="' . esc_attr( $field_id . '_' . $radio_value ) . '" class="asenha-subfield-radio-button" name="' . esc_attr( $field_name ) . '" value="' . esc_attr( $radio_value ) . '" ' . checked( $radio_value, $field_option_value, false ) . '>';
             echo '<label for="' . esc_attr( $field_id . '_' . $radio_value ) . '" class="asenha-subfield-radio-button-label">' . wp_kses_post( $radio_label ) . '</label>';
+        }
+        echo '</div>';
+        if ( !empty( $field_description ) ) {
+            echo '<div class="asenha-subfield-description">' . wp_kses_post( $field_description ) . '</div>';
         }
     }
 
@@ -158,12 +170,16 @@ class Settings_Fields_Render {
         }
         $field_id = $args['field_id'];
         $field_name = $args['field_name'];
+        $field_width_classname = ( isset( $args['field_width_classname'] ) ? $args['field_width_classname'] : '' );
         $field_type = $args['field_type'];
         $field_prefix = $args['field_prefix'];
         $field_suffix = $args['field_suffix'];
-        $field_description = $args['field_description'];
         $field_placeholder = ( isset( $args['field_placeholder'] ) ? $args['field_placeholder'] : '' );
+        $field_description = $args['field_description'];
         $field_option_value = ( isset( $options[$args['field_id']] ) ? $options[$args['field_id']] : '' );
+        if ( $field_id == 'live_site_url' ) {
+            $field_option_value = ( isset( $options[$args['field_id']] ) ? base64_decode( $options[$args['field_id']] ) : '' );
+        }
         if ( !empty( $field_prefix ) && !empty( $field_suffix ) ) {
             $field_classname = ' with-prefix with-suffix';
         } elseif ( !empty( $field_prefix ) && empty( $field_suffix ) ) {
@@ -173,19 +189,8 @@ class Settings_Fields_Render {
         } else {
             $field_classname = '';
         }
-        if ( $field_id == 'custom_login_slug' ) {
-            $field_placeholder = __( 'e.g. backend', 'admin-site-enhancements' );
-        } elseif ( $field_id == 'default_login_redirect_slug' ) {
-            $field_placeholder = __( 'e.g. my-account', 'admin-site-enhancements' );
-        } elseif ( $field_id == 'redirect_after_login_to_slug' ) {
-            // $field_placeholder = __( 'e.g. my-account', 'admin-site-enhancements' );
-        } elseif ( $field_id == 'redirect_after_logout_to_slug' ) {
-            // $field_placeholder = __( 'e.g. come-visit-again', 'admin-site-enhancements' );
-        } elseif ( $field_id == 'login_fails_allowed' ) {
-            $field_placeholder = '3';
-        } elseif ( $field_id == 'login_lockout_maxcount' ) {
-            $field_placeholder = '3';
-        } else {
+        if ( !empty( $field_width_classname ) ) {
+            $field_classname .= ' ' . $field_width_classname;
         }
         echo wp_kses_post( $field_prefix ) . '<input type="text" id="' . esc_attr( $field_name ) . '" class="asenha-subfield-text' . esc_attr( $field_classname ) . '" name="' . esc_attr( $field_name ) . '" placeholder="' . esc_attr( $field_placeholder ) . '" value="' . esc_attr( $field_option_value ) . '">' . wp_kses_post( $field_suffix );
         echo '<label for="' . esc_attr( $field_name ) . '" class="asenha-subfield-checkbox-label">' . esc_html( $field_description ) . '</label>';
@@ -262,6 +267,7 @@ class Settings_Fields_Render {
         $field_prefix = $args['field_prefix'];
         $field_suffix = $args['field_suffix'];
         $field_intro = $args['field_intro'];
+        $field_placeholder = ( isset( $args['field_placeholder'] ) ? $args['field_placeholder'] : '' );
         $field_description = ( isset( $args['field_description'] ) ? $args['field_description'] : '' );
         $field_option_value = ( isset( $options[$args['field_id']] ) ? $options[$args['field_id']] : '' );
         if ( !empty( $field_prefix ) && !empty( $field_suffix ) ) {
@@ -273,18 +279,11 @@ class Settings_Fields_Render {
         } else {
             $field_classname = '';
         }
-        if ( $field_id == 'revisions_max_number' || $field_id == 'custom_frontend_css_priority' || $field_id == 'head_code_priority' || $field_id == 'body_code_priority' || $field_id == 'footer_code_priority' ) {
-            $placeholder = '10';
-        } elseif ( $field_id == 'convert_to_webp_quality' ) {
-            $placeholder = '82';
-        } else {
-            $placeholder = '';
-        }
         echo '<div class="asenha-subfield-number-wrapper">';
         if ( !empty( $field_intro ) ) {
             echo '<div class="asenha-subfield-number-intro">' . wp_kses_post( $field_intro ) . '</div>';
         }
-        echo '<div>' . wp_kses_post( $field_prefix ) . '<input type="number" id="' . esc_attr( $field_name ) . '" class="asenha-subfield-number' . esc_attr( $field_classname ) . '" name="' . esc_attr( $field_name ) . '" placeholder="' . esc_attr( $placeholder ) . '" value="' . esc_attr( $field_option_value ) . '">' . wp_kses_post( $field_suffix ) . '</div>';
+        echo '<div>' . wp_kses_post( $field_prefix ) . '<input type="number" id="' . esc_attr( $field_name ) . '" class="asenha-subfield-number' . esc_attr( $field_classname ) . '" name="' . esc_attr( $field_name ) . '" placeholder="' . esc_attr( $field_placeholder ) . '" value="' . esc_attr( $field_option_value ) . '">' . wp_kses_post( $field_suffix ) . '</div>';
         if ( !empty( $field_description ) ) {
             echo '<div class="asenha-subfield-number-description">' . wp_kses_post( $field_description ) . '</div>';
         }
@@ -478,7 +477,7 @@ class Settings_Fields_Render {
 		<div class="media-subfield-wrapper">
 			<input id="<?php 
         echo esc_attr( $field_slug );
-        ?>" class="image-picker" type="text" size="36" name="<?php 
+        ?>" class="image-picker" type="text" size="40" name="<?php 
         echo esc_attr( $field_name );
         ?>" value="<?php 
         echo esc_url( $field_option_value );
@@ -486,6 +485,11 @@ class Settings_Fields_Render {
 			<button id="<?php 
         echo esc_attr( $field_slug );
         ?>-button" class="image-picker-button button-secondary">Select an Image</button>
+			<?php 
+        if ( !empty( $field_description ) ) {
+            echo '<div class="asenha-subfield-description media-subfield">' . wp_kses_post( $field_description ) . '</div>';
+        }
+        ?>
 		</div>
 		<?php 
     }
@@ -504,7 +508,7 @@ class Settings_Fields_Render {
         $field_description = $args['field_description'];
         $field_default_value = $args['field_default_value'];
         $options = get_option( $args['option_name'], array() );
-        $field_option_value = ( isset( $options[$field_id] ) ? $options[$field_id] : '' );
+        $field_option_value = ( isset( $options[$field_id] ) ? $options[$field_id] : $field_default_value );
         ?>
 		<div class="color-subfield-wrapper">
 			<input type="text" id="<?php 
@@ -583,10 +587,13 @@ class Settings_Fields_Render {
                     $menu_url_fragment = '';
                     if ( $custom_menu_item == $menu_item_id ) {
                         $menu_item_id_transformed = $common_methods->transform_menu_item_id( $menu_item_id );
+                        $is_custom_menu = 'no';
                         ?>
 						<li id="<?php 
                         echo esc_attr( $menu_item_id );
-                        ?>" class="menu-item parent-menu-item menu-item-depth-0">
+                        ?>" class="menu-item parent-menu-item menu-item-depth-0" data-custom-menu-item="<?php 
+                        echo esc_attr( $is_custom_menu );
+                        ?>">
 							<div class="menu-item-bar">
 								<div class="menu-item-handle">
 									<span class="dashicons dashicons-menu"></span>
@@ -689,6 +696,7 @@ class Settings_Fields_Render {
 							<?php 
                         $i = 1;
                         ?>
+							<div class="remove-menu-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="#bbbbbb" d="M24 2.4L21.6 0L12 9.6L2.4 0L0 2.4L9.6 12L0 21.6L2.4 24l9.6-9.6l9.6 9.6l2.4-2.4l-9.6-9.6z"/></svg></div>
 						</li>
 						<?php 
                         $menu_key_in_use[] = $menu_key;
@@ -710,10 +718,13 @@ class Settings_Fields_Render {
                     // Exclude Show All/Less toggles
                     if ( false === strpos( $menu_item_id, 'toplevel_page_asenha_' ) ) {
                         $menu_item_id_transformed = $common_methods->transform_menu_item_id( $menu_item_id );
+                        $is_custom_menu = 'no';
                         ?>
 						<li id="<?php 
                         echo esc_attr( $menu_item_id );
-                        ?>" class="menu-item parent-menu-item menu-item-depth-0">
+                        ?>" class="menu-item parent-menu-item menu-item-depth-0" data-custom-menu-item="<?php 
+                        echo esc_attr( $is_custom_menu );
+                        ?>">
 							<div class="menu-item-bar">
 								<div class="menu-item-handle">
 									<span class="dashicons dashicons-menu"></span>
@@ -751,8 +762,14 @@ class Settings_Fields_Render {
                         echo esc_attr( $menu_item_id_transformed );
                         ?>" class="<?php 
                         echo esc_attr( $checkbox_class );
+                        ?>" data-menu-item-title="<?php 
+                        echo esc_attr( $common_methods->strip_html_tags_and_content( $menu_item_title ) );
                         ?>" data-menu-item-id="<?php 
                         echo esc_attr( $menu_item_id_transformed );
+                        ?>" data-menu-item-id-ori="<?php 
+                        echo esc_attr( $menu_item_id );
+                        ?>" data-menu-url-fragment="<?php 
+                        echo esc_attr( $menu_url_fragment );
                         ?>">
 												<span><?php 
                         echo esc_html( $hide_text );
@@ -767,6 +784,7 @@ class Settings_Fields_Render {
 							<?php 
                         $i = 1;
                         ?>
+							<div class="remove-menu-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="#bbbbbb" d="M24 2.4L21.6 0L12 9.6L2.4 0L0 2.4L9.6 12L0 21.6L2.4 24l9.6-9.6l9.6 9.6l2.4-2.4l-9.6-9.6z"/></svg></div>
 						</li><!-- end of .menu-item -->
 						<?php 
                     }
@@ -786,10 +804,13 @@ class Settings_Fields_Render {
                 $menu_item_id_transformed = $common_methods->transform_menu_item_id( $menu_item_id );
                 // Strip tags
                 $menu_item_title = $common_methods->strip_html_tags_and_content( $menu_item_title );
+                $is_custom_menu = 'no';
                 ?>
 				<li id="<?php 
                 echo esc_attr( $menu_item_id );
-                ?>" class="menu-item parent-menu-item menu-item-depth-0">
+                ?>" class="menu-item parent-menu-item menu-item-depth-0" data-custom-menu-item="<?php 
+                echo esc_attr( $is_custom_menu );
+                ?>">
 					<div class="menu-item-bar">
 						<div class="menu-item-handle">
 							<span class="dashicons dashicons-menu"></span>
@@ -831,8 +852,14 @@ class Settings_Fields_Render {
                 echo esc_attr( $menu_item_id_transformed );
                 ?>" class="<?php 
                 echo esc_attr( $checkbox_class );
+                ?>" data-menu-item-title="<?php 
+                echo esc_attr( $common_methods->strip_html_tags_and_content( $menu_item_title ) );
                 ?>" data-menu-item-id="<?php 
                 echo esc_attr( $menu_item_id_transformed );
+                ?>" data-menu-item-id-ori="<?php 
+                echo esc_attr( $menu_item_id );
+                ?>" data-menu-url-fragment="<?php 
+                echo esc_attr( $menu_url_fragment );
                 ?>">
 										<span><?php 
                 echo esc_html( $hide_text );
@@ -847,6 +874,7 @@ class Settings_Fields_Render {
 				<?php 
                 $i = 1;
                 ?>
+					<div class="remove-menu-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="#bbbbbb" d="M24 2.4L21.6 0L12 9.6L2.4 0L0 2.4L9.6 12L0 21.6L2.4 24l9.6-9.6l9.6 9.6l2.4-2.4l-9.6-9.6z"/></svg></div>
 				</li>
 				<?php 
             }
@@ -857,16 +885,21 @@ class Settings_Fields_Render {
         // Hidden input field to store custom menu order (from options as is, or sortupdate) upon clicking Save Changes.
         $field_id = $args['field_id'];
         $field_name = $args['field_name'];
-        $field_description = $args['field_description'];
         $field_option_value = ( isset( $options[$args['field_id']] ) ? $options[$args['field_id']] : '' );
         echo '<input type="hidden" id="' . esc_attr( $field_name ) . '" class="asenha-subfield-text" name="' . esc_attr( $field_name ) . '" value="' . esc_attr( $field_option_value ) . '">';
         // Hidden input field to store custom menu titles (from options as is, or custom values entered on each non-WP-default menu items.
-        $field_id = 'custom_menu_titles';
-        $field_name = ASENHA_SLUG_U . '[' . $field_id . ']';
-        $field_option_value = ( isset( $options[$field_id] ) ? $options[$field_id] : '' );
-        echo '<input type="hidden" id="' . esc_attr( $field_name ) . '" class="asenha-subfield-text" name="' . esc_attr( $field_name ) . '" value="' . esc_attr( $field_option_value ) . '">';
+        $this->output_admin_menu_organizer_hidden_field( 'custom_menu_titles' );
         // Hidden input field to store hidden menu items (from options as is, or 'Hide' checkbox clicks) upon clicking Save Changes.
-        $field_id = 'custom_menu_hidden';
+        $this->output_admin_menu_organizer_hidden_field( 'custom_menu_hidden' );
+    }
+
+    /**
+     * Output hidden field
+     * 
+     * @since 6.9.13
+     */
+    public function output_admin_menu_organizer_hidden_field( $field_id ) {
+        $options = get_option( ASENHA_SLUG_U, array() );
         $field_name = ASENHA_SLUG_U . '[' . $field_id . ']';
         $field_option_value = ( isset( $options[$field_id] ) ? $options[$field_id] : '' );
         echo '<input type="hidden" id="' . esc_attr( $field_name ) . '" class="asenha-subfield-text" name="' . esc_attr( $field_name ) . '" value="' . esc_attr( $field_option_value ) . '">';

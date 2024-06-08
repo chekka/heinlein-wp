@@ -17,7 +17,6 @@ class Hide_Admin_Notices {
      * @since 1.2.0
      */
     public function admin_notices_wrapper() {
-        
         $options = get_option( ASENHA_SLUG_U, array() );
         $hide_for_nonadmins = isset( $options['hide_admin_notices_for_nonadmins'] ) ? $options['hide_admin_notices_for_nonadmins'] : false;
         
@@ -30,11 +29,8 @@ class Hide_Admin_Notices {
         }
 
         if ( current_user_can( $minimum_capability ) ) {
-
             echo '<div class="asenha-admin-notices-drawer" style="display:none;"><h2>' . __( 'Admin Notices', 'admin-site-enhancements' ) . '</h2></div>';
-            
         }
-
     }
 
     /**
@@ -130,14 +126,14 @@ class Hide_Admin_Notices {
                 #wpbody-content .notice-updated,
                 #wpbody-content .updated:not(.active, .inactive, .plugin-update-tr),
                 #wpbody-content .update-nag, */
-                #wpbody-content > .wrap > .notice:not(.system-notice,.hidden),
+                #wpbody-content > .wrap > .notice:not(#plugin-activated-successfully,.system-notice,.hidden),
                 #wpbody-content > .wrap > .notice-error,
                 #wpbody-content > .wrap > .error:not(.hidden),
                 #wpbody-content > .wrap > .notice-info,
                 #wpbody-content > .wrap > .notice-information,
                 #wpbody-content > .wrap > #message,
                 #wpbody-content > .wrap > .notice-warning:not(.hidden),
-                #wpbody-content > .wrap > .notice-success,
+                #wpbody-content > .wrap > .notice-success:not(#plugin-activated-successfully),
                 #wpbody-content > .wrap > .notice-updated,
                 #wpbody-content > .wrap > .updated,
                 #wpbody-content > .wrap > .update-nag,
@@ -163,6 +159,29 @@ class Hide_Admin_Notices {
                 #wpbody-content > div > .wrap > .notice-updated,
                 #wpbody-content > div > .wrap > .updated,
                 #wpbody-content > div > .wrap > .update-nag,
+                #wpbody-content > .wrap.woocommerce > form > .notice:not(.system-notice,.hidden),
+                #wpbody-content > .wrap.woocommerce > form > .notice-error,
+                #wpbody-content > .wrap.woocommerce > form > .error:not(.hidden),
+                #wpbody-content > .wrap.woocommerce > form > .notice-info,
+                #wpbody-content > .wrap.woocommerce > form > .notice-information,
+                #wpbody-content > .wrap.woocommerce > form > #message,
+                #wpbody-content > .wrap.woocommerce > form > .notice-warning:not(.hidden),
+                #wpbody-content > .wrap.woocommerce > form > .notice-success,
+                #wpbody-content > .wrap.woocommerce > form > .notice-updated,
+                #wpbody-content > .wrap.woocommerce > form > .updated,
+                #wpbody-content > .wrap.woocommerce > form > .update-nag,
+                /* TranslatePress */
+                #wpbody-content > #trp-main-settings > form > .notice:not(.system-notice,.hidden),
+                #wpbody-content > #trp-main-settings > form > .notice-error,
+                #wpbody-content > #trp-main-settings > form > .error:not(.hidden),
+                #wpbody-content > #trp-main-settings > form > .notice-info,
+                #wpbody-content > #trp-main-settings > form > .notice-information,
+                #wpbody-content > #trp-main-settings > form > #message,
+                #wpbody-content > #trp-main-settings > form > .notice-warning:not(.hidden),
+                #wpbody-content > #trp-main-settings > form > .notice-success,
+                #wpbody-content > #trp-main-settings > form > .notice-updated,
+                #wpbody-content > #trp-main-settings > form > .updated,
+                #wpbody-content > #trp-main-settings > form > .update-nag,
                 #wpbody-content > .notice,
                 #wpbody-content > .error,
                 #wpbody-content > .updated,

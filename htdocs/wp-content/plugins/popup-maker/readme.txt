@@ -1,36 +1,37 @@
-=== Popup Maker - Popup for opt-ins, lead gen, & more ===
+=== Popup Maker - Boost Sales, Conversions, Optins, Subscribers with the Ultimate WP Popups Builder ===
 Contributors: danieliser, codeatlantic
 Author URI: https://wppopupmaker.com/?utm_campaign=readme&utm_medium=referral&utm_source=readme-header&utm_content=author-url
 Plugin URI: https://wppopupmaker.com/?utm_campaign=readme&utm_medium=referral&utm_source=readme-header&utm_content=plugin-url
 Donate link:
-Tags:  marketing, ecommerce, popup, popups, optin, conversion, promotion, pop-up, lightbox, modal, popupmaker
+Tags:  marketing, popup, popups, optin, conversion
 Requires at least: 4.9
-Tested up to: 6.5.0
+Tested up to: 6.5.3
 Requires PHP: 5.6
-Stable tag: 1.18.5
+Stable tag: 1.19.0
 License: GPLv2 or later
 License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 
-Looking to boost your marketing and lead gen efforts? Using popups are a great way to increase your site's conversions!
+Want to boost sales & marketing efforts? Using popups are a great way to increase conversions! Use your favorite forms & builder, keep your data.
 
 == Description ==
 
-= Drive More Sales and Email List Opt-Ins Using Popups =
+= Drive More Sales, Leads & Email List Opt-Ins Using Popups =
 Create conversion-focused campaigns to grow your revenue and email list on your WordPress site with popups, slide-ins, banners, and more!
 
-[Popup Maker](https://wppopupmaker.com/?utm_campaign=readme&utm_medium=referral&utm_source=readme-description&utm_content=main-site-link)™ is the **best popup plugin WordPress** has to offer. It is incredibly versatile & flexible. Bend it to create any type of popup, modal, or content overlay for your WordPress website.
+[Popup Maker](https://wppopupmaker.com/?utm_campaign=readme&utm_medium=referral&utm_source=readme-description&utm_content=main-site-link)™ is the **[best WordPress popup plugin](https://wppopupmaker.com/conversion-optimization/best-wordpress-popup-plugins/)** around. It is incredibly versatile & flexible. Bend it to build any type of popup, modal, or content overlay for your WordPress website.
 
 > **Great plugin! Got the job done**
 > "Love how easy it was to make popups with this!" ~[Zac Gordon](https://wordpress.org/support/topic/great-plugin-got-the-job-done/)
 
-With Popup Maker, you can create popups such as:
+With Popup Maker, you have the ultimate popup builder toolkit at your disposal, create any type of popup in minutes:
 
 * Email opt-in popups,
+* Lead generation popups,
+* Subscription list popups
 * Content upgrade popups,
-* Lead gen popups,
 * Ecommerce popups,
 * Contact form popups,
-* Coronavirus/COVID-19 announcements,
+* Coronavirus/COVID-19 styleannouncements,
 * [EU cookie notices](https://ninjaforms.com/blog/eu-cookie-notices-ninja-forms/),
 * Popups to greet visitors from ProductHunt (requires [premium Advanced Targeting Conditions feature](https://wppopupmaker.com/extensions/advanced-targeting-conditions/?utm_campaign=readme&utm_medium=referral&utm_source=readme-description&utm_content=example-popups&utm_term=greet-producthunt)),
 * WooCommerce upsell popups (requires [premium WooCommerce feature](https://wppopupmaker.com/extensions/woocommerce-pro/?utm_campaign=readme&utm_medium=referral&utm_source=readme-description&utm_content=example-popups&utm_term=woocommerce-upsells)),
@@ -61,6 +62,7 @@ Popup Maker integrates with all of the most popular form plugins to allow you to
 * Contact Form 7 (CF7)
 * Caldera Forms
 * WPForms
+* WSForm
 * Mailchimp for WordPress (MC4WP)
 * Formidable Forms
 * and more!
@@ -92,7 +94,7 @@ Already created a form in your email marketing service? Using our free version, 
 * Dictate the frequency at which users see your popups using **Cookies**, and edit how the cookies are created using Cookie Creation Events.
 
  = Trusted by many people just like you! =
-Popup Maker is used on over 600,000 websites and has received over 3,900 5-star reviews just like this one:
+Popup Maker is used on over 780,000 websites and has received over 4,200 5-star reviews just like this one:
 
 > **Great plugin, everything I needed**
 > "Really nice plugin, simple to use, responsive, a good catch !" ~[@lemmmy](https://wordpress.org/support/topic/great-plugin-everything-i-needed/)
@@ -181,6 +183,16 @@ There are several common causes for this, check [this guide for help](https://do
 
 View our [complete changelog](https://github.com/PopupMaker/Popup-Maker/blob/master/CHANGELOG.md) for up-to-date information on what has been going on with the development of Popup Maker.
 
+= v1.19.0 - 05/23/2024 - WP Popup Builder for WS Forms =
+
+* Feature: Add WS Forms integration.
+* Tweak: Don't show error message when saving settings without making changes.
+* Fix: Improved disabled logging logic to prevent errors with logger even with logging disabled.
+* Fix: Error when value was numeric in popup theme hex fields without a hash.
+* Fix: Ninja Forms datepicker appeared behind popups.
+* Fix: Errors when 3rd party plugins returned invalid value in `mce_external_plugins` filter.
+* Fix: Random unkown key errors when extensions were active.
+
 = v1.18.5 - 03/19/2024 =
 
 * Fix: Error in some extensions due to action timing change. Reverting.
@@ -206,7 +218,7 @@ View our [complete changelog](https://github.com/PopupMaker/Popup-Maker/blob/mas
 * Fix: Bug in asset caching causing assets to falsly determine they couldn't be writtien.
 * Fix: Add backcompat fix for WP >5.3 `wp_date` errors.
 
-= v1.18.0 - 02/10/2023 =
+= v1.18.0 - 02/10/2023 - Accessible WordPress Popup Builder for all! =
 
 * Accessibility: Use newer WCAG `aria-modal` attributes and remove `aria-hidden` methods.
 * Improvement: Font Awesome 6 support for close button text.
@@ -233,7 +245,7 @@ View our [complete changelog](https://github.com/PopupMaker/Popup-Maker/blob/mas
 * Fix: Rendering issue with review request.
 * Fix: ATC Cookie condition was preventing popup from loading.
 
-= v1.17.0 - 11/24/2022 =
+= v1.17.0 - 11/24/2022 - Giving popup builders peice of mind =
 
 * Improvement: Added contextual notification system to be able to notify site admins about important information including security notices, beta tests, extension sales & more without requiring a plugin update.
 * Improvement: Render analytic reset times in server properly rather than UTC.
@@ -314,7 +326,7 @@ View our [complete changelog](https://github.com/PopupMaker/Popup-Maker/blob/mas
 
 * Fix: WP <5.0 and ClassicPress saw errors in the admin for usage of WP_Block_Type_Registry. [Issue #995](https://github.com/PopupMaker/Popup-Maker/issues/995)
 
-= v1.16.0 - 03/09/2021 =
+= v1.16.0 - 03/09/2021 - Make Cache Friendly WordPress Popups Easier =
 
 * Feature: Add 'flush popup cache' link in admin bar menu to quickly clear cached plugin JS & CSS files. [Issue #931](https://github.com/PopupMaker/Popup-Maker/issues/931)
 * Improvement: Remove 'Tools -> System Info' page, use WP Site Health page instead. [Issue #862](https://github.com/PopupMaker/Popup-Maker/issues/862)
@@ -325,7 +337,7 @@ View our [complete changelog](https://github.com/PopupMaker/Popup-Maker/blob/mas
 * Fix: Removed Action Scheduler library due to edge case issues with no reasonable long term solutions. [Issue #853](https://github.com/PopupMaker/Popup-Maker/issues/853)
 * Fix: Update integration with Contact Form 7 due to breaking changes in their recent v5.4 update. [Issue #946](https://github.com/PopupMaker/Popup-Maker/issues/946)
 
-= v1.15.0 - 01/12/2021 =
+= v1.15.0 - 01/12/2021 - Smart WordPress Popups, Magically Load When Needed =
 
 * Feature: Automatically enqueue popups when detected during page load [Issue $543](https://github.com/PopupMaker/Popup-Maker/issues/543)
 * Improvement: Improvements to 'Extend' page [Issue $913](https://github.com/PopupMaker/Popup-Maker/issues/913)

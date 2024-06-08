@@ -2,10 +2,10 @@
 /*
 Plugin Name: SiteOrigin Premium
 Description: A collection of powerful addons that enhance every aspect of SiteOrigin plugins and themes.
-Version: 1.61.1
+Version: 1.62.1
 Requires at least: 4.7
 Tested up to: 6.5.2
-Requires PHP: 5.6.20
+Requires PHP: 7.0.0
 Author: SiteOrigin
 Text Domain: siteorigin-premium
 Domain Path: /lang/
@@ -15,7 +15,7 @@ License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 */
 
-define( 'SITEORIGIN_PREMIUM_VERSION', '1.61.1' );
+define( 'SITEORIGIN_PREMIUM_VERSION', '1.62.1' );
 define( 'SITEORIGIN_PREMIUM_JS_SUFFIX', '.min' );
 define( 'SITEORIGIN_PREMIUM_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SITEORIGIN_PREMIUM_URL', plugin_dir_url( __FILE__ ) );
@@ -234,21 +234,27 @@ if ( ! class_exists( 'SiteOrigin_Premium' ) ) {
 			}
 		}
 
+		/**
+		 * Loads a specific addon.
+		 *
+		 * @param string $id The ID of the addon to load. The ID should be in the format 'type/id'.
+		 * @return mixed The instance of the addon if it exists and could be loaded. Otherwise, false will be returned.
+		 */
 		public function load_addon( $id ) {
-			// Attempt to autoload the class
+			if ( empty( $id ) || ! is_string( $id ) ) {
+				return false;
+			}
+
 			$classname = 'SiteOrigin_Premium_';
 			list( $addon_type, $addon_id ) = explode( '/', $id, 2 );
 			$classname .= ucfirst( $addon_type ) . '_';
 			$classname .= implode( '_', array_map( 'ucfirst', explode( '-', $addon_id ) ) );
 
-			if ( class_exists( $classname, true ) ) {
-				// Initialize the addon by creating a single.
-				return call_user_func( array( $classname, 'single' ) );
-			} else {
-				$this->log_error( sprintf( __( 'Plugin addon %s does not exist.', 'siteorigin-premium' ), $classname ) );
-
+			if ( ! class_exists( $classname, true ) ) {
 				return false;
 			}
+
+			return call_user_func( array( $classname, 'single' ) );
 		}
 
 		/**
@@ -331,13 +337,6 @@ if ( ! class_exists( 'SiteOrigin_Premium' ) ) {
 				}
 			}
 
-			wp_register_script(
-				'on-screen',
-				SiteOrigin_Premium::dir_url( __FILE__ ) . 'js/on-screen.umd' . SITEORIGIN_PREMIUM_JS_SUFFIX . '.js',
-				array(),
-				SITEORIGIN_PREMIUM_VERSION
-			);
-
 			wp_register_style(
 				'siteorigin-premium-animate',
 				SiteOrigin_Premium::dir_url( __FILE__ ) . 'css/animate' . SITEORIGIN_PREMIUM_JS_SUFFIX . '.css',
@@ -348,7 +347,7 @@ if ( ! class_exists( 'SiteOrigin_Premium' ) ) {
 			wp_register_script(
 				'siteorigin-premium-animate',
 				SiteOrigin_Premium::dir_url( __FILE__ ) . 'js/animate' . SITEORIGIN_PREMIUM_JS_SUFFIX . '.js',
-				array( 'jquery', 'on-screen' ),
+				array( 'jquery' ),
 				SITEORIGIN_PREMIUM_VERSION
 			);
 
@@ -431,10 +430,6 @@ if ( ! class_exists( 'SiteOrigin_Premium' ) ) {
 			$links['license'] = '<a href="' . esc_url( admin_url( 'admin.php?page=siteorigin-premium-license' ) ) . '">' . esc_html__( 'License', 'siteorigin-premium' ) . '</a>';
 
 			return $links;
-		}
-
-		private function log_error( $error ) {
-			// Add any development logging here
 		}
 
 		/**

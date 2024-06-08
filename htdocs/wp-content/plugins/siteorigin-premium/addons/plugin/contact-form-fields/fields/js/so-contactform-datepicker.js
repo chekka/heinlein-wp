@@ -4,24 +4,43 @@ window.SiteOriginPremium = window.SiteOriginPremium || {};
 
 SiteOriginPremium.setupDatepicker = function ( $ ) {
 
+	const generateDateString = ( date, options ) => {
+		// Handle text replacement for i18n.
+		const weekday = options.i18n.weekdays[ date.getDay() ];
+		const day = date.getDate();
+		const month = options.i18n.months[ date.getMonth() ];
+		const year = date.getFullYear();
+		return `${ weekday } ${ day } ${ month } ${ year }`;
+	};
+
+	const generateTimeString = ( time ) => {
+		let hours = time.getHours();
+		let minutes = time.getMinutes();
+		const ampm = hours >= 12 ? 'pm' : 'am';
+		hours = hours % 12 || 12; // the hour '0' should be '12'.
+		minutes = minutes < 10 ? `0${ minutes }` : minutes;
+		return `${ hours }:${ minutes } ${ ampm }`;
+	};
+
 	$( '.datepicker-container' ).each( function ( index, element ) {
 		var $datepickerContainer = $(element);
 		var $datepicker = $datepickerContainer.find( '.so-premium-datepicker' );
 		var options = $datepicker.data( 'options' );
 		var $valInput = $datepickerContainer.siblings( '.so-contactform-datetime' );
 		var defaultDate = $valInput.val() ? new Date( $valInput.val() ) : '';
-		
+
 		var updateDate = function () {
 			var date = $datepicker.data( 'pikaday' ).getDate();
 			var $timepicker = $datepickerContainer.siblings( '.timepicker-container' ).find( '.so-premium-timepicker' );
 			if ( $timepicker.length > 0 ) {
 				var time = $timepicker.timepicker( 'getTime' );
 				if ( time && time instanceof Date && date ) {
-					date.setHours( time.getHours(), time.getMinutes(), time.getSeconds(), time.getMilliseconds() );
-					$valInput.val( date );
+					$valInput.val(
+						`${ generateDateString( date, options ) } ${ generateTimeString( time ) }`
+					);
 				}
-			} else {
-				$valInput.val( date );
+			} else if ( date ) {
+				$valInput.val( generateDateString(date, options ) );
 			}
 		};
 		var yearRange = options.yearRange.split( ',' );
@@ -55,12 +74,7 @@ SiteOriginPremium.setupDatepicker = function ( $ ) {
 					return $datepicker.data( 'pikaday' ).getMoment().format( format );
 				}
 
-				// Handle text repalcement for i18n
-				var weekday = options.i18n.weekdays[date.getDay()];
-				var day = date.getDate();
-				var month = options.i18n.months[date.getMonth()];
-				var year = date.getFullYear();
-				return weekday + ' ' + day  + ' ' + month  + ' ' +  year;
+				return generateDateString( date, options );
 			},
 		} );
 		updateDate();
@@ -82,7 +96,7 @@ SiteOriginPremium.setupDatepicker = function ( $ ) {
 				$timepicker.timepicker( 'setTime', defaultTime );
 			}
 		}
-		
+
 		var updateTime = function () {
 			var $datepicker = $timepickerContainer.siblings( '.datepicker-container' ).find( '.so-premium-datepicker' );
 			// If we have a datepicker too, then set the time on the datepicker's selected date.
@@ -97,15 +111,17 @@ SiteOriginPremium.setupDatepicker = function ( $ ) {
 						time.getSeconds(),
 						time.getMilliseconds()
 					) );
-					$valInput.val( time );
+					$valInput.val(
+						`${ generateDateString( date, $datepicker.data( 'options' ) ) } ${ generateTimeString( time ) }`
+					);
 				}
 			} else {
 				$valInput.val( $timepicker.val() );
 			}
 		};
-		
+
 		$timepicker.on( 'changeTime', updateTime );
-		
+
 		updateTime();
 	} );
 
@@ -113,7 +129,7 @@ SiteOriginPremium.setupDatepicker = function ( $ ) {
 
 jQuery( function( $ ){
 	SiteOriginPremium.setupDatepicker( $ );
-	
+
 	if ( window.sowb ) {
 		$( window.sowb ).on( 'setup_widgets', function() {
 			SiteOriginPremium.setupDatepicker( $ );

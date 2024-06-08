@@ -1,9 +1,9 @@
 === SiteOrigin Premium ===
 Requires at least: 4.7
 Tested up to: 6.5.2
-Requires PHP: 5.6.20
-Stable tag: 1.61.1
-Build time: 2024-04-17T21:21:02+01:00
+Requires PHP: 7.0.0
+Stable tag: 1.62.1
+Build time: 2024-05-26T21:19:55+01:00
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -28,6 +28,23 @@ The SiteOrigin Premium plugin can be downloaded via the link provided in your or
 [Documentation](https://siteorigin.com/premium-documentation/) is available on SiteOrigin.com.
 
 == Changelog ==
+
+= 1.62.1 - 26 May 2024 =
+* Anchor ID: Update to allow for an empty Accordion and Tabs ID field. An ID is recommended.
+* Block Animations: Resolved potential TypeError.
+* Toggle Visibility: Added `siteorigin_premium_toggle_visibility_metabox_block_message` to adjust logged out message.
+* Resolved potential blank addon settings modal.
+* Prevented auto-updates if disabled.
+
+= 1.62.0 - 19 May 2024 =
+* New Addon! Enhance contact form security with the Cloudflare Turnstile Addon, a user-friendly CAPTCHA alternative that helps prevent spam while maintaining seamless user interaction.
+* Anchor ID: Fixed ID detection.
+* Author Box: Minor spacing and layout improvements.
+* Post Carousel: Added title tag to the link overlay.
+* Social Media Buttons: Added a fallback if Network Name field is empty.
+* Toggle Visibility: Resolved potential PHP warning.
+* WooCommerce Template Builder: Removed Shop Product Loop widget from Product Archive tab.
+* Increased required PHP version to PHP 7.
 
 = 1.61.1 - 17 April 2024 =
 * Anchor ID Addon: Refactored and centralized management, improving widget coordination and simplifying future maintenance.
@@ -97,7 +114,7 @@ optionally redirect users when a page is hidden. Hide/Show available with date s
 * Video Background: Added support for rounding in video backgrounds.
 * Various code formatting improvements for better readability and consistency.
 
-= 1.55.0 - 05 January 2023 =
+= 1.55.0 - 05 January 2024 =
 * Blog: Optimized supporting JavaScript assets.
 * Parallax Sliders: Ensured scripts only loaded when needed.
 * WooCommerce Template Builder: Added Genesis, Genesis Connect, and Block Editor compatibility.
@@ -107,4 +124,107 @@ optionally redirect users when a page is hidden. Hide/Show available with date s
 * Video Background: Adjusted secondary settings to conditionally display when a video is added.
 * Video Background: Updated the Background Video Opacity setting to conditionally display if a Background Video has been set.
 
-[View full changelog.](/wp-content/plugins/siteorigin-premium/readme.txt)
+= 1.54.1 - 13 December 2023 =
+* Blog: Hide Load More button when loading posts using Ajax.
+* Blog: Update to ensure Next link is hidden when there aren't enough posts load a new page.
+* Page Background: Resolved potential notices.
+* Improved required plugin and version check.
+* Updated Google Fonts array.
+
+= 1.54.0 - 14 November 2023 =
+* New Addon! Introducing the Video Background Addon. Add dynamic video backgrounds to any Page Builder row, column, or widget, adding an energetic touch to your site. With support for various video formats like mp4, m4v, mov, wmv, avi, mpg, ogv, and webm, flexibility is at your fingertips. Includes option for a semi-transparent overlay or pattern.
+* Blog: Removed pagination page reload if pagination is disabled.
+* Blog: Hid pagination links when loading posts using Ajax.
+* Blog: Ensured the correct pagination links are used when loading with Ajax.
+* Mirror Widgets: Enabled thumbnails.
+* Mirror Widgets: Updated permissions to allow the slug to be edited.
+* Renamed all "Cell" references to "Columns".
+* Updated SiteOrigin Installer.
+
+= 1.53.0 - 29 October 2023 =
+* Blog: Added Post Content `None` Option, allowing users to optionally hide the post content. Useful for display related posts.
+* Removed reference to "Content Area" in Cross Domain Copy Paste field instructions for clarity.
+* Premium Metabox: Fixed a display issue with the Block Editor. Added a condition to check if the parent element has rendered completely before making any changes.
+
+= 1.52.0 - 19 October 2023 =
+* Contact Form: Added support for Merge Tags. Merge tags can be added to the Subject, Success, and Auto Responder messages. Merge tags can be referenced by wrapping them in square brackets.
+* Blog: Code cleanup and reordering. Added animation settings for blog posts, including options for animation type, screen offset, animation speed, hiding before animation, animation delay, and disabling animation on mobile.
+* Cross Domain Copy Paste: Fixed issue where the browser storage iframe was appearing behind the settings. Updated z-index values in the CSS file to ensure the correct permissions modal stacking order.
+* Cross Domain Copy Paste: Added and fixed an HTTP alert. The addon now requires a secure connection (https) to function properly.
+
+= 1.51.0 - 26 September 2023 =
+* Blog: Resolved potential incorrect Read More pagination button display.
+* Cross Domain Copy Paste: Introduced the Browser Clipboard alernative to the Browser Storage Method.
+* Plugin License: If connection to license server fails, try one more time before deactivation.
+
+= 1.50.1 - 23 September 2023 =
+* Added new banners for Custom Palette, Image Shape, and Page Background addons.
+* Updated Google Fonts with new font families and styles.
+* Added minimum version header for plugin addons to prevent activation if user doesn't have the required minimum version.
+* WCTB: Moved compatibility code for various plugins to dedicated files for better organization and maintainability.
+* Prevented the SiteOrigin Premium metabox from appearing for Mirror Widgets and Custom Post Types.
+* Fixed a typo in the code comments of the `add_featured_image_fallback` function in the `blog.php` file.
+* Prevented potential JavaScript error in the Metabox when setting up tabs.
+* License Debugging: Changed UA Bypass to URL Query String for better debugging and flexibility.
+
+= 1.50.0 - 17 August 2023 =
+* Blog: Added fallback compatibility with `Skip Post If No Featured Image` setting. This includes preventing repeated processing of fallback image detection and modifying the query for the portfolio template to exclude posts without a featured image fallback.
+* WCTB: Added compatibility for the Virtue theme. This includes adding new filters and actions to modify the HTML structure and classes of the product elements.
+* Installer: Excluded Standalone Updater from the Installer. This includes updating the subproject commit in the `inc/installer` directory and excluding the `inc/installer/inc/github-plugin-updater.php` file from the copy process.
+* Updated "Tested up to" tag to 6.3 in the readme.txt and siteorigin-premium.php files.
+* Minor formatting updates to the `woocommerce-templates.php` file for better readability.
+
+= 1.49.0 - 03 August 2023 =
+* New Addon! Introducing the Image Shape Addon. Elevate your image designs with an expanded selection of shapes and captivating effects, including shadows and hover shadows.
+* Image Overlay: Ensure `responsive_breakpoint` is always set. Resolves a potential display issue if no value is set.
+* Parallax Sliders: If Page Builder isn't loading parallax, ensure setup JavaScript is loaded.
+* Resolved a potential SiteOrigin Premium admin page asset loading issue.
+* Added SiteOrigin Installer setting.
+
+= 1.48.0 - 25 July 2023 =
+* New Addon! Introducing the Cross Domain Copy Paste Addon. Build pages faster by copying and pasting Page Builder widgets and rows between websites.
+
+= 1.47.0 - 19 July 2023 =
+* Logo Booster: Update to ensure that if a logo is not set in the addon or theme, the site title will be displayed.
+* Page Background: Minor code improvements.
+* Page Background: Resolved `siteorigin_widgets_get_attachment_image_src` potential error.
+* WooCommerce Template Builder: Added compatibility for WPC Smart Compare and WPC Smart Wishlist.
+* WooCommerce Template Builder: Added a check to ensure Page Builder is activated before using `SiteOrigin_Panels_Admin`.
+* WooCommerce Template Builder: Removed non-WCTB layouts inside of the WCTB section.
+* WooCommerce Template Builder: Removed the Vantage prebuilt layout.
+* Parallax: Resolve multiple parallax performance issue.
+* Resolved potential `$assets_setup` warning.
+* Metabox: Various display and operational improvements. Currently used by Page Background and Logo Booster.
+* Addons Page: Scroll to top of addons after clicking tag.
+* Updated SiteOrigin Installer.
+
+= 1.46.0 - 13 June 2023 =
+* New Addon! Introducing the Page Background Addon. Add page specific background images with support for high-pixel-density displays.
+* Link Overlay: Added an Accessibility Label setting.
+* Addons Page: Improved addon search functionality and prevented potential misalignment when clicking plugin tags.
+* Code Formatting: Updated code formatting for the Addons page and related JavaScript.
+* Updated the SiteOrigin Installer.
+
+= 1.45.0 - 08 June 2023 =
+* Link Overlay: Added `Accessibility Label` setting.
+* Logo Booster: Prevented override on archive pages.
+* Logo Booster: Improved WooCommerce compatibility. Ensured that the correct ID is detected on the shop page.
+* WooCommerce Template Builder: Fixed unintentional Archive attribute query override.
+* Removed TGM Plugin Activation library.
+* Added the SiteOrigin Installer.
+* Updated the Google Fonts list.
+* ACF: Removed the SiteOrigin metabox from ACF post types. Added`siteorigin_premium_metabox_excluded_post_types`.
+
+= 1.44.0 - 22 May 2023 =
+* Logo Booster: Resolved edge case display errors.
+* Logo Booster: Migrated settings to a central metabox below the post content.
+* Logo Booster: Added global settings at SiteOrigin > Premium Addons > Logo Booster for Polylang and WPML.
+* Lightbox: Updated library from `v2.11.1` to `v2.11.4`.
+* Lightbox: Update to prevent duplicate items when added to the Anything Carousel.
+
+= 1.43.1 - 10 May 2023 =
+* Mirror Widgets: Excluded the Mirror Widget from the SiteOrigin Widget Block cache.
+* WooCommerce Template Builder: Added the ability to clone WooCommerce Templates from `Layouts > Clone: WooCommerce Templates`.
+* Developer: Registered Parallax as a common script.
+
+[View full changelog.](/wp-content/plugins/siteorigin-premium/changelog.txt)

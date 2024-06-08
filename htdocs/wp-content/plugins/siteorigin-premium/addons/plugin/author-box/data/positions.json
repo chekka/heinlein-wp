@@ -43,7 +43,7 @@
 		"values": {
 			"settings": {
 				"social_media_buttons_widget": {
-					"margin_around": "0px 5px 10px 0px",
+					"margin_around": "0px 0px 0px 5px",
 					"design": {
 						"align": "left"
 					}
@@ -70,7 +70,7 @@
 		"values": {
 			"settings": {
 				"social_media_buttons_widget": {
-					"margin_around": "0px 0px 12px 0px",
+					"margin_around": "15px 0px 0px 0px",
 					"design": {
 						"align": "left"
 					}

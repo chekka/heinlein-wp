@@ -3,22 +3,34 @@
 var sowb = window.sowb || {};
 
 jQuery( function( $ ) {
+	const $slidersWithAnchor = $( '.sow-slider-images[data-anchor-id]' );
+
 	// Set the initial slide.
-	$( '.sow-slider-images[data-anchor-id]' ).on( 'slider_setup_after cycle-initialized', function() {
-		const anchorId = $( this ).data( 'anchor-id' );
+	const SliderScrollOnInit = function() {
+		const $slider = $( this );
+		const anchorId = $slider.data( 'anchor-id' );
 		setTimeout( async function() {
 			const slide = await soPremium.anchorIds().getAnchor( anchorId );
 			if ( slide ) {
-				$( this ).cycle( 'goto', slide );
+				$slider.cycle( 'goto', slide );
 			}
+		}, 100 );
+	}
+
+	// Handle external hash changes.
+	$slidersWithAnchor.on( 'anchor_id_hash_change', function( event, slide ) {
+		setTimeout( function() {
+			$( this ).cycle( 'goto', slide );
 		}, 100 );
 	} );
 
-	// Update the anchor when the slide changes.
-	$( '.sow-slider-images[data-anchor-id]' ).each( function() {
+	$slidersWithAnchor.each( function() {
 		let $$ = $( this );
 		let anchor = $$.data( 'anchor-id' );
 
+		$$.on( 'cycle-post-initialize', SliderScrollOnInit );
+
+		// Update the anchor when the slide changes.
 		$$.on( 'cycle-after', function( event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag ) {
 			soPremium.anchorIds().update( anchor, optionHash.nextSlide );
 		} );

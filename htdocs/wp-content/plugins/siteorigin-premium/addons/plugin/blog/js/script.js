@@ -221,12 +221,6 @@ jQuery( function( $ ) {
 			const duration = parseFloat( settings.animation.duration );
 
 			setTimeout( function () {
-				const onScreen = new OnScreen( {
-					tolerance: parseInt( settings.animation.offset ),
-					// Using 0 for debounce causes it to default to 100ms. :/
-					debounce: settings.animation.debounce * 1000 || 1,
-				} );
-
 				const delay = parseFloat( settings.animation.delay );
 				const doAnimation = function ( itemClass, settings ) {
 					const $this = $( itemClass );
@@ -264,8 +258,16 @@ jQuery( function( $ ) {
 
 					const itemClass = 'so-animate-' + $item.index() + ( 0 | Math.random() * 9e6 ).toString( 36 );
 					$item.addClass( itemClass );
-					setTimeout( function() {
-						onScreen.on( 'enter', '.' + itemClass, function( element ) {
+
+					const element = document.querySelector( '.' + itemClass );
+					const elementHeight = element.offsetHeight;
+					let offset = parseInt( settings.animation.offset );
+					if ( isNaN( offset ) ) {
+						offset = 0;
+					}
+
+					const observer = new IntersectionObserver( function( item ) {
+						if ( item[0].isIntersecting ) {
 							if ( ! isNaN( delay ) && delay > 0 ) {
 								setTimeout( function() {
 									doAnimation( '.' + itemClass, settings );
@@ -273,9 +275,12 @@ jQuery( function( $ ) {
 							} else {
 								doAnimation( '.' + itemClass, settings );
 							}
-							onScreen.off( 'enter', '.' + itemClass );
-						} );
-					}, 1000 );
+							observer.unobserve( element );
+						}
+					}, {
+						threshold: offset / elementHeight,
+					} );
+					observer.observe( element );
 				} );
 			}, 150 );
 		},

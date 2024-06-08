@@ -44,11 +44,15 @@
 .sow-post-carousel-theme-overlay .sow-carousel-items .slick-track .sow-carousel-item .sow-carousel-item-title {
   margin: 0;
 }
+.sow-post-carousel-theme-overlay .sow-carousel-items .slick-track .sow-carousel-item .sow-entry-categories {
+  display: block;
+  margin-bottom: 12px;
+}
 .sow-post-carousel-theme-overlay .sow-carousel-items .slick-track .sow-carousel-item .sow-entry-categories a {
   display: inline-block;
   font-size: 12px;
   line-height: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   padding: 4px 8px;
   position: relative;
   text-decoration: none;

@@ -194,6 +194,12 @@ class SiteOrigin_Premium_Updater {
 			return $update;
 		}
 
+		// Check if this plugin is set to automatically update.
+		$auto_updates = (array) get_site_option( 'auto_update_plugins', array() );
+		if ( ! in_array( $this->name, $auto_updates ) ) {
+			return $update;
+		}
+
 		// Check if we already know about an update.
 		$version_info = $this->get_cached_version_info();
 		if (

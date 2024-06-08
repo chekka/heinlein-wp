@@ -1,5 +1,29 @@
 == Changelog ==
 
+= 1.62.0 - 19 May 2024 =
+* New Addon! Enhance contact form security with the Cloudflare Turnstile Addon, a user-friendly CAPTCHA alternative that helps prevent spam while maintaining seamless user interaction.
+* Anchor ID: Fixed ID detection.
+* Author Box: Minor spacing and layout improvements.
+* Post Carousel: Added title tag to the link overlay.
+* Social Media Buttons: Added a fallback if Network Name field is empty.
+* Toggle Visibility: Resolved potential PHP warning.
+* WooCommerce Template Builder: Removed Shop Product Loop widget from Product Archive tab.
+* Increased required PHP version to PHP 7.
+
+= 1.61.1 - 17 April 2024 =
+* Anchor ID Addon: Refactored and centralized management, improving widget coordination and simplifying future maintenance.
+* Improved plugin update checker reliability and efficiency by refactoring version information handling.
+
+= 1.61.0 - 12 April 2024 =
+* New Addon! Introducing the Author Box Addon. Automatically append author boxes to posts, featuring social links, recent articles, and bios to create engaging author presentations across multiple post types.
+* WooCommerce Template Builder: Resolved undefined array key "status" warning.
+* Post Carousel: Resolved an issue importing layouts with empty theme data.
+* Toggle Visibility: Accounted for a potential migration issue for legacy rows.
+* Improvements to automatic updates.
+* Improvements to data sanitization.
+* Updated SiteOrigin Installer.
+* Embed Blocker: Added multi-measurement padding.
+
 = 1.60.0 - 07 March 2024 =
 * New Addon! Introducing the Embed Blocker Addon. Effortlessly make your website GDPR and DSGVO compliant by controlling embeds from platforms like YouTube, Vimeo, Twitter, Instagram, Facebook, Google Maps, Reddit, Soundcloud, Spotify, and TikTok until user consent is given.
 * Carousel: Resolved `BuilderType` warning.
@@ -54,7 +78,7 @@ optionally redirect users when a page is hidden. Hide/Show available with date s
 * Video Background: Added support for rounding in video backgrounds.
 * Various code formatting improvements for better readability and consistency.
 
-= 1.55.0 - 05 January 2023 =
+= 1.55.0 - 05 January 2024 =
 * Blog: Optimized supporting JavaScript assets.
 * Parallax Sliders: Ensured scripts only loaded when needed.
 * WooCommerce Template Builder: Added Genesis, Genesis Connect, and Block Editor compatibility.

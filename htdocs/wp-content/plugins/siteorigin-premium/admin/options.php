@@ -429,7 +429,7 @@ class SiteOrigin_Premium_Options {
 			exit();
 		}
 
-		$addon_id = empty( $_GET['id'] ) ? false : $_GET['id'];
+		$addon_id = empty( $_GET['id'] ) ? false : sanitize_text_field( $_GET['id'] );
 
 		if ( ! SiteOrigin_Premium::single()->is_addon_active( $addon_id ) ) {
 			exit();

@@ -25,6 +25,7 @@ while ( $settings['posts']->have_posts() ) {
 			tabindex="-1"
 			aria-labelledby="sow-carousel-id-<?php echo the_ID(); ?>"
 			class="sow-carousel-overlay"
+			title="<?php echo esc_attr( get_the_title() ); ?>"
 		>
 			&nbsp;
 		</a>

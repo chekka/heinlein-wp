@@ -325,10 +325,6 @@ class SiteOrigin_Premium_Plugin_Image_Overlay {
 			wp_enqueue_style( 'so-premium-image-overlay' );
 
 			$overlay_settings = $this->get_overlay_settings();
-
-			if ( ! empty( $overlay_settings['overlay_animation_onscreen'] ) ) {
-				wp_enqueue_script( 'on-screen' );
-			}
 		}
 	}
 

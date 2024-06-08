@@ -130,17 +130,29 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 		if ( ! class_exists( 'SiteOrigin_Widgets_Bundle' ) ) {
 			return;
 		}
-
 		$doing_widget_form_ajax = wp_doing_ajax() &&
 		! empty( $_REQUEST['action'] ) &&
 		$_REQUEST['action'] == 'so_panels_widget_form';
 
-		if ( is_admin() && ! self::is_siteorigin_premium_wc_template_builder() && !$doing_widget_form_ajax ) {
+		if ( is_admin() && ! self::is_siteorigin_premium_wc_template_builder() && ! $doing_widget_form_ajax ) {
 			return;
 		}
 
 		if ( ! function_exists( 'list_files' ) ) {
 			require_once ABSPATH . 'wp-admin/includes/file.php';
+		}
+
+		// Clear PB widgets cache.
+		delete_transient( 'siteorigin_panels_widget_dialog_tabs' );
+		delete_transient( 'siteorigin_panels_widgets' );
+
+    // If this is the Product archive tab, we need to remove the Shop Product Loop.
+		if (
+			self::is_siteorigin_premium_wc_template_builder() &&
+			isset( $_GET['tab'] ) &&
+			$_GET['tab'] === 'content-product'
+		) {
+			$remove_shop = true;
 		}
 
 		if ( WP_Filesystem() ) {
@@ -163,6 +175,13 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 
 				foreach ( $template_files as $template_file ) {
 					$filename_parts = pathinfo( $template_file );
+
+					if (
+						isset( $remove_shop ) &&
+						$filename_parts['filename'] === 'wc-shop-product-loop'
+					) {
+						continue;
+					}
 
 					if ( $filename_parts['extension'] == 'php' ) {
 						require_once $template_file;

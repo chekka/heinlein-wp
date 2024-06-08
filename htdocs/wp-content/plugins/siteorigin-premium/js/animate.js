@@ -5,13 +5,71 @@
 window.SiteOriginPremium = window.SiteOriginPremium || {};
 
 SiteOriginPremium.setupAnimations = function ( $ ) {
-	
-	var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-	
+
+	const animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+
+	const animationWatcher = function( animation, threshold = 0 ) {
+		const element = document.querySelector( animation.selector );
+		const elementHeight = animation.$el.outerHeight();
+		const offset = parseInt( threshold );
+
+		var observer = new IntersectionObserver( function( item ) {
+			if ( item[0].isIntersecting ) {
+				animateIn( animation, false );
+				observer.unobserve( element );
+			}
+		}, {
+			threshold: elementHeight !== 0 ? offset / elementHeight : 0
+		} );
+		observer.observe( element );
+	}
+
+	const animateIn = function ( animation, repeat ) {
+		if ( animation.disableAnimationMobile && window.matchMedia( '(max-width: ' + animation.breakpoint + ')' ).matches ) {
+			if ( animation.hide ) {
+				animation.$el.css( 'opacity', 1 );
+			}
+			animation.$el.addClass( 'animate__animated' );
+			return;
+		}
+
+		var doAnimation = function () {
+			if ( animation.hide ) {
+				animation.$el.css( 'opacity', 1 );
+			}
+
+			if ( repeat ) {
+				animation.$el
+				.removeClass( 'animate__animated animate__' + animation.animation )
+				.addClass( 'animate__animated animate__' + animation.animation );
+			} else {
+				animation.$el.addClass( 'animate__animated animate__' + animation.animation );
+			}
+			animation.$el.one( animationEnd, function () {
+				animation.$el.removeClass( 'animate__animated animate__' + animation.animation );
+				if ( animation.finalState === 'hidden' ) {
+					animation.$el.css( 'opacity', 0 );
+				} else if ( animation.finalState === 'removed' ) {
+					animation.$el.css( 'display', 'none' );
+				}
+			} )
+		};
+
+		var delay = parseFloat( animation.delay );
+		if ( !isNaN( delay ) && delay > 0 ) {
+			setTimeout( function () {
+				doAnimation();
+			}, delay * 1000 );
+		} else {
+			doAnimation();
+		}
+	};
+
 	$( '[data-so-animation]' ).each( function () {
 		var $$ = $( this );
 		var animation = $$.data( 'so-animation' );
-		
+		animation.$el = $$;
+
 		// Set the animation duration
 		var duration = parseFloat( animation.duration );
 		if ( !isNaN( duration ) ) {
@@ -20,85 +78,31 @@ SiteOriginPremium.setupAnimations = function ( $ ) {
 				'animation-duration': duration + 's',
 			} );
 		}
-		
-		var animateIn = function ( repeat ) {
-			if ( animation.disableAnimationMobile && window.matchMedia( '(max-width: ' + animation.breakpoint + ')' ).matches ) {
-				if ( animation.hide ) {
-					$$.css( 'opacity', 1 );
-				}
-				$$.addClass( 'animate__animated' );
-				return;
-			}
 
-			var doAnimation = function () {
-				if ( animation.hide ) {
-					$$.css( 'opacity', 1 );
-				}
-				
-				if ( repeat ) {
-					$$
-					.removeClass( 'animate__animated animate__' + animation.animation )
-					.addClass( 'animate__animated animate__' + animation.animation );
-				} else {
-					$$.addClass( 'animate__animated animate__' + animation.animation );
-				}
-				$$.one( animationEnd, function () {
-					$$.removeClass( 'animate__animated animate__' + animation.animation );
-					if ( animation.finalState === 'hidden' ) {
-						$$.css( 'opacity', 0 );
-					} else if ( animation.finalState === 'removed' ) {
-						$$.css( 'display', 'none' );
-					}
-				} )
-			};
-			
-			var delay = parseFloat( animation.delay );
-			if ( !isNaN( delay ) && delay > 0 ) {
-				setTimeout( function () {
-					doAnimation();
-				}, delay * 1000 );
-			} else {
-				doAnimation();
-			}
-		};
-		
 		// Using 0 for debounce causes it to default to 100ms. :/
 		var debounce = animation.debounce * 1000 || 1;
 		// Only perform animation once for now. Will add option to repeat later.
 		if ( animation.animation ) {
 			switch ( animation.event ) {
 				case 'enter':
-					// We need a timeout to make sure the page is setup properly
-					setTimeout( function () {
-						var onScreen = new OnScreen( {
-							tolerance: parseInt( animation.offset ),
-							debounce: debounce,
-						} );
-						onScreen.on( 'enter', animation.selector, function () {
-							animateIn( false );
-							onScreen.off( 'enter', animation.selector );
-						} );
-					}, 150 );
+					animationWatcher(
+						animation,
+						animation.offset
+					);
 					break;
-				
+
 				case 'in':
-					setTimeout( function () {
-						var onScreen = new OnScreen( {
-							tolerance: parseInt( animation.offset ) + $$.outerHeight(),
-							debounce: debounce,
-						} );
-						onScreen.on( 'enter', animation.selector, function () {
-							animateIn( false );
-							onScreen.off( 'enter', animation.selector );
-						} );
-					}, 150 );
+					animationWatcher(
+						animation,
+						parseInt( animation.offset ) + $$.outerHeight()
+					);
 					break;
-				
+
 				case 'hover':
-					
+
 					if ( animation.repeat ) {
 						$$.on( 'mouseenter', function () {
-							animateIn( true );
+							animateIn( animation, true );
 							$$.addClass( 'animate__infinite' )
 						} )
 						.on( 'mouseleave', function () {
@@ -106,21 +110,21 @@ SiteOriginPremium.setupAnimations = function ( $ ) {
 						} );
 					} else {
 						$$.on( 'mouseenter', function () {
-							animateIn( true );
+							animateIn( animation, true );
 						} );
 					}
 					break;
-				
+
 				case 'slide_display':
 					var $slide = $$.closest( '.sow-slider-image' );
 
 					if ( $slide.hasClass( 'cycle-slide' ) && $slide.index() === 0 ) {
 						// Slider has already been initialized, trigger the animation.
-						animateIn( true );
+						animateIn( animation, true );
 					}
 
 					$slide.on( 'sowSlideCycleAfter sowSlideInitial', function ( e ) {
-						animateIn( true );
+						animateIn( animation, true );
 					} );
 
 					// Don't hide animation if slide has slide out animation
@@ -131,9 +135,9 @@ SiteOriginPremium.setupAnimations = function ( $ ) {
 					}
 
 					break;
-				
+
 				case 'load':
-					animateIn( false );
+					animateIn( animation, false );
 					break;
 			}
 		}
@@ -166,7 +170,7 @@ SiteOriginPremium.setupAnimations = function ( $ ) {
 
 jQuery( function ( $ ) {
 	SiteOriginPremium.setupAnimations( $ );
-	
+
 	if ( window.sowb ) {
 		$( window.sowb ).on( 'setup_widgets', function ( event, data ) {
 			if ( data && data.preview ) {
@@ -175,4 +179,3 @@ jQuery( function ( $ ) {
 		} );
 	}
 } );
-

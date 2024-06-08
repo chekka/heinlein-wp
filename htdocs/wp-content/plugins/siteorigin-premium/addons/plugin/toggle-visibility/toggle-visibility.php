@@ -422,7 +422,7 @@ class SiteOrigin_Premium_Plugin_Toggle_Visibility {
 			}
 		} elseif ( current_filter() == 'siteorigin_panels_output_widget' ) {
 			if (
-				! empty( $data['panels_info'] ) ||
+				! empty( $data['panels_info'] ) &&
 				! empty( $data['panels_info']['style'] )
 			) {
 				if (
@@ -721,6 +721,13 @@ class SiteOrigin_Premium_Plugin_Toggle_Visibility {
 					$this->premiumMeta
 				);
 			}
+
+			// Now that we've generated the block message, allow developers to modify it.
+			$content = apply_filters(
+				'siteorigin_premium_toggle_visibility_metabox_block_message',
+				$content,
+				$this->premiumMeta
+			);
 		}
 
 		return $content;

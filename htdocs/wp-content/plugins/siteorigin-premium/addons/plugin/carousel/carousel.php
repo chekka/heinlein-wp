@@ -75,6 +75,7 @@ class SiteOrigin_Premium_Plugin_Carousel {
 		// Reset Row Layout.
 		if (
 			! empty( $args ) &&
+			! empty( $args['builderType'] ) &&
 			$args['builderType'] === 'anything_carousel_panel_builder' &&
 			! empty( $styles['row_stretch'] )
 		) {

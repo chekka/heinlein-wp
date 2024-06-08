@@ -27,8 +27,54 @@ class Change_Login_URL {
         // If URL contains the custom login slug, redirect to the dashboard
         if ( false !== strpos( $url_input, '/' . $custom_login_slug . '/' ) ) {
             if ( is_user_logged_in() ) {
-                // Redirect to dashboard
-                wp_safe_redirect( get_admin_url() );
+                if ( array_key_exists( 'redirect_after_login', $options ) && $options['redirect_after_login'] ) {
+                    if ( array_key_exists( 'redirect_after_login_for', $options ) && !empty( $options['redirect_after_login_for'] ) ) {
+                        // An almost exact replica of redirect_after_login() in class-redirect-after-login.php
+                        $redirect_after_login_to_slug_raw = ( isset( $options['redirect_after_login_to_slug'] ) ? $options['redirect_after_login_to_slug'] : '' );
+                        if ( !empty( $redirect_after_login_to_slug_raw ) ) {
+                            $redirect_after_login_to_slug = trim( trim( $redirect_after_login_to_slug_raw ), '/' );
+                            if ( false !== strpos( $redirect_after_login_to_slug, '.php' ) ) {
+                                $slug_suffix = '';
+                            } else {
+                                $slug_suffix = '/';
+                            }
+                            $relative_path = $redirect_after_login_to_slug . $slug_suffix;
+                        } else {
+                            $relative_path = '';
+                        }
+                        $redirect_after_login_for = $options['redirect_after_login_for'];
+                        if ( isset( $redirect_after_login_for ) && count( $redirect_after_login_for ) > 0 ) {
+                            // Assemble single-dimensional array of roles for which custom URL redirection should happen
+                            $roles_for_custom_redirect = array();
+                            foreach ( $redirect_after_login_for as $role_slug => $custom_redirect ) {
+                                if ( $custom_redirect ) {
+                                    $roles_for_custom_redirect[] = $role_slug;
+                                }
+                            }
+                            // Does the user have roles data in array form?
+                            $user = wp_get_current_user();
+                            if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+                                $current_user_roles = $user->roles;
+                            }
+                            // Set custom redirect URL for roles set in the settings. Otherwise, leave redirect URL to the default, i.e. admin dashboard.
+                            foreach ( $current_user_roles as $role ) {
+                                if ( in_array( $role, $roles_for_custom_redirect ) ) {
+                                    wp_safe_redirect( home_url( $relative_path ) );
+                                    exit;
+                                } else {
+                                    // Redirect to dashboard
+                                    wp_safe_redirect( get_admin_url() );
+                                }
+                            }
+                        }
+                    } else {
+                        // Redirect to dashboard
+                        wp_safe_redirect( get_admin_url() );
+                    }
+                } else {
+                    // Redirect to dashboard
+                    wp_safe_redirect( get_admin_url() );
+                }
             } else {
                 // Redirect to the login URL with custom login slug in the query parameters
                 wp_safe_redirect( site_url( '/wp-login.php?' . $custom_login_slug . '&redirect=false' ) );
@@ -42,10 +88,17 @@ class Change_Login_URL {
      * 
      * @since 5.8.0
      */
-    public function customize_login_url( $lostpassword_url ) {
+    public function customize_login_url( $login_url, $redirect, $force_reauth ) {
         $options = get_option( ASENHA_SLUG_U );
         $custom_login_slug = $options['custom_login_slug'];
-        return home_url( '/' . $custom_login_slug . '/' );
+        $login_url = home_url( '/' . $custom_login_slug . '/' );
+        if ( !empty( $redirect ) ) {
+            $login_url = add_query_arg( 'redirect_to', urlencode( $redirect ), $login_url );
+        }
+        if ( $force_reauth ) {
+            $login_url = add_query_arg( 'reauth', '1', $login_url );
+        }
+        return $login_url;
     }
 
     /**
@@ -81,32 +134,71 @@ class Change_Login_URL {
      */
     public function redirect_on_default_login_urls() {
         global $interim_login;
+
+        if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+            return;
+        }
+
+        if ( defined( 'DOING_CRON' ) && DOING_CRON ) {
+            return;
+        }
+
         $options = get_option( ASENHA_SLUG_U );
-        $custom_login_slug = $options['custom_login_slug'];
-        // e.g. manage
+        $custom_login_slug = $options['custom_login_slug']; // e.g. manage
         $url_input = sanitize_text_field( $_SERVER['REQUEST_URI'] );
+        $url_input_parts = explode( '/', $url_input );
+
         $redirect_slug = 'not_found';
-        // When logging in
-        if ( isset( $_POST['log'] ) && isset( $_POST['pwd'] ) || isset( $_POST['post_password'] ) || is_user_logged_in() ) {
+
+        // When logging-in
+        if ( ( isset( $_POST['log'] ) && isset( $_POST['pwd'] ) ) 
+            || ( isset( $_POST['post_password'] ) )
+        ) {
             // Do nothing. i.e. do not redirect to /not_found/ as this contains a login POST request
-            // or the user is already logged in
             // upon successful login, redirection to logged-in view of /wp-admin/ happens.
             // Without this condition, login attempt will redirect to /not_found/
-        } else {
-            // When landing on the login page
-            // At this point /admin, /wp-admin/, /login redirects to /wp-login.php
-            if ( false !== strpos( $url_input, 'wp-login' ) ) {
-                if ( isset( $_GET['action'] ) && ('logout' == $_GET['action'] || 'rp' == $_GET['action'] || 'resetpass' == $_GET['action']) || isset( $_GET['checkemail'] ) && ('confirm' == $_GET['checkemail'] || 'registered' == $_GET['checkemail']) || isset( $_GET['interim-login'] ) && '1' == $_GET['interim-login'] || 'success' == $interim_login ) {
+        } elseif ( is_user_logged_in() ) {
+            // Do nothing user is already logged-in
+
+            // Redirect to /wp-admin/ (Dashboard) when accessing /wp-login.php without any $_POST data
+            if ( isset( $url_input_parts[1] ) && 'wp-login.php' == $url_input_parts[1] && empty( $_POST ) ) {
+                wp_safe_redirect( admin_url(), 302 );
+                exit();
+            } 
+        } elseif ( ! is_user_logged_in() ) {
+            // Check if request URL ends in /admin/, /wp-admin/, /login/ or /wp-login/
+            if ( isset( $url_input_parts[1] )
+                && in_array( $url_input_parts[1], array( 'admin', 'wp-admin', 'login', 'wp-login', 'wp-login.php' ) )
+                && ( ! isset( $url_input_parts[2] ) || ( isset( $url_input_parts[2] ) && empty( $url_input_parts[2] ) ) )
+            ) {
+                // Redirect to /not_found/ or custom redirect slug
+                wp_safe_redirect( home_url( $redirect_slug . '/' ), 302 );
+                exit();
+            } elseif ( false !== strpos( $url_input, 'wp-login.php' ) ) {
+
+                if ( ( isset( $_GET['action'] ) 
+                        && ( 'logout' == $_GET['action'] 
+                            || 'rp' == $_GET['action'] 
+                            || 'resetpass' == $_GET['action'] ) ) 
+                    || ( isset( $_GET['checkemail'] ) && ( 'confirm' == $_GET['checkemail'] || 'registered' == $_GET['checkemail'] ) ) 
+                    || ( isset( $_GET['interim-login'] ) && '1' == $_GET['interim-login'] ) 
+                    || 'success' == $interim_login
+                    || ( isset( $_GET['redirect_to'] ) && isset( $_GET['reauth'] ) && ( false !== strpos( $url_input, 'comment' ) ) )
+                ) {
+
                     // When we're logging out, inside the reset password flow, inside the registration flow or within the interim login flow
                     // e.g. https://www.example.com/wp-login.php?action=logout&_wpnonce=49bb818269
                     // e.g. https://www.example.com/wp-login.php?action=rp --> reset password
                     // e.g. https://www.example.com/wp-login.php?action=resetpass --> reset password
                     // e.g. https://www.example.com/wp-login.php?checkmail=confirm --> reset password
                     // e.g. https://www.example.com/wp-login.php?checkmail=registered --> register account
-                    // e.g. https://www.example.com/wp-login.php?interim-login=1&wp_lang=en_US
+                    // e.g. https://www.example.com/wp-login.php?interim-login=1&wp_lang=en_US  
+                    // e.g. https://www.example.com/wp-admin/comment.php?action=approve&c=14#wpbody-content --> https://www.example.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.example.com%2Fwp-admin%2Fcomment.php%3Faction%3Dapprove%26c%3D14&reauth=1#wpbody-content --> comment approve
                     // Do nothing.. proceed...
-                } elseif ( isset( $_GET['action'] ) && ('lostpassword' == $_GET['action'] || 'register' == $_GET['action']) ) {
+
+                } elseif ( isset( $_GET['action'] ) && ( 'lostpassword' == $_GET['action'] || 'register' == $_GET['action'] ) ) {
                     // When resetting password or registering an account
+
                     if ( isset( $_POST['user_login'] ) ) {
                         // Sending the form to reset password or register an account...
                         // Do nothing.. proceed with password reset or account registration
@@ -116,27 +208,28 @@ class Change_Login_URL {
                         if ( false === strpos( $url_input, $custom_login_slug ) ) {
                             // Redirect to /not_found/
                             wp_safe_redirect( home_url( $redirect_slug . '/' ), 302 );
-                            exit;
-                        }
+                            exit();
+                        } 
+
                         // or, custom login slug is in the url
                         // e.g. https://www.example.com/wp-login.php?action=lostpassword&customloginslug
                         // e.g. https://www.example.com/wp-login.php?action=register&customloginslug
                         // Do nothing... allow reset password or registration
                     }
-                } else {
-                    // When landing on the login form
+                } elseif ( false === strpos( $url_input, $custom_login_slug ) ) {
+                    // When landing on the login form /wp-login.php
                     // ...and custom login slug is not in the URL
-                    if ( false === strpos( $url_input, $custom_login_slug ) ) {
-                        // Redirect to /not_found/
-                        wp_safe_redirect( home_url( $redirect_slug . '/' ), 302 );
-                        exit;
-                    }
-                    // ...or, custom login slug is in the URL
+                    // Redirect to /not_found/
+                    wp_safe_redirect( home_url( $redirect_slug . '/' ), 302 );
+                    exit();
+                } elseif ( false !== strpos( $url_input, $custom_login_slug ) ) {
+                    // When landing on the login form /wp-login.php
+                    // ...and custom login slug is in the URL
                     // e.g. https://www.example.com/wp-login.php?customloginslug&redirect=false
-                    // Do nothing... allow login
-                }
-            }
-        }
+                    // Do nothing. Do not redirect. Allow login.
+                } else {}
+            } else {}
+        } else {}
     }
 
     /**

@@ -189,7 +189,10 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 		$positions = json_decode( file_get_contents( plugin_dir_path( __FILE__ ) . 'data/positions.json' ), true );
 
 		// Is this the global settings form?
-		if ( ! empty( $_GET['action'] ) && $_GET['action'] == 'so_premium_addon_settings_form' ) {
+		if (
+			! empty( $_GET['action'] ) &&
+			$_GET['action'] == 'so_premium_addon_settings_form'
+		) {
 			$form_fields['networks']['fields']['url']['description'] = __( 'The URL is used as a prefix for the authors username.', 'siteorigin-premium' );
 
 			// Form structure is different for the global settings form so
@@ -279,6 +282,10 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 	}
 
 	private function get_networks_from_array( $array = array(), & $networks = array() ) {
+		if ( empty( $array ) || ! is_array( $array ) ) {
+			return array();
+		}
+
 		foreach ( $array as $network ) {
 			// We use the name as an id so it must be set.
 			if ( empty( $network['name'] ) ) {
@@ -373,28 +380,24 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 			case 'avatar_above':
 				$hook = 'siteorigin_widgets_author_box_avatar_above';
 				break;
-
 			case 'avatar_below':
 				$hook = 'siteorigin_widgets_author_box_avatar_below';
 				break;
 			case 'author_above':
 				$hook = 'siteorigin_widgets_author_box_description_above';
 				break;
-			case 'title_inline':
+			case 'author_inline':
 				$hook = 'siteorigin_widgets_author_box_description_inline';
 				break;
-
 			case 'bio_before':
 				$hook = 'siteorigin_widgets_author_box_description_bio_before';
 				break;
 			case 'bio_after':
 				$hook = 'siteorigin_widgets_author_box_description_bio_after';
 				break;
-
 			case 'recent_posts':
 				$hook = 'siteorigin_widgets_author_box_description_below';
 				break;
-
 			default:
 				$hook = 'siteorigin_widgets_author_box_avatar_above';
 				break;

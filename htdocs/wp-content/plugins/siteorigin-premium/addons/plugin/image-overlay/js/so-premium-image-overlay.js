@@ -15,12 +15,6 @@ SiteOriginPremium.ImageOverlay = function( image, options, index ) {
 			this.addEventListeners();
 		}
 
-		if ( typeof OnScreen == 'function' ) {
-			this.onScreen = new OnScreen( {
-				debounce: 0,
-			} );
-		}
-
 		setTimeout( this.layoutChildren.bind( this ), 150 );
 	};
 
@@ -170,7 +164,7 @@ SiteOriginPremium.ImageOverlay = function( image, options, index ) {
 		this.overlayText.css( overlayTextCss );
 
 		// If the current device is always set to show, and not animate onscren, always display it.
-		if ( 
+		if (
 			! this.options.overlay_animation_onscreen &&
 			(
 				( this.isDesktop && this.options.desktop_show_trigger === 'always' ) ||
@@ -224,12 +218,21 @@ SiteOriginPremium.ImageOverlay = function( image, options, index ) {
 					( ! this.isDesktop && this.options.touch_show_trigger === 'always' )
 				)
 			) {
-				setTimeout( function() {
-					this.onScreen.on( 'enter', '.so-premium-' + options.widget_id, function() {
+				const element = document.querySelector( `.so-premium-${ options.widget_id }` );
+				var observer = new IntersectionObserver( function( item ) {
+					if ( ! item ) {
+						return;
+					}
+
+					if ( item[0].isIntersecting ) {
 						this.toggleOverlay();
-						this.onScreen.off( 'enter', '.so-premium-' + options.widget_id );
-					}.bind( this ) );
-				}.bind( this ), 150 );
+						observer.unobserve( element );
+					}
+				},
+				{
+					threshold: 0.25,
+				} );
+				observer.observe( element );
 			}
 		}
 
@@ -392,7 +395,7 @@ SiteOriginPremium.ImageOverlay = function( image, options, index ) {
 			this.overlay.css( 'opacity', newOpacity);
 		}
 	};
-	
+
 	if ( image.complete ) {
 		this.init();
 	} else {
@@ -413,7 +416,7 @@ SiteOriginPremium.createImageOverlays = function( $ ) {
 			return;
 		}
 		var settings = $wrapper.data( 'overlay-settings' );
-		
+
 		$( element ).find( 'img' )
 		.each( function( index, image ) {
 			if ( image.title ) {
@@ -432,7 +435,7 @@ SiteOriginPremium.createImageOverlays = function( $ ) {
 
 jQuery( function( $ ){
 	SiteOriginPremium.createImageOverlays( $ );
-	
+
 	if ( window.sowb ) {
 		$( window.sowb ).on( 'setup_widgets', function() {
 			SiteOriginPremium.createImageOverlays( $ );

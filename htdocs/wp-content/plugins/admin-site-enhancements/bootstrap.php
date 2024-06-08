@@ -30,7 +30,7 @@ class Admin_Site_Enhancements {
      * Initialize plugin functionalities
      */
     private function __construct() {
-        global $pagenow, $typenow;
+        global $wp_post_types, $pagenow, $typenow;
         // Setup admin menu, admin page, settings, settings sections, sections fields, admin scripts, plugin action links, etc.
         // Register admin menu and add the settings page.
         add_action( 'admin_menu', 'asenha_register_admin_menu' );
@@ -97,7 +97,8 @@ class Admin_Site_Enhancements {
                 $content_order = new ASENHA\Classes\Content_Order();
                 add_action( 'admin_menu', [$content_order, 'add_content_order_submenu'] );
                 add_action( 'wp_ajax_save_custom_order', [$content_order, 'save_custom_content_order'] );
-                add_filter( 'pre_get_posts', [$content_order, 'orderby_menu_order'] );
+                add_filter( 'pre_get_posts', [$content_order, 'orderby_menu_order'], PHP_INT_MAX );
+                // TODO: https://developer.wordpress.org/reference/hooks/ajax_query_attachments_args/ (for grid view of media library)
                 add_filter(
                     'save_post',
                     [$content_order, 'set_menu_order_for_new_posts'],
@@ -186,6 +187,31 @@ class Admin_Site_Enhancements {
             add_action( 'wp_ajax_svg_get_attachment_url', [$svg_upload, 'get_svg_attachment_url'] );
             add_filter( 'wp_prepare_attachment_for_js', [$svg_upload, 'get_svg_url_in_media_library'] );
         }
+        // AVIF Upload
+        if ( array_key_exists( 'enable_avif_upload', $options ) && $options['enable_avif_upload'] ) {
+            $avif_upload = new ASENHA\Classes\AVIF_Upload();
+            add_filter( 'mime_types', [$avif_upload, 'add_avif_mime_type'] );
+            add_filter( 'upload_mimes', [$avif_upload, 'allow_avif_mime_type_upload'] );
+            add_filter( 'getimagesize_mimes_to_exts', [$avif_upload, 'add_avif_mime_type_to_exts'] );
+            add_filter(
+                'wp_generate_attachment_metadata',
+                [$avif_upload, 'add_avif_image_dimension'],
+                10,
+                3
+            );
+            add_filter(
+                'file_is_displayable_image',
+                [$avif_upload, 'make_avif_displayable'],
+                10,
+                2
+            );
+            add_filter(
+                'wp_check_filetype_and_ext',
+                [$avif_upload, 'handle_exif_and_fileinfo_fail'],
+                10,
+                5
+            );
+        }
         // External Permalinks
         if ( array_key_exists( 'enable_external_permalinks', $options ) && $options['enable_external_permalinks'] ) {
             if ( array_key_exists( 'enable_external_permalinks_for', $options ) && !empty( $options['enable_external_permalinks_for'] ) ) {
@@ -268,7 +294,7 @@ class Admin_Site_Enhancements {
         // Hide Admin Notices
         if ( array_key_exists( 'hide_admin_notices', $options ) && $options['hide_admin_notices'] ) {
             $hide_admin_notices = new ASENHA\Classes\Hide_Admin_Notices();
-            add_action( 'admin_notices', [$hide_admin_notices, 'admin_notices_wrapper'], 9 );
+            add_action( 'admin_footer', [$hide_admin_notices, 'admin_notices_wrapper'], 9 );
             // add_action( 'all_admin_notices', [ $hide_admin_notices, 'admin_notices_wrapper' ] );
             add_action( 'admin_bar_menu', [$hide_admin_notices, 'admin_notices_menu'] );
             add_action( 'admin_print_styles', [$hide_admin_notices, 'admin_notices_menu_inline_css'] );
@@ -298,7 +324,7 @@ class Admin_Site_Enhancements {
             // add_action( 'wp_ajax_save_custom_menu_order', [ $admin_menu_organizer, 'save_custom_menu_order' ] );
             // add_action( 'wp_ajax_save_hidden_menu_items', [ $admin_menu_organizer, 'save_hidden_menu_items' ] );
             if ( array_key_exists( 'custom_menu_order', $options ) ) {
-                add_filter( 'custom_menu_order', '__return_true' );
+                add_filter( 'custom_menu_order', '__return_true', PHP_INT_MAX );
                 add_filter( 'menu_order', [$admin_menu_organizer, 'render_custom_menu_order'], PHP_INT_MAX );
             }
             if ( array_key_exists( 'custom_menu_titles', $options ) ) {
@@ -309,14 +335,9 @@ class Admin_Site_Enhancements {
                     if ( false !== strpos( $custom_menu_title, 'menu-posts__' ) ) {
                         $custom_menu_title = explode( '__', $custom_menu_title );
                         $posts_custom_title = $custom_menu_title[1];
-                        $post_object = get_post_type_object( 'post' );
-                        // object
-                        if ( property_exists( $post_object, 'label' ) ) {
-                            $posts_default_title = $post_object->label;
-                        } else {
-                            $posts_default_title = $post_object->labels->name;
-                        }
+                        $posts_default_title = $wp_post_types['post']->label;
                         if ( $posts_default_title != $posts_custom_title ) {
+                            add_filter( 'post_type_labels_post', [$admin_menu_organizer, 'change_post_labels'] );
                             add_action( 'init', [$admin_menu_organizer, 'change_post_object_label'] );
                             add_action( 'admin_menu', [$admin_menu_organizer, 'change_post_menu_label'], PHP_INT_MAX );
                             add_action( 'admin_bar_menu', [$admin_menu_organizer, 'change_wp_admin_bar'], 80 );
@@ -374,10 +395,13 @@ class Admin_Site_Enhancements {
                 add_action( 'admin_init', [$enhance_list_tables, 'hide_post_tags_column'] );
             }
         }
-        // Display Active Plugins First
-        if ( array_key_exists( 'display_active_plugins_first', $options ) && $options['display_active_plugins_first'] ) {
-            $display_active_plugins_first = new ASENHA\Classes\Display_Active_Plugins_First();
-            add_action( 'admin_head-plugins.php', [$display_active_plugins_first, 'show_active_plugins_first'] );
+        // Various Admin UI Enhancements
+        if ( array_key_exists( 'various_admin_ui_enhancements', $options ) && $options['various_admin_ui_enhancements'] ) {
+            $various_admin_ui_enhancements = new ASENHA\Classes\Various_Admin_Ui_Enhancements();
+            // Display Active Plugins First
+            if ( array_key_exists( 'display_active_plugins_first', $options ) && $options['display_active_plugins_first'] ) {
+                add_action( 'admin_head-plugins.php', [$various_admin_ui_enhancements, 'show_active_plugins_first'] );
+            }
         }
         // Custom Admin Footer Text
         if ( array_key_exists( 'custom_admin_footer_text', $options ) && $options['custom_admin_footer_text'] ) {
@@ -411,14 +435,17 @@ class Admin_Site_Enhancements {
         if ( array_key_exists( 'change_login_url', $options ) && $options['change_login_url'] ) {
             if ( array_key_exists( 'custom_login_slug', $options ) && !empty( $options['custom_login_slug'] ) ) {
                 $change_login_url = new ASENHA\Classes\Change_Login_URL();
-                add_action( 'init', [$change_login_url, 'redirect_on_custom_login_url'] );
-                // add_filter( 'login_url', [ $change_login_url, 'customize_login_url' ] );
-                add_filter( 'lostpassword_url', [$change_login_url, 'customize_lost_password_url'] );
-                add_filter( 'register_url', [$change_login_url, 'customize_register_url'] );
-                add_action( 'wp_loaded', [$change_login_url, 'redirect_on_default_login_urls'] );
-                add_action( 'wp_login_failed', [$change_login_url, 'redirect_to_custom_login_url_on_login_fail'] );
-                add_filter( 'login_message', [$change_login_url, 'add_failed_login_message'] );
-                add_action( 'wp_logout', [$change_login_url, 'redirect_to_custom_login_url_on_logout_success'] );
+                add_action( 'init', [ $change_login_url, 'redirect_on_custom_login_url' ] );
+                add_filter( 'login_url', [ $change_login_url, 'customize_login_url' ], 10, 3 );
+                add_filter( 'lostpassword_url', [ $change_login_url, 'customize_lost_password_url' ] );
+                add_filter( 'register_url', [ $change_login_url, 'customize_register_url' ] );
+                add_action( 'wp_loaded', [ $change_login_url, 'redirect_on_default_login_urls' ] );
+                add_action( 'wp_login_failed', [ $change_login_url, 'redirect_to_custom_login_url_on_login_fail' ] );
+                add_filter( 'login_message', [ $change_login_url, 'add_failed_login_message' ] );
+                // No need to modify logout_url or perform redirect on logout
+                // The customized login URL is already being returned after logout
+                // add_action( 'wp_logout', [ $change_login_url, 'redirect_to_custom_login_url_on_logout_success' ] );
+                // add_filter( 'logout_url', [ $change_login_url, 'customize_logout_url' ], 10, 2 );
             }
         }
         // Login ID Type

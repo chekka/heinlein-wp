@@ -2,14 +2,18 @@
 # This file is distributed under the same license as the Plugins - Contact Form 7 - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-03-25 11:19:56+0000\n"
+"PO-Revision-Date: 2024-06-05 06:37:53+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/4.0.0\n"
+"X-Generator: GlotPress/4.0.1\n"
 "Language: de\n"
 "Project-Id-Version: Plugins - Contact Form 7 - Stable (latest release)\n"
+
+#: includes/contact-form.php:576
+msgid "Invalid action URL is detected."
+msgstr "Ungültige Aktions-URL wurde entdeckt."
 
 #: modules/constant-contact/service.php:371
 msgid "This feature is deprecated. You are not recommended to use it."
@@ -57,7 +61,7 @@ msgstr "Unsichere E-Mail-Konfiguration wird ohne ausreichenden Schutz verwendet.
 
 #: includes/config-validator/validator.php:229
 msgid "Configuration error is detected."
-msgstr "Ein Konfigurationsfehler wurde festgestellt."
+msgstr "Ein Konfigurationsfehler wurde entdeckt."
 
 #: modules/sendinblue/service.php:161
 msgid "Brevo is active on this site."
@@ -78,7 +82,7 @@ msgstr "Das nächste große Update von Contact Form 7 wird veraltete PHP-Version
 msgid "Contact form not found."
 msgstr "Kontaktformular wurde nicht gefunden."
 
-#: includes/contact-form-functions.php:263
+#: includes/contact-form-functions.php:263 includes/contact-form.php:575
 msgid "Error:"
 msgstr "Fehler:"
 
@@ -117,7 +121,7 @@ msgstr "Erfahre, wie deine Daten verarbeitet werden."
 msgid "This form uses Akismet to reduce spam."
 msgstr "Dieses Formular verwendet Akismet, um Spam zu reduzieren."
 
-#: includes/contact-form.php:636
+#: includes/contact-form.php:648
 msgid "Contact form"
 msgstr "Kontaktformular"
 
@@ -170,7 +174,7 @@ msgid "The request payload format is not supported."
 msgstr "Das Request-Payload-Format wird nicht unterstützt."
 
 #. translators: 1: WordPress hook name, 2: version number
-#: includes/functions.php:576
+#: includes/functions.php:577
 msgid "Hook %1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s with no alternative available."
 msgstr "Der Hook %1$s ist seit Contact Form 7 Version %2$s <strong>veraltet</strong> und es ist keine Alternative verfügbar."
 
@@ -192,7 +196,7 @@ msgstr "Füll bitte dieses Feld aus."
 
 #. translators: 1: PHP function name, 2: version number, 3: alternative
 #. function name
-#: includes/functions.php:527
+#: includes/functions.php:528
 msgid "Function %1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use %3$s instead."
 msgstr "Funktion %1$s ist seit Contact Form 7 Version %2$s <strong>veraltet</strong>! Nutze stattdessen %3$s."
 
@@ -202,7 +206,7 @@ msgstr "Spam-Schutz"
 
 #. translators: Developer debugging message. 1: PHP function name, 2:
 #. Explanatory message, 3: Contact Form 7 version number.
-#: includes/functions.php:611
+#: includes/functions.php:612
 msgid "Function %1$s was called incorrectly. %2$s %3$s"
 msgstr "Die Funktion %1$s wurde fehlerhaft aufgerufen. %2$s %3$s"
 
@@ -469,7 +473,7 @@ msgid "Disallowed words are used."
 msgstr "Es werden Wörter von der Sperrliste verwendet."
 
 #. translators: %s: Contact Form 7 version number.
-#: includes/functions.php:603
+#: includes/functions.php:604
 msgid "(This message was added in Contact Form 7 version %s.)"
 msgstr "(Dieser Hinweis wurde in Contact&nbsp;Form&nbsp;7 Version&nbsp;%s hinzugefügt.)"
 
@@ -562,7 +566,7 @@ msgid "Connection established."
 msgstr "Verbindung aufgebaut."
 
 #. translators: 1: response code, 2: message, 3: body, 4: URL
-#: includes/functions.php:650
+#: includes/functions.php:651
 msgid "HTTP Response: %1$s %2$s %3$s from %4$s"
 msgstr "HTTP-Response: %1$s %2$s %3$s von %4$s"
 
@@ -754,7 +758,7 @@ msgstr "Wenn du gerne Contact Form 7 nutzt und es nützlich findest, dann erwäg
 msgid "It is hard to continue development and support for this plugin without contributions from users like you."
 msgstr "Es ist schwer, die Entwicklung und den Support für dieses Plugin ohne Beiträge von Nutzern wie dir fortzusetzen."
 
-#: includes/contact-form.php:543 includes/contact-form.php:1053
+#: includes/contact-form.php:543 includes/contact-form.php:1065
 msgid "This contact form is available only for logged in users."
 msgstr "Dieses Kontaktformular ist nur für angemeldete Benutzer verfügbar."
 
@@ -857,7 +861,7 @@ msgstr "1 Fehler in der Konfiguration entdeckt"
 
 #. translators: 1: WordPress hook name, 2: version number, 3: alternative hook
 #. name
-#: includes/functions.php:565
+#: includes/functions.php:566
 msgid "Hook %1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use %3$s instead."
 msgstr "Der Hook %1$s ist seit Contact Form 7 Version %2$s <strong>veraltet</strong>! Nutze stattdessen %3$s."
 

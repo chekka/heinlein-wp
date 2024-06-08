@@ -30,17 +30,17 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 
 		if ( class_exists( 'SiteOrigin_Widget_LayoutSlider_Widget' ) ) {
 			add_filter( 'siteorigin_widgets_form_options_sow-layout-slider', array( $this, 'add_slider_form_options' ), 10, 2 );
-			add_action( 'siteorigin_widgets_enqueue_frontend_scripts_sow-layout-slider', array( $this, 'enqueue_slider_js' ) );
+			add_filter( 'siteorigin_widgets_frontend_scripts_sow-slider', array( $this, 'register_slider_js' ), 10, 1 );
 		}
 
 		if ( class_exists( 'SiteOrigin_Widget_Hero_Widget' ) ) {
 			add_filter( 'siteorigin_widgets_form_options_sow-hero', array( $this, 'add_slider_form_options' ), 10, 2 );
-			add_action( 'siteorigin_widgets_enqueue_frontend_scripts_sow-hero', array( $this, 'enqueue_slider_js' ) );
+			add_filter( 'siteorigin_widgets_frontend_scripts_sow-slider', array( $this, 'register_slider_js' ), 10, 1 );
 		}
 
 		if ( class_exists( 'SiteOrigin_Widget_Slider_Widget' ) ) {
 			add_filter( 'siteorigin_widgets_form_options_sow-slider', array( $this, 'add_slider_form_options' ), 10, 2 );
-			add_action( 'siteorigin_widgets_enqueue_frontend_scripts_sow-slider', array( $this, 'enqueue_slider_js' ) );
+			add_filter( 'siteorigin_widgets_frontend_scripts_sow-slider', array( $this, 'register_slider_js' ), 10, 1 );
 		}
 
 		if ( class_exists( 'SiteOrigin_Widget_Accordion_Widget' ) ) {
@@ -100,7 +100,7 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 		$form_options['controls']['fields']['anchor'] = array(
 			'type' => 'text',
 			'label' => __( 'Anchor ID', 'siteorigin-premium' ),
-			'description' => __( 'Set a custom anchor ID.', 'siteorigin-premium' ),
+			'description' => __( 'An ID is required for the anchor to function.', 'siteorigin-premium' ),
 			'state_handler' => array(
 				'anchor_tags[show]' => array( 'show' ),
 				'anchor_tags[hide]' => array( 'hide' ),
@@ -110,18 +110,20 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 		return $form_options;
 	}
 
-	public function enqueue_slider_js( $instance ) {
-		if ( ! empty( $instance['controls']['use_anchor_tags'] ) ) {
-			wp_enqueue_script(
-				'so-premium-anchor-id-slider',
-				plugin_dir_url( __FILE__ ) . 'js/anchor-id-slider' . SITEORIGIN_PREMIUM_JS_SUFFIX . '.js',
-				array(
-					'sow-slider-slider-cycle2',
-					'so-premium-anchor-id'
+	public function register_slider_js( $frontend_scripts ) {
+		return array_merge(
+			array(
+				'so-premium-anchor-id-slider' => array(
+					'so-premium-anchor-id-slider',
+					plugin_dir_url( __FILE__ ) . 'js/anchor-id-slider' . SITEORIGIN_PREMIUM_JS_SUFFIX . '.js',
+					array(
+						'so-premium-anchor-id',
+					),
+					SITEORIGIN_PREMIUM_VERSION
 				),
-				SITEORIGIN_PREMIUM_VERSION
-			);
-		}
+			),
+			$frontend_scripts
+		);
 	}
 
 	public function accordion_enqueue_js( $instance ) {
@@ -196,7 +198,9 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 	 */
 	public function add_accordion_tabs_front_end_params( $params, $instance, $widget ) {
 		if ( ! empty( $instance['use_anchor_tags'] ) ) {
-			$params['anchor-id'] = ! empty( $instance['anchor_id'] ) ? sanitize_title_with_dashes( $instance['anchor_id'] ) : true;
+			if ( ! empty( $instance['anchor_id'] ) ) {
+				$params['anchor-id'] = sanitize_title_with_dashes( $instance['anchor_id'] );
+			}
 		}
 
 		return $params;

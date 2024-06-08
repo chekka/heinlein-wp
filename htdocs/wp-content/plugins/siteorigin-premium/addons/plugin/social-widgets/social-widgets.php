@@ -132,12 +132,20 @@ class SiteOrigin_Premium_Plugin_Social_Widgets {
 				if ( empty( $custom['icon_name'] ) && empty( $custom['icon_image'] ) ) {
 					continue;
 				}
-				// Is there a network name and if not, is the user using an icon image?
-				if ( empty( $custom['name'] ) && empty( $custom['icon_image'] ) ) {
-					$custom['name'] = $custom['icon_name'];
+
+				// Is there a network name?
+				if ( empty( $custom['name'] ) ) {
+					// If an icon image isn't set, use the icon's name.
+					if ( empty( $custom['icon_image'] ) ) {
+						$custom['name'] = $custom['icon_name'];
+					} else {
+						// Use the icon image id as the network name.
+						$key = $custom['name'] = $custom['icon_image'];
+					}
 				}
+
 				$name = preg_replace( '/\s/', '_', $custom['name'] );
-				$name = preg_replace( '/[^\w-]/', '', $name );
+				$name = sanitize_html_class( $name );
 				$custom_networks[ $key ]['name'] = $name;
 				$custom_networks[ $key ]['is_custom'] = true;
 			}
@@ -158,22 +166,28 @@ class SiteOrigin_Premium_Plugin_Social_Widgets {
 		}
 
 		foreach ( $instance['custom_networks'] as $custom ) {
-			// Replace spaces with underscores.
+			if ( empty( $custom['icon_image'] ) ) {
+				continue;
+			}
+
+			if ( empty( $custom['name'] ) ) {
+				$custom['name'] = $custom['icon_image'];
+			} else {
+
+			}
+
 			$custom_name = preg_replace( '/\s/', '_', $custom['name'] );
-			// Remove anything that isn't a word character or a hyphen.
-			$custom_name = preg_replace( '/[^\w-]/', '', $custom_name );
+			$custom_name = sanitize_html_class( $custom_name );
+
 			$custom_icon_html = '';
 
-			if ( ! empty( $custom['icon_image'] ) ) {
-				$attachment = wp_get_attachment_image_src( $custom['icon_image'] );
-
-				if ( ! empty( $attachment ) ) {
-					$icon_styles[] = 'background-image: url(' . esc_url( $attachment[0] ) . ')';
-					$custom_icon_html .= '<div class="sow-icon-image" style="' . implode( '; ', $icon_styles ) . '"></div>';
-				}
-				$premium_regex = '/<!--\s*premium-' . $custom_name . '\s*-->[\s\S]*?<!--\s*endpremium\s*-->/';
-				$template_html = preg_replace( $premium_regex, $custom_icon_html, $template_html );
+			$attachment = wp_get_attachment_image_src( $custom['icon_image'] );
+			if ( ! empty( $attachment ) ) {
+				$icon_styles[] = 'background-image: url(' . esc_url( $attachment[0] ) . ')';
+				$custom_icon_html .= '<div class="sow-icon-image" style="' . implode( '; ', $icon_styles ) . '"></div>';
 			}
+			$premium_regex = '/<!--\s*premium-' . $custom_name . '\s*-->[\s\S]*?<!--\s*endpremium\s*-->/';
+			$template_html = preg_replace( $premium_regex, $custom_icon_html, $template_html );
 		}
 
 		return $template_html;

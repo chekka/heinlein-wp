@@ -465,7 +465,6 @@ class SiteOrigin_Premium_Plugin_Blog {
 			! empty( $instance['animation']['type'] )
 		) {
 			wp_enqueue_style( 'siteorigin-premium-animate' );
-			wp_enqueue_script( 'on-screen' );
 			// Add breakpoint to output to allow for animations to be disabled on mobile if needed.
 			$widget_settings = get_option( 'so_widget_settings[SiteOrigin_Widget_Blog_Widget]', array() );
 			if ( empty( $widget_settings ) ) {

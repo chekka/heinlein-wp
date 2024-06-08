@@ -32,11 +32,11 @@ msgstr ""
 msgid "A collection of powerful addons that enhance every aspect of SiteOrigin plugins and themes."
 msgstr ""
 
-#: siteorigin-premium.php:9, admin/options.php:31, admin/options.php:32, inc/installer/siteorigin-installer.php:6, addons/plugin/accordion/accordion.php:6, addons/plugin/anchor-id/anchor-id.php:6, addons/plugin/animations/animations.php:6, addons/plugin/author-box/author-box.php:6, addons/plugin/blog/blog.php:6, addons/plugin/bulk-address/bulk-address.php:6, addons/plugin/carousel/carousel.php:6, addons/plugin/contact-form-fields/contact-form-fields.php:6, addons/plugin/cpt-builder/cpt-builder.php:6, addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:6, addons/plugin/cta/cta.php:6, addons/plugin/custom-palette/custom-palette.php:6, addons/plugin/custom-row-colors/custom-row-colors.php:6, addons/plugin/embed-blocker/embed-blocker.php:6, addons/plugin/hero/hero.php:6, addons/plugin/image-overlay/image-overlay.php:6, addons/plugin/image-shape/image-shape.php:6, addons/plugin/lightbox/lightbox.php:6, addons/plugin/link-overlay/link-overlay.php:6, addons/plugin/lottie-player/lottie-player.php:6, addons/plugin/map-styles/map-styles.php:6, addons/plugin/mirror-widgets/mirror-widgets.php:6, addons/plugin/multiple-media/multiple-media.php:6, addons/plugin/page-background/page-background.php:6, addons/plugin/parallax-sliders/parallax-sliders.php:6, addons/plugin/retina-background-images/retina-background-images.php:6, addons/plugin/social-widgets/social-widgets.php:6, addons/plugin/tabs/tabs.php:6, addons/plugin/testimonial/testimonial.php:6, addons/plugin/toggle-visibility/toggle-visibility.php:6, addons/plugin/tooltip/tooltip.php:6, addons/plugin/video-background/video-background.php:6, addons/plugin/web-font-selector/web-font-selector.php:6, addons/plugin/woocommerce-templates/woocommerce-templates.php:6, addons/theme/ajax-comments/ajax-comments.php:6, addons/theme/logo-booster/logo-booster.php:6, addons/theme/no-attribution/no-attribution.php:6, addons/plugin/mirror-widgets/inc/mirror-widget/mirror-widget.php:5, addons/plugin/woocommerce-templates/templates/content-single-product/wc-output-product-data-tabs.php:5
+#: siteorigin-premium.php:9, admin/options.php:31, admin/options.php:32, inc/installer/siteorigin-installer.php:6, addons/plugin/accordion/accordion.php:6, addons/plugin/anchor-id/anchor-id.php:6, addons/plugin/animations/animations.php:6, addons/plugin/author-box/author-box.php:6, addons/plugin/blog/blog.php:6, addons/plugin/bulk-address/bulk-address.php:6, addons/plugin/carousel/carousel.php:6, addons/plugin/cf-turnstile/cf-turnstile.php:6, addons/plugin/contact-form-fields/contact-form-fields.php:6, addons/plugin/cpt-builder/cpt-builder.php:6, addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:6, addons/plugin/cta/cta.php:6, addons/plugin/custom-palette/custom-palette.php:6, addons/plugin/custom-row-colors/custom-row-colors.php:6, addons/plugin/embed-blocker/embed-blocker.php:6, addons/plugin/hero/hero.php:6, addons/plugin/image-overlay/image-overlay.php:6, addons/plugin/image-shape/image-shape.php:6, addons/plugin/lightbox/lightbox.php:6, addons/plugin/link-overlay/link-overlay.php:6, addons/plugin/lottie-player/lottie-player.php:6, addons/plugin/map-styles/map-styles.php:6, addons/plugin/mirror-widgets/mirror-widgets.php:6, addons/plugin/multiple-media/multiple-media.php:6, addons/plugin/page-background/page-background.php:6, addons/plugin/parallax-sliders/parallax-sliders.php:6, addons/plugin/retina-background-images/retina-background-images.php:6, addons/plugin/social-widgets/social-widgets.php:6, addons/plugin/tabs/tabs.php:6, addons/plugin/testimonial/testimonial.php:6, addons/plugin/toggle-visibility/toggle-visibility.php:6, addons/plugin/tooltip/tooltip.php:6, addons/plugin/video-background/video-background.php:6, addons/plugin/web-font-selector/web-font-selector.php:6, addons/plugin/woocommerce-templates/woocommerce-templates.php:6, addons/theme/ajax-comments/ajax-comments.php:6, addons/theme/logo-booster/logo-booster.php:6, addons/theme/no-attribution/no-attribution.php:6, addons/plugin/mirror-widgets/inc/mirror-widget/mirror-widget.php:5, addons/plugin/woocommerce-templates/templates/content-single-product/wc-output-product-data-tabs.php:5
 msgid "SiteOrigin"
 msgstr ""
 
-#: siteorigin-premium.php:12, inc/installer/siteorigin-installer.php:7, addons/plugin/accordion/accordion.php:7, addons/plugin/anchor-id/anchor-id.php:7, addons/plugin/animations/animations.php:7, addons/plugin/author-box/author-box.php:7, addons/plugin/blog/blog.php:7, addons/plugin/bulk-address/bulk-address.php:7, addons/plugin/carousel/carousel.php:7, addons/plugin/contact-form-fields/contact-form-fields.php:7, addons/plugin/cpt-builder/cpt-builder.php:7, addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:7, addons/plugin/cta/cta.php:7, addons/plugin/custom-palette/custom-palette.php:7, addons/plugin/custom-row-colors/custom-row-colors.php:7, addons/plugin/embed-blocker/embed-blocker.php:7, addons/plugin/hero/hero.php:7, addons/plugin/image-overlay/image-overlay.php:7, addons/plugin/image-shape/image-shape.php:7, addons/plugin/lightbox/lightbox.php:7, addons/plugin/link-overlay/link-overlay.php:7, addons/plugin/lottie-player/lottie-player.php:7, addons/plugin/map-styles/map-styles.php:7, addons/plugin/mirror-widgets/mirror-widgets.php:7, addons/plugin/multiple-media/multiple-media.php:7, addons/plugin/page-background/page-background.php:7, addons/plugin/parallax-sliders/parallax-sliders.php:7, addons/plugin/retina-background-images/retina-background-images.php:7, addons/plugin/social-widgets/social-widgets.php:7, addons/plugin/tabs/tabs.php:7, addons/plugin/testimonial/testimonial.php:7, addons/plugin/toggle-visibility/toggle-visibility.php:7, addons/plugin/tooltip/tooltip.php:7, addons/plugin/video-background/video-background.php:7, addons/plugin/web-font-selector/web-font-selector.php:7, addons/plugin/woocommerce-templates/woocommerce-templates.php:7, addons/theme/ajax-comments/ajax-comments.php:7, addons/theme/logo-booster/logo-booster.php:7, addons/theme/no-attribution/no-attribution.php:7, addons/plugin/mirror-widgets/inc/mirror-widget/mirror-widget.php:6, addons/plugin/woocommerce-templates/templates/content-single-product/wc-output-product-data-tabs.php:6
+#: siteorigin-premium.php:12, inc/installer/siteorigin-installer.php:7, addons/plugin/accordion/accordion.php:7, addons/plugin/anchor-id/anchor-id.php:7, addons/plugin/animations/animations.php:7, addons/plugin/author-box/author-box.php:7, addons/plugin/blog/blog.php:7, addons/plugin/bulk-address/bulk-address.php:7, addons/plugin/carousel/carousel.php:7, addons/plugin/cf-turnstile/cf-turnstile.php:7, addons/plugin/contact-form-fields/contact-form-fields.php:7, addons/plugin/cpt-builder/cpt-builder.php:7, addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:7, addons/plugin/cta/cta.php:7, addons/plugin/custom-palette/custom-palette.php:7, addons/plugin/custom-row-colors/custom-row-colors.php:7, addons/plugin/embed-blocker/embed-blocker.php:7, addons/plugin/hero/hero.php:7, addons/plugin/image-overlay/image-overlay.php:7, addons/plugin/image-shape/image-shape.php:7, addons/plugin/lightbox/lightbox.php:7, addons/plugin/link-overlay/link-overlay.php:7, addons/plugin/lottie-player/lottie-player.php:7, addons/plugin/map-styles/map-styles.php:7, addons/plugin/mirror-widgets/mirror-widgets.php:7, addons/plugin/multiple-media/multiple-media.php:7, addons/plugin/page-background/page-background.php:7, addons/plugin/parallax-sliders/parallax-sliders.php:7, addons/plugin/retina-background-images/retina-background-images.php:7, addons/plugin/social-widgets/social-widgets.php:7, addons/plugin/tabs/tabs.php:7, addons/plugin/testimonial/testimonial.php:7, addons/plugin/toggle-visibility/toggle-visibility.php:7, addons/plugin/tooltip/tooltip.php:7, addons/plugin/video-background/video-background.php:7, addons/plugin/web-font-selector/web-font-selector.php:7, addons/plugin/woocommerce-templates/woocommerce-templates.php:7, addons/theme/ajax-comments/ajax-comments.php:7, addons/theme/logo-booster/logo-booster.php:7, addons/theme/no-attribution/no-attribution.php:7, addons/plugin/mirror-widgets/inc/mirror-widget/mirror-widget.php:6, addons/plugin/woocommerce-templates/templates/content-single-product/wc-output-product-data-tabs.php:6
 msgid "https://siteorigin.com"
 msgstr ""
 
@@ -44,15 +44,11 @@ msgstr ""
 msgid "https://siteorigin.com/downloads/premium"
 msgstr ""
 
-#: siteorigin-premium.php:248
-msgid "Plugin addon %s does not exist."
-msgstr ""
-
-#: siteorigin-premium.php:430
+#: siteorigin-premium.php:429
 msgid "Addons"
 msgstr ""
 
-#: siteorigin-premium.php:431
+#: siteorigin-premium.php:430
 msgid "License"
 msgstr ""
 
@@ -649,40 +645,40 @@ msgid "There was a problem with activating your SiteOrigin Premium license key."
 msgstr ""
 
 #. translators: the plugin name.
-#: inc/updater.php:358
+#: inc/updater.php:364
 msgid "There is a new version of %1$s available."
 msgstr ""
 
-#: inc/updater.php:364
+#: inc/updater.php:370
 msgid "Contact your network administrator to install the update."
 msgstr ""
 
 #. translators: 1. opening anchor tag, do not translate 2. the new plugin version 3. closing anchor tag, do not translate.
-#: inc/updater.php:369
+#: inc/updater.php:375
 msgid "%1$sView version %2$s details%3$s."
 msgstr ""
 
-#: inc/updater.php:377
+#: inc/updater.php:383
 msgid "%1$sView version %2$s details%3$s or %4$supdate now%5$s."
 msgstr ""
 
-#: inc/updater.php:388
+#: inc/updater.php:394
 msgid "Update now."
 msgstr ""
 
-#: inc/updater.php:611
+#: inc/updater.php:617
 msgid "You do not have permission to install plugin updates"
 msgstr ""
 
-#: inc/updater.php:611
+#: inc/updater.php:617
 msgid "Error"
 msgstr ""
 
-#: inc/updater.php:809
+#: inc/updater.php:815
 msgid "Invalid token supplied"
 msgstr ""
 
-#: inc/updater.php:816
+#: inc/updater.php:822
 msgid "License key expired or not activated for this URL. Please contact %s for help."
 msgstr ""
 
@@ -782,19 +778,19 @@ msgstr ""
 msgid "Title icon image size"
 msgstr ""
 
-#: addons/plugin/accordion/accordion.php:122, addons/plugin/carousel/carousel.php:113, addons/plugin/tabs/tabs.php:120
+#: addons/plugin/accordion/accordion.php:122, addons/plugin/carousel/carousel.php:114, addons/plugin/tabs/tabs.php:120
 msgid "Content type"
 msgstr ""
 
-#: addons/plugin/accordion/accordion.php:124, addons/plugin/carousel/carousel.php:115, addons/plugin/embed-blocker/embed-blocker.php:321, addons/plugin/map-styles/map-styles.php:221, addons/plugin/tabs/tabs.php:122, addons/plugin/toggle-visibility/toggle-visibility.php:616
+#: addons/plugin/accordion/accordion.php:124, addons/plugin/carousel/carousel.php:116, addons/plugin/embed-blocker/embed-blocker.php:321, addons/plugin/map-styles/map-styles.php:221, addons/plugin/tabs/tabs.php:122, addons/plugin/toggle-visibility/toggle-visibility.php:616
 msgid "Text"
 msgstr ""
 
-#: addons/plugin/accordion/accordion.php:125, addons/plugin/carousel/carousel.php:116, addons/plugin/tabs/tabs.php:123
+#: addons/plugin/accordion/accordion.php:125, addons/plugin/carousel/carousel.php:117, addons/plugin/tabs/tabs.php:123
 msgid "Layout builder"
 msgstr ""
 
-#: addons/plugin/accordion/accordion.php:135, addons/plugin/carousel/carousel.php:126, addons/plugin/tabs/tabs.php:133, addons/plugin/toggle-visibility/toggle-visibility.php:538, addons/plugin/toggle-visibility/toggle-visibility.php:604, addons/plugin/toggle-visibility/toggle-visibility.php:626, addons/plugin/toggle-visibility/toggle-visibility.php:636
+#: addons/plugin/accordion/accordion.php:135, addons/plugin/carousel/carousel.php:127, addons/plugin/tabs/tabs.php:133, addons/plugin/toggle-visibility/toggle-visibility.php:538, addons/plugin/toggle-visibility/toggle-visibility.php:604, addons/plugin/toggle-visibility/toggle-visibility.php:626, addons/plugin/toggle-visibility/toggle-visibility.php:636
 msgid "Content"
 msgstr ""
 
@@ -862,7 +858,7 @@ msgstr ""
 msgid "Lowercase"
 msgstr ""
 
-#: addons/plugin/accordion/accordion.php:239, addons/plugin/accordion/accordion.php:369, addons/plugin/carousel/carousel.php:202, addons/plugin/tabs/tabs.php:184, addons/plugin/tabs/tabs.php:337, addons/plugin/tabs/tabs.php:414
+#: addons/plugin/accordion/accordion.php:239, addons/plugin/accordion/accordion.php:369, addons/plugin/carousel/carousel.php:203, addons/plugin/tabs/tabs.php:184, addons/plugin/tabs/tabs.php:337, addons/plugin/tabs/tabs.php:414
 msgid "Border radius"
 msgstr ""
 
@@ -918,11 +914,11 @@ msgstr ""
 msgid "Font"
 msgstr ""
 
-#: addons/plugin/accordion/accordion.php:361, addons/plugin/carousel/carousel.php:238, addons/plugin/tabs/tabs.php:329, addons/plugin/tabs/tabs.php:407
+#: addons/plugin/accordion/accordion.php:361, addons/plugin/carousel/carousel.php:239, addons/plugin/tabs/tabs.php:329, addons/plugin/tabs/tabs.php:407
 msgid "Font size"
 msgstr ""
 
-#: addons/plugin/accordion/accordion.php:562, addons/plugin/carousel/carousel.php:162, addons/plugin/tabs/tabs.php:645
+#: addons/plugin/accordion/accordion.php:562, addons/plugin/carousel/carousel.php:163, addons/plugin/tabs/tabs.php:645
 msgid "This field requires Page Builder."
 msgstr ""
 
@@ -938,27 +934,31 @@ msgstr ""
 msgid "Add slide anchor ID in the URL"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:102, addons/plugin/anchor-id/anchor-id.php:175
+#: addons/plugin/anchor-id/anchor-id.php:102, addons/plugin/anchor-id/anchor-id.php:177
 msgid "Anchor ID"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:103, addons/plugin/anchor-id/anchor-id.php:176
-msgid "Set a custom anchor ID."
+#: addons/plugin/anchor-id/anchor-id.php:103
+msgid "An ID is required for the anchor to function."
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:164
+#: addons/plugin/anchor-id/anchor-id.php:166
 msgid "Add anchor ID in the URL"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:212
+#: addons/plugin/anchor-id/anchor-id.php:178
+msgid "Set a custom anchor ID."
+msgstr ""
+
+#: addons/plugin/anchor-id/anchor-id.php:216
 msgid "Add item anchor id in the URL"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:224
+#: addons/plugin/anchor-id/anchor-id.php:228
 msgid "Carousel anchor"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:225
+#: addons/plugin/anchor-id/anchor-id.php:229
 msgid "Optionally set a custom anchor id. Required if the widget title field is empty."
 msgstr ""
 
@@ -1154,19 +1154,19 @@ msgstr ""
 msgid "Social Media Buttons"
 msgstr ""
 
-#: addons/plugin/author-box/author-box.php:193
+#: addons/plugin/author-box/author-box.php:196
 msgid "The URL is used as a prefix for the authors username."
 msgstr ""
 
-#: addons/plugin/author-box/author-box.php:219, addons/plugin/tabs/tabs.php:360
+#: addons/plugin/author-box/author-box.php:222, addons/plugin/tabs/tabs.php:360
 msgid "Margin"
 msgstr ""
 
-#: addons/plugin/author-box/author-box.php:232
+#: addons/plugin/author-box/author-box.php:235
 msgid "After Recent posts"
 msgstr ""
 
-#: addons/plugin/author-box/author-box.php:327
+#: addons/plugin/author-box/author-box.php:334
 msgid "Security check failed"
 msgstr ""
 
@@ -1230,7 +1230,7 @@ msgstr ""
 msgid "Previous - Next"
 msgstr ""
 
-#: addons/plugin/blog/blog.php:198, addons/plugin/blog/blog.php:523
+#: addons/plugin/blog/blog.php:198, addons/plugin/blog/blog.php:522
 msgid "Load More"
 msgstr ""
 
@@ -1306,11 +1306,11 @@ msgstr ""
 msgid "Time, in seconds, after the event to start the animation."
 msgstr ""
 
-#: addons/plugin/blog/blog.php:489
+#: addons/plugin/blog/blog.php:488
 msgid "Previous"
 msgstr ""
 
-#: addons/plugin/blog/blog.php:494
+#: addons/plugin/blog/blog.php:493
 msgid "Next"
 msgstr ""
 
@@ -1338,44 +1338,68 @@ msgstr ""
 msgid "Introduce overlay themes, customizable navigation, and Layout Builder integration to carousels, enriching visuals and user interaction."
 msgstr ""
 
-#: addons/plugin/carousel/carousel.php:183, addons/plugin/tooltip/tooltip.php:117
+#: addons/plugin/carousel/carousel.php:184, addons/plugin/tooltip/tooltip.php:117
 msgid "Theme"
 msgstr ""
 
-#: addons/plugin/carousel/carousel.php:185
+#: addons/plugin/carousel/carousel.php:186
 msgid "Please, allow a couple of seconds for the theme settings to be applied."
 msgstr ""
 
-#: addons/plugin/carousel/carousel.php:197
+#: addons/plugin/carousel/carousel.php:198
 msgid "Thumbnail overlay color"
 msgstr ""
 
-#: addons/plugin/carousel/carousel.php:229, addons/plugin/woocommerce-templates/templates/content-single-product/wc-template-single-meta.php:21
+#: addons/plugin/carousel/carousel.php:230, addons/plugin/woocommerce-templates/templates/content-single-product/wc-template-single-meta.php:21
 msgid "Category"
 msgstr ""
 
-#: addons/plugin/carousel/carousel.php:234, addons/plugin/custom-palette/custom-palette.php:38, addons/plugin/custom-palette/custom-palette.php:69, addons/plugin/embed-blocker/embed-blocker.php:329, addons/plugin/image-shape/image-shape.php:86, addons/plugin/image-shape/image-shape.php:155
+#: addons/plugin/carousel/carousel.php:235, addons/plugin/custom-palette/custom-palette.php:38, addons/plugin/custom-palette/custom-palette.php:69, addons/plugin/embed-blocker/embed-blocker.php:329, addons/plugin/image-shape/image-shape.php:86, addons/plugin/image-shape/image-shape.php:155
 msgid "Color"
 msgstr ""
 
-#: addons/plugin/carousel/carousel.php:243, addons/plugin/social-widgets/social-widgets.php:88
+#: addons/plugin/carousel/carousel.php:244, addons/plugin/social-widgets/social-widgets.php:88
 msgid "Background color"
 msgstr ""
 
-#: addons/plugin/carousel/carousel.php:258
+#: addons/plugin/carousel/carousel.php:259
 msgid "Dots color"
 msgstr ""
 
-#: addons/plugin/carousel/carousel.php:263
+#: addons/plugin/carousel/carousel.php:264
 msgid "Dots selected and hover color"
 msgstr ""
 
-#: addons/plugin/carousel/carousel.php:268
+#: addons/plugin/carousel/carousel.php:269
 msgid "Navigation top margin"
 msgstr ""
 
-#: addons/plugin/carousel/carousel.php:269
+#: addons/plugin/carousel/carousel.php:270
 msgid "The space between the posts and navigation elements."
+msgstr ""
+
+#: addons/plugin/cf-turnstile/cf-turnstile.php:3, addons/plugin/cf-turnstile/cf-turnstile.php:51, addons/plugin/cf-turnstile/cf-turnstile.php:56
+msgid "Cloudflare Turnstile"
+msgstr ""
+
+#: addons/plugin/cf-turnstile/cf-turnstile.php:4
+msgid "Enhance contact form security with Cloudflare Turnstile, a user-friendly CAPTCHA alternative that helps prevent spam while maintaining seamless user interaction."
+msgstr ""
+
+#: addons/plugin/cf-turnstile/cf-turnstile.php:58
+msgid "%sCloudflare Turnstile%s is a free CAPTCHA replacement, and it's reported to be CCPA, GDPR compliant."
+msgstr ""
+
+#: addons/plugin/cf-turnstile/cf-turnstile.php:72
+msgid "Site Key"
+msgstr ""
+
+#: addons/plugin/cf-turnstile/cf-turnstile.php:80
+msgid "Secret Key"
+msgstr ""
+
+#: addons/plugin/cf-turnstile/cf-turnstile.php:127, addons/plugin/cf-turnstile/cf-turnstile.php:145
+msgid "Error validating your response. Please try again."
 msgstr ""
 
 #: addons/plugin/contact-form-fields/contact-form-fields.php:3
@@ -2821,7 +2845,7 @@ msgstr ""
 msgid "Tabs mobile position"
 msgstr ""
 
-#: addons/plugin/tabs/tabs.php:252, addons/plugin/woocommerce-templates/woocommerce-templates.php:1195, addons/plugin/woocommerce-templates/woocommerce-templates.php:1237, addons/plugin/woocommerce-templates/woocommerce-templates.php:1293
+#: addons/plugin/tabs/tabs.php:252, addons/plugin/woocommerce-templates/woocommerce-templates.php:1214, addons/plugin/woocommerce-templates/woocommerce-templates.php:1256, addons/plugin/woocommerce-templates/woocommerce-templates.php:1312
 msgid "Default"
 msgstr ""
 
@@ -3113,147 +3137,147 @@ msgstr ""
 msgid "Create tailored templates for WooCommerce, customizing Product, Archives, and Checkout pages to boost sales and engagement."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:195, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:24, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:68, addons/plugin/woocommerce-templates/templates/thankyou/wc-thankyou-order-details-table.php:34
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:214, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:24, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:68, addons/plugin/woocommerce-templates/templates/thankyou/wc-thankyou-order-details-table.php:34
 msgid "Product"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:199
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:218
 msgid "Product Archive"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:203
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:222
 msgid "Shop"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:207
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:226
 msgid "Cart"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:211
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:230
 msgid "Empty Cart"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:215
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:234
 msgid "Checkout"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:219, addons/plugin/woocommerce-templates/woocommerce-templates.php:237
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:238, addons/plugin/woocommerce-templates/woocommerce-templates.php:256
 msgid "Thank You"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:223
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:242
 msgid "My Account"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:290, addons/plugin/woocommerce-templates/woocommerce-templates.php:717
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:309, addons/plugin/woocommerce-templates/woocommerce-templates.php:736
 msgid "SiteOrigin WooCommerce Layout"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:338
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:357
 msgid "WooCommerce Template"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:352, addons/plugin/woocommerce-templates/woocommerce-templates.php:353, addons/plugin/woocommerce-templates/inc/admin-wc-template-builder.php:19
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:371, addons/plugin/woocommerce-templates/woocommerce-templates.php:372, addons/plugin/woocommerce-templates/inc/admin-wc-template-builder.php:19
 msgid "WooCommerce Template Builder"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:425
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:444
 msgid "Please install and activate %sWooCommerce%s before using this addon."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:442
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:461
 msgid "The SiteOrigin WooCommerce Template Builder addon isn't compatible with this version of WooCommerce. Please update to WooCommerce 3.4.0, or later, before using this addon."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:454
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:473
 msgid "Please install and activate %sSiteOrigin Page Builder%s before using this addon."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:476
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:495
 msgid "Please install and activate the %sSiteOrigin Widgets Bundle%s plugin before using this addon."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:583
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:602
 msgid "The templates to be used when viewing single product pages. Set one as the default and it will be used for all single product pages. Layouts can also be enabled for individual products by going to Products > Edit product and selecting the template from the Product template meta box dropdown."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:586
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:605
 msgid "The templates to be used for each product when viewing an archive page. Set one as the default and it will be used for the Shop page and any other product archive pages. Layouts can also be enabled for individual product archives by going to Products > Categories > Edit category and selecting the template from the Product archive template dropdown."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:589
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:608
 msgid "The template to be used when viewing the Shop page. This layout allows customization of position and size of the product loop, and placing widgets around the product loop."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:592
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:611
 msgid "The template to be used when viewing a cart which contains products."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:595
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:614
 msgid "The template to be used when viewing an empty cart."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:598
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:617
 msgid "The template to be used for the Checkout page."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:601
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:620
 msgid "The template to be used for the Thank you page which appears after an order is submitted."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:604
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:623
 msgid "The template to be used for the My account page."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:650
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:669
 msgid "Permanently delete this template?"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1075
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1094
 msgid "WooCommerce Product"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1082
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1101
 msgid "WooCommerce Product Archive"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1089
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1108
 msgid "WooCommerce Shop"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1096
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1115
 msgid "WooCommerce Cart"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1103
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1122
 msgid "WooCommerce Empty Cart"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1110
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1129
 msgid "WooCommerce Checkout"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1117
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1136
 msgid "WooCommerce Thank You"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1124
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1143
 msgid "WooCommerce My Account"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1172
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1191
 msgid "Clone: WooCommerce Templates"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1181
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1200
 msgid "Product template"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1234
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1253
 msgid "Template:"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1284, addons/plugin/woocommerce-templates/woocommerce-templates.php:1313
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1303, addons/plugin/woocommerce-templates/woocommerce-templates.php:1332
 msgid "Product Archive Template"
 msgstr ""
 

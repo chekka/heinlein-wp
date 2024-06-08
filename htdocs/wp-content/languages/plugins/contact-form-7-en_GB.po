@@ -2,14 +2,18 @@
 # This file is distributed under the same license as the Plugins - Contact Form 7 - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-03-12 08:38:32+0000\n"
+"PO-Revision-Date: 2024-05-21 11:58:24+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/4.0.0\n"
+"X-Generator: GlotPress/4.0.1\n"
 "Language: en_GB\n"
 "Project-Id-Version: Plugins - Contact Form 7 - Stable (latest release)\n"
+
+#: includes/contact-form.php:576
+msgid "Invalid action URL is detected."
+msgstr "Invalid action URL is detected."
 
 #: modules/constant-contact/service.php:371
 msgid "This feature is deprecated. You are not recommended to use it."
@@ -78,7 +82,7 @@ msgstr "The next major release of Contact Form 7 will discontinue support for ou
 msgid "Contact form not found."
 msgstr "Contact form not found."
 
-#: includes/contact-form-functions.php:263
+#: includes/contact-form-functions.php:263 includes/contact-form.php:575
 msgid "Error:"
 msgstr "Error:"
 
@@ -117,7 +121,7 @@ msgstr "Learn how your data is processed."
 msgid "This form uses Akismet to reduce spam."
 msgstr "This form uses Akismet to reduce spam."
 
-#: includes/contact-form.php:636
+#: includes/contact-form.php:648
 msgid "Contact form"
 msgstr "Contact form"
 
@@ -170,7 +174,7 @@ msgid "The request payload format is not supported."
 msgstr "The request payload format is not supported."
 
 #. translators: 1: WordPress hook name, 2: version number
-#: includes/functions.php:576
+#: includes/functions.php:577
 msgid "Hook %1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s with no alternative available."
 msgstr "Hook %1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s with no alternative available."
 
@@ -192,7 +196,7 @@ msgstr "Please fill out this field."
 
 #. translators: 1: PHP function name, 2: version number, 3: alternative
 #. function name
-#: includes/functions.php:527
+#: includes/functions.php:528
 msgid "Function %1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use %3$s instead."
 msgstr "Function %1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use %3$s instead."
 
@@ -202,7 +206,7 @@ msgstr "Spam protection"
 
 #. translators: Developer debugging message. 1: PHP function name, 2:
 #. Explanatory message, 3: Contact Form 7 version number.
-#: includes/functions.php:611
+#: includes/functions.php:612
 msgid "Function %1$s was called incorrectly. %2$s %3$s"
 msgstr "Function %1$s was called incorrectly. %2$s %3$s"
 
@@ -469,7 +473,7 @@ msgid "Disallowed words are used."
 msgstr "Disallowed words are used."
 
 #. translators: %s: Contact Form 7 version number.
-#: includes/functions.php:603
+#: includes/functions.php:604
 msgid "(This message was added in Contact Form 7 version %s.)"
 msgstr "(This message was added in Contact Form 7 version %s.)"
 
@@ -562,7 +566,7 @@ msgid "Connection established."
 msgstr "Connection established."
 
 #. translators: 1: response code, 2: message, 3: body, 4: URL
-#: includes/functions.php:650
+#: includes/functions.php:651
 msgid "HTTP Response: %1$s %2$s %3$s from %4$s"
 msgstr "HTTP Response: %1$s %2$s %3$s from %4$s"
 
@@ -754,7 +758,7 @@ msgstr "If you enjoy using Contact Form 7 and find it useful, please consider %s
 msgid "It is hard to continue development and support for this plugin without contributions from users like you."
 msgstr "It is hard to continue development and support for this plugin without contributions from users like you."
 
-#: includes/contact-form.php:543 includes/contact-form.php:1053
+#: includes/contact-form.php:543 includes/contact-form.php:1065
 msgid "This contact form is available only for logged in users."
 msgstr "This contact form is available only for logged in users."
 
@@ -857,7 +861,7 @@ msgstr "1 configuration error detected"
 
 #. translators: 1: WordPress hook name, 2: version number, 3: alternative hook
 #. name
-#: includes/functions.php:565
+#: includes/functions.php:566
 msgid "Hook %1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use %3$s instead."
 msgstr "Hook %1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use %3$s instead."
 

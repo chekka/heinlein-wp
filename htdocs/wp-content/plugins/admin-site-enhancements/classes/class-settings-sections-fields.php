@@ -18,7 +18,6 @@ class Settings_Sections_Fields {
     function register_sections_fields() {
         add_settings_section(
             'main-section',
-            // Section ID
             '',
             // Section title. Can be blank.
             '',
@@ -35,7 +34,6 @@ class Settings_Sections_Fields {
             ASENHA_ID,
             // Option group or option_page
             ASENHA_SLUG_U,
-            // Option name in wp_options table
             array(
                 'type'              => 'array',
                 'description'       => '',
@@ -52,6 +50,7 @@ class Settings_Sections_Fields {
             $wp_roles,
             $wpdb,
             $asenha_public_post_types,
+            $asenha_nonpublic_post_types,
             $asenha_gutenberg_post_types,
             $asenha_revisions_post_types,
             $active_plugin_slugs,
@@ -69,6 +68,19 @@ class Settings_Sections_Fields {
             $post_type_object = get_post_type_object( $post_type_name );
             $asenha_public_post_types[$post_type_name] = $post_type_object->label;
         }
+        asort( $asenha_public_post_types );
+        // sort by value, ascending
+        // Get array of slugs and plural labels for non-public post types, e.g. array( 'post' => 'Posts', 'page' => 'Pages' )
+        $asenha_nonpublic_post_types = array();
+        $public_post_type_names = get_post_types( array(
+            'public' => false,
+        ), 'names' );
+        foreach ( $public_post_type_names as $post_type_name ) {
+            $post_type_object = get_post_type_object( $post_type_name );
+            $asenha_nonpublic_post_types[$post_type_name] = $post_type_object->label;
+        }
+        asort( $asenha_nonpublic_post_types );
+        // sort by value, ascending
         // Get array of slugs and plural labels for post types that can be edited with the Gutenberg block editor, e.g. array( 'post' => 'Posts', 'page' => 'Pages' )
         $asenha_gutenberg_post_types = array();
         $gutenberg_not_applicable_types = array(
@@ -116,15 +128,11 @@ class Settings_Sections_Fields {
         $field_slug = 'enable-duplication';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Content Duplication', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -140,15 +148,11 @@ class Settings_Sections_Fields {
         $field_slug = 'duplication-redirect-destination';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'After duplication, redirect to:', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_radio_buttons_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'   => ASENHA_SLUG_U,
                 'field_id'      => $field_id,
@@ -166,15 +170,11 @@ class Settings_Sections_Fields {
         $field_slug = 'content-order';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Content Order', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -196,15 +196,11 @@ class Settings_Sections_Fields {
                 if ( (post_type_supports( $post_type_slug, 'page-attributes' ) || is_post_type_hierarchical( $post_type_slug )) && !in_array( $post_type_slug, $inapplicable_post_types ) ) {
                     add_settings_field(
                         $field_id . '_' . $post_type_slug,
-                        // Field ID
                         '',
                         // Field title
                         [$render_field, 'render_checkbox_subfield'],
-                        // Callback to render field with custom arguments in the array below
                         ASENHA_SLUG,
-                        // Settings page slug
                         'main-section',
-                        // Section ID
                         array(
                             'option_name'     => ASENHA_SLUG_U,
                             'parent_field_id' => $field_id,
@@ -222,15 +218,11 @@ class Settings_Sections_Fields {
         $field_slug = 'enable-media-replacement';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Media Replacement', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -240,43 +232,16 @@ class Settings_Sections_Fields {
                 'class'             => 'asenha-toggle content-management ' . $field_slug,
             )
         );
-        // Media Library Infinite Scrolling
-        $field_id = 'media_library_infinite_scrolling';
-        $field_slug = 'media-library-infinite-scrolling';
-        add_settings_field(
-            $field_id,
-            // Field ID
-            __( 'Media Library Infinite Scrolling', 'admin-site-enhancements' ),
-            // Field title
-            [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
-            ASENHA_SLUG,
-            // Settings page slug
-            'main-section',
-            // Section ID
-            array(
-                'option_name'       => ASENHA_SLUG_U,
-                'field_id'          => $field_id,
-                'field_slug'        => $field_slug,
-                'field_name'        => ASENHA_SLUG_U . '[' . $field_id . ']',
-                'field_description' => __( 'Re-enable infinite scrolling in the grid view of the media library. Useful for scrolling through a large library.', 'admin-site-enhancements' ),
-                'class'             => 'asenha-toggle content-management ' . $field_slug,
-            )
-        );
         // Enable SVG Upload
         $field_id = 'enable_svg_upload';
         $field_slug = 'enable-svg-upload';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'SVG Upload', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -295,15 +260,11 @@ class Settings_Sections_Fields {
                 // e.g. $role_slug is administrator, $role_label is Administrator
                 add_settings_field(
                     $field_id . '_' . $role_slug,
-                    // Field ID
                     '',
                     // Field title
                     [$render_field, 'render_checkbox_subfield'],
-                    // Callback to render field with custom arguments in the array below
                     ASENHA_SLUG,
-                    // Settings page slug
                     'main-section',
-                    // Section ID
                     array(
                         'option_name'     => ASENHA_SLUG_U,
                         'parent_field_id' => $field_id,
@@ -315,20 +276,50 @@ class Settings_Sections_Fields {
                 );
             }
         }
+        // Enable AVIF Upload
+        $field_id = 'enable_avif_upload';
+        $field_slug = 'enable-avif-upload';
+        add_settings_field(
+            $field_id,
+            __( 'AVIF Upload', 'admin-site-enhancements' ),
+            // Field title
+            [$render_field, 'render_checkbox_toggle'],
+            ASENHA_SLUG,
+            'main-section',
+            array(
+                'option_name'            => ASENHA_SLUG_U,
+                'field_id'               => $field_id,
+                'field_slug'             => $field_slug,
+                'field_name'             => ASENHA_SLUG_U . '[' . $field_id . ']',
+                'field_description'      => __( 'Enable uploading <a href="https://www.smashingmagazine.com/2021/09/modern-image-formats-avif-webp/" target="_blank">AVIF</a> files in the Media Library. You can convert your existing PNG, JPG and GIF files using a tool like <a href="https://squoosh.app/" target="_blank">Squoosh</a>.', 'admin-site-enhancements' ),
+                'field_options_wrapper'  => true,
+                'field_options_moreless' => true,
+                'class'                  => 'asenha-toggle content-management ' . $field_slug,
+            )
+        );
+        $field_id = 'avif_support_status';
+        $field_slug = 'avif-support-status';
+        add_settings_field(
+            $field_id,
+            '',
+            // Field title
+            [$render_field, 'render_avif_support_status'],
+            ASENHA_SLUG,
+            'main-section',
+            array(
+                'class' => 'asenha-toggle content-management ' . $field_slug,
+            )
+        );
         // Enable External Permalinks
         $field_id = 'enable_external_permalinks';
         $field_slug = 'enable-external-permalinks';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'External Permalinks', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -348,15 +339,11 @@ class Settings_Sections_Fields {
                 if ( 'attachment' != $post_type_slug ) {
                     add_settings_field(
                         $field_id . '_' . $post_type_slug,
-                        // Field ID
                         '',
                         // Field title
                         [$render_field, 'render_checkbox_subfield'],
-                        // Callback to render field with custom arguments in the array below
                         ASENHA_SLUG,
-                        // Settings page slug
                         'main-section',
-                        // Section ID
                         array(
                             'option_name'     => ASENHA_SLUG_U,
                             'parent_field_id' => $field_id,
@@ -374,15 +361,11 @@ class Settings_Sections_Fields {
         $field_slug = 'external-links-new-tab';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Open All External Links in New Tab', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -399,15 +382,11 @@ class Settings_Sections_Fields {
         $field_slug = 'custom-nav-menu-items-new-tab';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Allow Custom Navigation Menu Items to Open in New Tab', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -424,15 +403,11 @@ class Settings_Sections_Fields {
         $field_slug = 'enable-missed-schedule-posts-auto-publish';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Auto-Publish Posts with Missed Schedule', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -450,15 +425,11 @@ class Settings_Sections_Fields {
         $field_slug = 'hide-modify-elements';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Clean Up Admin Bar', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -474,15 +445,11 @@ class Settings_Sections_Fields {
         $field_slug = 'hide-ab-wp-logo-menu';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -495,15 +462,11 @@ class Settings_Sections_Fields {
         $field_slug = 'hide-ab-customize-menu';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -516,15 +479,11 @@ class Settings_Sections_Fields {
         $field_slug = 'hide-ab-updates-menu';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -537,15 +496,11 @@ class Settings_Sections_Fields {
         $field_slug = 'hide-ab-comments-menu';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -558,15 +513,11 @@ class Settings_Sections_Fields {
         $field_slug = 'hide-ab-new-content-menu';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -579,15 +530,11 @@ class Settings_Sections_Fields {
         $field_slug = 'hide-ab-howdy';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -600,15 +547,11 @@ class Settings_Sections_Fields {
         $field_slug = 'hide-help-drawer';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -624,15 +567,11 @@ class Settings_Sections_Fields {
         $field_options_moreless = false;
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Hide Admin Notices', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -649,15 +588,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-dashboard-widgets';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Disable Dashboard Widgets', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -673,15 +608,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-welcome-panel-in-dashboard';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -703,15 +634,11 @@ class Settings_Sections_Fields {
         foreach ( $dashboard_widgets as $widget ) {
             add_settings_field(
                 $field_id . '_' . $widget['id'],
-                // Field ID
                 '',
                 // Field title
                 [$render_field, 'render_checkbox_subfield'],
-                // Callback to render field with custom arguments in the array below
                 ASENHA_SLUG,
-                // Settings page slug
                 'main-section',
-                // Section ID
                 array(
                     'option_name'     => ASENHA_SLUG_U,
                     'parent_field_id' => $field_id,
@@ -728,15 +655,11 @@ class Settings_Sections_Fields {
         $field_description = __( 'Hide admin bar on the frontend for all or some user roles.', 'admin-site-enhancements' );
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Hide Admin Bar', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -755,15 +678,11 @@ class Settings_Sections_Fields {
                 // e.g. $role_slug is administrator, $role_label is Administrator
                 add_settings_field(
                     $field_id . '_' . $role_slug,
-                    // Field ID
                     '',
                     // Field title
                     [$render_field, 'render_checkbox_subfield'],
-                    // Callback to render field with custom arguments in the array below
                     ASENHA_SLUG,
-                    // Settings page slug
                     'main-section',
-                    // Section ID
                     array(
                         'option_name'     => ASENHA_SLUG_U,
                         'parent_field_id' => $field_id,
@@ -780,15 +699,11 @@ class Settings_Sections_Fields {
         $field_slug = 'wider-admin-menu';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Wider Admin Menu', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'           => ASENHA_SLUG_U,
                 'field_id'              => $field_id,
@@ -803,15 +718,11 @@ class Settings_Sections_Fields {
         $field_slug = 'admin-menu-width';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_select_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'          => ASENHA_SLUG_U,
                 'field_id'             => $field_id,
@@ -840,15 +751,11 @@ class Settings_Sections_Fields {
         $field_slug = 'customize-admin-menu';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Admin Menu Organizer', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -864,15 +771,11 @@ class Settings_Sections_Fields {
         $field_slug = 'custom-menu-order';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_sortable_menu'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -889,15 +792,11 @@ class Settings_Sections_Fields {
         $field_options_moreless = false;
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Show Custom Taxonomy Filters', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -914,15 +813,11 @@ class Settings_Sections_Fields {
         $field_slug = 'enhance-list-tables';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Enhance List Tables', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -939,15 +834,11 @@ class Settings_Sections_Fields {
         $field_slug = 'show-featured-image-column';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -961,15 +852,11 @@ class Settings_Sections_Fields {
         $field_slug = 'show-excerpt-column';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -983,15 +870,11 @@ class Settings_Sections_Fields {
         $field_slug = 'show-id-column';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -1005,15 +888,11 @@ class Settings_Sections_Fields {
         $field_slug = 'show-file-size-column';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -1027,15 +906,11 @@ class Settings_Sections_Fields {
         $field_slug = 'show-id-in-action_row';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -1049,15 +924,11 @@ class Settings_Sections_Fields {
         $field_slug = 'hide-comments-column';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -1071,15 +942,11 @@ class Settings_Sections_Fields {
         $field_slug = 'hide-post-tags-column';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -1088,27 +955,61 @@ class Settings_Sections_Fields {
                 'class'       => 'asenha-checkbox asenha-hide-th content-management ' . $field_slug,
             )
         );
+        // Various Admin UI Enhancements
+        $field_id = 'various_admin_ui_enhancements';
+        $field_slug = 'various-admin-ui-enhancements';
+        add_settings_field(
+            $field_id,
+            __( 'Various Admin UI Enhancements', 'admin-site-enhancements' ),
+            // Field title
+            [$render_field, 'render_checkbox_toggle'],
+            ASENHA_SLUG,
+            'main-section',
+            array(
+                'option_name'            => ASENHA_SLUG_U,
+                'field_id'               => $field_id,
+                'field_slug'             => $field_slug,
+                'field_name'             => ASENHA_SLUG_U . '[' . $field_id . ']',
+                'field_description'      => __( 'Various, smaller enhancements for different parts of the admin interface.', 'admin-site-enhancements' ),
+                'field_options_wrapper'  => true,
+                'field_options_moreless' => true,
+                'class'                  => 'asenha-toggle admin-interface ' . $field_slug,
+            )
+        );
+        // Media Library Infinite Scrolling
+        $field_id = 'media_library_infinite_scrolling';
+        $field_slug = 'media-library-infinite-scrolling';
+        add_settings_field(
+            $field_id,
+            '',
+            // Field title
+            [$render_field, 'render_checkbox_plain'],
+            ASENHA_SLUG,
+            'main-section',
+            array(
+                'option_name' => ASENHA_SLUG_U,
+                'field_id'    => $field_id,
+                'field_name'  => ASENHA_SLUG_U . '[' . $field_id . ']',
+                'field_label' => '<strong>' . __( 'Media Library Infinite Scrolling', 'admin-site-enhancements' ) . '</strong><br />' . __( 'Re-enable infinite scrolling in the grid view of the media library. Useful for scrolling through a large library.', 'admin-site-enhancements' ),
+                'class'       => 'asenha-toggle admin-interface ' . $field_slug,
+            )
+        );
         // Display Active Plugins First
         $field_id = 'display_active_plugins_first';
         $field_slug = 'display-active-plugins-first';
         add_settings_field(
             $field_id,
-            // Field ID
-            __( 'Display Active Plugins First', 'admin-site-enhancements' ),
+            '',
             // Field title
-            [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
+            [$render_field, 'render_checkbox_plain'],
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
-                'option_name'       => ASENHA_SLUG_U,
-                'field_id'          => $field_id,
-                'field_slug'        => $field_slug,
-                'field_name'        => ASENHA_SLUG_U . '[' . $field_id . ']',
-                'field_description' => __( 'Display active / activated plugins at the top of the Installed Plugins list. Useful when your site has many deactivated plugins for testing or development purposes.', 'admin-site-enhancements' ),
-                'class'             => 'asenha-toggle content-management ' . $field_slug,
+                'option_name' => ASENHA_SLUG_U,
+                'field_id'    => $field_id,
+                'field_name'  => ASENHA_SLUG_U . '[' . $field_id . ']',
+                'field_label' => '<strong>' . __( 'Display Active Plugins First', 'admin-site-enhancements' ) . '</strong><br />' . __( 'Display active / activated plugins at the top of the Installed Plugins list. Useful when your site has many deactivated plugins for testing or development purposes.', 'admin-site-enhancements' ),
+                'class'       => 'asenha-toggle admin-interface ' . $field_slug,
             )
         );
         // Custom Admin Footer Text
@@ -1116,15 +1017,11 @@ class Settings_Sections_Fields {
         $field_slug = 'custom-admin-footer-text';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Custom Admin Footer Text', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -1158,15 +1055,11 @@ class Settings_Sections_Fields {
         );
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Left Side', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_wpeditor_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -1199,15 +1092,11 @@ class Settings_Sections_Fields {
         );
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Right Side', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_wpeditor_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -1234,15 +1123,11 @@ class Settings_Sections_Fields {
         $field_slug = 'change-login-url';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Change Login URL', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -1262,22 +1147,19 @@ class Settings_Sections_Fields {
         $field_slug = 'custom-login-slug';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'New login URL:', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_text_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
                 'field_name'        => ASENHA_SLUG_U . '[' . $field_id . ']',
                 'field_type'        => 'with-prefix-suffix',
                 'field_prefix'      => site_url() . '/',
-                'field_suffix'      => '',
+                'field_suffix'      => '/',
+                'field_placeholder' => __( 'e.g. backend', 'admin-site-enhancements' ),
                 'field_description' => '',
                 'class'             => 'asenha-text with-prefix-suffix login-logout ' . $field_slug,
             )
@@ -1286,15 +1168,11 @@ class Settings_Sections_Fields {
         $field_slug = 'change-login-url-description';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_description_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_description' => __( '<div class="asenha-warning">This feature <strong>only works for/with the default WordPress login page</strong>. It does not support using custom login page you manually created with a page builder or with another plugin.<br /><br />It\'s also <strong>not yet compatible with two-factor authentication (2FA) methods</strong>. If you use a 2FA plugin, please use the change login URL feature bundled in that plugin, or use another plugin that is compatible with it.<br /><br />And obviously, to improve security, please <strong>use something other than \'login\'</strong> for the custom login slug.</div>', 'admin-site-enhancements' ),
@@ -1306,15 +1184,11 @@ class Settings_Sections_Fields {
         $field_slug = 'login-id-type-restriction';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Login ID Type', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'           => ASENHA_SLUG_U,
                 'field_id'              => $field_id,
@@ -1329,15 +1203,11 @@ class Settings_Sections_Fields {
         $field_slug = 'login-id-type';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_radio_buttons_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'   => ASENHA_SLUG_U,
                 'field_id'      => $field_id,
@@ -1355,15 +1225,11 @@ class Settings_Sections_Fields {
         $field_slug = 'site-identity-on-login';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Site Identity on Login Page', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'           => ASENHA_SLUG_U,
                 'field_id'              => $field_id,
@@ -1383,15 +1249,11 @@ class Settings_Sections_Fields {
         $field_slug = 'enable-login-logout-menu';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Log In/Out Menu', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -1408,15 +1270,11 @@ class Settings_Sections_Fields {
         $field_slug = 'enable-last-login-column';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Last Login Column', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -1433,15 +1291,11 @@ class Settings_Sections_Fields {
         $field_slug = 'redirect-after-login';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Redirect After Login', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -1457,15 +1311,11 @@ class Settings_Sections_Fields {
         $field_slug = 'redirect-after-login-to-slug';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Redirect to:', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_text_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -1473,6 +1323,7 @@ class Settings_Sections_Fields {
                 'field_type'        => 'with-prefix-suffix',
                 'field_prefix'      => site_url() . '/',
                 'field_suffix'      => __( 'for:', 'admin-site-enhancements' ),
+                'field_placeholder' => '',
                 'field_description' => '',
                 'class'             => 'asenha-text with-prefix-suffix login-logout ' . $field_slug,
             )
@@ -1484,15 +1335,11 @@ class Settings_Sections_Fields {
                 // e.g. $role_slug is administrator, $role_label is Administrator
                 add_settings_field(
                     $field_id . '_' . $role_slug,
-                    // Field ID
                     '',
                     // Field title
                     [$render_field, 'render_checkbox_subfield'],
-                    // Callback to render field with custom arguments in the array below
                     ASENHA_SLUG,
-                    // Settings page slug
                     'main-section',
-                    // Section ID
                     array(
                         'option_name'     => ASENHA_SLUG_U,
                         'parent_field_id' => $field_id,
@@ -1509,15 +1356,11 @@ class Settings_Sections_Fields {
         $field_slug = 'redirect-after-logout';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Redirect After Logout', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -1533,15 +1376,11 @@ class Settings_Sections_Fields {
         $field_slug = 'redirect-after-logout-to-slug';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Redirect to:', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_text_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -1560,15 +1399,11 @@ class Settings_Sections_Fields {
                 // e.g. $role_slug is administrator, $role_label is Administrator
                 add_settings_field(
                     $field_id . '_' . $role_slug,
-                    // Field ID
                     '',
                     // Field title
                     [$render_field, 'render_checkbox_subfield'],
-                    // Callback to render field with custom arguments in the array below
                     ASENHA_SLUG,
-                    // Settings page slug
                     'main-section',
-                    // Section ID
                     array(
                         'option_name'     => ASENHA_SLUG_U,
                         'parent_field_id' => $field_id,
@@ -1585,15 +1420,11 @@ class Settings_Sections_Fields {
         $field_slug = 'enable-custom-admin-css';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Custom Admin CSS', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -1609,15 +1440,11 @@ class Settings_Sections_Fields {
         $field_slug = 'custom-admin-css';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_textarea_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -1635,15 +1462,11 @@ class Settings_Sections_Fields {
         $field_slug = 'enable-custom-frontend-css';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Custom Frontend CSS', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -1659,15 +1482,11 @@ class Settings_Sections_Fields {
         $field_slug = 'custom-frontend-css';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_textarea_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -1685,16 +1504,12 @@ class Settings_Sections_Fields {
         $field_slug = 'insert-head-body-footer-code';
         add_settings_field(
             $field_id,
-            // Field ID
             /* translators: keep &lt;head&gt; &lt;body&gt; &lt;footer&gt; as is in the translation */
             __( 'Insert &lt;head&gt;, &lt;body&gt; and &lt;footer&gt; Code', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -1710,15 +1525,11 @@ class Settings_Sections_Fields {
         $field_slug = 'head-code-priority';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_number_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -1727,6 +1538,7 @@ class Settings_Sections_Fields {
                 'field_prefix'      => __( '<strong>Code to insert before &lt;/head&gt; with the priority of</strong>', 'admin-site-enhancements' ),
                 'field_suffix'      => '',
                 'field_intro'       => '',
+                'field_placeholder' => '10',
                 'field_description' => __( 'Default is 10. Larger number insert code closer to &lt;/head&gt;', 'admin-site-enhancements' ),
                 'class'             => 'asenha-number asenha-hide-th narrow custom-code ' . $field_slug,
             )
@@ -1735,15 +1547,11 @@ class Settings_Sections_Fields {
         $field_slug = 'head-code';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_textarea_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -1760,15 +1568,11 @@ class Settings_Sections_Fields {
         $field_slug = 'body-code-priority';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_number_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -1777,6 +1581,7 @@ class Settings_Sections_Fields {
                 'field_prefix'      => __( '<strong>Code to insert after &lt;body&gt; with the priority of</strong>', 'admin-site-enhancements' ),
                 'field_suffix'      => '',
                 'field_intro'       => '',
+                'field_placeholder' => '10',
                 'field_description' => __( 'Default is 10. Smaller number insert code closer to &lt;body&gt;', 'admin-site-enhancements' ),
                 'class'             => 'asenha-number asenha-hide-th narrow custom-code ' . $field_slug,
             )
@@ -1785,15 +1590,11 @@ class Settings_Sections_Fields {
         $field_slug = 'body-code';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_textarea_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -1810,15 +1611,11 @@ class Settings_Sections_Fields {
         $field_slug = 'footer-code-priority';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_number_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -1827,6 +1624,7 @@ class Settings_Sections_Fields {
                 'field_prefix'      => __( '<strong>Code to insert in footer section before &lt;/body&gt; with the priority of</strong>', 'admin-site-enhancements' ),
                 'field_suffix'      => '',
                 'field_intro'       => '',
+                'field_placeholder' => '10',
                 'field_description' => __( 'Default is 10. Larger number insert code closer to &lt;/body&gt;', 'admin-site-enhancements' ),
                 'class'             => 'asenha-number asenha-hide-th narrow custom-code ' . $field_slug,
             )
@@ -1835,15 +1633,11 @@ class Settings_Sections_Fields {
         $field_slug = 'footer-code';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_textarea_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -1861,15 +1655,11 @@ class Settings_Sections_Fields {
         $field_slug = 'enable-custom-body-class';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Custom Body Class', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -1889,15 +1679,11 @@ class Settings_Sections_Fields {
                 if ( 'attachment' != $post_type_slug ) {
                     add_settings_field(
                         $field_id . '_' . $post_type_slug,
-                        // Field ID
                         '',
                         // Field title
                         [$render_field, 'render_checkbox_subfield'],
-                        // Callback to render field with custom arguments in the array below
                         ASENHA_SLUG,
-                        // Settings page slug
                         'main-section',
-                        // Section ID
                         array(
                             'option_name'     => ASENHA_SLUG_U,
                             'parent_field_id' => $field_id,
@@ -1915,15 +1701,11 @@ class Settings_Sections_Fields {
         $field_slug = 'manage-ads-appads-txt';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Manage ads.txt and app-ads.txt', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -1941,15 +1723,11 @@ class Settings_Sections_Fields {
         $ads_txt_str_replaced = str_replace( '.', '-', sanitize_text_field( $_SERVER['SERVER_NAME'] ) );
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_textarea_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -1968,15 +1746,11 @@ class Settings_Sections_Fields {
         $appads_txt_url_urlencoded = urlencode( site_url( 'app-ads.txt' ) );
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_textarea_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -1994,15 +1768,11 @@ class Settings_Sections_Fields {
         $field_slug = 'manage-robots-txt';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Manage robots.txt', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -2019,15 +1789,11 @@ class Settings_Sections_Fields {
         $robots_txt_url_urlencoded = urlencode( site_url( 'robots.txt' ) );
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_textarea_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -2048,21 +1814,17 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-gutenberg';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Disable Gutenberg', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
                 'field_slug'             => $field_slug,
                 'field_name'             => ASENHA_SLUG_U . '[' . $field_id . ']',
-                'field_description'      => 'Disable the Gutenberg block editor for some or all applicable post types.',
+                'field_description'      => __( 'Disable the Gutenberg block editor for some or all applicable post types.', 'admin-site-enhancements' ),
                 'field_options_wrapper'  => true,
                 'field_options_moreless' => true,
                 'class'                  => 'asenha-toggle disable-components ' . $field_slug,
@@ -2075,15 +1837,11 @@ class Settings_Sections_Fields {
                 // e.g. $post_type_slug is post, $post_type_label is Posts
                 add_settings_field(
                     $field_id . '_' . $post_type_slug,
-                    // Field ID
                     '',
                     // Field title
                     [$render_field, 'render_checkbox_subfield'],
-                    // Callback to render field with custom arguments in the array below
                     ASENHA_SLUG,
-                    // Settings page slug
                     'main-section',
-                    // Section ID
                     array(
                         'option_name'     => ASENHA_SLUG_U,
                         'parent_field_id' => $field_id,
@@ -2099,15 +1857,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-gutenberg-frontend-styles';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -2121,15 +1875,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-comments';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Disable Comments', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -2148,15 +1898,11 @@ class Settings_Sections_Fields {
                 // e.g. $post_type_slug is post, $post_type_label is Posts
                 add_settings_field(
                     $field_id . '_' . $post_type_slug,
-                    // Field ID
                     '',
                     // Field title
                     [$render_field, 'render_checkbox_subfield'],
-                    // Callback to render field with custom arguments in the array below
                     ASENHA_SLUG,
-                    // Settings page slug
                     'main-section',
-                    // Section ID
                     array(
                         'option_name'     => ASENHA_SLUG_U,
                         'parent_field_id' => $field_id,
@@ -2173,15 +1919,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-rest-api';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Disable REST API', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -2198,15 +1940,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-feeds';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Disable Feeds', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -2223,15 +1961,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-all-updates';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Disable All Updates', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -2248,15 +1982,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-smaller-components';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Disable Smaller Components', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -2272,15 +2002,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-head-generator-tag';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -2293,15 +2019,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-resource-version-number';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -2314,15 +2036,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-head-wlwmanifest-tag';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -2335,15 +2053,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-head-rsd-tag';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -2356,15 +2070,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-head-shortlink-tag';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -2377,15 +2087,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-frontend-dashicons';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -2398,15 +2104,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-emoji-support';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -2419,15 +2121,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-jquery-migrate';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -2440,15 +2138,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-block-widgets';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -2465,15 +2159,11 @@ class Settings_Sections_Fields {
         $field_slug = 'limit-login-attempts';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Limit Login Attempts', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -2489,15 +2179,11 @@ class Settings_Sections_Fields {
         $field_slug = 'login-fails-allowed';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_number_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -2506,6 +2192,7 @@ class Settings_Sections_Fields {
                 'field_prefix'      => '',
                 'field_suffix'      => __( 'failed login attempts allowed before 15 minutes lockout', 'admin-site-enhancements' ),
                 'field_intro'       => '',
+                'field_placeholder' => '3',
                 'field_description' => '',
                 'class'             => 'asenha-text with-prefix-suffix extra-narrow no-margin security ' . $field_slug,
             )
@@ -2514,15 +2201,11 @@ class Settings_Sections_Fields {
         $field_slug = 'login-lockout-maxcount';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_number_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -2531,6 +2214,7 @@ class Settings_Sections_Fields {
                 'field_prefix'      => '',
                 'field_suffix'      => __( 'lockout(s) will block further login attempts for 24 hours', 'admin-site-enhancements' ),
                 'field_intro'       => '',
+                'field_placeholder' => '3',
                 'field_description' => '',
                 'class'             => 'asenha-text with-prefix-suffix extra-narrow no-margin security ' . $field_slug,
             )
@@ -2539,15 +2223,11 @@ class Settings_Sections_Fields {
         $field_slug = 'login-attempts-log-table';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Failed login attempts:', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_datatable'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -2565,15 +2245,11 @@ class Settings_Sections_Fields {
         $field_slug = 'obfuscate-author-slugs';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Obfuscate Author Slugs', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'           => ASENHA_SLUG_U,
                 'field_id'              => $field_id,
@@ -2589,15 +2265,11 @@ class Settings_Sections_Fields {
         $field_slug = 'obfuscate-email-address';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Email Address Obfuscator', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -2618,15 +2290,11 @@ class Settings_Sections_Fields {
         		</ul>', 'admin-site-enhancements' );
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_description_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_description' => $field_description,
@@ -2638,15 +2306,11 @@ class Settings_Sections_Fields {
         $field_slug = 'disable-xmlrpc';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Disable XML-RPC', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'           => ASENHA_SLUG_U,
                 'field_id'              => $field_id,
@@ -2665,15 +2329,11 @@ class Settings_Sections_Fields {
         $field_slug = 'image-upload-control';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Image Upload Control', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -2689,15 +2349,11 @@ class Settings_Sections_Fields {
         $field_slug = 'image-max-width';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_number_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -2706,6 +2362,7 @@ class Settings_Sections_Fields {
                 'field_prefix'      => __( 'Max width:', 'admin-site-enhancements' ),
                 'field_suffix'      => __( 'pixels. <span class="faded">(Default is 1920 pixels)</span>', 'admin-site-enhancements' ),
                 'field_intro'       => '',
+                'field_placeholder' => '1920',
                 'field_description' => '',
                 'class'             => 'asenha-number asenha-hide-th narrow optimizations ' . $field_slug,
             )
@@ -2714,24 +2371,21 @@ class Settings_Sections_Fields {
         $field_slug = 'image-max-height';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_number_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
-                'option_name'  => ASENHA_SLUG_U,
-                'field_id'     => $field_id,
-                'field_name'   => ASENHA_SLUG_U . '[' . $field_id . ']',
-                'field_type'   => 'with-prefix-suffix',
-                'field_prefix' => __( 'Max height:', 'admin-site-enhancements' ),
-                'field_suffix' => __( 'pixels <span class="faded">(Default is 1920 pixels)</span>', 'admin-site-enhancements' ),
-                'field_intro'  => '',
-                'class'        => 'asenha-number asenha-hide-th narrow margin-bottom-4 optimizations ' . $field_slug,
+                'option_name'       => ASENHA_SLUG_U,
+                'field_id'          => $field_id,
+                'field_name'        => ASENHA_SLUG_U . '[' . $field_id . ']',
+                'field_type'        => 'with-prefix-suffix',
+                'field_prefix'      => __( 'Max height:', 'admin-site-enhancements' ),
+                'field_suffix'      => __( 'pixels <span class="faded">(Default is 1920 pixels)</span>', 'admin-site-enhancements' ),
+                'field_intro'       => '',
+                'field_placeholder' => '1920',
+                'class'             => 'asenha-number asenha-hide-th narrow margin-bottom-4 optimizations ' . $field_slug,
             )
         );
         $field_id = 'image_upload_control_description';
@@ -2739,15 +2393,11 @@ class Settings_Sections_Fields {
         $field_description = __( 'To exclude an image from conversion and resizing, append \'-nr\' suffix to the file name, e.g. bird-photo-4k-nr.jpg', 'admin-site-enhancements' );
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_description_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_description' => $field_description,
@@ -2759,15 +2409,11 @@ class Settings_Sections_Fields {
         $field_slug = 'enable-revisions-control';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Revisions Control', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -2783,15 +2429,11 @@ class Settings_Sections_Fields {
         $field_slug = 'revisions-max-number';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_number_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -2800,6 +2442,7 @@ class Settings_Sections_Fields {
                 'field_prefix'      => __( 'Limit to', 'admin-site-enhancements' ),
                 'field_suffix'      => __( 'revisions for:', 'admin-site-enhancements' ),
                 'field_intro'       => '',
+                'field_placeholder' => '10',
                 'field_description' => '',
                 'class'             => 'asenha-number asenha-hide-th extra-narrow optimizations ' . $field_slug,
             )
@@ -2814,15 +2457,11 @@ class Settings_Sections_Fields {
                 // e.g. $post_type_slug is post, $post_type_label is Posts
                 add_settings_field(
                     $field_id . '_' . $post_type_slug,
-                    // Field ID
                     '',
                     // Field title
                     [$render_field, 'render_checkbox_subfield'],
-                    // Callback to render field with custom arguments in the array below
                     ASENHA_SLUG,
-                    // Settings page slug
                     'main-section',
-                    // Section ID
                     array(
                         'option_name'     => ASENHA_SLUG_U,
                         'parent_field_id' => $field_id,
@@ -2839,15 +2478,11 @@ class Settings_Sections_Fields {
         $field_slug = 'enable-heartbeat-control';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Heartbeat Control', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -2863,15 +2498,11 @@ class Settings_Sections_Fields {
         $field_slug = 'heartbeat-control-for-admin-pages';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'On admin pages', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_radio_buttons_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'   => ASENHA_SLUG_U,
                 'field_id'      => $field_id,
@@ -2889,15 +2520,11 @@ class Settings_Sections_Fields {
         $field_slug = 'heartbeat-interval-for-admin-pages';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_select_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'          => ASENHA_SLUG_U,
                 'field_id'             => $field_id,
@@ -2925,15 +2552,11 @@ class Settings_Sections_Fields {
         $field_slug = 'heartbeat-control-for-post-edit';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'On post creation and edit screens', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_radio_buttons_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'   => ASENHA_SLUG_U,
                 'field_id'      => $field_id,
@@ -2951,15 +2574,11 @@ class Settings_Sections_Fields {
         $field_slug = 'heartbeat-interval-for-post-edit';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_select_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'          => ASENHA_SLUG_U,
                 'field_id'             => $field_id,
@@ -2986,15 +2605,11 @@ class Settings_Sections_Fields {
         $field_slug = 'heartbeat-control-for-frontend';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'On the frontend', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_radio_buttons_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'   => ASENHA_SLUG_U,
                 'field_id'      => $field_id,
@@ -3012,15 +2627,11 @@ class Settings_Sections_Fields {
         $field_slug = 'heartbeat-interval-for-frontend';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_select_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'          => ASENHA_SLUG_U,
                 'field_id'             => $field_id,
@@ -3052,15 +2663,11 @@ class Settings_Sections_Fields {
         $field_slug = 'smtp-email-delivery';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Email Delivery', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -3076,15 +2683,11 @@ class Settings_Sections_Fields {
         $field_slug = 'smtp-default-from-description';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_description_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_description' => __( 'If set, the following sender name/email overrides WordPress core defaults but can still be overridden by other plugins that enables custom sender name/email, e.g. form plugins.', 'admin-site-enhancements' ),
@@ -3095,15 +2698,11 @@ class Settings_Sections_Fields {
         $field_slug = 'smtp-default-from-name';
         add_settings_field(
             $field_id,
-            // Field ID
             __( '<span class="field-sublabel sublabel-wide">Sender name</span>', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_text_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -3119,15 +2718,11 @@ class Settings_Sections_Fields {
         $field_slug = 'smtp-default-from-email';
         add_settings_field(
             $field_id,
-            // Field ID
             __( '<span class="field-sublabel sublabel-wide">Sender email</span>', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_text_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -3143,15 +2738,11 @@ class Settings_Sections_Fields {
         $field_slug = 'smtp-force-from';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -3164,15 +2755,11 @@ class Settings_Sections_Fields {
         $field_slug = 'smtp--description';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_description_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_description' => __( 'If set, the following SMTP service/account wil be used to deliver your emails.', 'admin-site-enhancements' ),
@@ -3183,15 +2770,11 @@ class Settings_Sections_Fields {
         $field_slug = 'smtp-host';
         add_settings_field(
             $field_id,
-            // Field ID
             __( '<span class="field-sublabel sublabel-wide">Host</span>', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_text_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -3207,15 +2790,11 @@ class Settings_Sections_Fields {
         $field_slug = 'smtp-port';
         add_settings_field(
             $field_id,
-            // Field ID
             __( '<span class="field-sublabel sublabel-wide">Port</span>', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_number_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -3232,15 +2811,11 @@ class Settings_Sections_Fields {
         $field_slug = 'smtp-security';
         add_settings_field(
             $field_id,
-            // Field ID
             __( '<span class="field-sublabel sublabel-wide">Security</span>', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_radio_buttons_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'   => ASENHA_SLUG_U,
                 'field_id'      => $field_id,
@@ -3258,15 +2833,11 @@ class Settings_Sections_Fields {
         $field_slug = 'smtp-username';
         add_settings_field(
             $field_id,
-            // Field ID
             __( '<span class="field-sublabel sublabel-wide">Username</span>', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_text_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -3282,15 +2853,11 @@ class Settings_Sections_Fields {
         $field_slug = 'smtp-password';
         add_settings_field(
             $field_id,
-            // Field ID
             __( '<span class="field-sublabel sublabel-wide">Password</span>', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_password_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -3306,15 +2873,11 @@ class Settings_Sections_Fields {
         $field_slug = 'smtp-bypass-ssl-verification';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -3327,15 +2890,11 @@ class Settings_Sections_Fields {
         $field_slug = 'smtp-debug';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_checkbox_plain'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name' => ASENHA_SLUG_U,
                 'field_id'    => $field_id,
@@ -3348,15 +2907,11 @@ class Settings_Sections_Fields {
         $field_slug = 'smtp-send-test-email-description';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_description_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_description' => __( 'After saving the settings above, check if everything is configured properly below.', 'admin-site-enhancements' ),
@@ -3367,15 +2922,11 @@ class Settings_Sections_Fields {
         $field_slug = 'smtp-send-test-email-to';
         add_settings_field(
             $field_id,
-            // Field ID
             __( '<span class="field-sublabel sublabel-wide">Send a test email to</span>', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_custom_html'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'html'  => '<input type="text" id="test-email-to" class="asenha-subfield-text" name="" placeholder="" value=""><a id="send-test-email" class="button send-test-email">' . __( 'Send Now', 'admin-site-enhancements' ) . '</a>',
                 'class' => 'asenha-html wide utilities ' . $field_slug,
@@ -3385,15 +2936,11 @@ class Settings_Sections_Fields {
         $field_slug = 'smtp-send-test-email-result';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_description_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_description' => '<div id="ajax-result" class="ajax-result-div" style="display:none;">
@@ -3408,15 +2955,11 @@ class Settings_Sections_Fields {
         $field_slug = 'multiple-user-roles';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Multiple User Roles', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'           => ASENHA_SLUG_U,
                 'field_id'              => $field_id,
@@ -3432,15 +2975,11 @@ class Settings_Sections_Fields {
         $field_slug = 'image-sizes-panel';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Image Sizes Panel', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'           => ASENHA_SLUG_U,
                 'field_id'              => $field_id,
@@ -3456,15 +2995,11 @@ class Settings_Sections_Fields {
         $field_slug = 'view-admin-as-role';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'View Admin as Role', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -3483,15 +3018,11 @@ class Settings_Sections_Fields {
         $role_reset_link = site_url( '/?reset-for=' ) . $current_user_username;
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_description_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_description' => '<div class="asenha-warning"><strong>' . sprintf( 
@@ -3507,15 +3038,11 @@ class Settings_Sections_Fields {
         $field_slug = 'enable-password-protection';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Password Protection', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -3531,15 +3058,11 @@ class Settings_Sections_Fields {
         $field_slug = 'password-protection-password';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Set the password:', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_password_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -3556,15 +3079,11 @@ class Settings_Sections_Fields {
         $field_slug = 'maintenance-mode';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Maintenance Mode', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -3580,15 +3099,11 @@ class Settings_Sections_Fields {
         $field_slug = 'maintenance-page-heading';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Heading', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_text_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -3605,15 +3120,11 @@ class Settings_Sections_Fields {
         $field_slug = 'maintenance-page-description';
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Description', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_textarea_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_id'          => $field_id,
@@ -3636,37 +3147,29 @@ class Settings_Sections_Fields {
         );
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Background', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_radio_buttons_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'   => ASENHA_SLUG_U,
                 'field_id'      => $field_id,
                 'field_name'    => ASENHA_SLUG_U . '[' . $field_id . ']',
                 'field_radios'  => $field_radios,
                 'field_default' => 'default',
-                'class'         => 'asenha-radio-buttons utilities ' . $field_slug,
+                'class'         => 'asenha-radio-buttons margin-top-12 utilities ' . $field_slug,
             )
         );
         $field_id = 'maintenance_mode_description';
         $field_slug = 'maintenance-mode-description';
         add_settings_field(
             $field_id,
-            // Field ID
             '',
             // Field title
             [$render_field, 'render_description_subfield'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'       => ASENHA_SLUG_U,
                 'field_description' => '<div class="asenha-warning"><strong>' . __( 'Please clear your cache</strong> after enabling or disabling maintenance mode. This ensures site visitors see either the maintenance page or the actual content of each page.', 'admin-site-enhancements' ) . '</div>',
@@ -3682,15 +3185,11 @@ class Settings_Sections_Fields {
         $field_options_moreless = false;
         add_settings_field(
             $field_id,
-            // Field ID
             $module_title,
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'            => ASENHA_SLUG_U,
                 'field_id'               => $field_id,
@@ -3708,15 +3207,11 @@ class Settings_Sections_Fields {
         $module_description = __( 'Show quick summary of the system the site is running on to admins, in the "At a Glance" dashboard widget. This includes the web server software, the PHP version, the database software and server IP address.', 'admin-site-enhancements' );
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Display System Summary', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
                 'option_name'           => ASENHA_SLUG_U,
                 'field_id'              => $field_id,
@@ -3730,25 +3225,24 @@ class Settings_Sections_Fields {
         // Search Engines Visibility Status
         $field_id = 'search_engine_visibility_status';
         $field_slug = 'search-engine-visibility-status';
+        $field_options_moreless = false;
+        $field_options_wrapper = false;
         add_settings_field(
             $field_id,
-            // Field ID
             __( 'Search Engines Visibility Status', 'admin-site-enhancements' ),
             // Field title
             [$render_field, 'render_checkbox_toggle'],
-            // Callback to render field with custom arguments in the array below
             ASENHA_SLUG,
-            // Settings page slug
             'main-section',
-            // Section ID
             array(
-                'option_name'           => ASENHA_SLUG_U,
-                'field_id'              => $field_id,
-                'field_slug'            => $field_slug,
-                'field_name'            => ASENHA_SLUG_U . '[' . $field_id . ']',
-                'field_description'     => __( 'Show admin bar status when search engines are set to be discouraged from indexing the site. This is set through a "Search engine visibility" checkbox in Settings >> Reading.', 'admin-site-enhancements' ),
-                'field_options_wrapper' => true,
-                'class'                 => 'asenha-toggle utilities ' . $field_slug,
+                'option_name'            => ASENHA_SLUG_U,
+                'field_id'               => $field_id,
+                'field_slug'             => $field_slug,
+                'field_name'             => ASENHA_SLUG_U . '[' . $field_id . ']',
+                'field_description'      => __( 'Show admin bar status when search engines are set to be discouraged from indexing the site. This is set through a "Search engine visibility" checkbox in Settings >> Reading.', 'admin-site-enhancements' ),
+                'field_options_moreless' => $field_options_moreless,
+                'field_options_wrapper'  => $field_options_wrapper,
+                'class'                  => 'asenha-toggle utilities ' . $field_slug,
             )
         );
     }
