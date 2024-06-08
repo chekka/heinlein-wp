@@ -44,14 +44,14 @@ class SiteOrigin_Premium_WooCommerce_Template_Loop_Add_To_Cart extends WP_Widget
 		$field_name = $this->get_field_name( 'add_to_cart_' . $field );
 		?>
 		<div class="so-wc-widget-form-input">
-			<label for="<?php esc_attr_e( $field_id ); ?>">
-				<?php esc_html_e( sprintf( __( '%s product button text', 'siteorigin-premium' ), ucfirst( $field ) ) ); ?>
+			<label for="<?php echo esc_attr( $field_id ); ?>">
+				<?php echo esc_html( sprintf( __( '%s product button text', 'siteorigin-premium' ), ucfirst( $field ) ) ); ?>
 			</label>
 			<input
 				type="text"
-				id="<?php esc_attr_e( $field_id ); ?>"
-				name="<?php esc_attr_e( $field_name ); ?>"
-				value="<?php esc_attr_e( $field_value ); ?>"/>
+				id="<?php echo esc_attr( $field_id ); ?>"
+				name="<?php echo esc_attr( $field_name ); ?>"
+				value="<?php echo esc_attr( $field_value ); ?>"/>
 		</div>
 		<?php
 	}

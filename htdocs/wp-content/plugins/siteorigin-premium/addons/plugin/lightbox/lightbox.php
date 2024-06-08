@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Lightbox
-Description: Enable a lightbox on various SiteOrigin image widgets.
+Description: Showcase your images in striking lightbox galleries, allowing for immersive viewing with options to customize overlay color, opacity, and navigation controls.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

@@ -75,7 +75,7 @@ class SiteOrigin_Premium_Metabox extends SiteOrigin_Widget {
 				}
 			}
 
-			if ( ! empty( $tabs ) ) {	
+			if ( ! empty( $tabs ) ) {
 				$form_options = array(
 					'tabs' => array(
 						'type' => 'tabs',
@@ -101,6 +101,33 @@ class SiteOrigin_Premium_Metabox extends SiteOrigin_Widget {
 		wp_nonce_field( 'siteorigin_premium_metabox_save', '_siteorigin_premium_metabox_save_nonce' );
 	}
 
+	/**
+	 * Accounts empty values being present in a form options array.
+	 *
+	 * @param array $form_options The form options array.
+	 * @param array $values The values array.
+	 * @return array The modified instance array.
+	 */
+	private function account_for_empty( $form_options, $values ) {
+		$instance = array();
+		foreach ( $form_options as $id => $field ) {
+			if ( is_array( $field ) ) {
+				$instance[ $id ] = $this->account_for_empty(
+					$field,
+					isset( $values[ $id ] ) ? $values[ $id ] : array()
+				);
+			} else {
+				if ( isset( $values[ $id ] ) ) {
+					$instance[ $id ] = $values[ $id ];
+				} else {
+					$instance[ $id ] = false;
+				}
+			}
+		}
+
+		return $instance;
+	}
+
 	public function metabox_save( $post_id ) {
 		if (
 			empty( $_POST['_siteorigin_premium_metabox_save_nonce'] ) ||
@@ -114,12 +141,22 @@ class SiteOrigin_Premium_Metabox extends SiteOrigin_Widget {
 			! empty( $_POST['widget-siteorigin-premium'] ) &&
 			! empty( $_POST['widget-siteorigin-premium'][1] )
 		) {
+
+			$values = $_POST['widget-siteorigin-premium'][1];
+
+			$form_options = $this->get_widget_form();
+			unset( $form_options['tabs'] );
+
+			// Load defaults, and account for empty values.
+			$instance = $this->add_defaults( $form_options, $values );
+			$instance = $this->account_for_empty( $instance, $values );
+
 			$meta = get_post_meta( $post_id, 'siteorigin_premium_meta', true );
 			update_post_meta(
 				$post_id,
 				'siteorigin_premium_meta',
 				$this->update(
-					$_POST['widget-siteorigin-premium'][1],
+					$instance,
 					! empty( $meta ) ? $meta : false,
 					'metabox'
 				)

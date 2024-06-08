@@ -59,22 +59,24 @@ class SiteOrigin_Premium_Utility {
 	}
 
 	/**
-	 * Determines if an addon is enabled for the current post.
+	 * Checks if an addon is enabled for a specific post.
 	 *
-	 * @param array $settings The plugin settings.
-	 * @return bool Returns true if the meta is enabled, false otherwise.
+	 * @param array $settings The addon settings.
+	 * @param string $setting The specific addon setting to check.
+	 * @return bool Returns true if the addon is enabled for the post, false otherwise.
 	 */
 	public function is_addon_enabled_for_post( $settings, $setting ) {
 		$premium_meta = get_post_meta( get_the_id(), 'siteorigin_premium_meta', true );
 
-		// Check for global settings, and if this post type is enabled.
+		// Check if the current post type is enabled.
 		if (
-			! empty( $settings ) && !
+			! empty( $settings ) &&
+			is_array( $settings['types'] ) &&
 			in_array( get_post_type(), $settings['types'] )
 		) {
 			if (
-				empty( $premium_meta['general'] ) ||
-				empty( $premium_meta['general'][ $setting . '_off'] )
+				isset( $premium_meta['general'] ) &&
+				empty( $premium_meta['general'][ $setting . '_on'] )
 			) {
 				// Post has been disabled via meta.
 				return false;
@@ -83,14 +85,38 @@ class SiteOrigin_Premium_Utility {
 			return true;
 		}
 
-		// Post type is enabled. Let's check if the user has disabled this specific post.
+		// Post type is disabled. Check if the current post has been enabled.
 		if (
-			empty( $premium_meta['general'] ) ||
-			! empty( $premium_meta['general'][ $setting . '_on'] )
+			! isset( $premium_meta['general'] ) ||
+			empty( $premium_meta['general'][ $setting . '_off'] )
 		) {
+			// It hasn't.
 			return false;
 		}
 
 		return true;
 	}
+
+	/**
+	 * Ensure the tag is valid before output. If it's not, return the fallback.
+	 *
+	 * @param string $tag The HTML tag to validate.
+	 * @param string|null $fallback The fallback value if the tag is empty or invalid.
+	 * @param array $valid_tags An array containing valid HTML tags.
+	 * @return string A valid HTML tag for the widget.
+	 *
+	 * @see https://github.com/siteorigin/so-widgets-bundle/blob/develop/base/base.php#L554-L563
+	 */
+	public function validate_tag( $tag, $fallback = null, $valid_tags = array() ) {
+		if ( empty( $valid_tags ) || ! is_array( $valid_tags ) ) {
+			$valid_tags = array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p' );
+		}
+
+		if ( ! in_array( $tag, $valid_tags ) ) {
+			return $fallback;
+		}
+
+		return $tag;
+	}
+
 }

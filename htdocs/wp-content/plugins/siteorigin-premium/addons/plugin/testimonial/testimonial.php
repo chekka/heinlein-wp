@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Testimonials
-Description: Additional settings and styles for the SiteOrigin Testimonial Widget.
+Description: Enhance your Testimonials Widget with custom fonts, sizes, styles, and layouts, bringing customer feedback to life and effectively boosting your site's credibility.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

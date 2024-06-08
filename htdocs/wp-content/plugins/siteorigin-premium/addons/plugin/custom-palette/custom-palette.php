@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Custom Palette
-Description: Create a custom color palette for Page Builder and Widgets Bundle color settings.
+Description: Effortlessly customize your site's color scheme, creating a unique palette for Page Builder and Widgets Bundle, ensuring a harmonious visual experience.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

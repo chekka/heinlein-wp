@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Block Animations
-Description: Adds animation options to Page Builder rows, columns, and widgets.
+Description: Add animations to Page Builder rows, columns, and widgets, creating lively transitions that engage users with easy-to-set options.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -239,7 +239,7 @@ class SiteOrigin_Premium_Plugin_Animations {
 			$attributes['data-so-animation'] = array(
 				'selector' => '.' . $selector,
 				'animation' => $this->style_migration_replacer( $args['animation_type'] ),
-				'breakpoint' => siteorigin_panels_setting( 'mobile-width' ) . 'px',
+				'breakpoint' => $this->get_mobile_width() . 'px',
 				'duration' => isset( $args[ 'animation_duration' ] ) ? floatval( $args[ 'animation_duration' ] ) : 1,
 				'repeat' => ! empty( $args[ 'animation_repeat' ] ) ? 1 : 0,
 				'hide' => ! empty( $args[ 'animation_hide' ] ) ? 1 : 0,
@@ -273,13 +273,17 @@ class SiteOrigin_Premium_Plugin_Animations {
 		return $attributes;
 	}
 
+	public function get_mobile_width() {
+		return (int) function_exists( 'siteorigin_panels_setting' ) ? siteorigin_panels_setting( 'mobile-width' ) : 768;
+	}
+
 	public function add_hiding_class() {
 		static $once = false;
 
 		if ( ! $once && $this->hidden_used ) {
 			$once = true;
 			?>
-			<style type="text/css">.panels-animation-hide:not(.panels-animation-hide-disable-mobile){opacity:0} @media(min-width: <?php echo siteorigin_panels_setting( 'mobile-width' ); ?>px){.panels-animation-hide{opacity:0}}</style>
+			<style type="text/css">.panels-animation-hide:not(.panels-animation-hide-disable-mobile){opacity:0} @media(min-width: <?php echo $this->get_mobile_width(); ?>px){.panels-animation-hide{opacity:0}}</style>
 			<noscript><style type="text/css">.panels-animation-hide{opacity:1}</style></noscript>
 			<?php
 		}

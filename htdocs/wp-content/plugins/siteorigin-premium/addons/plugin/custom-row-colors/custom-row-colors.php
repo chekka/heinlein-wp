@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Custom Row Colors
-Description: Organize your Page Builder rows with custom background colors.
+Description: Enhance Page Builder row management by integrating custom background colors, offering a vibrant and organized admin interface for streamlined editing.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

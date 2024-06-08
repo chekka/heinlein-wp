@@ -78,13 +78,13 @@ class SiteOrigin_Premium_EDD_Actions {
 			'body'      => $params,
 		);
 
-		$response = wp_remote_get( SiteOrigin_Premium::single()->update_url(), $request );
+		$response = wp_remote_get( esc_url( SiteOrigin_Premium::single()->update_url() ), $request );
 
 		if ( is_wp_error( $response ) ) {
 			$license_data = new stdClass();
 			$license_data->license = 'invalid';
 			$license_data->errors['wp'] = $response->get_error_message();
-			
+
 			if ( isset( $response->errors['http_request_failed'] ) ) {
 				// The Request to SiteOrigin.com failed; avoid deactivating the license in response.
 				$license_data->first = true;

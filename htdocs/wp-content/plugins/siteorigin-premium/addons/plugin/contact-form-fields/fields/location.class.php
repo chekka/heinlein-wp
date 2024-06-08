@@ -84,7 +84,7 @@ class SiteOrigin_Widget_ContactForm_Field_Location extends SiteOrigin_Widget_Con
 			<div class="sow-google-map-canvas"
 			     style="<?php echo ( $global_settings['map_consent'] ) ? 'display: none;' : ''; ?>"
 			     id="map-canvas-<?php echo esc_attr( $options['field_id'] ); ?>"
-			     data-options="<?php echo esc_attr( json_encode( $map_data ) ); ?>">
+			     data-options="<?php echo esc_attr( wp_json_encode( $map_data ) ); ?>">
 			</div>
 			<?php
 		}

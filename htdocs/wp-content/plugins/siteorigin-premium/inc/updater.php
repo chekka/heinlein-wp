@@ -102,7 +102,13 @@ class SiteOrigin_Premium_Updater {
 
 		// If check has been disabled using the above filter, just return, unless we're on the updates page or the
 		// plugins 'Update Available' page.
-		if ( ! $check_enabled && ! ( $is_updates_page || $is_plugins_updates_page ) ) {
+		if (
+			! $check_enabled &&
+			! (
+				$is_updates_page ||
+				$is_plugins_updates_page
+			)
+		) {
 			return $_transient_data;
 		}
 
@@ -143,20 +149,29 @@ class SiteOrigin_Premium_Updater {
 			do_action( 'siteorigin_premium_update_check' );
 		}
 
-		if (
-			is_object( $version_info ) &&
-			isset( $version_info->new_version )
-		) {
-			if ( version_compare( $this->version, $version_info->new_version, '<' ) ) {
-				$_transient_data->response[ $this->name ] = $version_info;
-			} else {
-				// Required for automatic updates.
-				$_transient_data->no_update[ $this->name ] = $version_info;
-			}
-
-			$_transient_data->last_checked = time();
-			$_transient_data->checked[ $this->name ] = $this->version;
+		if ( ! is_object( $version_info ) ) {
+			return $_transient_data;
 		}
+
+		$version_info->version = $this->version;
+		$version_info->current_version = $this->version;
+		$version_info->id = $this->name;
+		$version_info->version = $this->version;
+		$version_info->tested = $this->get_tested_version( $version_info );
+		$version_info->plugin = $this->name;
+
+		if (
+			isset( $version_info->new_version ) &&
+			version_compare( $this->version, $version_info->new_version, '<' )
+		) {
+			$_transient_data->response[ $this->name ] = $version_info;
+		} else {
+			// Required for automatic updates.
+			$_transient_data->no_update[ $this->name ] = $version_info;
+		}
+
+		$_transient_data->last_checked = time();
+		$_transient_data->checked[ $this->name ] = $this->version;
 
 		return $_transient_data;
 	}
@@ -179,23 +194,22 @@ class SiteOrigin_Premium_Updater {
 			return $update;
 		}
 
-		// To bypass the update cache without enforcing automatic updates,
-		// we need to check if the plugin is set to automatically update first.
-		if ( ! wp_is_auto_update_enabled_for_type( 'plugin' ) ) {
-			return $update;
-		}
-		$auto_updates = get_site_option( 'auto_update_plugins', array() );
-		if ( ! in_array( $this->name, $auto_updates ) ) {
-			return $update;
+		// Check if we already know about an update.
+		$version_info = $this->get_cached_version_info();
+		if (
+			! empty( $version_info->new_version ) &&
+			version_compare( $this->version, $version_info->new_version, '<' )
+		) {
+			return true;
 		}
 
-		// Fetch the latest data to prevent the update cache from being used.
 		$version_info = $this->get_repo_api_data( true );
-
 		if ( ! $version_info ) {
-			return $update;
+			// If we were unable to fetch the latest data, We have to give up.
+			return false;
 		}
 
+		// Compare the version from the cache with the latest version.
 		if ( version_compare( $this->version, $version_info->new_version, '<' ) ) {
 			return true;
 		}
@@ -227,6 +241,7 @@ class SiteOrigin_Premium_Updater {
 
 			// This is required for your plugin to support auto-updates in WordPress 5.5.
 			$version_info->plugin = $this->name;
+			$version_info->current_version = $this->version;
 			$version_info->id = $this->name;
 			$version_info->tested = $this->get_tested_version( $version_info );
 
@@ -525,7 +540,7 @@ class SiteOrigin_Premium_Updater {
 			return;
 		}
 
-		// Don't allow a plugin to ping itself
+		// Don't allow a plugin to ping itself,
 		if ( home_url() === $this->api_url ) {
 			return false;
 		}
@@ -772,19 +787,19 @@ class SiteOrigin_Premium_Updater {
  */
 function siteorigin_premium_updater_http_response_debug( $response, $args, $url ) {
 	if (
-		// Check that we have a response
+		// Check that we have a response.
 		isset( $response['response'] ) &&
 		is_array( $response['response'] ) &&
 
-		// Check that the response is a 401
+		// Check that the response is a 401.
 		isset( $response['response']['code'] ) &&
 		$response['response']['code'] == 401 &&
 
-		// Check that it comes from our server
+		// Check that it comes from our server.
 		strpos( $url, SiteOrigin_Premium_EDD_Actions::EDD_ACTIONS_HOST ) !== false &&
 		strpos( $url, 'package_download' ) !== false
 	) {
-		// extract values from token
+		// Extract values from token.
 		$url_parts = parse_url( $url );
 		$paths = array_values( explode( '/', $url_parts['path'] ) );
 		$token = end( $paths );

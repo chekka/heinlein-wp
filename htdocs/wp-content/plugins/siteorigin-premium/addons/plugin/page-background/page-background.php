@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Page Background
-Description: Add page specific background images with support for high-pixel-density displays.
+Description: Set unique or global backgrounds to align with your content, enhancing visual appeal and ensuring high-resolution clarity on every display type.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -230,7 +230,7 @@ class SiteOrigin_Premium_Plugin_Page_Background {
 			if ( ! empty( $css ) ) {
 				$selector = ! empty( $global_settings['selector'] ) ? $global_settings['selector'] : self::get_selector();
 				$css = apply_filters( 'siteorigin_premium_page_background_css', $css );
-				echo '<style>' . trim( strip_tags( "$selector { $css }" ) ) . '</style>';
+				echo '<style>' . trim( wp_strip_all_tags( "$selector { $css }" ) ) . '</style>';
 			}
 		}
 	}

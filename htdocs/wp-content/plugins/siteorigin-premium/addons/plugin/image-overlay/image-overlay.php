@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Image Overlay
-Description: Add a beautiful and customizable text overlay with animations to your images.
+Description: Add interactive hover text overlays with customizable animations to your images, ideal for enriching galleries, portfolios, and any image-based content.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

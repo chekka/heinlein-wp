@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Parallax Sliders
-Description: Enhances the SiteOrigin Slider, Hero, and Layout Slider widgets by adding parallax and fixed background image options.
+Description: Enhance your Slider, Hero, and Layout Slider widgets with parallax and fixed backgrounds, making your site's content more engaging and visually appealing.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -175,7 +175,7 @@ class SiteOrigin_Premium_Plugin_Parallax_Sliders {
 		} elseif ( isset( $frame['background'] ) && $frame['background']['image_type'] == 'parallax' ) {
 			$url_field = $frame['background']['image'];
 			$url_fallback_field = $frame['background']['image_fallback'];
-			$opacity = intval( $frame['background']['opacity'] ) / 100;
+			$opacity = (int) $frame['background']['opacity'] / 100;
 		} else {
 			return;
 		}

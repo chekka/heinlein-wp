@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Tooltip
-Description: Add beautiful tooltips to a host of SiteOrigin Widgets.
+Description: Elevate user interaction with engaging image tooltips, offering informative visual cues for buttons, icons, images, and more, seamlessly across your site.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Hero
-Description: Additional settings and styles for the SiteOrigin Hero Widget.
+Description: Unlock new levels of creativity in your Hero Widget with added functionality and style settings, enabling dynamic animations and personalized control.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

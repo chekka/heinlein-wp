@@ -131,7 +131,7 @@ class SiteOrigin_Widget_ContactForm_Field_Datepicker extends SiteOrigin_Widget_C
 				}
 			}
 			?>
-			<div class="sow-form-field datepicker-container<?php echo ' ' . esc_attr( $width_class ); ?>">
+			<div class="sow-form-field datepicker-container<?php echo ' ' . sanitize_html_class( $width_class ); ?>">
 				<?php if ( ! empty( $datepicker_label ) ) { ?>
 					<label for="<?php echo esc_attr( $datepicker_id ); ?>">
 						<strong>
@@ -143,7 +143,7 @@ class SiteOrigin_Widget_ContactForm_Field_Datepicker extends SiteOrigin_Widget_C
 					type="text"
 					id="<?php echo esc_attr( $datepicker_id ); ?>"
 					class="so-premium-datepicker sow-text-field"
-					data-options="<?php echo esc_attr( json_encode( $datepicker_options ) ); ?>"
+					data-options="<?php echo esc_attr( wp_json_encode( $datepicker_options ) ); ?>"
 					autocomplete="off"
 					<?php method_exists( $this, 'add_custom_attrs' ) ? self::add_custom_attrs( 'datepicker' ) : ''; ?>
 				/>
@@ -160,7 +160,7 @@ class SiteOrigin_Widget_ContactForm_Field_Datepicker extends SiteOrigin_Widget_C
 				'timeFormat' => ! empty( $datetime_options['timepicker_custom_format'] ) ? 'H:i' : get_option( 'time_format' ),
 			);
 			?>
-			<div class="sow-form-field timepicker-container<?php echo ' ' . esc_attr( $width_class ); ?>">
+			<div class="sow-form-field timepicker-container<?php echo ' ' . sanitize_html_class( $width_class ); ?>">
 				<?php if ( ! empty( $timepicker_label ) ) { ?>
 					<label for="<?php echo esc_attr( $timepicker_id ); ?>">
 						<strong>
@@ -170,8 +170,8 @@ class SiteOrigin_Widget_ContactForm_Field_Datepicker extends SiteOrigin_Widget_C
 				<?php } ?>
 				<input type="text"
 					id="<?php echo esc_attr( $timepicker_id ); ?>"
-					class="so-premium-timepicker<?php echo ' ' . esc_attr( $width_class ); ?> sow-text-field"
-					data-options="<?php echo esc_attr( json_encode( $timepicker_options ) ); ?>"
+					class="so-premium-timepicker<?php echo ' ' . sanitize_html_class( $width_class ); ?> sow-text-field"
+					data-options="<?php echo esc_attr( wp_json_encode( $timepicker_options ) ); ?>"
 					data-prefill="<?php echo esc_attr( isset( $datetime_options['timepicker_prefill'] ) ? $datetime_options['timepicker_prefill'] : true ); ?>"
 					<?php method_exists( $this, 'add_custom_attrs' ) ? self::add_custom_attrs( 'timepicker' ) : ''; ?>
 				/>

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Blog
-Description: Additional settings and styles for the SiteOrigin Blog Widget.
+Description: Elevate blog layouts with expanded content display options, first-image fallbacks, and Ajax-powered pagination for dynamic, interactive post navigation.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -48,7 +48,7 @@ function SiteOrigin_premium_blog_addon_ajax() {
 		wp_reset_postdata();
 		$result = array( 'html' => ob_get_clean() );
 		header( 'content-type: application/json' );
-		echo json_encode( $result );
+		echo wp_json_encode( $result );
 	}
 	die();
 }
@@ -372,7 +372,7 @@ class SiteOrigin_Premium_Plugin_Blog {
 				),
 			)
 		);
-		
+
 		// Allow for Post Content to be removed.
 		$form_options['settings']['fields']['content']['options']['none'] = __( 'None', 'siteorigin-premium' );
 
@@ -486,12 +486,12 @@ class SiteOrigin_Premium_Plugin_Blog {
 
 		if ( $settings['pagination'] == 'links' ) {
 			if ( $posts->query['paged'] > 1 || $settings['pagination_reload'] == 'ajax' ) {
-				$markup .= '<a href="' . add_query_arg( 'sow-' . $instance['paged_id'], $posts->query['paged'] - 1 ) . '" class="sow-previous"><span>&larr;</span>' . esc_html__( 'Previous', 'siteorigin-premium' ) . '</a>';
+				$markup .= '<a href="' . esc_url( add_query_arg( 'sow-' . $instance['paged_id'], $posts->query['paged'] - 1 ) ) . '" class="sow-previous"><span>&larr;</span>' . esc_html__( 'Previous', 'siteorigin-premium' ) . '</a>';
 			}
 
 			// Don't output next page if this is the final page - always output it if it's Ajax powered.
 			if ( $posts->max_num_pages != $posts->query['paged'] || $settings['pagination_reload'] == 'ajax' ) {
-				$markup .= '<a href="' . add_query_arg( 'sow-' . $instance['paged_id'], $posts->query['paged'] + 1 ) . '" class="sow-next">' . esc_html__( 'Next', 'siteorigin-premium' ) . '<span>&rarr;</span></a>';
+				$markup .= '<a href="' . esc_url( add_query_arg( 'sow-' . $instance['paged_id'], $posts->query['paged'] + 1 ) ) . '" class="sow-next">' . esc_html__( 'Next', 'siteorigin-premium' ) . '<span>&rarr;</span></a>';
 			}
 		} elseif ( $settings['pagination'] == 'disabled' ) {
 			$markup = ' ';
@@ -519,7 +519,7 @@ class SiteOrigin_Premium_Plugin_Blog {
 				$markup = '<a class="sow-blog-' . ( $settings['pagination'] == 'load' ? 'load-more' : 'infinite' ) . '"
 					data-url="' . esc_url( home_url( $wp->request ) ) . '"
 					data-id="' . 'sow-' . $instance['paged_id'] . '"
-					href="' . add_query_arg( 'sow-' . $instance['paged_id'], $posts->query['paged'] + 1 ) . '"
+					href="' . esc_url( add_query_arg( 'sow-' . $instance['paged_id'], $posts->query['paged'] + 1 ) ) . '"
 				>' . esc_html__( 'Load More', 'siteorigin-premium' ) . '</a>';
 			} else {
 				$markup = ' ';

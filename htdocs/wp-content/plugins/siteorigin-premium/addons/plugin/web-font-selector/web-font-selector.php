@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Web Font Selector
-Description: Choose from hundreds of beautiful web fonts right in the visual editor.
+Description: Easily select from a vast array of Google Web Fonts directly within the SiteOrigin Editor Widget or any TinyMCE editor, simplifying font customization.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -107,7 +107,7 @@ class SiteOrigin_Premium_Plugin_Web_Font_Selector {
 			'soPremiumFonts',
 			array(
 				'font_modules' => self::get_font_modules(),
-				'placeholder_text' => __( 'Select Web Font', 'siteorigin-premium' ),
+				'placeholder_text' => esc_html__( 'Select Web Font', 'siteorigin-premium' ),
 			)
 		);
 	}
@@ -170,7 +170,7 @@ class SiteOrigin_Premium_Plugin_Web_Font_Selector {
 			'siteorigin-web-font-selector',
 			'soPremiumFontsWebFontSelector',
 			array(
-				'variant' => __( 'Variant', 'siteorigin-premium' ),
+				'variant' => esc_html__( 'Variant', 'siteorigin-premium' ),
 			)
 		);
 	}

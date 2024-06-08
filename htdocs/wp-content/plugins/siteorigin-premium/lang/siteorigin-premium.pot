@@ -32,11 +32,11 @@ msgstr ""
 msgid "A collection of powerful addons that enhance every aspect of SiteOrigin plugins and themes."
 msgstr ""
 
-#: siteorigin-premium.php:9, admin/options.php:31, admin/options.php:32, inc/installer/siteorigin-installer.php:6, addons/plugin/accordion/accordion.php:6, addons/plugin/anchor-id/anchor-id.php:6, addons/plugin/animations/animations.php:6, addons/plugin/blog/blog.php:6, addons/plugin/bulk-address/bulk-address.php:6, addons/plugin/carousel/carousel.php:6, addons/plugin/contact-form-fields/contact-form-fields.php:6, addons/plugin/cpt-builder/cpt-builder.php:6, addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:6, addons/plugin/cta/cta.php:6, addons/plugin/custom-palette/custom-palette.php:6, addons/plugin/custom-row-colors/custom-row-colors.php:6, addons/plugin/embed-blocker/embed-blocker.php:6, addons/plugin/hero/hero.php:6, addons/plugin/image-overlay/image-overlay.php:6, addons/plugin/image-shape/image-shape.php:6, addons/plugin/lightbox/lightbox.php:6, addons/plugin/link-overlay/link-overlay.php:6, addons/plugin/lottie-player/lottie-player.php:6, addons/plugin/map-styles/map-styles.php:6, addons/plugin/mirror-widgets/mirror-widgets.php:6, addons/plugin/multiple-media/multiple-media.php:6, addons/plugin/page-background/page-background.php:6, addons/plugin/parallax-sliders/parallax-sliders.php:6, addons/plugin/retina-background-images/retina-background-images.php:6, addons/plugin/social-widgets/social-widgets.php:6, addons/plugin/tabs/tabs.php:6, addons/plugin/testimonial/testimonial.php:6, addons/plugin/toggle-visibility/toggle-visibility.php:6, addons/plugin/tooltip/tooltip.php:6, addons/plugin/video-background/video-background.php:6, addons/plugin/web-font-selector/web-font-selector.php:6, addons/plugin/woocommerce-templates/woocommerce-templates.php:6, addons/theme/ajax-comments/ajax-comments.php:6, addons/theme/logo-booster/logo-booster.php:6, addons/theme/no-attribution/no-attribution.php:6, addons/plugin/mirror-widgets/inc/mirror-widget/mirror-widget.php:5, addons/plugin/woocommerce-templates/templates/content-single-product/wc-output-product-data-tabs.php:5
+#: siteorigin-premium.php:9, admin/options.php:31, admin/options.php:32, inc/installer/siteorigin-installer.php:6, addons/plugin/accordion/accordion.php:6, addons/plugin/anchor-id/anchor-id.php:6, addons/plugin/animations/animations.php:6, addons/plugin/author-box/author-box.php:6, addons/plugin/blog/blog.php:6, addons/plugin/bulk-address/bulk-address.php:6, addons/plugin/carousel/carousel.php:6, addons/plugin/contact-form-fields/contact-form-fields.php:6, addons/plugin/cpt-builder/cpt-builder.php:6, addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:6, addons/plugin/cta/cta.php:6, addons/plugin/custom-palette/custom-palette.php:6, addons/plugin/custom-row-colors/custom-row-colors.php:6, addons/plugin/embed-blocker/embed-blocker.php:6, addons/plugin/hero/hero.php:6, addons/plugin/image-overlay/image-overlay.php:6, addons/plugin/image-shape/image-shape.php:6, addons/plugin/lightbox/lightbox.php:6, addons/plugin/link-overlay/link-overlay.php:6, addons/plugin/lottie-player/lottie-player.php:6, addons/plugin/map-styles/map-styles.php:6, addons/plugin/mirror-widgets/mirror-widgets.php:6, addons/plugin/multiple-media/multiple-media.php:6, addons/plugin/page-background/page-background.php:6, addons/plugin/parallax-sliders/parallax-sliders.php:6, addons/plugin/retina-background-images/retina-background-images.php:6, addons/plugin/social-widgets/social-widgets.php:6, addons/plugin/tabs/tabs.php:6, addons/plugin/testimonial/testimonial.php:6, addons/plugin/toggle-visibility/toggle-visibility.php:6, addons/plugin/tooltip/tooltip.php:6, addons/plugin/video-background/video-background.php:6, addons/plugin/web-font-selector/web-font-selector.php:6, addons/plugin/woocommerce-templates/woocommerce-templates.php:6, addons/theme/ajax-comments/ajax-comments.php:6, addons/theme/logo-booster/logo-booster.php:6, addons/theme/no-attribution/no-attribution.php:6, addons/plugin/mirror-widgets/inc/mirror-widget/mirror-widget.php:5, addons/plugin/woocommerce-templates/templates/content-single-product/wc-output-product-data-tabs.php:5
 msgid "SiteOrigin"
 msgstr ""
 
-#: siteorigin-premium.php:12, inc/installer/siteorigin-installer.php:7, addons/plugin/accordion/accordion.php:7, addons/plugin/anchor-id/anchor-id.php:7, addons/plugin/animations/animations.php:7, addons/plugin/blog/blog.php:7, addons/plugin/bulk-address/bulk-address.php:7, addons/plugin/carousel/carousel.php:7, addons/plugin/contact-form-fields/contact-form-fields.php:7, addons/plugin/cpt-builder/cpt-builder.php:7, addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:7, addons/plugin/cta/cta.php:7, addons/plugin/custom-palette/custom-palette.php:7, addons/plugin/custom-row-colors/custom-row-colors.php:7, addons/plugin/embed-blocker/embed-blocker.php:7, addons/plugin/hero/hero.php:7, addons/plugin/image-overlay/image-overlay.php:7, addons/plugin/image-shape/image-shape.php:7, addons/plugin/lightbox/lightbox.php:7, addons/plugin/link-overlay/link-overlay.php:7, addons/plugin/lottie-player/lottie-player.php:7, addons/plugin/map-styles/map-styles.php:7, addons/plugin/mirror-widgets/mirror-widgets.php:7, addons/plugin/multiple-media/multiple-media.php:7, addons/plugin/page-background/page-background.php:7, addons/plugin/parallax-sliders/parallax-sliders.php:7, addons/plugin/retina-background-images/retina-background-images.php:7, addons/plugin/social-widgets/social-widgets.php:7, addons/plugin/tabs/tabs.php:7, addons/plugin/testimonial/testimonial.php:7, addons/plugin/toggle-visibility/toggle-visibility.php:7, addons/plugin/tooltip/tooltip.php:7, addons/plugin/video-background/video-background.php:7, addons/plugin/web-font-selector/web-font-selector.php:7, addons/plugin/woocommerce-templates/woocommerce-templates.php:7, addons/theme/ajax-comments/ajax-comments.php:7, addons/theme/logo-booster/logo-booster.php:7, addons/theme/no-attribution/no-attribution.php:7, addons/plugin/mirror-widgets/inc/mirror-widget/mirror-widget.php:6, addons/plugin/woocommerce-templates/templates/content-single-product/wc-output-product-data-tabs.php:6
+#: siteorigin-premium.php:12, inc/installer/siteorigin-installer.php:7, addons/plugin/accordion/accordion.php:7, addons/plugin/anchor-id/anchor-id.php:7, addons/plugin/animations/animations.php:7, addons/plugin/author-box/author-box.php:7, addons/plugin/blog/blog.php:7, addons/plugin/bulk-address/bulk-address.php:7, addons/plugin/carousel/carousel.php:7, addons/plugin/contact-form-fields/contact-form-fields.php:7, addons/plugin/cpt-builder/cpt-builder.php:7, addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:7, addons/plugin/cta/cta.php:7, addons/plugin/custom-palette/custom-palette.php:7, addons/plugin/custom-row-colors/custom-row-colors.php:7, addons/plugin/embed-blocker/embed-blocker.php:7, addons/plugin/hero/hero.php:7, addons/plugin/image-overlay/image-overlay.php:7, addons/plugin/image-shape/image-shape.php:7, addons/plugin/lightbox/lightbox.php:7, addons/plugin/link-overlay/link-overlay.php:7, addons/plugin/lottie-player/lottie-player.php:7, addons/plugin/map-styles/map-styles.php:7, addons/plugin/mirror-widgets/mirror-widgets.php:7, addons/plugin/multiple-media/multiple-media.php:7, addons/plugin/page-background/page-background.php:7, addons/plugin/parallax-sliders/parallax-sliders.php:7, addons/plugin/retina-background-images/retina-background-images.php:7, addons/plugin/social-widgets/social-widgets.php:7, addons/plugin/tabs/tabs.php:7, addons/plugin/testimonial/testimonial.php:7, addons/plugin/toggle-visibility/toggle-visibility.php:7, addons/plugin/tooltip/tooltip.php:7, addons/plugin/video-background/video-background.php:7, addons/plugin/web-font-selector/web-font-selector.php:7, addons/plugin/woocommerce-templates/woocommerce-templates.php:7, addons/theme/ajax-comments/ajax-comments.php:7, addons/theme/logo-booster/logo-booster.php:7, addons/theme/no-attribution/no-attribution.php:7, addons/plugin/mirror-widgets/inc/mirror-widget/mirror-widget.php:6, addons/plugin/woocommerce-templates/templates/content-single-product/wc-output-product-data-tabs.php:6
 msgid "https://siteorigin.com"
 msgstr ""
 
@@ -124,11 +124,11 @@ msgstr ""
 msgid "The %s Addon requires %s %s or higher."
 msgstr ""
 
-#: admin/options.php:517
+#: admin/options.php:524
 msgid "You're using SiteOrigin Premium in development mode. Add and activate your license key to change to production mode."
 msgstr ""
 
-#: admin/options.php:519
+#: admin/options.php:526
 msgid "Development mode uses slower raw files, but they're ideal when you're still developing a site."
 msgstr ""
 
@@ -649,40 +649,40 @@ msgid "There was a problem with activating your SiteOrigin Premium license key."
 msgstr ""
 
 #. translators: the plugin name.
-#: inc/updater.php:343
+#: inc/updater.php:358
 msgid "There is a new version of %1$s available."
 msgstr ""
 
-#: inc/updater.php:349
+#: inc/updater.php:364
 msgid "Contact your network administrator to install the update."
 msgstr ""
 
 #. translators: 1. opening anchor tag, do not translate 2. the new plugin version 3. closing anchor tag, do not translate.
-#: inc/updater.php:354
+#: inc/updater.php:369
 msgid "%1$sView version %2$s details%3$s."
 msgstr ""
 
-#: inc/updater.php:362
+#: inc/updater.php:377
 msgid "%1$sView version %2$s details%3$s or %4$supdate now%5$s."
 msgstr ""
 
-#: inc/updater.php:373
+#: inc/updater.php:388
 msgid "Update now."
 msgstr ""
 
-#: inc/updater.php:596
+#: inc/updater.php:611
 msgid "You do not have permission to install plugin updates"
 msgstr ""
 
-#: inc/updater.php:596
+#: inc/updater.php:611
 msgid "Error"
 msgstr ""
 
-#: inc/updater.php:794
+#: inc/updater.php:809
 msgid "Invalid token supplied"
 msgstr ""
 
-#: inc/updater.php:801
+#: inc/updater.php:816
 msgid "License key expired or not activated for this URL. Please contact %s for help."
 msgstr ""
 
@@ -742,10 +742,6 @@ msgstr ""
 msgid "Your license key is valid and active."
 msgstr ""
 
-#: admin/tpl/license-page.php:44
-msgid "Your license key ends in %s"
-msgstr ""
-
 #: inc/installer/siteorigin-installer.php:3
 msgid "SiteOrigin Installer"
 msgstr ""
@@ -763,7 +759,7 @@ msgid "SiteOrigin Accordion"
 msgstr ""
 
 #: addons/plugin/accordion/accordion.php:4
-msgid "Additional settings and styles for the SiteOrigin Accordion Widget."
+msgid "Customize Accordion Widgets with advanced styles for organized content, improved navigation, and engaging user interactions through personalized design."
 msgstr ""
 
 #: addons/plugin/accordion/accordion.php:62, addons/plugin/tabs/tabs.php:81
@@ -790,7 +786,7 @@ msgstr ""
 msgid "Content type"
 msgstr ""
 
-#: addons/plugin/accordion/accordion.php:124, addons/plugin/carousel/carousel.php:115, addons/plugin/embed-blocker/embed-blocker.php:286, addons/plugin/map-styles/map-styles.php:221, addons/plugin/tabs/tabs.php:122, addons/plugin/toggle-visibility/toggle-visibility.php:619
+#: addons/plugin/accordion/accordion.php:124, addons/plugin/carousel/carousel.php:115, addons/plugin/embed-blocker/embed-blocker.php:321, addons/plugin/map-styles/map-styles.php:221, addons/plugin/tabs/tabs.php:122, addons/plugin/toggle-visibility/toggle-visibility.php:616
 msgid "Text"
 msgstr ""
 
@@ -798,7 +794,7 @@ msgstr ""
 msgid "Layout builder"
 msgstr ""
 
-#: addons/plugin/accordion/accordion.php:135, addons/plugin/carousel/carousel.php:126, addons/plugin/tabs/tabs.php:133, addons/plugin/toggle-visibility/toggle-visibility.php:541, addons/plugin/toggle-visibility/toggle-visibility.php:607, addons/plugin/toggle-visibility/toggle-visibility.php:629, addons/plugin/toggle-visibility/toggle-visibility.php:639
+#: addons/plugin/accordion/accordion.php:135, addons/plugin/carousel/carousel.php:126, addons/plugin/tabs/tabs.php:133, addons/plugin/toggle-visibility/toggle-visibility.php:538, addons/plugin/toggle-visibility/toggle-visibility.php:604, addons/plugin/toggle-visibility/toggle-visibility.php:626, addons/plugin/toggle-visibility/toggle-visibility.php:636
 msgid "Content"
 msgstr ""
 
@@ -814,19 +810,19 @@ msgstr ""
 msgid "The number of the panel, starting at 1, to which to scroll when the page first loads. Requires Add panel anchor id in the URL setting to be enabled."
 msgstr ""
 
-#: addons/plugin/accordion/accordion.php:178, addons/plugin/accordion/accordion.php:254, addons/plugin/accordion/accordion.php:335, addons/plugin/accordion/accordion.php:384, addons/plugin/blog/blog.php:306, addons/plugin/cta/cta.php:128, addons/plugin/cta/cta.php:140, addons/plugin/image-overlay/image-overlay.php:86, addons/plugin/image-overlay/image-overlay.php:165, addons/plugin/image-overlay/image-overlay.php:175, addons/plugin/tabs/tabs.php:163, addons/plugin/tabs/tabs.php:199, addons/plugin/tabs/tabs.php:224, addons/plugin/tabs/tabs.php:237, addons/plugin/tabs/tabs.php:271, addons/plugin/tabs/tabs.php:294, addons/plugin/tabs/tabs.php:352, addons/plugin/tabs/tabs.php:364, addons/plugin/tabs/tabs.php:381, addons/plugin/tabs/tabs.php:429, addons/plugin/tooltip/tooltip.php:111
+#: addons/plugin/accordion/accordion.php:178, addons/plugin/accordion/accordion.php:254, addons/plugin/accordion/accordion.php:335, addons/plugin/accordion/accordion.php:384, addons/plugin/blog/blog.php:306, addons/plugin/cta/cta.php:128, addons/plugin/cta/cta.php:140, addons/plugin/embed-blocker/embed-blocker.php:304, addons/plugin/image-overlay/image-overlay.php:86, addons/plugin/image-overlay/image-overlay.php:165, addons/plugin/image-overlay/image-overlay.php:175, addons/plugin/tabs/tabs.php:163, addons/plugin/tabs/tabs.php:199, addons/plugin/tabs/tabs.php:224, addons/plugin/tabs/tabs.php:237, addons/plugin/tabs/tabs.php:271, addons/plugin/tabs/tabs.php:294, addons/plugin/tabs/tabs.php:352, addons/plugin/tabs/tabs.php:364, addons/plugin/tabs/tabs.php:381, addons/plugin/tabs/tabs.php:429, addons/plugin/tooltip/tooltip.php:111
 msgid "Top"
 msgstr ""
 
-#: addons/plugin/accordion/accordion.php:182, addons/plugin/accordion/accordion.php:203, addons/plugin/accordion/accordion.php:213, addons/plugin/accordion/accordion.php:255, addons/plugin/accordion/accordion.php:295, addons/plugin/accordion/accordion.php:339, addons/plugin/accordion/accordion.php:385, addons/plugin/blog/blog.php:310, addons/plugin/cta/cta.php:144, addons/plugin/image-overlay/image-overlay.php:87, addons/plugin/image-overlay/image-overlay.php:166, addons/plugin/image-overlay/image-overlay.php:186, addons/plugin/tabs/tabs.php:167, addons/plugin/tabs/tabs.php:200, addons/plugin/tabs/tabs.php:211, addons/plugin/tabs/tabs.php:238, addons/plugin/tabs/tabs.php:275, addons/plugin/tabs/tabs.php:298, addons/plugin/tabs/tabs.php:319, addons/plugin/tabs/tabs.php:353, addons/plugin/tabs/tabs.php:365, addons/plugin/tabs/tabs.php:385, addons/plugin/tabs/tabs.php:430
+#: addons/plugin/accordion/accordion.php:182, addons/plugin/accordion/accordion.php:203, addons/plugin/accordion/accordion.php:213, addons/plugin/accordion/accordion.php:255, addons/plugin/accordion/accordion.php:295, addons/plugin/accordion/accordion.php:339, addons/plugin/accordion/accordion.php:385, addons/plugin/blog/blog.php:310, addons/plugin/cta/cta.php:144, addons/plugin/embed-blocker/embed-blocker.php:307, addons/plugin/image-overlay/image-overlay.php:87, addons/plugin/image-overlay/image-overlay.php:166, addons/plugin/image-overlay/image-overlay.php:186, addons/plugin/tabs/tabs.php:167, addons/plugin/tabs/tabs.php:200, addons/plugin/tabs/tabs.php:211, addons/plugin/tabs/tabs.php:238, addons/plugin/tabs/tabs.php:275, addons/plugin/tabs/tabs.php:298, addons/plugin/tabs/tabs.php:319, addons/plugin/tabs/tabs.php:353, addons/plugin/tabs/tabs.php:365, addons/plugin/tabs/tabs.php:385, addons/plugin/tabs/tabs.php:430
 msgid "Right"
 msgstr ""
 
-#: addons/plugin/accordion/accordion.php:186, addons/plugin/accordion/accordion.php:256, addons/plugin/accordion/accordion.php:343, addons/plugin/accordion/accordion.php:386, addons/plugin/blog/blog.php:314, addons/plugin/cta/cta.php:130, addons/plugin/cta/cta.php:148, addons/plugin/image-overlay/image-overlay.php:88, addons/plugin/image-overlay/image-overlay.php:167, addons/plugin/image-overlay/image-overlay.php:176, addons/plugin/tabs/tabs.php:171, addons/plugin/tabs/tabs.php:201, addons/plugin/tabs/tabs.php:225, addons/plugin/tabs/tabs.php:239, addons/plugin/tabs/tabs.php:279, addons/plugin/tabs/tabs.php:302, addons/plugin/tabs/tabs.php:354, addons/plugin/tabs/tabs.php:366, addons/plugin/tabs/tabs.php:389, addons/plugin/tabs/tabs.php:431, addons/plugin/tooltip/tooltip.php:112
+#: addons/plugin/accordion/accordion.php:186, addons/plugin/accordion/accordion.php:256, addons/plugin/accordion/accordion.php:343, addons/plugin/accordion/accordion.php:386, addons/plugin/blog/blog.php:314, addons/plugin/cta/cta.php:130, addons/plugin/cta/cta.php:148, addons/plugin/embed-blocker/embed-blocker.php:310, addons/plugin/image-overlay/image-overlay.php:88, addons/plugin/image-overlay/image-overlay.php:167, addons/plugin/image-overlay/image-overlay.php:176, addons/plugin/tabs/tabs.php:171, addons/plugin/tabs/tabs.php:201, addons/plugin/tabs/tabs.php:225, addons/plugin/tabs/tabs.php:239, addons/plugin/tabs/tabs.php:279, addons/plugin/tabs/tabs.php:302, addons/plugin/tabs/tabs.php:354, addons/plugin/tabs/tabs.php:366, addons/plugin/tabs/tabs.php:389, addons/plugin/tabs/tabs.php:431, addons/plugin/tooltip/tooltip.php:112
 msgid "Bottom"
 msgstr ""
 
-#: addons/plugin/accordion/accordion.php:190, addons/plugin/accordion/accordion.php:202, addons/plugin/accordion/accordion.php:212, addons/plugin/accordion/accordion.php:257, addons/plugin/accordion/accordion.php:294, addons/plugin/accordion/accordion.php:347, addons/plugin/accordion/accordion.php:387, addons/plugin/blog/blog.php:318, addons/plugin/cta/cta.php:152, addons/plugin/image-overlay/image-overlay.php:89, addons/plugin/image-overlay/image-overlay.php:168, addons/plugin/image-overlay/image-overlay.php:185, addons/plugin/tabs/tabs.php:175, addons/plugin/tabs/tabs.php:202, addons/plugin/tabs/tabs.php:210, addons/plugin/tabs/tabs.php:240, addons/plugin/tabs/tabs.php:283, addons/plugin/tabs/tabs.php:306, addons/plugin/tabs/tabs.php:318, addons/plugin/tabs/tabs.php:355, addons/plugin/tabs/tabs.php:367, addons/plugin/tabs/tabs.php:393, addons/plugin/tabs/tabs.php:432
+#: addons/plugin/accordion/accordion.php:190, addons/plugin/accordion/accordion.php:202, addons/plugin/accordion/accordion.php:212, addons/plugin/accordion/accordion.php:257, addons/plugin/accordion/accordion.php:294, addons/plugin/accordion/accordion.php:347, addons/plugin/accordion/accordion.php:387, addons/plugin/blog/blog.php:318, addons/plugin/cta/cta.php:152, addons/plugin/embed-blocker/embed-blocker.php:313, addons/plugin/image-overlay/image-overlay.php:89, addons/plugin/image-overlay/image-overlay.php:168, addons/plugin/image-overlay/image-overlay.php:185, addons/plugin/tabs/tabs.php:175, addons/plugin/tabs/tabs.php:202, addons/plugin/tabs/tabs.php:210, addons/plugin/tabs/tabs.php:240, addons/plugin/tabs/tabs.php:283, addons/plugin/tabs/tabs.php:306, addons/plugin/tabs/tabs.php:318, addons/plugin/tabs/tabs.php:355, addons/plugin/tabs/tabs.php:367, addons/plugin/tabs/tabs.php:393, addons/plugin/tabs/tabs.php:432
 msgid "Left"
 msgstr ""
 
@@ -886,7 +882,7 @@ msgstr ""
 msgid "Bottom left"
 msgstr ""
 
-#: addons/plugin/accordion/accordion.php:250, addons/plugin/accordion/accordion.php:380, addons/plugin/blog/blog.php:302, addons/plugin/cta/cta.php:136, addons/plugin/embed-blocker/embed-blocker.php:279, addons/plugin/tabs/tabs.php:195, addons/plugin/tabs/tabs.php:348, addons/plugin/tabs/tabs.php:425
+#: addons/plugin/accordion/accordion.php:250, addons/plugin/accordion/accordion.php:380, addons/plugin/blog/blog.php:302, addons/plugin/cta/cta.php:136, addons/plugin/embed-blocker/embed-blocker.php:300, addons/plugin/tabs/tabs.php:195, addons/plugin/tabs/tabs.php:348, addons/plugin/tabs/tabs.php:425
 msgid "Padding"
 msgstr ""
 
@@ -918,7 +914,7 @@ msgstr ""
 msgid "Border active color"
 msgstr ""
 
-#: addons/plugin/accordion/accordion.php:357, addons/plugin/blog/blog.php:273, addons/plugin/embed-blocker/embed-blocker.php:290, addons/plugin/tabs/tabs.php:325, addons/plugin/tabs/tabs.php:403
+#: addons/plugin/accordion/accordion.php:357, addons/plugin/blog/blog.php:273, addons/plugin/embed-blocker/embed-blocker.php:325, addons/plugin/tabs/tabs.php:325, addons/plugin/tabs/tabs.php:403
 msgid "Font"
 msgstr ""
 
@@ -935,34 +931,34 @@ msgid "SiteOrigin Anchor ID"
 msgstr ""
 
 #: addons/plugin/anchor-id/anchor-id.php:4
-msgid "Link directly to SiteOrigin Slides, Tabs, Accordion Panels, and Carousel Items."
+msgid "Link directly to specific slides, tabs, accordion panels, and carousel items using easy-to-set anchor IDs, maintaining user focus and engagement."
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:82
+#: addons/plugin/anchor-id/anchor-id.php:90
 msgid "Add slide anchor ID in the URL"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:94, addons/plugin/anchor-id/anchor-id.php:141
+#: addons/plugin/anchor-id/anchor-id.php:102, addons/plugin/anchor-id/anchor-id.php:175
 msgid "Anchor ID"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:95, addons/plugin/anchor-id/anchor-id.php:142
+#: addons/plugin/anchor-id/anchor-id.php:103, addons/plugin/anchor-id/anchor-id.php:176
 msgid "Set a custom anchor ID."
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:130
+#: addons/plugin/anchor-id/anchor-id.php:164
 msgid "Add anchor ID in the URL"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:178
+#: addons/plugin/anchor-id/anchor-id.php:212
 msgid "Add item anchor id in the URL"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:190
+#: addons/plugin/anchor-id/anchor-id.php:224
 msgid "Carousel anchor"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:191
+#: addons/plugin/anchor-id/anchor-id.php:225
 msgid "Optionally set a custom anchor id. Required if the widget title field is empty."
 msgstr ""
 
@@ -971,7 +967,7 @@ msgid "SiteOrigin Block Animations"
 msgstr ""
 
 #: addons/plugin/animations/animations.php:4
-msgid "Adds animation options to Page Builder rows, columns, and widgets."
+msgid "Add animations to Page Builder rows, columns, and widgets, creating lively transitions that engage users with easy-to-set options."
 msgstr ""
 
 #: addons/plugin/animations/animations.php:43
@@ -1102,12 +1098,84 @@ msgstr ""
 msgid "Number of seconds to wait after the page stops scrolling before the animation is started. This only applies to the \"Element Enters Screen\" and \"Element In Screen\" events."
 msgstr ""
 
+#: addons/plugin/author-box/author-box.php:3
+msgid "SiteOrigin Author Box"
+msgstr ""
+
+#: addons/plugin/author-box/author-box.php:4
+msgid "Automatically append author boxes to posts, featuring social links, recent articles, and bios to create engaging author presentations across multiple post types."
+msgstr ""
+
+#: addons/plugin/author-box/author-box.php:63
+msgid "Position"
+msgstr ""
+
+#: addons/plugin/author-box/author-box.php:66
+msgid "Before Content"
+msgstr ""
+
+#: addons/plugin/author-box/author-box.php:67
+msgid "After Content"
+msgstr ""
+
+#: addons/plugin/author-box/author-box.php:72
+msgid "Enabled Post Types"
+msgstr ""
+
+#: addons/plugin/author-box/author-box.php:77
+msgid "Author Box Settings"
+msgstr ""
+
+#: addons/plugin/author-box/author-box.php:85
+msgid "This addon requires SiteOrigin Widgets Bundle X or higher. You have version %s installed. Please update the SiteOrigin Widgets Bundle."
+msgstr ""
+
+#: addons/plugin/author-box/author-box.php:92
+msgid "This addon requires the Author Box Widget to be enabled at Plugins > SiteOrigin Widgets."
+msgstr ""
+
+#: addons/plugin/author-box/author-box.php:116
+msgid "Display Author Box"
+msgstr ""
+
+#: addons/plugin/author-box/author-box.php:127
+msgid "Show Recent Posts By Author"
+msgstr ""
+
+#: addons/plugin/author-box/author-box.php:141
+msgid "Add Social Media Buttons"
+msgstr ""
+
+#: addons/plugin/author-box/author-box.php:155
+msgid "Recent Posts"
+msgstr ""
+
+#: addons/plugin/author-box/author-box.php:168
+msgid "Social Media Buttons"
+msgstr ""
+
+#: addons/plugin/author-box/author-box.php:193
+msgid "The URL is used as a prefix for the authors username."
+msgstr ""
+
+#: addons/plugin/author-box/author-box.php:219, addons/plugin/tabs/tabs.php:360
+msgid "Margin"
+msgstr ""
+
+#: addons/plugin/author-box/author-box.php:232
+msgid "After Recent posts"
+msgstr ""
+
+#: addons/plugin/author-box/author-box.php:327
+msgid "Security check failed"
+msgstr ""
+
 #: addons/plugin/blog/blog.php:3
 msgid "SiteOrigin Blog"
 msgstr ""
 
 #: addons/plugin/blog/blog.php:4
-msgid "Additional settings and styles for the SiteOrigin Blog Widget."
+msgid "Elevate blog layouts with expanded content display options, first-image fallbacks, and Ajax-powered pagination for dynamic, interactive post navigation."
 msgstr ""
 
 #: addons/plugin/blog/blog.php:121
@@ -1182,7 +1250,7 @@ msgstr ""
 msgid "Top Margin"
 msgstr ""
 
-#: addons/plugin/blog/blog.php:241, addons/plugin/embed-blocker/embed-blocker.php:270, addons/plugin/woocommerce-templates/templates/checkout/wc-checkout-order-review.php:53
+#: addons/plugin/blog/blog.php:241, addons/plugin/embed-blocker/embed-blocker.php:291, addons/plugin/woocommerce-templates/templates/checkout/wc-checkout-order-review.php:53
 msgid "Border Color"
 msgstr ""
 
@@ -1194,7 +1262,7 @@ msgstr ""
 msgid "Border Width"
 msgstr ""
 
-#: addons/plugin/blog/blog.php:257, addons/plugin/embed-blocker/embed-blocker.php:274
+#: addons/plugin/blog/blog.php:257, addons/plugin/embed-blocker/embed-blocker.php:295
 msgid "Border Radius"
 msgstr ""
 
@@ -1218,11 +1286,11 @@ msgstr ""
 msgid "Capitalize Links"
 msgstr ""
 
-#: addons/plugin/blog/blog.php:292, addons/plugin/embed-blocker/embed-blocker.php:303
+#: addons/plugin/blog/blog.php:292, addons/plugin/embed-blocker/embed-blocker.php:338
 msgid "Link Color"
 msgstr ""
 
-#: addons/plugin/blog/blog.php:297, addons/plugin/embed-blocker/embed-blocker.php:308
+#: addons/plugin/blog/blog.php:297, addons/plugin/embed-blocker/embed-blocker.php:343
 msgid "Link Hover Color"
 msgstr ""
 
@@ -1251,7 +1319,7 @@ msgid "SiteOrigin Bulk Addresses"
 msgstr ""
 
 #: addons/plugin/bulk-address/bulk-address.php:4
-msgid "Add multiple Map Marker addresses in one go to the SiteOrigin Google Maps Widget."
+msgid "Quickly add multiple map markers at once, simplifying the creation of interactive maps with a comprehensive view of all your important locations."
 msgstr ""
 
 #: addons/plugin/bulk-address/bulk-address.php:39
@@ -1267,7 +1335,7 @@ msgid "SiteOrigin Carousel"
 msgstr ""
 
 #: addons/plugin/carousel/carousel.php:4
-msgid "Additional settings and styles for the SiteOrigin Carousel widgets."
+msgid "Introduce overlay themes, customizable navigation, and Layout Builder integration to carousels, enriching visuals and user interaction."
 msgstr ""
 
 #: addons/plugin/carousel/carousel.php:183, addons/plugin/tooltip/tooltip.php:117
@@ -1286,7 +1354,7 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: addons/plugin/carousel/carousel.php:234, addons/plugin/custom-palette/custom-palette.php:38, addons/plugin/custom-palette/custom-palette.php:69, addons/plugin/embed-blocker/embed-blocker.php:294, addons/plugin/image-shape/image-shape.php:86, addons/plugin/image-shape/image-shape.php:155
+#: addons/plugin/carousel/carousel.php:234, addons/plugin/custom-palette/custom-palette.php:38, addons/plugin/custom-palette/custom-palette.php:69, addons/plugin/embed-blocker/embed-blocker.php:329, addons/plugin/image-shape/image-shape.php:86, addons/plugin/image-shape/image-shape.php:155
 msgid "Color"
 msgstr ""
 
@@ -1315,7 +1383,7 @@ msgid "SiteOrigin Contact Form"
 msgstr ""
 
 #: addons/plugin/contact-form-fields/contact-form-fields.php:4
-msgid "Additional settings and styles for the SiteOrigin Contact Form Widget."
+msgid "Enhance SiteOrigin forms with a Layout Builder, Autoresponder, Location/Datetime Picker Fields, and Merge Tags for advanced form customization."
 msgstr ""
 
 #: addons/plugin/contact-form-fields/contact-form-fields.php:77
@@ -1386,7 +1454,7 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
-#: addons/plugin/contact-form-fields/contact-form-fields.php:172, addons/plugin/embed-blocker/embed-blocker.php:62, addons/plugin/toggle-visibility/toggle-visibility.php:620
+#: addons/plugin/contact-form-fields/contact-form-fields.php:172, addons/plugin/embed-blocker/embed-blocker.php:83, addons/plugin/toggle-visibility/toggle-visibility.php:617
 msgid "Layout Builder"
 msgstr ""
 
@@ -1499,7 +1567,7 @@ msgid "SiteOrigin Custom Post Type Builder"
 msgstr ""
 
 #: addons/plugin/cpt-builder/cpt-builder.php:4
-msgid "Build custom post types with reusable Page Builder layouts."
+msgid "Craft and manage unique post types with seamless Page Builder integration, enabling consistent layouts across your site's diverse content needs."
 msgstr ""
 
 #: addons/plugin/cpt-builder/cpt-builder.php:74
@@ -1675,7 +1743,7 @@ msgid "SiteOrigin Cross Domain Copy Paste"
 msgstr ""
 
 #: addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:4
-msgid "Copy and Paste Page Builder widgets and rows between websites."
+msgid "Streamline your site development by effortlessly copying and pasting rows, columns, and widgets across domains, saving time and enhancing creative continuity."
 msgstr ""
 
 #: addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:38
@@ -1726,27 +1794,27 @@ msgstr ""
 msgid "Go to your destination page, right-click in Page Builder, and click Paste Row or Paste Widget."
 msgstr ""
 
-#: addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:104
+#: addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:111
 msgid "Cross Domain Paste"
 msgstr ""
 
-#: addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:106
+#: addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:113
 msgid "Success. You can now right-click and paste in Page Builder."
 msgstr ""
 
-#: addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:107
+#: addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:114
 msgid "Something went wrong. Please try copying the data again."
 msgstr ""
 
-#: addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:108
+#: addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:115
 msgid "Your website must use HTTPS for the SiteOrigin Premium Cross Domain Copy Paste Addon to function."
 msgstr ""
 
-#: addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:170
+#: addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:177
 msgid "Cross Domain Copy Paste"
 msgstr ""
 
-#: addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:178
+#: addons/plugin/cross-domain-copy-paste/cross-domain-copy-paste.php:185
 msgid "Paste your row or widget data into the above field, then right-click and paste in Page Builder. %sGetting Started%s"
 msgstr ""
 
@@ -1755,7 +1823,7 @@ msgid "SiteOrigin Call-To-Action"
 msgstr ""
 
 #: addons/plugin/cta/cta.php:4
-msgid "Additional settings and styles for the SiteOrigin Call-To-Action Widget."
+msgid "Boost your Call To Action Widget with expanded settings and styles, offering precise control to create compelling buttons that engage and convert your audience."
 msgstr ""
 
 #: addons/plugin/cta/cta.php:64, addons/plugin/cta/cta.php:68, addons/plugin/image-overlay/image-overlay.php:53, addons/plugin/tooltip/tooltip.php:67
@@ -1766,7 +1834,7 @@ msgstr ""
 msgid "Image Display"
 msgstr ""
 
-#: addons/plugin/cta/cta.php:77, addons/plugin/embed-blocker/embed-blocker.php:266, addons/plugin/page-background/page-background.php:39
+#: addons/plugin/cta/cta.php:77, addons/plugin/embed-blocker/embed-blocker.php:287, addons/plugin/page-background/page-background.php:39
 msgid "Background Image"
 msgstr ""
 
@@ -1815,7 +1883,7 @@ msgid "SiteOrigin Custom Palette"
 msgstr ""
 
 #: addons/plugin/custom-palette/custom-palette.php:4
-msgid "Create a custom color palette for Page Builder and Widgets Bundle color settings."
+msgid "Effortlessly customize your site's color scheme, creating a unique palette for Page Builder and Widgets Bundle, ensuring a harmonious visual experience."
 msgstr ""
 
 #: addons/plugin/custom-palette/custom-palette.php:32
@@ -1827,7 +1895,7 @@ msgid "SiteOrigin Custom Row Colors"
 msgstr ""
 
 #: addons/plugin/custom-row-colors/custom-row-colors.php:4
-msgid "Organize your Page Builder rows with custom background colors."
+msgid "Enhance Page Builder row management by integrating custom background colors, offering a vibrant and organized admin interface for streamlined editing."
 msgstr ""
 
 #: addons/plugin/custom-row-colors/custom-row-colors.php:34
@@ -1871,117 +1939,125 @@ msgid "Embed Blocker"
 msgstr ""
 
 #: addons/plugin/embed-blocker/embed-blocker.php:4
-msgid "Effortlessly comply with GDPR and DSGVO by controlling embeds from platforms such as YouTube, X, and Google Maps."
+msgid "Effortlessly comply with GDPR and DSGVO by controlling embeds from platforms like YouTube, X, Google Maps, and others, with customizable block messages."
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:46
+#: addons/plugin/embed-blocker/embed-blocker.php:67
 msgid ""
 "[site]'s content is blocked.\n"
 "			To view this content, %syou must agree to their privacy policy%s. <br>\n"
 "			[button]"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:58
+#: addons/plugin/embed-blocker/embed-blocker.php:79
 msgid "Message Type"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:61
+#: addons/plugin/embed-blocker/embed-blocker.php:82
 msgid "TinyMCE"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:71, addons/plugin/embed-blocker/embed-blocker.php:81
+#: addons/plugin/embed-blocker/embed-blocker.php:92, addons/plugin/embed-blocker/embed-blocker.php:102
 msgid "Block Message"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:92
+#: addons/plugin/embed-blocker/embed-blocker.php:113
 msgid "The Block Message will be appended to the blocked content. The following placeholders can be used:"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:94
+#: addons/plugin/embed-blocker/embed-blocker.php:115
 msgid "The label for the site that is being blocked."
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:95
+#: addons/plugin/embed-blocker/embed-blocker.php:116
 msgid "The site's privacy policy link."
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:96
+#: addons/plugin/embed-blocker/embed-blocker.php:117
 msgid "The button for the user to consent to view the content."
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:105
+#: addons/plugin/embed-blocker/embed-blocker.php:126, addons/plugin/embed-blocker/embed-blocker.php:133
 msgid "Site"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:208, addons/plugin/image-overlay/image-overlay.php:234, addons/plugin/tooltip/tooltip.php:144, addons/plugin/woocommerce-templates/templates/content-single-product/wc-output-product-data-tabs.php:43, addons/plugin/woocommerce-templates/templates/content-single-product/wc-output-product-data-tabs.php:65, addons/plugin/woocommerce-templates/templates/content-single-product/wc-output-product-data-tabs.php:87
+#: addons/plugin/embed-blocker/embed-blocker.php:138
+msgid "URLs"
+msgstr ""
+
+#: addons/plugin/embed-blocker/embed-blocker.php:143
+msgid "Status"
+msgstr ""
+
+#: addons/plugin/embed-blocker/embed-blocker.php:229, addons/plugin/image-overlay/image-overlay.php:234, addons/plugin/tooltip/tooltip.php:144, addons/plugin/woocommerce-templates/templates/content-single-product/wc-output-product-data-tabs.php:43, addons/plugin/woocommerce-templates/templates/content-single-product/wc-output-product-data-tabs.php:65, addons/plugin/woocommerce-templates/templates/content-single-product/wc-output-product-data-tabs.php:87
 msgid "Enabled"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:212
+#: addons/plugin/embed-blocker/embed-blocker.php:233
 msgid "Site Label"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:216
+#: addons/plugin/embed-blocker/embed-blocker.php:237
 msgid "Site URLs"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:217
+#: addons/plugin/embed-blocker/embed-blocker.php:238
 msgid "Enter a comma separated list of URLs to block."
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:221
+#: addons/plugin/embed-blocker/embed-blocker.php:242
 msgid "Privacy Policy Link"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:225
+#: addons/plugin/embed-blocker/embed-blocker.php:246
 msgid "Embed Type"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:228
+#: addons/plugin/embed-blocker/embed-blocker.php:249
 msgid "iFrame"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:229
+#: addons/plugin/embed-blocker/embed-blocker.php:250
 msgid "Blockquote"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:230
+#: addons/plugin/embed-blocker/embed-blocker.php:251
 msgid "Script"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:232
+#: addons/plugin/embed-blocker/embed-blocker.php:253
 msgid "Select the embed type to be targetted for blocking."
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:238, addons/plugin/woocommerce-templates/templates/thankyou/wc-thankyou-order-status.php:21, addons/plugin/woocommerce-templates/templates/thankyou/wc-thankyou-order-status.php:33
+#: addons/plugin/embed-blocker/embed-blocker.php:259, addons/plugin/woocommerce-templates/templates/thankyou/wc-thankyou-order-status.php:21, addons/plugin/woocommerce-templates/templates/thankyou/wc-thankyou-order-status.php:33
 msgid "Message"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:244
+#: addons/plugin/embed-blocker/embed-blocker.php:265
 msgid "Design"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:249, addons/plugin/tooltip/tooltip.php:64
+#: addons/plugin/embed-blocker/embed-blocker.php:270, addons/plugin/tooltip/tooltip.php:64
 msgid "Button"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:256
+#: addons/plugin/embed-blocker/embed-blocker.php:277
 msgid "Container"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:260, addons/plugin/page-background/page-background.php:34
+#: addons/plugin/embed-blocker/embed-blocker.php:281, addons/plugin/page-background/page-background.php:34
 msgid "Background Color"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:299
+#: addons/plugin/embed-blocker/embed-blocker.php:334
 msgid "Size"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:314
+#: addons/plugin/embed-blocker/embed-blocker.php:349
 msgid "Paragraph Margin Bottom"
 msgstr ""
 
-#: addons/plugin/embed-blocker/embed-blocker.php:326
+#: addons/plugin/embed-blocker/embed-blocker.php:361
 msgid "I Agree"
 msgstr ""
 
@@ -1990,7 +2066,7 @@ msgid "SiteOrigin Hero"
 msgstr ""
 
 #: addons/plugin/hero/hero.php:4
-msgid "Additional settings and styles for the SiteOrigin Hero Widget."
+msgid "Unlock new levels of creativity in your Hero Widget with added functionality and style settings, enabling dynamic animations and personalized control."
 msgstr ""
 
 #: addons/plugin/hero/hero.php:64
@@ -2042,7 +2118,7 @@ msgid "SiteOrigin Image Overlay"
 msgstr ""
 
 #: addons/plugin/image-overlay/image-overlay.php:4
-msgid "Add a beautiful and customizable text overlay with animations to your images."
+msgid "Add interactive hover text overlays with customizable animations to your images, ideal for enriching galleries, portfolios, and any image-based content."
 msgstr ""
 
 #: addons/plugin/image-overlay/image-overlay.php:50, addons/plugin/tooltip/tooltip.php:61
@@ -2234,7 +2310,7 @@ msgid "SiteOrigin Image Shape"
 msgstr ""
 
 #: addons/plugin/image-shape/image-shape.php:4
-msgid "Elevate your image designs with an expanded selection of shapes and captivating effects, including shadows and hover shadows."
+msgid "Transform your images with unique shapes and engaging effects, from shadows to hover enhancements, for standout visuals in the SiteOrigin Image Widget."
 msgstr ""
 
 #: addons/plugin/image-shape/image-shape.php:57
@@ -2245,7 +2321,7 @@ msgstr ""
 msgid "Shadow"
 msgstr ""
 
-#: addons/plugin/image-shape/image-shape.php:74, addons/plugin/image-shape/image-shape.php:143, addons/plugin/toggle-visibility/toggle-visibility.php:233
+#: addons/plugin/image-shape/image-shape.php:74, addons/plugin/image-shape/image-shape.php:143, addons/plugin/toggle-visibility/toggle-visibility.php:230
 msgid "Enable"
 msgstr ""
 
@@ -2278,7 +2354,7 @@ msgid "SiteOrigin Lightbox"
 msgstr ""
 
 #: addons/plugin/lightbox/lightbox.php:4
-msgid "Enable a lightbox on various SiteOrigin image widgets."
+msgid "Showcase your images in striking lightbox galleries, allowing for immersive viewing with options to customize overlay color, opacity, and navigation controls."
 msgstr ""
 
 #: addons/plugin/lightbox/lightbox.php:58
@@ -2398,26 +2474,26 @@ msgid "SiteOrigin Link Overlay"
 msgstr ""
 
 #: addons/plugin/link-overlay/link-overlay.php:4
-msgid "Link an entire Page Builder row, column, or widget."
+msgid "Turn any Page Builder row, cell, or widget into a clickable link, offering direct access to content or external pages with minimal setup and improved accessibility."
 msgstr ""
 
-#: addons/plugin/link-overlay/link-overlay.php:38
+#: addons/plugin/link-overlay/link-overlay.php:41
 msgid "Link Overlay"
 msgstr ""
 
-#: addons/plugin/link-overlay/link-overlay.php:47, addons/plugin/social-widgets/social-widgets.php:57
+#: addons/plugin/link-overlay/link-overlay.php:50, addons/plugin/social-widgets/social-widgets.php:57
 msgid "URL"
 msgstr ""
 
-#: addons/plugin/link-overlay/link-overlay.php:54
+#: addons/plugin/link-overlay/link-overlay.php:57
 msgid "Open link in new window"
 msgstr ""
 
-#: addons/plugin/link-overlay/link-overlay.php:61
+#: addons/plugin/link-overlay/link-overlay.php:64
 msgid "Accessibility Label"
 msgstr ""
 
-#: addons/plugin/link-overlay/link-overlay.php:63
+#: addons/plugin/link-overlay/link-overlay.php:66
 msgid "Describe the link for screen readers."
 msgstr ""
 
@@ -2426,7 +2502,7 @@ msgid "SiteOrigin Lottie Player"
 msgstr ""
 
 #: addons/plugin/lottie-player/lottie-player.php:4
-msgid "Customize and enhance your SiteOrigin Lottie Player with additional settings."
+msgid "Bring your ideas to life with Lottie Animations, offering adjustable loops, speeds, and interactive triggers for captivating and dynamic content."
 msgstr ""
 
 #: addons/plugin/lottie-player/lottie-player.php:45
@@ -2510,7 +2586,7 @@ msgid "SiteOrigin Map Styles"
 msgstr ""
 
 #: addons/plugin/map-styles/map-styles.php:4
-msgid "Adds a curated list of predefined map styles to the SiteOrigin Google Maps widget as well as additional consent prompt styling options."
+msgid "Upgrade your maps with 23 unique styles for a tailored look, and introduce consent-based access for compliance with user privacy regulations."
 msgstr ""
 
 #: addons/plugin/map-styles/map-styles.php:72
@@ -2558,7 +2634,7 @@ msgid "SiteOrigin Mirror Widgets"
 msgstr ""
 
 #: addons/plugin/mirror-widgets/mirror-widgets.php:4
-msgid "Create a widget once, use it everywhere. Update it and the changes reflect in all instances of the widget."
+msgid "Create a widget once, use it everywhere. Update it, and see changes in all instances, streamlining your workflow and significantly saving you time."
 msgstr ""
 
 #: addons/plugin/mirror-widgets/mirror-widgets.php:70
@@ -2594,7 +2670,7 @@ msgid "SiteOrigin Multiple Media"
 msgstr ""
 
 #: addons/plugin/multiple-media/multiple-media.php:4
-msgid "Upload multiple images at once to SiteOrigin Slider and Image Grid type widgets."
+msgid "Streamline your workflow by uploading multiple images simultaneously to Sliders, Grids, and Hero frames, quickly creating visually stunning websites."
 msgstr ""
 
 #: addons/plugin/multiple-media/multiple-media.php:37
@@ -2614,7 +2690,7 @@ msgid "SiteOrigin Page Background"
 msgstr ""
 
 #: addons/plugin/page-background/page-background.php:4
-msgid "Add page specific background images with support for high-pixel-density displays."
+msgid "Set unique or global backgrounds to align with your content, enhancing visual appeal and ensuring high-resolution clarity on every display type."
 msgstr ""
 
 #: addons/plugin/page-background/page-background.php:45
@@ -2650,7 +2726,7 @@ msgid "SiteOrigin Parallax Sliders"
 msgstr ""
 
 #: addons/plugin/parallax-sliders/parallax-sliders.php:4
-msgid "Enhances the SiteOrigin Slider, Hero, and Layout Slider widgets by adding parallax and fixed background image options."
+msgid "Enhance your Slider, Hero, and Layout Slider widgets with parallax and fixed backgrounds, making your site's content more engaging and visually appealing."
 msgstr ""
 
 #: addons/plugin/retina-background-images/retina-background-images.php:3
@@ -2658,7 +2734,7 @@ msgid "SiteOrigin Retina Background Images"
 msgstr ""
 
 #: addons/plugin/retina-background-images/retina-background-images.php:4
-msgid "Add widget, column, and row Retina background images for high-pixel-density displays."
+msgid "Deliver crystal clear visuals across your site by adding Retina ready background images to widgets, cells, and rows for sharp, high-resolution displays."
 msgstr ""
 
 #: addons/plugin/retina-background-images/retina-background-images.php:37
@@ -2670,7 +2746,7 @@ msgid "SiteOrigin Social Widgets"
 msgstr ""
 
 #: addons/plugin/social-widgets/social-widgets.php:4
-msgid "Add custom networks to the SiteOrigin Social Media Buttons Widget."
+msgid "Expand and personalize your site's social media buttons by adding unique networks and custom icons, enhancing user engagement and connectivity."
 msgstr ""
 
 #: addons/plugin/social-widgets/social-widgets.php:43
@@ -2722,7 +2798,7 @@ msgid "SiteOrigin Tabs"
 msgstr ""
 
 #: addons/plugin/tabs/tabs.php:4
-msgid "Additional settings and styles for the SiteOrigin Tabs Widget."
+msgid "Enhance site navigation and engagement by enriching Tabs Widgets with new styles and functionalities for intuitive content organization."
 msgstr ""
 
 #: addons/plugin/tabs/tabs.php:46
@@ -2761,16 +2837,12 @@ msgstr ""
 msgid "Icon location"
 msgstr ""
 
-#: addons/plugin/tabs/tabs.php:360
-msgid "Margin"
-msgstr ""
-
 #: addons/plugin/testimonial/testimonial.php:3
 msgid "SiteOrigin Testimonials"
 msgstr ""
 
 #: addons/plugin/testimonial/testimonial.php:4
-msgid "Additional settings and styles for the SiteOrigin Testimonial Widget."
+msgid "Enhance your Testimonials Widget with custom fonts, sizes, styles, and layouts, bringing customer feedback to life and effectively boosting your site's credibility."
 msgstr ""
 
 #: addons/plugin/testimonial/testimonial.php:78
@@ -2810,102 +2882,102 @@ msgid "SiteOrigin Toggle Visibility"
 msgstr ""
 
 #: addons/plugin/toggle-visibility/toggle-visibility.php:4
-msgid "Toggle the visibility of Page Builder rows and widgets based on device or logged-in status. Schedule content to show or hide."
+msgid "Toggle visibility across Page Builder content or full pages, customizing access by device, logged in status, and time for strategic content arrangement."
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:126, addons/plugin/toggle-visibility/toggle-visibility.php:551
+#: addons/plugin/toggle-visibility/toggle-visibility.php:123, addons/plugin/toggle-visibility/toggle-visibility.php:548
 msgid "Toggle Visibility"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:139
+#: addons/plugin/toggle-visibility/toggle-visibility.php:136
 msgid "Hide Row on All Devices"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:147
+#: addons/plugin/toggle-visibility/toggle-visibility.php:144
 msgid "Hide Widget on All Devices"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:156
+#: addons/plugin/toggle-visibility/toggle-visibility.php:153
 msgid "Hide on Desktop"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:164
+#: addons/plugin/toggle-visibility/toggle-visibility.php:161
 msgid "Hide on Tablet"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:172
+#: addons/plugin/toggle-visibility/toggle-visibility.php:169
 msgid "Hide on Mobile"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:180, addons/plugin/toggle-visibility/toggle-visibility.php:556, addons/plugin/toggle-visibility/toggle-visibility.php:581
+#: addons/plugin/toggle-visibility/toggle-visibility.php:177, addons/plugin/toggle-visibility/toggle-visibility.php:553, addons/plugin/toggle-visibility/toggle-visibility.php:578
 msgid "Hide When Logged Out"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:188
+#: addons/plugin/toggle-visibility/toggle-visibility.php:185
 msgid "Hide When Logged In"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:195, addons/plugin/toggle-visibility/toggle-visibility.php:567
+#: addons/plugin/toggle-visibility/toggle-visibility.php:192, addons/plugin/toggle-visibility/toggle-visibility.php:564
 msgid "Scheduling"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:203, addons/plugin/toggle-visibility/toggle-visibility.php:575, addons/plugin/woocommerce-templates/templates/content-single-product/wc-template-single-meta.php:18
+#: addons/plugin/toggle-visibility/toggle-visibility.php:200, addons/plugin/toggle-visibility/toggle-visibility.php:572, addons/plugin/woocommerce-templates/templates/content-single-product/wc-template-single-meta.php:18
 msgid "Display"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:215, addons/plugin/toggle-visibility/toggle-visibility.php:585
+#: addons/plugin/toggle-visibility/toggle-visibility.php:212, addons/plugin/toggle-visibility/toggle-visibility.php:582
 msgid "Date From"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:222, addons/plugin/toggle-visibility/toggle-visibility.php:589
+#: addons/plugin/toggle-visibility/toggle-visibility.php:219, addons/plugin/toggle-visibility/toggle-visibility.php:586
 msgid "Date To"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:532
+#: addons/plugin/toggle-visibility/toggle-visibility.php:529
 msgid "Page Visibility"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:538
+#: addons/plugin/toggle-visibility/toggle-visibility.php:535
 msgid "Visibility Target"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:542
+#: addons/plugin/toggle-visibility/toggle-visibility.php:539
 msgid "Page"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:554, addons/plugin/toggle-visibility/toggle-visibility.php:579
+#: addons/plugin/toggle-visibility/toggle-visibility.php:551, addons/plugin/toggle-visibility/toggle-visibility.php:576
 msgid "Show"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:555, addons/plugin/toggle-visibility/toggle-visibility.php:580
+#: addons/plugin/toggle-visibility/toggle-visibility.php:552, addons/plugin/toggle-visibility/toggle-visibility.php:577
 msgid "Hide"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:557
+#: addons/plugin/toggle-visibility/toggle-visibility.php:554
 msgid "Schedule"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:597
+#: addons/plugin/toggle-visibility/toggle-visibility.php:594
 msgid "Redirect URL"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:598
+#: addons/plugin/toggle-visibility/toggle-visibility.php:595
 msgid "Optionally redirect the user to a different URL when the page is hidden"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:616
+#: addons/plugin/toggle-visibility/toggle-visibility.php:613
 msgid "Content Type"
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:630, addons/plugin/toggle-visibility/toggle-visibility.php:640
+#: addons/plugin/toggle-visibility/toggle-visibility.php:627, addons/plugin/toggle-visibility/toggle-visibility.php:637
 msgid "The message to display when the content is hidden."
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:635
+#: addons/plugin/toggle-visibility/toggle-visibility.php:632
 msgid "Page content currently unavailable for viewing."
 msgstr ""
 
-#: addons/plugin/toggle-visibility/toggle-visibility.php:723
+#: addons/plugin/toggle-visibility/toggle-visibility.php:720
 msgid "This content has been hidden"
 msgstr ""
 
@@ -2914,7 +2986,7 @@ msgid "SiteOrigin Tooltip"
 msgstr ""
 
 #: addons/plugin/tooltip/tooltip.php:4
-msgid "Add beautiful tooltips to a host of SiteOrigin Widgets."
+msgid "Elevate user interaction with engaging image tooltips, offering informative visual cues for buttons, icons, images, and more, seamlessly across your site."
 msgstr ""
 
 #: addons/plugin/tooltip/tooltip.php:65
@@ -2974,7 +3046,7 @@ msgid "SiteOrigin Video Background"
 msgstr ""
 
 #: addons/plugin/video-background/video-background.php:4
-msgid "Introduce dynamic video backgrounds to any Page Builder row, column, or widget, adding an energetic touch to your site. Includes option for a semi-transparent overlay or pattern."
+msgid "Bring your website to life with video backgrounds in rows, columns, or widgets, blending vibrant visuals with clear text through semi-transparent overlays."
 msgstr ""
 
 #: addons/plugin/video-background/video-background.php:71
@@ -3022,7 +3094,7 @@ msgid "SiteOrigin Web Font Selector"
 msgstr ""
 
 #: addons/plugin/web-font-selector/web-font-selector.php:4
-msgid "Choose from hundreds of beautiful web fonts right in the visual editor."
+msgid "Easily select from a vast array of Google Web Fonts directly within the SiteOrigin Editor Widget or any TinyMCE editor, simplifying font customization."
 msgstr ""
 
 #: addons/plugin/web-font-selector/web-font-selector.php:110
@@ -3038,7 +3110,7 @@ msgid "SiteOrigin WooCommerce Templates"
 msgstr ""
 
 #: addons/plugin/woocommerce-templates/woocommerce-templates.php:4
-msgid "Create custom WooCommerce templates using the power of SiteOrigin Page Builder."
+msgid "Create tailored templates for WooCommerce, customizing Product, Archives, and Checkout pages to boost sales and engagement."
 msgstr ""
 
 #: addons/plugin/woocommerce-templates/woocommerce-templates.php:195, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:24, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:68, addons/plugin/woocommerce-templates/templates/thankyou/wc-thankyou-order-details-table.php:34
@@ -3073,7 +3145,7 @@ msgstr ""
 msgid "My Account"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:269, addons/plugin/woocommerce-templates/woocommerce-templates.php:284, addons/plugin/woocommerce-templates/woocommerce-templates.php:290, addons/plugin/woocommerce-templates/woocommerce-templates.php:717
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:290, addons/plugin/woocommerce-templates/woocommerce-templates.php:717
 msgid "SiteOrigin WooCommerce Layout"
 msgstr ""
 
@@ -3190,7 +3262,7 @@ msgid "SiteOrigin Ajax Comments"
 msgstr ""
 
 #: addons/theme/ajax-comments/ajax-comments.php:4
-msgid "Keep your SiteOrigin theme conversations flowing with AJAX loading comments."
+msgid "Eliminate page reloads for post comment forms, allowing seamless comment submission without interrupting the user's viewing experience."
 msgstr ""
 
 #: addons/theme/logo-booster/logo-booster.php:3
@@ -3198,7 +3270,7 @@ msgid "SiteOrigin Logo Booster"
 msgstr ""
 
 #: addons/theme/logo-booster/logo-booster.php:4
-msgid "Enhance your SiteOrigin theme logo functionality. Add an alternative logo on any page; upload a sticky logo to display on scroll."
+msgid "Customize logos on a per-page or language basis, seamlessly adapting your branding to enhance appeal and relevance in diverse visitor contexts."
 msgstr ""
 
 #: addons/theme/logo-booster/logo-booster.php:46
@@ -3234,7 +3306,15 @@ msgid "SiteOrigin No Attribution"
 msgstr ""
 
 #: addons/theme/no-attribution/no-attribution.php:4
-msgid "Removes the SiteOrigin attribution from your website footer."
+msgid "Remove the SiteOrigin attribution from your footer for a sleek, professional appearance, directly supporting SiteOrigin product development."
+msgstr ""
+
+#: addons/plugin/author-box/tpl/social-media-form.php:6
+msgid "SiteOrigin Author Bio Social Media"
+msgstr ""
+
+#: addons/plugin/author-box/tpl/social-media-form.php:30
+msgid "Your username will be appended to %s"
 msgstr ""
 
 #: addons/plugin/bulk-address/fields/bulk-addresses.class.php:32
@@ -3493,10 +3573,6 @@ msgstr ""
 msgid "You must be logged in to checkout."
 msgstr ""
 
-#: addons/plugin/carousel/post-carousel/templates/overlay.php:32
-msgid " "
-msgstr ""
-
 #: addons/plugin/mirror-widgets/inc/mirror-widget/mirror-widget.php:4
 msgid "Outputs the Mirror Widget of your choosing."
 msgstr ""
@@ -3647,6 +3723,10 @@ msgstr ""
 
 #: addons/plugin/woocommerce-templates/templates/content-product/wc-template-loop-add-to-cart.php:38
 msgid "View Options"
+msgstr ""
+
+#: addons/plugin/woocommerce-templates/templates/content-product/wc-template-loop-add-to-cart.php:48
+msgid "%s product button text"
 msgstr ""
 
 #: addons/plugin/woocommerce-templates/templates/content-product/wc-template-loop-price.php:7

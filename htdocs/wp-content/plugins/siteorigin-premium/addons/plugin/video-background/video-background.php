@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Video Background
-Description: Introduce dynamic video backgrounds to any Page Builder row, column, or widget, adding an energetic touch to your site. Includes option for a semi-transparent overlay or pattern.
+Description: Bring your website to life with video backgrounds in rows, columns, or widgets, blending vibrant visuals with clear text through semi-transparent overlays.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -68,7 +68,7 @@ class SiteOrigin_Premium_Plugin_Video_Background {
 			</span>
 
 			<div class="select-video">
-				<?php _e( 'Select Video', 'siteorigin-premium' ); ?>
+				<?php esc_html_e( 'Select Video', 'siteorigin-premium' ); ?>
 			</div>
 			<input
 				type="hidden"
@@ -78,7 +78,7 @@ class SiteOrigin_Premium_Plugin_Video_Background {
 		</div>
 		<a href="#" class="remove-video <?php if ( empty( (int) $current ) ) {
 			echo ' hidden';
-		} ?>"><?php _e( 'Remove', 'siteorigin-premium' ); ?></a>
+		} ?>"><?php esc_html_e( 'Remove', 'siteorigin-premium' ); ?></a>
 
 		<input
 			type="text"
@@ -121,8 +121,8 @@ class SiteOrigin_Premium_Plugin_Video_Background {
 			'so-premium-video-background-field',
 			'soVideoBackgroundField',
 			array(
-				'add_media' => __( 'Choose Video', 'siteorigin-premium' ),
-				'add_media_done' => __( 'Done', 'siteorigin-premium' ),
+				'add_media' => esc_html__( 'Choose Video', 'siteorigin-premium' ),
+				'add_media_done' => esc_html__( 'Done', 'siteorigin-premium' ),
 			)
 		);
 	}
@@ -282,7 +282,7 @@ class SiteOrigin_Premium_Plugin_Video_Background {
 
 					$video_element .= '<source
 						src="' . sow_esc_url( $video_file ) . '"
-						type="' . self::get_format( $video_file ) . '"
+						type="' . esc_attr( self::get_format( $video_file ) ) . '"
 					>';
 
 					if ( strpos( $video_element, 'source' ) !== false ) {

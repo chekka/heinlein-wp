@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin No Attribution
-Description: Removes the SiteOrigin attribution from your website footer.
+Description: Remove the SiteOrigin attribution from your footer for a sleek, professional appearance, directly supporting SiteOrigin product development.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

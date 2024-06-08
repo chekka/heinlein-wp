@@ -1,0 +1,81 @@
+{
+	"avatar_above": {
+		"label": "Above Author Avatar",
+		"values": {
+			"settings": {
+				"social_media_buttons_widget": {
+					"margin_around": "0px 0px 10px 0px",
+					"design": {
+						"align": "center"
+					}
+				}
+			}
+		}
+	},
+	"avatar_below": {
+		"label": "Below Author Avatar",
+		"values": {
+			"settings": {
+				"social_media_buttons_widget": {
+					"margin_around": "10px 0px 0px 0px",
+					"design": {
+						"align": "center"
+					}
+				}
+			}
+		}
+	},
+	"author_above": {
+		"label": "Above Author Name",
+		"values": {
+			"settings": {
+				"social_media_buttons_widget": {
+					"margin_around": "0px 0px 10px 0px",
+					"design": {
+						"align": "left"
+					}
+				}
+			}
+		}
+	},
+	"author_inline": {
+		"label": "Inline With Author Name",
+		"values": {
+			"settings": {
+				"social_media_buttons_widget": {
+					"margin_around": "0px 5px 10px 0px",
+					"design": {
+						"align": "left"
+					}
+				}
+			}
+		}
+	},
+	"bio_before": {
+		"label": "Above Author Bio",
+		"values": {
+			"settings": {
+				"social_media_buttons_widget": {
+					"margin_around": "0px 0px 10px 0px",
+					"design": {
+						"align": "left"
+					}
+				}
+			}
+
+		}
+	},
+	"bio_after": {
+		"label": "Below Author Bio",
+		"values": {
+			"settings": {
+				"social_media_buttons_widget": {
+					"margin_around": "0px 0px 12px 0px",
+					"design": {
+						"align": "left"
+					}
+				}
+			}
+		}
+	}
+}

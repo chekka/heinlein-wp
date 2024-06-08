@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Call-To-Action
-Description: Additional settings and styles for the SiteOrigin Call-To-Action Widget.
+Description: Boost your Call To Action Widget with expanded settings and styles, offering precise control to create compelling buttons that engage and convert your audience.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

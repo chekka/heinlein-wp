@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Logo Booster
-Description: Enhance your SiteOrigin theme logo functionality. Add an alternative logo on any page; upload a sticky logo to display on scroll.
+Description: Customize logos on a per-page or language basis, seamlessly adapting your branding to enhance appeal and relevance in diverse visitor contexts.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -53,7 +53,7 @@ class SiteOrigin_Premium_Theme_Logo_booster {
 			$languages = icl_get_languages();
 			$default_language = apply_filters( 'wpml_default_language', null );
 			// Update standard sticky logo to reference default language.
-			$form_options['scroll_logo']['label'] = $languages[ $default_language ]['native_name'] . ' ' . $form_options['scroll_logo']['label']; 
+			$form_options['scroll_logo']['label'] = $languages[ $default_language ]['native_name'] . ' ' . $form_options['scroll_logo']['label'];
 			unset( $languages[ $default_language ] );
 			foreach ( $languages as $cc => $language ) {
 				$form_options[ $cc . '_base_logo' ] = array(
@@ -133,7 +133,7 @@ class SiteOrigin_Premium_Theme_Logo_booster {
 				! (
 					function_exists( 'is_shop' ) &&
 					is_shop()
-				) 
+				)
 			)
 		) {
 			return $html;
@@ -327,11 +327,11 @@ class SiteOrigin_Premium_Theme_Logo_booster {
 	public function add_site_title_text() {
 		$tag = is_front_page() ? 'h1' : 'p';
 		?>
-		<<?php echo $tag; ?> class="site-title">
+		<<?php echo esc_html( $tag ); ?> class="site-title">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 			<?php bloginfo( 'name' ); ?>
 			</a>
-		</<?php echo $tag; ?>>
+		</<?php echo esc_html( $tag ); ?>>
 		<?php
 	}
 

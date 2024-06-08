@@ -1,0 +1,134 @@
+@import "../bootstrap/scss/functions";
+
+$enable-negative-margins: true;
+$enable-shadows: true;
+$transition-collapse: height 0s;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 580px,
+  md: 780px,
+  lg: 1040px,
+  xl: 1200px,
+  xxl: 1330px,
+) !default;
+
+$container-max-widths: (
+  sm: 100%,
+  md: 100%,
+  lg: 100%,
+  xl: 100%,
+  xxl: 1332px,
+) !default;
+
+$spacer: 15px;
+
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 2,
+  5: $spacer * 3,
+  6: $spacer * 6,
+  7: $spacer * 7,
+  50: 50px,
+  60: 60px,
+  70: 70px,
+  80: 80px,
+  90: 90px,
+  100: 100px,
+) !default;
+
+$grid-gutter-width: 15px;
+
+$gutters: (
+  0: 0,
+  1: $spacer * 1,
+  2: $spacer * 2,
+  3: $spacer * 3,
+  4: $spacer * 4,
+  5: $spacer * 5,
+);
+
+$border-radius:      18px;
+$border-radius-sm:   24rem;
+$border-radius-lg:   36rem;
+$border-radius-xl:   115px;
+$border-radius-xxl:  2rem;
+
+$box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+$box-shadow-sm: 0 0 1rem rgba(0, 0, 0, 0.05);
+$box-shadow-lg: 0 0 3rem rgba(0, 0, 0, 0.1);
+$box-shadow-xl: 0 0 3rem rgba(0, 0, 0, 0.3);
+
+$utilities: (
+  "rounded-top": (
+    property: border-top-left-radius border-top-right-radius,
+    class: rounded-top,
+    values: (
+      null: $border-radius,
+      0: 0,
+      1: $border-radius-sm,
+      2: $border-radius,
+      3: $border-radius-lg,
+      4: $border-radius-xl,
+      5: $border-radius-xxl,
+    )
+  ),
+  "rounded-end": (
+    property: border-top-right-radius border-bottom-right-radius,
+    class: rounded-end,
+    values: (
+      null: $border-radius,
+      0: 0,
+      1: $border-radius-sm,
+      2: $border-radius,
+      3: $border-radius-lg,
+      4: $border-radius-xl,
+      5: $border-radius-xxl,
+    )
+  ),
+  "shadow": (
+    property: box-shadow,
+    class: shadow,
+    values: (
+      null: $box-shadow,
+      sm: $box-shadow-sm,
+      lg: $box-shadow-lg,
+      xl: $box-shadow-xl,
+      none: none
+    )
+  )
+);
+
+$position-values: (
+  0: 0,
+  10: 10%,
+  12: 12%,
+  15: 15%,
+  20: 20%,
+  50: 50%,
+  100: 100%
+);
+
+@import "../bootstrap/scss/bootstrap";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/maps";
+@import "../bootstrap/scss/mixins";
+@import "../bootstrap/scss/utilities";
+
+$utilities: map-merge(
+  $utilities, (
+    "position": map-merge(
+      map-get($utilities, "position"),
+      ( responsive: true ),
+    ),
+    "rounded": map-merge(
+      map-get($utilities, "rounded"),
+      ( responsive: true ),
+    ),
+  )
+);
+
+@import "../bootstrap/scss/utilities/api";

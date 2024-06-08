@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Social Widgets
-Description: Add custom networks to the SiteOrigin Social Media Buttons Widget.
+Description: Expand and personalize your site's social media buttons by adding unique networks and custom icons, enhancing user engagement and connectivity.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

@@ -106,13 +106,13 @@ class SiteOrigin_Video {
 	public function autoplay_callback( $match ) {
 		return str_replace(
 			$match[1],
-			add_query_arg(
+			esc_url( add_query_arg(
 				array(
 					'autoplay' => 1,
 					'mute' => 1,
 				),
 				$match[1]
-			),
+			) ),
 			$match[0]
 		);
 	}
@@ -135,7 +135,7 @@ class SiteOrigin_Video {
 			$match[1]
 		);
 
-		return str_replace( $match[1], $new_url, $match[0] );
+		return str_replace( $match[1], esc_url( $new_url ), $match[0] );
 	}
 
 	/**
@@ -156,12 +156,12 @@ class SiteOrigin_Video {
 
 		return str_replace(
 			$match[1],
-			add_query_arg(
+			esc_url( add_query_arg(
 				array(
 					$js_arg,
 				),
 				$match[1]
-			),
+			) ),
 			$match[0]
 		);
 	}

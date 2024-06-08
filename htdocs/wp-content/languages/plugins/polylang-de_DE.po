@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the Plugins - Polylang - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-03-18 09:56:01+0000\n"
+"PO-Revision-Date: 2024-04-13 20:13:37+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/4.0.0\n"
+"X-Generator: GlotPress/4.0.1\n"
 "Language: de\n"
 "Project-Id-Version: Plugins - Polylang - Stable (latest release)\n"
 
@@ -485,7 +485,7 @@ msgstr "Nordmazedonien"
 #. translators: %1$s is a date, %2$s is link start tag, %3$s is link end tag.
 #: include/license.php:334
 msgid "Your license key will expire soon! Precisely, it will expire on %1$s. %2$sRenew your license key today!%3$s"
-msgstr "Dein Lizenzschlüssel läuft bald ab! Genau genommen am %1$s. %2$sErneuere heute deinen Lizenzschlüssel!%3$s"
+msgstr "Dein Lizenzschlüssel läuft bald ab! Genau genommen am %1$s. %2$sErneuere heute deinen Lizenzschlüssel!%3$s."
 
 #: settings/settings-module.php:352
 msgid "To enable this feature, you need Polylang Pro."

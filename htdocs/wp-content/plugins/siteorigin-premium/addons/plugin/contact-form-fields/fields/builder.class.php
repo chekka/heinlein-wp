@@ -9,7 +9,7 @@ class SiteOrigin_Widget_ContactForm_Field_Builder extends SiteOrigin_Widget_Cont
 				$options['field']['builder_options']
 			);
 		} else {
-			echo __( 'This widget requires Page Builder.', 'siteorigin-premium' );
+			esc_html_e( 'This widget requires Page Builder.', 'siteorigin-premium' );
 		}
 	}
 }

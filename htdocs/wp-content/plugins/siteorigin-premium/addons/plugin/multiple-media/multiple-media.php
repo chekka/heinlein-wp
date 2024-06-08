@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Multiple Media
-Description: Upload multiple images at once to SiteOrigin Slider and Image Grid type widgets.
+Description: Streamline your workflow by uploading multiple images simultaneously to Sliders, Grids, and Hero frames, quickly creating visually stunning websites.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Image Shape
-Description: Elevate your image designs with an expanded selection of shapes and captivating effects, including shadows and hover shadows.
+Description: Transform your images with unique shapes and engaging effects, from shadows to hover enhancements, for standout visuals in the SiteOrigin Image Widget.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

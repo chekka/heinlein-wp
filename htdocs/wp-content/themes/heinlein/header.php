@@ -28,7 +28,7 @@
 <body <?php body_class(); ?>>
 
   <header class="site-header">
-    <div class="container">
+    <div class="d-flex">
       <?php 
         if ( is_active_sidebar( 'header' )):
             dynamic_sidebar( 'header' );

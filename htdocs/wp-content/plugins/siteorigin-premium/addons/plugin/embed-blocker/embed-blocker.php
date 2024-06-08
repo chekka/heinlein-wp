@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Embed Blocker
-Description: Effortlessly comply with GDPR and DSGVO by controlling embeds from platforms such as YouTube, X, and Google Maps.
+Description: Effortlessly comply with GDPR and DSGVO by controlling embeds from platforms like YouTube, X, Google Maps, and others, with customizable block messages.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -18,18 +18,39 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 	private $blockId = 0;
 
 	public function __construct() {
-		if ( defined( 'SOW_BUNDLE_VERSION' ) ) {
-			add_action( 'wp_head', array( $this, 'add_blocker_less' ) );
-			add_filter( 'the_content', array( $this, 'process_content' ), 99 );
-			add_action( 'wp_enqueue_scripts', array( $this, 'register_assets' ) );
-			add_filter( 'siteorigin_premium_content_blocker_content', array( $this, 'additional_blocks' ), 10, 3 );
-		}
+		add_action( 'init', array( $this, 'init' ) );
 	}
 
 	public static function single() {
 		static $single;
 
 		return empty( $single ) ? $single = new self() : $single;
+	}
+
+	function init() {
+		if ( defined( 'SOW_BUNDLE_VERSION' ) ) {
+			add_action( 'wp_head', array( $this, 'add_blocker_less' ) );
+			add_filter( 'the_content', array( $this, 'process_content' ), 99 );
+			add_action( 'wp_enqueue_scripts', array( $this, 'register_assets' ) );
+			add_filter( 'siteorigin_premium_content_blocker_content', array( $this, 'additional_blocks' ), 10, 3 );
+
+			add_action( 'siteorigin_premium_version_update', array( $this, 'update_settings_migration' ), 20, 2 );
+		}
+	}
+
+	public function update_settings_migration( $new_version, $old_version ) {
+		if ( version_compare( $old_version, '1.60.0', '<=' ) ) {
+			$settings = SiteOrigin_Premium_Options::single()->get_settings( 'plugin/embed-blocker' );
+			// Migrate padding to multi-measurement.
+			if (
+				! empty( $settings['blocker_design']['container']['padding'] )
+				&& strpos( $settings['blocker_design']['container']['padding'], ' ' ) === false
+			) {
+				$padding = $settings['blocker_design']['container']['padding'];
+				$settings['blocker_design']['container']['padding'] = sanitize_text_field( "$padding $padding $padding $padding" );
+				SiteOrigin_Premium_Options::single()->save_settings( 'plugin/embed-blocker', $settings );
+			}
+		}
 	}
 
 	public function message_field_help( $shortcode, $text ) {
@@ -109,17 +130,17 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 							array(
 								'selector' => '.siteorigin-widget-field-label .siteorigin-widget-input',
 								'valueMethod' => 'val',
-								'label' => __( 'Site', 'so-widgets-bundle' ),
+								'label' => __( 'Site', 'siteorigin-premium' ),
 							),
 							array(
 								'selector' => '.siteorigin-widget-field-urls .siteorigin-widget-input',
 								'valueMethod' => 'val',
-								'label' => __( 'URLs', 'so-widgets-bundle' ),
+								'label' => __( 'URLs', 'siteorigin-premium' ),
 							),
 							array(
 								'selector' => '.siteorigin-widget-field-status .siteorigin-widget-input',
 								'valueMethod' => 'checkboxFormField',
-								'label' => __( 'Status', 'so-widgets-bundle' ),
+								'label' => __( 'Status', 'siteorigin-premium' ),
 							),
 						),
 					),
@@ -275,9 +296,23 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 									'default' => '3px',
 								),
 								'padding' => array(
-									'type' => 'measurement',
+									'type' => 'multi-measurement',
 									'label' => __( 'Padding', 'siteorigin-premium' ),
-									'default' => '30px',
+									'default' => '30px 30px 30px 30px',
+									'measurements' => array(
+										'top' => array(
+											'label' => __( 'Top', 'siteorigin-premium' ),
+										),
+										'right' => array(
+											'label' => __( 'Right', 'siteorigin-premium' ),
+										),
+										'bottom' => array(
+											'label' => __( 'Bottom', 'siteorigin-premium' ),
+										),
+										'left' => array(
+											'label' => __( 'Left', 'siteorigin-premium' ),
+										),
+									),
 								),
 							),
 						),
@@ -458,7 +493,7 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 		$css = $this->generate_less( $settings['blocker_design'] );
 
 		if ( ! empty( $css ) ) {
-			echo '<style type="text/css">' . wp_kses_post( $css ) . '</style>';
+			echo '<style type="text/css">' . wp_strip_all_tags( $css ) . '</style>';
 		}
 	}
 

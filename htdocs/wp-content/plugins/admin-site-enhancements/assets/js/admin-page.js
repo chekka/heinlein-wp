@@ -153,6 +153,7 @@
       $('.hide-admin-notices').appendTo('.fields-admin-interface > table > tbody');
       
       $('.disable-dashboard-widgets').appendTo('.fields-admin-interface > table > tbody');
+      $('.disable-welcome-panel-in-dashboard').appendTo('.fields-admin-interface .disable-dashboard-widgets .asenha-subfields');
       $('.disabled-dashboard-widgets').appendTo('.fields-admin-interface .disable-dashboard-widgets .asenha-subfields');
       $('.hide-admin-bar').appendTo('.fields-admin-interface > table > tbody');
       
@@ -276,6 +277,7 @@
       $('.smtp-default-from-name').appendTo('.fields-utilities .smtp-email-delivery .asenha-subfields');
       $('.smtp-default-from-email').appendTo('.fields-utilities .smtp-email-delivery .asenha-subfields');
       $('.smtp-force-from').appendTo('.fields-utilities .smtp-email-delivery .asenha-subfields');
+      
       $('.smtp--description').appendTo('.fields-utilities .smtp-email-delivery .asenha-subfields');
       $('.smtp-host').appendTo('.fields-utilities .smtp-email-delivery .asenha-subfields');
       $('.smtp-port').appendTo('.fields-utilities .smtp-email-delivery .asenha-subfields');

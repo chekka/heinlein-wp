@@ -80,7 +80,7 @@ if ( class_exists( 'SiteOrigin_Widget' ) ) {
 		 */
 		public function scripts_loading_message() {
 			?>
-			<p><strong><?php _e( 'Scripts and styles for this form are loading.', 'siteorigin-premium' ); ?></strong></p>
+			<p><strong><?php esc_html_e( 'Scripts and styles for this form are loading.', 'siteorigin-premium' ); ?></strong></p>
 			<?php
 		}
 
@@ -109,7 +109,7 @@ if ( class_exists( 'SiteOrigin_Widget' ) ) {
 		public function form( $instance ) {
 			?><p><?php
 			printf(
-				__( 'Please, install and active the %sSiteOrigin Widgets Bundle%s plugin to use these addon settings.' ),
+				esc_html( 'Please, install and active the %sSiteOrigin Widgets Bundle%s plugin to use these addon settings.' ),
 				sprintf(
 					'<a href="%s" target="_blank" rel="noopener noreferrer">',
 					apply_filters( 'siteorigin_add_installer', true ) ? esc_url( admin_url( 'admin.php?page=siteorigin-installer&highlight=so-widgets-bundle' ) ) : 'https://wordpress.org/plugins/so-widgets-bundle/'

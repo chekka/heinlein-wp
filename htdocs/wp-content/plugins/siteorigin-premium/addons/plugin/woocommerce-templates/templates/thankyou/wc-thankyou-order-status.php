@@ -49,7 +49,7 @@ class SiteOrigin_Premium_WooCommerce_Thankyou_Order_Status extends SiteOrigin_Wi
 				if ( ! empty( $instance['failed']['message'] ) ) {
 					?>
 					<div class="woocommerce-notice woocommerce-notice--error woocommerce-thankyou-order-failed">
-						<?php echo $instance['failed']['message']; ?>
+						<?php echo wp_kses_post( $instance['failed']['message'] ); ?>
 					</div>
 				<?php } ?>
 

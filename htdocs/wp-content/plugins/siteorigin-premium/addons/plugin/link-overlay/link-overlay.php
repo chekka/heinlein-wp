@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Link Overlay
-Description: Link an entire Page Builder row, column, or widget.
+Description: Turn any Page Builder row, cell, or widget into a clickable link, offering direct access to content or external pages with minimal setup and improved accessibility.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -14,6 +14,9 @@ Requires: siteorigin-panels
 
 class SiteOrigin_Premium_Plugin_Link_Overlay {
 	public function __construct() {
+		if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
+			return;
+		}
 		add_filter( 'siteorigin_panels_row_style_groups', array( $this, 'add_style_group' ), 10, 3 );
 		add_filter( 'siteorigin_panels_cell_style_groups', array( $this, 'add_style_group' ), 10, 3 );
 		add_filter( 'siteorigin_panels_widget_style_groups', array( $this, 'add_style_group' ), 10, 3 );
@@ -95,7 +98,7 @@ class SiteOrigin_Premium_Plugin_Link_Overlay {
 			if ( ! empty( $data['style']['link_overlay_new_window'] ) ) {
 				$content .= ' target="_blank" rel="noopener noreferrer"';
 			}
-			
+
 			if ( ! empty( $data['style']['link_overlay_label'] ) ) {
 				$content .= ' aria-label="' . esc_attr( $data['style']['link_overlay_label'] ) . '"';
 			}

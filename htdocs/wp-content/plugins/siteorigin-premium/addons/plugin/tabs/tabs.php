@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Tabs
-Description: Additional settings and styles for the SiteOrigin Tabs Widget.
+Description: Enhance site navigation and engagement by enriching Tabs Widgets with new styles and functionalities for intuitive content organization.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

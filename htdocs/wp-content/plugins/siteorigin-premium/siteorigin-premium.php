@@ -2,9 +2,9 @@
 /*
 Plugin Name: SiteOrigin Premium
 Description: A collection of powerful addons that enhance every aspect of SiteOrigin plugins and themes.
-Version: 1.60.0
+Version: 1.61.1
 Requires at least: 4.7
-Tested up to: 6.4
+Tested up to: 6.5.2
 Requires PHP: 5.6.20
 Author: SiteOrigin
 Text Domain: siteorigin-premium
@@ -15,7 +15,7 @@ License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 */
 
-define( 'SITEORIGIN_PREMIUM_VERSION', '1.60.0' );
+define( 'SITEORIGIN_PREMIUM_VERSION', '1.61.1' );
 define( 'SITEORIGIN_PREMIUM_JS_SUFFIX', '.min' );
 define( 'SITEORIGIN_PREMIUM_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SITEORIGIN_PREMIUM_URL', plugin_dir_url( __FILE__ ) );
@@ -123,7 +123,7 @@ if ( ! class_exists( 'SiteOrigin_Premium' ) ) {
 
 			// Set up the updater if the user has entered a key
 			$this->updater = new SiteOrigin_Premium_Updater(
-				self::update_url(),
+				esc_url( self::update_url() ),
 				__FILE__,
 				array(
 					'version' => SITEORIGIN_PREMIUM_VERSION,
@@ -427,8 +427,8 @@ if ( ! class_exists( 'SiteOrigin_Premium' ) ) {
 		 */
 		public function add_action_links( $links ) {
 			unset( $links['edit'] );
-			$links['addons'] = '<a href="' . esc_url( admin_url( 'admin.php?page=siteorigin-premium-addons' ) ) . '">' . __( 'Addons', 'siteorigin-premium' ) . '</a>';
-			$links['license'] = '<a href="' . esc_url( admin_url( 'admin.php?page=siteorigin-premium-license' ) ) . '">' . __( 'License', 'siteorigin-premium' ) . '</a>';
+			$links['addons'] = '<a href="' . esc_url( admin_url( 'admin.php?page=siteorigin-premium-addons' ) ) . '">' . esc_html__( 'Addons', 'siteorigin-premium' ) . '</a>';
+			$links['license'] = '<a href="' . esc_url( admin_url( 'admin.php?page=siteorigin-premium-license' ) ) . '">' . esc_html__( 'License', 'siteorigin-premium' ) . '</a>';
 
 			return $links;
 		}

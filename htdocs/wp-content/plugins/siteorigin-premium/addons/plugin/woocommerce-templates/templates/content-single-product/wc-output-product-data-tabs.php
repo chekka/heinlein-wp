@@ -106,7 +106,10 @@ class SiteOrigin_Premium_WooCommerce_Output_Product_Data_Tabs extends SiteOrigin
 			unset( $tabs['so_field_container_state'] );
 
 			foreach ( $tabs as $name => $settings ) {
-				if ( ! $settings['status'] ) {
+				if (
+					isset( $settings['status'] ) &&
+					! $settings['status']
+				) {
 					$this->changes['remove'][ $name ] = true;
 					continue;
 				}

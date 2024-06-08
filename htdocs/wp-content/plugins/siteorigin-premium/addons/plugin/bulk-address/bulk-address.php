@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Bulk Addresses
-Description: Add multiple Map Marker addresses in one go to the SiteOrigin Google Maps Widget.
+Description: Quickly add multiple map markers at once, simplifying the creation of interactive maps with a comprehensive view of all your important locations.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

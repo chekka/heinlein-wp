@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Ajax Comments
-Description: Keep your SiteOrigin theme conversations flowing with AJAX loading comments.
+Description: Eliminate page reloads for post comment forms, allowing seamless comment submission without interrupting the user's viewing experience.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -73,7 +73,7 @@ class SiteOrigin_Premium_Theme_Ajax_Comments {
 		comments_template();
 		$comment_html = ob_get_clean();
 
-		echo json_encode( array(
+		echo wp_json_encode( array(
 			'status' => 'success',
 			'html' => $comment_html,
 		) );
@@ -93,7 +93,7 @@ class SiteOrigin_Premium_Theme_Ajax_Comments {
 
 	public function error_handler( $error ) {
 		header( 'content-type: application/json', true );
-		echo json_encode( array(
+		echo wp_json_encode( array(
 			'status' => 'error',
 			'error' => $error,
 		) );

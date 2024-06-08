@@ -12,9 +12,9 @@
 		<div class="so-premium-icon-wrapper">
 			<img src="<?php echo SiteOrigin_Premium::dir_url( __FILE__ ); ?>../img/page-icon.png" class="so-premium-icon" />
 		</div>
-		<h1><?php _e( 'SiteOrigin Premium Addons', 'siteorigin-premium' ); ?></h1>
+		<h1><?php esc_html_e( 'SiteOrigin Premium Addons', 'siteorigin-premium' ); ?></h1>
 
-		<input type="search" class="addons-search" name="search" placeholder="<?php _e( 'Search Addons', 'siteorigin-premium' ); ?>" />
+		<input type="search" class="addons-search" name="search" placeholder="<?php esc_html_e( 'Search Addons', 'siteorigin-premium' ); ?>" />
 
 		<ul class="page-sections">
 			<?php
@@ -34,7 +34,7 @@
 					</a>
 				</li>
 				<?php
-			}	
+			}
 			?>
 		</ul>
 
@@ -77,7 +77,7 @@
 
 						<div class="so-addon-text">
 
-							<div class="so-addon-active-indicator"><?php _e( 'Active', 'so-addons-bundle' ); ?></div>
+							<div class="so-addon-active-indicator"><?php esc_html_e( 'Active', 'so-addons-bundle' ); ?></div>
 
 							<h3 class="so-addon-name"><?php echo esc_html( $addon['Name'] ); ?></h3>
 
@@ -119,7 +119,7 @@
 										<button class="button-secondary so-addon-deactivate" data-status="0"><?php esc_html_e( 'Deactivate', 'so-addons-bundle' ); ?></button>
 									</div>
 								<?php } ?>
-								
+
 								<?php if ( ! empty( $addon['has_settings'] ) ) { ?>
 									<button class="button-secondary so-addon-settings" data-form-url="<?php echo esc_url( $addon['form_url'] ); ?>"<?php if ( empty( $addon['Active'] ) ) {
 										echo ' style="display: none;"';
@@ -141,7 +141,7 @@
 
 								<?php if ( ! empty( $addon['Documentation'] ) ) { ?>
 									<a href="<?php echo esc_url( $addon['Documentation'] ); ?>" target="_blank" rel="noopener noreferrer" class="so-section-documentation-link">
-										<?php _e( 'Documentation', 'siteorigin-premium' ); ?>
+										<?php esc_html_e( 'Documentation', 'siteorigin-premium' ); ?>
 									</a>
 								<?php } ?>
 							</div>
@@ -160,12 +160,12 @@
 	<?php if ( ! class_exists( 'SiteOrigin_Panels' ) ) { ?>
 		<div class="installer">
 			<a href="#" class="installer-link">
-				<?php echo __( 'General Premium Settings', 'siteorigin-premium' ); ?>
+				<?php esc_html_e( 'General Premium Settings', 'siteorigin-premium' ); ?>
 			</a>
 
 			<div class="installer-container" style="display: none;">
 				<label>
-					<?php echo __( 'Enable SiteOrigin Installer: ', 'siteorigin-premium' ); ?>
+					<?php esc_html_e( 'Enable SiteOrigin Installer: ', 'siteorigin-premium' ); ?>
 					<input
 						type="checkbox"
 						name="installer_status"
@@ -180,33 +180,33 @@
 
 	<div class="siteorigin-logo">
 		<p>
-			<?php _e( 'Proudly Created By', 'siteorigin-premium' ); ?>
+			<?php esc_html_e( 'Proudly Created By', 'siteorigin-premium' ); ?>
 		</p>
 		<a href="https://siteorigin.com/" target="_blank" rel="noopener noreferrer">
 			<img src="<?php echo SiteOrigin_Premium::dir_url( __FILE__ ); ?>../img/siteorigin.png" />
 		</a>
 	</div>
-	
+
 	<div id="siteorigin-premium-settings-dialog">
 		<div class="so-overlay"></div>
-		
+
 		<div class="so-title-bar">
-			<h3 class="so-title"><?php _e( 'Addon Settings', 'siteorigin-premium' ); ?></h3>
+			<h3 class="so-title"><?php esc_html_e( 'Addon Settings', 'siteorigin-premium' ); ?></h3>
 			<a class="so-close">
 				<span class="so-dialog-icon"></span>
 			</a>
 		</div>
-		
+
 		<div class="so-content so-loading">
 		</div>
-		
+
 		<div class="so-toolbar">
 			<div class="so-buttons">
-				<button class="button-primary so-save"><?php _e( 'Save', 'siteorigin-premium' ); ?></button>
+				<button class="button-primary so-save"><?php esc_html_e( 'Save', 'siteorigin-premium' ); ?></button>
 			</div>
 		</div>
 	</div>
-	
+
 	<iframe id="so-premium-addon-settings-save" name="so-premium-addon-settings-save"></iframe>
 
 	<div class="modal-video" tabindex="-1" role="dialog" style="display: none;">

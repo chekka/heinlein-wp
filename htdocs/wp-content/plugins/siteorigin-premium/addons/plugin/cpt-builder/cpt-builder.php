@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Custom Post Type Builder
-Description: Build custom post types with reusable Page Builder layouts.
+Description: Craft and manage unique post types with seamless Page Builder integration, enabling consistent layouts across your site's diverse content needs.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -269,19 +269,19 @@ class SiteOrigin_Premium_Plugin_Cpt_Builder {
 			array(
 				'loc' => array(
 					'confirm_edit_post_type' => sprintf(
-						__( 'Warning! Editing the post type layout will affect %s existing posts of this type.', 'siteorigin-premium' ),
+						esc_html__( 'Warning! Editing the post type layout will affect %s existing posts of this type.', 'siteorigin-premium' ),
 						$existing_post_count
 					),
 					'confirm_disable_editable' => sprintf(
-						__( 'Warning! Disabling editable layout will cause problems with %s existing posts of this type.', 'siteorigin-premium' ),
+						esc_html__( 'Warning! Disabling editable layout will cause problems with %s existing posts of this type.', 'siteorigin-premium' ),
 						$existing_post_count
 					),
 					'confirm_edit_slug' => sprintf(
-						__( 'Warning! Editing the post type slug will cause problems with %s existing posts of this type!', 'siteorigin-premium' ),
+						esc_html__( 'Warning! Editing the post type slug will cause problems with %s existing posts of this type!', 'siteorigin-premium' ),
 						$existing_post_count
 					),
 				),
-				'existing_post_count' => intval( $existing_post_count ),
+				'existing_post_count' => (int) $existing_post_count,
 			)
 		);
 	}

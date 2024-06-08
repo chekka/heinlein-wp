@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Contact Form
-Description: Additional settings and styles for the SiteOrigin Contact Form Widget.
+Description: Enhance SiteOrigin forms with a Layout Builder, Autoresponder, Location/Datetime Picker Fields, and Merge Tags for advanced form customization.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -325,14 +325,14 @@ class SiteOrigin_Premium_Plugin_Contact_Form_Fields {
 		$subject = apply_filters(
 			'siteorigin_premium_contact_auto_responder_subject',
 			empty( $auto_responder['subject'] ) ?
-				__( 'Message received!', 'siteorigin-premium' ) :
+				esc_html__( 'Message received!', 'siteorigin-premium' ) :
 				$auto_responder['subject']
 		);
 
 		$message = apply_filters(
 			'siteorigin_premium_contact_auto_responder_message',
 			empty( $auto_responder['message'] ) ?
-				__( 'Thanks for contacting us. We\'ll get back to you shortly.', 'siteorigin-premium' ) :
+				esc_html__( 'Thanks for contacting us. We\'ll get back to you shortly.', 'siteorigin-premium' ) :
 				$auto_responder['message']
 		);
 
@@ -513,7 +513,7 @@ class SiteOrigin_Premium_Plugin_Contact_Form_Fields {
 		} else {
 			$this->apply_merge_tag( $value );
 		}
-		
+
 		return $value;
 	}
 
@@ -522,5 +522,5 @@ class SiteOrigin_Premium_Plugin_Contact_Form_Fields {
 			$this->merge_tags[ $field['merge_tag'] ] = $value;
 		}
 	}
-	
+
 }

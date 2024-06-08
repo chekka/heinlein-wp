@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Carousel
-Description: Additional settings and styles for the SiteOrigin Carousel widgets.
+Description: Introduce overlay themes, customizable navigation, and Layout Builder integration to carousels, enriching visuals and user interaction.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -283,7 +283,7 @@ class SiteOrigin_Premium_Plugin_Carousel {
 	private static function is_non_default_theme( $instance ) {
 		return ! empty( $instance ) &&
 			isset( $instance['design'] ) &&
-			isset( $instance['design']['theme'] ) &&
+			! empty( $instance['design']['theme'] ) &&
 			$instance['design']['theme'] != 'base';
 	}
 
@@ -343,7 +343,7 @@ class SiteOrigin_Premium_Plugin_Carousel {
 			if ( wp_style_is( 'sow-post-carousel-' . $instance['design']['theme'], 'registered' ) ) {
 				wp_enqueue_style( 'sow-post-carousel-' . $instance['design']['theme'] );
 			}
-			$template_vars['settings']['item_template'] = plugin_dir_path( __FILE__ ) . 'post-carousel/templates/' . $instance['design']['theme'] . '.php';
+			$template_vars['settings']['item_template'] = plugin_dir_path( __FILE__ ) . 'post-carousel/templates/' . basename( $instance['design']['theme'] ) . '.php';
 			$template_vars['settings']['navigation'] = 'container';
 
 			$size = siteorigin_widgets_get_image_size( $instance['image_size'] );

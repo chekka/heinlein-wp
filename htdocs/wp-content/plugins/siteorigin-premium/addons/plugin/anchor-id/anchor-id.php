@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Anchor ID
-Description: Link directly to SiteOrigin Slides, Tabs, Accordion Panels, and Carousel Items.
+Description: Link directly to specific slides, tabs, accordion panels, and carousel items using easy-to-set anchor IDs, maintaining user focus and engagement.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -26,6 +26,8 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 	}
 
 	public function add_filters() {
+		add_action( 'wp_enqueue_scripts', array( $this, 'register_js' ) );
+
 		if ( class_exists( 'SiteOrigin_Widget_LayoutSlider_Widget' ) ) {
 			add_filter( 'siteorigin_widgets_form_options_sow-layout-slider', array( $this, 'add_slider_form_options' ), 10, 2 );
 			add_action( 'siteorigin_widgets_enqueue_frontend_scripts_sow-layout-slider', array( $this, 'enqueue_slider_js' ) );
@@ -44,11 +46,13 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 		if ( class_exists( 'SiteOrigin_Widget_Accordion_Widget' ) ) {
 			add_filter( 'siteorigin_widgets_form_options_sow-accordion', array( $this, 'add_accordion_tabs_form_options' ), 10, 2 );
 			add_filter( 'siteorigin_widgets_wrapper_data_sow-accordion', array( $this, 'add_accordion_tabs_front_end_params' ), 10, 3 );
+			add_action( 'siteorigin_widgets_enqueue_frontend_scripts_sow-accordion', array( $this, 'accordion_enqueue_js' ), 9 );
 		}
 
 		if ( class_exists( 'SiteOrigin_Widget_Tabs_Widget' ) ) {
 			add_filter( 'siteorigin_widgets_form_options_sow-tabs', array( $this, 'add_accordion_tabs_form_options' ), 10, 2 );
 			add_filter( 'siteorigin_widgets_wrapper_data_sow-tabs', array( $this, 'add_accordion_tabs_front_end_params' ), 10, 3 );
+			add_action( 'siteorigin_widgets_enqueue_frontend_scripts_sow-tabs', array( $this, 'tabs_enqueue_js' ), 9 );
 		}
 
 		if ( class_exists( 'SiteOrigin_Widget_Anything_Carousel_Widget' ) ) {
@@ -59,17 +63,21 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 		}
 	}
 
-	private function add_offset_to_script( $script_id ) {
-		if ( empty( $this->offset_added ) ) {
-			wp_localize_script(
-				$script_id,
-				'soPremiumAnchorId',
-				array(
-					'scrollto_offset' => (int) apply_filters( 'siteorigin_premium_anchor_id_scrollto_offset', 90 ),
-				)
-			);
-			$this->offset_added = true;
-		}
+	public function register_js() {
+		wp_register_script(
+			'so-premium-anchor-id',
+			plugin_dir_url( __FILE__ ) . 'js/anchor-id' . SITEORIGIN_PREMIUM_JS_SUFFIX . '.js',
+			array(),
+			SITEORIGIN_PREMIUM_VERSION
+		);
+
+		wp_localize_script(
+			'so-premium-anchor-id',
+			'soPremiumAnchorId',
+			array(
+				'scrollto_offset' => ( int ) apply_filters( 'siteorigin_premium_anchor_id_scrollto_offset', 90 ),
+			)
+		);
 	}
 
 	public function add_slider_form_options( $form_options, $widget ) {
@@ -107,11 +115,37 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 			wp_enqueue_script(
 				'so-premium-anchor-id-slider',
 				plugin_dir_url( __FILE__ ) . 'js/anchor-id-slider' . SITEORIGIN_PREMIUM_JS_SUFFIX . '.js',
-				array( 'sow-slider-slider-cycle2' ),
+				array(
+					'sow-slider-slider-cycle2',
+					'so-premium-anchor-id'
+				),
 				SITEORIGIN_PREMIUM_VERSION
 			);
+		}
+	}
 
-			$this->add_offset_to_script( 'so-premium-anchor-id-slider' );
+	public function accordion_enqueue_js( $instance ) {
+		if ( ! empty( $instance['use_anchor_tags'] ) ) {
+			wp_enqueue_script(
+				'so-premium-anchor-id-accordion',
+				plugin_dir_url( __FILE__ ) . 'js/anchor-id-accordion' . SITEORIGIN_PREMIUM_JS_SUFFIX . '.js',
+				array(
+					'so-premium-anchor-id'
+				),
+				SITEORIGIN_PREMIUM_VERSION
+			);
+		}
+	}
+	public function tabs_enqueue_js( $instance ) {
+		if ( ! empty( $instance['use_anchor_tags'] ) ) {
+			wp_enqueue_script(
+				'so-premium-anchor-id-tabs',
+				plugin_dir_url( __FILE__ ) . 'js/anchor-id-tabs' . SITEORIGIN_PREMIUM_JS_SUFFIX . '.js',
+				array(
+					'so-premium-anchor-id'
+				),
+				SITEORIGIN_PREMIUM_VERSION
+			);
 		}
 	}
 
@@ -207,7 +241,7 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 				! empty( $instance['title'] )
 			)
 		) {
-			$template_vars['settings']['attributes']['anchor'] = sanitize_title_with_dashes(
+			$template_vars['settings']['attributes']['anchor-id'] = sanitize_title_with_dashes(
 				! empty( $instance['carousel_settings']['anchor'] ) ? $instance['carousel_settings']['anchor'] : $instance['title']
 			);
 		}
@@ -220,11 +254,9 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 			wp_enqueue_script(
 				'so-premium-anything-carousel',
 				plugin_dir_url( __FILE__ ) . 'js/anchor-id-anything-carousel' . SITEORIGIN_PREMIUM_JS_SUFFIX . '.js',
-				array(),
+				array( 'so-premium-anchor-id' ),
 				SITEORIGIN_PREMIUM_VERSION
 			);
-
-			$this->add_offset_to_script( 'so-premium-anything-carousel' );
 		}
 	}
 }

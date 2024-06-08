@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Mirror Widgets
-Description: Create a widget once, use it everywhere. Update it and the changes reflect in all instances of the widget.
+Description: Create a widget once, use it everywhere. Update it, and see changes in all instances, streamlining your workflow and significantly saving you time.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -100,7 +100,7 @@ class SiteOrigin_Premium_Plugin_Mirror_Widgets {
 	public function add_shortcode_column_content( $column, $post_id ) {
 		if ( $column == 'so_mirror_widget_shortcode' ) {
 			?>
-			<input type="text" onfocus="this.select()" value='[mirror_widget id="<?php echo intval( $post_id ); ?>"]' readonly>
+			<input type="text" onfocus="this.select()" value='[mirror_widget id="<?php echo (int) $post_id; ?>"]' readonly>
 			<?php
 		}
 	}
@@ -121,7 +121,7 @@ class SiteOrigin_Premium_Plugin_Mirror_Widgets {
 
 	public function render_shortcode_post_meta_box( $post, $metabox ) {
 		?>
-		<input type="text" onfocus="this.select()" value='[mirror_widget id="<?php echo intval( $post->ID ); ?>"]' readonly>
+		<input type="text" onfocus="this.select()" value='[mirror_widget id="<?php echo (int) $post->ID; ?>"]' readonly>
 		<?php
 	}
 
@@ -136,9 +136,9 @@ class SiteOrigin_Premium_Plugin_Mirror_Widgets {
 			is_numeric( $atts['id'] ) &&
 			get_post_meta( $atts['id'], 'panels_data', true )
 		) {
-			echo SiteOrigin_Panels::renderer()->render( $atts['id'] );
+			echo do_shortcode( SiteOrigin_Panels::renderer()->render( $atts['id'] ) );
 		} else {
-			_e( 'Error: Invalid Mirror Widget ID.', 'siteorigin-premium' );
+			esc_html_e( 'Error: Invalid Mirror Widget ID.', 'siteorigin-premium' );
 		}
 
 		return ob_get_clean();

@@ -45,14 +45,14 @@
 		method="post"
 		id="so-premium-wc-template-form"
 		data-type="so_premium_wc_template"
-		data-post-id="<?php echo $template_post_id; ?>"
+		data-post-id="<?php echo (int) $template_post_id; ?>"
 		data-preview-url="<?php echo esc_url( $preview_url ); ?>"
-		data-builder-supports="<?php echo esc_attr( json_encode( $builder_supports ) ); ?>"
+		data-builder-supports="<?php echo esc_attr( wp_json_encode( $builder_supports ) ); ?>"
 	>
 		<?php if ( $allow_multiple_templates ) { ?>
 			<?php if ( ! empty( $template_posts ) ) { ?>
 				<div id="so-wc-selected-template-container" class="so-wc-template-input-container">
-					<label for="so-wc-selected-template"><?php _e( 'Template', 'siteorigin-premium' ); ?></label>
+					<label for="so-wc-selected-template"><?php esc_html_e( 'Template', 'siteorigin-premium' ); ?></label>
 					<select id="so-wc-selected-template" name="so-wc-selected-template">
 						<option value=""><?php esc_html_e( 'Add New Template', 'siteorigin-premium' ); ?></option>
 						<?php foreach ( $template_posts as $tmplt_post ) {
@@ -65,7 +65,7 @@
 							<option
 								value="<?php echo esc_attr( $tmplt_post->ID ); ?>"
 								<?php selected( $tmplt_post->ID, $template_post_id ); ?>>
-									<?php echo esc_html( $tmplt_post->post_title ) . $default_label; ?>
+									<?php echo esc_html( $tmplt_post->post_title . $default_label ); ?>
 							</option>
 						<?php } ?>
 					</select>
@@ -83,7 +83,7 @@
 							echo 'autofocus';
 						} ?>/>
 				</div>
-				<h4><?php _e( 'Before Product Archive Loop', 'siteorigin-premium' ); ?></h4>
+				<h4><?php esc_html_e( 'Before Product Archive Loop', 'siteorigin-premium' ); ?></h4>
 				<?php
 				// In some contexts this is already encoded so we need to account for that.
 				$template_before = get_option( "so-wc-templates-before-$template_post_id" );
@@ -99,7 +99,7 @@
 					data-type="wctb-archive-builder"
 				>
 					<p>
-						<button class="button-secondary siteorigin-panels-display-builder" ><?php _e( 'Open Builder', 'siteorigin-premium' ); ?></button>
+						<button class="button-secondary siteorigin-panels-display-builder" ><?php esc_html_e( 'Open Builder', 'siteorigin-premium' ); ?></button>
 					</p>
 					<input
 						type="hidden"
@@ -109,7 +109,7 @@
 						id="contentproductbefore"
 					/>
 				</div>
-				<h4><?php _e( 'Product Archive Loop', 'siteorigin-premium' ); ?></h4>
+				<h4><?php esc_html_e( 'Product Archive Loop', 'siteorigin-premium' ); ?></h4>
 			<?php } else { ?>
 				<div id="so-wc-edit-name-container" class="so-wc-template-input-container">
 					<input
@@ -117,7 +117,7 @@
 						id="so-wc-template-name"
 						name="so-wc-template-name"
 						placeholder="<?php esc_attr_e( 'Template Title', 'siteorigin-premium' ); ?>"
-						value="<?php echo ! empty( $template_post ) ? $template_post->post_title : ''; ?>"
+						value="<?php echo ! empty( $template_post ) ? esc_attr( $template_post->post_title ) : ''; ?>"
 						<?php if ( empty( $template_post ) ) {
 							echo 'autofocus';
 						} ?>/>
@@ -129,7 +129,7 @@
 		</div>
 
 		<?php if ( $current_tab == 'content-product' ) { ?>
-			<h4><?php _e( 'After Product Archive Loop', 'siteorigin-premium' ); ?></h4>
+			<h4><?php esc_html_e( 'After Product Archive Loop', 'siteorigin-premium' ); ?></h4>
 			<?php
 			// In some contexts this is already encoded so we need to account for that.
 			$template_after = get_option( "so-wc-templates-after-$template_post_id" );
@@ -146,7 +146,7 @@
 				data-type="wctb-archive-builder"
 			>
 				<p>
-					<button class="button-secondary siteorigin-panels-display-builder" ><?php _e( 'Open Builder', 'siteorigin-premium' ); ?></button>
+					<button class="button-secondary siteorigin-panels-display-builder" ><?php esc_html_e( 'Open Builder', 'siteorigin-premium' ); ?></button>
 				</p>
 				<input
 					type="hidden"
@@ -163,7 +163,7 @@
 				// Create the panels_data input
 				document.write( '<input name="panels_data" type="hidden" class="siteorigin-panels-data-field" id="panels-data-field-' + builderId + '" />' );
 				document.getElementById( 'panels-data-field-' + builderId ).value = JSON.stringify( panelsData );
-			} )( "so-wc-template", <?php echo json_encode( $panels_data ); ?> );
+			} )( "so-wc-template", <?php echo wp_json_encode( $panels_data ); ?> );
 		</script>
 		<p>
 			<label for="so-wc-activate" class="so-wc-activate-checkbox">
@@ -195,15 +195,15 @@
 		</div>
 		<input type="hidden" id="post_content" name="post_content"/>
 		<?php wp_nonce_field( 'update', '_so_wc_template_nonce' ); ?>
-		<input type="hidden" id="post_content" name="template_post_id" value="<?php echo $template_post_id; ?>"/>
+		<input type="hidden" id="post_content" name="template_post_id" value="<?php echo (int) $template_post_id; ?>"/>
 	</form>
-	<noscript><p><?php _e( 'This interface requires Javascript', 'siteorigin-premium' ); ?></p></noscript>
+	<noscript><p><?php esc_html_e( 'This interface requires Javascript', 'siteorigin-premium' ); ?></p></noscript>
 	<script type="text/template" id="so-premium-wc-template-preview">
 		<div id="so-premium-wc-template-preview-dialog">
 			<div class="so-overlay"></div>
 
 			<div class="so-title-bar">
-				<h3 class="so-title"><?php _e( 'SiteOrigin WooCommerce Template Preview', 'siteorigin-premium' ); ?></h3>
+				<h3 class="so-title"><?php esc_html_e( 'SiteOrigin WooCommerce Template Preview', 'siteorigin-premium' ); ?></h3>
 				<a class="so-close">
 					<span class="so-dialog-icon"></span>
 				</a>
@@ -214,7 +214,7 @@
 
 			<div class="so-toolbar">
 				<div class="so-buttons">
-					<button class="button-primary so-close"><?php _e( 'Close', 'siteorigin-premium' ); ?></button>
+					<button class="button-primary so-close"><?php esc_html_e( 'Close', 'siteorigin-premium' ); ?></button>
 				</div>
 			</div>
 		</div>

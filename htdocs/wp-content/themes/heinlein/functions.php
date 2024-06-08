@@ -69,6 +69,7 @@ add_action('widgets_init', 'heinlein_widgets_init');
 //
 // Media Sizes
 //
+add_image_size( 'more-footer', 350, 200, true );
 add_image_size( 'mainnav@2', 420, 250, true );
 add_image_size( 'mainnav', 210, 125, true );
 add_image_size( 'mainnav-wide@2', 900, 250, true );
@@ -102,3 +103,14 @@ function heinlein_excerpt_length($length){
   return 150;
 }
 add_filter('excerpt_length', 'heinlein_excerpt_length', 999);
+
+
+function deregister_media_elements(){
+  wp_deregister_script('wp-mediaelement');
+  wp_deregister_style('wp-mediaelement');
+}
+add_action('wp_enqueue_scripts','deregister_media_elements');
+
+
+add_filter( 'wpcf7_form_elements', 'do_shortcode' );
+add_shortcode( 'page_title', 'get_the_title' );

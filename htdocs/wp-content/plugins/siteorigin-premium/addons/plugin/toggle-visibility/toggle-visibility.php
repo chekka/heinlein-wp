@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Toggle Visibility
-Description: Toggle the visibility of Page Builder rows and widgets based on device or logged-in status. Schedule content to show or hide.
+Description: Toggle visibility across Page Builder content or full pages, customizing access by device, logged in status, and time for strategic content arrangement.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -17,16 +17,21 @@ class SiteOrigin_Premium_Plugin_Toggle_Visibility {
 	private $premiumMeta;
 
 	public function __construct() {
+		add_filter( 'siteorigin_premium_metabox_form_options', array( $this, 'metabox_options' ), 1, 99 );
+		add_filter( 'the_content', array( $this, 'content_visibility'), 1, 9 );
+		add_filter( 'template_redirect', array( $this, 'page_visibility'), 1 );
+
+		if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
+			return;
+		}
+
 		add_filter( 'siteorigin_panels_row_style_groups', array( $this, 'style_group' ), 10, 3 );
 		add_filter( 'siteorigin_panels_row_style_fields', array( $this, 'style_fields' ), 10, 3 );
 		add_filter( 'siteorigin_panels_widget_style_groups', array( $this, 'style_group' ), 10, 3 );
 		add_filter( 'siteorigin_panels_widget_style_fields', array( $this, 'style_fields' ), 10, 3 );
 		add_filter( 'siteorigin_panels_css_object', array( $this, 'add_row_widget_visibility_css' ), 10, 4 );
 
-		if (
-			defined( 'SITEORIGIN_PANELS_VERSION' ) &&
-			version_compare( SITEORIGIN_PANELS_VERSION, '2.16.7', '>' )
-		) {
+		if ( version_compare( SITEORIGIN_PANELS_VERSION, '2.16.7', '>' ) ) {
 			add_filter( 'siteorigin_panels_output_row', array( $this, 'maybe_hide_row_widget' ), 10, 2 );
 			add_filter( 'siteorigin_panels_output_widget', array( $this, 'maybe_hide_row_widget' ), 10, 2 );
 		} else {
@@ -35,14 +40,11 @@ class SiteOrigin_Premium_Plugin_Toggle_Visibility {
 
 		add_action( 'admin_print_scripts-post-new.php', array( $this, 'enqueue_admin_assets' ), 20 );
 		add_action( 'admin_print_scripts-post.php', array( $this, 'enqueue_admin_assets' ), 20 );
-		add_action( 'admin_print_scripts-appearance_page_so_panels_home_page', array( $this, 'enqueue_admin_assets' ), 20 );
 		add_action( 'admin_print_scripts-widgets.php', array( $this, 'enqueue_admin_assets' ), 20 );
+		add_action( 'admin_print_scripts-appearance_page_so_panels_home_page', array( $this, 'enqueue_admin_assets' ), 20 );
 
 		// If a newer version of PB is active, we need to migrate the schedule related settings.
-		if (
-			defined( 'SITEORIGIN_PANELS_VERSION' ) &&
-			version_compare( SITEORIGIN_PANELS_VERSION, '2.17.0', '>=' )
-		) {
+		if ( version_compare( SITEORIGIN_PANELS_VERSION, '2.17.0', '>=' ) ) {
 			$this->toggleSchedulingLegacy = true;
 			add_filter( 'siteorigin_panels_general_current_styles', array( $this, 'setting_migration' ), 10, 4 );
 			add_filter( 'siteorigin_panels_general_style_fields', array( $this, 'setting_migration_pre_save' ) );
@@ -50,11 +52,6 @@ class SiteOrigin_Premium_Plugin_Toggle_Visibility {
 		}
 
 		add_shortcode( 'toggle_visibility', array( $this, 'shortcode' ) );
-
-		add_filter( 'siteorigin_premium_metabox_form_options', array( $this, 'metabox_options' ), 1, 99 );
-		add_filter( 'the_content', array( $this, 'content_visibility'), 1, 9 );
-		add_filter( 'template_redirect', array( $this, 'page_visibility'), 1 );
-
 	}
 
 	public static function single() {
@@ -246,7 +243,7 @@ class SiteOrigin_Premium_Plugin_Toggle_Visibility {
 			! empty( $style['toggle_date_from'] ) ||
 			! empty( $style['toggle_date_to'] )
 		) {
-			$style['toggle_scheduling_toggle_display'] = $style['toggle_display'];
+			$style['toggle_scheduling_toggle_display'] = ! empty( $style['toggle_display'] ) ? $style['toggle_display'] : '';
 			$style['toggle_scheduling_toggle_date_from'] = ! empty( $style['toggle_date_from'] ) ? $style['toggle_date_from'] : '';
 			$style['toggle_scheduling_toggle_date_to'] = ! empty( $style['toggle_date_to'] ) ? $style['toggle_date_to'] : '';
 
@@ -720,7 +717,7 @@ class SiteOrigin_Premium_Plugin_Toggle_Visibility {
 				// If there isn't valid content, fallback to a default message.
 				$content = apply_filters(
 					'siteorigin_premium_toggle_visibility_metabox_content_fallback',
-					__( 'This content has been hidden', 'siteorigin-premium' ),
+					esc_html__( 'This content has been hidden', 'siteorigin-premium' ),
 					$this->premiumMeta
 				);
 			}

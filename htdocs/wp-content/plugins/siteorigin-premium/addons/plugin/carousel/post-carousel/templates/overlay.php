@@ -1,4 +1,6 @@
 <?php
+$tag = SiteOrigin_Premium_Utility::single()->validate_tag( $settings['item_title_tag'], 'h3' );
+
 while ( $settings['posts']->have_posts() ) {
 	$settings['posts']->the_post();
 	$img = siteorigin_widgets_get_attachment_image_src(
@@ -29,16 +31,16 @@ while ( $settings['posts']->have_posts() ) {
 
 		<?php if ( has_category() ) { ?>
 			<span class="sow-entry-categories">
-				<?php echo the_category( esc_html__( ' ', 'siteorigin-premium' ) ); ?>
+				<?php echo the_category( ' ' ); ?>
 			</span>
 		<?php } ?>
 
-		<<?php echo esc_attr( $settings['item_title_tag'] ); ?>
-			class="sow-carousel-item-title" 
+		<<?php echo esc_attr( $tag ); ?>
+			class="sow-carousel-item-title"
 			id="sow-carousel-id-<?php echo the_ID(); ?>"
 		>
 			<?php echo esc_html( get_the_title() ); ?>
-		</<?php echo esc_attr( $settings['item_title_tag'] ); ?>>
+		</<?php echo esc_attr( $tag ); ?>>
 	</div>
 <?php
 }

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Lottie Player
-Description: Customize and enhance your SiteOrigin Lottie Player with additional settings.
+Description: Bring your ideas to life with Lottie Animations, offering adjustable loops, speeds, and interactive triggers for captivating and dynamic content.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

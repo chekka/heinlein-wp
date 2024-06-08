@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Map Styles
-Description: Adds a curated list of predefined map styles to the SiteOrigin Google Maps widget as well as additional consent prompt styling options.
+Description: Upgrade your maps with 23 unique styles for a tailored look, and introduce consent-based access for compliance with user privacy regulations.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

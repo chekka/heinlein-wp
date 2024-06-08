@@ -395,7 +395,7 @@ class SiteOrigin_Premium_Options {
 							),
 							admin_url( 'admin-ajax.php' )
 						);
-						$data['form_url'] = wp_nonce_url( $form_url, 'display-addon-settings-form' );
+						$data['form_url'] = esc_url( wp_nonce_url( $form_url, 'display-addon-settings-form' ) );
 
 						// Enqueue scripts and styles for the form fields.
 						ob_start();
@@ -470,23 +470,30 @@ class SiteOrigin_Premium_Options {
 		}
 
 		$addon_id = empty( $_GET['id'] ) ? false : $_GET['id'];
-		/** @var SiteOrigin_Premium_Form $settings_form */
-		$settings_form = null;
-		$addon = SiteOrigin_Premium::single()->load_addon( $addon_id );
+		$new_settings = array_values( $_POST );
+		$this->save_settings( $addon_id, $new_settings, true );
+		die();
+	}
 
+	public function save_settings( $addon_id, $new_settings, $exit_if_no_addon = false ) {
+		$addon = SiteOrigin_Premium::single()->load_addon( $addon_id );
 		if ( empty( $addon ) || ! method_exists( $addon, 'get_settings_form' ) ) {
-			exit();
+			if ( $exit_if_no_addon ) {
+				exit();
+			}
+			return;
 		}
+		/** @var SiteOrigin_Premium_Form $settings_form */
 		$settings_form = $addon->get_settings_form();
 
-		$new_form_values = array_values( $_POST );
-		$old_form_values = $this->get_settings( $addon_id );
+		$new_settings = array_values( $_POST );
+		$old_settings = $this->get_settings( $addon_id );
 
-		$new_form_values = $settings_form->update( stripslashes_deep( array_shift( $new_form_values ) ), $old_form_values );
+		$new_settings = $settings_form->update( stripslashes_deep( array_shift( $new_settings ) ), $old_settings );
 
-		unset( $new_form_values['_sow_form_id'] );
-		unset( $new_form_values['_sow_form_timestamp'] );
-		update_option( 'so_premium_addon_settings[' . $addon_id . ']', $new_form_values );
+		unset( $new_settings['_sow_form_id'] );
+		unset( $new_settings['_sow_form_timestamp'] );
+		update_option( 'so_premium_addon_settings[' . $addon_id . ']', $new_settings );
 	}
 
 	public function get_settings( $addon_id, $load_defaults = true ) {
@@ -526,9 +533,9 @@ class SiteOrigin_Premium_Options {
 
 		foreach ( $this->messages as $message ) {
 			?>
-			<div class="<?php echo $message['type']; ?>">
+			<div class="<?php echo esc_attr( $message['type'] ); ?>">
 				<p>
-					<?php echo $message['message']; ?>
+					<?php echo esc_html( $message['message'] ); ?>
 				</p>
 			</div>
 			<?php
@@ -643,14 +650,14 @@ class SiteOrigin_Premium_Options {
 			// This has been activated.
 			$action_links = apply_filters( 'siteorigin_premium_addon_action_links-' . $addon_section . '/' . $addon_id, array() );
 
-			echo json_encode( array(
+			echo wp_json_encode( array(
 				'status' => 'enabled',
 				'action_links' => array_values( $action_links ),
 				'submenu_links' => array_values( $submenu_links ),
 			) );
 		} else {
 			// This has been deactivated.
-			echo json_encode( array(
+			echo wp_json_encode( array(
 				'status' => 'disabled',
 				'submenu_links' => array_values( $submenu_links ),
 			) );

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Retina Background Images
-Description: Add widget, column, and row Retina background images for high-pixel-density displays.
+Description: Deliver crystal clear visuals across your site by adding Retina ready background images to widgets, cells, and rows for sharp, high-resolution displays.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

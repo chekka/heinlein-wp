@@ -32,15 +32,17 @@
       $(this).parent(".panel-grid-cell").addClass("wide");
     });
 
-    $(window).on('resize scroll', function () {
-      var counterPos = $('.counter-wrapper').offset().top;
-      if ($('body').scrollTop() >= counterPos) {
-        $(".counter var").each(function(){
-          $(this).counterUp({
-            delay: 1000,
-            time: 1000,
+    $(window).on("resize scroll", function () {
+      if ($("body").hasClass("front")) {
+        var counterPos = $(".counter-wrapper").offset().top;
+        if (counterPos > 0 && $("body").scrollTop() >= counterPos) {
+          $(".counter var").each(function () {
+            $(this).counterUp({
+              delay: 1000,
+              time: 1000,
+            });
           });
-        });
+        }
       }
     });
   });

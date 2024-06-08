@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Cross Domain Copy Paste
-Description: Copy and Paste Page Builder widgets and rows between websites.
+Description: Streamline your site development by effortlessly copying and pasting rows, columns, and widgets across domains, saving time and enhancing creative continuity.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -59,13 +59,13 @@ class SiteOrigin_Premium_Plugin_cross_domain_copy_paste {
 				'intro' => array(
 					'type' => 'html',
 					'markup' => '<p><strong>' . __( 'Browser Clipboard Method', 'siteorigin-premium' ) . '</strong><br>
-					' . __( 'Right-click on a Page Builder source row or widget, click Copy Row or Copy Widget.', 'siteorigin-premium' ) . '<br>' 
-					. __( 'Go to your destination page, locate the Cross Domain Copy Paste field below Page Builder, right-click, and Paste your data.', 'siteorigin-premium' ) . '<br>' 
+					' . __( 'Right-click on a Page Builder source row or widget, click Copy Row or Copy Widget.', 'siteorigin-premium' ) . '<br>'
+					. __( 'Go to your destination page, locate the Cross Domain Copy Paste field below Page Builder, right-click, and Paste your data.', 'siteorigin-premium' ) . '<br>'
 					. __( 'Finally, right-click within Page Builder and select Paste Row or Paste Widget from the contextual menu.', 'siteorigin-premium' ) . '<br></p>
 					<p><strong>' . __( 'Browser Storage Method', 'siteorigin-premium' ) . '</strong><br>'
-					. __( 'Click the Grant Permission button conditionally displayed below the Browser Storage radio button.', 'siteorigin-premium' ) . '<br>' 
+					. __( 'Click the Grant Permission button conditionally displayed below the Browser Storage radio button.', 'siteorigin-premium' ) . '<br>'
 					. __( 'Grant permissions on both the source and destination websites.', 'siteorigin-premium' ) . '<br>'
-					. __( 'Right-click on a Page Builder source row or widget, click Copy Row or Copy Widget.', 'siteorigin-premium' ) . '<br>' 
+					. __( 'Right-click on a Page Builder source row or widget, click Copy Row or Copy Widget.', 'siteorigin-premium' ) . '<br>'
 					. __( 'Go to your destination page, right-click in Page Builder, and click Paste Row or Paste Widget.', 'siteorigin-premium' ),
 				),
 			)
@@ -81,7 +81,13 @@ class SiteOrigin_Premium_Plugin_cross_domain_copy_paste {
 		$settings = SiteOrigin_Premium_Options::single()->get_settings( 'plugin/cross-domain-copy-paste' );
 
 		// Load the default method if it's not set.
-		if ( empty( $settings['method'] ) ) {
+		if (
+			empty( $settings['method'] ) ||
+			(
+				$settings['method'] != 'clipboard' &&
+				$settings['method'] != 'storage'
+			)
+		) {
 			$settings['method'] = 'clipboard';
 		}
 
@@ -90,6 +96,7 @@ class SiteOrigin_Premium_Plugin_cross_domain_copy_paste {
 				add_action( 'admin_footer-widgets.php', array( $this, 'widgets_page_markup' ) );
 			}
 		}
+
 		wp_enqueue_script(
 			'siteorigin-premium-cross-domain-copy-paste-addon',
 			plugin_dir_url( __FILE__ ) . 'js/addon' . SITEORIGIN_PREMIUM_JS_SUFFIX . '.js',
@@ -101,11 +108,11 @@ class SiteOrigin_Premium_Plugin_cross_domain_copy_paste {
 				'siteorigin-premium-cross-domain-copy-paste-addon',
 				'soPremiumCrossDomainCopyPaste',
 				array(
-					'loc' => __( 'Cross Domain Paste', 'siteorigin-premium' ),
-					'method' => $settings['method'],
-					'success' => __( 'Success. You can now right-click and paste in Page Builder.', 'siteorigin-premium' ),
-					'fail' => __( 'Something went wrong. Please try copying the data again.', 'siteorigin-premium' ),
-					'https' => __( 'Your website must use HTTPS for the SiteOrigin Premium Cross Domain Copy Paste Addon to function.', 'siteorigin-premium' ),
+					'loc' => esc_html__( 'Cross Domain Paste', 'siteorigin-premium' ),
+					'method' => esc_html( $settings['method'] ),
+					'success' => esc_html__( 'Success. You can now right-click and paste in Page Builder.', 'siteorigin-premium' ),
+					'fail' => esc_html__( 'Something went wrong. Please try copying the data again.', 'siteorigin-premium' ),
+					'https' => esc_html__( 'Your website must use HTTPS for the SiteOrigin Premium Cross Domain Copy Paste Addon to function.', 'siteorigin-premium' ),
 				)
 			);
 

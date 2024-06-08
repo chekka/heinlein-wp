@@ -12,7 +12,7 @@ $loop_el = apply_filters( 'siteorigin_premium_wctb_item_element', 'li' );
 
 do_action( 'siteorigin_premium_wctb_archive_item_before' );
 ?>
-<<?php echo $loop_el; ?>
+<<?php echo esc_html( $loop_el ); ?>
 	<?php
 	wc_product_class(
 		apply_filters(
@@ -34,7 +34,7 @@ do_action( 'siteorigin_premium_wctb_archive_item_before' );
 	}
 
 	?>
-</<?php echo $loop_el; ?>>
+</<?php echo esc_html( $loop_el ); ?>>
 
 <?php
 do_action( 'siteorigin_premium_wctb_archive_item_after' );

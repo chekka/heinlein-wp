@@ -9,7 +9,7 @@
 		<div class="so-premium-icon-wrapper">
 			<img src="<?php echo SiteOrigin_Premium::dir_url( __FILE__ ); ?>../img/page-icon.png" class="so-premium-icon" />
 		</div>
-		<h1><?php _e( 'SiteOrigin Premium License', 'siteorigin-premium' ); ?></h1>
+		<h1><?php esc_html_e( 'SiteOrigin Premium License', 'siteorigin-premium' ); ?></h1>
 	</div>
 
 	<?php $this->display_key_message( $key ); ?>
@@ -22,11 +22,11 @@
 					<span class="dashicons dashicons-yes"></span>
 				<?php } ?>
 
-				<?php _e( 'License Key', 'siteorigin-premium' ); ?>
+				<?php esc_html_e( 'License Key', 'siteorigin-premium' ); ?>
 
 				<?php if ( $license_active ) { ?>
 					<span class="license-status">
-						<?php _e( 'Your license key is valid and active.', 'siteorigin-premium' ); ?>
+						<?php esc_html_e( 'Your license key is valid and active.', 'siteorigin-premium' ); ?>
 					</span>
 				<?php } ?>
 			</label>
@@ -41,7 +41,7 @@
 
 				<?php if ( ! empty( $partial_key ) ) { ?>
 					<p class="key-indicator">
-						<?php printf( __( 'Your license key ends in %s', 'siteorigin-premium' ), $partial_key ); ?>
+						<?php printf( esc_html( 'Your license key ends in %s', 'siteorigin-premium' ), $partial_key ); ?>
 					</p>
 				<?php } ?>
 			</div>
@@ -52,7 +52,7 @@
 
 	<div class="siteorigin-logo">
 		<p>
-			<?php _e( 'Proudly Created By', 'siteorigin' ); ?>
+			<?php esc_html_e( 'Proudly Created By', 'siteorigin' ); ?>
 		</p>
 		<a href="https://siteorigin.com/" target="_blank" rel="noopener noreferrer">
 			<img src="<?php echo SiteOrigin_Premium::dir_url( __FILE__ ); ?>../img/siteorigin.png" />

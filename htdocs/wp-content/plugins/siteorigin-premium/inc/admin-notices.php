@@ -96,7 +96,7 @@ class SiteOrigin_Premium_Admin_Notices {
 							<?php echo wp_kses_post( $message ); ?>
 						</p>
 					<?php } ?>
-					<a href="<?php echo $dismiss_url; ?>" class="siteorigin-notice-dismiss"></a>
+					<a href="<?php echo esc_url( $dismiss_url ); ?>" class="siteorigin-notice-dismiss"></a>
 				</div>
 				<?php
 			}

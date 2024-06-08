@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin Accordion
-Description: Additional settings and styles for the SiteOrigin Accordion Widget.
+Description: Customize Accordion Widgets with advanced styles for organized content, improved navigation, and engaging user interactions through personalized design.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com

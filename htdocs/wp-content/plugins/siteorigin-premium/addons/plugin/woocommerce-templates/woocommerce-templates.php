@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SiteOrigin WooCommerce Templates
-Description: Create custom WooCommerce templates using the power of SiteOrigin Page Builder.
+Description: Create tailored templates for WooCommerce, customizing Product, Archives, and Checkout pages to boost sales and engagement.
 Version: 1.0.0
 Author: SiteOrigin
 Author URI: https://siteorigin.com
@@ -266,7 +266,7 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 			$template_posts = $wpdb->get_results(
 				$wpdb->prepare(
 					'SELECT ID FROM ' . $wpdb->prefix . 'posts WHERE `post_type` = "so_wc_template" AND `post_title` NOT LIKE %s',
-					'%' . __( 'SiteOrigin WooCommerce Layout', 'siteorigin-premium' )
+					'%' . esc_sql( 'SiteOrigin WooCommerce Layout', 'siteorigin-premium' )
 				)
 			);
 
@@ -281,7 +281,7 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 			$template_posts = $wpdb->get_results(
 				$wpdb->prepare(
 					'SELECT post_title, ID FROM ' . $wpdb->prefix . 'posts WHERE `post_type` = "so_wc_template" AND `post_title` LIKE %s',
-					'%' . __( 'SiteOrigin WooCommerce Layout', 'siteorigin-premium' )
+					'%' . esc_sql( 'SiteOrigin WooCommerce Layout', 'siteorigin-premium' )
 				),
 				OBJECT_K
 			);
