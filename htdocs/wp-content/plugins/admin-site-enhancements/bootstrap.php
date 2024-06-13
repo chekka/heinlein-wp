@@ -435,13 +435,18 @@ class Admin_Site_Enhancements {
         if ( array_key_exists( 'change_login_url', $options ) && $options['change_login_url'] ) {
             if ( array_key_exists( 'custom_login_slug', $options ) && !empty( $options['custom_login_slug'] ) ) {
                 $change_login_url = new ASENHA\Classes\Change_Login_URL();
-                add_action( 'init', [ $change_login_url, 'redirect_on_custom_login_url' ] );
-                add_filter( 'login_url', [ $change_login_url, 'customize_login_url' ], 10, 3 );
-                add_filter( 'lostpassword_url', [ $change_login_url, 'customize_lost_password_url' ] );
-                add_filter( 'register_url', [ $change_login_url, 'customize_register_url' ] );
-                add_action( 'wp_loaded', [ $change_login_url, 'redirect_on_default_login_urls' ] );
-                add_action( 'wp_login_failed', [ $change_login_url, 'redirect_to_custom_login_url_on_login_fail' ] );
-                add_filter( 'login_message', [ $change_login_url, 'add_failed_login_message' ] );
+                add_action( 'init', [$change_login_url, 'redirect_on_custom_login_url'] );
+                add_filter(
+                    'login_url',
+                    [$change_login_url, 'customize_login_url'],
+                    10,
+                    3
+                );
+                add_filter( 'lostpassword_url', [$change_login_url, 'customize_lost_password_url'] );
+                add_filter( 'register_url', [$change_login_url, 'customize_register_url'] );
+                add_action( 'wp_loaded', [$change_login_url, 'redirect_on_default_login_urls'] );
+                add_action( 'wp_login_failed', [$change_login_url, 'redirect_to_custom_login_url_on_login_fail'] );
+                add_filter( 'login_message', [$change_login_url, 'add_failed_login_message'] );
                 // No need to modify logout_url or perform redirect on logout
                 // The customized login URL is already being returned after logout
                 // add_action( 'wp_logout', [ $change_login_url, 'redirect_to_custom_login_url_on_logout_success' ] );
