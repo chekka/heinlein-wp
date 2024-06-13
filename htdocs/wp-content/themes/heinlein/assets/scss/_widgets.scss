@@ -1,0 +1,26 @@
+@import "variables.scss";
+
+.so-widget-heinlein-icon-box {
+  a {
+    display: block;
+    max-width: 240px;
+    margin: auto;
+  }
+  svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1em;
+    border-radius: 50%;
+  }
+  p {
+    line-height: 1.5em;
+  }
+
+  a:hover svg {
+    background-color: $blau-dunkel;
+
+    path:not(:first-child) {
+      fill: #fff;
+    }
+  }
+}

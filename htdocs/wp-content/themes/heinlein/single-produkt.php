@@ -27,7 +27,7 @@
             <path style="fill:#04204C;" d="M244,0H0v217c0,19.9,16.1,36,36,36h197l47,47v-47V36C280,16.1,263.9,0,244,0z"/>
             <polygon style="fill:#AA8461;" points="161.8,105.1 202.5,105.1 202.5,68.6 24.8,68.6 24.8,167.4 161.8,167.4 "/>
             <rect x="29.6" y="34.2" style="fill:none;" width="250.4" height="56.2"/>
-            <text transform="matrix(1 0 0 1 29.6037 50.2466)" style="fill:#9aa6bd; font-family:Gotham; font-weight:500; font-size:22px;">STARTEN SIE IHRE</text>
+            <text transform="matrix(1 0 0 1 29.6037 50.2466)" style="fill:#9aa6bd; font-family:Gotham; font-weight:500; font-size:22px;"><?php echo _e("STARTEN SIE IHRE"); ?></text>
             <rect x="29.6" y="78.3" style="fill:none;" width="250.4" height="103.2"/>
             <text transform="matrix(1 0 0 1 29.6037 94.3288)"><tspan x="0" y="0" style="fill:#FFFFFF; font-family:Gotham; font-weight:500; font-size:22px;">INDIVIDUELLE</tspan><tspan x="0" y="30.7" style="fill:#FFFFFF; font-family:'Gotham-Medium'; font-size:22px;">PRODUKT-</tspan><tspan x="0" y="61.4" style="fill:#FFFFFF; font-family:'Gotham-Medium'; font-size:22px;">ANFRAGE</tspan></text>
             <rect x="29.5" y="183.4" style="fill:none;" width="250.5" height="53.4"/>

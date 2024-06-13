@@ -1,4 +1,4 @@
-[class^="content--"] {
+[class*="content--"] {
   margin: auto !important;
   padding-left: 15px;
   padding-right: 15px;
@@ -20,13 +20,19 @@
   max-width: 1400px;
 }
 
+.content--xxxl {
+  max-width: 1120px;
+  margin: auto;
+}
+
+
 .content--xxl {
   max-width: 960px;
   margin: auto;
 }
 
 .content--xl {
-  max-width: 9100px;
+  max-width: 910px;
 }
 
 .content--lg {
