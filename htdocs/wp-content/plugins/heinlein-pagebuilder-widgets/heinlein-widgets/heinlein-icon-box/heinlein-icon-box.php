@@ -74,10 +74,19 @@ class heinlein_Icon_Box_Widget extends SiteOrigin_Widget {
 						'gold' =>  __( 'Gold', 'heinlein-widgets' ),
 						'white' =>  __( 'Weiß', 'heinlein-widgets' )
 					),
+				),	
+				'media' => array(
+					'type' => 'media',
+					'label' => __( '', 'heinlein-widgets' ),
+					'choose' => __( 'Datei wählen', 'heinlein-widgets' ),
+					'update' => __( 'Datei wählen', 'heinlein-widgets' ),
+					'library' => 'image,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-word.document.macroEnabled.12,application/vnd.ms-word.template.macroEnabled.12,application/vnd.oasis.opendocument.text,application/vnd.apple.pages,application/pdf,application/vnd.ms-xpsdocument,application/oxps,application/rtf,application/wordperfect,application/octet-stream',
+					'fallback' => true
 				),
-				'target' => array(
-					'type' => 'text',
-					'placeholder' => 'Link Ziel'
+				'target_blank' => array(
+					'type' => 'checkbox',
+					'label' => __( 'In neuem Fenster öffnen', 'heinlein-widgets' ),
+        			'default' => false
 				),
 				'tinymce_editor' => array(
 					'type' => 'tinymce',

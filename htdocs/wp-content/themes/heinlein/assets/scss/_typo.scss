@@ -47,6 +47,10 @@ a {
   text-decoration: none;
 }
 
+h2+p {
+  margin-top: -1rem;
+}
+
 p {
   color: $blau-mittel-3;
   line-height: 1.955rem;
@@ -54,8 +58,23 @@ p {
   letter-spacing: 0.0222em;
 }
 
+.hyphens p {
+  hyphens: auto;
+}
+
 p:last-child {
   margin-bottom: 0;
+}
+
+#komplett {
+  p {
+    font-size: 1.1rem;
+    em {
+      font-size: 1.2rem;
+      font-style: normal;
+      letter-spacing: 0.075rem;
+    }
+  }
 }
 
 .widget_sow-hero h1 {

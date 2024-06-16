@@ -24,3 +24,17 @@
     }
   }
 }
+
+.widget_sow-image {
+  .rounded {
+    img {
+      border-radius: 5000px;
+    }
+  }
+
+  .border--blue {
+    img {
+      border: 1px solid $blau-dunkel;
+    }
+  }
+}

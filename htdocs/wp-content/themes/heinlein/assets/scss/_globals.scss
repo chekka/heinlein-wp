@@ -1,22 +1,70 @@
 * {
-   -moz-outline-style: none;
-   outline-style: none;
-   outline: none;
-   box-sizing: border-box;
-   background-origin: content-box;
-   text-rendering: optimizeLegibility !important;
-   -webkit-font-smoothing: antialiased !important;
+  -moz-outline-style: none;
+  outline-style: none;
+  outline: none;
+  box-sizing: border-box;
+  background-origin: content-box;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
 }
 
 .deepblue {
-   background-color: $blau-dunkel;
+  background-color: $blau-dunkel;
 
-   * {
-      color: #fff;
-   }
+  * {
+    color: #fff;
+  }
 }
 
 img {
-   max-width: 100%;
-   height: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.box {
+  border-radius: 0 $r2 0 $r2;
+  overflow: hidden;
+
+  .widget-title {
+    padding: 0.5em 1em;
+  }
+  &.title-inner {
+    position: relative;
+    .widget-title {
+      position: absolute;
+      z-index: 1;
+    }
+  }
+}
+
+.video-placeholder {
+  .sow-image-container {
+    position: relative;
+    a {
+      &:before {
+         content: "";
+         position: absolute;
+         top: 0;
+         right: 0;
+         bottom: 0;
+         left: 0;
+         background-color: $blau-dunkel;
+         opacity: .333;
+      }
+      &:after {
+        content: "";
+        width: 70px;
+        height: 70px;
+        background-image: url(../images/icon-forward-white.svg);
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &:hover:before {
+         opacity: .777;
+      }
+    }
+  }
 }

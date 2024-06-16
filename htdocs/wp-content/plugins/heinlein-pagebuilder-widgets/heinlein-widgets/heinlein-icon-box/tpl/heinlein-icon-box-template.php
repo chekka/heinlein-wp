@@ -3,7 +3,8 @@
    $icon_position =		wp_kses_post($instance['icon_position']);
 	$icon_type =			wp_kses_post($instance['icon_type']);
 	$icon_color =			wp_kses_post($instance['icon_color']);
-	$target =			   wp_kses_post($instance['target']);
+	$media =			   	wp_kses_post($instance['media']);
+	$target_blank = 		wp_kses_post($instance['target_blank']);
 	$btn_text =				wp_kses_post($instance['section_btn']['button_text']);
 	$btn_ziel =				sow_esc_url($instance['section_btn']['button_ziel']);
 	$vermittlerID =		wp_kses_post($instance['section_btn']['button_vermittlerID']);
@@ -23,8 +24,8 @@ if ( $btn_type == 'text-arrow'){
 }
 ?>
 
-<?php if($target != ''): ?>
-<a href="<?php echo $target; ?>">
+<?php if($media != ''): ?>
+<a href="<?php echo wp_get_attachment_url($media); ?>"<?php if($target_blank == 1): ?> target="_blank" rel="noopener"<?php endif; ?>>
 <?php endif ?>
 	<div class="d-flex <?php echo $icon_position; ?> <?php echo $icon_orientation; ?> h-100 <?php echo $flex; if($is_popup == true){ echo ' popup '; }?>">
 		<div class="card-icon icon-<?php echo $icon_color; ?>">
@@ -50,6 +51,6 @@ if ( $btn_type == 'text-arrow'){
 		</div>
 		<?php } ?>
 	</div>
-<?php if($target != ''): ?>
+<?php if($media != ''): ?>
 </a>
 <?php endif ?>
