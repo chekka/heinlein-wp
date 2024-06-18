@@ -1,4 +1,5 @@
 <?php
+
 return array(
 	'trapezium' => __( 'Trapezium', 'siteorigin-premium' ),
 	'rectangle' => __( 'Rectangle', 'siteorigin-premium' ),
@@ -44,4 +45,3 @@ return array(
 	'blob-29' => __( 'Blob 29', 'siteorigin-premium' ),
 	'blob-30' => __( 'Blob 30', 'siteorigin-premium' ),
 );
-

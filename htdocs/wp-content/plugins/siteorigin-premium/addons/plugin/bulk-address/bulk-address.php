@@ -13,7 +13,6 @@ Requires: so-widgets-bundle/google-map
 */
 
 class SiteOrigin_Premium_Plugin_bulk_address {
-
 	public function __construct() {
 		add_filter( 'siteorigin_widgets_form_options_sow-google-map', array( $this, 'add_field' ) );
 		add_filter( 'siteorigin_widgets_field_registered_class_paths', array( $this, 'siteorigin_override_field' ) );
@@ -21,6 +20,7 @@ class SiteOrigin_Premium_Plugin_bulk_address {
 
 	public static function single() {
 		static $single;
+
 		return empty( $single ) ? $single = new self() : $single;
 	}
 
@@ -41,7 +41,7 @@ class SiteOrigin_Premium_Plugin_bulk_address {
 		);
 
 		if ( version_compare( SOW_BUNDLE_VERSION, '1.46.7', '<' ) ) {
-			$setting['description'] = sprintf( __( "To bulk add addresses, you must have SiteOrigin Widgets Bundle 1.46.7 or later installed. You have version %s installed.", 'siteorigin-premium' ), SOW_BUNDLE_VERSION );
+			$setting['description'] = sprintf( __( 'To bulk add addresses, you must have SiteOrigin Widgets Bundle 1.46.7 or later installed. You have version %s installed.', 'siteorigin-premium' ), SOW_BUNDLE_VERSION );
 		}
 
 		siteorigin_widgets_array_insert( $form_options['markers']['fields'], 'marker_positions', array(

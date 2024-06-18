@@ -152,9 +152,10 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 		if ( class_exists( 'SiteOrigin_Widget_Recent_Posts_Widget' ) ) {
 			$form_options['settings']['fields']['recent_posts_widget'] = array(
 				'type' => 'widget',
-				'label' => __( 'Recent Posts' , 'siteorigin-premium' ),
+				'label' => __( 'Recent Posts', 'siteorigin-premium' ),
 				'hide' => true,
 				'class' => 'SiteOrigin_Widget_Recent_Posts_Widget',
+				'form_filter' => array( $this, 'filter_recent_posts_widget_form' ),
 				'state_handler' => array(
 					'recent_posts[show]' => array( 'show' ),
 					'recent_posts[hide]' => array( 'hide' ),
@@ -165,7 +166,7 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 		if ( class_exists( 'SiteOrigin_Widget_SocialMediaButtons_Widget' ) ) {
 			$form_options['settings']['fields']['social_media_buttons_widget'] = array(
 				'type' => 'widget',
-				'label' => __( 'Social Media Buttons' , 'siteorigin-premium' ),
+				'label' => __( 'Social Media Buttons', 'siteorigin-premium' ),
 				'hide' => true,
 				'class' => 'SiteOrigin_Widget_SocialMediaButtons_Widget',
 				'form_filter' => array( $this, 'filter_social_media_buttons_widget_form' ),
@@ -177,6 +178,29 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 		}
 
 		return $form_options;
+	}
+
+	public function filter_recent_posts_widget_form( $form_fields ) {
+		siteorigin_widgets_array_insert(
+			$form_fields['recent_design']['fields'],
+			'post',
+			array(
+				'container' => array(
+					'type' => 'section',
+					'label' => __( 'Container', 'siteorigin-premium' ),
+					'hide' => true,
+					'fields' => array(
+						'margin_top' => array(
+							'type' => 'measurement',
+							'label' => __( 'Margin Top', 'siteorigin-premium' ),
+							'default' => '20px',
+						),
+					),
+				),
+			)
+		);
+
+		return $form_fields;
 	}
 
 	public function filter_social_media_buttons_widget_form( $form_fields ) {
@@ -197,7 +221,7 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 
 			// Form structure is different for the global settings form so
 			// we need to modify the positions array to reflect that.
-			foreach( $positions as $key => $position ) {
+			foreach ( $positions as $key => $position ) {
 				$positions[ $key ]['values']['widget'] = array(
 					'settings' => $position['values']['settings'],
 				);
@@ -243,6 +267,7 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 
 	private function social_media_profile_data() {
 		$widget_class = 'SiteOrigin_Widget_SocialMediaButtons_Widget';
+
 		if ( ! class_exists( $widget_class ) ) {
 			return;
 		}
@@ -258,6 +283,7 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 		}
 
 		$settings = $addon_settings['widget']['settings'];
+
 		if (
 			empty( $settings['social_media_buttons'] ) ||
 			empty( $settings['social_media_buttons_widget'] ) ||
@@ -294,11 +320,13 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 
 			$networks[ $network['name'] ] = ! empty( $network['url'] ) ? $network['url'] : '';
 		}
+
 		return $networks;
 	}
 
 	public function add_social_media_to_profile( $user ) {
 		$networks = $this->social_media_profile_data();
+
 		if ( empty( $networks ) ) {
 			return;
 		}
@@ -307,7 +335,6 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 		$user_meta = get_user_meta( $user->ID, 'siteorigin_premium_social_media_urls', true ) ?: array();
 
 		wp_nonce_field( 'author_box_social_media_update', '_author_box_social_media' );
-
 
 		// Load the Social Media Buttons widget networks.
 		if ( empty( $this->widget_networks ) ) {
@@ -335,12 +362,14 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 		}
 
 		$networks = $this->social_media_profile_data();
+
 		if ( empty( $networks ) ) {
 			return;
 		}
 
 		$saved_networks = array();
 		$user_networks = $_POST['so_premium_author_bio_social_media'];
+
 		foreach ( $user_networks as $user_network_name => $user_network_user ) {
 			// Ensure the network is valid.
 			if ( ! isset( $networks[ $user_network_name ] ) ) {
@@ -353,6 +382,7 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 		// Delete the meta if there are no set networks.
 		if ( empty( $saved_networks ) ) {
 			delete_user_meta( $user_id, 'siteorigin_premium_social_media_urls' );
+
 			return;
 		}
 
@@ -361,6 +391,7 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 
 	public function setup_widget_hooks( $instance ) {
 		$settings = $instance['settings'];
+
 		if (
 			! empty( $settings['recent_posts'] ) &&
 			! empty( $settings['recent_posts_widget'] )
@@ -380,21 +411,27 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 			case 'avatar_above':
 				$hook = 'siteorigin_widgets_author_box_avatar_above';
 				break;
+
 			case 'avatar_below':
 				$hook = 'siteorigin_widgets_author_box_avatar_below';
 				break;
+
 			case 'author_above':
 				$hook = 'siteorigin_widgets_author_box_description_above';
 				break;
+
 			case 'author_inline':
 				$hook = 'siteorigin_widgets_author_box_description_inline';
 				break;
+
 			case 'bio_before':
 				$hook = 'siteorigin_widgets_author_box_description_bio_before';
 				break;
+
 			case 'bio_after':
 				$hook = 'siteorigin_widgets_author_box_description_bio_after';
 				break;
+
 			case 'recent_posts':
 				$hook = 'siteorigin_widgets_author_box_description_below';
 				break;
@@ -422,6 +459,12 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 		}
 		$widget = 'recent-posts';
 		$widget_settings = $instance['settings']['recent_posts_widget'];
+		$margin_top = $widget_settings['recent_design']['container']['margin_top'] ?? '20px';
+
+		if ( ! empty( $margin_top ) ) {
+			$container_css = 'margin-top: ' . esc_attr( $margin_top ) . ';';
+		}
+
 		include SiteOrigin_Premium::dir_path( __FILE__ ) . 'tpl/widget.php';
 	}
 
@@ -438,6 +481,7 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 
 		$container_css = '';
 		$widget_settings = $instance['settings']['social_media_buttons_widget'];
+
 		if ( $widget_settings['position'] == 'title_inline' ) {
 			$container_css = 'display: inline-block;';
 		}
@@ -448,11 +492,13 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 
 		// Get the user id of the author of the post.
 		$user_id = get_the_author_meta( 'ID' );
+
 		if ( empty( $user_id ) ) {
 			return;
 		}
 
 		$user_meta = get_user_meta( $user_id, 'siteorigin_premium_social_media_urls', true ) ?: array();
+
 		// If the user hasn't set up their socials, and this widget is being output via the global settings, stop output.
 		if ( $this->isGlobal && empty( $user_meta ) ) {
 			return;
@@ -477,7 +523,6 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 	}
 
 	private function add_social_media_buttons_widget_network_setup( $field, & $widget_settings, $user_meta = array() ) {
-
 		foreach ( $widget_settings[ $field ] as $key => $network ) {
 			if (
 				// Does the network have a name?
@@ -493,8 +538,10 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 			}
 
 			$url = '';
+
 			if ( ! empty( $network['url'] ) ) {
 				$url .= $network['url'];
+
 				// Ensure the URL has a trailing slash.
 				if ( substr( $url, -1 ) !== '/' ) {
 					$url .= '/';
@@ -524,6 +571,7 @@ class SiteOrigin_Premium_Plugin_Author_Box {
 		ob_start();
 		$the_widget->widget( array(), $settings['widget'] );
 		$box = ob_get_clean();
+
 		if ( $settings['position'] == 'before' ) {
 			return $box . $content;
 		} else {

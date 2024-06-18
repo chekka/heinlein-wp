@@ -1,4 +1,5 @@
 <?php
+
 class SiteOrigin_Premium_WooCommerce_Template_Single_Meta extends SiteOrigin_Widget {
 	public $remove = array();
 
@@ -78,6 +79,7 @@ class SiteOrigin_Premium_WooCommerce_Template_Single_Meta extends SiteOrigin_Wid
 
 	public function widget( $args, $instance ) {
 		echo $args['before_widget'];
+
 		if ( function_exists( 'woocommerce_template_single_meta' ) ) {
 			do_action( 'siteorigin_premium_wctb_single_product_meta_before' );
 			wp_enqueue_style( 'so-wc-template-single-meta' );

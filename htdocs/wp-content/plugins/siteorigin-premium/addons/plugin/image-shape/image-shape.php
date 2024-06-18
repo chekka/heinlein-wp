@@ -24,7 +24,7 @@ class SiteOrigin_Premium_Plugin_Image_Shape {
 		add_filter( 'siteorigin_widgets_image_shape_file_path', array( $this, 'premium_path' ), 10, 2 );
 		add_filter( 'siteorigin_widgets_image_shape_file_url', array( $this, 'premium_url' ), 10, 2 );
 
-		$this->shapes = include( plugin_dir_path( __FILE__ ) . 'data/premium-shapes.php' );
+		$this->shapes = include plugin_dir_path( __FILE__ ) . 'data/premium-shapes.php';
 	}
 
 	public static function single() {
@@ -220,7 +220,6 @@ class SiteOrigin_Premium_Plugin_Image_Shape {
 			return $less_variables;
 		}
 
-
 		if ( $instance['image_shape']['shape'] == 'custom' ) {
 			$src = siteorigin_widgets_get_attachment_image_src(
 				$instance['image_shape']['shape_custom'],
@@ -240,7 +239,6 @@ class SiteOrigin_Premium_Plugin_Image_Shape {
 		if ( ! empty( $instance['image_shape']['shadow_hover']['enable'] ) ) {
 			$less_variables['image_shape_shadow_hover'] = self::generate_shadow( $instance['image_shape']['shadow_hover'], 'shadow_hover' );
 		}
-
 
 		return $less_variables;
 	}
@@ -269,6 +267,7 @@ class SiteOrigin_Premium_Plugin_Image_Shape {
 		if ( isset( $this->shapes[ $shape ] ) ) {
 			$path = plugin_dir_path( __FILE__ ) . 'shapes/';
 		}
+
 		return $path;
 	}
 
@@ -276,7 +275,7 @@ class SiteOrigin_Premium_Plugin_Image_Shape {
 		if ( isset( $this->shapes[ $shape ] ) ) {
 			$url = plugin_dir_url( __FILE__ ) . 'shapes/';
 		}
+
 		return $url;
 	}
-
 }

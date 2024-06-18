@@ -52,12 +52,7 @@ function siteorigin_premium_wctb_compat_virtue_item_product_class() {
 }
 add_filter( 'siteorigin_premium_wctb_item_product_class', 'siteorigin_premium_wctb_compat_virtue_item_product_class' );
 
-
 function siteorigin_premium_wctb_compat_virtue_archive_item_after() {
 	echo '</div>';
 }
 add_action( 'siteorigin_premium_wctb_archive_item_after', 'siteorigin_premium_wctb_compat_virtue_archive_item_after' );
-
-
-
-

@@ -284,15 +284,15 @@ msgstr ""
 msgid "Allows you to add any active SiteOrigin Widgets Bundle widgets."
 msgstr ""
 
-#: icons/fontawesome/filter.php:1885, icons/materialicons/filter.php:4
+#: icons/fontawesome/filter.php:1893, icons/materialicons/filter.php:4
 msgid "Regular"
 msgstr ""
 
-#: icons/fontawesome/filter.php:1886, widgets/contact/contact.php:431, widgets/contact/contact.php:572, widgets/contact/contact.php:680, widgets/contact/contact.php:758, widgets/headline/headline.php:217, widgets/recent-posts/recent-posts.php:265
+#: icons/fontawesome/filter.php:1894, widgets/contact/contact.php:431, widgets/contact/contact.php:572, widgets/contact/contact.php:680, widgets/contact/contact.php:758, widgets/headline/headline.php:217, widgets/recent-posts/recent-posts.php:265
 msgid "Solid"
 msgstr ""
 
-#: icons/fontawesome/filter.php:1887
+#: icons/fontawesome/filter.php:1895
 msgid "Brands"
 msgstr ""
 
@@ -1245,7 +1245,7 @@ msgstr ""
 msgid "Required Field"
 msgstr ""
 
-#: widgets/contact/contact.php:198, widgets/contact/contact.php:205, widgets/contact/contact.php:1387
+#: widgets/contact/contact.php:198, widgets/contact/contact.php:205, widgets/contact/contact.php:1394
 msgid "Required field"
 msgstr ""
 
@@ -1585,64 +1585,64 @@ msgstr ""
 msgid "After submission, scroll the user to the top of the contact form."
 msgstr ""
 
-#: widgets/contact/contact.php:1399
+#: widgets/contact/contact.php:1406
 msgid "Invalid email address."
 msgstr ""
 
-#: widgets/contact/contact.php:1425
+#: widgets/contact/contact.php:1432
 msgid "Invalid phone number. It should contain at least three digits."
 msgstr ""
 
-#: widgets/contact/contact.php:1436
+#: widgets/contact/contact.php:1443
 msgid "Invalid number."
 msgstr ""
 
-#: widgets/contact/contact.php:1519
+#: widgets/contact/contact.php:1526
 msgid "Error sending email, please try again later."
 msgstr ""
 
-#: widgets/contact/contact.php:1546
+#: widgets/contact/contact.php:1553
 msgid "A valid email is required"
 msgstr ""
 
-#: widgets/contact/contact.php:1548
+#: widgets/contact/contact.php:1555
 msgid "The email address is invalid"
 msgstr ""
 
-#: widgets/contact/contact.php:1552
+#: widgets/contact/contact.php:1559
 msgid "Missing subject"
 msgstr ""
 
-#: widgets/contact/contact.php:1582
+#: widgets/contact/contact.php:1589
 msgid "Error validating your Captcha response."
 msgstr ""
 
-#: widgets/contact/contact.php:1617
+#: widgets/contact/contact.php:1624
 msgid "Unfortunately our system identified your message as spam."
 msgstr ""
 
-#: widgets/contact/contact.php:1624
+#: widgets/contact/contact.php:1631
 msgid "Error validating your Captcha response. Really Simple CAPTCHA missing."
 msgstr ""
 
-#: widgets/contact/contact.php:1633
+#: widgets/contact/contact.php:1640
 msgid "Error validating your Captcha response. Please try again."
 msgstr ""
 
-#: widgets/contact/contact.php:1640, widgets/contact/contact.php:1648
+#: widgets/contact/contact.php:1647, widgets/contact/contact.php:1655
 msgid "Unfortunately, our system identified your message as spam."
 msgstr ""
 
-#: widgets/contact/contact.php:1659
+#: widgets/contact/contact.php:1666
 msgctxt "The name of who sent this email"
 msgid "From"
 msgstr ""
 
-#: widgets/contact/contact.php:1784
+#: widgets/contact/contact.php:1791
 msgid "Add a form autoresponder and additional fields, including a date and time picker with %sSiteOrigin Premium%s"
 msgstr ""
 
-#: widgets/contact/contact.php:1789
+#: widgets/contact/contact.php:1796
 msgid "Use Google Fonts right inside the Contact Form Widget with %sSiteOrigin Premium%s"
 msgstr ""
 

@@ -3,8 +3,8 @@ Tags: page builder, website builder, responsive design, drag and drop, visual ed
 Requires at least: 4.7
 Tested up to: 6.5
 Requires PHP: 7.0.0
-Stable tag: 2.29.16
-Build time: 2024-05-13T18:22:43+01:00
+Stable tag: 2.29.17
+Build time: 2024-06-15T13:11:02+01:00
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Donate link: https://siteorigin.com/downloads/premium/
@@ -120,6 +120,15 @@ Page Builder is compatible with the vast majority of third-party plugins and wid
 SiteOrigin offers a single premium plugin that enhances and extends Page Builder, the Widgets Bundle, SiteOrigin CSS and all of our free themes. Find out more about [SiteOrigin Premium](https://siteorigin.com/downloads/premium/) and the powerful addons it offers.
 
 == Changelog ==
+
+= 2.29.17 – 15 June 2024 =
+* Layout Builder: Default the modal icon to "Cog".
+* Layouts Block: Added an additional check for clearing potential block errors.
+* Row Overlays: Resolved a potential Column/Widget video content overlap.
+* Row Cell Preview: Adjusted the percentage symbol placement.
+* Updated escaping functions to use translatable versions where needed.
+* Updated SiteOrigin Installer.
+* Number Style Field: Added min/max support.
 
 = 2.29.16 – 13 May 2024 =
 * Adjusted Add Widget modal sidebar link order and display.

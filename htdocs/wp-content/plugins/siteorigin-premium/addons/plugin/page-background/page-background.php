@@ -45,11 +45,11 @@ class SiteOrigin_Premium_Plugin_Page_Background {
 				'label' => __( 'Background Image Display', 'siteorigin-premium' ),
 				'default' => 'cover',
 				'options' => array(
-					'tile'     => __( 'Tiled Image', 'siteorigin-premium' ),
-					'cover'    => __( 'Cover', 'siteorigin-premium' ),
-					'center'   => __( 'Centered, with original size', 'siteorigin-premium' ),
-					'contain'  => __( 'Contain', 'siteorigin-premium' ),
-					'fixed'    => __( 'Fixed', 'siteorigin-premium' ),
+					'tile' => __( 'Tiled Image', 'siteorigin-premium' ),
+					'cover' => __( 'Cover', 'siteorigin-premium' ),
+					'center' => __( 'Centered, with original size', 'siteorigin-premium' ),
+					'contain' => __( 'Contain', 'siteorigin-premium' ),
+					'fixed' => __( 'Fixed', 'siteorigin-premium' ),
 					'parallax' => __( 'Parallax', 'siteorigin-premium' ),
 				),
 				'state_emitter' => array(
@@ -58,7 +58,6 @@ class SiteOrigin_Premium_Plugin_Page_Background {
 				),
 			),
 		);
-
 
 		if ( SiteOrigin_Premium::single()->is_addon_active( 'plugin/retina-background-images' ) ) {
 			$this->fields['retina_background'] = array(
@@ -90,10 +89,11 @@ class SiteOrigin_Premium_Plugin_Page_Background {
 	public function metabox_options( $form_options ) {
 		$global_settings = SiteOrigin_Premium_Options::single()->get_settings( 'plugin/page-background', false );
 		$this->fields['background_display']['default'] = ! empty( $global_settings['background_display'] ) ? $global_settings['background_display'] : 'cover';
+
 		return $form_options + array(
 			'page_background' => array(
 				'type' => 'section',
-				'label' => __( 'Page Background' , 'siteorigin-premium' ),
+				'label' => __( 'Page Background', 'siteorigin-premium' ),
 				'tab' => true,
 				'hide' => true,
 				'fields' => $this->fields,
@@ -112,6 +112,7 @@ class SiteOrigin_Premium_Plugin_Page_Background {
 	public function add_page_background() {
 		$premium_meta = get_post_meta( get_the_ID(), 'siteorigin_premium_meta', true );
 		$global_settings = SiteOrigin_Premium_Options::single()->get_settings( 'plugin/page-background', false );
+
 		if ( ! empty( $global_settings ) ) {
 			if ( empty( $premium_meta['page_background'] ) ) {
 				$settings = $global_settings;
@@ -124,13 +125,14 @@ class SiteOrigin_Premium_Plugin_Page_Background {
 					'background_display',
 				);
 
-	 			if ( SiteOrigin_Premium::single()->is_addon_active( 'plugin/retina-background-images' ) ) {
-	 				$fields[] = 'retina_background';
-	 				$fields[] = 'retina_background_fallback';
-	 			}
+				if ( SiteOrigin_Premium::single()->is_addon_active( 'plugin/retina-background-images' ) ) {
+					$fields[] = 'retina_background';
+					$fields[] = 'retina_background_fallback';
+				}
 
 				// Override global settings as needed.
- 				$fields = array_flip( $fields );
+				$fields = array_flip( $fields );
+
 				foreach ( $fields as $k => $v ) {
 					if ( empty( $premium_meta['page_background'][ $k ] ) ) {
 						if ( ! empty( $global_settings[ $k ] ) ) {
@@ -154,6 +156,7 @@ class SiteOrigin_Premium_Plugin_Page_Background {
 					'full',
 					! empty( $settings['background_fallback'] ) ? $settings['background_fallback'] : false
 				);
+
 				if ( ! empty( $background ) ) {
 					if (
 						! empty( $settings['background_display'] ) &&
@@ -189,26 +192,30 @@ class SiteOrigin_Premium_Plugin_Page_Background {
 
 						// Retina background not set, set normal background.
 						if ( empty( $css ) ) {
-							$css .= 'background: url(' . esc_url( $background[0] ) .');';
+							$css .= 'background: url(' . esc_url( $background[0] ) . ');';
 						}
 
 						switch ( $settings['background_display'] ) {
 							case 'tile':
 								$css .= 'background-repeat: repeat !important;';
 								break;
+
 							case 'default':
 							case 'cover':
 								$css .= 'background-position: center center !important;';
 								$css .= 'background-size: cover !important;';
 								break;
+
 							case 'contain':
 								$css .= 'background-size: contain !important;';
 								break;
+
 							case 'parallax':
 							case 'center':
 								$css .= 'background-position: center center !important;';
 								$css .= 'background-repeat: no-repeat !important;';
 								break;
+
 							case 'fixed':
 								$css .= 'background-attachment: fixed !important;';
 								$css .= 'background-position: center center !important;';

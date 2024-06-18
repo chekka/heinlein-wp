@@ -41,19 +41,20 @@ class SiteOrigin_Video {
 		$video_width = ! empty( $content_width ) ? $content_width : 640;
 
 		$hash = md5( serialize( array(
-			'src'      => $src,
-			'width'    => $video_width,
+			'src' => $src,
+			'width' => $video_width,
 			'autoplay' => $autoplay,
-			'loop'     => $loop,
+			'loop' => $loop,
 		) ) );
 
 		// Standardize YouTube video URL.
-		if ( strpos(  $src, 'youtu.be' ) !== false ) {
+		if ( strpos( $src, 'youtu.be' ) !== false ) {
 			$src = str_replace( 'youtu.be/', 'youtube.com/watch?v=', $src );
 		}
 
 		if ( strpos( $src, 'youtube.com/watch' ) !== false ) {
 			$src_parse = parse_url( $src, PHP_URL_QUERY );
+
 			// Check if the URL was encoded.
 			if ( strpos( $src_parse, '&amp;' ) !== false ) {
 				$src_parse = str_replace( '&amp;', '&', $src_parse );

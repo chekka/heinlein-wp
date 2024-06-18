@@ -4,7 +4,7 @@
  * Class SiteOrigin_Premium_Compatibility
  */
 class SiteOrigin_Premium_Compatibility {
-	function __construct() {
+	public function __construct() {
 		add_action( 'plugins_loaded', array( $this, 'init' ), 1 );
 	}
 

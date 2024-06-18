@@ -7,7 +7,7 @@ if ( empty( $networks ) ) {
 <table class="form-table" role="presentation">
 	<tbody>
 	<?php
-	foreach( $networks as $network => $url ) {
+	foreach ( $networks as $network => $url ) {
 		$value = isset( $user_meta[ $network ] ) ? $user_meta[ $network ] : '';
 		$label = empty( $this->widget_networks[ $network ] ) ? $network : $this->widget_networks[ $network ]['label'];
 		?>
@@ -27,7 +27,7 @@ if ( empty( $networks ) ) {
 				/>
 				<?php if ( ! empty( $url ) ) { ?>
 					<p class="description">
-						<?php echo esc_html( sprintf(__( 'Your username will be appended to %s', 'siteorigin-premium' ), esc_url( $url ) ) ); ?>
+						<?php echo esc_html( sprintf( __( 'Your username will be appended to %s', 'siteorigin-premium' ), esc_url( $url ) ) ); ?>
 					</p>
 				<?php } ?>
 			</td>

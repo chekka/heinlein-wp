@@ -45,7 +45,6 @@ class SiteOrigin_Premium_Plugin_Retina_background_images {
 
 	private function get_image_Url( $name, $styles ) {
 		if ( ! empty( $styles[ $name ] ) ) {
-
 			$image_size_name = ! empty( $name ) ? 'background' : $name;
 			$url = SiteOrigin_Panels_Styles::get_attachment_image_src(
 				$styles[ $name ],

@@ -36,7 +36,6 @@ class SiteOrigin_Premium_Plugin_CF_Turnstile {
 		add_action( 'siteorigin_widgets_contact_before_submit', array( $this, 'add_cf_turnstile' ) );
 	}
 
-
 	public function admin_form_options( $form_options ) {
 		if ( empty( $form_options ) ) {
 			return $form_options;
@@ -61,11 +60,11 @@ class SiteOrigin_Premium_Plugin_CF_Turnstile {
 							),
 							'state_emitter' => array(
 								'callback' => 'conditional',
-								'args'     => array(
+								'args' => array(
 									'cf_turnstile[show]: val',
-									'cf_turnstile[hide]: ! val'
+									'cf_turnstile[hide]: ! val',
 								),
-							)
+							),
 						),
 						'site_key' => array(
 							'type' => 'text',
@@ -125,6 +124,7 @@ class SiteOrigin_Premium_Plugin_CF_Turnstile {
 
 		if ( empty( $post_vars['cf-turnstile-response'] ) ) {
 			$errors['cf_turnstile'] = __( 'Error validating your response. Please try again.', 'siteorigin-premium' );
+
 			return $errors;
 		}
 

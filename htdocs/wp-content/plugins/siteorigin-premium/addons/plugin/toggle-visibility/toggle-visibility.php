@@ -17,9 +17,9 @@ class SiteOrigin_Premium_Plugin_Toggle_Visibility {
 	private $premiumMeta;
 
 	public function __construct() {
-		add_filter( 'siteorigin_premium_metabox_form_options', array( $this, 'metabox_options' ), 1, 99 );
-		add_filter( 'the_content', array( $this, 'content_visibility'), 1, 9 );
-		add_filter( 'template_redirect', array( $this, 'page_visibility'), 1 );
+		add_filter( 'siteorigin_premium_metabox_form_options', array( $this, 'metabox_options' ), 1 );
+		add_filter( 'the_content', array( $this, 'content_visibility' ), 99 );
+		add_filter( 'template_redirect', array( $this, 'page_visibility' ), 1 );
 
 		if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
 			return;
@@ -586,7 +586,7 @@ class SiteOrigin_Premium_Plugin_Toggle_Visibility {
 								'label' => __( 'Date To', 'siteorigin-premium' ),
 								'type' => 'text',
 							),
-						)
+						),
 					),
 
 					'redirect' => array(
@@ -677,6 +677,7 @@ class SiteOrigin_Premium_Plugin_Toggle_Visibility {
 
 		if ( $this->premiumMeta['status'] == 'scheduled' ) {
 			$type = $this->premiumMeta['toggle_scheduling_data']['toggle_display'];
+
 			if ( $type == 'disable_logged_out' ) {
 				$this->premiumMeta['toggle_scheduling_data']['toggle_display'] = 'hide';
 			}
@@ -691,7 +692,7 @@ class SiteOrigin_Premium_Plugin_Toggle_Visibility {
 		return false;
 	}
 
-	function content_visibility( $content ) {
+	public function content_visibility( $content ) {
 		$this->load_premium_meta();
 
 		if ( $this->metabox_visibility_should_hide_page( 'content' ) ) {
@@ -733,13 +734,15 @@ class SiteOrigin_Premium_Plugin_Toggle_Visibility {
 		return $content;
 	}
 
-	function page_visibility() {
+	public function page_visibility() {
 		$this->load_premium_meta();
 
 		if ( $this->metabox_visibility_should_hide_page( 'page' ) ) {
 			if ( ! empty( $this->premiumMeta['redirect'] ) ) {
-				wp_redirect( sow_esc_url( do_shortcode(
-					$this->premiumMeta['redirect'] )
+				wp_redirect( sow_esc_url(
+					do_shortcode(
+						$this->premiumMeta['redirect']
+					)
 				) );
 
 				die();

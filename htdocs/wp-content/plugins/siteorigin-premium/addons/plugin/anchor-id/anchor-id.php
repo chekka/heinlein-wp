@@ -75,7 +75,7 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 			'so-premium-anchor-id',
 			'soPremiumAnchorId',
 			array(
-				'scrollto_offset' => ( int ) apply_filters( 'siteorigin_premium_anchor_id_scrollto_offset', 90 ),
+				'scrollto_offset' => (int) apply_filters( 'siteorigin_premium_anchor_id_scrollto_offset', 90 ),
 			)
 		);
 	}
@@ -119,7 +119,7 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 					array(
 						'so-premium-anchor-id',
 					),
-					SITEORIGIN_PREMIUM_VERSION
+					SITEORIGIN_PREMIUM_VERSION,
 				),
 			),
 			$frontend_scripts
@@ -132,7 +132,7 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 				'so-premium-anchor-id-accordion',
 				plugin_dir_url( __FILE__ ) . 'js/anchor-id-accordion' . SITEORIGIN_PREMIUM_JS_SUFFIX . '.js',
 				array(
-					'so-premium-anchor-id'
+					'so-premium-anchor-id',
 				),
 				SITEORIGIN_PREMIUM_VERSION
 			);
@@ -144,7 +144,7 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 				'so-premium-anchor-id-tabs',
 				plugin_dir_url( __FILE__ ) . 'js/anchor-id-tabs' . SITEORIGIN_PREMIUM_JS_SUFFIX . '.js',
 				array(
-					'so-premium-anchor-id'
+					'so-premium-anchor-id',
 				),
 				SITEORIGIN_PREMIUM_VERSION
 			);

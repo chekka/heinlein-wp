@@ -146,7 +146,7 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 		delete_transient( 'siteorigin_panels_widget_dialog_tabs' );
 		delete_transient( 'siteorigin_panels_widgets' );
 
-    // If this is the Product archive tab, we need to remove the Shop Product Loop.
+		// If this is the Product archive tab, we need to remove the Shop Product Loop.
 		if (
 			self::is_siteorigin_premium_wc_template_builder() &&
 			isset( $_GET['tab'] ) &&
@@ -721,7 +721,7 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 
 					exit( wp_redirect( add_query_arg( array(
 						'page' => 'so-wc-templates',
-						'tab'  => $tab,
+						'tab' => $tab,
 					), admin_url( 'admin.php' ) ) ) );
 				}
 			}
@@ -877,7 +877,7 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 
 		// Genesis Connect for WooCommerce Compatibility.
 		if ( function_exists( 'gencwooc_template_loader' ) && is_product() ) {
-			$template = wc_get_template_part('single', 'product');
+			$template = wc_get_template_part( 'single', 'product' );
 		}
 
 		if ( ! empty( $override ) ) {
@@ -1001,7 +1001,7 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 		return $template;
 	}
 
-	function block_editor_content( $content ) {
+	public function block_editor_content( $content ) {
 		// Confirm the current page has WC Blocks.
 		if ( strpos( $content, 'wp-block-woocommerce' ) !== false ) {
 			return $content;
@@ -1009,6 +1009,7 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 
 		// If there aren't any WCTB templates setup, don't bother.
 		$this->so_wc_templates = get_option( 'so-wc-templates' );
+
 		if ( empty( $this->so_wc_templates ) ) {
 			return $content;
 		}
@@ -1041,6 +1042,7 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 		}
 
 		$template = $current_page;
+
 		if (
 			$current_page == 'cart' &&
 			! empty( WC()->cart ) &&
@@ -1064,6 +1066,7 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 
 						foreach ( $order->get_items() as $item ) {
 							$product = $item->get_product();
+
 							if ( empty( $product ) ) {
 								continue;
 							}
@@ -1079,6 +1082,7 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 			}
 			ob_start();
 			include SiteOrigin_Premium::dir_path( __FILE__ ) . '/templates/' . sanitize_file_name( $template ) . '.php';
+
 			return ob_get_clean();
 		}
 
@@ -1091,56 +1095,56 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 		}
 
 		$tabs['woocommerce_content_single_product'] = array(
-			'title'  => __( 'WooCommerce Product', 'siteorigin-premium' ),
+			'title' => __( 'WooCommerce Product', 'siteorigin-premium' ),
 			'filter' => array(
 				'groups' => array( 'woocommerce_content_single_product' ),
 			),
 		);
 
 		$tabs['woocommerce_content_product'] = array(
-			'title'  => __( 'WooCommerce Product Archive', 'siteorigin-premium' ),
+			'title' => __( 'WooCommerce Product Archive', 'siteorigin-premium' ),
 			'filter' => array(
 				'groups' => array( 'woocommerce_content_product' ),
 			),
 		);
 
 		$tabs['woocommerce_shop'] = array(
-			'title'  => __( 'WooCommerce Shop', 'siteorigin-premium' ),
+			'title' => __( 'WooCommerce Shop', 'siteorigin-premium' ),
 			'filter' => array(
 				'groups' => array( 'woocommerce_shop' ),
 			),
 		);
 
 		$tabs['woocommerce_cart'] = array(
-			'title'  => __( 'WooCommerce Cart', 'siteorigin-premium' ),
+			'title' => __( 'WooCommerce Cart', 'siteorigin-premium' ),
 			'filter' => array(
 				'groups' => array( 'woocommerce_cart' ),
 			),
 		);
 
 		$tabs['woocommerce_cart_empty'] = array(
-			'title'  => __( 'WooCommerce Empty Cart', 'siteorigin-premium' ),
+			'title' => __( 'WooCommerce Empty Cart', 'siteorigin-premium' ),
 			'filter' => array(
 				'groups' => array( 'woocommerce_cart_empty' ),
 			),
 		);
 
 		$tabs['woocommerce_checkout'] = array(
-			'title'  => __( 'WooCommerce Checkout', 'siteorigin-premium' ),
+			'title' => __( 'WooCommerce Checkout', 'siteorigin-premium' ),
 			'filter' => array(
 				'groups' => array( 'woocommerce_checkout' ),
 			),
 		);
 
 		$tabs['woocommerce_thankyou'] = array(
-			'title'  => __( 'WooCommerce Thank You', 'siteorigin-premium' ),
+			'title' => __( 'WooCommerce Thank You', 'siteorigin-premium' ),
 			'filter' => array(
 				'groups' => array( 'woocommerce_thankyou' ),
 			),
 		);
 
 		$tabs['woocommerce_myaccount'] = array(
-			'title'  => __( 'WooCommerce My Account', 'siteorigin-premium' ),
+			'title' => __( 'WooCommerce My Account', 'siteorigin-premium' ),
 			'filter' => array(
 				'groups' => array( 'woocommerce_myaccount' ),
 			),

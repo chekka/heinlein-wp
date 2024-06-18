@@ -2,7 +2,7 @@
 /*
 Plugin Name: SiteOrigin Premium
 Description: A collection of powerful addons that enhance every aspect of SiteOrigin plugins and themes.
-Version: 1.62.1
+Version: 1.63.0
 Requires at least: 4.7
 Tested up to: 6.5.2
 Requires PHP: 7.0.0
@@ -15,7 +15,7 @@ License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 */
 
-define( 'SITEORIGIN_PREMIUM_VERSION', '1.62.1' );
+define( 'SITEORIGIN_PREMIUM_VERSION', '1.63.0' );
 define( 'SITEORIGIN_PREMIUM_JS_SUFFIX', '.min' );
 define( 'SITEORIGIN_PREMIUM_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SITEORIGIN_PREMIUM_URL', plugin_dir_url( __FILE__ ) );
@@ -28,7 +28,7 @@ if ( ! class_exists( 'SiteOrigin_Premium' ) ) {
 
 		public static $default_active = array();
 
-		private $assets_setup  = false;
+		private $assets_setup = false;
 
 		/**
 		 * @var SiteOrigin_Premium_Updater
@@ -47,7 +47,7 @@ if ( ! class_exists( 'SiteOrigin_Premium' ) ) {
 			add_action( 'admin_enqueue_scripts', array( $this, 'register_common_scripts' ) );
 			add_filter( 'siteorigin_add_installer', array( $this, 'add_installer_migrate' ), 9 );
 
-			if ( self::REPLACE_TEASERS  ) {
+			if ( self::REPLACE_TEASERS ) {
 				// This removes teaser fields from the settings.
 				add_filter( 'siteorigin_settings_display_teaser', '__return_false' );
 
@@ -86,7 +86,7 @@ if ( ! class_exists( 'SiteOrigin_Premium' ) ) {
 		}
 
 		public static function autoloader( $classname ) {
-			if ( preg_match( '/^SiteOrigin_Premium_(Theme_|Plugin_)?([A-Za-z_]*)/', $classname, $matches ) ) {
+			if ( preg_match( '/^SiteOrigin_Premium_(Theme_|Plugin_)?([A-Za-z_0-9]*)/', $classname, $matches ) ) {
 				if ( ! empty( $matches[1] ) ) {
 					$addon_type = strtolower( trim( $matches[1], '_' ) );
 					$filename = SITEORIGIN_PREMIUM_DIR . '/addons/' . $addon_type . '/';
@@ -111,6 +111,7 @@ if ( ! class_exists( 'SiteOrigin_Premium' ) ) {
 			// Only set up the updater if the current user is actually able to
 			// update the plugin.
 			$doing_cron = defined( 'DOING_CRON' ) && DOING_CRON;
+
 			if ( ! current_user_can( 'manage_options' ) && ! $doing_cron ) {
 				return;
 			}
@@ -187,6 +188,8 @@ if ( ! class_exists( 'SiteOrigin_Premium' ) ) {
 			if ( ! class_exists( 'SiteOrigin_Installer' ) ) {
 				include SITEORIGIN_PREMIUM_DIR . 'inc/installer/siteorigin-installer.php';
 			}
+
+			include SITEORIGIN_PREMIUM_DIR . 'inc/gate.php';
 		}
 
 		/**
@@ -238,6 +241,7 @@ if ( ! class_exists( 'SiteOrigin_Premium' ) ) {
 		 * Loads a specific addon.
 		 *
 		 * @param string $id The ID of the addon to load. The ID should be in the format 'type/id'.
+		 *
 		 * @return mixed The instance of the addon if it exists and could be loaded. Otherwise, false will be returned.
 		 */
 		public function load_addon( $id ) {
@@ -327,6 +331,7 @@ if ( ! class_exists( 'SiteOrigin_Premium' ) ) {
 			// We only register scripts on the frontend, and the Block Editor.
 			if ( is_admin() ) {
 				$current_screen = get_current_screen();
+
 				if (
 					! empty( $current_screen ) &&
 					method_exists( $current_screen, 'is_block_editor' ) &&
@@ -519,6 +524,7 @@ if ( ! class_exists( 'SiteOrigin_Premium' ) ) {
 
 		public static function update_url() {
 			$url = 'https://siteorigin.com/wp-content/plugins/siteorigin-components/edd-actions.php';
+
 			// Used to help with debugging on our side.
 			if ( isset( $_GET['debug-ua-remove'] ) ) {
 				delete_option( 'siteorigin_premium_ua_debug' );

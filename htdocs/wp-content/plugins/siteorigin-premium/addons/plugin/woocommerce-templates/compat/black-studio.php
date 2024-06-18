@@ -1,4 +1,5 @@
 <?php
+
 // Add compatibility for the Black Studio TinyMCE plugin.
 // Load Black Studio TinyMCE's Visual Editor widget assets while using the WCTB.
 function siteorigin_premium_wctb_compat_black_studio( $enabled_pages ) {

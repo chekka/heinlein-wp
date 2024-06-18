@@ -1,9 +1,9 @@
 === SiteOrigin Premium ===
 Requires at least: 4.7
-Tested up to: 6.5.2
+Tested up to: 6.5.5
 Requires PHP: 7.0.0
-Stable tag: 1.62.1
-Build time: 2024-05-26T21:19:55+01:00
+Stable tag: 1.63.0
+Build time: 2024-06-17T14:53:13+01:00
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -28,6 +28,15 @@ The SiteOrigin Premium plugin can be downloaded via the link provided in your or
 [Documentation](https://siteorigin.com/premium-documentation/) is available on SiteOrigin.com.
 
 == Changelog ==
+
+= 1.63.0 - 17 June 2024 =
+* New Addon! 404 Page: Create custom 404 error pages with personalized design and content. Guide your user's website experience even during misdirections.
+* Anchor ID: Improved functionality with hash change, Accordion, Tab, and scroll fixes, better placement and loading.
+* Author Box: Added `Margin Top` setting to the built-in Recent Posts Widget.
+* Block Animations: Added min/max as required to prevent a possible console error.
+* Toggle Visibility: Resolved Yoast Open Graph conflict with metabox content block.
+* Updated Google Fonts.
+* Updated SiteOrigin Installer.
 
 = 1.62.1 - 26 May 2024 =
 * Anchor ID: Update to allow for an empty Accordion and Tabs ID field. An ID is recommended.

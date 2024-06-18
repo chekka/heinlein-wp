@@ -27,7 +27,7 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 		return empty( $single ) ? $single = new self() : $single;
 	}
 
-	function init() {
+	public function init() {
 		if ( defined( 'SOW_BUNDLE_VERSION' ) ) {
 			add_action( 'wp_head', array( $this, 'add_blocker_less' ) );
 			add_filter( 'the_content', array( $this, 'process_content' ), 99 );
@@ -41,6 +41,7 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 	public function update_settings_migration( $new_version, $old_version ) {
 		if ( version_compare( $old_version, '1.60.0', '<=' ) ) {
 			$settings = SiteOrigin_Premium_Options::single()->get_settings( 'plugin/embed-blocker' );
+
 			// Migrate padding to multi-measurement.
 			if (
 				! empty( $settings['blocker_design']['container']['padding'] )
@@ -72,6 +73,7 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 
 	public function get_settings_form() {
 		$message_fields = array();
+
 		if ( defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
 			// Let's give the user the option of using PB or TinyMCE.
 			$message_fields['message_type'] = array(
@@ -84,7 +86,7 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 				),
 				'state_emitter' => array(
 					'callback' => 'select',
-					'args' => array( 'message_type' )
+					'args' => array( 'message_type' ),
 				),
 			);
 			$message_fields['builder'] = array(
@@ -267,7 +269,7 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 					'fields' => array(
 						'button' => array(
 							'type' => 'widget',
-							'label' => __( 'Button' , 'siteorigin-premium' ),
+							'label' => __( 'Button', 'siteorigin-premium' ),
 							'hide' => true,
 							'class' => 'SiteOrigin_Widget_Button_Widget',
 							'form_filter' => array( $this, 'filter_button_widget' ),
@@ -348,7 +350,7 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 									'type' => 'measurement',
 									'label' => __( 'Paragraph Margin Bottom', 'siteorigin-premium' ),
 									'default' => '15px',
-								)
+								),
 							),
 						),
 					),
@@ -406,12 +408,12 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 			'container_background' => ! empty( $container['background'] ) ? $container['background'] : '',
 			'container_border_color' => ! empty( $container['border_color'] ) ? '1px solid ' . $container['border_color'] : '',
 			'container_border_radius' => ! empty( $container['border_radius'] ) ? $container['border_radius'] : '',
-			'container_padding'  => ! empty( $container['padding'] ) ? $container['padding'] : '',
+			'container_padding' => ! empty( $container['padding'] ) ? $container['padding'] : '',
 			'text_color' => ! empty( $text['color'] ) ? $text['color'] : '',
 			'text_size' => ! empty( $text['size'] ) ? $text['size'] : '',
 			'text_link' => ! empty( $text['link'] ) ? $text['link'] : '',
 			'text_link_hover' => ! empty( $text['link_hover'] ) ? $text['link_hover'] : '',
-			'text_margin' => ! empty( $text['text_margin'] ) ? $text['text_margin'] . ' 0': '',
+			'text_margin' => ! empty( $text['text_margin'] ) ? $text['text_margin'] . ' 0' : '',
 		);
 
 		if ( ! empty( $container['background_image'] ) ) {
@@ -423,7 +425,6 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 			if ( ! empty( $background ) ) {
 				$vars['container_background_image'] = 'url(' . $background[0] . ')';
 			}
-
 		}
 
 		if ( ! empty( $text['font'] ) ) {
@@ -464,6 +465,7 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 		}
 
 		$compiler = new SiteOrigin_LessC();
+
 		try {
 			if ( method_exists( $compiler, 'compile' ) ) {
 				$css = @ $compiler->compile( $less );
@@ -480,6 +482,7 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 		// Remove any empty CSS
 		$css = preg_replace( '/[^{}]*\{\s*\}/m', '', $css );
 		$css = trim( $css );
+
 		return $css;
 	}
 
@@ -513,8 +516,10 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 			}
 
 			$urls = explode( ',', $site['urls'] );
+
 			foreach ( $urls as $url ) {
 				$url = trim( $url );
+
 				if ( empty( $url ) ) {
 					continue;
 				}
@@ -523,7 +528,8 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 					// Found an embed. Let's block it.
 					$this->setup_block_message( $settings, $site );
 					$this->block_embed( $url, $site );
-					$this->content = apply_filters( 'siteorigin_premium_content_blocker_content',
+					$this->content = apply_filters(
+						'siteorigin_premium_content_blocker_content',
 						$this->content,
 						$url,
 						$settings
@@ -542,13 +548,13 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 
 	private function apply_addon_shortcodes( $settings, $site ) {
 		$this->block_message = str_replace(
-			"[site]",
+			'[site]',
 			wp_kses_post( $site['label'] ),
 			$this->block_message
 		);
 
 		$this->block_message = str_replace(
-			"[privacy_link]",
+			'[privacy_link]',
 			esc_url( $site['privacy_link'] ),
 			$this->block_message
 		);
@@ -561,7 +567,7 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 		$button = ob_get_clean();
 
 		$this->block_message = str_replace(
-			"[button]",
+			'[button]',
 			$button,
 			$this->block_message
 		);
@@ -573,6 +579,7 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 			$attributes['class'] = '';
 		}
 		$attributes['class'] .= ' siteorigin-premium-embed-blocker-button';
+
 		return $attributes;
 	}
 
@@ -614,6 +621,7 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 	 * Retrieves the platform name from a given URL.
 	 *
 	 * @param string $url The URL to extract the platform name from.
+	 *
 	 * @return string The platform name extracted from the URL.
 	 */
 	public function get_platform_name( $url ) {
@@ -622,13 +630,13 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 		$count = count( $parts );
 
 		// If $url has a www, return the second part.
-		if ( $count > 2 && $parts[0] === 'www') {
+		if ( $count > 2 && $parts[0] === 'www' ) {
 			return $parts[1];
-		// If $url has exactly two parts, it's x.com.
 		} elseif ( $count === 2 ) {
+			// If $url has exactly two parts, it's x.com.
 			return $parts[0];
-		// If $url has more than one part, it's subdomain.x.com.
-		} elseif ( count( $parts ) > 1) {
+		} elseif ( count( $parts ) > 1 ) {
+			// If $url has more than one part, it's subdomain.x.com.
 			return $parts[1];
 		}
 
@@ -660,7 +668,7 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 		}
 
 		$this->edit_content(
-			'/<'. $element . ' class="'. $class . '-.*?<\/'. $element . '>/m',
+			'/<' . $element . ' class="' . $class . '-.*?<\/' . $element . '>/m',
 			$element
 		);
 	}
@@ -686,6 +694,7 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 	 * Replaces the 'href="#"' in the block message with 'href="#{block_id}"'.
 	 *
 	 * @param string $block_id The ID of the block.
+	 *
 	 * @return string The modified block message.
 	 */
 	private function edit_content_block_message( $block_id ) {
@@ -706,8 +715,7 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 
 		$this->content = preg_replace_callback(
 			$pattern,
-			function ( $matches ) use ( $type, $add_block_message, $slug ) {
-
+			function( $matches ) use ( $type, $add_block_message, $slug ) {
 				$this->blockId++;
 				$block_id = 'siteorigin-premium-embed-blocker-' . $this->blockId;
 				$block_message = $add_block_message ? $this->edit_content_block_message( $block_id ) : '';
@@ -715,7 +723,7 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 				return str_replace(
 					array(
 						'<' . esc_attr( $type ),
-						'</' . esc_attr( $type ) . '>'
+						'</' . esc_attr( $type ) . '>',
 					),
 					array(
 						'<section
@@ -724,7 +732,7 @@ class SiteOrigin_Premium_Plugin_Embed_Blocker {
 							style="display: none;"
 							data-site-slug="' . esc_attr( $slug ) . '"
 							data-type="' . esc_attr( $type ) . '"',
-						'</section>'
+						'</section>',
 					),
 					$matches[0]
 				) . $block_message;

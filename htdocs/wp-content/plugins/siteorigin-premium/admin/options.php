@@ -64,10 +64,10 @@ class SiteOrigin_Premium_Options {
 	/**
 	 * Enqueue the admin scripts for the premium settings page
 	 */
-
-	function enqueue_admin_scripts( $prefix ) {
+	public function enqueue_admin_scripts( $prefix ) {
 		if ( function_exists( 'get_current_screen' ) ) {
 			$current_screen = get_current_screen();
+
 			if ( $current_screen && method_exists( $current_screen, 'is_block_editor' ) ) {
 				if ( $current_screen->is_block_editor() ) {
 					wp_enqueue_style( 'siteorigin-premium-block-editor', SiteOrigin_Premium::dir_url( __FILE__ ) . 'css/block-editor.css' );
@@ -118,6 +118,7 @@ class SiteOrigin_Premium_Options {
 		}
 
 		$current_screen = get_current_screen();
+
 		if (
 			! is_object( $current_screen ) ||
 			! isset( $current_screen->id ) ||
@@ -216,11 +217,12 @@ class SiteOrigin_Premium_Options {
 						SiteOrigin_Premium_License::STATUS_INACTIVE,
 						SiteOrigin_Premium_License::STATUS_INVALID,
 						SiteOrigin_Premium_License::STATUS_EXPIRED,
-						SiteOrigin_Premium_License::STATUS_NO_ACTIVATION
+						SiteOrigin_Premium_License::STATUS_NO_ACTIVATION,
 					)
 				)
 			) {
 				$License_data = $license->get_license_data();
+
 				// If $payment_id is set, store it.
 				if ( ! empty( $License_data->payment_id ) ) {
 					update_option( 'siteorigin_premium_details', array(
@@ -275,15 +277,15 @@ class SiteOrigin_Premium_Options {
 		$so_plugins = array(
 			'siteorigin-panels' => array(
 				'name' => __( 'SiteOrigin Page Builder', 'siteorigin-premium' ),
-				'version' => 'SITEORIGIN_PANELS_VERSION'
+				'version' => 'SITEORIGIN_PANELS_VERSION',
 			),
 			'so-widgets-bundle' => array(
 				'name' => __( 'SiteOrigin Widgets Bundle', 'siteorigin-premium' ),
-				'version' => 'SOW_BUNDLE_VERSION'
+				'version' => 'SOW_BUNDLE_VERSION',
 			),
 			'so-css' => array(
 				'name' => __( 'SiteOrigin CSS', 'siteorigin-premium' ),
-				'version' => 'SO_CSS_VERSION'
+				'version' => 'SO_CSS_VERSION',
 			),
 		);
 
@@ -325,6 +327,7 @@ class SiteOrigin_Premium_Options {
 						// Check for required plugin details. If found, attempt to get installed version.
 						if ( isset( $so_plugins[ $required_plugin ] ) ) {
 							$required_plugin = $so_plugins[ $required_plugin ];
+
 							if ( defined( $required_plugin['version'] ) ) {
 								$installed_version = constant( $required_plugin['version'] );
 							}
@@ -339,7 +342,6 @@ class SiteOrigin_Premium_Options {
 								$data['Name'],
 								$required_plugin['name']
 							);
-
 						} elseif (
 							$installed_version != 'dev' &&
 							version_compare( $required_version, $installed_version, '>=' )
@@ -355,7 +357,6 @@ class SiteOrigin_Premium_Options {
 							);
 						}
 					}
-
 				} else {
 					$theme_supports = get_theme_support( 'siteorigin-premium-' . $theme_support_id );
 
@@ -405,7 +406,7 @@ class SiteOrigin_Premium_Options {
 					$data['has_settings'] = ! empty( $settings_form );
 				}
 
-				$addons[$section][$addon_id] = apply_filters( 'siteorigin_premium_addon_data-'. $addon_id, $data );
+				$addons[$section][$addon_id] = apply_filters( 'siteorigin_premium_addon_data-' . $addon_id, $data );
 			}
 		}
 
@@ -477,10 +478,12 @@ class SiteOrigin_Premium_Options {
 
 	public function save_settings( $addon_id, $new_settings, $exit_if_no_addon = false ) {
 		$addon = SiteOrigin_Premium::single()->load_addon( $addon_id );
+
 		if ( empty( $addon ) || ! method_exists( $addon, 'get_settings_form' ) ) {
 			if ( $exit_if_no_addon ) {
 				exit();
 			}
+
 			return;
 		}
 		/** @var SiteOrigin_Premium_Form $settings_form */
@@ -579,11 +582,13 @@ class SiteOrigin_Premium_Options {
 			// This needs to be changed via the theme mod.
 
 			$support = get_theme_support( 'siteorigin-premium-' . $addon_id );
+
 			if ( is_array( $support ) ) {
 				$support = current( $support );
 
 				if ( ! empty( $support['theme_mod'] ) ) {
 					$theme_mod = $support['theme_mod'];
+
 					if ( $theme_mod[0] == '!' ) {
 						// The ! means we want the mod to be the opposite.
 						set_theme_mod( substr( $theme_mod, 1 ), ! $status );
@@ -593,6 +598,7 @@ class SiteOrigin_Premium_Options {
 				} elseif ( ! empty( $support['siteorigin_setting'] ) || class_exists( 'SiteOrigin_Settings' ) ) {
 					$setting_key = $support['siteorigin_setting'];
 					$settings = SiteOrigin_Settings::single();
+
 					if ( $setting_key[0] == '!' ) {
 						// The ! means we want the mod to be the opposite.
 						$settings->set( substr( $setting_key, 1 ), ! $status );

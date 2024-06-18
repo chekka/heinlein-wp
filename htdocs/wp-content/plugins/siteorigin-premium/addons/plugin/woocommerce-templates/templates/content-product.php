@@ -19,7 +19,7 @@ do_action( 'siteorigin_premium_wctb_archive_item_before' );
 			'siteorigin_premium_wctb_item_product_class',
 			'',
 			'content-product'
-			),
+		),
 		$product
 	);
 	?>

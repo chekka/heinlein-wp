@@ -110,20 +110,22 @@ class SiteOrigin_Premium_Plugin_Animations {
 
 		$fields['animation_screen_offset'] = array(
 			'name' => __( 'Screen Offset', 'siteorigin-premium' ),
-			'type' => 'text',
+			'type' => 'number',
 			'default' => 0,
 			'group' => 'animations',
 			'description' => __( 'How many pixels above the bottom of the screen must the element be before animating in.', 'siteorigin-premium' ),
 			'priority' => 15,
+			'min' => 0,
 		);
 
 		$fields['animation_duration'] = array(
 			'name' => __( 'Animation Speed', 'siteorigin-premium' ),
-			'type' => 'text',
+			'type' => 'number',
 			'default' => 1,
 			'group' => 'animations',
 			'description' => __( 'Number of seconds that the incoming animation lasts.', 'siteorigin-premium' ),
 			'priority' => 20,
+			'min' => 0,
 		);
 
 		$fields['animation_repeat'] = array(

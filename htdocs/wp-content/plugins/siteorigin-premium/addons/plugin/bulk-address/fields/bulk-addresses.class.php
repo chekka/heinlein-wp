@@ -6,8 +6,7 @@
  * Class SiteOrigin_Widget_Field_Bulk_Addresses
  */
 class SiteOrigin_Widget_Field_Bulk_addresses extends SiteOrigin_Widget_Field_Base {
-
-protected function render_field( $attachments, $instance ) {
+	protected function render_field( $attachments, $instance ) {
 		?>
 		<a href="#" class="button so-bulk-addresses-field-add-bulk">Bulk add addresses</a>
 		<div class="so-bulk-addresses-field-add-wrapper" style="display: none;">

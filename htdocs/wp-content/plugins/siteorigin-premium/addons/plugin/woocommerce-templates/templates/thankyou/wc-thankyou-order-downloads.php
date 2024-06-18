@@ -25,7 +25,7 @@ class SiteOrigin_Premium_WooCommerce_Thankyou_Order_Downloads extends WP_Widget 
 				wc_get_template(
 					'order/order-downloads.php',
 					array(
-						'downloads'  => $downloads,
+						'downloads' => $downloads,
 						'show_title' => true,
 					)
 				);

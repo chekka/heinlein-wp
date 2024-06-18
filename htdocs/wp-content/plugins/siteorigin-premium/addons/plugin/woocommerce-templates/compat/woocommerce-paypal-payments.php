@@ -1,4 +1,5 @@
 <?php
+
 // Add compatibility for the WooCommerce PayPal Payments plugin.
 // Check if we need to override the WooCommerce PayPal Payments render hook on this page or not.
 function siteorigin_premium_wctb_compat_woocommerce_paypal_payments_setup() {
@@ -22,6 +23,7 @@ function siteorigin_premium_wctb_compat_woocommerce_paypal_payments_setup() {
 
 			if ( ! empty( $product ) ) {
 				$has_template = get_post_meta( $product->ID, 'so_wc_template_post_id', true );
+
 				// Does this product page have a template set?
 				if ( ! empty( $has_template ) ) {
 					$override = true;
@@ -49,7 +51,6 @@ function siteorigin_premium_wctb_compat_woocommerce_paypal_payments_setup() {
 }
 add_action( 'parse_query', 'siteorigin_premium_wctb_compat_woocommerce_paypal_payments_setup' );
 
-	
 // Move WooCommerce PayPal Payments buttons after Add to Cart button.
 function siteorigin_premium_wctb_compat_woocommerce_paypal_payments( $filter ) {
 	return 'siteorigin_premium_wctb_add_to_cart_after';

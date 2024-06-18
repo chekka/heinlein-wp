@@ -26,7 +26,7 @@ class SiteOrigin_Premium_Metabox extends SiteOrigin_Widget {
 	}
 
 	public function add_metabox( $post_type ) {
-		$excluded_types =  apply_filters( 'siteorigin_premium_metabox_excluded_post_types', array(
+		$excluded_types = apply_filters( 'siteorigin_premium_metabox_excluded_post_types', array(
 			'so_mirror_widget',
 			'so_custom_post_type',
 			'acf-field-group',
@@ -54,11 +54,11 @@ class SiteOrigin_Premium_Metabox extends SiteOrigin_Widget {
 		$form_options = apply_filters( 'siteorigin_premium_metabox_form_options', array(
 			'general' => array(
 				'type' => 'section',
-				'label' => __( 'General' , 'siteorigin-premium' ),
+				'label' => __( 'General', 'siteorigin-premium' ),
 				'tab' => true,
 				'hide' => true,
 				'fields' => array(),
-			)
+			),
 		) );
 
 		// If there aren't any general fields, remove the tab.
@@ -69,6 +69,7 @@ class SiteOrigin_Premium_Metabox extends SiteOrigin_Widget {
 		if ( class_exists( 'SiteOrigin_Widget_Field_Tabs' ) ) {
 			// If WB is new enough to support the Tabs field, add it.
 			$tabs = array();
+
 			foreach ( $form_options as $id => $field ) {
 				if ( isset( $field['tab'] ) ) {
 					$tabs[ $id ] = $field['label'];
@@ -80,7 +81,7 @@ class SiteOrigin_Premium_Metabox extends SiteOrigin_Widget {
 					'tabs' => array(
 						'type' => 'tabs',
 						'tabs' => $tabs,
-					)
+					),
 				) + $form_options;
 			}
 		}
@@ -110,6 +111,7 @@ class SiteOrigin_Premium_Metabox extends SiteOrigin_Widget {
 	 */
 	private function account_for_empty( $form_options, $values ) {
 		$instance = array();
+
 		foreach ( $form_options as $id => $field ) {
 			if ( is_array( $field ) ) {
 				$instance[ $id ] = $this->account_for_empty(
@@ -141,7 +143,6 @@ class SiteOrigin_Premium_Metabox extends SiteOrigin_Widget {
 			! empty( $_POST['widget-siteorigin-premium'] ) &&
 			! empty( $_POST['widget-siteorigin-premium'][1] )
 		) {
-
 			$values = $_POST['widget-siteorigin-premium'][1];
 
 			$form_options = $this->get_widget_form();

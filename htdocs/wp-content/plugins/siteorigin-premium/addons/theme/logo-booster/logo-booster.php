@@ -55,6 +55,7 @@ class SiteOrigin_Premium_Theme_Logo_booster {
 			// Update standard sticky logo to reference default language.
 			$form_options['scroll_logo']['label'] = $languages[ $default_language ]['native_name'] . ' ' . $form_options['scroll_logo']['label'];
 			unset( $languages[ $default_language ] );
+
 			foreach ( $languages as $cc => $language ) {
 				$form_options[ $cc . '_base_logo' ] = array(
 					'type' => 'media',
@@ -68,6 +69,7 @@ class SiteOrigin_Premium_Theme_Logo_booster {
 				);
 			}
 		}
+
 		return new SiteOrigin_Premium_Form(
 			'so-addon-logo-booster-settings',
 			$form_options
@@ -76,11 +78,14 @@ class SiteOrigin_Premium_Theme_Logo_booster {
 
 	private function get_global_settings() {
 		$settings = SiteOrigin_Premium_Options::single()->get_settings( 'theme/logo-booster', false );
+
 		if ( function_exists( 'icl_get_languages' ) ) {
 			$current_language = apply_filters( 'wpml_current_language', null );
+
 			if ( ! empty( $settings[ $current_language . '_base_logo' ] ) ) {
 				$settings['base_logo'] = $settings[ $current_language . '_base_logo' ];
 			}
+
 			if ( ! empty( $settings[ $current_language . '_scroll_logo' ] ) ) {
 				$settings['scroll_logo'] = $settings[ $current_language . '_scroll_logo' ];
 			}
@@ -91,6 +96,7 @@ class SiteOrigin_Premium_Theme_Logo_booster {
 
 	private static function get_meta( $premium_meta = array(), $is_admin = false ) {
 		$post_id = function_exists( 'is_shop' ) && is_shop() ? wc_get_page_id( 'shop' ) : get_the_id();
+
 		if ( empty( $premium_meta ) ) {
 			$premium_meta = get_post_meta( $post_id, 'siteorigin_premium_meta', true );
 		}
@@ -104,6 +110,7 @@ class SiteOrigin_Premium_Theme_Logo_booster {
 			apply_filters( 'siteorigin_premium_logo_booster_meta_migrate_check', true )
 		) {
 			$existing_meta = get_post_meta( $post_id, 'siteorigin_premium_logo_booster', true );
+
 			if (
 				! empty( $existing_meta ) &&
 				(
@@ -140,10 +147,12 @@ class SiteOrigin_Premium_Theme_Logo_booster {
 		}
 
 		$logo_booster_meta = self::get_meta();
+
 		if ( ! empty( $logo_booster_meta ) && ! empty( $logo_booster_meta['base'] ) ) {
 			$logo_override_id = $logo_booster_meta['base'];
 		} else {
 			$settings = $this->get_global_settings();
+
 			if ( ! empty( $settings['base_logo'] ) ) {
 				$logo_override_id = $settings['base_logo'];
 			}
@@ -165,6 +174,7 @@ class SiteOrigin_Premium_Theme_Logo_booster {
 		}
 
 		$scroll_logo_id = $this->get_scroll_logo( $logo_booster_meta );
+
 		if ( ! empty( $scroll_logo_id ) ) {
 			$scroll_logo = wp_get_attachment_image(
 				$scroll_logo_id,
@@ -195,6 +205,7 @@ class SiteOrigin_Premium_Theme_Logo_booster {
 			$logo_id = $logo_booster_meta['base'];
 		} else {
 			$settings = $this->get_global_settings();
+
 			if ( ! empty( $settings['base_logo'] ) ) {
 				$logo_id = $settings['base_logo'];
 			}
@@ -212,10 +223,10 @@ class SiteOrigin_Premium_Theme_Logo_booster {
 	}
 
 	public function setup_scroll_logo_theme( $attrs ) {
-
 		if ( get_stylesheet() == 'vantage' ) {
 			if ( siteorigin_setting( 'layout_masthead' ) == 'logo-in-menu' ) {
 				$logo = siteorigin_setting( 'logo_image' );
+
 				if ( empty( $logo ) && function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
 					$logo = get_theme_mod( 'custom_logo' );
 				}
@@ -226,6 +237,7 @@ class SiteOrigin_Premium_Theme_Logo_booster {
 		}
 
 		$settings = $this->get_global_settings();
+
 		if ( empty( $settings ) || empty( $this->get_scroll_logo() ) || empty( $logo ) ) {
 			return $attrs;
 		}
@@ -257,10 +269,12 @@ class SiteOrigin_Premium_Theme_Logo_booster {
 			$scroll_logo_id = $logo_booster_meta['sticky'];
 		} else {
 			$settings = $this->get_global_settings();
+
 			if ( ! empty( $settings['scroll_logo'] ) ) {
 				$scroll_logo_id = $settings['scroll_logo'];
 			}
 		}
+
 		return $scroll_logo_id;
 	}
 
@@ -281,7 +295,7 @@ class SiteOrigin_Premium_Theme_Logo_booster {
 				)
 			);
 
-			$scroll_logo = '<a href="'. esc_url( home_url( '/' ) ) . '" rel="home">' . $scroll_logo . '</a>';
+			$scroll_logo = '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . $scroll_logo . '</a>';
 
 			if ( $return ) {
 				return $scroll_logo;
@@ -310,6 +324,7 @@ class SiteOrigin_Premium_Theme_Logo_booster {
 			// Overriding this value will prevent the site title text from appearing.
 			// We need to account for that by re-adding it if a logo isn't set using meta.
 			$meta = self::get_meta();
+
 			if ( empty( $meta ) || empty( $meta['base'] ) ) {
 				if ( ! empty( $meta['sticky'] ) ) {
 					add_action( 'siteorigin_unwind_logo_before', array( $this, 'add_site_title_text' ) );

@@ -12,6 +12,7 @@ class SiteOrigin_Premium_WooCommerce_Show_Product_Images extends WP_Widget {
 
 	public function widget( $args, $instance ) {
 		echo $args['before_widget'];
+
 		// Product Gallery Slider for WooCommerce compatibility for version 2.2 and higher.
 		if ( class_exists( 'CI_WPGS' ) && defined( 'WPGS_INC' ) ) {
 			require WPGS_INC . '/product-image.php';

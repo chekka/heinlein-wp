@@ -4,7 +4,6 @@
  * Class SiteOrigin_Premium_Utility
  *
  * This file contains utility functions that are used throughout the plugin.
- *
  */
 class SiteOrigin_Premium_Utility {
 	public static function single() {
@@ -22,6 +21,7 @@ class SiteOrigin_Premium_Utility {
 	 */
 	public function get_post_types() {
 		$types = get_transient( 'siteorigin_premium_post_types' );
+
 		if ( empty( $types ) ) {
 			$post_types = get_post_types( array( '_builtin' => false ) );
 
@@ -118,5 +118,4 @@ class SiteOrigin_Premium_Utility {
 
 		return $tag;
 	}
-
 }

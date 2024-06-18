@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Encapsulates license related functionality. Makes any EDD license related calls to our API.
  */
 class SiteOrigin_Premium_License {
-// 'valid'/'invalid' are returned by EDD and 'active'/'inactive' are set locally.
+	// 'valid'/'invalid' are returned by EDD and 'active'/'inactive' are set locally.
 	const STATUS_VALID = 'valid';
 	const STATUS_ACTIVE = 'active';
 	const STATUS_INVALID = 'invalid';
@@ -40,7 +40,7 @@ class SiteOrigin_Premium_License {
 	public function check_license_key( $update_status = true, $debug = false ) {
 		$this->license_data = $this->edd_actions->check_license( $this->license_key, $debug );
 
-		if ( ! empty( $this->license_data ) ) {	
+		if ( ! empty( $this->license_data ) ) {
 			if ( $update_status && ! isset( $this->license_data->first ) ) {
 				return $this->update_status( $this->license_data );
 			} else {

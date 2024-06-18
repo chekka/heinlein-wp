@@ -89,6 +89,7 @@ class SiteOrigin_Premium_Plugin_Video_Background {
 		/>
 		<?php
 		$field = ob_get_clean();
+
 		return $field;
 	}
 
@@ -136,26 +137,26 @@ class SiteOrigin_Premium_Plugin_Video_Background {
 		);
 
 		$fields['video_background_opacity'] = array(
-			'name'        => __( 'Background Video Opacity', 'siteorigin-premium' ),
-			'type'        => 'slider',
-			'group'       => 'design',
-			'priority'    => 9.2,
+			'name' => __( 'Background Video Opacity', 'siteorigin-premium' ),
+			'type' => 'slider',
+			'group' => 'design',
+			'priority' => 9.2,
 		);
 
 		$fields['video_background_play_once'] = array(
-			'label'        => __( 'Loop Video', 'siteorigin-premium' ),
-			'type'        => 'checkbox',
-			'group'       => 'design',
-			'priority'    => 9.3,
+			'label' => __( 'Loop Video', 'siteorigin-premium' ),
+			'type' => 'checkbox',
+			'group' => 'design',
+			'priority' => 9.3,
 			'default' => true,
 		);
 
 		$fields['video_background_display'] = array(
-			'name'        => __( 'Background Video Display', 'siteorigin-premium' ),
-			'type'        => 'select',
-			'group'       => 'design',
-			'priority'    => 9.4,
-			'options'     => array(
+			'name' => __( 'Background Video Display', 'siteorigin-premium' ),
+			'type' => 'select',
+			'group' => 'design',
+			'priority' => 9.4,
+			'options' => array(
 				'full' => __( 'Full', 'siteorigin-premium' ),
 				'cover' => __( 'Cover', 'siteorigin-premium' ),
 			),
@@ -204,19 +205,26 @@ class SiteOrigin_Premium_Plugin_Video_Background {
 		switch ( $extension ) {
 			case 'm4v':
 				return 'video/mp4';
+
 			case 'mov':
 				return 'video/quicktime';
+
 			case 'wmv':
 				return 'video/x-ms-wmv';
+
 			case 'avi':
 				return 'video/x-msvideo';
+
 			case 'mpg':
 				return 'video/mpeg';
+
 			case 'ogv':
 			case 'ogg':
 				return 'video/ogg';
+
 			case 'webm':
 				return 'video/webm';
+
 			case 'mp4':
 			default:
 				return 'video/mp4';
@@ -226,6 +234,7 @@ class SiteOrigin_Premium_Plugin_Video_Background {
 	public function add_video_background( $html, $context, $custom_overlay ) {
 		if ( $custom_overlay ) {
 			$style = $context['style'];
+
 			if ( ! empty( $style['video_background'] ) ) {
 				$video = $style['video_background'];
 			} elseif ( ! empty( $style['video_background_fallback'] ) ) {
@@ -245,10 +254,11 @@ class SiteOrigin_Premium_Plugin_Video_Background {
 				$so_video = new SiteOrigin_Video();
 
 				$opacity = null;
+
 				if (
 					! empty( $style['video_background_opacity'] ) &&
 					$style['video_background_opacity'] !== 100
-				 ) {
+				) {
 					$opacity = 'style="opacity: ' . ( (int) $style['video_background_opacity'] / 100 ) . ';"';
 				}
 
@@ -270,11 +280,13 @@ class SiteOrigin_Premium_Plugin_Video_Background {
 					$loop = ( ! isset( $style['video_background_play_once'] ) || $style['video_background_play_once'] ) ? ' loop' : '';
 
 					$border_radius = '';
+
 					if ( ! empty( $style['border_radius'] ) ) {
-						$border_radius = 'style="border-radius:' . esc_attr( $style['border_radius'] ). ';"';
+						$border_radius = 'style="border-radius:' . esc_attr( $style['border_radius'] ) . ';"';
 					}
 
 					$video_element = "<video autoplay muted playsinline $loop $border_radius>";
+
 					// If $video_file isn't set video is a local file.
 					if ( ! isset( $video_file ) ) {
 						$video_file = wp_get_attachment_url( $video );
