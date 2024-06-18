@@ -53,10 +53,12 @@ img {
       }
       &:after {
         content: "";
-        width: 70px;
-        height: 70px;
+        width: 40%;
+        height: 40%;
         background-image: url(../images/icon-forward-white.svg);
         background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
         position: absolute;
         top: 50%;
         left: 50%;
