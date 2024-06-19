@@ -36,7 +36,7 @@
       ?>
       <a href="/" class="site-logo">
         <picture>
-          <source srcset="/wp-content/themes/heinlein/assets/images/heinlein-plastiktechnik-signet.svg" media="(max-width: 840px)" width="80" height="110">
+          <source srcset="/wp-content/themes/heinlein/assets/images/heinlein-plastiktechnik-signet.svg" media="(max-width: 580px)" width="80" height="110">
           <img src="/wp-content/themes/heinlein/assets/images/heinlein-plastiktechnik-logo.svg" alt="Heinlein Plastik-Technik Logo" width="240" height="90" loading="eager" decoding="sync">
         </picture>
       </a>         

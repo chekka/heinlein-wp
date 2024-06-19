@@ -1,0 +1,31 @@
+#page-header {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: 75vh;
+   z-index: -1;
+   
+   overflow: hidden;
+
+   .header-image,
+   .header-video {
+      flex-shrink: 0;
+      min-width: 100%;
+      min-height: 100%;
+      max-width: initial;
+   }
+
+   .header-text {
+      position: absolute;
+      z-index: 1;
+   }
+
+   +.panel-layout {
+      margin-top: 75vh;
+   }
+}

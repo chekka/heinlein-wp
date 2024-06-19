@@ -10,23 +10,6 @@
     $('body').attr({ 'data-width':$winW });
   });
 
-  $(window).on('scroll', function () {
-    if ($(window).width() > 574) {
-      t = 0;
-    } else {
-      t = 50;
-    }
-    if ($(this).scrollTop() > t) {
-      $('body').addClass('scrolled');
-      $('.site-header').addClass('active');
-    } else {
-      $('body').removeClass('scrolled');
-      $('.site-header').removeClass('active');
-    }
-    var scroll = $(window).scrollTop();
-    position = scroll;
-  });
-
   $(document).on('ready',function(){
 
     // Video popup

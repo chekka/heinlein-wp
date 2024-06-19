@@ -26718,13 +26718,6 @@ body {
   width: 100% !important;
 }
 
-.widget_sow-hero > .fixed {
-  position: fixed;
-  left: 0;
-  right: 0;
-  height: 75vh;
-}
-
 .single-video .sow-video-wrapper {
   width: 76%;
   margin: auto;
@@ -26741,12 +26734,17 @@ body {
   position: relative;
 }
 
+.home .hero-box {
+  left: auto;
+  right: -210px;
+}
+
 .hero-box {
   padding: 14px 34px 14px 44px;
   width: 260px;
   background-color: #001e4b;
   border-radius: 0 36px 0 36px;
-  position: absolute;
+  position: sticky;
   z-index: 100;
   left: 0;
   bottom: 0;
@@ -26836,6 +26834,33 @@ body {
   border-style: solid;
   border-width: 0 50px 50px 0;
   border-color: transparent #001e4b transparent transparent;
+}
+
+#page-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 75vh;
+  z-index: -1;
+  overflow: hidden;
+}
+#page-header .header-image,
+#page-header .header-video {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: initial;
+}
+#page-header .header-text {
+  position: absolute;
+  z-index: 1;
+}
+#page-header + .panel-layout {
+  margin-top: 75vh;
 }
 
 .popmake .sow-video-wrapper.use-fitvids {
@@ -27223,6 +27248,22 @@ svg .bg--white {
   overflow: hidden;
 }
 
+#product-grid .so-widget-sow-image {
+  position: relative;
+}
+#product-grid .so-widget-sow-image .widget-title a {
+  position: absolute;
+  border: 1px solid #001e4b;
+  border-radius: 1000px;
+  background-color: transparent;
+  width: 100%;
+  line-height: 40px;
+  color: #001e4b;
+  left: 0;
+  bottom: 0;
+  font-weight: 700;
+}
+
 #support-boxes .textwidget p {
   background-color: #001e4b;
   padding: 21px 30px;
@@ -27259,7 +27300,6 @@ svg .bg--white {
   top: 0;
   width: 100%;
   z-index: 501;
-  min-height: 130px;
   height: auto;
   overflow: hidden;
   background-color: transparent;
@@ -27272,6 +27312,16 @@ svg .bg--white {
   z-index: 10000;
   top: 0;
   width: 240px;
+}
+@media (max-width: 579.98px) {
+  .site-header .site-logo {
+    right: 50%;
+    transform: translateX(50%);
+    width: auto;
+  }
+  .site-header .site-logo img {
+    max-height: 90px;
+  }
 }
 .site-header .site-logo img {
   max-width: 100%;
@@ -27504,6 +27554,89 @@ svg .bg--white {
   border-bottom-left-radius: 0;
   border-top-left-radius: 12px;
   border-bottom-right-radius: 12px;
+}
+
+#mobile-menu {
+  line-height: 3em;
+  padding: 30px;
+}
+#mobile-menu * {
+  font-size: 16px;
+}
+#mobile-menu ul, #mobile-menu li {
+  margin: 0;
+  padding: 0;
+  display: block;
+  list-style: none;
+}
+#mobile-menu a {
+  font-family: "Encode Sans", sans-serif;
+  color: #001e4b;
+  text-transform: uppercase;
+}
+#mobile-menu .hamburger {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  background-size: 100% 100%;
+  background-image: url(../images/hamburger.svg);
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: auto 100%;
+}
+#mobile-menu .hamburger.open {
+  background-image: url(../images/icons/icon-x-blank.svg);
+}
+#mobile-menu #menu-mobile-menu {
+  display: none;
+  margin: 30px 0 0 8px;
+}
+#mobile-menu .sub-menu {
+  display: none;
+  margin-bottom: 1em;
+}
+#mobile-menu .sub-menu.show {
+  display: block;
+}
+#mobile-menu .sub-menu li {
+  margin: 0 0 0 1em;
+  line-height: 2em;
+}
+#mobile-menu .sub-menu a {
+  display: block;
+  position: relative;
+  padding-left: 24px;
+  text-transform: none;
+}
+#mobile-menu .sub-menu a:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: transparent;
+  transform: rotate(135deg);
+  text-indent: -9999px;
+  border-top: 1px solid #7d8ca3;
+  border-left: 1px solid #7d8ca3;
+  color: transparent;
+  left: 0px;
+  top: 10px;
+}
+#mobile-menu .lang-item {
+  display: inline-block;
+  width: 40px;
+  border: 1px solid;
+  border-radius: 50%;
+  line-height: 38px;
+  height: 40px;
+  text-align: center;
+  margin-top: 21px;
+}
+#mobile-menu .lang-item.lang-item-first {
+  margin: 0 8px 0 -8px;
 }
 
 .bg--blau-dunkel {
@@ -27803,6 +27936,17 @@ h3, .h3 {
   vertical-align: middle;
 }
 
+@media (max-width: 575px) {
+  h1, .h1, h2, .h2 {
+    font-size: 1.8rem;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    margin: auto;
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+}
 .bg--blau-dunkel {
   background-color: #001e4b;
   color: #fff;

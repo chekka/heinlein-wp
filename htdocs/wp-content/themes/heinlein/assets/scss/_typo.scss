@@ -115,3 +115,15 @@ h3 {
   top: 7px;
   vertical-align: middle;
 }
+
+@media (max-width: 575px) {
+  h1, .h1, h2, .h2 {
+      font-size: 1.8rem;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+      margin: auto;
+      line-height: 1.2;
+      letter-spacing: 0;
+      text-transform: uppercase;
+  }
+}

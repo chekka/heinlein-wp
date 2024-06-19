@@ -220,3 +220,21 @@
     overflow: hidden;
   }
 }
+
+#product-grid {
+  .so-widget-sow-image {
+    position: relative;
+    .widget-title a {
+      position: absolute;
+      border: 1px solid $blau-dunkel;
+      border-radius: 1000px;
+      background-color: transparent;
+      width: 100%;
+      line-height: 40px;
+      color: $blau-dunkel;
+      left: 0;
+      bottom: 0;
+      font-weight: 700;
+    }
+  }
+}
