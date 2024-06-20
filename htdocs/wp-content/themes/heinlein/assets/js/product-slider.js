@@ -23,13 +23,6 @@
         {
           breakpoint: 768,
           settings: {
-            slidesToShow: 3,
-            centerMode: true
-          }
-        },
-        {
-          breakpoint: 540,
-          settings: {
             slidesToShow: 1,
             centerMode: true
           }
