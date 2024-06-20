@@ -6,6 +6,7 @@
 function heinlein_scripts_styles(){
     // ENQUEUE Styles
     wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/slick/slick.css', array(), null, 'all' );
+    wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/assets/slick/slick-theme.css', array(), null, 'all' );
     wp_enqueue_style( 'heinlein', get_template_directory_uri() . '/assets/css/heinlein.css', array(), null, 'all' );
     if ( is_front_page() ) :
       wp_enqueue_style( 'product-slider', get_template_directory_uri() . '/assets/css/product-slider.css', array(), null, 'all' );
@@ -14,14 +15,15 @@ function heinlein_scripts_styles(){
 
     // ENQUEUE Scripts
     wp_enqueue_script( 'jquery' );
+    if ( is_front_page() ) :
+      wp_enqueue_script( 'product-slider', get_template_directory_uri() . '/assets/js/product-slider.js', array(), null, true );
+      wp_enqueue_script( 'counter', get_template_directory_uri() . '/assets/js/jquery.counterup.min.js', array(), null, true );
+      wp_enqueue_script( 'waypoints', get_template_directory_uri() . '/assets/js/waypoints.min.js', array(), null, true );
+    endif;
     wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/slick/slick.js', array(), null, true );
     wp_enqueue_script( 'colorbox', get_template_directory_uri() . '/assets/colorbox/jquery.colorbox-min.js', array(), null, true );
     wp_enqueue_script( 'heinlein', get_template_directory_uri() . '/assets/js/heinlein-global.js', array(), null, true );  
     wp_enqueue_script( 'heinlein-menu', get_template_directory_uri() . '/assets/js/heinlein-menu.js', array(), null, true );
-    if ( is_front_page() ) :
-      wp_enqueue_script( 'product-slider', get_template_directory_uri() . '/assets/js/product-slider.js', array(), null, true );
-      wp_enqueue_script( 'counter', get_template_directory_uri() . '/assets/js/jquery.counterup.min.js', array(), null, true );
-    endif;
 
     // DEQUEUE Styles
     wp_dequeue_style( 'contact-form-7' );
@@ -111,6 +113,11 @@ function deregister_media_elements(){
 }
 add_action('wp_enqueue_scripts','deregister_media_elements');
 
-
+// Add shortcodes
 add_filter( 'wpcf7_form_elements', 'do_shortcode' );
 add_shortcode( 'page_title', 'get_the_title' );
+
+function print_required_span() {
+  return '<span class="required">*</span>';
+}
+add_shortcode('*', 'print_required_span');

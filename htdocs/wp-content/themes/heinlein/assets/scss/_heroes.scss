@@ -2,11 +2,6 @@
   position: relative;
 }
 
-.home .hero-box {
-  left: auto;
-  right: -210px;
-}
-
 .hero-box {
   padding: 14px 34px 14px 44px;
   width: 260px;
@@ -86,7 +81,7 @@
 
         width: 55px;
         height: 55px;
-        left: 136px;
+        right: -80px;
         background-image: url(../images/icons/icon-hero-circle-arrow.svg);
       }
 
@@ -114,5 +109,60 @@
     border-style: solid;
     border-width: 0 50px 50px 0;
     border-color: transparent $blau-dunkel transparent transparent;
+  }
+
+  &.muster {
+    width: 295px;
+    padding: 30px 30px 120px 30px;    
+
+    &:after {
+      top: -48px;
+      right: initial;
+      left: 0;
+      transform: rotate(180deg);
+    }
+
+    p {
+      text-transform: uppercase;
+      font-family: Gotham;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 1.4em;
+      margin-bottom: 0.25em;
+    }
+
+    & + img {
+      max-width: 255px;
+      margin: -90px 0 0 20px;
+      position: relative;
+      z-index: 101;
+    }
+  }
+}
+
+.home #produktanfrage-box {
+  max-width: 260px;
+
+  @media (min-width: 1600px) {
+    margin: -320px auto 0 auto;
+    transform: translateX(610px);
+  }
+  @media (max-width: 1599.99px) {
+    margin: 0 auto 12vh;
+  }
+}
+
+#musterbox-box {
+  max-width: 295px;
+  margin-top: -100px;
+}
+
+.home #musterbox-box {
+  @media (min-width: 1600px) {
+    margin: -120px auto -120px;
+    transform: translateX(-610px);
+  }
+  @media (max-width: 1599.99px) {
+    margin: -70px auto 7vh;
   }
 }

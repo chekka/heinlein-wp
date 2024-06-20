@@ -21,6 +21,5 @@
          <?php endif; ?>
       </div>
       <?php the_content(); ?>
-      <div style="min-height:100vh"></div>
    <?php endwhile; endif; ?>          
 <?php get_footer(); ?>

@@ -3,6 +3,31 @@
 
   $(document).on('ready', function () {
 
+
+    // Frontpage counter  
+    function counter() {
+      if ($('body').length > 0 && 'IntersectionObserver' in window) {
+        const targets = document.querySelectorAll('span.counter');
+        var countup = function (target) {
+          const io = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const counter = entry.target;
+                $(counter).counterUp({
+                  delay: 10,
+                  time: 2000,
+                });
+                observer.disconnect();
+              }
+            });
+          });
+          io.observe(target);
+        };
+        targets.forEach(countup);
+      }
+    }
+    counter();
+
     // Site header height
     var headerHeight = $('.site-logo').outerHeight() + 20;
     $('.site-header').css({ 'min-height': headerHeight });
@@ -66,17 +91,7 @@
     });
 
     $(window).on('resize scroll', function () {
-      if ($('body').hasClass('front')) {
-        var counterPos = $('.counter-wrapper').offset().top;
-        if (counterPos > 0 && $('body').scrollTop() >= counterPos) {
-          $('.counter var').each(function () {
-            $(this).counterUp({
-              delay: 1000,
-              time: 1000,
-            });
-          });
-        }
-      }
+      
     });
 
     $(window).on('scroll', function () {

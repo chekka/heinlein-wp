@@ -51,6 +51,10 @@ h2+p {
   margin-top: -1rem;
 }
 
+#nachhaltigkeit h2 {
+  color: #00AF35;
+}
+
 p {
   color: $blau-mittel-3;
   line-height: 1.955rem;
@@ -121,7 +125,7 @@ h3 {
       font-size: 1.8rem;
       hyphens: auto;
       -webkit-hyphens: auto;
-      margin: auto;
+      margin: 0 auto 1em auto;
       line-height: 1.2;
       letter-spacing: 0;
       text-transform: uppercase;

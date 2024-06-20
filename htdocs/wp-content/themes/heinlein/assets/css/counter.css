@@ -1,7 +1,7 @@
-.counter {
+.counter-wrapper {
   text-align: center;
 
-  var {
+  span.counter {
     font-style: normal;
     font-size: 5.7rem;
     font-family: Gotham, sans-serif;
