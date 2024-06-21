@@ -27,7 +27,7 @@
 
 <body <?php body_class(); ?>>
 
-  <header class="site-header">
+  <header class="site-header" id="top">
     
       <?php 
         if ( is_active_sidebar( 'header' )):

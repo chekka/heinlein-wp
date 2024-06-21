@@ -26629,6 +26629,47 @@ img {
   opacity: 0.777;
 }
 
+.header-icon {
+  width: 20vmin;
+  height: 20vmin;
+  max-width: 230px;
+  max-height: 230px;
+  position: absolute;
+  left: 50%;
+  top: 15vh;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.imagetoggle .panel-last-child {
+  display: none;
+}
+.imagetoggle:hover .panel-last-child {
+  display: block;
+}
+.imagetoggle:hover .panel-first-child {
+  display: none;
+}
+
+.counter p {
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+.counter p strong {
+  font-size: 3.3rem;
+  font-style: normal;
+  font-family: Gotham, sans-serif;
+  font-weight: 100;
+  line-height: 1.2;
+  display: inline-block;
+  color: #fff;
+}
+
+.home .counter strong {
+  font-size: 5.7rem;
+}
+
 #virtual_showroom .content {
   max-width: 1200px;
   border-radius: 36px;
@@ -26666,22 +26707,32 @@ a[title="Mehr erfahren"]:hover {
   border-color: #001e4b;
 }
 
-a[title="Look inside"] {
+a[title="Look inside"],
+a[title="Mehr erfahren"] {
   color: #fff;
   border-color: #fff;
 }
-a[title="Look inside"]:hover {
+a[title="Look inside"]:hover,
+a[title="Mehr erfahren"]:hover {
   color: #5c6c90;
   border-color: #5c6c90;
 }
 
-a[title="Mehr erfahren"] {
+#nachhaltigkeit a[title="Mehr erfahren"] {
   color: #00AF35;
   border-color: #00AF35;
 }
-a[title="Mehr erfahren"]:hover {
+#nachhaltigkeit a[title="Mehr erfahren"]:hover {
   color: #fff;
   background-color: #00AF35;
+  border-color: #00AF35;
+}
+
+.rounded-3-0x0x {
+  border-radius: 0 36px 0 36px;
+}
+.rounded-3-0x0x img {
+  border-radius: 0 36px 0 36px;
 }
 
 [class*=content--] {
@@ -26960,6 +27011,8 @@ body {
   min-width: 100%;
   min-height: 100%;
   max-width: initial;
+  width: auto;
+  height: auto;
 }
 #page-header .header-text {
   position: absolute;
@@ -27183,15 +27236,6 @@ svg .bg--white {
   padding: 0;
   margin: 0;
   overflow: hidden;
-}
-.product--header .header-icon {
-  width: 21vh;
-  height: 21vh;
-  position: absolute;
-  left: 50%;
-  top: 15vh;
-  transform: translateX(-50%);
-  z-index: 3;
 }
 .product--header .header-image {
   object-fit: cover;
@@ -27979,7 +28023,7 @@ h2 + p, .h2 + p {
   margin-top: -1rem;
 }
 
-#nachhaltigkeit h2, #nachhaltigkeit .h2 {
+.text-green * {
   color: #00AF35;
 }
 
@@ -28044,6 +28088,10 @@ h3, .h3 {
   left: 0px;
   top: 7px;
   vertical-align: middle;
+}
+
+.bg--blau-dunkel * {
+  color: #fff;
 }
 
 @media (max-width: 575px) {

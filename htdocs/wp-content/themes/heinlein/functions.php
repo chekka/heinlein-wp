@@ -8,18 +8,18 @@ function heinlein_scripts_styles(){
     wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/slick/slick.css', array(), null, 'all' );
     wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/assets/slick/slick-theme.css', array(), null, 'all' );
     wp_enqueue_style( 'heinlein', get_template_directory_uri() . '/assets/css/heinlein.css', array(), null, 'all' );
+    wp_enqueue_style( 'counter', get_template_directory_uri() . '/assets/css/counter.css', array(), null, 'all' );
     if ( is_front_page() ) :
-      wp_enqueue_style( 'product-slider', get_template_directory_uri() . '/assets/css/product-slider.css', array(), null, 'all' );
-      wp_enqueue_style( 'counter', get_template_directory_uri() . '/assets/css/counter.css', array(), null, 'all' );
+      wp_enqueue_style( 'product-slider', get_template_directory_uri() . '/assets/css/product-slider.css', array(), null, 'all' );      
     endif;
 
     // ENQUEUE Scripts
     wp_enqueue_script( 'jquery' );
     if ( is_front_page() ) :
       wp_enqueue_script( 'product-slider', get_template_directory_uri() . '/assets/js/product-slider.js', array(), null, true );
-      wp_enqueue_script( 'counter', get_template_directory_uri() . '/assets/js/jquery.counterup.min.js', array(), null, true );
-      wp_enqueue_script( 'waypoints', get_template_directory_uri() . '/assets/js/waypoints.min.js', array(), null, true );
     endif;
+    wp_enqueue_script( 'counter', get_template_directory_uri() . '/assets/js/jquery.counterup.min.js', array(), null, true );
+    wp_enqueue_script( 'waypoints', get_template_directory_uri() . '/assets/js/waypoints.min.js', array(), null, true );    
     wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/slick/slick.js', array(), null, true );
     wp_enqueue_script( 'colorbox', get_template_directory_uri() . '/assets/colorbox/jquery.colorbox-min.js', array(), null, true );
     wp_enqueue_script( 'heinlein', get_template_directory_uri() . '/assets/js/heinlein-global.js', array(), null, true );  
@@ -121,3 +121,6 @@ function print_required_span() {
   return '<span class="required">*</span>';
 }
 add_shortcode('*', 'print_required_span');
+
+// Do not resize images 
+add_filter( 'big_image_size_threshold', '__return_false' ); 
