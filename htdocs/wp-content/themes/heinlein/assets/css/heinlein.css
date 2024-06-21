@@ -26599,34 +26599,11 @@ img {
   z-index: 1;
 }
 
-.video-placeholder .sow-image-container {
-  position: relative;
+.rounded-3-0x0x {
+  border-radius: 0 36px 0 36px;
 }
-.video-placeholder .sow-image-container a:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #001e4b;
-  opacity: 0.333;
-}
-.video-placeholder .sow-image-container a:after {
-  content: "";
-  width: 40%;
-  height: 40%;
-  background-image: url(../images/icon-forward-white.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.video-placeholder .sow-image-container a:hover:before {
-  opacity: 0.777;
+.rounded-3-0x0x img {
+  border-radius: 0 36px 0 36px;
 }
 
 .header-icon {
@@ -26728,11 +26705,140 @@ a[title="Mehr erfahren"]:hover {
   border-color: #00AF35;
 }
 
-.rounded-3-0x0x {
-  border-radius: 0 36px 0 36px;
+.video-placeholder .sow-image-container {
+  position: relative;
 }
-.rounded-3-0x0x img {
-  border-radius: 0 36px 0 36px;
+.video-placeholder .sow-image-container a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #001e4b;
+  opacity: 0.333;
+}
+.video-placeholder .sow-image-container a:after {
+  content: "";
+  width: 40%;
+  height: 40%;
+  background-image: url(../images/icon-forward-white.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.video-placeholder .sow-image-container a:hover:before {
+  opacity: 0.777;
+}
+
+.history-slider {
+  padding-bottom: 70px;
+}
+.history-slider .widget {
+  margin-bottom: 0 !important;
+}
+.history-slider img {
+  border-radius: 0 18px 0 18px;
+  width: calc(100% - 20px);
+}
+.history-slider p {
+  line-height: 1.4;
+  text-align: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  min-height: 100px;
+  margin-top: 1rem;
+  padding-right: 30px;
+}
+.history-slider h3, .history-slider .h3 {
+  font-size: 2.2em;
+  font-family: Gotham, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.7;
+  height: 80px;
+  background-image: url(../images/history-steps.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 bottom;
+}
+.history-slider .slick-prev,
+.history-slider .slick-next:before {
+  display: none !important;
+}
+.history-slider .slick-next {
+  background-image: url(../images/icon-forward.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 77px;
+  height: 77px;
+  top: initial;
+  bottom: -90px;
+  left: 50%;
+  margin-left: -38.5px;
+  -webkit-transform: none;
+  transform: none;
+}
+
+/* Fertigunsprozess */
+#prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell {
+  display: flex;
+}
+#prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget {
+  background-image: url(../images/prozess-scale.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0 calc(100% + 50px);
+  padding: 0 0 130px 0;
+  margin-bottom: 0 !important;
+}
+#prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box {
+  overflow: visible;
+  padding: 0 0 0 25%;
+  border-radius: 0 24px 0 24px;
+  position: relative;
+}
+#prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget {
+  background-color: #fff;
+  margin-bottom: 0 !important;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 0 0 0 24px;
+}
+#prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget img {
+  border-radius: 0 24px 0 0;
+}
+#prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget .widget-title {
+  position: absolute;
+  bottom: -50px;
+  left: 24px;
+  width: 69px;
+  text-align: right;
+  font-size: 90px;
+  font-family: Gotham, sans-serif;
+  font-weight: 100;
+  line-height: 0.777;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.222);
+  padding: 0 15px 77px 0;
+  border-right: 2px solid #001e4b;
+}
+#prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget p {
+  margin: 0;
+  padding-left: 20px;
+}
+#prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget p strong {
+  display: block;
+  font-family: "Encode Sans", sans-serif;
+  font-weight: 400;
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  letter-spacing: 0.0777em;
+  word-spacing: 0.222em;
+  margin-top: 1em;
 }
 
 [class*=content--] {
@@ -26816,6 +26922,10 @@ body {
 
 .stil--gray {
   background: radial-gradient(30vw circle at 90% 70%, #b7beca, transparent), radial-gradient(30vw circle at 0% 90%, #b7beca, transparent), radial-gradient(at 0% 0%, #eff2f7, #cfd5e3);
+}
+
+.stil--silver {
+  background: radial-gradient(circle farthest-corner at 40% 0, #fff, #e4ecf1);
 }
 
 .siteorigin-panels-stretch {

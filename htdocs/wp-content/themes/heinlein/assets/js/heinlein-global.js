@@ -41,6 +41,29 @@
       arrows: false,
       dots: true
     });
+
+    // Slick history slider
+    $('.history-slider .panel-layout').slick({
+      slidesToShow: 4,
+      responsive: [{
+        breakpoint: 1200,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 900,
+          settings: {
+            slidesToShow: 2,
+          }
+        },
+        {
+          breakpoint: 560,
+          settings: {
+            slidesToShow: 1,
+          }
+        }]
+    });
     
     // Video popup
     $('.pum-theme-186').each(function(){

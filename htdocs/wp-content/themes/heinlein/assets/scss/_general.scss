@@ -113,9 +113,160 @@ a[title="Mehr erfahren"] {
   }
 }
 
-.rounded-3-0x0x {
-  border-radius: 0 $r3 0 $r3;
+.video-placeholder {
+  .sow-image-container {
+    position: relative;
+    a {
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $blau-dunkel;
+        opacity: 0.333;
+      }
+      &:after {
+        content: "";
+        width: 40%;
+        height: 40%;
+        background-image: url(../images/icon-forward-white.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &:hover:before {
+        opacity: 0.777;
+      }
+    }
+  }
+}
+
+.history-slider {
+  padding-bottom: 70px;
+  .widget {
+    margin-bottom: 0 !important;
+  }
+
   img {
-    border-radius: 0 $r3 0 $r3;
+    border-radius: 0 $r1 0 $r1;
+    width: calc(100% - 20px);
+  }
+
+  p {
+    line-height: 1.4;
+    text-align: left;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    min-height: 100px;
+    margin-top: 1rem;
+    padding-right: 30px;
+  }
+
+  h3 {
+    font-size: 2.2em;
+    font-family: Gotham, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 0.7;
+    height: 80px;
+    background-image: url(../images/history-steps.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 bottom;
+  }
+
+  .slick-prev,
+  .slick-next:before {
+    display: none !important;
+  }
+
+  .slick-next {
+    background-image: url(../images/icon-forward.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 77px;
+    height: 77px;
+    top: initial;
+    bottom: -90px;
+    left: 50%;
+    margin-left: -38.5px;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+/* Fertigunsprozess */
+#prozesskette .grid {
+  & > .panel-layout {
+    & > .panel-grid {
+      & > .panel-grid-cell {
+        display: flex;
+
+        & > .widget {
+          background-image: url(../images/prozess-scale.svg);
+          background-repeat: no-repeat;
+          background-size: 100%;
+          background-position: 0 calc(100% + 50px);
+          padding: 0 0 130px 0;
+          margin-bottom: 0 !important;
+
+          .box {
+            overflow: visible;
+            padding: 0 0 0 25%;
+            border-radius: 0 $r2 0 $r2;
+            position: relative;
+
+            .widget {
+              background-color: #fff;
+              margin-bottom: 0 !important;
+              box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+              border-radius: 0 0 0 $r2;
+
+              img {
+                border-radius: 0 $r2 0 0;
+              }
+
+              .widget-title {
+                position: absolute;
+                bottom: -50px;
+                left: 24px;
+                width: 69px;
+                text-align: right;
+                font-size: 90px;
+                font-family: Gotham, sans-serif;
+                font-weight: 100;
+                line-height: 0.777;
+                text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.222);
+                padding: 0 15px 77px 0;
+                border-right: 2px solid $blau-dunkel;
+              }
+
+              p {
+                margin: 0;
+                padding-left: 20px;
+
+                strong {
+                  display: block;
+                  font-family: "Encode Sans", sans-serif;
+                  font-weight: 400;
+                  text-align: left;
+                  font-size: 1.2rem;
+                  line-height: 1.5;
+                  letter-spacing: 0.0777em;
+                  word-spacing: 0.222em;
+                  margin-top: 1em;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
