@@ -1,4 +1,5 @@
 mariadb-init/*
+.htaccess
 
 htdocs/wp-config.php
 
