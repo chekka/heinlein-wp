@@ -14,17 +14,7 @@
     z-index: -1;
     padding: 0;
     margin: 0;
-    overflow: hidden;
-
-    .header-icon {
-      width: 21vh;
-      height: 21vh;
-      position: absolute;
-      left: 50%;
-      top: 15vh;
-      transform: translateX(-50%);
-      z-index: 3;
-    }
+    overflow: hidden;    
 
     .header-image {
       object-fit: cover;

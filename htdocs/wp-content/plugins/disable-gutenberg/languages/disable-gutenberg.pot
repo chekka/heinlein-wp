@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Disable Gutenberg\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-28 00:10+0000\n"
+"POT-Creation-Date: 2024-06-19 21:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -26,24 +26,12 @@ msgstr ""
 msgid "ACF Support"
 msgstr ""
 
-#: inc/settings-reset.php:38
-msgid "and"
-msgstr ""
-
-#: inc/settings-reset.php:40
-msgid "Apply code"
-msgstr ""
-
-#: inc/settings-reset.php:40
-msgid "at checkout. Sale ends 5/25/24."
-msgstr ""
-
 #: inc/plugin-features.php:86
 msgid "Block Edit"
 msgstr ""
 
-#: inc/settings-reset.php:39
-msgid "books"
+#: inc/settings-reset.php:36
+msgid "Buy one get one FREE with code"
 msgstr ""
 
 #: inc/plugin-features.php:96
@@ -114,7 +102,7 @@ msgid ""
 "roles, and more."
 msgstr ""
 
-#: inc/settings-reset.php:111
+#: inc/settings-reset.php:109
 msgid "Dismiss"
 msgstr ""
 
@@ -162,8 +150,8 @@ msgid ""
 "Editor). Or, disable this setting to display more options."
 msgstr ""
 
-#: inc/settings-reset.php:35
-msgid "Go Pro!"
+#: inc/settings-reset.php:38
+msgid "Get&nbsp;plugins&nbsp;&raquo;"
 msgstr ""
 
 #: inc/settings-register.php:50
@@ -210,6 +198,10 @@ msgstr ""
 msgid "No, abort mission."
 msgstr ""
 
+#: inc/settings-reset.php:37
+msgid "or take 30% off with code"
+msgstr ""
+
 #: inc/settings-register.php:233
 msgid "Please give a 5-star rating! A huge THANK YOU for your support!"
 msgstr ""
@@ -240,10 +232,6 @@ msgstr ""
 
 #: inc/settings-register.php:34
 msgid "Post Type ="
-msgstr ""
-
-#: inc/settings-reset.php:37
-msgid "Pro WordPress plugins"
 msgstr ""
 
 #: inc/settings-register.php:54
@@ -322,8 +310,8 @@ msgstr ""
 msgid "Sorry, pal!"
 msgstr ""
 
-#: inc/settings-reset.php:36
-msgid "Take 30% OFF any of our"
+#: inc/settings-reset.php:35
+msgid "Super Plugin Sale!"
 msgstr ""
 
 #: inc/settings-register.php:167

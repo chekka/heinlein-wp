@@ -94,6 +94,10 @@ body {
     radial-gradient(at 0% 0%, $blau-light-1, $blau-light-4);
 }
 
+.stil--silver {
+  background: radial-gradient(circle farthest-corner at 40% 0, #fff, $blau-light-2);
+}
+
 .siteorigin-panels-stretch {
   margin-left: 0 !important;
   margin-right: 0 !important;

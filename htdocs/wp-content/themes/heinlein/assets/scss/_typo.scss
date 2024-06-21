@@ -51,7 +51,7 @@ h2+p {
   margin-top: -1rem;
 }
 
-#nachhaltigkeit h2 {
+.text-green * {
   color: #00AF35;
 }
 
@@ -118,6 +118,10 @@ h3 {
   left: 0px;
   top: 7px;
   vertical-align: middle;
+}
+
+.bg--blau-dunkel * {
+  color: #fff;
 }
 
 @media (max-width: 575px) {
