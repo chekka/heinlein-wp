@@ -45,7 +45,7 @@ class heinlein_Icon_Box_Widget extends SiteOrigin_Widget {
 				'icon_position' => array(
 					'type' => 'radio',
 					'label' => __( 'Icon position', 'heinlein-widgets' ),
-					'default' => 'icon-center',
+					'default' => 'align-items-center',
 					'options' => array(
 							'icon-left' =>  __( 'Links', 'heinlein-widgets' ),
 							'icon-right' =>  __( 'Rechts', 'heinlein-widgets' ),
@@ -86,7 +86,7 @@ class heinlein_Icon_Box_Widget extends SiteOrigin_Widget {
 				'target_blank' => array(
 					'type' => 'checkbox',
 					'label' => __( 'In neuem Fenster öffnen', 'heinlein-widgets' ),
-        			'default' => false
+        			'default' => true
 				),
 				'tinymce_editor' => array(
 					'type' => 'tinymce',

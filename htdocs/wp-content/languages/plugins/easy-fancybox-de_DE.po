@@ -1,0 +1,1511 @@
+# Translation of Plugins - Easy FancyBox &#8211; WordPress Lightbox Plugin - Stable (latest release) in German
+# This file is distributed under the same license as the Plugins - Easy FancyBox &#8211; WordPress Lightbox Plugin - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2024-06-17 02:38:27+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: de\n"
+"Project-Id-Version: Plugins - Easy FancyBox &#8211; WordPress Lightbox Plugin - Stable (latest release)\n"
+
+#: views/pro-landing-page.php:18
+msgid "40% off sale this week! Use code LAUNCH at checkout."
+msgstr "Diese Woche 40 % Rabatt! Verwende den Code LAUNCH an der Kasse."
+
+#: inc/class-easyfancybox-admin.php:143
+msgid "Easy Fancybox Pro is launched! Take 40% off this week - use code LAUNCH at checkout."
+msgstr "Easy Fancybox Pro ist da! Diese Woche 40 % Rabatt – verwende den Code LAUNCH beim Bezahlen."
+
+#: views/pro-landing-page.php:124 views/pro-landing-page.php:151
+msgid "Unlimited Sites"
+msgstr "Unbegrenzte Websites"
+
+#: views/pro-landing-page.php:85
+msgid "All Features"
+msgstr "Alle Funktionen"
+
+#: views/pro-landing-page.php:82
+msgid "Most Popular!"
+msgstr "Am beliebtesten"
+
+#: views/pro-landing-page.php:78 views/pro-landing-page.php:117
+#: views/pro-landing-page.php:154
+msgid "Buy Now"
+msgstr "Jetzt kaufen"
+
+#: views/pro-landing-page.php:75 views/pro-landing-page.php:114
+msgid "25 Site License"
+msgstr "25 Sites-Lizenz"
+
+#: views/pro-landing-page.php:74 views/pro-landing-page.php:113
+msgid "5 Site License"
+msgstr "5 Sites-Lizenz"
+
+#: views/pro-landing-page.php:73 views/pro-landing-page.php:112
+msgid "1 Site License"
+msgstr "1 Site-Lizenz"
+
+#: views/pro-landing-page.php:68 views/pro-landing-page.php:107
+#: views/pro-landing-page.php:146
+msgid "Unlimited Site License"
+msgstr "Unbegrenzte Websites Lizenz"
+
+#: views/pro-landing-page.php:67 views/pro-landing-page.php:106
+#: views/pro-landing-page.php:145
+msgid "UNLIMITED"
+msgstr "UNLIMITIERT"
+
+#: views/pro-landing-page.php:66 views/pro-landing-page.php:105
+#: views/pro-landing-page.php:144
+msgid "Performance Optimizations"
+msgstr "Optimierung der Geschwindigkeit"
+
+#: views/pro-landing-page.php:65 views/pro-landing-page.php:104
+#: views/pro-landing-page.php:143
+msgid "Open Maps"
+msgstr "Maps öffnen"
+
+#: views/pro-landing-page.php:64 views/pro-landing-page.php:103
+#: views/pro-landing-page.php:142
+msgid "Open Iframes"
+msgstr "iframes öffnen"
+
+#: views/pro-landing-page.php:63 views/pro-landing-page.php:102
+#: views/pro-landing-page.php:141
+msgid "Open Inline Content"
+msgstr "Inline Content öffnen"
+
+#: views/pro-landing-page.php:62 views/pro-landing-page.php:101
+#: views/pro-landing-page.php:140
+msgid "Create Modals/Popups"
+msgstr "Modale/Popups erstellen"
+
+#: views/pro-landing-page.php:61 views/pro-landing-page.php:100
+#: views/pro-landing-page.php:139
+msgid "Open PDFs"
+msgstr "PDFs öffnen"
+
+#: views/pro-landing-page.php:60 views/pro-landing-page.php:99
+#: views/pro-landing-page.php:138
+msgid "Open Video"
+msgstr "Video öffnen"
+
+#: views/pro-landing-page.php:59 views/pro-landing-page.php:98
+#: views/pro-landing-page.php:137
+msgid "Image Zooming"
+msgstr "Image Zoom"
+
+#: views/pro-landing-page.php:58 views/pro-landing-page.php:97
+#: views/pro-landing-page.php:136
+msgid "Fullscreen"
+msgstr "Vollbild"
+
+#: views/pro-landing-page.php:57 views/pro-landing-page.php:96
+#: views/pro-landing-page.php:135
+msgid "Slidesshow & Transitions"
+msgstr "Slidesshow & Übergänge"
+
+#: views/pro-landing-page.php:56 views/pro-landing-page.php:95
+#: views/pro-landing-page.php:134
+msgid "Toolbar Controls"
+msgstr "Toolbar Kontrollen"
+
+#: views/pro-landing-page.php:55 views/pro-landing-page.php:94
+#: views/pro-landing-page.php:133
+msgid "Thumbnails in Lightbox"
+msgstr "Thumbnails in Lightbox"
+
+#: views/pro-landing-page.php:54 views/pro-landing-page.php:93
+#: views/pro-landing-page.php:132
+msgid "All Customization Options"
+msgstr "Alle Optionen zur Anpassung"
+
+#: views/pro-landing-page.php:53 views/pro-landing-page.php:92
+#: views/pro-landing-page.php:131
+msgid "PRO LIGHTBOX"
+msgstr "PRO LIGHTBOX"
+
+#: views/pro-landing-page.php:52 views/pro-landing-page.php:91
+#: views/pro-landing-page.php:130
+msgid "FancyBox2 - Pro Features"
+msgstr "FancyBox2 - Pro Funktionen"
+
+#: views/pro-landing-page.php:51 views/pro-landing-page.php:90
+#: views/pro-landing-page.php:129
+msgid "Reloaded - Pro Features"
+msgstr "Reloaded - Pro Funktionen"
+
+#: views/pro-landing-page.php:50 views/pro-landing-page.php:89
+#: views/pro-landing-page.php:128
+msgid "Legacy - Pro Features"
+msgstr "Legacy -Pro Funktionen"
+
+#: views/pro-landing-page.php:49 views/pro-landing-page.php:88
+#: views/pro-landing-page.php:127
+msgid "BASIC LIGHTBOXES"
+msgstr "BASIC LIGHTBOXEN"
+
+#: views/pro-landing-page.php:48 views/pro-landing-page.php:87
+#: views/pro-landing-page.php:126
+msgid "PLUGIN UPDATES"
+msgstr "PLUGIN UPDATES"
+
+#: views/pro-landing-page.php:47 views/pro-landing-page.php:86
+#: views/pro-landing-page.php:125
+msgid "PRO SUPPORT"
+msgstr "PRO SUPPORT"
+
+#: views/pro-landing-page.php:46
+msgid "Basic Lightboxes"
+msgstr "Basic Lightboxen"
+
+#: views/pro-landing-page.php:32
+msgid "Or buy directly from the WordPress dashboard below!"
+msgstr "Oder kaufe  direkt über das WordPress-Dashboard unten!"
+
+#: views/pro-landing-page.php:30
+msgid "See Demos"
+msgstr "Siehe Demos"
+
+#: views/pro-landing-page.php:29
+msgid "Learn More"
+msgstr "Mehr erfahren"
+
+#: views/pro-landing-page.php:27
+msgid "Add Pro features for free lightboxes - Legacy, Reloaded, V2. Or level up with the brilliant new FancyBox 5 Pro Lightbox. Supports images, pdfs, video, maps, modals with custom content, and more."
+msgstr "Füge Pro-Funktionen für kostenlose Lightboxen hinzu – Legacy, Reloaded, V2. Oder mache ein Upgrade mit der brillanten neuen FancyBox 5 Pro Lightbox. Unterstützt Bilder, PDFs, Videos, Karten, Modale mit benutzerdefiniertem Inhalt und mehr."
+
+#: views/pro-landing-page.php:26
+msgid "Make your media a highlight of your website."
+msgstr "Mache Deine Medien zum Highlight deiner Website."
+
+#: views/pro-landing-page.php:24
+msgid "Easy Fancybox Pro"
+msgstr "Easy Fancybox Pro"
+
+#: inc/fancybox-options.php:552
+msgid "Disable core lightbox while using Easy Fancybox."
+msgstr "Deaktivieren die Core-Lightbox, während Du Easy Fancybox verwendest."
+
+#: inc/fancybox-options.php:547
+msgid "Disable Core Lightbox"
+msgstr "Core Lightbox deaktivieren"
+
+#: inc/class-easyfancybox.php:321
+msgid "Pro Lightbox"
+msgstr "Pro Lightbox"
+
+#: inc/fancybox-options.php:177
+msgid "When enabled, the pixel ratio of retina displays will apply and images may appear smaller but sharper."
+msgstr "Wenn aktiviert, wird das Pixelverhältnis von Retina-Displays angewendet und Bilder können kleiner, aber schärfer erscheinen."
+
+#: inc/fancybox-options.php:172
+msgid "Adjust images for retina"
+msgstr "Bilder für Retina anpassen"
+
+#: inc/fancybox-options.php:594
+msgid "All images"
+msgstr "Alle Bilder"
+
+#: inc/class-easyfancybox-admin.php:234
+msgid "We work hard to maintain it. Would you do us a BIG favor and give us a 5-star review on WordPress.org? Or share feedback <a %s>here</a>."
+msgstr "Wir arbeiten hart daran, es zu betreiben. Würdest Du uns einen GROSSEN Gefallen tun und uns eine 5-Sterne-Bewertung auf WordPress.org geben? Oder gib uns <a %s>hier</a> Feedback."
+
+#: inc/class-easyfancybox-admin.php:230
+msgid "You've been using Easy Fancybox for a long time! Awesome and thanks!"
+msgstr "Du nutzt Easy Fancybox schon lange! Super und vielen Dank!"
+
+#: inc/class-easyfancybox-admin.php:245
+msgid "Already did!"
+msgstr "Habe ich bereits gemacht!"
+
+#: inc/class-easyfancybox-admin.php:244
+msgid "Maybe later"
+msgstr "Später vielleicht"
+
+#: inc/class-easyfancybox-admin.php:242
+msgid "Ok, you deserve it!"
+msgstr "Ok, ihr habt es verdient!"
+
+#: inc/fancybox-options.php:681
+msgid "Only applies when Close Style is set to Elastic. "
+msgstr "Funktioniert nur, wenn Schließen auf Elastic eingestellt ist. "
+
+#: inc/fancybox-options.php:657
+msgid "Close Style"
+msgstr "Stil für Schließen"
+
+#: inc/fancybox-options.php:653
+msgid "Only applies when Open Style is set to Elastic. "
+msgstr "Funktioniert nur, wenn Öffnen auf Elastic eingestellt ist. "
+
+#: inc/fancybox-options.php:629
+msgid "Open Style"
+msgstr "Stil für Öffnen"
+
+#: inc/fancybox-options.php:615
+msgid "Transition Style"
+msgstr "Stil für Übergang"
+
+#. translators: %1$s is replaced with a link, ie <a> tag
+#: views/settings-section-intro.php:19
+msgid "here"
+msgstr "hier"
+
+#. translators: %1$s is replaced with a link, ie <a> tag
+#: views/settings-section-intro.php:19
+msgid "Easy FancyBox settings have moved! Please go %1$s."
+msgstr "Easy FancyBox Einstellungen wurden verschoben! Gehe bitte  %1$s."
+
+#: views/settings-field-version.php:33
+msgid "Additional settings for the selected lightbox will appear below."
+msgstr "Weitere Einstellungen für die ausgewählte Lightbox werden unterhalb angezeigt."
+
+#: inc/fancybox-options.php:1862
+msgid "Allow fullscreen"
+msgstr "Vollbild erlauben"
+
+#: inc/fancybox-options.php:1404
+msgid "Disables cookies."
+msgstr "Cookies deaktivieren"
+
+#: inc/fancybox-options.php:905
+msgid "Auto dimensions"
+msgstr "Automatische Abmessungen"
+
+#: inc/fancybox-options.php:862
+msgid "Auto play slideshow"
+msgstr "Slideshow automatisch abspielen"
+
+#: inc/fancybox-options.php:852
+msgid "Image css selectors"
+msgstr "Bild CSS-Selektoren"
+
+#: inc/fancybox-options.php:816
+msgid "Mousewheel navigation"
+msgstr "Navigation per Mausrad"
+
+#: inc/fancybox-options.php:805
+msgid "Continuous navigation"
+msgstr "Fortlaufende Navigation"
+
+#: inc/fancybox-options.php:795
+msgid "Enable keyboard nav"
+msgstr "Tastaturnavigation aktivieren"
+
+#: inc/fancybox-options.php:785
+msgid "Show nav arrows"
+msgstr "Navigationspfeile anzeigen"
+
+#: inc/fancybox-options.php:781
+msgid "You can also use rel attribute to manually group images together. "
+msgstr "Du kannst das rel-Attribut auch verwenden, um Bilder manuell zu gruppieren. "
+
+#: inc/fancybox-options.php:770
+msgid "Automattically group images"
+msgstr "Bilder automatisch gruppieren"
+
+#: inc/fancybox-options.php:760
+msgid "Show title on hover"
+msgstr "Titel beim Hover anzeigen"
+
+#: inc/fancybox-options.php:750 inc/fancybox-options.php:1126
+#: inc/fancybox-options.php:1223 inc/fancybox-options.php:1335
+#: inc/fancybox-options.php:1489 inc/fancybox-options.php:1619
+#: inc/fancybox-options.php:1747 inc/fancybox-options.php:1852
+msgid "Title from alt"
+msgstr "Titel aus Alt-Tag"
+
+#: inc/fancybox-options.php:704 inc/fancybox-options.php:1086
+#: inc/fancybox-options.php:1201 inc/fancybox-options.php:1293
+#: inc/fancybox-options.php:1447 inc/fancybox-options.php:1577
+#: inc/fancybox-options.php:1705 inc/fancybox-options.php:1810
+msgid "Show title"
+msgstr "Titel anzeigen"
+
+#: inc/fancybox-options.php:694 inc/fancybox-options.php:994
+msgid "Close on click"
+msgstr "Mit Klick schließen"
+
+#: inc/fancybox-options.php:685 inc/fancybox-options.php:985
+msgid "Transition Opacity"
+msgstr "Transparenz beim Übergang"
+
+#: inc/fancybox-options.php:953 inc/fancybox-options.php:981
+msgid "Only applies when Transition is set to Elastic. "
+msgstr "Funktioniert nur, wenn der Übergang auf „Elastisch“ eingestellt ist. "
+
+#: inc/fancybox-options.php:602
+msgid "Treat fancybox class as image"
+msgstr "Verwende die Fancybox-Klasse als Bild"
+
+#: inc/fancybox-options.php:584
+msgid "Comma-separated list of file extensions to detect. Clear field to disable autodetection. "
+msgstr "Durch Kommas getrennte Liste der zu erkennenden Dateierweiterungen. Leere das Feld, um die automatische Erkennung zu deaktivieren. "
+
+#: inc/fancybox-options.php:543
+msgid "Comma-separated list of selectors to exclude for lightbox autodetect."
+msgstr "Durch Kommas getrennte Liste von Selektoren, die für die automatische Lightbox-Erkennung ausgeschlossen werden sollen."
+
+#: inc/fancybox-options.php:532
+msgid "WPBakery / VC Masonry compatibility, replaces prettyPhoto lightbox. "
+msgstr "WPBakery/VC Masonry-Kompatibilität, ersetzt PrettyPhoto Lightbox. "
+
+#: inc/fancybox-options.php:526
+msgid "WPBakery compatibility"
+msgstr "WPBakery Kompatibilität"
+
+#: inc/fancybox-options.php:516
+msgid "Include metadata script"
+msgstr "Metadatenskript hinzufügen"
+
+#: inc/fancybox-options.php:503
+msgid "Exclude inline_script"
+msgstr "Inline_script ausschließen"
+
+#: inc/fancybox-options.php:494
+msgid "Exclude core jQuery"
+msgstr "Core-jQuery ausschließen"
+
+#: inc/fancybox-options.php:485
+msgid "Load scripts in head"
+msgstr "Lade die Skripte im Head"
+
+#: inc/fancybox-options.php:458
+msgid "IE 8 compatibility"
+msgstr "IE 8-Kompatibilität"
+
+#: inc/fancybox-options.php:445
+msgid "Minimum viewport height"
+msgstr "Mindesthöhe des Ansichtsfensters"
+
+#: inc/fancybox-options.php:432
+msgid "Minimum viewport width"
+msgstr "Mindestbreite des Ansichtsfensters"
+
+#: inc/fancybox-options.php:423
+msgid "Hide auto popup for X time after first visit. "
+msgstr "Automatisches Popup nach dem ersten Besuch X Mal ausblenden. "
+
+#: inc/fancybox-options.php:410
+msgid "Autopopup - hide after first"
+msgstr "Automatisches Popup nach dem ersten ausblenden."
+
+#: inc/fancybox-options.php:397
+msgid "Autopopup - delay"
+msgstr "Autopopup - Verzögerung"
+
+#: inc/fancybox-options.php:393
+msgid "Open lightbox automatically on page load"
+msgstr "Lightbox beim Laden der Seite automatisch öffnen"
+
+#: inc/fancybox-options.php:383
+msgid "Enable autopopup"
+msgstr "Autopopup aktivieren"
+
+#: inc/fancybox-options.php:371
+msgid "Show gradient spotlight effect around image."
+msgstr "Zeige den Spotlight-Effekt mit Farbverlauf um das Bild herum an."
+
+#: inc/fancybox-options.php:365
+msgid "Overlay spotlight effect"
+msgstr "Overlay-Spotlight-Effekt"
+
+#: inc/fancybox-options.php:353
+msgid "Overlay opacity"
+msgstr "Overlay Transparenz"
+
+#: inc/fancybox-options.php:332 inc/fancybox-options.php:341
+msgid "Overlay color"
+msgstr "Overlay Farbe"
+
+#: inc/fancybox-options.php:322
+msgid "Close when overlay clicked"
+msgstr "Schließen, wenn Overlay angeklickt wird"
+
+#: inc/fancybox-options.php:312
+msgid "Show overlay"
+msgstr "Overlay anzeigen"
+
+#: inc/fancybox-options.php:305
+msgid "Overlay Appearance"
+msgstr "Overlay-Erscheinungsbild"
+
+#: inc/fancybox-options.php:295
+msgid "Load mousewheel script"
+msgstr "Mausrad-Skript laden"
+
+#: inc/fancybox-options.php:265
+msgid "Esc key closes FancyBox"
+msgstr "Esc-Taste schließt FancyBox"
+
+#: inc/fancybox-options.php:259
+msgid "Enable ESC key"
+msgstr "ESC-Taste aktivieren"
+
+#: inc/fancybox-options.php:255
+msgid "Disabled on touch devices and when content might be larger than the viewport."
+msgstr "Deaktiviert auf Touch-Geräten und wenn der Inhalt möglicherweise größer als das Ansichtsfenster ist."
+
+#: inc/fancybox-options.php:210
+msgid "Default: 10"
+msgstr "Standard: 10"
+
+#: inc/fancybox-options.php:182
+msgid "Window background color"
+msgstr "Hintergrundfarbe des Fensters"
+
+#: inc/fancybox-options.php:168
+msgid "Default: 20"
+msgstr "Standard: 20"
+
+#: inc/fancybox-options.php:160
+msgid "Window margin"
+msgstr "Fenster Außenabstand"
+
+#: inc/fancybox-options.php:156
+msgid "Default of 340 ussed if not set or cannot be determined automatically."
+msgstr "Der Standardwert 340 wird verwendet, wenn er nicht festgelegt ist oder nicht automatisch ermittelt werden kann."
+
+#: inc/fancybox-options.php:147
+msgid "Default of 560 ussed if not set or cannot be determined automatically."
+msgstr "Der Standardwert 560 wird verwendet, wenn er nicht festgelegt ist oder nicht automatisch ermittelt werden kann."
+
+#: inc/fancybox-options.php:132
+msgid "Show close button"
+msgstr "Schließen-Button anzeigen"
+
+#: inc/fancybox-options.php:122
+msgid "Auto scale to fit"
+msgstr "Automatische Skalierung zur Anpassung"
+
+#: inc/fancybox-options.php:115
+msgid "Window Appearance"
+msgstr "Fenster-Darstellung"
+
+#: inc/fancybox-options.php:105
+msgid "Enable for iFrames"
+msgstr "Für iFrames aktivieren"
+
+#: inc/fancybox-options.php:97
+msgid "Enable for Dailymotion"
+msgstr "Für Dailymotion aktivieren"
+
+#: inc/fancybox-options.php:89
+msgid "Enable for Vimeo"
+msgstr "Für Vimeo aktivieren"
+
+#: inc/fancybox-options.php:81
+msgid "Enable for Youtube"
+msgstr "Für YouTube aktivieren"
+
+#: inc/fancybox-options.php:71
+msgid "Enable for VideoPress"
+msgstr "Für VideoPress aktivieren"
+
+#: inc/fancybox-options.php:63
+msgid "Enable for SVGs"
+msgstr "Für SVGs aktivieren"
+
+#: inc/fancybox-options.php:54
+msgid "Enable for SWFs"
+msgstr "Für SWFs aktivieren"
+
+#: inc/fancybox-options.php:46
+msgid "Enable for PDFs"
+msgstr "Für PDFs aktivieren"
+
+#: inc/fancybox-options.php:38
+msgid "Enable for Inline Content"
+msgstr "Für Inline Content aktivieren"
+
+#: inc/fancybox-options.php:30
+msgid "Enable for Images"
+msgstr "Für Bilder aktivieren"
+
+#: inc/fancybox-options.php:23
+msgid "Enable"
+msgstr "Aktivieren"
+
+#: inc/fancybox-options.php:10
+msgid "Get Pro"
+msgstr "Pro holen"
+
+#: inc/fancybox-options.php:9
+msgid "Want more options? "
+msgstr "Möchtest Du weitere Optionen? "
+
+#: inc/class-easyfancybox.php:319
+msgid "FancyBox Classic Reloaded"
+msgstr "FancyBox Classic Reloaded"
+
+#: inc/class-easyfancybox.php:318
+msgid "FancyBox Legacy"
+msgstr "FancyBox Legacy"
+
+#: inc/class-easyfancybox-admin.php:383
+msgid "Choose Lighbox Version"
+msgstr "Wähle  Lightbox-Version"
+
+#: inc/class-easyfancybox-admin.php:105
+msgid "Lightbox Settings - Easy Fancybox"
+msgstr "Lightbox Einstellungen - Easy Fancybox"
+
+#. Plugin Name of the plugin
+#: easy-fancybox.php
+msgid "Easy FancyBox - WordPress Lightbox Plugin"
+msgstr "Easy FancyBox - WordPress Lightbox Plugin"
+
+#. Author of the plugin
+#: easy-fancybox.php
+msgid "FirelightWP"
+msgstr "FirelightWP"
+
+#. Description of the plugin
+#: easy-fancybox.php
+msgid "Most popular WordPress lightbox plugin. Easily add a lightbox for viewing images and other media."
+msgstr "Das beliebteste WordPress-Lightbox-Plugin. Füge ganz einfach eine Lightbox zum Anzeigen von Bildern und anderen Medien hinzu."
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: easy-fancybox.php
+msgid "https://firelightwp.com"
+msgstr "https://firelightwp.com"
+
+#: inc/fancybox-options.php:873
+msgid "Play speed"
+msgstr "Abspielgeschwindigkeit"
+
+#. translators: %s is replaced with an account url
+#: views/admin-notice.php:25
+msgid "Pro version"
+msgstr "Pro-Version"
+
+#. translators: %s is replaced with an account url
+#: views/admin-notice.php:25
+msgid "Please download and install the latest %s."
+msgstr "Bitte lade und installiere die neueste Version von %s."
+
+#: inc/class-easyfancybox.php:320
+msgid "FancyBox V2"
+msgstr "FancyBox V2"
+
+#: inc/fancybox-options.php:821
+msgid "Allow gallery browsing by mousewheel action."
+msgstr "Durchsuchen der Galerie per Mausrad-Aktion zulassen."
+
+#: inc/fancybox-options.php:742 inc/fancybox-options.php:1329
+#: inc/fancybox-options.php:1483 inc/fancybox-options.php:1613
+#: inc/fancybox-options.php:1741 inc/fancybox-options.php:1846
+msgid "Inside top"
+msgstr "Innen oben"
+
+#: inc/fancybox-options.php:740 inc/fancybox-options.php:1327
+#: inc/fancybox-options.php:1481 inc/fancybox-options.php:1611
+#: inc/fancybox-options.php:1739 inc/fancybox-options.php:1844
+msgid "Outside top"
+msgstr "Außen oben"
+
+#: inc/fancybox-options.php:730 inc/fancybox-options.php:1317
+#: inc/fancybox-options.php:1601 inc/fancybox-options.php:1729
+#: inc/fancybox-options.php:1834
+msgid "Title Style"
+msgstr "Titelstil"
+
+#: inc/fancybox-options.php:349
+msgid "Enter an RGBA color value."
+msgstr "RGBA-Farbwert eingeben."
+
+#: inc/translation-strings.php:205
+msgid "To make any VideoPress movie open in an overlay, switch on Autodetect or use the class \"fancybox-videopress\" for its link."
+msgstr "Um einen beliebigen VideoPress-Film in einem Overlay zu öffnen, schalte Autodetect ein oder verwende die Klasse „fancybox-videopress“ für seinen Link."
+
+#. Translators: http repsonse code
+#: inc/translation-strings.php:201
+msgid "Unexpected response code %d."
+msgstr "Unerwarteter Antwortcode %d."
+
+#: inc/translation-strings.php:199
+msgid "Failed identify the product."
+msgstr "Das Produkt konnte nicht identifiziert werden."
+
+#: inc/translation-strings.php:198
+msgid "Cannot make requests to own domain."
+msgstr "Es können keine Requests an die eigene Domain gestellt werden."
+
+#: inc/translation-strings.php:197
+msgid "Too many requests. Please try again in a minute."
+msgstr "Zu viele Anfragen. Bitte versuche es in einer Minute nochmals."
+
+#: inc/translation-strings.php:194
+msgid "Your license was successfully deactivated for this site."
+msgstr "Deine Lizenz wurde für diese Site erfolgreich deaktiviert."
+
+#: inc/translation-strings.php:193
+msgid "Your license was successfully activated for this site."
+msgstr "Deine Lizenz wurde für diese Site erfolgreich aktiviert."
+
+#. Translators: Plugin name
+#: inc/translation-strings.php:186
+msgid "Your license key for %s is not activated for this site."
+msgstr "Dein Lizenzschlüssel für %s ist für diese Site nicht aktiviert."
+
+#. Translators: Plugin name
+#: inc/translation-strings.php:178
+msgid "You have an invalid or expired license key for %s."
+msgstr "Du hast einen ungültigen oder abgelaufenen Lizenzschlüssel für %s."
+
+#. Translators: plugin admin page URL
+#: inc/translation-strings.php:174 inc/translation-strings.php:182
+#: inc/translation-strings.php:190
+msgid "To receive plugin updates, please <a href=\"%s\">correct this issue</a>."
+msgstr "Um Plugin-Updates zu erhalten, <a href=\"%s\">korrigiere bitte dieses Problem</a>."
+
+#. Translators: Plugin name
+#: inc/translation-strings.php:170
+msgid "You have not yet entered your license key for %s."
+msgstr "Du hast Deinen Lizenzschlüssel für %s noch nicht eingegeben."
+
+#. Translators: license error code, Support (linked)
+#: inc/translation-strings.php:165
+msgid "Unexpected license error code %1$s. Please try again or get %2$s."
+msgstr "Unerwarteter Lizenz-Fehlercode %1$s. Bitte versuchen es erneut oder holen Dir %2$s."
+
+#: inc/translation-strings.php:163
+msgid "An unkown error occurred. Please try again."
+msgstr "Ein unbekannter Fehler ist aufgetreten. Bitte versuche es nochmals."
+
+#: inc/translation-strings.php:162
+msgid "An error occurred, please try again."
+msgstr "Es ist ein Fehler aufgetreten, bitte versuche es erneut."
+
+#: inc/translation-strings.php:161
+msgid "Your license key has reached its activation limit."
+msgstr "Dein Lizenzschlüssel hat sein Aktivierungslimit erreicht."
+
+#. Translators: Plugin name
+#: inc/translation-strings.php:158
+msgid "This appears to be an invalid license key for %s."
+msgstr "Dies scheint ein ungültiger Lizenzschlüssel für %s zu sein."
+
+#: inc/translation-strings.php:156 inc/translation-strings.php:196
+msgid "Your license is not active for this site."
+msgstr "Deine Lizenz ist für diese Website nicht aktiviert."
+
+#: inc/translation-strings.php:155
+msgid "This appears to be an invalid license key."
+msgstr "Dies scheint ein ungültiger Lizenzschlüssel zu sein."
+
+#: inc/translation-strings.php:154
+msgid "Your license key has been disabled."
+msgstr "Dein Lizenzschlüssel wurde deaktiviert."
+
+#: inc/translation-strings.php:153
+msgid "Your license key has expired."
+msgstr "Dein Lizenzschlüssel ist abgelaufen."
+
+#. Translators: Expiration date
+#: inc/translation-strings.php:147
+msgid "Your license key has expired on %s."
+msgstr "Dein Lizenzschlüssel ist am %s abgelaufen."
+
+#. Translators: Premium Plugin name, Plugin name
+#: inc/translation-strings.php:134
+msgid "In order to use %1$s, please activate %2$s."
+msgstr "Um %1$s zu verwenden, aktiviere bitte %2$s."
+
+#. Translators: Premium Plugin name, Plugin name (linked)
+#: inc/translation-strings.php:129
+msgid "To use the %1$s advanced options, please install %$2s."
+msgstr "Um die erweiterten Optionen von %1$s zu verwenden, installiere bitte %$2s."
+
+#. Translators: Plugin name, Account (linked)
+#: inc/translation-strings.php:122
+msgid "You can (de)activate your %1$s license from here or manage domains from your %2$s."
+msgstr "Hier kannst Du Deine %1$s-Lizenz (de)aktivieren oder Domains von Deinem %2$s aus verwalten."
+
+#: inc/translation-strings.php:120
+msgid "Deactivate license for this site"
+msgstr "Lizenz für diese Seite deaktivieren"
+
+#: inc/translation-strings.php:119
+msgid "Activate license for this site"
+msgstr "Lizenz für diese Seite aktivieren"
+
+#: inc/translation-strings.php:118
+msgid "Check license key"
+msgstr "Überprüfe deinen Lizenzschlüssel"
+
+#: inc/translation-strings.php:117
+msgid "License action"
+msgstr "Lizenz-Aktion"
+
+#. Translators: Account (linked)
+#: inc/translation-strings.php:113
+msgid "Please note: Auto-updates are blocked for non-stable versions. Disabling this option will <em>not</em> automatically revert the plugin to the latest stable release. To downgrade manually, first download the latest stable release from your %1$s and then install it via %2$s."
+msgstr "Bitte beachte: Automatische Updates sind für nicht stabile Versionen blockiert. Durch Deaktivieren dieser Option wird das Plug-in <em>nicht</em> automatisch auf die neueste stabile Version zurückgesetzt. Für ein manuelles Rücksetzen lade zuerst die neueste stabile Version von Ihrem %1$s herunter und installieren sie dann über %2$s."
+
+#: inc/translation-strings.php:111
+msgid "This option will allow you to update the plugin to the latest beta release."
+msgstr "Mit dieser Option kannst Du das Plugin auf die neueste Beta-Version aktualisieren."
+
+#. Translators: Premium Plugin name
+#: inc/translation-strings.php:108
+msgid "Get updates for pre-release versions of %s."
+msgstr "Erhalte Updates für Vorabversionen von %s."
+
+#: inc/translation-strings.php:106
+msgid "Beta version"
+msgstr "Beta-Versionen"
+
+#. Translators: Account (linked), Premium Plugin name
+#: inc/translation-strings.php:101
+msgid "Please check your %1$s for possibilities to upgrade your %2$s license."
+msgstr "Bitte überprüfe Dein %1$s auf Möglichkeiten zum Upgrade Deiner %2$s-Lizenz."
+
+#: inc/translation-strings.php:98
+msgid "renew your license"
+msgstr "erneuere Deine Lizenz"
+
+#. Translators: Premium Plugin name, renew your license (linked)
+#: inc/translation-strings.php:96
+msgid "To continue receiving updates for %1$s, please %2$s."
+msgstr "Um weiterhin Updates für %1$s zu erhalten, bitte %2$s."
+
+#. Translators: Plugin name
+#: inc/translation-strings.php:92
+msgid "To receive updates for %s, please activate your license for this site."
+msgstr "Um Updates für %s zu erhalten, aktiviere bitte Deine Lizenz für diese Seite."
+
+#. Translators: Expiration date
+#: inc/translation-strings.php:88
+msgid "It expires on %s."
+msgstr "Läuft ab am %s."
+
+#: inc/translation-strings.php:85 inc/translation-strings.php:195
+msgid "Your license is active for this site."
+msgstr "Deine Lizenz ist für diese Website aktiv."
+
+#: inc/translation-strings.php:84
+msgid "Enter your license key."
+msgstr "Gib deinen Lizenzschlüssel ein."
+
+#: inc/translation-strings.php:83
+msgid "License key"
+msgstr "Lizenzschlüssel"
+
+#: inc/translation-strings.php:81 inc/translation-strings.php:102
+#: inc/translation-strings.php:114 inc/translation-strings.php:124
+msgid "Status301 Premium account"
+msgstr "Status301 Premium-Konto"
+
+#. Translators: Plugin name, Status301 Premium account (linked)
+#: inc/translation-strings.php:79
+msgid "You can find your %1$s license key in your %2$s."
+msgstr "Du findest Deinen %1$s-Lizenzschlüssel in Deinem %2$s."
+
+#: inc/translation-strings.php:77
+msgid "An active license key grants you access to plugin updates and support. If a license key is absent, deactivated or expired, the plugin may continue to work properly but you will not receive automatic updates."
+msgstr "Ein aktiver Lizenzschlüssel gewährt Dir Zugriff auf Plugin-Updates und Support. Wenn ein Lizenzschlüssel fehlt, deaktiviert oder abgelaufen ist, funktioniert das Plugin möglicherweise weiterhin ordnungsgemäß, aber Du erhältst keine automatischen Updates."
+
+#: inc/translation-strings.php:75 inc/translation-strings.php:80
+#: inc/translation-strings.php:93 inc/translation-strings.php:97
+#: inc/translation-strings.php:103 inc/translation-strings.php:109
+#: inc/translation-strings.php:123 inc/translation-strings.php:130
+#: inc/translation-strings.php:135 inc/translation-strings.php:159
+#: inc/translation-strings.php:171 inc/translation-strings.php:179
+#: inc/translation-strings.php:187
+msgid "Easy FancyBox Pro"
+msgstr "Easy FancyBox Pro"
+
+#. Translators: Plugin name, renew your license (linked)
+#: inc/translation-strings.php:74
+msgid "Enter your license key for %s."
+msgstr "Gib Deinen Lizenzschlüssel für %s ein."
+
+#: inc/translation-strings.php:71
+msgid "License"
+msgstr "Lizenz"
+
+#: inc/translation-strings.php:70
+msgid "Easy FancyBox Pro License"
+msgstr "Easy FancyBox Pro Lizenz"
+
+#: inc/translation-strings.php:15
+msgid "First VideoPress link"
+msgstr "Erster VideoPress Link"
+
+#: inc/fancybox-options.php:1351
+msgid "VideoPress"
+msgstr "VideoPress"
+
+#: inc/class-easyfancybox-admin.php:679
+msgid "Rate ★★★★★"
+msgstr "Bewerte ★★★★★"
+
+#: inc/fancybox-options.php:1054
+msgid "External viewers have bandwidth, usage rate and and file size limits."
+msgstr "Externe Viewer hat reduzierte Limits für Bandbreite, Benutzungsrate und Dateigröße."
+
+#: inc/fancybox-options.php:1051
+msgid "Google Docs Viewer (external)"
+msgstr "Google Docs Viewer (extern)"
+
+#: inc/fancybox-options.php:1049
+msgid "Embed tag"
+msgstr "Tag einbetten"
+
+#: inc/fancybox-options.php:508
+msgid "Do not use wp_add_inline_script/style (may solve issues with old minification plugins)"
+msgstr "Verwende nicht wp_add_inline_script/style (das könnte Probleme mit älteren Minimierungs-Plugins lösen)"
+
+#: inc/fancybox-options.php:499
+msgid "Do not include standard WordPress jQuery library (do this only if you are sure jQuery is included from another source!)"
+msgstr "Inkludiere nicht die Standard WordPress jQuery Bibloithek (Mache das nur, wenn Du sicher bist, dass jQuery aus einer anderen Quelle eingebunden wird!)"
+
+#: inc/fancybox-options.php:490
+msgid "Move scripts from footer to theme head section (not recommended for site load times!)"
+msgstr "Verschiebe die Scripts vom Footer zum Header des Themes (nicht empfohlen, da es möglicherweise die Ladezeiten verschlechtert!)"
+
+#: inc/fancybox-options.php:481
+msgid "Higher is later."
+msgstr "Höher ist später."
+
+#: inc/fancybox-options.php:481
+msgid "Default priority is 10."
+msgstr "Standard Priorität ist 10."
+
+#: inc/fancybox-options.php:472
+msgid "FancyBox script priority"
+msgstr "FancyBox Script Priorität"
+
+#: inc/fancybox-options.php:468
+msgid "Try to deactivate all conflicting light box scripts in your theme or other plugins. If this is not possible, try a higher script priority number which means scripts are added later, wich may allow them to override conflicting scripts. A lower priority number, excluding WordPress standard jQuery, or even moving the plugin scripts to the header may work in cases where there are blocking errors occuring in other script."
+msgstr "Versuche, alle kollidierenden Lightbox-Scripts im Theme oder in Plugins zu deaktivieren. Falls das nicht möglich ist, versuche es mit einer höherer Priorität-Zahl. Dann werden die Script später geladen und es ist möglich, dass damit kollidierenden Scripte überschrieben werden. Eine niedrigere Priorität-Zahl, deaktivieren des WordPress Standard jQuery oder Verschieben der Scripte des Plugins in den Header kann in Einzelfällen dort funktionieren, wo  blockierende Fehler in anderen Scipts auftreten."
+
+#: inc/fancybox-options.php:468
+msgid "Theme & plugins compatibility"
+msgstr "Theme- & Plugin-Kompatibilität"
+
+#. Translators: Plugin name (linked), version number
+#: inc/translation-strings.php:140
+msgid "Please upgrade %1$s to version %2$s or later."
+msgstr "Bitte upgrade %1$s zu Version %2$s oder höher"
+
+#: inc/translation-strings.php:10
+msgid "Link with ID matching URL hash"
+msgstr "Verlinken mit ID passend zum URL Hash"
+
+#: inc/fancybox-options.php:756 inc/fancybox-options.php:1132
+#: inc/fancybox-options.php:1228 inc/fancybox-options.php:1341
+#: inc/fancybox-options.php:1495 inc/fancybox-options.php:1625
+#: inc/fancybox-options.php:1753 inc/fancybox-options.php:1858
+msgid "Allow title from thumbnail alt attribute."
+msgstr "Erlaube den Titel vom Alt-Attribut des Vorschaubildes."
+
+#: inc/fancybox-options.php:710 inc/fancybox-options.php:1092
+#: inc/fancybox-options.php:1206 inc/fancybox-options.php:1299
+#: inc/fancybox-options.php:1453 inc/fancybox-options.php:1583
+#: inc/fancybox-options.php:1711 inc/fancybox-options.php:1816
+msgid "FancyBox will try to get a title from the link or thumbnail title attributes."
+msgstr "FancyBox wird versuchen, einen Titel aus dem Link oder dem Alt-Attribut des Vorschaubildes zu erstellen."
+
+#: inc/translation-strings.php:55
+msgid "easeInOutBounce"
+msgstr "easeInOutBounce"
+
+#: inc/translation-strings.php:54
+msgid "easeOutBounce"
+msgstr "easeOutBounce"
+
+#: inc/translation-strings.php:53
+msgid "easeInBounce"
+msgstr "easeInBounce"
+
+#: inc/translation-strings.php:52
+msgid "easeInOutBack"
+msgstr "easeInOutBack"
+
+#: inc/translation-strings.php:51
+msgid "easeInOutElastic"
+msgstr "easeInOutElastic"
+
+#: inc/translation-strings.php:50
+msgid "easeOutElastic"
+msgstr "easeOutElastic"
+
+#: inc/translation-strings.php:49
+msgid "easeInElastic"
+msgstr "easeInElastic"
+
+#: inc/translation-strings.php:48
+msgid "easeInOutCirc"
+msgstr "easeInOutCirc"
+
+#: inc/translation-strings.php:47
+msgid "easeOutCirc"
+msgstr "easeOutCirc"
+
+#: inc/translation-strings.php:46
+msgid "easeInCirc"
+msgstr "easeInCirc"
+
+#: inc/translation-strings.php:45
+msgid "easeInOutExpo"
+msgstr "easeInOutExpo"
+
+#: inc/translation-strings.php:44
+msgid "easeOutExpo"
+msgstr "easeOutExpo"
+
+#: inc/translation-strings.php:43
+msgid "easeInExpo"
+msgstr "easeInExpo"
+
+#: inc/translation-strings.php:42
+msgid "easeInOutSine"
+msgstr "easeInOutSine"
+
+#: inc/translation-strings.php:41
+msgid "easeOutSine"
+msgstr "easeOutSine"
+
+#: inc/translation-strings.php:40
+msgid "easeInSine"
+msgstr "easeInSine"
+
+#: inc/translation-strings.php:39
+msgid "easeInOutQuint"
+msgstr "easeInOutQuint"
+
+#: inc/translation-strings.php:38
+msgid "easeOutQuint"
+msgstr "easeOutQuint"
+
+#: inc/translation-strings.php:37
+msgid "easeInQuint"
+msgstr "easeInQuint"
+
+#: inc/translation-strings.php:36
+msgid "easeInOutQuart"
+msgstr "easeInOutQuart"
+
+#: inc/translation-strings.php:35
+msgid "easeOutQuart"
+msgstr "easeOutQuart"
+
+#: inc/translation-strings.php:34
+msgid "easeInQuart"
+msgstr "easeInQuart"
+
+#: inc/translation-strings.php:33
+msgid "easeInOutCubic"
+msgstr "easeInOutCubic"
+
+#: inc/translation-strings.php:32
+msgid "easeOutCubic"
+msgstr "easeOutCubic"
+
+#: inc/translation-strings.php:31
+msgid "easeInCubic"
+msgstr "easeInCubic"
+
+#: inc/translation-strings.php:30
+msgid "easeInOutQuad"
+msgstr "easeInOutQuad"
+
+#: inc/translation-strings.php:29
+msgid "easeOutQuad"
+msgstr "easeOutQuad"
+
+#: inc/translation-strings.php:28
+msgid "easeInQuad"
+msgstr "easeInQuad"
+
+#: inc/translation-strings.php:25
+msgid "Links inside Section(s) only (below)"
+msgstr "Links nur innerhalb von Bereich(en) only (nachstehend)"
+
+#: inc/translation-strings.php:22
+msgid "Treat popups on different URLs separately"
+msgstr "Popus auf abweichenden URLs anders behandeln"
+
+#: inc/translation-strings.php:20
+msgid "First of any link"
+msgstr "Erster Link"
+
+#: inc/translation-strings.php:19
+msgid "First iFrame link"
+msgstr "Erster iframe Link"
+
+#: inc/translation-strings.php:18
+msgid "First Dailymotion link"
+msgstr "Erster Dailymotion Link"
+
+#: inc/translation-strings.php:17
+msgid "First Vimeo link"
+msgstr "Erster Vimeo Link"
+
+#: inc/translation-strings.php:16
+msgid "First YouTube link"
+msgstr "Erster YouTube Link"
+
+#: inc/translation-strings.php:14
+msgid "First SVG link"
+msgstr "Erster SVG Link"
+
+#: inc/translation-strings.php:13
+msgid "First SWF link"
+msgstr "Erster SWF Link"
+
+#: inc/translation-strings.php:12
+msgid "First PDF link"
+msgstr "Erster PDF Link"
+
+#: inc/translation-strings.php:11
+msgid "First Image link"
+msgstr "Erster Bild Link"
+
+#: inc/translation-strings.php:7
+msgid "Set a border radius to create rounded corners. Higher is rounder."
+msgstr "Einen Radius für abgerundete Kanten festlegen. Höher = runder"
+
+#: inc/fancybox-options.php:1869
+msgid "Allow embedded content to jump to full screen mode"
+msgstr "Eingebetteten Inhalt erlauben zum Umspringen auf den Vollbildmodus."
+
+#: inc/fancybox-options.php:1050
+msgid "iFrame tag (let browser decide)"
+msgstr "iFrame Tag (gemäß Browsereinstellungen)"
+
+#: inc/fancybox-options.php:1048
+msgid "Object tag (plus fall-back link)"
+msgstr "Object-Tag (plus Link für Fallback)"
+
+#: inc/fancybox-options.php:1042
+msgid "Embed with"
+msgstr "Eingebettete Breite"
+
+#: inc/fancybox-options.php:911
+msgid "Try to adjust size to inline/html content. If unchecked the default dimensions will be used."
+msgstr "Versuche die Größe den Inline/HTML-Inhaltes anzupassen. Falls nicht angehakt, werden die Standard-Größen verwendet."
+
+#: inc/fancybox-options.php:611
+msgid "Force FancyBox to treat all media linked with class=\"fancybox\" as images?"
+msgstr "FancyBox zwingen, alle verlinkten Medien mit  class=\"fancybox\" als Bilder zu behandeln?"
+
+#: inc/fancybox-options.php:421
+msgid "1 Year"
+msgstr "Ein Jahr"
+
+#: inc/fancybox-options.php:420
+msgid "1 Month"
+msgstr "Ein Monat"
+
+#: inc/fancybox-options.php:419
+msgid "1 Week"
+msgstr "1 Woche"
+
+#: inc/fancybox-options.php:418
+msgid "1 Day"
+msgstr "Ein Tag"
+
+#: inc/fancybox-options.php:406
+msgid "Delay in milliseconds"
+msgstr "Verzögerung in Millisekunden"
+
+#. translators: %1$s is replaced with a query paramater
+#: views/admin-notice.php:30
+msgid "Or you can ignore and <a href=\"%1$s\">hide this message</a>."
+msgstr "Ignorieren und <a href=\"%1$s\">Nachricht ausblenden</a>."
+
+#: views/admin-notice.php:27
+msgid "Please contact your web site administrator."
+msgstr "Bitte kontaktiere Deinen Webiste-Administrator"
+
+#: inc/translation-strings.php:138 views/admin-notice.php:19
+msgid "Notice: The current Easy FancyBox plugin version is not fully compatible with your version of the Pro extension. Some advanced options may not be functional."
+msgstr "INFO: die aktuelle Easy FancyBox Pluginversion ist nicht vollständig kompatibel mit Deiner Version der Pro-Erweiterung. Einige der erweiterten Option könnten nicht funktionieren"
+
+#: inc/fancybox-options.php:1768
+msgid "To make a website or HTML document open in an overlay, use the class \"fancybox-iframe\" for its link."
+msgstr "Um eine Website oder ein HTML-Dokument in einer Überlagerung anzuzeigen, verwende  class=\"fancybox-iframe\" für den Link."
+
+#: inc/fancybox-options.php:1640
+msgid "To make any Dailymotion movie open in an overlay, switch on Autodetect or use the class \"fancybox-dailymotion\" for its link."
+msgstr "Um jeden Dailymotion Film in einer Überlagerung anzuzeigen, wechsle zu Autodetect oder verwende class=\"fancybox-dailymotion\" für den Link. "
+
+#: inc/fancybox-options.php:1513
+msgid "To make any Vimeo movie open in an overlay, switch on Autodetect or use the class \"fancybox-vimeo\" for its link."
+msgstr "Um jeden Vimeo Film in einer Überlagerung anzuzeigen, wechsle zu Autodetect oder verwende class=\"fancybox-vimeo\" für den Link. "
+
+#: inc/fancybox-options.php:1375
+msgid "To make any YouTube movie open in an overlay, switch on Autodetect or use the class \"fancybox-youtube\" for its link."
+msgstr "Um jeden YouTube Film in einer Überlagerung anzuzeigen, wechsle zu Autodetect oder verwende class=\"fancybox-youtube\" für den Link. "
+
+#: inc/fancybox-options.php:1017
+msgid "To make any PDF document file open in an overlay, switch on Autodetect or use the class \"fancybox-pdf\" for its link."
+msgstr "Um jedes PDF-Datei (.pdf) in einer Überlagerung anzuzeigen, wechsle zu Autodetect oder verwende class=\"fancybox-pdf\" für den Link. "
+
+#: inc/fancybox-options.php:925
+msgid "Define scrolling and scrollbar visibility."
+msgstr "Scrolling und Sichtbarkeit der Scrollbar festlegen"
+
+#: inc/fancybox-options.php:922
+msgid "Never"
+msgstr "Nie"
+
+#: inc/fancybox-options.php:921
+msgid "Always"
+msgstr "Immer"
+
+#: inc/fancybox-options.php:920
+msgid "Auto"
+msgstr "Auto"
+
+#: inc/fancybox-options.php:915
+msgid "Scrolling"
+msgstr "Scrollen"
+
+#: inc/translation-strings.php:67
+msgid "(12 seconds)"
+msgstr "(12 Sekunden)"
+
+#: inc/translation-strings.php:66
+msgid "(9 seconds)"
+msgstr "(9 Sekunden)"
+
+#: inc/translation-strings.php:65
+msgid "(6 seconds)"
+msgstr "(6 Sekunden)"
+
+#: inc/translation-strings.php:64
+msgid "(3 seconds)"
+msgstr "(3 Sekunden)"
+
+#: inc/translation-strings.php:63
+msgid "Auto-rotation uses a fixed 3, 6, 9 or 12 second pause per image."
+msgstr "Auto-Rotation verwendet eine fixe 3, 6, 9 oder 12 Sekunden Pause pro Bild."
+
+#: inc/translation-strings.php:62
+msgid "Hide/show title on mouse hover action works best with Overlay title position."
+msgstr "Verbergen/Zeigen des Titel bei Maus-Over funtkioniert am besten mit der Überlagerung Titel Position"
+
+#: inc/translation-strings.php:61
+msgid "Examples: If your theme wraps post content in a div with class post, change this value to \"div.post\". If you want to group images in a WordPress gallery together, use \".gallery,.wp-block-gallery,.tiled-gallery\". If you want to include images in a sidebar with ID primary, add \", #primary\"."
+msgstr "Beispiele: Falls Dein Theme den Post-Inhalt innerhalb eines div mit class=\"post\" anzeigt, ändere diesen Wert auf \"div.post\". Falls Du Bilder in einer WordPress-Galerie zusammenfassen möchtest, verwende \".gallery,.wp-block-gallery,.tiled-gallery\". Falls Du Bilder in einer Sidebar mit ID=\"primary\" einfügen möchtest, ergänze \", #primary\"."
+
+#: inc/translation-strings.php:60
+msgid "This applies when <em>Apply to</em> is set to <em>Limited to Sections</em> and/or <em>Autogallery</em> is set to <em>Galleries per Section</em>. Adapt it to conform with your theme."
+msgstr "Dies wird verwendet wenn <em>Anwenden bei</em> ist eingestellt auf <em>Beschränkt auf Bereiche</em> und/oder <em>Autogallery</em> ist einegstellt auf<em>Galerien pro Bereich</em>. Passe es an, damit es zu Deinem Theme passt."
+
+#: inc/translation-strings.php:59
+msgid "Galleries per Section (below)"
+msgstr "Galerien pro Bereich (unterhalb)"
+
+#: inc/fancybox-options.php:837
+msgid "Fade speed"
+msgstr "Fade Geschwindigkeit"
+
+#: inc/fancybox-options.php:825
+msgid "Change speed"
+msgstr "Wechsel Geschwindigkeit "
+
+#: inc/fancybox-options.php:812
+msgid "Make galleries cyclic, allowing you to keep pressing next/back."
+msgstr "Galerien endlos ablaufen lassen, ermöglicht das Verwenden von Vor/Zurück."
+
+#: inc/fancybox-options.php:300
+msgid "Include Mousewheel jQuery extension to allow gallery browsing by mousewheel action."
+msgstr "Füge die Mousewheel jQuery Erweiterung ein, um das Mausrad für das Durchsehen einer Galerie verwenden zu können."
+
+#: inc/fancybox-options.php:801
+msgid "Arrow key strokes browse the gallery"
+msgstr "Erlauben Tastatureingabe für das Durchsehen einer Galerie"
+
+#: inc/fancybox-options.php:791
+msgid "Show the gallery navigation arrows"
+msgstr "Zeige die Pfeile zur Galerie-Navigation"
+
+#: inc/fancybox-options.php:778
+msgid "All in one gallery"
+msgstr "Alle in einer Galerie"
+
+#: inc/fancybox-options.php:777
+msgid "WordPress galleries only"
+msgstr "Nur WordPress Galerien"
+
+#: inc/fancybox-options.php:766
+msgid "Hide/show title on mouse hover action"
+msgstr "Verbergen/Zeigen bei Maus-over Aktionen"
+
+#: inc/fancybox-options.php:512
+msgid "Advanced"
+msgstr "Erweitert"
+
+#: inc/fancybox-options.php:723 inc/fancybox-options.php:741
+#: inc/fancybox-options.php:1104 inc/fancybox-options.php:1120
+#: inc/fancybox-options.php:1217 inc/fancybox-options.php:1311
+#: inc/fancybox-options.php:1328 inc/fancybox-options.php:1465
+#: inc/fancybox-options.php:1482 inc/fancybox-options.php:1595
+#: inc/fancybox-options.php:1612 inc/fancybox-options.php:1723
+#: inc/fancybox-options.php:1740 inc/fancybox-options.php:1828
+#: inc/fancybox-options.php:1845
+msgid "Inside"
+msgstr "Innerhalb"
+
+#: inc/fancybox-options.php:722 inc/fancybox-options.php:739
+#: inc/fancybox-options.php:1103 inc/fancybox-options.php:1119
+#: inc/fancybox-options.php:1216 inc/fancybox-options.php:1310
+#: inc/fancybox-options.php:1326 inc/fancybox-options.php:1464
+#: inc/fancybox-options.php:1480 inc/fancybox-options.php:1594
+#: inc/fancybox-options.php:1610 inc/fancybox-options.php:1722
+#: inc/fancybox-options.php:1738 inc/fancybox-options.php:1827
+#: inc/fancybox-options.php:1843
+msgid "Outside"
+msgstr "Außerhalb"
+
+#: inc/fancybox-options.php:724 inc/fancybox-options.php:743
+#: inc/fancybox-options.php:1102 inc/fancybox-options.php:1118
+#: inc/fancybox-options.php:1215 inc/fancybox-options.php:1309
+#: inc/fancybox-options.php:1325 inc/fancybox-options.php:1463
+#: inc/fancybox-options.php:1479 inc/fancybox-options.php:1593
+#: inc/fancybox-options.php:1609 inc/fancybox-options.php:1721
+#: inc/fancybox-options.php:1737 inc/fancybox-options.php:1826
+#: inc/fancybox-options.php:1842
+msgid "Float"
+msgstr "Float"
+
+#: inc/fancybox-options.php:714 inc/fancybox-options.php:1096
+#: inc/fancybox-options.php:1110 inc/fancybox-options.php:1210
+#: inc/fancybox-options.php:1303 inc/fancybox-options.php:1457
+#: inc/fancybox-options.php:1471 inc/fancybox-options.php:1587
+#: inc/fancybox-options.php:1715 inc/fancybox-options.php:1820
+msgid "Title Position"
+msgstr "Titel Position"
+
+#: inc/fancybox-options.php:1206
+msgid "Show title."
+msgstr "Zeige Titel."
+
+#: inc/fancybox-options.php:700 inc/fancybox-options.php:1000
+msgid "Close FancyBox when content is clicked"
+msgstr "FancyBox schließen, sobald auf den Inhalt geklickt wird"
+
+#: inc/fancybox-options.php:690 inc/fancybox-options.php:990
+msgid "Transparency fade during elastic transition. CAUTION: Use only when at least Transition In is set to Elastic!"
+msgstr "Transparenz verblasst während des \"elastic\" Überganges. ACHTUNG: nur verwenden, wenn zumindest der Übergang \"In\" auf \"Elastic\" eingestellt ist!"
+
+#: inc/fancybox-options.php:672 inc/fancybox-options.php:972
+msgid "Easing Out"
+msgstr "Easing Out"
+
+#: inc/fancybox-options.php:957
+msgid "Transition Out"
+msgstr "Transition Out"
+
+#: inc/fancybox-options.php:650 inc/fancybox-options.php:678
+#: inc/fancybox-options.php:950 inc/fancybox-options.php:978
+msgid "Swing"
+msgstr "Swing"
+
+#: inc/fancybox-options.php:649 inc/fancybox-options.php:677
+#: inc/fancybox-options.php:949 inc/fancybox-options.php:977
+msgid "Linear"
+msgstr "Linear"
+
+#: inc/fancybox-options.php:644 inc/fancybox-options.php:944
+msgid "Easing In"
+msgstr "Easing In"
+
+#: inc/fancybox-options.php:623 inc/fancybox-options.php:637
+#: inc/fancybox-options.php:665 inc/fancybox-options.php:937
+#: inc/fancybox-options.php:965
+msgid "Elastic"
+msgstr "Elastic"
+
+#: inc/fancybox-options.php:622 inc/fancybox-options.php:636
+#: inc/fancybox-options.php:664 inc/fancybox-options.php:936
+#: inc/fancybox-options.php:964
+msgid "Fade"
+msgstr "Ein-/ Ausblenden"
+
+#: inc/fancybox-options.php:929
+msgid "Transition In"
+msgstr "Übergang In"
+
+#: inc/fancybox-options.php:595
+msgid "All image links"
+msgstr "Alle Bildlinks"
+
+#: inc/fancybox-options.php:588
+msgid "Apply to"
+msgstr "Anwenden auf"
+
+#: inc/fancybox-options.php:576 inc/fancybox-options.php:1026
+#: inc/fancybox-options.php:1152 inc/fancybox-options.php:1244
+#: inc/fancybox-options.php:1357 inc/fancybox-options.php:1379
+#: inc/fancybox-options.php:1517 inc/fancybox-options.php:1644
+msgid "Autodetect"
+msgstr "Autodetect"
+
+#: inc/fancybox-options.php:562
+msgid "To make images open in an overlay, add their extension to the Autodetect field or use the class \"fancybox\" for its link. Clear field to switch off all autodetection."
+msgstr "Um Bilder in einer Überlagerung anzuzeigen, für deren Dateierweiterung zum Autodetekt-Feld hinzu oder verwende class=\"fancybox\" für den Link. Feld leeren um Autodetekt auszuschalten"
+
+#: inc/fancybox-options.php:464
+msgid "Include IE 8 compatibility style rules"
+msgstr "Stil-Regeln für IE 8 Kompatibilität einfügen"
+
+#: inc/fancybox-options.php:376
+msgid "Miscellaneous"
+msgstr "Weitere "
+
+#: inc/fancybox-options.php:278 inc/fancybox-options.php:291
+#: inc/fancybox-options.php:833 inc/fancybox-options.php:846
+#: inc/fancybox-options.php:882
+msgid "Duration in milliseconds. Higher is slower."
+msgstr "Länge in Millisekunden. Größer ist langsamer."
+
+#: inc/fancybox-options.php:282
+msgid "Closing speed"
+msgstr "Geschwindigkeit beim Schließen"
+
+#: inc/fancybox-options.php:269
+msgid "Opening speed"
+msgstr "Geschwindigkeit beim Öffnen"
+
+#: inc/fancybox-options.php:128
+msgid "Scale large content down to fit in the browser viewport."
+msgstr "Skaliere große Inhalte damit sie in das Browser Fenster passen."
+
+#: inc/fancybox-options.php:249
+msgid "Center when scrolling"
+msgstr "Zentrieren beim Scrollen"
+
+#: inc/fancybox-options.php:215
+msgid "Border radius"
+msgstr "Eckenradius"
+
+#: inc/fancybox-options.php:198 inc/fancybox-options.php:349
+#: inc/fancybox-options.php:584
+msgid "Example:"
+msgstr "Beispiel:"
+
+#: inc/fancybox-options.php:198
+msgid "Use RGBA notation for semi-transparent borders."
+msgstr "Verwende RGBA Schreibweise für halb transparente Ränder."
+
+#: inc/fancybox-options.php:1054
+msgid "Note:"
+msgstr "Hinweis:"
+
+#: inc/fancybox-options.php:193
+msgid "Border color"
+msgstr "Randfarbe"
+
+#: inc/fancybox-options.php:229
+msgid "Title color"
+msgstr "Titelfarbe"
+
+#: inc/fancybox-options.php:239
+msgid "Text color"
+msgstr "Textfarbe"
+
+#: inc/fancybox-options.php:138
+msgid "Show the (X) close button"
+msgstr "Zeige den (X) Schließen-Button"
+
+#: inc/fancybox-options.php:337
+msgid "Enter an HTML color value."
+msgstr "Trage einen HTML Farbwert ein."
+
+#: inc/fancybox-options.php:278 inc/fancybox-options.php:291
+#: inc/fancybox-options.php:337 inc/fancybox-options.php:361
+#: inc/fancybox-options.php:406 inc/fancybox-options.php:441
+#: inc/fancybox-options.php:454 inc/fancybox-options.php:543
+#: inc/fancybox-options.php:833 inc/fancybox-options.php:846
+#: inc/fancybox-options.php:882
+msgid "Default:"
+msgstr "Standard:"
+
+#: inc/fancybox-options.php:361
+msgid "Value between 0 and 1. "
+msgstr "Wert zwischen 0 und 1. "
+
+#: inc/fancybox-options.php:328
+msgid "Close FancyBox when overlay is clicked."
+msgstr "FancyBox schließen, wenn auf die Überlagerung geklickt wird"
+
+#: inc/fancybox-options.php:318
+msgid "Show the overlay around content opened in FancyBox."
+msgstr "Zeige die Überlagerung um einen in FancyBox geöffneten Inhalt"
+
+#: inc/fancybox-options.php:721 inc/fancybox-options.php:738
+msgid "Overlay"
+msgstr "Overlay"
+
+#: inc/fancybox-options.php:522
+msgid "Include Metadata jQuery extension to allow passing custom parameters via link class."
+msgstr "Füge die Metadata jQuery Erweiterung ein, um individuelle Parameter über die Link-Klasse weiterzugeben."
+
+#: inc/fancybox-options.php:389
+msgid "Link with ID \"fancybox-auto\""
+msgstr "Verbinde mit der ID \"fancybox-auto\""
+
+#: inc/fancybox-options.php:536
+msgid "Exclude"
+msgstr "Ausschließen"
+
+#: inc/fancybox-options.php:1238
+msgid "SVG"
+msgstr "SVG"
+
+#: inc/class-easyfancybox-admin.php:678 inc/translation-strings.php:72
+#: inc/translation-strings.php:167
+msgid "Support"
+msgstr "Support"
+
+#: inc/fancybox-options.php:1762
+msgid "iFrames"
+msgstr "iFrames"
+
+#: inc/fancybox-options.php:1634
+msgid "Dailymotion"
+msgstr "Dailymotion"
+
+#: inc/fancybox-options.php:1507
+msgid "Vimeo"
+msgstr "Vimeo"
+
+#: inc/fancybox-options.php:1369
+msgid "YouTube"
+msgstr "YouTube"
+
+#: inc/fancybox-options.php:1145
+msgid "SWF"
+msgstr "SWF"
+
+#: inc/fancybox-options.php:1011
+msgid "PDF"
+msgstr "PDF"
+
+#: inc/fancybox-options.php:888
+msgid "Inline Content"
+msgstr "Inline Content"
+
+#: inc/fancybox-options.php:559
+msgid "Images"
+msgstr "Bilder"
+
+#: inc/fancybox-options.php:17
+msgid "Global settings"
+msgstr "Globale Einstellungen"
+
+#: inc/class-easyfancybox-admin.php:46 inc/translation-strings.php:131
+#: inc/translation-strings.php:136 inc/translation-strings.php:141
+msgid "Easy FancyBox"
+msgstr "Easy FancyBox"
