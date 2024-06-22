@@ -8,11 +8,18 @@
   -webkit-font-smoothing: antialiased !important;
 }
 
-.deepblue {
-  background-color: $blau-dunkel;
+#page-header + .panel-layout p > a[title=""],
+.news-footer p > a[title=""] {
+  color: $blau-dunkel;
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: 3px;
+  border-bottom: 1px solid $blau-dunkel;
+  line-height: 1;
 
-  * {
-    color: #fff;
+  &:hover {
+    color: $gold-dunkel;
+    border-color: $gold-dunkel;
   }
 }
 
@@ -42,4 +49,35 @@ img {
   img {
     border-radius: 0 $r3 0 $r3;
   }
+}
+
+.rounded-2-0x0x {
+  border-radius: 0 $r2 0 $r2;
+  img {
+    border-radius: 0 $r2 0 $r2;
+  }
+}
+
+.rounded-3-x0x0 {
+  border-radius: $r3 0 $r3 0;
+  img {
+    border-radius: $r3 0 $r3 0;
+  }
+}
+
+.gallery {
+  & > .panel-grid-cell {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    & > div {
+      max-width: 33.333%;
+    }
+
+    .widget {
+      padding: 0 15px;
+    }
+  }
+
 }

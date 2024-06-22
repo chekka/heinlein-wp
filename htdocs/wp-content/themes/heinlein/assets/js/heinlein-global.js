@@ -42,6 +42,21 @@
       dots: true
     });
 
+    $('form .slick').slick({
+      arrows: false,
+      dots: true,
+      infinite: false,
+      adaptiveHeight: true
+    });
+
+    $('form .slick .goprev').on('click',function(){
+      $('form .slick').slick('slickPrev');
+    });
+    
+    $('form .slick .gonext').on('click',function(){
+      $('form .slick').slick('slickNext');
+    });
+
     // Slick history slider
     $('.history-slider .panel-layout').slick({
       slidesToShow: 4,

@@ -26544,9 +26544,62 @@ svg .bg--white {
   font-weight: 600;
   src: local(""), url("../fonts/montserrat/montserrat-v25-latin-600.woff2") format("woff2"), url("../fonts/montserrat/montserrat-v25-latin-600.woff") format("woff");
 }
+a[title="Virtual showroom"],
+a[title="Look inside"],
+a[title="Mehr erfahren"],
+a[title=Anfrage-Formular] {
+  display: inline-block;
+  font-size: 1em;
+  line-height: 3em !important;
+  text-transform: none;
+  color: #5c6c90;
+  letter-spacing: 0.05;
+  padding: 0 21px;
+  margin-bottom: 50px;
+  border: 1px solid #5c6c90 !important;
+  border-radius: 0 18px 0 18px;
+}
+a[title="Virtual showroom"]:hover,
+a[title="Look inside"]:hover,
+a[title="Mehr erfahren"]:hover,
+a[title=Anfrage-Formular]:hover {
+  color: #001e4b !important;
+  border-color: #001e4b !important;
+}
+
+a[title="Look inside"],
+a[title="Mehr erfahren"],
+a[title=Anfrage-Formular] {
+  color: #fff;
+  border-color: #fff;
+}
+a[title="Look inside"]:hover,
+a[title="Mehr erfahren"]:hover,
+a[title=Anfrage-Formular]:hover {
+  color: #fff;
+  border-color: #aa8461;
+  background-color: #aa8461;
+}
+
+#nachhaltigkeit a[title="Mehr erfahren"] {
+  color: #00AF35;
+  border-color: #00AF35;
+}
+#nachhaltigkeit a[title="Mehr erfahren"]:hover {
+  color: #fff;
+  background-color: #00AF35;
+  border-color: #00AF35;
+}
+
 label {
   display: block;
-  margin-top: 1rem;
+  margin: 1rem 0 0.5em 0;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.wpcf7-radio label {
+  margin-top: 0;
 }
 
 input[type=text],
@@ -26560,6 +26613,68 @@ textarea {
   box-shadow: inset 0 3px 9px -7px rgba(0, 0, 0, 0.5);
   padding: 0 0.75rem;
   line-height: 2;
+  width: 100%;
+}
+
+textarea {
+  max-height: 150px;
+}
+
+.wpcf7-list-item {
+  display: inline-block;
+  margin: 0 2em 0 0;
+}
+.wpcf7-list-item label,
+.wpcf7-list-item input {
+  cursor: pointer;
+}
+
+input[type=radio],
+input[type=checkbox] {
+  transform: scale(1.333);
+}
+
+.wpcf7-list-item-label + input[type=radio],
+.wpcf7-list-item-label + input[type=checkbox] {
+  margin-left: 7px;
+}
+
+input[type=radio] + .wpcf7-list-item-label,
+input[type=checkbox] + .wpcf7-list-item-label {
+  margin-left: 7px;
+}
+
+form .slick-slide {
+  padding: 7px;
+}
+form div[class^=col-] {
+  margin-bottom: 30px;
+}
+form hr {
+  border: none;
+  border-bottom: 1px solid #001e4b;
+}
+form .gonext p,
+form .goprev p {
+  border: 1px solid #7f6445;
+  color: #7f6445 !important;
+  background-color: transparent;
+  border-radius: 0 18px 0 18px;
+  padding: 0.3em 2.1em;
+  cursor: pointer;
+  float: left;
+}
+form .gonext p:hover,
+form .goprev p:hover {
+  background-color: #fff;
+  border-color: #001e4b !important;
+  color: #001e4b !important;
+}
+form .gonext {
+  float: right;
+}
+form .section-title {
+  font-size: 1.5em;
 }
 
 * {
@@ -26572,11 +26687,19 @@ textarea {
   -webkit-font-smoothing: antialiased !important;
 }
 
-.deepblue {
-  background-color: #001e4b;
+#page-header + .panel-layout p > a[title=""],
+.news-footer p > a[title=""] {
+  color: #001e4b;
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #001e4b;
+  line-height: 1;
 }
-.deepblue * {
-  color: #fff;
+#page-header + .panel-layout p > a[title=""]:hover,
+.news-footer p > a[title=""]:hover {
+  color: #7f6445;
+  border-color: #7f6445;
 }
 
 img {
@@ -26604,6 +26727,32 @@ img {
 }
 .rounded-3-0x0x img {
   border-radius: 0 36px 0 36px;
+}
+
+.rounded-2-0x0x {
+  border-radius: 0 24px 0 24px;
+}
+.rounded-2-0x0x img {
+  border-radius: 0 24px 0 24px;
+}
+
+.rounded-3-x0x0 {
+  border-radius: 36px 0 36px 0;
+}
+.rounded-3-x0x0 img {
+  border-radius: 36px 0 36px 0;
+}
+
+.gallery > .panel-grid-cell {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.gallery > .panel-grid-cell > div {
+  max-width: 33.333%;
+}
+.gallery > .panel-grid-cell .widget {
+  padding: 0 15px;
 }
 
 .header-icon {
@@ -26661,48 +26810,6 @@ img {
   width: 200px;
   height: 240px;
   transform: translate(-50%, -85%);
-}
-
-a[title="Virtual showroom"],
-a[title="Look inside"],
-a[title="Mehr erfahren"] {
-  display: inline-block;
-  font-size: 1em;
-  line-height: 3em;
-  text-transform: none;
-  color: #5c6c90;
-  letter-spacing: 0.05;
-  padding: 0 21px;
-  margin-bottom: 50px;
-  border: 1px solid #5c6c90;
-  border-radius: 0 18px 0 18px;
-}
-a[title="Virtual showroom"]:hover,
-a[title="Look inside"]:hover,
-a[title="Mehr erfahren"]:hover {
-  color: #001e4b;
-  border-color: #001e4b;
-}
-
-a[title="Look inside"],
-a[title="Mehr erfahren"] {
-  color: #fff;
-  border-color: #fff;
-}
-a[title="Look inside"]:hover,
-a[title="Mehr erfahren"]:hover {
-  color: #5c6c90;
-  border-color: #5c6c90;
-}
-
-#nachhaltigkeit a[title="Mehr erfahren"] {
-  color: #00AF35;
-  border-color: #00AF35;
-}
-#nachhaltigkeit a[title="Mehr erfahren"]:hover {
-  color: #fff;
-  background-color: #00AF35;
-  border-color: #00AF35;
 }
 
 .video-placeholder .sow-image-container {
@@ -26787,6 +26894,7 @@ a[title="Mehr erfahren"]:hover {
 /* Fertigunsprozess */
 #prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell {
   display: flex;
+  flex-wrap: wrap;
 }
 #prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget {
   background-image: url(../images/prozess-scale.svg);
@@ -26795,17 +26903,32 @@ a[title="Mehr erfahren"]:hover {
   background-position: 0 calc(100% + 50px);
   padding: 0 0 130px 0;
   margin-bottom: 0 !important;
+  flex: 0 1 33.333%;
+}
+@media (max-width: 1199.98px) {
+  #prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget {
+    flex: 0 1 50%;
+  }
+}
+@media (max-width: 719.98px) {
+  #prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget {
+    flex: 0 1 100%;
+  }
 }
 #prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box {
   overflow: visible;
   padding: 0 0 0 25%;
-  border-radius: 0 24px 0 24px;
   position: relative;
 }
 #prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget {
   background-color: #fff;
   margin-bottom: 0 !important;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+}
+#prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget:first-child {
+  border-radius: 0 24px 0 0;
+}
+#prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget:last-child {
   border-radius: 0 0 0 24px;
 }
 #prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget img {
@@ -26825,20 +26948,42 @@ a[title="Mehr erfahren"]:hover {
   padding: 0 15px 77px 0;
   border-right: 2px solid #001e4b;
 }
+#prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget .widget-title + div {
+  padding: 20px 0;
+}
 #prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget p {
   margin: 0;
   padding-left: 20px;
+  line-height: 1.5;
 }
 #prozesskette .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget p strong {
   display: block;
   font-family: "Encode Sans", sans-serif;
   font-weight: 400;
   text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 0.333em;
   font-size: 1.2rem;
   line-height: 1.5;
   letter-spacing: 0.0777em;
   word-spacing: 0.222em;
-  margin-top: 1em;
+}
+
+#produkt-finder h4, #produkt-finder .h4 {
+  color: #001e4b;
+  font-family: "Encode Sans Expanded", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  font-size: 1.25rem;
+  margin-bottom: 0.777em;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+#produkt-finder p {
+  line-height: 1.4;
+  margin-bottom: 0.777em;
+  min-height: 42px;
 }
 
 [class*=content--] {
@@ -26944,6 +27089,69 @@ body {
 .single-video iframe {
   border-radius: 0 36px 0 36px;
   margin: auto;
+}
+
+.news-footer {
+  padding: 7vh 15px;
+  background-color: #eff2f7;
+  text-align: center;
+}
+.news-footer p {
+  margin-bottom: 0.5em;
+}
+
+.news-loop {
+  flex-wrap: wrap;
+}
+@media (min-width: 1040px) {
+  .news-loop .loop-item {
+    flex: 0 1 31.5%;
+  }
+}
+@media (max-width: 1039.98px) {
+  .news-loop .loop-item {
+    flex: 0 1 48%;
+  }
+}
+@media (max-width: 579.98px) {
+  .news-loop .loop-item {
+    flex: 0 1 100%;
+  }
+}
+.news-loop .loop-item > div {
+  padding: 20px;
+}
+.news-loop .loop-item p {
+  line-height: 1.5;
+}
+.news-loop .loop-item h2, .news-loop .loop-item .h2 {
+  font-size: 18px;
+  text-align: left;
+  color: var(--blau-dunkel);
+  letter-spacing: 0.07rem;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  font-weight: 400;
+  font-family: "Encode Sans Expanded", sans-serif;
+  line-height: 1.4;
+  margin-bottom: 0;
+  min-height: 65px;
+}
+.news-loop .loop-item .excerpt {
+  min-height: 140px;
+  hyphens: auto;
+}
+.news-loop .loop-item .news-item-footer {
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 40px;
+}
+.news-loop .loop-item .news-item-footer svg {
+  width: 40px;
+}
+.news-loop .loop-item .news-item-footer svg path {
+  stroke: #3c4c70;
+  fill: none;
 }
 
 .sow-slider-image-wrapper {
@@ -28200,7 +28408,7 @@ h3, .h3 {
   vertical-align: middle;
 }
 
-.bg--blau-dunkel * {
+.bg--blau-dunkel > div > .widget_sow-editor * {
   color: #fff;
 }
 

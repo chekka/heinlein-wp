@@ -1,0 +1,42 @@
+a[title="Virtual showroom"],
+a[title="Look inside"],
+a[title="Mehr erfahren"],
+a[title="Anfrage-Formular"] {
+  display: inline-block;
+  font-size: 1em;
+  line-height: 3em !important;
+  text-transform: none;
+  color: $blau-mittel-1;
+  letter-spacing: 0.05;
+  padding: 0 21px;
+  margin-bottom: 50px;
+  border: 1px solid $blau-mittel-1 !important;
+  border-radius: 0 $r1 0 $r1;
+
+  &:hover {
+    color: $blau-dunkel !important;
+    border-color: $blau-dunkel !important;
+  }
+}
+
+a[title="Look inside"],
+a[title="Mehr erfahren"],
+a[title="Anfrage-Formular"] {
+  color: #fff;
+  border-color: #fff;
+  &:hover {
+    color: #fff;
+    border-color: $gold;
+    background-color: $gold;
+  }
+}
+
+#nachhaltigkeit a[title="Mehr erfahren"] {
+  color: $green-text;
+  border-color: $green-text;
+  &:hover {
+    color: #fff;
+    background-color: $green-text;
+    border-color: $green-text;
+  }
+}

@@ -73,46 +73,6 @@
   }
 }
 
-a[title="Virtual showroom"],
-a[title="Look inside"],
-a[title="Mehr erfahren"] {
-  display: inline-block;
-  font-size: 1em;
-  line-height: 3em;
-  text-transform: none;
-  color: $blau-mittel-1;
-  letter-spacing: 0.05;
-  padding: 0 21px;
-  margin-bottom: 50px;
-  border: 1px solid $blau-mittel-1;
-  border-radius: 0 $r1 0 $r1;
-
-  &:hover {
-    color: $blau-dunkel;
-    border-color: $blau-dunkel;
-  }
-}
-
-a[title="Look inside"],
-a[title="Mehr erfahren"] {
-  color: #fff;
-  border-color: #fff;
-  &:hover {
-    color: $blau-mittel-1;
-    border-color: $blau-mittel-1;
-  }
-}
-
-#nachhaltigkeit a[title="Mehr erfahren"] {
-  color: $green-text;
-  border-color: $green-text;
-  &:hover {
-    color: #fff;
-    background-color: $green-text;
-    border-color: $green-text;
-  }
-}
-
 .video-placeholder {
   .sow-image-container {
     position: relative;
@@ -207,6 +167,7 @@ a[title="Mehr erfahren"] {
     & > .panel-grid {
       & > .panel-grid-cell {
         display: flex;
+        flex-wrap: wrap;
 
         & > .widget {
           background-image: url(../images/prozess-scale.svg);
@@ -215,18 +176,33 @@ a[title="Mehr erfahren"] {
           background-position: 0 calc(100% + 50px);
           padding: 0 0 130px 0;
           margin-bottom: 0 !important;
+          flex: 0 1 33.333%;
+
+          @include media-breakpoint-down(xl) {
+            flex: 0 1 50%;
+          }
+
+          @include media-breakpoint-down(md) {
+            flex: 0 1 100%;
+          }
 
           .box {
             overflow: visible;
-            padding: 0 0 0 25%;
-            border-radius: 0 $r2 0 $r2;
+            padding: 0 0 0 25%;            
             position: relative;
 
             .widget {
               background-color: #fff;
               margin-bottom: 0 !important;
               box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
-              border-radius: 0 0 0 $r2;
+              
+              &:first-child {
+                border-radius: 0 $r2 0 0;
+              }
+
+              &:last-child {
+                border-radius: 0 0 0 $r2;
+              }
 
               img {
                 border-radius: 0 $r2 0 0;
@@ -245,22 +221,28 @@ a[title="Mehr erfahren"] {
                 text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.222);
                 padding: 0 15px 77px 0;
                 border-right: 2px solid $blau-dunkel;
+
+                & + div {
+                  padding: 20px 0;
+                }
               }
 
               p {
                 margin: 0;
                 padding-left: 20px;
+                line-height: 1.5;
 
                 strong {
                   display: block;
                   font-family: "Encode Sans", sans-serif;
                   font-weight: 400;
                   text-align: left;
+                  text-transform: uppercase;
+                  margin-bottom: .333em;
                   font-size: 1.2rem;
                   line-height: 1.5;
                   letter-spacing: 0.0777em;
                   word-spacing: 0.222em;
-                  margin-top: 1em;
                 }
               }
             }
@@ -268,5 +250,24 @@ a[title="Mehr erfahren"] {
         }
       }
     }
+  }
+}
+
+#produkt-finder {
+  h4 {
+    color: $blau-dunkel;
+    font-family: "Encode Sans Expanded", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    font-size: 1.25rem;
+    margin-bottom: .777em;
+    font-weight: 400;
+    letter-spacing: normal;
+  }
+  p {
+    line-height: 1.4;
+    margin-bottom: .777em;
+    min-height: 42px;
   }
 }
