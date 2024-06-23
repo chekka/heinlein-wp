@@ -102,9 +102,9 @@ img {
             margin: 0 auto;
           }
 
-          &.panel-last-child {
-            margin: auto;
-          }
+          // &.panel-last-child {
+          //   margin: auto;
+          // }
         }
       }
     }
@@ -174,4 +174,61 @@ img {
 
 .ausbildung .sow-accordion-panel {
   background-color: $blau-light-2 !important;
+}
+
+.flip-box {
+  background-color: transparent;
+  width: 100%;
+  perspective: 1000px;
+
+  .so-widget-sow-editor {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.333s;
+    transform-style: preserve-3d;
+    min-height: 300px;
+
+    .widget-title {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $blau-dunkel;
+      color: white;
+      border-radius: 0 36px;
+      box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.3);
+      backface-visibility: hidden;
+      font-size: 22px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px;
+    }
+
+    .textwidget {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #ebeef4;
+      color: $blau-light-3;
+      transform: rotateY(180deg);
+      border-radius: 36px 0;
+      display: table;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px;
+
+      p {
+        font-family: "Encode Sans", sans-serif;
+        line-height: 1.6em;
+      }
+    }
+  }
+
+  &:hover .so-widget-sow-editor {
+    transform: rotateY(180deg);
+  }
 }

@@ -39,9 +39,12 @@
   max-width: 750px;
 }
 
-.content--md,
-.paragraph.width--md {
+.content--md {
   max-width: 650px;
+}
+
+.content--sm {
+  max-width: 560px;
 }
 
 .content--xs {
