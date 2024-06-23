@@ -5,6 +5,14 @@ label {
   font-weight: 400;
 }
 
+form {
+  .row {
+    p, label {
+      margin: 7px 0 0 0;
+    }
+  }
+}
+
 .wpcf7-radio {
   label {
     margin-top: 0;
@@ -31,7 +39,7 @@ textarea {
 
 .wpcf7-list-item {
   display: inline-block;
-  margin: 0 2em 0 0;
+  margin: 0 2em 0 0 !important;
 
   label,
   input {
@@ -39,23 +47,22 @@ textarea {
   }
 }
 
-input[type=radio],
-input[type=checkbox] {
+input[type="radio"],
+input[type="checkbox"] {
   transform: scale(1.333);
 }
 
-.wpcf7-list-item-label + input[type=radio],
-.wpcf7-list-item-label + input[type=checkbox] {
+.wpcf7-list-item-label + input[type="radio"],
+.wpcf7-list-item-label + input[type="checkbox"] {
   margin-left: 7px;
 }
 
-input[type=radio] + .wpcf7-list-item-label,
-input[type=checkbox] + .wpcf7-list-item-label {
+input[type="radio"] + .wpcf7-list-item-label,
+input[type="checkbox"] + .wpcf7-list-item-label {
   margin-left: 7px;
 }
 
 form {
-
   .slick-slide {
     padding: 7px;
   }
@@ -68,13 +75,13 @@ form {
     border-bottom: 1px solid $blau-dunkel;
   }
 
-  .gonext,
+  .gonext:not(.submit),
   .goprev {
     p {
       border: 1px solid $gold-dunkel;
       color: $gold-dunkel !important;
       background-color: transparent;
-      border-radius: 0 $r1 0 $r1;
+      border-radius: 0 $r1;
       padding: 0.3em 2.1em;
       cursor: pointer;
       float: left;
@@ -89,9 +96,43 @@ form {
 
   .gonext {
     float: right;
+
+    &.submit {
+      padding: 0;            
+
+      input {
+        color: #fff;
+        background-color: $gold-dunkel;
+        border: 1px solid $gold-dunkel;
+        border-radius: 0 $r1;
+        padding: 0.3em 2.1em;
+        cursor: pointer;
+        
+        &:hover {
+          background-color: $gold;
+        }
+
+        & + .wpcf7-spinner {
+          position: absolute;
+          left: -40px;
+        }
+      }
+    }
   }
 
   .section-title {
     font-size: 1.5em;
   }
+}
+
+.wpcf7-response-output {
+  margin: 3em 0 0 0 !important;
+  padding: 1em !important;
+  border-radius: 0 $r2;
+  background-color: #fff;
+  border-width: 1px !important;
+}
+
+.wpcf7-not-valid {
+    border: 1px solid #dc3232 !important;
 }

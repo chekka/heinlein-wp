@@ -47,12 +47,18 @@ a {
   text-decoration: none;
 }
 
-h2+p {
+.textwidget a {
+  color: $blau-dunkel;
+  border-bottom: 1px solid $blau-dunkel;
+  padding-bottom: 1px;
+}
+
+h2 + p {
   margin-top: -1rem;
 }
 
 .text-green * {
-  color: #00AF35;
+  color: #00af35;
 }
 
 p {
@@ -111,27 +117,33 @@ h3 {
   margin-top: 1em;
 }
 
-.textwidget ul li::before {
-  font-size: 0.4em;
-  line-height: 2em;
-  position: absolute;
-  left: 0px;
-  top: 7px;
-  vertical-align: middle;
+.textwidget ul li {
+  margin-bottom: 7px;
+  
+  &::before {
+    font-size: 0.4em;
+    line-height: 2em;
+    position: absolute;
+    left: 0px;
+    top: 7px;
+    vertical-align: middle;
+  }
 }
-
 .bg--blau-dunkel > div > .widget_sow-editor * {
   color: #fff;
 }
 
 @media (max-width: 575px) {
-  h1, .h1, h2, .h2 {
-      font-size: 1.8rem;
-      hyphens: auto;
-      -webkit-hyphens: auto;
-      margin: 0 auto 1em auto;
-      line-height: 1.2;
-      letter-spacing: 0;
-      text-transform: uppercase;
+  h1,
+  .h1,
+  h2,
+  .h2 {
+    font-size: 1.8rem;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    margin: 0 auto 1em auto;
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-transform: uppercase;
   }
 }

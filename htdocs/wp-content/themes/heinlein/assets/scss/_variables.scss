@@ -30,7 +30,7 @@ $ivory-hell-1: #f4f2ef;
 $ivory-hell-2: #eae5e1;
 $ivory-dunkel: #e4d8ce;
 
-$green-text: #00AF35;
+$green-text: #00af35;
 $green-bg: #97e678;
 
 $orange: #ff6b37;
@@ -42,7 +42,7 @@ $colors-list: (
   ("blau-mittel-1", $blau-mittel-1, $white),
   ("blau-mittel-1", $blau-mittel-1, $white),
   ("blau-mittel-2", $blau-mittel-2, $white),
-  ("blau-mittel-3", $blau-mittel-3, $white),  
+  ("blau-mittel-3", $blau-mittel-3, $white),
   ("blau-light-1", $blau-light-1, $blau-dunkel),
   ("blau-light-1", $blau-light-1, $blau-dunkel),
   ("blau-light-2", $blau-light-2, $blau-dunkel),
@@ -53,31 +53,30 @@ $colors-list: (
   ("blau-light-7", $blau-light-7, $blau-dunkel),
   ("gold", $gold, $white),
   ("gold-dunkel", $gold-dunkel, $white),
-
-  ("ivory-hell-1", $ivory-hell-1, $gold-dunkel),
+  ("ivory-hell-1", $ivory-hell-1, $blau-dunkel),
   ("ivory-hell-2", $ivory-hell-2, $gold-dunkel),
   ("ivory-dunkel", $ivory-dunkel, $gold-dunkel),
-  
   ("black", $black, $white),
-  ("white", $white, $black)
+  ("white", $white, $blau-dunkel)
 );
 
 @each $color in $colors-list {
-   .bg--#{nth($color,1)} {
-     background-color: #{nth($color, 2)};
-     color: #{nth($color, 3)};
-   }
-   svg .bg--#{nth($color,1)} {
-     fill: #{nth($color, 2)};
-   }
- }
- 
+  .bg--#{nth($color,1)} {
+    background-color: #{nth($color, 2)};
+    * {
+      color: #{nth($color, 3)};
+    }
+  }
+  svg .bg--#{nth($color,1)} {
+    fill: #{nth($color, 2)};
+  }
 
-
-
-
-
-
+  .txt--#{nth($color,1)} {
+    * {
+      color: #{nth($color, 2)};
+    }
+  }
+}
 
 //
 //
@@ -89,7 +88,7 @@ $r2: 24px;
 $r3: 36px;
 
 $box-hover-shadow: 0 12px 24px -3px rgba(0, 0, 0, 0.2);
-$box-shadow: 2px 2px 9px 0px rgba(0,0,0,0.175);
+$box-shadow: 2px 2px 9px 0px rgba(0, 0, 0, 0.175);
 //
 //
 // Layout
@@ -103,5 +102,3 @@ $pvw-3: $pvw * 3;
 
 $margin-1: 48px;
 $margin-2: 70px;
-
-

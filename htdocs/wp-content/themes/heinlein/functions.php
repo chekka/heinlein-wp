@@ -113,6 +113,9 @@ function deregister_media_elements(){
 }
 add_action('wp_enqueue_scripts','deregister_media_elements');
 
+// Enable shortcodes in contact form 7
+add_filter( 'wpcf7_form_elements', 'do_shortcode' );
+
 // Add shortcodes
 add_filter( 'wpcf7_form_elements', 'do_shortcode' );
 add_shortcode( 'page_title', 'get_the_title' );
@@ -124,3 +127,4 @@ add_shortcode('*', 'print_required_span');
 
 // Do not resize images 
 add_filter( 'big_image_size_threshold', '__return_false' ); 
+
