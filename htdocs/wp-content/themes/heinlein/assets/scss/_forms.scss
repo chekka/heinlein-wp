@@ -120,19 +120,42 @@ form {
     }
   }
 
+  .wpcf7-response-output {
+    margin: 3em 0 0 0 !important;
+    padding: 1em !important;
+    border-radius: 0 $r2;
+    background-color: #fff;
+    border-width: 1px !important;
+    position: relative;
+    z-index: 3;
+  }
+
+  &.invalid .wpcf7-response-output {
+    border-color: #dc3232 !important;
+    border-top-width: 0 !important;
+    border-right-width: 0 !important;
+    color: #dc3232;
+  }
+
+  &.sent {
+    input.wpcf7-form-control[type=submit] {
+      display: none;
+    }
+
+    .wpcf7-response-output {
+      margin-top: -120px !important;
+      border-color: green !important;
+      color: green !important;
+    }
+
+  }
+  
+  .wpcf7-not-valid {
+    border: 1px solid #dc3232 !important;
+  }  
+  
   .section-title {
     font-size: 1.5em;
   }
 }
 
-.wpcf7-response-output {
-  margin: 3em 0 0 0 !important;
-  padding: 1em !important;
-  border-radius: 0 $r2;
-  background-color: #fff;
-  border-width: 1px !important;
-}
-
-.wpcf7-not-valid {
-    border: 1px solid #dc3232 !important;
-}

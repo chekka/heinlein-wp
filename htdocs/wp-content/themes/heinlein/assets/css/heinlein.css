@@ -26701,6 +26701,17 @@ a[title=Anfrage-Formular]:hover {
   background-color: #aa8461;
 }
 
+a[title=Anfrage-Formular] {
+  transform: scale(1.5);
+  padding-left: 3em;
+  padding-right: 3em;
+  text-transform: uppercase;
+  border-color: #fff !important;
+}
+a[title=Anfrage-Formular]:hover {
+  color: #fff !important;
+}
+
 #nachhaltigkeit a[title="Mehr erfahren"] {
   color: #00af35;
   border-color: #00af35;
@@ -26815,20 +26826,34 @@ form .gonext.submit input + .wpcf7-spinner {
   position: absolute;
   left: -40px;
 }
-form .section-title {
-  font-size: 1.5em;
-}
-
-.wpcf7-response-output {
+form .wpcf7-response-output {
   margin: 3em 0 0 0 !important;
   padding: 1em !important;
   border-radius: 0 24px;
   background-color: #fff;
   border-width: 1px !important;
+  position: relative;
+  z-index: 3;
 }
-
-.wpcf7-not-valid {
+form.invalid .wpcf7-response-output {
+  border-color: #dc3232 !important;
+  border-top-width: 0 !important;
+  border-right-width: 0 !important;
+  color: #dc3232;
+}
+form.sent input.wpcf7-form-control[type=submit] {
+  display: none;
+}
+form.sent .wpcf7-response-output {
+  margin-top: -120px !important;
+  border-color: green !important;
+  color: green !important;
+}
+form .wpcf7-not-valid {
   border: 1px solid #dc3232 !important;
+}
+form .section-title {
+  font-size: 1.5em;
 }
 
 * {

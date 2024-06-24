@@ -27,7 +27,19 @@ a[title="Anfrage-Formular"] {
   &:hover {
     color: #fff;
     border-color: $gold;
-    background-color: $gold;
+    background-color: $gold;    
+  }
+}
+
+a[title="Anfrage-Formular"] {
+  transform: scale(1.5);
+  padding-left: 3em;
+  padding-right: 3em;
+  text-transform: uppercase;
+  border-color: #fff !important;
+
+  &:hover {
+    color: #fff !important;
   }
 }
 

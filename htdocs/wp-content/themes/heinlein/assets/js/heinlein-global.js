@@ -12,8 +12,6 @@
 
   $(document).on('ready',function(){
 
-    $(".wpcf7-form").removeAttr('novalidate');
-
     // counterUp
     function counter() {
       if ($('body').length > 0 && 'IntersectionObserver' in window) {
