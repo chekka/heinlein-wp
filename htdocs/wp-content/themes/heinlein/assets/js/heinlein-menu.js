@@ -26,7 +26,7 @@
     
     $('.mainnav-desktop:not(#menu-produkte, #menu-products)').each(function () {
       $(this).find('.panel-grid-cell .widget_sow-image > div:not(.no-target)').each(function(){
-        var title = $(this).find('.widget-title').text();
+        var title = $(this).find('.sow-image-container img').attr('alt');
         var target = title.toLowerCase().replace(' ','-').replace('ü','ue');
         var url = $(this).find('.sow-image-container a').attr('href');
         var new_url = url + '#' + target;

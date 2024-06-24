@@ -115,7 +115,13 @@ h3 {
   letter-spacing: 0.0777em;
   word-spacing: 0.222em;
   margin-top: 1em;
+
+  & + h2 {
+    margin-top: .7em;
+  }
 }
+
+
 
 .textwidget ul li {
   margin-bottom: 7px;
@@ -131,6 +137,7 @@ h3 {
 }
 .bg--blau-dunkel > div > .widget_sow-editor * {
   color: #fff;
+  border-bottom-color: #fff;
 }
 
 @media (max-width: 575px) {
