@@ -26521,7 +26521,7 @@ svg .bg--ivory-hell-1 {
   background-color: #eae5e1;
 }
 .bg--ivory-hell-2 * {
-  color: #7f6445;
+  color: #001e4b;
 }
 
 svg .bg--ivory-hell-2 {
@@ -26536,7 +26536,7 @@ svg .bg--ivory-hell-2 {
   background-color: #e4d8ce;
 }
 .bg--ivory-dunkel * {
-  color: #7f6445;
+  color: #001e4b;
 }
 
 svg .bg--ivory-dunkel {
@@ -27339,11 +27339,6 @@ img {
   font-weight: 400;
   letter-spacing: normal;
 }
-#produkt-finder p {
-  line-height: 1.4;
-  margin-bottom: 0.777em;
-  min-height: 42px;
-}
 
 #azubi-videos .widget {
   margin-bottom: 7vh !important;
@@ -28001,7 +27996,7 @@ svg .bg--ivory-hell-1 {
   background-color: #eae5e1;
 }
 .bg--ivory-hell-2 * {
-  color: #7f6445;
+  color: #001e4b;
 }
 
 svg .bg--ivory-hell-2 {
@@ -28016,7 +28011,7 @@ svg .bg--ivory-hell-2 {
   background-color: #e4d8ce;
 }
 .bg--ivory-dunkel * {
-  color: #7f6445;
+  color: #001e4b;
 }
 
 svg .bg--ivory-dunkel {
@@ -28868,7 +28863,7 @@ svg .bg--ivory-hell-1 {
   background-color: #eae5e1;
 }
 .bg--ivory-hell-2 * {
-  color: #7f6445;
+  color: #001e4b;
 }
 
 svg .bg--ivory-hell-2 {
@@ -28883,7 +28878,7 @@ svg .bg--ivory-hell-2 {
   background-color: #e4d8ce;
 }
 .bg--ivory-dunkel * {
-  color: #7f6445;
+  color: #001e4b;
 }
 
 svg .bg--ivory-dunkel {
@@ -28974,7 +28969,7 @@ a {
   text-decoration: none;
 }
 
-.textwidget a {
+.so-widget-sow-editor a {
   color: #001e4b;
   border-bottom: 1px solid #001e4b;
   padding-bottom: 1px;
@@ -28993,6 +28988,12 @@ p {
   line-height: 1.955rem;
   margin-bottom: 1.5rem;
   letter-spacing: 0.0222em;
+}
+
+.line-heigt-low p {
+  line-height: 1.4;
+  margin-bottom: 0.777em;
+  min-height: 42px;
 }
 
 .hyphens p {
@@ -29320,7 +29321,7 @@ svg .bg--ivory-hell-1 {
   background-color: #eae5e1;
 }
 .bg--ivory-hell-2 * {
-  color: #7f6445;
+  color: #001e4b;
 }
 
 svg .bg--ivory-hell-2 {
@@ -29335,7 +29336,7 @@ svg .bg--ivory-hell-2 {
   background-color: #e4d8ce;
 }
 .bg--ivory-dunkel * {
-  color: #7f6445;
+  color: #001e4b;
 }
 
 svg .bg--ivory-dunkel {

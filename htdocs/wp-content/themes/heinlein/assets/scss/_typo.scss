@@ -47,7 +47,7 @@ a {
   text-decoration: none;
 }
 
-.textwidget a {
+.so-widget-sow-editor a {
   color: $blau-dunkel;
   border-bottom: 1px solid $blau-dunkel;
   padding-bottom: 1px;
@@ -66,6 +66,12 @@ p {
   line-height: 1.955rem;
   margin-bottom: 1.5rem;
   letter-spacing: 0.0222em;
+}
+
+.line-heigt-low p {
+  line-height: 1.4;
+  margin-bottom: .777em;
+  min-height: 42px;
 }
 
 .hyphens p {
