@@ -1,0 +1,154 @@
+<div class="slick">
+   <div class="d-flex flex-wrap">
+     <div class="col-12">
+       <p class="section-title">{Inhalt und Dosierung}</h4>
+     </div>
+     <div class="col-12 col-md-6 pe-md-3">
+       <label>{Haben Sie bereits den entsprechenden<br>Behälter für Ihr Produkt?}</label>[radio CONTAINER label_first use_label_element "{Ja}" "{Nein}"]
+       <hr>
+       <label>{Um welchen Inhalt geht es?}</label>[textarea WELCHER_INHALT]
+     </div>
+     <div class="col-12 col-md-6 ps-md-3 pb-3">
+       <label>&nbsp;<br>{EAB Konformität}</label>[radio EAB label_first use_label_element "{Ja}" "{Nein}"]
+       <hr>
+       <label>{Sonstiges}</label>[textarea SONSTIGES]
+     </div>
+     <div class="col-12">
+       <div class="gonext">{Weiter}</div>
+     </div>
+   </div>
+   <div class="d-flex flex-wrap">
+     <div class="col-12">
+       <p class="section-title">{Material und Maße}</h4>
+     </div>
+     <div class="col-12 col-md-4 mb-0">
+       <label class="inline">{Flaschenvolumen (in ml)}</label>
+     </div>
+     <div class="col-12 col-md-8 mb-0 align-self-center">[text FLASCHENVOLUMEN]</div>
+     <div class="col-12 col-md-4 mb-0">
+       <label class="inline">{Material des Verschlusses}</label>
+     </div>
+     <div class="col-12 col-md-8 mb-0 align-self-center">[text MATERIAL]</div>
+     <div class="col-12 col-md-4 mb-0">
+       <label class="inline">{Flaschengewinde}</label>
+     </div>
+     <div class="col-12 col-md-8 mb-0 align-self-center">[text GEWINDE]</div>
+     <div class="col-12 col-md-4 mb-0">
+       <label class="inline">{Mündungsdurchmesser (in mm)}</label>
+     </div>
+     <div class="col-12 col-md-8 mb-0 align-self-center">[text DURCHMESSER]</div>
+     <div class="col-12 mt-5">
+       <div class="goprev">{Zurück}</div>
+       <div class="gonext">{Weiter}</div>
+     </div>
+   </div>
+   <div class="d-flex flex-wrap">
+     <div class="col-12">
+       <p class="section-title">{Verschluss und Innenleben}</h4>
+     </div>
+     <div class="col-12">
+       <label>{Welche Anforderungen an Sicherheit sind gefordert?}</label>[radio SICHERHEITSANFORDERUNG use_label_element "{Keine}" "{Originalitätsverschluss}" "{Kindersicherheitsverschluss}"]
+       <hr>
+     </div>
+     <div class="col-12">
+       <label>{Welche Konbination wird benötigt?}</label>[checkbox KOMBINATION use_label_element "{Konus}" "{Dichtscheibe}" "{Ausgießer}" "{Tropfer}" "{Pinsel}" "{Spatel}" "{Pipette}" "{Messbecher}" "{Messlöffel}" "{Dosierspritze mit Adapter}"]
+     </div>
+     <div class="col-12 mt-3">
+         <div class="goprev">{Zurück}</div>
+         <div class="gonext">{Weiter}</div>
+     </div>
+   </div>
+   <div class="d-flex flex-wrap">
+     <div class="col-12">
+       <p class="section-title">{Kontaktdaten}</h4>
+     </div>
+     <div class="d-flex flex-wrap col-12 col-md-6 pe-4">
+       <div class="row">
+         <div class="col-3">
+           <label class="inline">{Firma}</label>
+         </div>
+         <div class="col-9">
+           [text* FIRMA]
+         </div>
+       </div>
+       <div class="row">
+         <div class="col-3">
+           <label class="inline">{Name}</label>
+         </div>
+         <div class="col-9">
+           [text NAME]
+         </div>
+       </div>
+       <div class="row">
+         <div class="col-3">
+           <label class="inline">{Telefon}</label>
+         </div>
+         <div class="col-9">
+           [text TELEFON]
+         </div>
+       </div>
+       <div class="row">
+         <div class="col-3">
+           <label class="inline">{E-Mail}</label>
+         </div>
+         <div class="col-9">
+           [text EMAIL]
+         </div>
+       </div>
+     </div>
+     <div class="d-flex flex-wrap col-12 col-md-6 ps-4">
+       <div class="row">
+         <div class="col-3">
+           <label class="inline"">{Straße/Nr.}</label>
+         </div>
+         <div class="col-9">
+           [text ANSCHRIFT]
+         </div>
+       </div>
+       <div class="row">
+         <div class="col-3">
+           <label class="inline">{PLZ}</label>
+         </div>
+         <div class="col-9">
+           [text PLZ]
+         </div>
+       </div>
+       <div class="row">
+         <div class="col-3">
+           <label class="inline">{Ort}</label>
+         </div>
+         <div class="col-9">
+           [text ORT]
+         </div>
+       </div>
+       <div class="row">
+         <div class="col-3">
+           <label class="inline">{Land}</label>
+         </div>
+         <div class="col-9">
+           [text LAND]
+         </div>
+       </div>      
+     </div>  
+     <div class="col-12 mt-5">
+       <div class="goprev">{Zurück}</div>
+       <div class="gonext">{Weiter}</div>
+     </div>
+   </div>
+   <div class="d-flex flex-wrap">
+     <div class="col-12">
+       <p class="section-title">{Abschluss}</h4>
+     </div>
+     <div class="row">
+       <label>{Ihre Nachricht an uns}</label>
+       <div class="col-12">
+         [textarea MITTEILUNG]
+         <p>{Informationen dazu, wie Heinlein Plastik-Technik mit Daten umgeht, finden Sie in unserer <a href="/datenschutzerklarung" rel="noopener" target="_blank" tabindex="0">Datenschutzerklärung</a>. Ihre Daten können Sie jederzeit und umkompliziert löschen lassen.}</p>
+       </div>
+     </div>
+     <div class="col-12 mt-5 d-flex justify-content-between">
+       <div class="goprev">{Zurück}</div>
+       <div class="gonext submit">[submit "{Absenden}"]</div>
+     </div>
+   </div>  
+ </div>

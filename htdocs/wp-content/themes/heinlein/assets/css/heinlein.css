@@ -26722,14 +26722,25 @@ a[title=Anfrage-Formular]:hover {
   border-color: #00af35;
 }
 
+span.required {
+  color: #dc3232;
+}
+
 label {
   display: block;
-  margin: 1rem 0 0.5em 0;
+  margin: 0 0 3px 0;
   line-height: 1.5;
   font-weight: 400;
 }
+label.inline {
+  margin: 1rem 0 0.5em 0;
+}
 
-form .row p, form .row label {
+.wpcf7-list-item label {
+  margin: 1rem 0 0.5em 0;
+}
+
+form .row p, form .row input {
   margin: 7px 0 0 0;
 }
 
@@ -26783,7 +26794,10 @@ form .slick-slide {
   padding: 7px;
 }
 form div[class^=col-] {
-  margin-bottom: 30px;
+  margin-bottom: 12px;
+}
+form .row div[class^=col-] {
+  margin-bottom: 0;
 }
 form hr {
   border: none;
@@ -26805,13 +26819,18 @@ form .goprev p:hover {
   border-color: #001e4b !important;
   color: #001e4b !important;
 }
-form .gonext {
+form .goprev + div {
   float: right;
 }
-form .gonext.submit {
+form .goprev + div.submit {
   padding: 0;
 }
-form .gonext.submit input {
+form .submit > p {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+form .submit input {
   color: #fff;
   background-color: #7f6445;
   border: 1px solid #7f6445;
@@ -26819,12 +26838,24 @@ form .gonext.submit input {
   padding: 0.3em 2.1em;
   cursor: pointer;
 }
-form .gonext.submit input:hover {
+form .submit input:hover {
   background-color: #aa8461;
+  border-color: #aa8461;
 }
-form .gonext.submit input + .wpcf7-spinner {
-  position: absolute;
-  left: -40px;
+form .submit input + .wpcf7-spinner {
+  display: inline-block;
+  background-color: #aa8461;
+  opacity: 1;
+  width: 24px;
+  height: 24px;
+  margin: 0 20px;
+}
+form .submit input + .wpcf7-spinner:before {
+  background-color: #fff;
+  top: 4px;
+  left: 4px;
+  width: 6px;
+  height: 6px;
 }
 form .wpcf7-response-output {
   margin: 3em 0 0 0 !important;
@@ -26854,6 +26885,12 @@ form .wpcf7-not-valid {
 }
 form .section-title {
   font-size: 1.5em;
+}
+
+.wpcf7-form-control:focus,
+.wpcf7-form-control:hover,
+.wpcf7-form-control:valid {
+  border-color: transparent !important;
 }
 
 * {
