@@ -1,4 +1,5 @@
 mariadb-init/*
+htdocs/.htaccess
 .htaccess
 htdocs/.htaccess
 
@@ -7,6 +8,7 @@ htdocs/wp-config.php
 htdocs/wp-content/uploads/*
 htdocs/wp-content/updraft/*
 
+htdocs/wp-content/advanced-cache.php
 htdocs/wp-content/cache/*
 htdocs/wp-content/wpo-cache/*
 htdocs/wp-content/ewww/*
