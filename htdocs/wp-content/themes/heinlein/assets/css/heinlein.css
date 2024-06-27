@@ -26858,7 +26858,7 @@ form .submit input + .wpcf7-spinner:before {
   height: 6px;
 }
 form .wpcf7-response-output {
-  margin: 3em 0 0 0 !important;
+  margin: 1em 0 0 0 !important;
   padding: 1em !important;
   border-radius: 0 24px;
   background-color: #fff;
@@ -26876,7 +26876,6 @@ form.sent input.wpcf7-form-control[type=submit] {
   display: none;
 }
 form.sent .wpcf7-response-output {
-  margin-top: -120px !important;
   border-color: green !important;
   color: green !important;
 }
@@ -26885,12 +26884,6 @@ form .wpcf7-not-valid {
 }
 form .section-title {
   font-size: 1.5em;
-}
-
-.wpcf7-form-control:focus,
-.wpcf7-form-control:hover,
-.wpcf7-form-control:valid {
-  border-color: transparent !important;
 }
 
 * {
@@ -27485,6 +27478,10 @@ body {
 }
 #main > .panel-layout > .panel-grid:first-child {
   z-index: -1;
+}
+
+.panel-row-style {
+  scroll-margin-top: 120px;
 }
 
 .stil--gray {

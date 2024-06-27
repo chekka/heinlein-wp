@@ -79,12 +79,16 @@ body {
 #main {
   > .panel-layout {
     > .panel-grid {
-      position: relative;
+      position: relative;      
     }
     > .panel-grid:first-child {
       z-index: -1;
     }
   }
+}
+
+.panel-row-style {
+  scroll-margin-top: 120px;
 }
 
 .stil--gray {

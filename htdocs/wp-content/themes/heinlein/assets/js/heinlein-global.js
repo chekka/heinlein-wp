@@ -110,6 +110,8 @@
       });
     });
 
+    $('.wpcf7-form').attr({ 'novalidate': 'novalidate' });
+
   });
   
 })(jQuery);

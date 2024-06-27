@@ -164,7 +164,7 @@ form {
   }
 
   .wpcf7-response-output {
-    margin: 3em 0 0 0 !important;
+    margin: 1em 0 0 0 !important;
     padding: 1em !important;
     border-radius: 0 $r2;
     background-color: #fff;
@@ -186,7 +186,6 @@ form {
     }
 
     .wpcf7-response-output {
-      margin-top: -120px !important;
       border-color: green !important;
       color: green !important;
     }
@@ -200,10 +199,4 @@ form {
   .section-title {
     font-size: 1.5em;
   }
-}
-
-.wpcf7-form-control:focus,
-.wpcf7-form-control:hover,
-.wpcf7-form-control:valid {
-  border-color: transparent !important;
 }

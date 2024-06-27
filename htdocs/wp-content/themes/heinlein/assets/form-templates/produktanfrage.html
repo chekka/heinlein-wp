@@ -1,25 +1,25 @@
 <h3>{Produktanfrage}: [page_title]</h3>
 <div class="d-flex flex-wrap">
     <div class="col-12">
-        <label>{Firma}</label>[text* FIRMA]
+        <label>{Firma} [*]</label>[text* FIRMA]
     </div>
     <div class="col-12 col-md-6 pe-md-4">
-        <label>{Vorname}</label>[text* VNAME]
+        <label>{Vorname} [*]</label>[text* VNAME]
     </div>
     <div class="col-12 col-md-6 ps-md-4">
-        <label>{Nachname}</label>[text* NNAME]
+        <label>{Nachname} [*]</label>[text* NNAME]
     </div>
     <div class="col-12 col-md-6 pe-md-4">
-        <label>{E-Mail Adresse}</label>[text* MAIL]
+        <label>{E-Mail Adresse} [*]</label>[text* MAIL]
     </div>
     <div class="col-12 col-md-6 ps-md-4">
-        <label>{Telefonnummer}</label>[text* PHONE]
+        <label>{Telefonnummer} [*]</label>[text* PHONE]
     </div>
     <div class="col-12 col-md-6 pe-md-4">
-        <label>{Ich bitte um kontakt per}</label>[radio KONTAKT-PER class:novalidate use_label_element default:1 "{Telefon}" "{E-Mail}"]
+        <label>{Ich bitte um Kontakt per} [*]</label>[radio KONTAKT-PER class:novalidate use_label_element default:1 "{Telefon}" "{E-Mail}"]
     </div>
     <div class="col-12 col-md-6 ps-md-4">
-        <label>{Wie können wir Ihnen helfen?}</label>[textarea* MESSAGE]
+        <label>{Wie können wir Ihnen helfen?}</label>[textarea MESSAGE]
     </div>
     <div class="col-12">
         [checkbox MUSTERBOX use_label_element "{Bitte senden Sie mir eine Musterbox zu}"]
@@ -27,21 +27,21 @@
     [group group-musterbox clear_on_hide]
     <div class="d-flex flex-wrap">
         <div class="col-12 col-md-6 pe-md-3">
-            <label>{Straße}</label>[text* STRASSE]
+            <label>{Straße} [*]</label>[text* STRASSE]
         </div>
         <div class="col-12 col-md-6 ps-md-3">
-            <label>{Hausnummer}</label>[text* HAUSNUMMER]
+            <label>{Hausnummer} [*]</label>[text* HAUSNUMMER]
         </div>
         <div class="d-flex col-12 col-md-6 pe-md-3">
             <div class="col-4 pe-3">
-                <label>{Postleitzahl}</label>[text* PLZ]
+                <label>{Postleitzahl} [*]</label>[text* PLZ]
             </div>
             <div class="col-8">
-                <label>{Ort}</label>[text* ORT]
+                <label>{Ort} [*]</label>[text* ORT]
             </div>
         </div>
         <div class="col-12 col-md-6 ps-md-3">
-            <label>{Land}</label>[text* LAND]
+            <label>{Land} [*]</label>[text* LAND]
         </div>
     </div>
     [/group]
