@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Easy FancyBox &#8211; WordPress Lightbox Plugin - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-06-17 02:38:27+0000\n"
+"PO-Revision-Date: 2024-06-26 03:26:48+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,11 +11,57 @@ msgstr ""
 "Language: de\n"
 "Project-Id-Version: Plugins - Easy FancyBox &#8211; WordPress Lightbox Plugin - Stable (latest release)\n"
 
+#. translators: %1$s is replaced with a query paramater
+#: views/admin-notice.php:30
+msgid "hide this message"
+msgstr "Diese Nachricht verbergen"
+
+#. translators: %1$s is replaced with a query paramater
+#: views/admin-notice.php:30
+msgid "Or you can ignore and %s."
+msgstr "Oder ignorieren und  %s ."
+
+#: inc/class-easyfancybox-admin.php:769
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: inc/class-easyfancybox-admin.php:188
+msgid "LEARN MORE"
+msgstr "MEHR ERFAHREN"
+
+#: build/index.js:1 src/lightbox-panel.jsx:76
+msgid "View Lightbox Settings"
+msgstr "Lightbox Einstellungen ansehen"
+
+#: build/index.js:1 src/lightbox-panel.jsx:67
+msgid "Notice: You have an active Easy Fancybox Pro license and can use the Pro Lightbox!"
+msgstr "Hinweis: Du besitzt eine aktive Easy Fancybox Pro Lizenz und kannst die Pro Lightbox nutzen!"
+
+#: build/index.js:1 src/lightbox-panel.jsx:59
+msgid "Upgrade"
+msgstr "Upgrade"
+
+#: build/index.js:1 src/lightbox-panel.jsx:42
+msgid "Upgrade to enable Pro Lightbox."
+msgstr "Upgrade, um Pro Lightbox zu aktivieren."
+
+#: build/index.js:1 src/lightbox-panel.jsx:30
+msgid "You are using: "
+msgstr "Sie nutzen: "
+
+#: build/index.js:1 src/lightbox-panel.jsx:28
+msgid "Lightbox"
+msgstr "Lightbox"
+
+#: inc/class-easyfancybox-admin.php:730
+msgid "Easy Fancybox"
+msgstr "Easy Fancybox"
+
 #: views/pro-landing-page.php:18
 msgid "40% off sale this week! Use code LAUNCH at checkout."
 msgstr "Diese Woche 40 % Rabatt! Verwende den Code LAUNCH an der Kasse."
 
-#: inc/class-easyfancybox-admin.php:143
+#: inc/class-easyfancybox-admin.php:187
 msgid "Easy Fancybox Pro is launched! Take 40% off this week - use code LAUNCH at checkout."
 msgstr "Easy Fancybox Pro ist da! Diese Woche 40 % Rabatt – verwende den Code LAUNCH beim Bezahlen."
 
@@ -166,7 +212,7 @@ msgstr "Basic Lightboxen"
 msgid "Or buy directly from the WordPress dashboard below!"
 msgstr "Oder kaufe  direkt über das WordPress-Dashboard unten!"
 
-#: views/pro-landing-page.php:30
+#: views/pro-landing-page.php:30 build/index.js:1 src/lightbox-panel.jsx:50
 msgid "See Demos"
 msgstr "Siehe Demos"
 
@@ -194,7 +240,7 @@ msgstr "Deaktivieren die Core-Lightbox, während Du Easy Fancybox verwendest."
 msgid "Disable Core Lightbox"
 msgstr "Core Lightbox deaktivieren"
 
-#: inc/class-easyfancybox.php:321
+#: inc/class-easyfancybox.php:194
 msgid "Pro Lightbox"
 msgstr "Pro Lightbox"
 
@@ -210,23 +256,23 @@ msgstr "Bilder für Retina anpassen"
 msgid "All images"
 msgstr "Alle Bilder"
 
-#: inc/class-easyfancybox-admin.php:234
+#: inc/class-easyfancybox-admin.php:278
 msgid "We work hard to maintain it. Would you do us a BIG favor and give us a 5-star review on WordPress.org? Or share feedback <a %s>here</a>."
 msgstr "Wir arbeiten hart daran, es zu betreiben. Würdest Du uns einen GROSSEN Gefallen tun und uns eine 5-Sterne-Bewertung auf WordPress.org geben? Oder gib uns <a %s>hier</a> Feedback."
 
-#: inc/class-easyfancybox-admin.php:230
+#: inc/class-easyfancybox-admin.php:274
 msgid "You've been using Easy Fancybox for a long time! Awesome and thanks!"
 msgstr "Du nutzt Easy Fancybox schon lange! Super und vielen Dank!"
 
-#: inc/class-easyfancybox-admin.php:245
+#: inc/class-easyfancybox-admin.php:289
 msgid "Already did!"
 msgstr "Habe ich bereits gemacht!"
 
-#: inc/class-easyfancybox-admin.php:244
+#: inc/class-easyfancybox-admin.php:288
 msgid "Maybe later"
 msgstr "Später vielleicht"
 
-#: inc/class-easyfancybox-admin.php:242
+#: inc/class-easyfancybox-admin.php:286
 msgid "Ok, you deserve it!"
 msgstr "Ok, ihr habt es verdient!"
 
@@ -538,19 +584,19 @@ msgstr "Pro holen"
 msgid "Want more options? "
 msgstr "Möchtest Du weitere Optionen? "
 
-#: inc/class-easyfancybox.php:319
+#: inc/class-easyfancybox.php:192
 msgid "FancyBox Classic Reloaded"
 msgstr "FancyBox Classic Reloaded"
 
-#: inc/class-easyfancybox.php:318
+#: inc/class-easyfancybox.php:191
 msgid "FancyBox Legacy"
 msgstr "FancyBox Legacy"
 
-#: inc/class-easyfancybox-admin.php:383
+#: inc/class-easyfancybox-admin.php:430
 msgid "Choose Lighbox Version"
 msgstr "Wähle  Lightbox-Version"
 
-#: inc/class-easyfancybox-admin.php:105
+#: inc/class-easyfancybox-admin.php:149
 msgid "Lightbox Settings - Easy Fancybox"
 msgstr "Lightbox Einstellungen - Easy Fancybox"
 
@@ -589,7 +635,7 @@ msgstr "Pro-Version"
 msgid "Please download and install the latest %s."
 msgstr "Bitte lade und installiere die neueste Version von %s."
 
-#: inc/class-easyfancybox.php:320
+#: inc/class-easyfancybox.php:193
 msgid "FancyBox V2"
 msgstr "FancyBox V2"
 
@@ -842,7 +888,7 @@ msgstr "Erster VideoPress Link"
 msgid "VideoPress"
 msgstr "VideoPress"
 
-#: inc/class-easyfancybox-admin.php:679
+#: inc/class-easyfancybox-admin.php:784
 msgid "Rate ★★★★★"
 msgstr "Bewerte ★★★★★"
 
@@ -1116,11 +1162,6 @@ msgstr "Ein Tag"
 #: inc/fancybox-options.php:406
 msgid "Delay in milliseconds"
 msgstr "Verzögerung in Millisekunden"
-
-#. translators: %1$s is replaced with a query paramater
-#: views/admin-notice.php:30
-msgid "Or you can ignore and <a href=\"%1$s\">hide this message</a>."
-msgstr "Ignorieren und <a href=\"%1$s\">Nachricht ausblenden</a>."
 
 #: views/admin-notice.php:27
 msgid "Please contact your web site administrator."
@@ -1464,7 +1505,7 @@ msgstr "Ausschließen"
 msgid "SVG"
 msgstr "SVG"
 
-#: inc/class-easyfancybox-admin.php:678 inc/translation-strings.php:72
+#: inc/class-easyfancybox-admin.php:783 inc/translation-strings.php:72
 #: inc/translation-strings.php:167
 msgid "Support"
 msgstr "Support"
@@ -1505,7 +1546,7 @@ msgstr "Bilder"
 msgid "Global settings"
 msgstr "Globale Einstellungen"
 
-#: inc/class-easyfancybox-admin.php:46 inc/translation-strings.php:131
+#: inc/class-easyfancybox-admin.php:85 inc/translation-strings.php:131
 #: inc/translation-strings.php:136 inc/translation-strings.php:141
 msgid "Easy FancyBox"
 msgstr "Easy FancyBox"

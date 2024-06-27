@@ -3,9 +3,9 @@ Contributors: andreasmuench
 Donate link: https://andreasmuench.de/wordpress-programmierer
 Tags: contact form 7, polylang, multilingual, translate, language
 Requires at least: 5.7.0
-Tested up to: 6.4.3
+Tested up to: 6.5.5
 Requires PHP: 5.6
-Stable tag: 1.0.10
+Stable tag: 1.0.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,6 +67,11 @@ Just go to the support forums and kindly ask for it, then we´ll see what we can
 3. Example contact form in different languages
 
 == Changelog ==
+
+= 1.0.11 =
+* implement detection of untranslatable custom message strings
+* implement feature to reset message strings
+* improve detection of current language in AJAX form submit
 
 = 1.0.10 =
 * fix issue with mb_stripos(), see https://wordpress.org/support/topic/critical-error-with-last-update/#post-17711176

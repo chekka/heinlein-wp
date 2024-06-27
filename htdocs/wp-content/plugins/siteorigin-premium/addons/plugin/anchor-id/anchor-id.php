@@ -59,7 +59,7 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 			add_filter( 'siteorigin_widgets_form_options_sow-anything-carousel', array( $this, 'add_anything_carousel_form_options' ), 10, 2 );
 
 			add_filter( 'siteorigin_widgets_template_variables_sow-anything-carousel', array( $this, 'anything_carousel_add_anchor' ), 10, 2 );
-			add_action( 'siteorigin_widgets_enqueue_frontend_scripts_sow-anything-carousel', array( $this, 'anything_carousel_enqueue_js' ) );
+			add_filter( 'siteorigin_widgets_frontend_scripts_sow-anything-carousel', array( $this, 'anything_carousel_enqueue_js' ), 10, 1 );
 		}
 	}
 
@@ -149,6 +149,23 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 				SITEORIGIN_PREMIUM_VERSION
 			);
 		}
+	}
+
+	public function anything_carousel_enqueue_js( $frontend_scripts ) {
+		return array_merge(
+			array(
+				'so-premium-anything-carousel' => array(
+					'so-premium-anything-carousel',
+					plugin_dir_url( __FILE__ ) . 'js/anchor-id-anything-carousel' . SITEORIGIN_PREMIUM_JS_SUFFIX . '.js',
+					array(
+						'jquery',
+						'so-premium-anchor-id',
+					),
+					SITEORIGIN_PREMIUM_VERSION
+				),
+			),
+			$frontend_scripts
+		);
 	}
 
 	public function add_accordion_tabs_form_options( $form_options, $widget ) {
@@ -251,16 +268,5 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 		}
 
 		return $template_vars;
-	}
-
-	public function anything_carousel_enqueue_js( $instance ) {
-		if ( ! empty( $instance['carousel_settings']['use_anchor_tags'] ) ) {
-			wp_enqueue_script(
-				'so-premium-anything-carousel',
-				plugin_dir_url( __FILE__ ) . 'js/anchor-id-anything-carousel' . SITEORIGIN_PREMIUM_JS_SUFFIX . '.js',
-				array( 'so-premium-anchor-id' ),
-				SITEORIGIN_PREMIUM_VERSION
-			);
-		}
 	}
 }

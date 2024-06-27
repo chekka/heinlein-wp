@@ -2,8 +2,8 @@
 Requires at least: 4.7
 Tested up to: 6.5.5
 Requires PHP: 7.0.0
-Stable tag: 1.63.0
-Build time: 2024-06-17T14:53:13+01:00
+Stable tag: 1.63.1
+Build time: 2024-06-22T07:41:37-07:00
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -28,6 +28,10 @@ The SiteOrigin Premium plugin can be downloaded via the link provided in your or
 [Documentation](https://siteorigin.com/premium-documentation/) is available on SiteOrigin.com.
 
 == Changelog ==
+
+= 1.63.1 - 22 June 2024 =
+* Anchor ID: Improved Anything Carousel performance.
+* 404 Page: Restored theme page settings for the Display > Page option.
 
 = 1.63.0 - 17 June 2024 =
 * New Addon! 404 Page: Create custom 404 error pages with personalized design and content. Guide your user's website experience even during misdirections.

@@ -1051,7 +1051,7 @@ msgstr ""
 msgid "Add slide anchor ID in the URL"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:102, addons/plugin/anchor-id/anchor-id.php:177
+#: addons/plugin/anchor-id/anchor-id.php:102, addons/plugin/anchor-id/anchor-id.php:194
 msgid "Anchor ID"
 msgstr ""
 
@@ -1059,23 +1059,23 @@ msgstr ""
 msgid "An ID is required for the anchor to function."
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:166
+#: addons/plugin/anchor-id/anchor-id.php:183
 msgid "Add anchor ID in the URL"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:178
+#: addons/plugin/anchor-id/anchor-id.php:195
 msgid "Set a custom anchor ID."
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:216
+#: addons/plugin/anchor-id/anchor-id.php:233
 msgid "Add item anchor id in the URL"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:228
+#: addons/plugin/anchor-id/anchor-id.php:245
 msgid "Carousel anchor"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:229
+#: addons/plugin/anchor-id/anchor-id.php:246
 msgid "Optionally set a custom anchor id. Required if the widget title field is empty."
 msgstr ""
 

@@ -114,6 +114,9 @@ class Helpers
         add_filter('gettext', 'mlcf7pll\Helpers::deactivate_gettext', 999, 3 );
 
         $messages = wpcf7_messages();
+		foreach($messages as $key => $val){
+			$messages[$key] = $val['default'];
+		}
 
         // remove the filter to make translating work again
         remove_filter('gettext', 'mlcf7pll\Helpers::deactivate_gettext', 999);

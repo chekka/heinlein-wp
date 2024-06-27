@@ -280,7 +280,7 @@ class SiteOrigin_Premium_Central_Gate {
 			empty( $force_gate ) &&
 			empty( $this->settings['content_type'] )
 		) {
-			return;
+			return false;
 		}
 
 		$force_gate = $force_gate ? $force_gate : in_array( $this->settings['content_type'], array( 'layout', 'text' ) );
@@ -367,8 +367,16 @@ class SiteOrigin_Premium_Central_Gate {
 			return false;
 		}
 
-		// Override the 404 page.
+		// Override the page to show the assigned page.
 		global $wp_query;
-		$wp_query = new WP_Query( array( 'page_id' => $page_id ) );
+		$wp_query->queried_object = $page;
+		$wp_query->queried_object_id = $page_id;
+		$wp_query->is_404 = false;
+		$wp_query->is_single = false;
+		$wp_query->is_page = true;
+		$wp_query->post_count = 1;
+		$wp_query->found_posts = 1;
+		$wp_query->current_post = -1;
+		$wp_query->posts = array( $page );
 	}
 }
