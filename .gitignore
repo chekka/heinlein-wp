@@ -1,5 +1,6 @@
 mariadb-init/*
 .htaccess
+htdocs/.htaccess
 
 htdocs/wp-config.php
 
@@ -9,6 +10,8 @@ htdocs/wp-content/updraft/*
 htdocs/wp-content/cache/*
 htdocs/wp-content/wpo-cache/*
 htdocs/wp-content/ewww/*
+htdocs/wp-content/litespeed/
+htdocs/wp-content/.litespeed_conf.dat
 htdocs/wp-content/wflogs/*
 htdocs/wp-content/upgrade/*
 htdocs/wp-content/upgrade-temp-backup/*
