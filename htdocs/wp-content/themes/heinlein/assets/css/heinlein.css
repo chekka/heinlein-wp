@@ -26933,6 +26933,12 @@ img {
   border-radius: 0 24px 0 24px;
   overflow: hidden;
 }
+.box.stretch {
+  height: 100%;
+}
+.box.title-padding .widget-title {
+  padding: 1.5em 1em;
+}
 .box .widget-title {
   padding: 0.5em 1em;
 }
@@ -27431,6 +27437,31 @@ img {
     max-width: 100%;
   }
 }
+.site-footer * {
+  font-family: "Encode Sans Expanded", sans-serif;
+  color: #f8f5f3;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+}
+.site-footer > div > .widget {
+  flex: 1;
+}
+.site-footer .separator {
+  display: inline-block;
+  margin: 0 12px;
+}
+.site-footer #footer-menu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: end;
+}
+.site-footer #footer-menu ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 30px;
+}
+
 .content--max {
   max-width: 1400px;
 }

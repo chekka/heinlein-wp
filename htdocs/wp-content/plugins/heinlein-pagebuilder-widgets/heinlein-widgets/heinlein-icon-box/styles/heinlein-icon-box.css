@@ -2,6 +2,15 @@
 .so-widget-heinlein-icon-box {
   height: 100%;
   position: relative;
+
+  a:hover {
+    #icon--external-link {
+      path {
+        fill: transparent;
+        stroke: #fff;
+      }
+    }
+  }
 }
 
 .so-widget-heinlein-icon-box .shadowed {
@@ -25,11 +34,15 @@
   max-width: 90px;
   height: 70px;
 }
-.so-widget-heinlein-icon-box .flex-row img {
-  width: 36px;
-  height: 36px;
+.so-widget-heinlein-icon-box .flex-row {
+  img {
+    width: 36px;
+    height: 36px;
+  }
+  svg {
+    margin: 0 1em 0 0;
+  }
 }
-
 .so-widget-heinlein-icon-box .header-color {
   height: 130px;
   display: flex;

@@ -16,6 +16,41 @@
   }
 }
 
+.site-footer {
+  * {
+    font-family: "Encode Sans Expanded", sans-serif;
+    color: #f8f5f3;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+  }
+
+  & > div {
+    & > .widget {
+      flex: 1;
+    }  
+  }
+
+  .separator {
+    display: inline-block;  
+    margin: 0 12px;
+  }
+
+  #footer-menu {
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: end;
+
+      li {
+        list-style: none;
+        margin: 0;
+        padding: 0 0 0 30px;
+      }
+    }
+  }
+}
+
 .content--max {
   max-width: 1400px;
 }

@@ -32,6 +32,15 @@ img {
   border-radius: 0 $r2 0 $r2;
   overflow: hidden;
 
+  &.stretch {
+    height: 100%;
+  }
+
+  &.title-padding {
+    .widget-title {
+      padding: 1.5em 1em;
+    }
+  }
   .widget-title {
     padding: 0.5em 1em;
   }

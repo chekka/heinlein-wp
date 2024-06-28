@@ -35,7 +35,8 @@ class heinlein_Icon_Box_Widget extends SiteOrigin_Widget {
 					'default' => 'flex-column',
 					'options' => array(
 							'flex-column' =>  __( 'Über dem Text', 'heinlein-widgets' ),
-							'flex-column-reverse' =>  __( 'Unter dem Text', 'heinlein-widgets' )
+							'flex-column-reverse' =>  __( 'Unter dem Text', 'heinlein-widgets' ),
+							'flex-row' =>  __( 'Vor dem Text', 'heinlein-widgets' )
 					),
 					'state_emitter' => array(
 						'callback' => 'select',
@@ -62,7 +63,8 @@ class heinlein_Icon_Box_Widget extends SiteOrigin_Widget {
 					'label' => __( '', 'heinlein-widgets' ),
 					'default' => 'download',
 					'options' => array(
-						'download' =>  __( 'Download', 'heinlein-widgets' )
+						'download' =>  __( 'Download', 'heinlein-widgets' ),
+						'external-link' =>  __( 'Externer Link', 'heinlein-widgets' )
 					),
 				),
 				'icon_color' => array(
@@ -82,6 +84,12 @@ class heinlein_Icon_Box_Widget extends SiteOrigin_Widget {
 					'update' => __( 'Datei wählen', 'heinlein-widgets' ),
 					'library' => 'image,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-word.document.macroEnabled.12,application/vnd.ms-word.template.macroEnabled.12,application/vnd.oasis.opendocument.text,application/vnd.apple.pages,application/pdf,application/vnd.ms-xpsdocument,application/oxps,application/rtf,application/wordperfect,application/octet-stream',
 					'fallback' => true
+				),
+				'external_url' => array(
+					'type' => 'text',
+					'label' => __( 'Externer Link', 'heinlein-widgets' ),
+        			'default' => '',
+					'placeholder' => 'https://...'
 				),
 				'target_blank' => array(
 					'type' => 'checkbox',

@@ -120,10 +120,15 @@ add_filter( 'wpcf7_form_elements', 'do_shortcode' );
 add_filter( 'wpcf7_form_elements', 'do_shortcode' );
 add_shortcode( 'page_title', 'get_the_title' );
 
-function print_required_span() {
+function sc_print_required_span() {
   return '<span class="required">*</span>';
 }
-add_shortcode('*', 'print_required_span');
+add_shortcode('*', 'sc_print_required_span');
+
+function sc_current_year() {
+  return date('Y');
+}
+add_shortcode('Y', 'sc_current_year');
 
 // Do not resize images 
 add_filter( 'big_image_size_threshold', '__return_false' ); 
