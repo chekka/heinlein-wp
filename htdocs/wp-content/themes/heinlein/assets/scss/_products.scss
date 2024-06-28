@@ -14,7 +14,7 @@
     z-index: -1;
     padding: 0;
     margin: 0;
-    overflow: hidden;    
+    overflow: hidden;
 
     .header-image {
       object-fit: cover;
@@ -26,20 +26,20 @@
       top: 50%;
       transform: translate(-50%, -50%);
     }
-  }
-}
 
-#produktanfrage {
-  height: 150px;
-  svg {
-    transform: translateY(-150px);
-    polygon {
-      fill: $gold;
-    }
-  }
-  a:hover {
-    polygon {
-      fill: $gold-dunkel !important;
+    & + #produktanfrage {
+      height: 150px;
+      svg {
+        transform: translateY(-150px);
+        polygon {
+          fill: $gold;
+        }
+      }
+      a:hover {
+        polygon {
+          fill: $gold-dunkel !important;
+        }
+      }
     }
   }
 }
@@ -198,7 +198,11 @@
 .stil--gray .kombi .panel-grid-cell:first-child:after {
   background-color: $blau-light-3;
 }
-.stil--gray .produktdaten .panel-grid-cell .widget .so-widget-sow-editor:not(.icon) {
+.stil--gray
+  .produktdaten
+  .panel-grid-cell
+  .widget
+  .so-widget-sow-editor:not(.icon) {
   background-color: $blau-light-1;
 }
 

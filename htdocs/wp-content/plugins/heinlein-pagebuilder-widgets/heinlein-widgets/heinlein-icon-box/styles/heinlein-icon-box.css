@@ -14,7 +14,7 @@
 }
 
 .so-widget-heinlein-icon-box .heinlein-widget-title {
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   font-size: calc(17px * 1.18);
   margin: 0 0 12px 0;
   hyphens: auto;
@@ -88,4 +88,14 @@
 .so-widget-heinlein-icon-box .lvw-callout__actions {
   width: 100%;
   padding-bottom: 21px;
+}
+
+.so-widget-heinlein-icon-box {
+  .icon-white {
+    svg {
+      path {
+        fill: #fff;
+      }
+    }
+  }
 }

@@ -26664,6 +26664,7 @@ svg .bg--white {
   font-weight: 600;
   src: local(""), url("../fonts/montserrat/montserrat-v25-latin-600.woff2") format("woff2"), url("../fonts/montserrat/montserrat-v25-latin-600.woff") format("woff");
 }
+.button-link,
 a[title="Virtual showroom"],
 a[title="Look inside"],
 a[title="Mehr erfahren"],
@@ -26679,6 +26680,7 @@ a[title=Anfrage-Formular] {
   border: 1px solid #5c6c90 !important;
   border-radius: 0 18px 0 18px;
 }
+.button-link:hover,
 a[title="Virtual showroom"]:hover,
 a[title="Look inside"]:hover,
 a[title="Mehr erfahren"]:hover,
@@ -26709,6 +26711,17 @@ a[title=Anfrage-Formular] {
   border-color: #fff !important;
 }
 a[title=Anfrage-Formular]:hover {
+  color: #fff !important;
+}
+
+.cta-blue {
+  background-color: #001e4b;
+  color: #fff !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.cta-blue:hover {
+  background-color: #3c4c70;
   color: #fff !important;
 }
 
@@ -26995,6 +27008,10 @@ img {
 }
 .rounded-3-x0x0 img {
   border-radius: 36px 0 36px 0;
+}
+
+.scale-15 {
+  transform: scale(1.5);
 }
 
 .gallery > .panel-grid-cell {
@@ -27358,7 +27375,7 @@ img {
   word-spacing: 0.222em;
 }
 
-#produkt-finder h4, #produkt-finder .h4 {
+#produktanfrage h4, #produktanfrage .h4 {
   color: #001e4b;
   font-family: "Encode Sans Expanded", sans-serif;
   text-transform: uppercase;
@@ -28111,17 +28128,16 @@ svg .bg--white {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
-#produktanfrage {
+.product--header + #produktanfrage {
   height: 150px;
 }
-#produktanfrage svg {
+.product--header + #produktanfrage svg {
   transform: translateY(-150px);
 }
-#produktanfrage svg polygon {
+.product--header + #produktanfrage svg polygon {
   fill: #aa8461;
 }
-#produktanfrage a:hover polygon {
+.product--header + #produktanfrage a:hover polygon {
   fill: #7f6445 !important;
 }
 

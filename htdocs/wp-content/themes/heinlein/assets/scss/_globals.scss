@@ -119,6 +119,10 @@ img {
   }
 }
 
+.scale-15 {
+  transform: scale(1.5);
+}
+
 .gallery {
   & > .panel-grid-cell {
     display: flex;

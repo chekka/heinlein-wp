@@ -1,3 +1,4 @@
+.button-link,
 a[title="Virtual showroom"],
 a[title="Look inside"],
 a[title="Mehr erfahren"],
@@ -39,6 +40,18 @@ a[title="Anfrage-Formular"] {
   border-color: #fff !important;
 
   &:hover {
+    color: #fff !important;
+  }
+}
+
+.cta-blue {
+  background-color: $blau-dunkel;
+  color: #fff !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+  &:hover {
+    background-color: $blau-mittel-3;
     color: #fff !important;
   }
 }
