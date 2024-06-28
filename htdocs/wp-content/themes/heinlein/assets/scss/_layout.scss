@@ -1,4 +1,5 @@
 [class*="content--"] {
+  width: 100%;
   margin: auto !important;
   padding-left: 15px;
   padding-right: 15px;
@@ -17,6 +18,8 @@
 }
 
 .site-footer {
+  margin: auto 0 0 0;
+
   * {
     font-family: "Encode Sans Expanded", sans-serif;
     color: #f8f5f3;
@@ -103,6 +106,8 @@ body {
   width: 100%;
   min-height: 100vh;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .content {

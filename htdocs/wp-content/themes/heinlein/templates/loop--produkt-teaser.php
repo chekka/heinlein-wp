@@ -2,10 +2,15 @@
 <?php 
 if ( have_posts() ):
 	while ( have_posts() ): the_post();
-      $headerimage = get_field( 'headerimage' );
+      if(get_field( 'vorschaubild' ) != ""):
+         $image = get_field( 'vorschaubild' );
+      else:
+         $image = get_field( 'headerimage' );
+      endif;
+      
 ?>
    <a href="<?php echo get_permalink(); ?>" class="loop-item d-flex flex-column bg--ivory-hell-2 mb-4 mb-lg-0">
-      <?php echo wp_get_attachment_image( $headerimage, 'more-footer', "", ["class" => "header-image", "alt"=>get_the_title()] ); ?>
+      <?php echo wp_get_attachment_image( $image, 'more-footer', "", ["class" => "header-image", "alt"=>get_the_title()] ); ?>
       <p class="p-3 ps-4 text-center text-uppercase"><?php the_title(); ?></p>
    </a>
    <?php
