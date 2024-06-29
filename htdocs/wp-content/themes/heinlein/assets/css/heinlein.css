@@ -26929,9 +26929,16 @@ img {
   height: auto;
 }
 
+.shadowed {
+  box-shadow: 0 12px 24px -3px rgba(0, 0, 0, 0.2);
+}
+
 .box {
   border-radius: 0 24px 0 24px;
   overflow: hidden;
+}
+.box.box-rounding-0 {
+  border-radius: 24px 0 0 0;
 }
 .box.stretch {
   height: 100%;
@@ -26942,6 +26949,21 @@ img {
 .box .widget-title {
   padding: 0.5em 1em;
 }
+.box.title-blue .widget-title {
+  background-color: #001e4b;
+  color: #fff;
+  padding: 20px 40px 20px 20px;
+}
+.box.title-blue .widget-title + .textwidget {
+  padding: 20px;
+}
+.box.title-blue .widget-title + .textwidget ul {
+  margin: 0 0 0 1em;
+  padding: 0;
+}
+.box.title-rounding-x0x0 .widget-title {
+  border-radius: 24px 0 !important;
+}
 .box.title-inner {
   position: relative;
 }
@@ -26951,6 +26973,8 @@ img {
 }
 .box.box-blue {
   padding: 30px 20px;
+}
+.box.box-blue:not([class*=bg--]) {
   background-color: #001e4b;
 }
 .box.box-blue * {
@@ -27055,6 +27079,18 @@ img {
 .grid > .panel-layout > .panel-grid > .panel-grid-cell .widget.panel-last-child[data-index="6"], .grid > .panel-layout > .panel-grid > .panel-grid-cell .widget.panel-last-child[data-index="9"] {
   margin: auto !important;
 }
+@media (min-width: 1200px) {
+  .grid.last-2-center > .panel-layout > .panel-grid > .panel-grid-cell .widget:nth-last-child(2) {
+    margin-left: auto !important;
+    margin-right: 1.16725% !important;
+  }
+}
+@media (min-width: 1200px) {
+  .grid.last-2-center > .panel-layout > .panel-grid > .panel-grid-cell .widget:last-child {
+    margin-right: auto !important;
+    margin-left: 1.16725% !important;
+  }
+}
 
 .boxes .widget {
   border-radius: 0 24px 0 24px;
@@ -27100,6 +27136,10 @@ img {
 }
 .so-widget-sow-accordion .sow-accordion .sow-accordion-panel .sow-accordion-panel-border {
   padding: 0 36px 21px 36px !important;
+}
+
+.panel-row-style {
+  background-origin: border-box;
 }
 
 .ausbildung .sow-accordion-panel {
@@ -27246,7 +27286,7 @@ img {
 }
 .video-placeholder .widget-title {
   font-family: "Encode Sans Semi Expanded", sans-serif;
-  color: var(--blau-dunkel);
+  color: #001e4b;
   font-weight: 600;
   font-size: 1.3em;
   text-transform: none;
@@ -27421,6 +27461,58 @@ img {
   line-height: 1.5;
 }
 
+#kundenstimmen .slick-track {
+  display: flex;
+  align-items: center;
+  padding-bottom: 50px;
+}
+#kundenstimmen .slick-track .slick-slide {
+  padding: 20px;
+  margin: 0 20px;
+  border-radius: 36px 0;
+  box-shadow: 0 12px 24px -3px rgba(0, 0, 0, 0.2);
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+#kundenstimmen .slick-track .slick-slide .widget {
+  margin-bottom: 0 !important;
+}
+#kundenstimmen .slick-track .slick-slide p {
+  line-height: 1.5;
+  color: #001e4b;
+}
+
+.final-row p {
+  position: relative;
+  padding: 0 0 220px 0;
+}
+@media (min-width: 720px) {
+  .final-row p {
+    padding: 0 30% 0 0;
+  }
+}
+.final-row p:after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-size: contain;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (min-width: 720px) {
+  .final-row p:after {
+    bottom: initial;
+    top: 50%;
+    left: 75%;
+    transform: translateY(-50%);
+  }
+}
+.final-row.p-icon-partner p:after {
+  background-image: url(../images/icons/icon-partner.svg);
+}
+
 [class*=content--] {
   width: 100%;
   margin: auto !important;
@@ -27470,14 +27562,16 @@ img {
   max-width: 1400px;
 }
 
+.content--max-1260 {
+  max-width: 1260px;
+}
+
 .content--xxxl {
   max-width: 1200px;
-  margin: auto;
 }
 
 .content--xxl {
   max-width: 960px;
-  margin: auto;
 }
 
 .content--xl {
@@ -27576,6 +27670,9 @@ body {
 .news-loop {
   flex-wrap: wrap;
 }
+.news-loop .loop-item {
+  transition-duration: 0.3s;
+}
 @media (min-width: 1040px) {
   .news-loop .loop-item {
     flex: 0 1 31.5%;
@@ -27591,6 +27688,15 @@ body {
     flex: 0 1 100%;
   }
 }
+.news-loop .loop-item:hover {
+  box-shadow: 0 12px 24px -3px rgba(0, 0, 0, 0.2);
+}
+.news-loop .loop-item:hover svg path:first-child {
+  fill: #001e4b;
+}
+.news-loop .loop-item:hover svg path:last-child {
+  stroke: #fff;
+}
 .news-loop .loop-item > div {
   padding: 20px;
 }
@@ -27600,7 +27706,7 @@ body {
 .news-loop .loop-item h2, .news-loop .loop-item .h2 {
   font-size: 18px;
   text-align: left;
-  color: var(--blau-dunkel);
+  color: #001e4b;
   letter-spacing: 0.07rem;
   hyphens: auto;
   -webkit-hyphens: auto;
@@ -27840,6 +27946,45 @@ body {
   bottom: -0.15em;
 }
 
+.hero-button-orange .textwidget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-button-orange .textwidget p {
+  margin: 0 auto;
+  background-color: #001e4b;
+  color: #ff6b37;
+  padding: 7px 30px 3px;
+  text-transform: uppercase;
+  border-radius: 24px 24px 0 0;
+  font-family: Gotham, sans-serif;
+  font-weight: 800;
+}
+.hero-button-orange .textwidget p:last-child {
+  margin: 0 auto;
+  background-color: #ff6b37;
+  padding: 15px 0;
+  border-radius: 0 36px;
+  font-family: "Encode Sans Expanded";
+  font-weight: 300;
+  width: 100%;
+}
+.hero-button-orange .textwidget a {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  border: none !important;
+  padding: 0 !important;
+  color: #fff !important;
+  display: block;
+  text-align: center !important;
+}
+.hero-button-orange.outline p:last-child {
+  background-color: transparent;
+  border: 1px solid #ff6b37;
+}
+
 #page-header {
   display: flex;
   justify-content: center;
@@ -27867,6 +28012,13 @@ body {
 }
 #page-header + .panel-layout {
   margin-top: 75vh;
+}
+
+.pum-open-overlay {
+  padding-right: 15px;
+}
+.pum-open-overlay .site-header .site-logo {
+  margin-right: 15px;
 }
 
 .popmake .sow-video-wrapper.use-fitvids {
@@ -29112,6 +29264,20 @@ a {
   text-decoration: none;
 }
 
+a[class^=cta-] {
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  border-radius: 0 24px;
+  border: none;
+  display: inline-block;
+  padding: 12px 36px !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
 .so-widget-sow-editor a {
   color: #001e4b;
   border-bottom: 1px solid #001e4b;
@@ -29124,6 +29290,10 @@ h2 + p, .h2 + p {
 
 .text-green * {
   color: #00af35;
+}
+
+.text-orange * {
+  color: #ff6b37 !important;
 }
 
 p {

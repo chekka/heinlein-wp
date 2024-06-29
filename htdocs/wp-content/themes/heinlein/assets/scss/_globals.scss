@@ -28,9 +28,17 @@ img {
   height: auto;
 }
 
+.shadowed {
+  box-shadow: $box-hover-shadow;
+}
+
 .box {
   border-radius: 0 $r2 0 $r2;
   overflow: hidden;
+
+  &.box-rounding-0 {
+    border-radius: $r2 0 0 0;
+  }
 
   &.stretch {
     height: 100%;
@@ -44,6 +52,30 @@ img {
   .widget-title {
     padding: 0.5em 1em;
   }
+
+  &.title-blue {
+    .widget-title {
+      background-color: $blau-dunkel;
+      color: #fff;
+      padding: 20px 40px 20px 20px;
+
+      & + .textwidget {
+        padding: 20px;
+
+        ul {
+          margin: 0 0 0 1em;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  &.title-rounding-x0x0 {
+    .widget-title {
+      border-radius: $r2 0 !important;
+    }
+  }
+
   &.title-inner {
     position: relative;
     .widget-title {
@@ -54,7 +86,10 @@ img {
 
   &.box-blue {
     padding: 30px 20px;
-    background-color: $blau-dunkel;
+
+    &:not([class*="bg--"]) {
+      background-color: $blau-dunkel;
+    }
 
     * {
       color: #fff !important;
@@ -71,7 +106,7 @@ img {
           border-bottom-color: $blau-light-7;
         }
       }
-      &[href^=mailto] {
+      &[href^="mailto"] {
         border-bottom: 1px solid #fff;
         padding-bottom: 1px;
         &:hover {
@@ -177,6 +212,26 @@ img {
       }
     }
   }
+  &.last-2-center {
+    & > .panel-layout {
+      & > .panel-grid {
+        & > .panel-grid-cell {
+          .widget:nth-last-child(2) {
+            @include media-breakpoint-up(xl) {
+              margin-left: auto !important;
+              margin-right: 1.16725% !important;
+            }
+          }
+          .widget:last-child {
+            @include media-breakpoint-up(xl) {
+              margin-right: auto !important;
+              margin-left: 1.16725% !important;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .boxes {
@@ -238,6 +293,10 @@ img {
       }
     }
   }
+}
+
+.panel-row-style {
+  background-origin: border-box;
 }
 
 .ausbildung .sow-accordion-panel {

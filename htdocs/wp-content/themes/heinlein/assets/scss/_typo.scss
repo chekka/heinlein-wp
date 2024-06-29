@@ -47,6 +47,20 @@ a {
   text-decoration: none;
 }
 
+a[class^="cta-"] {
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  border-radius: 0 $r2;
+  border: none;
+  display: inline-block;
+  padding: 12px 36px !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
 .so-widget-sow-editor a {
   color: $blau-dunkel;
   border-bottom: 1px solid $blau-dunkel;
@@ -60,6 +74,11 @@ h2 + p {
 .text-green * {
   color: #00af35;
 }
+
+.text-orange * {
+  color: $orange !important;
+}
+
 
 p {
   color: $blau-mittel-3;

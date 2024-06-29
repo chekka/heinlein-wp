@@ -35,5 +35,6 @@
    <footer class="news-footer">
       <p><a href="/news"><?php echo _("Zurück zur Übersicht"); ?></a></p>
       <p><strong>oder gleich den nächsten News-Artikel lesen:</strong></p>
+      <?php // incude('templates/loop--produkt-teaser.php') ?>
    </footer>         
 <?php get_footer(); ?>

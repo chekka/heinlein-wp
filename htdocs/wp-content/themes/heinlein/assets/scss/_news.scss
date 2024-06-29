@@ -9,9 +9,11 @@
 }
 
 .news-loop {
-  flex-wrap: wrap;
+  flex-wrap: wrap;  
 
   .loop-item {
+    transition-duration: .3s;
+
     @include media-breakpoint-up(lg) {
       flex: 0 1 31.5%;
     }
@@ -22,6 +24,19 @@
 
     @include media-breakpoint-down(sm) {
       flex: 0 1 100%;
+    }
+
+    &:hover {
+      box-shadow: $box-hover-shadow;
+
+      svg {
+        path:first-child {
+          fill: $blau-dunkel;
+        }
+        path:last-child {
+          stroke: #fff
+        }
+      }
     }
 
     > div {
@@ -35,7 +50,7 @@
     h2 {
       font-size: 18px;
       text-align: left;
-      color: var(--blau-dunkel);
+      color: $blau-dunkel;
       letter-spacing: 0.07rem;
       hyphens: auto;
       -webkit-hyphens: auto;

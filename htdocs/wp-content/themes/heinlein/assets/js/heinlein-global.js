@@ -42,6 +42,20 @@
       dots: true
     });
 
+    $('.text-slider-2 .panel-grid-cell').slick({
+      arrows: false,
+      dots: true,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      responsive: [{
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }]
+    });
+
     $('form .slick').slick({
       arrows: false,
       dots: true,
