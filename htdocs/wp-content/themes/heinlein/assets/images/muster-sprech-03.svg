@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 111.5 87.7">
+  <defs>
+    <linearGradient id="Neues_Verlaufsfeld_1" data-name="Neues Verlaufsfeld 1" x1="46.1" y1="78.4" x2="69.4" y2="-6.1" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".4" stop-color="#fbfbfb"/>
+      <stop offset=".8" stop-color="#f1f1f1"/>
+      <stop offset="1" stop-color="#e6e6e6"/>
+    </linearGradient>
+    <linearGradient id="Unbenannter_Verlauf_13" data-name="Unbenannter Verlauf 13" x1="-367.1" y1="2166.6" x2="-366.1" y2="2166.6" gradientTransform="translate(279105.1 30328.6) rotate(-74.2) scale(127.7 -127.7)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e6e6e6"/>
+      <stop offset=".2" stop-color="#f1f1f1"/>
+      <stop offset=".6" stop-color="#fbfbfb"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+  </defs>
+  <path d="M.5.5v51.8c0,10,8.6,18.1,19.2,18.1h70.2l21.1,16.3-1-68.1c0-10-8.6-18.1-19.2-18.1H.5Z" style="fill: url(#Neues_Verlaufsfeld_1);"/>
+  <path d="M.5,52.3h.5c0,9.7,8.3,17.6,18.7,17.6h70.3l20.5,15.7-1-67c0-9.7-8.3-17.6-18.7-17.6H1v51.3H0V0h90.8c10.8,0,19.7,8.3,19.7,18.6l1,69.1-21.8-16.8H19.7C8.8,70.9,0,62.6,0,52.3h.5Z" style="fill: url(#Unbenannter_Verlauf_13); stroke-width: 0px;"/>
+  <text transform="translate(15.6 22.5)" style="fill: #252228; font-family: EncodeSansExpanded-Regular, &apos;Encode Sans Expanded&apos;; font-size: 8px;"><tspan x="0" y="0" style="letter-spacing: 0em;">„</tspan><tspan x="3.9" y="0" style="letter-spacing: 0em;">Di</tspan><tspan x="12.8" y="0" style="letter-spacing: 0em;">e</tspan><tspan x="17.7" y="0" xml:space="preserve" style="letter-spacing: 0em;"> Qual</tspan><tspan x="39.6" y="0" style="letter-spacing: 0em;">it</tspan><tspan x="45.6" y="0" style="letter-spacing: 0em;">ä</tspan><tspan x="50.5" y="0" style="letter-spacing: 0em;">t</tspan><tspan x="54.2" y="0" style="letter-spacing: 0em;"> </tspan><tspan x="56.6" y="0" style="letter-spacing: 0em;">d</tspan><tspan x="62" y="0" style="letter-spacing: 0em;">e</tspan><tspan x="67" y="0">r</tspan></text>
+  <text transform="translate(85.9 22.5)" style="fill: #252228; font-family: EncodeSansExpanded-Regular, &apos;Encode Sans Expanded&apos;; font-size: 8px;"><tspan x="0" y="0"> </tspan></text>
+  <text transform="translate(15.6 36.5)" style="fill: #252228; font-family: EncodeSansExpanded-Regular, &apos;Encode Sans Expanded&apos;; font-size: 8px;"><tspan x="0" y="0" style="letter-spacing: 0em;">P</tspan><tspan x="5.7" y="0" style="letter-spacing: 0em;">r</tspan><tspan x="9.1" y="0" style="letter-spacing: 0em;">o</tspan><tspan x="14.5" y="0" style="letter-spacing: 0em;">d</tspan><tspan x="19.9" y="0" style="letter-spacing: 0em;">u</tspan><tspan x="25.3" y="0" style="letter-spacing: 0em;">k</tspan><tspan x="30.2" y="0" style="letter-spacing: 0em;">t</tspan><tspan x="33.8" y="0" style="letter-spacing: 0em;">e i</tspan><tspan x="43.4" y="0" style="letter-spacing: 0em;">s</tspan><tspan x="47.8" y="0">t</tspan></text>
+  <text transform="translate(66.9 36.5)" style="fill: #252228; font-family: EncodeSansExpanded-Regular, &apos;Encode Sans Expanded&apos;; font-size: 8px;"><tspan x="0" y="0"> </tspan></text>
+  <text transform="translate(15.6 50.5)" style="fill: #252228; font-family: EncodeSansExpanded-Regular, &apos;Encode Sans Expanded&apos;; font-size: 8px;"><tspan x="0" y="0" style="letter-spacing: 0em;">au</tspan><tspan x="10.3" y="0" style="letter-spacing: 0em;">s</tspan><tspan x="14.7" y="0" style="letter-spacing: 0em;">nahm</tspan><tspan x="38.3" y="0" style="letter-spacing: 0em;">s</tspan><tspan x="42.7" y="0" style="letter-spacing: 0em;">l</tspan><tspan x="45" y="0" style="letter-spacing: 0em;">os</tspan><tspan x="54.7" y="0" style="letter-spacing: 0em;"> </tspan><tspan x="57.2" y="0" style="letter-spacing: 0em;">g</tspan><tspan x="62.6" y="0" style="letter-spacing: 0em;">u</tspan><tspan x="68" y="0" style="letter-spacing: 0em;">t</tspan><tspan x="71.8" y="0" style="letter-spacing: 0em;">.</tspan><tspan x="73.7" y="0">“</tspan></text>
+</svg>

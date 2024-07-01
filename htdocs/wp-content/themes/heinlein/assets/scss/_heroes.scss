@@ -123,6 +123,15 @@
       transform: rotate(180deg);
     }
 
+    &.bg--ivory-hell-3 {
+      *:not(a, a span) {
+        color: $gold-dunkel !important;
+      }
+      &:after {
+        border-color: transparent $ivory-hell-3 transparent transparent;
+      }
+    }
+
     p {
       text-transform: uppercase;
       font-family: Gotham;
@@ -139,9 +148,13 @@
       z-index: 101;
     }
     &.text-normal {
-      width: 310px;
+      display: grid;
+      width: 330px;
       margin: auto;
       padding-bottom: 0;
+      @include media-breakpoint-up(md) {
+        min-height: 461px;
+      }
 
       * {
         color: #fff;
@@ -163,6 +176,14 @@
     }
 
     &.list-plus {
+      &.bg--ivory-hell-3 {
+        ul {
+          @include media-breakpoint-up(md) {
+            margin-bottom: 148px !important;
+          }
+        }
+      }
+
       p {
         strong {
           font-family: $font-body;
@@ -305,7 +326,9 @@
   }
 }
 
-.hero-button-orange {
+.hero-button-orange,
+.hero-button-gold,
+.hero-button-ivory {
   .textwidget {
     display: flex;
     flex-direction: column;
@@ -326,7 +349,7 @@
         background-color: $orange;
         padding: 15px 0;
         border-radius: 0 $r3;
-        font-family: "Encode Sans Expanded";
+        font-family: "Gotham";
         font-weight: 300;
         width: 100%;
       }
@@ -347,6 +370,55 @@
     p:last-child {
       background-color: transparent;
       border: 1px solid $orange;
+    }
+  }
+}
+
+.hero-button-gold {
+  .textwidget {
+    p {
+      &:last-child {
+        background-color: $gold-dunkel;
+      }
+      &:hover {
+        background-color: $gold !important;
+        a {
+          color: #fff !important;
+        }
+      }
+    }
+  }
+  &.outline {
+    p:last-child {
+      background-color: transparent;
+      border: 1px solid $gold-dunkel;
+    }
+  }
+}
+
+.hero-button-ivory {
+  .textwidget {
+    p {
+      &:last-child {
+        background-color: $ivory-dunkel-2;
+      }
+    }
+  }
+  &.outline {
+    p:last-child {
+      background-color: transparent;
+      border: 1px solid $ivory-dunkel-2;
+      a {
+        text-transform: none;
+        font-weight: 900;
+        color: $ivory-dunkel-2 !important;
+      }
+      &:hover {
+        background-color: $ivory-dunkel-2 !important;
+        a {
+          color: #fff !important;
+        }
+      }
     }
   }
 }

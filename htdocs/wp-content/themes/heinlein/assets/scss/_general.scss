@@ -369,3 +369,35 @@
     }
   }
 }
+
+#sprech-01 img {
+  min-width: 355px;
+  max-width: 355px;
+}
+
+#sprech-02 img {
+  min-width: 480px;
+  max-width: 480px;
+}
+
+#sprech-03 img {
+  min-width: 270px;
+  max-width: 270px;
+  @include media-breakpoint-up(md) {
+    margin-left: -30px;
+  }
+}
+
+#sprech-04 img {
+  min-width: 405px;
+  max-width: 405px;
+}
+
+#sprech-05 img {
+  min-width: 282px;
+  max-width: 282px;
+}
+
+div[id^=sprech-0] {
+  margin-bottom: -30px;
+}

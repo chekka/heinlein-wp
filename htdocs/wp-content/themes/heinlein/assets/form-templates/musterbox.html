@@ -1,7 +1,11 @@
-<p>[*]{Pflichtfeld}</p>
+<p>[*] {Pflichtfeld}</p>
 <h3 class="mb-4 mt-4">{Wir senden Ihnen gerne kostenlos und unverbindlich eine Musterbox zu.}</h3>
 <div class="d-flex flex-wrap justify-content-between">
-    <div class="col-12">
+     <div class="col-12 col-md-3 mb-0">
+        <label class="mt-1">{Musterbox auswählen}</label>
+    </div>
+    <div class="col-12 col-md-9 mb-0 align-self-center">[radio BOXTYP default:1 use_label_element "{CLASSIC COLLECTION}" "{LIFESTYLE COLLECTION}"]</div>
+    <div class="col-12 mt-3">
         <label>{Firma} [*]</label>[text* FIRMA]
     </div>
     <div class="col-12 col-md-6 pe-md-3">

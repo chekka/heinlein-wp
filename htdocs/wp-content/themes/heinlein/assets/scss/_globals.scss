@@ -184,6 +184,32 @@ img {
 }
 
 .grid {
+
+  &.grid-auto {
+    & > .panel-layout {
+      & > .panel-grid {
+        & > .panel-grid-cell {
+          max-width: 1400px;
+          margin: auto;
+
+          .widget {
+            width: auto;
+            flex: 0 auto;
+          }          
+        }
+      }
+    }
+  }
+  &.grid-center {
+    & > .panel-layout {
+      & > .panel-grid {
+        & > .panel-grid-cell {
+          justify-content: center;
+        }
+      }
+    }
+  }
+
   & > .panel-layout {
     & > .panel-grid {
       & > .panel-grid-cell {

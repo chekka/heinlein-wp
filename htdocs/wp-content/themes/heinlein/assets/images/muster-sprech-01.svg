@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 207.1 160.6">
+  <defs>
+    <linearGradient id="Unbenannter_Verlauf" data-name="Unbenannter Verlauf" x1="90.7" y1="33.5" x2="121.4" y2="145.1" gradientTransform="translate(0 159.9) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".4" stop-color="#fbfbfb"/>
+      <stop offset=".8" stop-color="#f1f1f1"/>
+      <stop offset="1" stop-color="#e6e6e6"/>
+    </linearGradient>
+    <filter id="drop-shadow-1">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="14"/>
+      <feFlood flood-color="#000" flood-opacity="1"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="Unbenannter_Verlauf_2" data-name="Unbenannter Verlauf 2" x1="-538.7" y1="-1671.7" x2="-537.7" y2="-1671.7" gradientTransform="translate(281161.5 -12409.9) rotate(-74.7) scale(160.2)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e6e6e6"/>
+      <stop offset=".2" stop-color="#f1f1f1"/>
+      <stop offset=".6" stop-color="#fbfbfb"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+  </defs>
+  <path d="M25.5,25.5v65.6c0,12.6,10.4,22.9,23.3,22.9h107l25.7,20.6-1.2-86.2c0-12.6-10.4-22.9-23.3-22.9,0,0-131.5,0-131.5,0Z" style="fill: url(#Unbenannter_Verlauf); filter: url(#drop-shadow-1); stroke-width: 0px;"/>
+  <path d="M25.5,91.1h.5c0,12.4,10.2,22.4,22.8,22.4h107.2l25.1,20-1.2-85.1c0-12.4-10.2-22.4-22.8-22.4H26v65.1h-1V25h132c13.2,0,23.8,10.5,23.8,23.4l1.2,87.2-26.4-21.1H48.8c-13.1,0-23.8-10.5-23.8-23.4h.5Z" style="fill: url(#Unbenannter_Verlauf_2); stroke-width: 0px;"/>
+  <text transform="translate(45.6 51.1)" style="fill: #252228; font-family: EncodeSansExpanded-Regular, &apos;Encode Sans Expanded&apos;; font-size: 8px; isolation: isolate;"><tspan x="0" y="0">„Die Reaktionsfähigkeit</tspan></text>
+  <text transform="translate(45.6 65.1)" style="fill: #252228; font-family: EncodeSansExpanded-Regular, &apos;Encode Sans Expanded&apos;; font-size: 8px; isolation: isolate;"><tspan x="0" y="0">auf Anfragen ist sehr gut.</tspan></text>
+  <text transform="translate(45.6 79.1)" style="fill: #252228; font-family: EncodeSansExpanded-Regular, &apos;Encode Sans Expanded&apos;; font-size: 8px; isolation: isolate;"><tspan x="0" y="0">Die Lieferketten stabil</tspan></text>
+  <text transform="translate(45.6 93.1)" style="fill: #252228; font-family: EncodeSansExpanded-Regular, &apos;Encode Sans Expanded&apos;; font-size: 8px; isolation: isolate;"><tspan x="0" y="0">und transparent.“</tspan></text>
+</svg>

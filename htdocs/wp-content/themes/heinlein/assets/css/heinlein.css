@@ -26562,6 +26562,21 @@ svg .bg--ivory-dunkel {
   color: #e4d8ce;
 }
 
+.bg--ivory-dunkel-2 {
+  background-color: #bab0a1;
+}
+.bg--ivory-dunkel-2 * {
+  color: #001e4b;
+}
+
+svg .bg--ivory-dunkel-2 {
+  fill: #bab0a1;
+}
+
+.txt--ivory-dunkel-2 * {
+  color: #bab0a1;
+}
+
 .bg--black {
   background-color: #000;
 }
@@ -26768,6 +26783,9 @@ label.inline {
   margin: 1rem 0 0.5em 0;
 }
 
+form h3, form .h3 {
+  text-align: left;
+}
 form .row p, form .row input {
   margin: 7px 0 0 0;
 }
@@ -27071,6 +27089,17 @@ img {
   padding: 0 15px;
 }
 
+.grid.grid-auto > .panel-layout > .panel-grid > .panel-grid-cell {
+  max-width: 1400px;
+  margin: auto;
+}
+.grid.grid-auto > .panel-layout > .panel-grid > .panel-grid-cell .widget {
+  width: auto;
+  flex: 0 auto;
+}
+.grid.grid-center > .panel-layout > .panel-grid > .panel-grid-cell {
+  justify-content: center;
+}
 .grid > .panel-layout > .panel-grid > .panel-grid-cell {
   display: flex;
   flex-wrap: wrap;
@@ -27526,6 +27555,40 @@ img {
   background-image: url(../images/icons/icon-partner.svg);
 }
 
+#sprech-01 img {
+  min-width: 355px;
+  max-width: 355px;
+}
+
+#sprech-02 img {
+  min-width: 480px;
+  max-width: 480px;
+}
+
+#sprech-03 img {
+  min-width: 270px;
+  max-width: 270px;
+}
+@media (min-width: 720px) {
+  #sprech-03 img {
+    margin-left: -30px;
+  }
+}
+
+#sprech-04 img {
+  min-width: 405px;
+  max-width: 405px;
+}
+
+#sprech-05 img {
+  min-width: 282px;
+  max-width: 282px;
+}
+
+div[id^=sprech-0] {
+  margin-bottom: -30px;
+}
+
 [class*=content--] {
   width: 100%;
   margin: auto !important;
@@ -27651,6 +27714,10 @@ body {
 
 .stil--silver {
   background: radial-gradient(circle farthest-corner at 40% 0, #fff, #e4ecf1);
+}
+
+.stil--ivory-top {
+  background: linear-gradient(to bottom, #ebe7e0, #fff);
 }
 
 .siteorigin-panels-stretch {
@@ -27869,6 +27936,14 @@ body {
   left: 0;
   transform: rotate(180deg);
 }
+.landing-hero-box.muster.bg--ivory-hell-3 *:not(a, a span),
+.hero-box.muster.bg--ivory-hell-3 *:not(a, a span) {
+  color: #7f6445 !important;
+}
+.landing-hero-box.muster.bg--ivory-hell-3:after,
+.hero-box.muster.bg--ivory-hell-3:after {
+  border-color: transparent #ebe7e0 transparent transparent;
+}
 .landing-hero-box.muster p,
 .hero-box.muster p {
   text-transform: uppercase;
@@ -27887,9 +27962,16 @@ body {
 }
 .landing-hero-box.muster.text-normal,
 .hero-box.muster.text-normal {
-  width: 310px;
+  display: grid;
+  width: 330px;
   margin: auto;
   padding-bottom: 0;
+}
+@media (min-width: 720px) {
+  .landing-hero-box.muster.text-normal,
+  .hero-box.muster.text-normal {
+    min-height: 461px;
+  }
 }
 .landing-hero-box.muster.text-normal *,
 .hero-box.muster.text-normal * {
@@ -27909,6 +27991,12 @@ body {
   font-size: 1.333em;
   text-transform: uppercase;
   margin-bottom: 1em;
+}
+@media (min-width: 720px) {
+  .landing-hero-box.muster.list-plus.bg--ivory-hell-3 ul,
+  .hero-box.muster.list-plus.bg--ivory-hell-3 ul {
+    margin-bottom: 148px !important;
+  }
 }
 .landing-hero-box.muster.list-plus p strong,
 .hero-box.muster.list-plus p strong {
@@ -28047,12 +28135,16 @@ body {
   bottom: -0.15em;
 }
 
-.hero-button-orange .textwidget {
+.hero-button-orange .textwidget,
+.hero-button-gold .textwidget,
+.hero-button-ivory .textwidget {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.hero-button-orange .textwidget p {
+.hero-button-orange .textwidget p,
+.hero-button-gold .textwidget p,
+.hero-button-ivory .textwidget p {
   margin: 0 auto;
   background-color: #001e4b;
   color: #ff6b37;
@@ -28062,16 +28154,20 @@ body {
   font-family: Gotham, sans-serif;
   font-weight: 800;
 }
-.hero-button-orange .textwidget p:last-child {
+.hero-button-orange .textwidget p:last-child,
+.hero-button-gold .textwidget p:last-child,
+.hero-button-ivory .textwidget p:last-child {
   margin: 0 auto;
   background-color: #ff6b37;
   padding: 15px 0;
   border-radius: 0 36px;
-  font-family: "Encode Sans Expanded";
+  font-family: "Gotham";
   font-weight: 300;
   width: 100%;
 }
-.hero-button-orange .textwidget a {
+.hero-button-orange .textwidget a,
+.hero-button-gold .textwidget a,
+.hero-button-ivory .textwidget a {
   font-size: 1.5em;
   text-transform: uppercase;
   text-decoration: none !important;
@@ -28081,9 +28177,44 @@ body {
   display: block;
   text-align: center !important;
 }
-.hero-button-orange.outline p:last-child {
+.hero-button-orange.outline p:last-child,
+.hero-button-gold.outline p:last-child,
+.hero-button-ivory.outline p:last-child {
   background-color: transparent;
   border: 1px solid #ff6b37;
+}
+
+.hero-button-gold .textwidget p:last-child {
+  background-color: #7f6445;
+}
+.hero-button-gold .textwidget p:hover {
+  background-color: #aa8461 !important;
+}
+.hero-button-gold .textwidget p:hover a {
+  color: #fff !important;
+}
+.hero-button-gold.outline p:last-child {
+  background-color: transparent;
+  border: 1px solid #7f6445;
+}
+
+.hero-button-ivory .textwidget p:last-child {
+  background-color: #bab0a1;
+}
+.hero-button-ivory.outline p:last-child {
+  background-color: transparent;
+  border: 1px solid #bab0a1;
+}
+.hero-button-ivory.outline p:last-child a {
+  text-transform: none;
+  font-weight: 900;
+  color: #bab0a1 !important;
+}
+.hero-button-ivory.outline p:last-child:hover {
+  background-color: #bab0a1 !important;
+}
+.hero-button-ivory.outline p:last-child:hover a {
+  color: #fff !important;
 }
 
 #page-header {
@@ -28432,6 +28563,21 @@ svg .bg--ivory-dunkel {
 
 .txt--ivory-dunkel * {
   color: #e4d8ce;
+}
+
+.bg--ivory-dunkel-2 {
+  background-color: #bab0a1;
+}
+.bg--ivory-dunkel-2 * {
+  color: #001e4b;
+}
+
+svg .bg--ivory-dunkel-2 {
+  fill: #bab0a1;
+}
+
+.txt--ivory-dunkel-2 * {
+  color: #bab0a1;
 }
 
 .bg--black {
@@ -29315,6 +29461,21 @@ svg .bg--ivory-dunkel {
   color: #e4d8ce;
 }
 
+.bg--ivory-dunkel-2 {
+  background-color: #bab0a1;
+}
+.bg--ivory-dunkel-2 * {
+  color: #001e4b;
+}
+
+svg .bg--ivory-dunkel-2 {
+  fill: #bab0a1;
+}
+
+.txt--ivory-dunkel-2 * {
+  color: #bab0a1;
+}
+
 .bg--black {
   background-color: #000;
 }
@@ -29425,6 +29586,10 @@ h2 + p, .h2 + p {
 
 .text-orange * {
   color: #ff6b37 !important;
+}
+
+.text-ivory * {
+  color: #bab0a1 !important;
 }
 
 p {
@@ -29804,6 +29969,21 @@ svg .bg--ivory-dunkel {
 
 .txt--ivory-dunkel * {
   color: #e4d8ce;
+}
+
+.bg--ivory-dunkel-2 {
+  background-color: #bab0a1;
+}
+.bg--ivory-dunkel-2 * {
+  color: #001e4b;
+}
+
+svg .bg--ivory-dunkel-2 {
+  fill: #bab0a1;
+}
+
+.txt--ivory-dunkel-2 * {
+  color: #bab0a1;
 }
 
 .bg--black {
