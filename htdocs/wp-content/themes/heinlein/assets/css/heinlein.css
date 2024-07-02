@@ -28727,6 +28727,14 @@ svg .bg--white {
   background-position: center center;
   box-shadow: inset 10px 0px 7px -7px rgba(0, 0, 0, 0.1), inset -10px 0px 7px -7px rgba(0, 0, 0, 0.1);
 }
+@media (max-width: 719.98px) {
+  .kombi .panel-grid-cell:first-child:after {
+    top: initial;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, calc(50% + 15px));
+  }
+}
 .kombi .panel-grid-cell .so-panel:hover a {
   text-decoration: underline;
 }
