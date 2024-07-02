@@ -401,3 +401,25 @@
 div[id^=sprech-0] {
   margin-bottom: -30px;
 }
+
+// Social sticky banner
+#block-stickysocialbanner {
+  position: fixed;
+  top: 33vh;
+  right: 0;
+  width: 64px;
+  padding: 0;
+  background-color: #fff;
+  border-radius: $r2 0 0 $r2;
+  box-shadow: $box-hover-shadow;
+  
+  div {
+    margin: 18px 0;
+    text-align: center;
+    
+    img {
+      max-width: 36px;
+    }
+  }
+}
+
