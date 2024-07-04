@@ -26547,34 +26547,64 @@ svg .bg--ivory-hell-3 {
   color: #ebe7e0;
 }
 
-.bg--ivory-dunkel {
+.bg--ivory-hell-4 {
   background-color: #e4d8ce;
+}
+.bg--ivory-hell-4 * {
+  color: #001e4b;
+}
+
+svg .bg--ivory-hell-4 {
+  fill: #e4d8ce;
+}
+
+.txt--ivory-hell-4 * {
+  color: #e4d8ce;
+}
+
+.bg--ivory-hell-5 {
+  background-color: #d1c9bc;
+}
+.bg--ivory-hell-5 * {
+  color: #001e4b;
+}
+
+svg .bg--ivory-hell-5 {
+  fill: #d1c9bc;
+}
+
+.txt--ivory-hell-5 * {
+  color: #d1c9bc;
+}
+
+.bg--ivory-dunkel {
+  background-color: #bab0a1;
 }
 .bg--ivory-dunkel * {
   color: #001e4b;
 }
 
 svg .bg--ivory-dunkel {
-  fill: #e4d8ce;
-}
-
-.txt--ivory-dunkel * {
-  color: #e4d8ce;
-}
-
-.bg--ivory-dunkel-2 {
-  background-color: #bab0a1;
-}
-.bg--ivory-dunkel-2 * {
-  color: #001e4b;
-}
-
-svg .bg--ivory-dunkel-2 {
   fill: #bab0a1;
 }
 
-.txt--ivory-dunkel-2 * {
+.txt--ivory-dunkel * {
   color: #bab0a1;
+}
+
+.bg--dark {
+  background-color: #252227;
+}
+.bg--dark * {
+  color: #fff;
+}
+
+svg .bg--dark {
+  fill: #252227;
+}
+
+.txt--dark * {
+  color: #252227;
 }
 
 .bg--black {
@@ -28217,19 +28247,19 @@ body {
 }
 
 .hero-button-ivory .textwidget p:last-child {
-  background-color: #bab0a1;
+  background-color: #e4d8ce;
 }
 .hero-button-ivory.outline p:last-child {
   background-color: transparent;
-  border: 1px solid #bab0a1;
+  border: 1px solid #e4d8ce;
 }
 .hero-button-ivory.outline p:last-child a {
   text-transform: none;
   font-weight: 900;
-  color: #bab0a1 !important;
+  color: #e4d8ce !important;
 }
 .hero-button-ivory.outline p:last-child:hover {
-  background-color: #bab0a1 !important;
+  background-color: #e4d8ce !important;
 }
 .hero-button-ivory.outline p:last-child:hover a {
   color: #fff !important;
@@ -28568,34 +28598,64 @@ svg .bg--ivory-hell-3 {
   color: #ebe7e0;
 }
 
-.bg--ivory-dunkel {
+.bg--ivory-hell-4 {
   background-color: #e4d8ce;
+}
+.bg--ivory-hell-4 * {
+  color: #001e4b;
+}
+
+svg .bg--ivory-hell-4 {
+  fill: #e4d8ce;
+}
+
+.txt--ivory-hell-4 * {
+  color: #e4d8ce;
+}
+
+.bg--ivory-hell-5 {
+  background-color: #d1c9bc;
+}
+.bg--ivory-hell-5 * {
+  color: #001e4b;
+}
+
+svg .bg--ivory-hell-5 {
+  fill: #d1c9bc;
+}
+
+.txt--ivory-hell-5 * {
+  color: #d1c9bc;
+}
+
+.bg--ivory-dunkel {
+  background-color: #bab0a1;
 }
 .bg--ivory-dunkel * {
   color: #001e4b;
 }
 
 svg .bg--ivory-dunkel {
-  fill: #e4d8ce;
-}
-
-.txt--ivory-dunkel * {
-  color: #e4d8ce;
-}
-
-.bg--ivory-dunkel-2 {
-  background-color: #bab0a1;
-}
-.bg--ivory-dunkel-2 * {
-  color: #001e4b;
-}
-
-svg .bg--ivory-dunkel-2 {
   fill: #bab0a1;
 }
 
-.txt--ivory-dunkel-2 * {
+.txt--ivory-dunkel * {
   color: #bab0a1;
+}
+
+.bg--dark {
+  background-color: #252227;
+}
+.bg--dark * {
+  color: #fff;
+}
+
+svg .bg--dark {
+  fill: #252227;
+}
+
+.txt--dark * {
+  color: #252227;
 }
 
 .bg--black {
@@ -29472,34 +29532,64 @@ svg .bg--ivory-hell-3 {
   color: #ebe7e0;
 }
 
-.bg--ivory-dunkel {
+.bg--ivory-hell-4 {
   background-color: #e4d8ce;
+}
+.bg--ivory-hell-4 * {
+  color: #001e4b;
+}
+
+svg .bg--ivory-hell-4 {
+  fill: #e4d8ce;
+}
+
+.txt--ivory-hell-4 * {
+  color: #e4d8ce;
+}
+
+.bg--ivory-hell-5 {
+  background-color: #d1c9bc;
+}
+.bg--ivory-hell-5 * {
+  color: #001e4b;
+}
+
+svg .bg--ivory-hell-5 {
+  fill: #d1c9bc;
+}
+
+.txt--ivory-hell-5 * {
+  color: #d1c9bc;
+}
+
+.bg--ivory-dunkel {
+  background-color: #bab0a1;
 }
 .bg--ivory-dunkel * {
   color: #001e4b;
 }
 
 svg .bg--ivory-dunkel {
-  fill: #e4d8ce;
-}
-
-.txt--ivory-dunkel * {
-  color: #e4d8ce;
-}
-
-.bg--ivory-dunkel-2 {
-  background-color: #bab0a1;
-}
-.bg--ivory-dunkel-2 * {
-  color: #001e4b;
-}
-
-svg .bg--ivory-dunkel-2 {
   fill: #bab0a1;
 }
 
-.txt--ivory-dunkel-2 * {
+.txt--ivory-dunkel * {
   color: #bab0a1;
+}
+
+.bg--dark {
+  background-color: #252227;
+}
+.bg--dark * {
+  color: #fff;
+}
+
+svg .bg--dark {
+  fill: #252227;
+}
+
+.txt--dark * {
+  color: #252227;
 }
 
 .bg--black {
@@ -29615,7 +29705,7 @@ h2 + p, .h2 + p {
 }
 
 .text-ivory * {
-  color: #bab0a1 !important;
+  color: #e4d8ce !important;
 }
 
 p {
@@ -29982,34 +30072,64 @@ svg .bg--ivory-hell-3 {
   color: #ebe7e0;
 }
 
-.bg--ivory-dunkel {
+.bg--ivory-hell-4 {
   background-color: #e4d8ce;
+}
+.bg--ivory-hell-4 * {
+  color: #001e4b;
+}
+
+svg .bg--ivory-hell-4 {
+  fill: #e4d8ce;
+}
+
+.txt--ivory-hell-4 * {
+  color: #e4d8ce;
+}
+
+.bg--ivory-hell-5 {
+  background-color: #d1c9bc;
+}
+.bg--ivory-hell-5 * {
+  color: #001e4b;
+}
+
+svg .bg--ivory-hell-5 {
+  fill: #d1c9bc;
+}
+
+.txt--ivory-hell-5 * {
+  color: #d1c9bc;
+}
+
+.bg--ivory-dunkel {
+  background-color: #bab0a1;
 }
 .bg--ivory-dunkel * {
   color: #001e4b;
 }
 
 svg .bg--ivory-dunkel {
-  fill: #e4d8ce;
-}
-
-.txt--ivory-dunkel * {
-  color: #e4d8ce;
-}
-
-.bg--ivory-dunkel-2 {
-  background-color: #bab0a1;
-}
-.bg--ivory-dunkel-2 * {
-  color: #001e4b;
-}
-
-svg .bg--ivory-dunkel-2 {
   fill: #bab0a1;
 }
 
-.txt--ivory-dunkel-2 * {
+.txt--ivory-dunkel * {
   color: #bab0a1;
+}
+
+.bg--dark {
+  background-color: #252227;
+}
+.bg--dark * {
+  color: #fff;
+}
+
+svg .bg--dark {
+  fill: #252227;
+}
+
+.txt--dark * {
+  color: #252227;
 }
 
 .bg--black {

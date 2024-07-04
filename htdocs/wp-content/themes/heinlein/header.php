@@ -30,9 +30,22 @@
   <header class="site-header" id="top">
     
       <?php 
-        if ( is_active_sidebar( 'header' )):
+        function contains_partial_class($partial) {
+          $body_classes = get_body_class();
+          foreach ($body_classes as $class) {
+            if (strpos($class, $partial) !== false) {
+              return true;
+            }
+          }
+          return false;
+        }
+        
+        // Usage example
+        if (!contains_partial_class('landingpage')) {
+          if ( is_active_sidebar( 'header' )):
             dynamic_sidebar( 'header' );
-        endif; 
+          endif;
+        }
       ?>
       <a href="/" class="site-logo">
         <picture>

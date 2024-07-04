@@ -400,21 +400,21 @@
   .textwidget {
     p {
       &:last-child {
-        background-color: $ivory-dunkel-2;
+        background-color: $ivory-hell-4;
       }
     }
   }
   &.outline {
     p:last-child {
       background-color: transparent;
-      border: 1px solid $ivory-dunkel-2;
+      border: 1px solid $ivory-hell-4;
       a {
         text-transform: none;
         font-weight: 900;
-        color: $ivory-dunkel-2 !important;
+        color: $ivory-hell-4 !important;
       }
       &:hover {
-        background-color: $ivory-dunkel-2 !important;
+        background-color: $ivory-hell-4 !important;
         a {
           color: #fff !important;
         }
