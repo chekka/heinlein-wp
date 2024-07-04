@@ -351,16 +351,15 @@
       height: 150px;
       background-size: contain;
       bottom: 0;
-      left: 50%;    
+      left: 50%;
       transform: translateX(-50%);
 
       @include media-breakpoint-up(md) {
         bottom: initial;
         top: 50%;
-        left: 75%;    
+        left: 75%;
         transform: translateY(-50%);
       }
-
     }
   }
   &.p-icon-partner {
@@ -398,7 +397,7 @@
   max-width: 282px;
 }
 
-div[id^=sprech-0] {
+div[id^="sprech-0"] {
   margin-bottom: -30px;
 }
 
@@ -412,14 +411,40 @@ div[id^=sprech-0] {
   background-color: #fff;
   border-radius: $r2 0 0 $r2;
   box-shadow: $box-hover-shadow;
-  
+
   div {
     margin: 18px 0;
     text-align: center;
-    
+
     img {
       max-width: 36px;
     }
   }
 }
 
+#pgc-1804-5-0 {
+  position: relative;
+}
+
+#panel-1804-5-0-0 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  div {
+    height: 100%;
+  }
+
+  .textwidget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      max-width: 550px;
+    }
+  }
+}

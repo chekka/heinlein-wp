@@ -4,6 +4,33 @@
 
 .landing-hero-box,
 .hero-box {
+  .title {
+    text-transform: uppercase;
+    font-family: Gotham;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.3;
+    margin-bottom: 0.5em;
+    color: $white;
+  }
+
+  &.bg--dark {
+    a.pink {
+      position: relative;
+
+      &:before {
+        top: initial;
+        bottom: -110px;
+        left: -5px;
+        right: initial;
+        background-image: url(../images/icons/icon-hero-circle-arrow-pink.svg);
+      }
+    }
+    &:after {
+      border-color: transparent $dark transparent transparent;
+    }
+  }
+
   padding: 14px 34px 14px 44px;
   width: 260px;
 
@@ -69,8 +96,15 @@
       line-height: 1.4em;
       display: inline;
       white-space: pre-wrap;
-      border: 0 solid $gold;
-      border-width: 0.25em 0;
+
+      &.pink {
+        background-color: $pink;
+        border-color: $pink;
+
+        &:after {
+          background-color: $pink;
+        }
+      }
 
       &:before {
         content: "";
@@ -115,6 +149,21 @@
   &.muster {
     width: 295px;
     padding: 30px 30px 120px 30px;
+
+    &.no-angle {
+      &:before,
+      &:after {
+        content: initial;
+      }
+
+      a {
+        background-color: $pink;
+
+        span {
+          background-color: $dark;
+        }
+      }
+    }
 
     &:after {
       top: -48px;
@@ -418,6 +467,35 @@
         a {
           color: #fff !important;
         }
+      }
+    }
+  }
+}
+
+.page-template-page-landingpage-gold {
+  .hero-box.muster.bg--ivory-hell-3 {
+    background-color: $ivory-hell-1 !important;
+    
+    box-shadow: $box-hover-shadow;
+    min-width: 340px;
+    padding-bottom: 0 !important;
+
+    ul {
+      margin-bottom: 0 !important;
+    }
+    strong,
+    li {
+      color: $dark !important;
+    }
+
+    a {
+      &:hover {
+        background-color: $dark !important;
+      }
+
+      span {
+        background-color: $dark !important;
+        color: #fff;
       }
     }
   }

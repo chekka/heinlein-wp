@@ -43,6 +43,7 @@ $green-text: #00af35;
 $green-bg: #97e678;
 
 $orange: #ff6b37;
+$pink: #EB4D64;
 $white: #fff;
 $dark: #252227;
 $black: #000;
@@ -69,9 +70,10 @@ $colors-list: (
   ("ivory-hell-4", $ivory-hell-4, $blau-dunkel),
   ("ivory-hell-5", $ivory-hell-5, $blau-dunkel),
   ("ivory-dunkel", $ivory-dunkel, $blau-dunkel),
-  ("dark", $dark, $white),
+  ("dark", $dark, $ivory-hell-4),
   ("black", $black, $white),
-  ("white", $white, $blau-dunkel)
+  ("white", $white, $blau-dunkel),
+  ("pink", $pink, $white),
 );
 
 @each $color in $colors-list {

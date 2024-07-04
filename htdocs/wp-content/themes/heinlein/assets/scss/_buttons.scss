@@ -65,3 +65,11 @@ a[title="Anfrage-Formular"] {
     border-color: $green-text;
   }
 }
+
+.button-link.bg--pink {
+  border: none !important;
+  color: #fff !important;
+  transform: scale(1.5);
+  padding: 0 3em;
+  margin-top: 3em;
+}

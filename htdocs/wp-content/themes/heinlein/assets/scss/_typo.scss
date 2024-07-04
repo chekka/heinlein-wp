@@ -69,16 +69,29 @@ h2 + p {
   margin-top: -1rem;
 }
 
+span.text-green,
 .text-green * {
   color: #00af35;
 }
 
+span.text-orange,
 .text-orange * {
   color: $orange !important;
 }
 
+span.text-ivory,
 .text-ivory * {
   color: $ivory-hell-4 !important;
+}
+
+span.text-gold,
+.text-gold * {
+  color: $gold !important;
+}
+
+span.text-dark,
+.text-dark * {
+  color: $dark !important;
 }
 
 p {
