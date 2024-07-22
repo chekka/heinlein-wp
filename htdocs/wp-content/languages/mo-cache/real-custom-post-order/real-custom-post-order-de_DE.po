@@ -1,0 +1,77 @@
+# Copyright (C) 2023 devowl.io
+# This file is distributed under the same license as the Real Custom Post Order plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: n/a\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/src\n"
+"POT-Creation-Date: n/a\n"
+"PO-Revision-Date: 2023-11-08 13:01+0000\n"
+"Last-Translator: Matthias Günter <matthias.guenter@devowl.io>\n"
+"Language-Team: German (informal) <https://translate.devowl.io/projects/"
+"wordpress-real-custom-post-order-backend-php/develop/de@informal/>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.1.1\n"
+
+#. Plugin Name of the plugin
+#: index.php
+msgid "Real Custom Post Order"
+msgstr "Real Custom Post Order"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: index.php
+msgid "https://devowl.io"
+msgstr "https://devowl.io/de/"
+
+#. Description of the plugin
+#: index.php
+msgid ""
+"Custom post order for posts, pages, WooCommerce products and custom post "
+"types using drag and drop. Simple and intuitive sorting of your content!"
+msgstr ""
+"Benutzerdefinierte Reihenfolge für Beiträge, Seiten, WooCommerce-Produkte "
+"und benutzerdefinierte Beitragstypen per Drag & Drop. Einfache und intuitive "
+"Sortierung deiner Inhalte!"
+
+#. Author of the plugin
+#: index.php
+msgid "devowl.io"
+msgstr "devowl.io"
+
+#: inc/AdInitiator.php:53
+msgid "Drag & Drop your posts and pages"
+msgstr "Drag & Drop deiner Beiträge und Seiten"
+
+#: inc/AdInitiator.php:54
+msgid ""
+"A custom order of posts - whether it's a post order, a custom page order, a "
+"custom product order, or a custom post type order - can help you organize "
+"your content in a more intuitive way that helps you find your content more "
+"simply and quickly."
+msgstr ""
+"Eine benutzerdefinierte Reihenfolge von Beiträgen - sei es eine "
+"Beitragsreihenfolge, eine benutzerdefinierte Seitenreihenfolge, eine "
+"benutzerdefinierte Produktreihenfolge oder eine benutzerdefinierten "
+"Reihenfolge eines Custom Post Types - kann dir dabei helfen, deine Inhalte "
+"auf eine intuitivere Art und Weise zu organisieren, die es dir ermöglicht, "
+"deine Inhalte einfacher und schneller zu finden."
+
+#: inc/sortable/AbstractSortable.php:50
+msgid "Sequence array not valid."
+msgstr "Sequenz nicht gültig."
+
+#: inc/sortable/AbstractSortable.php:55
+msgid "Sequence value not a number."
+msgstr "Sequenzwert ist keine Zahl."
+
+#: inc/view/PostScreenSettings.php:38
+msgid "Custom order for this list table"
+msgstr "Benutzerdefinierte Reihenfolge für diese Tabelle"
+
+#: inc/view/PostScreenSettings.php:47
+msgid "Enabled"
+msgstr "Aktiviert"
