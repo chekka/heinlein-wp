@@ -26742,7 +26742,6 @@ svg .bg--pink {
 .button-link,
 a[title="Virtual showroom"],
 a[title="Look inside"],
-a[title="Mehr erfahren"],
 a[title=Anfrage-Formular] {
   display: inline-block;
   font-size: 1em;
@@ -26758,20 +26757,17 @@ a[title=Anfrage-Formular] {
 .button-link:hover,
 a[title="Virtual showroom"]:hover,
 a[title="Look inside"]:hover,
-a[title="Mehr erfahren"]:hover,
 a[title=Anfrage-Formular]:hover {
   color: #001e4b !important;
   border-color: #001e4b !important;
 }
 
 a[title="Look inside"],
-a[title="Mehr erfahren"],
 a[title=Anfrage-Formular] {
   color: #fff;
   border-color: #fff;
 }
 a[title="Look inside"]:hover,
-a[title="Mehr erfahren"]:hover,
 a[title=Anfrage-Formular]:hover {
   color: #fff;
   border-color: #aa8461;
@@ -26794,6 +26790,21 @@ a[title=Anfrage-Formular]:hover {
   color: #fff !important;
   text-transform: uppercase;
   letter-spacing: 2px;
+  margin: 1em 0 2em 0;
+}
+.cta-blue.outline {
+  background-color: transparent;
+  border: 1px solid #001e4b !important;
+  color: #001e4b !important;
+}
+.cta-blue.outline.green {
+  border-color: #00af35 !important;
+  color: #00af35 !important;
+  background-color: #fff !important;
+}
+.cta-blue.outline.green:hover {
+  background-color: #00af35 !important;
+  color: #fff !important;
 }
 .cta-blue:hover {
   background-color: #3c4c70;
@@ -27527,7 +27538,7 @@ img {
   text-align: left;
   hyphens: auto;
   -webkit-hyphens: auto;
-  min-height: 100px;
+  min-height: 120px;
   margin-top: 1rem;
   padding-right: 30px;
 }
@@ -27891,6 +27902,10 @@ div[id^=sprech-0] {
 
 .content--lg {
   max-width: 750px;
+}
+
+.page-template-page-landingpage .content--lg {
+  max-width: 800px;
 }
 
 .content--md {
@@ -30135,6 +30150,12 @@ h6 em,
 .h6 em {
   font-style: normal;
   color: #aa8461;
+}
+
+.h1h2-small h1, .h1h2-small .h1,
+.h1h2-small h2,
+.h1h2-small .h2 {
+  font-size: 1.7em;
 }
 
 a {

@@ -47,8 +47,10 @@
             dynamic_sidebar( 'header' );
           endif;
         }
+
+        $current_lang = pll_current_language();
       ?>
-      <a href="/" class="site-logo">
+      <a href="/<?php if($current_lang != "de"): echo pll_current_language(); endif; ?>" class="site-logo">
         <picture>
           <source srcset="/wp-content/themes/heinlein/assets/images/heinlein-plastiktechnik-signet.svg" media="(max-width: 580px)" width="80" height="110">
           <img src="/wp-content/themes/heinlein/assets/images/heinlein-plastiktechnik-logo.svg" alt="Heinlein Plastik-Technik Logo" width="240" height="90" loading="eager" decoding="sync">
