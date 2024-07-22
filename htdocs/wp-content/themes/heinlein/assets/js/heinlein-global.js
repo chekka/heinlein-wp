@@ -3,6 +3,11 @@
   
   $(window).on('load', function () {
     $('body').addClass('loaded');
+
+    document.querySelector('.glider').addEventListener('glider-animated', function() {      
+      $('.slider-next.disabled').hide().next().show();
+    });
+
   });
 
   $(window).on('resize', function () {
@@ -11,6 +16,13 @@
   });
 
   $(document).on('ready',function(){
+    
+    // Popup form in next so-panel
+    $('.popup-next').on('click', function(){
+      var parent = $(this).parents('.so-panel');
+      var next = $(parent).next('.so-panel');
+      $(next).find('.popup-form').addClass('show');
+    });
 
     // counterUp
     function counter() {

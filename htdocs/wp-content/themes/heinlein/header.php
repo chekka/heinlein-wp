@@ -9,6 +9,7 @@
   <meta name="msapplication-TileColor" content="#17254c">
   <meta name="theme-color" content="#17254c">
   <link rel="profile" href="https://gmpg.org/xfn/11">
+  <?php wp_enqueue_script("jquery"); ?>
   <?php wp_head(); ?>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">

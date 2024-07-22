@@ -4,7 +4,7 @@ span.required {
 
 label {
   display: block;
-  margin: 0 0 3px 0;
+  margin: 0;
   line-height: 1.5;
   font-weight: 400;
 
@@ -24,8 +24,11 @@ form {
     text-align: left;
   }
   .row {
-    p, input {
-      margin: 7px 0 0 0;
+    p,
+    input,
+    textarea,
+    select {
+      margin: 0 0 21px 0;
     }
   }
 }
@@ -40,13 +43,15 @@ input[type="text"],
 input[type="number"],
 input[type="email"],
 input[type="tel"],
+select,
 textarea {
   color: $blau-mittel-3;
   border-radius: 0 $r1 0 $r1;
   border: 1px solid $ivory-hell-2;
   box-shadow: inset 0 3px 9px -7px rgba(0, 0, 0, 0.5);
   padding: 0 0.75rem;
-  line-height: 2;
+  line-height: 40px;
+  height: 40px;
   width: 100%;
 }
 
@@ -83,24 +88,32 @@ form {
   .slick-slide {
     padding: 7px;
   }
-  
+
+  p > a {
+    text-decoration: underline;
+  }
+
   div[class^="col-"] {
     margin-bottom: 12px;
   }
 
   .row {
-    div[class^="col-"] {  
+    display: flex;
+    justify-content: space-between;
+
+    div[class^="col-"] {
       margin-bottom: 0;
     }
   }
 
   hr {
     border: none;
-    border-bottom: 1px solid $blau-dunkel;
+    border-bottom: 1px solid $blau-dunkel !important;
   }
 
   .gonext:not(.submit),
-  .goprev {
+  .goprev,
+  .slider-control {
     p {
       border: 1px solid $gold-dunkel;
       color: $gold-dunkel !important;
@@ -118,16 +131,18 @@ form {
     }
   }
 
+  .gonext {
+    float: right;
+  }
   .goprev + div {
-    float: right;    
+    float: right;
 
     &.submit {
       padding: 0;
-    }          
+    }
   }
 
   .submit {
-
     & > p {
       display: flex;
       flex-direction: row-reverse;
@@ -141,7 +156,9 @@ form {
       border-radius: 0 $r1;
       padding: 0.3em 2.1em;
       cursor: pointer;
-      
+      min-height: 40px;
+      margin-top: 2em;
+
       &:hover {
         background-color: $gold;
         border-color: $gold;
@@ -149,7 +166,7 @@ form {
 
       & + .wpcf7-spinner {
         display: inline-block;
-        background-color: $gold;
+        background-color: transparent;
         opacity: 1;
         width: 24px;
         height: 24px;
@@ -166,25 +183,73 @@ form {
     }
   }
 
+  .wpcf7-submit {
+    color: #fff !important;
+    background-color: $gold-dunkel !important;
+    border: 1px solid $gold-dunkel !important;
+    border-radius: 0 $r1 !important;
+    padding: 0.3em 2.1em !important;
+    cursor: pointer !important;
+    min-height: 38px !important;
+    margin: 3em 0 2em !important;
+
+    &:hover {
+      background-color: $gold !important;
+      border-color: $gold !important;
+    }
+
+    & + .wpcf7-spinner {
+      display: inline-block;
+      background-color: transparent;
+      opacity: 1;
+      width: 24px;
+      height: 24px;
+      margin: 0 20px;
+
+      &:before {
+        background-color: #fff;
+        top: 4px;
+        left: 4px;
+        width: 6px;
+        height: 6px;
+      }
+    }
+  }
+
+  span.wpcf7-not-valid-tip {
+    font-size: 12px;
+    line-height: 1;
+    margin: 0px 0 12px 14px;
+    display: block;
+    font-weight: 700;
+    color: $pink !important;
+    background-color: transparent !important;
+  }
+
   .wpcf7-response-output {
-    margin: 1em 0 0 0 !important;
-    padding: 1em !important;
+    margin: 0 !important;
+    padding: 0 !important;
     border-radius: 0 $r2;
-    background-color: #fff;
+    background-color: transparent;
     border-width: 1px !important;
     position: relative;
     z-index: 3;
   }
 
-  &.invalid .wpcf7-response-output {
-    border-color: #dc3232 !important;
-    border-top-width: 0 !important;
-    border-right-width: 0 !important;
-    color: #dc3232;
+  &.invalid {
+    .wpcf7-response-output {
+      border-color: #dc3232 !important;
+      border-top-width: 0 !important;
+      border-right-width: 0 !important;
+      color: #dc3232;
+      margin: 1em 0 !important;
+      padding: 1em !important;
+      background-color: #fff;
+    }
   }
 
   &.sent {
-    input.wpcf7-form-control[type=submit] {
+    input.wpcf7-form-control[type="submit"] {
       display: none;
     }
 
@@ -192,14 +257,82 @@ form {
       border-color: green !important;
       color: green !important;
     }
-
   }
-  
+
   .wpcf7-not-valid {
-    border: 1px solid #dc3232 !important;
-  }  
-  
+    border-bottom: 2px solid #dc3232 !important;
+  }
+
   .section-title {
     font-size: 1.5em;
   }
+}
+
+.screen-reader-response {
+  display: none;
+}
+
+.popup-form {
+  position: fixed;
+  top: -200vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition-duration: 0.5s;
+  z-index: -100;  
+
+  padding: 30px;
+  border-radius: 0 $r3;
+  border: none;
+  background-color: #f4f2ef;
+
+  &.show {
+    top: 40%;
+    background-color: $ivory-hell-1;
+    box-shadow: 0px 12px 24px -3px rgba(2, 2, 2, 0.2),
+      0 0 0 200vmax rgba(234, 229, 225, 0.8);
+    z-index: 1000000000;
+  }
+
+  * {
+    color: $blau-dunkel !important;
+    line-height: 1.5;
+  }
+}
+.slider-control.ui-button {
+  color: $gold-dunkel !important;
+  background-color: transparent !important;
+  border: 1px solid $gold !important;
+  border-radius: 0 18px !important;
+  padding: 0 2.1em !important;
+  cursor: pointer !important;
+  min-height: 36px !important;
+  line-height: 36px;
+  transition: .3s;
+
+  &:hover {
+    background-color: $white !important;
+    color: $gold-dunkel !important;
+    border-color: $gold-dunkel !important;
+  }
+}
+
+.slider-next + span {
+  input[type="submit"] {
+    line-height: 36px;
+    min-height: 36px;
+    display: inline-block;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 10px 0 0 0 !important;
+  }
+}
+
+.cf7sg-response-output {
+  margin: 0 !important;
+  padding: 12px 21px !important;
+  border-radius: 0 24px;
+  background-color: #fff;
+  border-width: 1px !important;
+  position: relative;
+  z-index: 3;
 }

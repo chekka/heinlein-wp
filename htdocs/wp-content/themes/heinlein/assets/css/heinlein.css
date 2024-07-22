@@ -26824,7 +26824,7 @@ span.required {
 
 label {
   display: block;
-  margin: 0 0 3px 0;
+  margin: 0;
   line-height: 1.5;
   font-weight: 400;
 }
@@ -26839,8 +26839,11 @@ label.inline {
 form h3, form .h3 {
   text-align: left;
 }
-form .row p, form .row input {
-  margin: 7px 0 0 0;
+form .row p,
+form .row input,
+form .row textarea,
+form .row select {
+  margin: 0 0 21px 0;
 }
 
 .wpcf7-radio label {
@@ -26851,13 +26854,15 @@ input[type=text],
 input[type=number],
 input[type=email],
 input[type=tel],
+select,
 textarea {
   color: #3c4c70;
   border-radius: 0 18px 0 18px;
   border: 1px solid #eae5e1;
   box-shadow: inset 0 3px 9px -7px rgba(0, 0, 0, 0.5);
   padding: 0 0.75rem;
-  line-height: 2;
+  line-height: 40px;
+  height: 40px;
   width: 100%;
 }
 
@@ -26892,18 +26897,26 @@ input[type=checkbox] + .wpcf7-list-item-label {
 form .slick-slide {
   padding: 7px;
 }
+form p > a {
+  text-decoration: underline;
+}
 form div[class^=col-] {
   margin-bottom: 12px;
+}
+form .row {
+  display: flex;
+  justify-content: space-between;
 }
 form .row div[class^=col-] {
   margin-bottom: 0;
 }
 form hr {
   border: none;
-  border-bottom: 1px solid #001e4b;
+  border-bottom: 1px solid #001e4b !important;
 }
 form .gonext:not(.submit) p,
-form .goprev p {
+form .goprev p,
+form .slider-control p {
   border: 1px solid #7f6445;
   color: #7f6445 !important;
   background-color: transparent;
@@ -26913,10 +26926,14 @@ form .goprev p {
   float: left;
 }
 form .gonext:not(.submit) p:hover,
-form .goprev p:hover {
+form .goprev p:hover,
+form .slider-control p:hover {
   background-color: #fff;
   border-color: #001e4b !important;
   color: #001e4b !important;
+}
+form .gonext {
+  float: right;
 }
 form .goprev + div {
   float: right;
@@ -26936,6 +26953,8 @@ form .submit input {
   border-radius: 0 18px;
   padding: 0.3em 2.1em;
   cursor: pointer;
+  min-height: 40px;
+  margin-top: 2em;
 }
 form .submit input:hover {
   background-color: #aa8461;
@@ -26943,7 +26962,7 @@ form .submit input:hover {
 }
 form .submit input + .wpcf7-spinner {
   display: inline-block;
-  background-color: #aa8461;
+  background-color: transparent;
   opacity: 1;
   width: 24px;
   height: 24px;
@@ -26956,11 +26975,49 @@ form .submit input + .wpcf7-spinner:before {
   width: 6px;
   height: 6px;
 }
-form .wpcf7-response-output {
-  margin: 1em 0 0 0 !important;
-  padding: 1em !important;
-  border-radius: 0 24px;
+form .wpcf7-submit {
+  color: #fff !important;
+  background-color: #7f6445 !important;
+  border: 1px solid #7f6445 !important;
+  border-radius: 0 18px !important;
+  padding: 0.3em 2.1em !important;
+  cursor: pointer !important;
+  min-height: 38px !important;
+  margin: 3em 0 2em !important;
+}
+form .wpcf7-submit:hover {
+  background-color: #aa8461 !important;
+  border-color: #aa8461 !important;
+}
+form .wpcf7-submit + .wpcf7-spinner {
+  display: inline-block;
+  background-color: transparent;
+  opacity: 1;
+  width: 24px;
+  height: 24px;
+  margin: 0 20px;
+}
+form .wpcf7-submit + .wpcf7-spinner:before {
   background-color: #fff;
+  top: 4px;
+  left: 4px;
+  width: 6px;
+  height: 6px;
+}
+form span.wpcf7-not-valid-tip {
+  font-size: 12px;
+  line-height: 1;
+  margin: 0px 0 12px 14px;
+  display: block;
+  font-weight: 700;
+  color: #EB4D64 !important;
+  background-color: transparent !important;
+}
+form .wpcf7-response-output {
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 24px;
+  background-color: transparent;
   border-width: 1px !important;
   position: relative;
   z-index: 3;
@@ -26970,6 +27027,9 @@ form.invalid .wpcf7-response-output {
   border-top-width: 0 !important;
   border-right-width: 0 !important;
   color: #dc3232;
+  margin: 1em 0 !important;
+  padding: 1em !important;
+  background-color: #fff;
 }
 form.sent input.wpcf7-form-control[type=submit] {
   display: none;
@@ -26979,10 +27039,73 @@ form.sent .wpcf7-response-output {
   color: green !important;
 }
 form .wpcf7-not-valid {
-  border: 1px solid #dc3232 !important;
+  border-bottom: 2px solid #dc3232 !important;
 }
 form .section-title {
   font-size: 1.5em;
+}
+
+.screen-reader-response {
+  display: none;
+}
+
+.popup-form {
+  position: fixed;
+  top: -200vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition-duration: 0.5s;
+  z-index: -100;
+  padding: 30px;
+  border-radius: 0 36px;
+  border: none;
+  background-color: #f4f2ef;
+}
+.popup-form.show {
+  top: 40%;
+  background-color: #f4f2ef;
+  box-shadow: 0px 12px 24px -3px rgba(2, 2, 2, 0.2), 0 0 0 200vmax rgba(234, 229, 225, 0.8);
+  z-index: 1000000000;
+}
+.popup-form * {
+  color: #001e4b !important;
+  line-height: 1.5;
+}
+
+.slider-control.ui-button {
+  color: #7f6445 !important;
+  background-color: transparent !important;
+  border: 1px solid #aa8461 !important;
+  border-radius: 0 18px !important;
+  padding: 0 2.1em !important;
+  cursor: pointer !important;
+  min-height: 36px !important;
+  line-height: 36px;
+  transition: 0.3s;
+}
+.slider-control.ui-button:hover {
+  background-color: #fff !important;
+  color: #7f6445 !important;
+  border-color: #7f6445 !important;
+}
+
+.slider-next + span input[type=submit] {
+  line-height: 36px;
+  min-height: 36px;
+  display: inline-block;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin: 10px 0 0 0 !important;
+}
+
+.cf7sg-response-output {
+  margin: 0 !important;
+  padding: 12px 21px !important;
+  border-radius: 0 24px;
+  background-color: #fff;
+  border-width: 1px !important;
+  position: relative;
+  z-index: 3;
 }
 
 * {
@@ -27551,6 +27674,23 @@ img {
   align-items: center;
   justify-content: flex-start;
 }
+.zertifikate-grid .box a {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.zertifikate-grid .box p:nth-child(2) {
+  margin-bottom: 2em;
+}
+.zertifikate-grid .box > div {
+  height: 100%;
+}
+.zertifikate-grid .box > div .textwidget {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .zertifikate-grid .box * {
   text-align: center !important;
   line-height: 1.5;
@@ -27831,6 +27971,191 @@ body {
 .single-video iframe {
   border-radius: 0 36px 0 36px;
   margin: auto;
+}
+
+.wpcf7-form .container {
+  max-width: 940px;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  flex-wrap: wrap;
+  zoom: 1;
+  display: block;
+}
+.wpcf7-form .row {
+  zoom: 1;
+  display: block;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 24px;
+}
+.wpcf7-form .row:before, .wpcf7-form .row:after {
+  content: unset !important;
+}
+.wpcf7-form .container:after,
+.wpcf7-form .container:before,
+.wpcf7-form .row:after,
+.wpcf7-form .row:before {
+  content: "";
+  display: table;
+}
+.wpcf7-form .container:after,
+.wpcf7-form .row:after {
+  clear: both;
+}
+@media (min-width: 580px) {
+  .wpcf7-form .columns {
+    margin: 0;
+    padding: 0;
+    width: 6.38298%;
+  }
+  .wpcf7-form .columns.point-five {
+    width: calc(25% - 12px);
+  }
+  .wpcf7-form .columns:first-child {
+    margin-left: 0;
+  }
+  .wpcf7-form .columns.one.point-five {
+    width: calc(12.5% - 12px);
+  }
+  .wpcf7-form .columns.two {
+    width: calc(16.6666666667% - 12px);
+  }
+  .wpcf7-form .columns.two.point-five {
+    width: calc(20.8333333333% - 12px);
+  }
+  .wpcf7-form .columns.one-fourth,
+  .wpcf7-form .columns.three {
+    width: calc(25% - 12px);
+  }
+  .wpcf7-form .columns.three.point-five {
+    width: calc(29.1666666667% - 12px);
+  }
+  .wpcf7-form .columns.four,
+  .wpcf7-form .columns.one-third {
+    width: calc(33.3333333333% - 12px);
+  }
+  .wpcf7-form .columns.four.point-five {
+    width: calc(33.3333333333% - 12px);
+  }
+  .wpcf7-form .columns.five {
+    width: calc(50% - 12px);
+  }
+  .wpcf7-form .columns.one-half,
+  .wpcf7-form .columns.six {
+    width: calc(50% - 12px);
+  }
+  .wpcf7-form .columns.seven {
+    width: calc(58.3333333333% - 12px);
+  }
+  .wpcf7-form .columns.eight,
+  .wpcf7-form .columns.two-thirds {
+    width: calc(66.6666666667% - 12px);
+  }
+  .wpcf7-form .columns.nine,
+  .wpcf7-form .columns.three-fourths {
+    width: calc(75% - 12px);
+  }
+  .wpcf7-form .columns.ten {
+    width: calc(83.3333333333% - 12px);
+  }
+  .wpcf7-form .columns.eleven {
+    width: calc(91.6666666667% - 12px);
+  }
+  .wpcf7-form .columns.full,
+  .wpcf7-form .columns.twelve {
+    width: 100%;
+  }
+  .wpcf7-form .columns.offset-one {
+    margin-left: 10.6383%;
+  }
+  .wpcf7-form .columns.offset-one:first-child {
+    margin-left: 8.51064%;
+  }
+  .wpcf7-form .columns.offset-two {
+    margin-left: 19.14894%;
+  }
+  .wpcf7-form .columns.offset-two:first-child {
+    margin-left: 17.02128%;
+  }
+  .wpcf7-form .columns.offset-three {
+    margin-left: 27.65957%;
+  }
+  .wpcf7-form .columns.offset-three:first-child {
+    margin-left: 25.53191%;
+  }
+  .wpcf7-form .columns.offset-four {
+    margin-left: 36.17021%;
+  }
+  .wpcf7-form .columns.offset-four:first-child {
+    margin-left: 34.04255%;
+  }
+  .wpcf7-form .columns.offset-five {
+    margin-left: 44.68085%;
+  }
+  .wpcf7-form .columns.offset-five:first-child {
+    margin-left: 42.55319%;
+  }
+  .wpcf7-form .columns.offset-six {
+    margin-left: 53.19149%;
+  }
+  .wpcf7-form .columns.offset-six:first-child {
+    margin-left: 51.06383%;
+  }
+  .wpcf7-form .columns.offset-seven {
+    margin-left: 61.70213%;
+  }
+  .wpcf7-form .columns.offset-seven:first-child {
+    margin-left: 59.57447%;
+  }
+  .wpcf7-form .columns.offset-eight {
+    margin-left: 70.21277%;
+  }
+  .wpcf7-form .columns.offset-eight:first-child {
+    margin-left: 68.08511%;
+  }
+  .wpcf7-form .columns.offset-nine {
+    margin-left: 78.7234%;
+  }
+  .wpcf7-form .columns.offset-nine:first-child {
+    margin-left: 76.59574%;
+  }
+  .wpcf7-form .columns.offset-ten {
+    margin-left: 87.23404%;
+  }
+  .wpcf7-form .columns.offset-ten:first-child {
+    margin-left: 85.10638%;
+  }
+  .wpcf7-form .columns.offset-eleven {
+    margin-left: 95.74468%;
+  }
+  .wpcf7-form .columns.offset-eleven:first-child {
+    margin-left: 93.61702%;
+  }
+}
+
+.pum-content .wpcf7-form .container {
+  margin: 0;
+  padding: 0;
+}
+
+.cf7-smart-grid textarea {
+  height: initial !important;
+}
+
+.cf7sg-title {
+  display: block;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.wpcf7-form-control-wrap {
+  padding-top: 7px;
+}
+
+.wpcf7-radio {
+  margin-top: 12px;
 }
 
 .news-footer {
@@ -29814,6 +30139,7 @@ h6 em,
 
 a {
   text-decoration: none;
+  color: #001e4b;
 }
 
 a[class^=cta-] {

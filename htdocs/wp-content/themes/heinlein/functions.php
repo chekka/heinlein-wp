@@ -14,7 +14,7 @@ function heinlein_scripts_styles(){
     endif;
 
     // ENQUEUE Scripts
-    wp_enqueue_script( 'jquery' );
+    // wp_enqueue_script( 'jquery' );
     if ( is_front_page() ) :
       wp_enqueue_script( 'product-slider', get_template_directory_uri() . '/assets/js/product-slider.js', array(), null, true );
     endif;
@@ -133,3 +133,11 @@ add_shortcode('Y', 'sc_current_year');
 // Do not resize images 
 add_filter( 'big_image_size_threshold', '__return_false' ); 
 
+/* Disable the auto scroll back to the top of the slider form. */
+function produktfinder_slider_auto_scroll($scroll, $cf7_key){
+  //check to make sure you have the right field in the right form.
+  if('produktfinder'!==$cf7_key) return $scroll;
+  $scroll = false; //disable auto scroll.
+  return $scroll;
+}
+add_filter( 'cf7sg_slider_auto_scroll','produktfinder_slider_auto_scroll',10,2);
