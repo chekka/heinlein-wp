@@ -180,6 +180,78 @@ h3 {
     vertical-align: middle;
   }
 }
+
+.list-plus {
+  &.bg--ivory-hell-3 {
+    ul {
+      @include media-breakpoint-up(md) {
+        margin-bottom: 148px !important;
+      }
+    }
+  }
+
+  ul {
+    margin: 12px 0 0 0 !important;
+
+    li::marker {
+      content: "";
+    }
+
+    li:before {
+      font-family: Gotham !important;
+      font-weight: 900;
+      top: 5px;
+    }
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    + p {
+      a {
+        font-family: Gotham;
+        font-weight: 300;
+        display: block;
+        margin: 30px 0;
+        padding: 15px 15px 13px 15px;
+        width: calc(100% + 60px);
+        max-width: 365px;
+        text-align: center;
+        border: none;
+        border-radius: 0 $r2;
+        position: relative;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $gold-dunkel !important;
+        }
+
+        &:before,
+        &:after {
+          content: initial;
+        }
+
+        & > span {
+          position: absolute;
+          top: -35px;
+          left: 50%;
+          padding: 2px 20px 0;
+          transform: translateX(-50%);
+          line-height: 33px;
+          font-size: 18px;
+          font-weight: 900;
+          background-color: $gold-dunkel;
+          border-radius: $r1 $r1 0 0;
+        }
+
+        &[href*="classic"] {
+          background-color: $blau-mittel-1;
+        }
+      }
+    }
+  }
+}
+
+
 .bg--blau-dunkel > div > .widget_sow-editor * {
   color: #fff;
   border-bottom-color: #fff;

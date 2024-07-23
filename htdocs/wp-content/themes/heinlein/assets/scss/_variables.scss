@@ -74,6 +74,7 @@ $colors-list: (
   ("black", $black, $white),
   ("white", $white, $blau-dunkel),
   ("pink", $pink, $white),
+  ("orange", $orange, $white),
 );
 
 @each $color in $colors-list {
@@ -88,6 +89,7 @@ $colors-list: (
   }
 
   .txt--#{nth($color,1)} {
+    color: #{nth($color, 2)};
     * {
       color: #{nth($color, 2)};
     }
