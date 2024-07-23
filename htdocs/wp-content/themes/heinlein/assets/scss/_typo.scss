@@ -192,20 +192,26 @@ h3 {
 
   ul {
     margin: 12px 0 0 0 !important;
+    padding: 0 0 0 1.25em;
 
-    li::marker {
-      content: "";
+    li {
+      display: block;
+      position: relative;
+    
+      &:before {
+        content: '+';
+        font-family: Gotham !important;
+        font-weight: 900;
+        top: -3px;
+        position: absolute;
+        left: -20px;
+        font-size: 1em;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
-
-    li:before {
-      font-family: Gotham !important;
-      font-weight: 900;
-      top: 5px;
-    }
-    li:last-child {
-      margin-bottom: 0;
-    }
-
+  
     + p {
       a {
         font-family: Gotham;

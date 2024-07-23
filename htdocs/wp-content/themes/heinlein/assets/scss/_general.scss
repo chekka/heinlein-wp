@@ -398,6 +398,12 @@
 #sprech-02 img {
   min-width: 480px;
   max-width: 480px;
+
+  @include media-breakpoint-down(md) {
+    min-width: initial;
+    width: 480px;
+    max-width: 100%;  
+  }
 }
 
 #sprech-03 img {

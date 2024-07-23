@@ -4,9 +4,11 @@
   $(window).on('load', function () {
     $('body').addClass('loaded');
 
-    document.querySelector('.glider').addEventListener('glider-animated', function() {      
-      $('.slider-next.disabled').hide().next().show();
-    });
+    if ($(".glider").length) {
+      document.querySelector('.glider').addEventListener('glider-animated', function() {      
+        $('.slider-next.disabled').hide().next().show();
+      });
+    }
 
   });
 

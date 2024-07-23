@@ -27911,6 +27911,13 @@ img {
   min-width: 480px;
   max-width: 480px;
 }
+@media (max-width: 719.98px) {
+  #sprech-02 img {
+    min-width: initial;
+    width: 480px;
+    max-width: 100%;
+  }
+}
 
 #sprech-03 img {
   min-width: 270px;
@@ -28861,6 +28868,10 @@ body {
 }
 #page-header + .panel-layout {
   margin-top: 67vh;
+}
+
+.page-id-1526 div#page-header {
+  min-height: 90vh;
 }
 
 .pum-open-overlay {
@@ -30595,14 +30606,20 @@ h3 + h2, .h3 + h2, h3 + .h2, .h3 + .h2 {
 }
 .list-plus ul {
   margin: 12px 0 0 0 !important;
+  padding: 0 0 0 1.25em;
 }
-.list-plus ul li::marker {
-  content: "";
+.list-plus ul li {
+  display: block;
+  position: relative;
 }
 .list-plus ul li:before {
+  content: "+";
   font-family: Gotham !important;
   font-weight: 900;
-  top: 5px;
+  top: -3px;
+  position: absolute;
+  left: -20px;
+  font-size: 1em;
 }
 .list-plus ul li:last-child {
   margin-bottom: 0;
