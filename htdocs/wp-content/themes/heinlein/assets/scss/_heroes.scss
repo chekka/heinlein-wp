@@ -195,13 +195,19 @@
       }
     }
 
-    p {
+    p:not(.bold) {
       text-transform: uppercase;
       font-family: Gotham;
       font-weight: 500;
       font-size: 22px;
       line-height: 1.4em;
-      margin-bottom: 0.25em;
+      margin-bottom: 0.25em;      
+    }
+
+    p {
+      &.bold {
+        font-weight: 700;
+      }
     }
 
     & + img {
@@ -386,7 +392,7 @@
   &.outline {
     .textwidget {
       p:last-child {
-        a {          
+        a {
           color: $orange !important;
 
           &:hover {

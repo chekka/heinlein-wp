@@ -28581,14 +28581,18 @@ body {
 .hero-box.muster.bg--ivory-hell-3:after {
   border-color: transparent #ebe7e0 transparent transparent;
 }
-.landing-hero-box.muster p,
-.hero-box.muster p {
+.landing-hero-box.muster p:not(.bold),
+.hero-box.muster p:not(.bold) {
   text-transform: uppercase;
   font-family: Gotham;
   font-weight: 500;
   font-size: 22px;
   line-height: 1.4em;
   margin-bottom: 0.25em;
+}
+.landing-hero-box.muster p.bold,
+.hero-box.muster p.bold {
+  font-weight: 700;
 }
 .landing-hero-box.muster + img,
 .hero-box.muster + img {
@@ -30461,6 +30465,7 @@ a {
 }
 
 a[class^=cta-] {
+  font-weight: 700;
   color: #fff;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -30470,8 +30475,7 @@ a[class^=cta-] {
   padding: 12px 36px !important;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-family: Gotham, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .so-widget-sow-editor a {
