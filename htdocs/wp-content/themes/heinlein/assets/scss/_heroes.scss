@@ -31,6 +31,20 @@
     }
   }
 
+  &.bg--blau-dunkel {
+    * {
+      color: $white;
+    }
+
+    h4 {
+      font-size: 1.4em;
+      text-align: left;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      padding: 1.5em 0 0;
+    }
+  }
+
   padding: 14px 34px 14px 44px;
   width: 260px;
 
@@ -44,7 +58,6 @@
 
   & ul {
     display: block;
-    color: #fff;
     margin: 1em 0em 1em -21px !important;
     padding: 0;
 
@@ -52,6 +65,7 @@
       display: block;
       position: relative;
       padding: 0 0 0 21px;
+      color: $white;
 
       &:before {
         content: "+" !important;
@@ -382,11 +396,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 101;
+
+    p:not(p[class*="bg--"], p[class*="text-"]):first-child {
+      background-color: $blau-dunkel;
+      color: $orange;
+    }
 
     p {
       margin: 0 auto;
-      background-color: $blau-dunkel;
-      color: $orange;
       padding: 7px 30px 3px;
       text-transform: uppercase;
       border-radius: $r2 $r2 0 0;
@@ -394,6 +413,11 @@
       font-weight: 800;
 
       &:last-child {
+        padding: 0;
+        width: 100%;
+      }
+
+      a {
         margin: 0 auto;
         background-color: $orange;
         padding: 15px 0;
@@ -401,24 +425,35 @@
         font-family: "Gotham";
         font-weight: 300;
         width: 100%;
-      }
-    }
 
-    a {
-      font-size: 1.5em;
-      text-transform: uppercase;
-      text-decoration: none !important;
-      border: none !important;
-      padding: 0 !important;
-      color: #fff !important;
-      display: block;
-      text-align: center !important;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        text-decoration: none !important;
+        border: none !important;
+        color: #fff !important;
+        display: block;
+        text-align: center !important;
+
+        &:hover {
+          background-color: $gold !important;
+          border-color: $gold !important;
+        }
+      }
     }
   }
   &.outline {
-    p:last-child {
-      background-color: transparent;
-      border: 1px solid $orange;
+    .textwidget {
+      p:last-child {
+        a {
+          background-color: transparent !important;
+          border: 1px solid $orange !important;
+          
+          &:hover {
+            background-color: $gold !important;
+            border-color: $gold !important;
+          }
+        }
+      }
     }
   }
 }
@@ -427,11 +462,13 @@
   .textwidget {
     p {
       &:last-child {
-        background-color: $gold-dunkel;
+        a {
+          background-color: $gold-dunkel;
+        }
       }
       &:hover {
-        background-color: $gold !important;
         a {
+          background-color: $gold !important;
           color: #fff !important;
         }
       }
@@ -475,7 +512,7 @@
 .page-template-page-landingpage-gold {
   .hero-box.muster.bg--ivory-hell-3 {
     background-color: $ivory-hell-1 !important;
-    
+
     box-shadow: $box-hover-shadow;
     min-width: 340px;
     padding-bottom: 0 !important;

@@ -184,7 +184,6 @@ img {
 }
 
 .grid {
-
   &.grid-auto {
     & > .panel-layout {
       & > .panel-grid {
@@ -195,7 +194,7 @@ img {
           .widget {
             width: auto;
             flex: 0 auto;
-          }          
+          }
         }
       }
     }
@@ -383,5 +382,91 @@ img {
 
   &:hover .so-widget-sow-editor {
     transform: rotateY(180deg);
+  }
+}
+
+.page-template-page-landingpage {
+  #musterboxen {
+    .hero-box,
+    .hero-button-orange {
+      max-width: 330px;
+      margin: auto;
+    }
+
+    .panel-grid:nth-child(2) {
+      margin-top: -50px;
+    }
+    .panel-grid-cell {
+      .sow-image-container {
+        margin-top: 70px;
+      }
+
+      & > .left {
+        .sow-image-container {
+          img {
+            margin-bottom: -70px;
+          }
+        }
+      }
+
+      @include media-breakpoint-only(xl) {
+        .panel-grid:nth-child(2) {
+          margin-top: 70px;
+        }
+        .panel-grid-cell {
+          .sow-image-container {
+            margin-top: 70px;
+            margin-bottom: -120px;
+            min-height: 400px;
+          }
+          & > .left {
+            .sow-image-container {
+              img {
+                transform: scale(1.5) translateX(-50px);
+              }
+            }
+          }
+
+          & > .right {
+            .sow-image-container {
+              img {
+                transform: scale(1.5) translateX(0);
+              }
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(xxl) {
+        .panel-grid:nth-child(2) {
+          margin-top: 170px;
+        }
+
+        .panel-grid-cell {
+          .sow-image-container {
+            margin-top: 70px;
+            margin-bottom: -200px;
+            min-height: 500px;
+          }
+
+          & > .left {
+            .sow-image-container {
+              margin-top: 0;
+              img {
+                transform: scale(1.75) translate(-75px, 0);
+              }
+            }
+          }
+
+          & > .right {
+            .sow-image-container {
+              img {
+                transform: scale(1.75) translate(25px, -20px);
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
