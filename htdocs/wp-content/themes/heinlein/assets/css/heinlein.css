@@ -31255,7 +31255,7 @@ svg .bg--orange {
   line-height: 1.5em;
 }
 .so-widget-heinlein-icon-box a:hover svg {
-  background-color: #001e4b;
+  background-color: #001e4b !important;
 }
 .so-widget-heinlein-icon-box a:hover svg path:not(:first-child) {
   fill: #fff;
