@@ -28015,6 +28015,16 @@ div[id^=sprech-0] {
 .site-footer {
   margin: auto 0 0 0;
 }
+@media (max-width: 1199.98px) {
+  .site-footer .panel-grid {
+    flex-direction: column;
+  }
+}
+@media (max-width: 1199.98px) {
+  .site-footer .panel-grid .panel-grid-cell {
+    width: 100% !important;
+  }
+}
 .site-footer * {
   font-family: "Encode Sans Expanded", sans-serif;
   color: #f8f5f3;
@@ -28035,7 +28045,7 @@ div[id^=sprech-0] {
   justify-content: end;
   gap: 30px;
 }
-@media (max-width: 719.98px) {
+@media (max-width: 1199.98px) {
   .site-footer #footer-menu ul {
     justify-content: center;
   }
