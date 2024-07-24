@@ -1,31 +1,15 @@
-# Translation of Plugins - Honeypot for Contact Form 7 - Development (trunk) in English (UK)
-# This file is distributed under the same license as the Plugins - Honeypot for Contact Form 7 - Development (trunk) package.
+# Translation of Plugins - Honeypot for Contact Form 7 - Stable (latest release) in English (UK)
+# This file is distributed under the same license as the Plugins - Honeypot for Contact Form 7 - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-12-21 12:11:49+0000\n"
+"PO-Revision-Date: 2024-07-01 10:38:44+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/4.0.0-alpha.11\n"
+"X-Generator: GlotPress/4.0.1\n"
 "Language: en_GB\n"
-"Project-Id-Version: Plugins - Honeypot for Contact Form 7 - Development (trunk)\n"
-
-#: includes/admin.php:332
-msgid "Recommended"
-msgstr "Recommended"
-
-#: includes/admin.php:204
-msgid "Below are global settings for the Honeypot plugin. Many of these settings can be overridden when inserting the Honeypot field shortcode when creating your CF7 contact form."
-msgstr "Below are global settings for the Honeypot plugin. Many of these settings can be overridden when inserting the Honeypot field shortcode when creating your CF7 contact form."
-
-#: includes/admin.php:286 includes/honeypot4cf7.php:333
-msgid "seconds"
-msgstr "seconds"
-
-#: includes/admin.php:284 includes/honeypot4cf7.php:329
-msgid "Enable Time Check"
-msgstr "Enable Time Check"
+"Project-Id-Version: Plugins - Honeypot for Contact Form 7 - Stable (latest release)\n"
 
 #: includes/honeypot4cf7.php:311
 msgid "Move inline CSS"
@@ -60,36 +44,28 @@ msgstr "For better security, change \"honeypot\" to something more appealing to 
 msgid "Generate a form-tag for a spam-stopping honeypot field. Check out %s for more settings/info."
 msgstr "Generate a form-tag for a spam-stopping honeypot field. Check out %s for more settings/info."
 
+#: includes/honeypot4cf7.php:229
+msgid "Honeypot for CF7"
+msgstr "Honeypot for CF7"
+
+#. translators: %s: honeypot field ID
+#: includes/honeypot4cf7.php:195
+msgid "Something is stuck in the honey. Field ID = %s"
+msgstr "Something is stuck in the honey. Field ID = %s"
+
 #. translators: 1: submission interval integer 2: honeypot field ID
 #: includes/honeypot4cf7.php:170
 msgid "Honeypot detected form submitted too fast (%1$s seconds). Field ID = %2$s"
 msgstr "Honeypot detected form submitted too fast (%1$s seconds). Field ID = %2$s"
 
-#. translators: %s: Link to Contact Form 7 plugin page.
-#: includes/admin.php:55
-msgid "The version of %s that is installed will not work with this version of Honeypot for CF7."
-msgstr "The version of %s that is installed will not work with this version of Honeypot for CF7."
-
-#: includes/admin.php:219
-msgid "Flamingo"
-msgstr "Flamingo"
-
-#: includes/admin.php:40 includes/admin.php:56
-msgid "Contact Form 7"
-msgstr "Contact Form 7"
-
 #. translators: %s: Plugin's reviews page link
-#: includes/admin.php:352
+#: includes/admin.php:344
 msgid "Please rate us on %s. Thanks!!"
 msgstr "Please rate us on %s. Thanks!!"
 
-#: includes/admin.php:327
-msgid "Buy Us a Coffee"
-msgstr "Buy Us a Coffee"
-
-#: includes/admin.php:325
-msgid "Do you like Honeypot for CF7? Consider showing your support:"
-msgstr "Do you like Honeypot for CF7? Consider showing your support:"
+#: includes/admin.php:324
+msgid "Recommended"
+msgstr "Recommended"
 
 #. translators: 1: spam count 2: install date
 #: includes/admin.php:313
@@ -103,6 +79,14 @@ msgstr "Reset to Defaults"
 #: includes/admin.php:295
 msgid "Save"
 msgstr "Save"
+
+#: includes/admin.php:286 includes/honeypot4cf7.php:333
+msgid "seconds"
+msgstr "seconds"
+
+#: includes/admin.php:284 includes/honeypot4cf7.php:329
+msgid "Enable Time Check"
+msgstr "Enable Time Check"
 
 #: includes/admin.php:274 includes/honeypot4cf7.php:320
 msgid "Disable Accessibility Label"
@@ -133,6 +117,10 @@ msgstr "If using placeholders on other fields, this can help honeypot mimic a \"
 msgid "Global Placeholder"
 msgstr "Global Placeholder"
 
+#: includes/admin.php:219
+msgid "Flamingo"
+msgstr "Flamingo"
+
 #. translators: 1: Link to Flamingo plugin page
 #: includes/admin.php:218
 msgid "(Recommended) By default the Honeypot field is not stored with other fields in form-saving plugins like %1$s. However, saving the field can be useful to see what spam bots are leaving behind to help you improve your spam stopping superpowers. If you'd like to store the value of the field, simply check this box (and install %1$s)."
@@ -141,6 +129,10 @@ msgstr "(Recommended) By default the Honeypot field is not stored with other fie
 #: includes/admin.php:208
 msgid "Store Honeypot Value"
 msgstr "Store Honeypot Value"
+
+#: includes/admin.php:204
+msgid "Below are global settings for the Honeypot plugin. Many of these settings can be overridden when inserting the Honeypot field shortcode when creating your CF7 contact form."
+msgstr "Below are global settings for the Honeypot plugin. Many of these settings can be overridden when inserting the Honeypot field shortcode when creating your CF7 contact form."
 
 #: includes/admin.php:203 includes/honeypot4cf7.php:236
 msgid "Honeypot Settings"
@@ -162,17 +154,17 @@ msgstr "The settings have been reset to their defaults."
 msgid "Settings"
 msgstr "Settings"
 
-#: includes/honeypot4cf7.php:229
-msgid "Honeypot for CF7"
-msgstr "Honeypot for CF7"
+#. translators: %s: Link to Contact Form 7 plugin page.
+#: includes/admin.php:55
+msgid "The version of %s that is installed will not work with this version of Honeypot for CF7."
+msgstr "The version of %s that is installed will not work with this version of Honeypot for CF7."
 
-#. translators: %s: honeypot field ID
-#: includes/honeypot4cf7.php:195
-msgid "Something is stuck in the honey. Field ID = %s"
-msgstr "Something is stuck in the honey. Field ID = %s"
+#: includes/admin.php:40 includes/admin.php:56
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
 
 #. Plugin Name of the plugin
-#: includes/admin.php:153 includes/admin.php:193
+#: honeypot.php includes/admin.php:153 includes/admin.php:193
 msgid "Honeypot for Contact Form 7"
 msgstr "Honeypot for Contact Form 7"
 
@@ -180,21 +172,10 @@ msgstr "Honeypot for Contact Form 7"
 msgid "If checked, the accessibility label will not be generated. This is not recommended, but may improve spam blocking. If you're unsure, leave this unchecked."
 msgstr "If checked, the accessibility label will not be generated. This is not recommended, but may improve spam blocking. If you're unsure, leave this unchecked."
 
-#. Author URI of the plugin
-msgid "http://www.nocean.ca"
-msgstr "http://www.nocean.ca"
-
-#. Author of the plugin
-msgid "Nocean"
-msgstr "Nocean"
-
 #. Description of the plugin
+#: honeypot.php
 msgid "Add honeypot anti-spam functionality to the popular Contact Form 7 plugin."
 msgstr "Add honeypot anti-spam functionality to the popular Contact Form 7 plugin."
-
-#. Plugin URI of the plugin
-msgid "http://www.nocean.ca/plugins/honeypot-module-for-contact-form-7-wordpress-plugin/"
-msgstr "http://www.nocean.ca/plugins/honeypot-module-for-contact-form-7-wordpress-plugin/"
 
 #: includes/honeypot4cf7.php:345
 msgid "Insert Tag"

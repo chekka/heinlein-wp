@@ -2,9 +2,9 @@
 Contributors: codekraft, gardenboi
 Tags: antispam, blacklist, honeypot, geoip, security, contact form 7
 Requires at least: 5.4
-Tested up to: 6.4.2
+Tested up to: 6.5.5
 Requires PHP: 5.6
-Stable tag: 0.6.2
+Stable tag: 0.6.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -161,6 +161,9 @@ Enable **extended debug mode** ("CF7ANTISPAM_DEBUG" has to be enabled) - disable
 
 
 == Changelog ==
+
+= 0.6.3 =
+* Quick fix for null is not an object (evaluating 'document.getElementById("cf7a_download_button") (bug report, thanks to @WebCodePoet)
 
 = 0.6.2 =
 * Fix/honeyform init (bug report, thanks to @silas2209)

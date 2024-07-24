@@ -60,11 +60,11 @@ class Hide_Admin_Notices {
                 $wp_admin_bar->add_menu( array(
                     'id'        => 'asenha-hide-admin-notices',
                     'parent'    => 'top-secondary',
-                    'grou'      => null,
+                    'group'     => null,
                     'title'     => __( 'Notices', 'admin-site-enhancements' ) . '<span class="asenha-admin-notices-counter" style="opacity:0;">0</span>',
                     // 'href'       => '',
                     'meta'      => array(
-                        'class'     => 'asenha-admin-notices-menu',
+                        'class'     => 'asenha-admin-notices-menu hidden',
                         'title'     => __( 'Click to view hidden admin notices', 'admin-site-enhancements' ),
                     ),
                 ) );
@@ -126,7 +126,7 @@ class Hide_Admin_Notices {
                 #wpbody-content .notice-updated,
                 #wpbody-content .updated:not(.active, .inactive, .plugin-update-tr),
                 #wpbody-content .update-nag, */
-                #wpbody-content > .wrap > .notice:not(#plugin-activated-successfully,.system-notice,.hidden,),
+                #wpbody-content > .wrap > .notice:not(#plugin-activated-successfully,.system-notice,.hidden),
                 #wpbody-content > .wrap > .notice-error,
                 #wpbody-content > .wrap > .error:not(.hidden),
                 #wpbody-content > .wrap > .notice-info,

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Complianz &#8211; GDPR/CCPA Cookie Consent - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-05-31 22:46:55+0000\n"
+"PO-Revision-Date: 2024-07-23 12:34:10+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,10 @@ msgstr ""
 "X-Generator: GlotPress/4.0.1\n"
 "Language: de\n"
 "Project-Id-Version: Plugins - Complianz &#8211; GDPR/CCPA Cookie Consent - Stable (latest release)\n"
+
+#: upgrade/upgrade-to-pro.php:178
+msgid "Really Simple SSL & Security - Lightweight plugin, heavyweight features."
+msgstr "Really Simple SSL & Security - Kleines Plugin, große Funktionen."
 
 #: upgrade/upgrade-to-pro.php:174
 msgid "SSL & Security"
@@ -111,6 +115,14 @@ msgstr "Audio-Details"
 msgid "There has been an error cropping your image."
 msgstr "Beim Zuschneiden Ihres Bildes ist ein Fehler aufgetreten."
 
+#: settings/media/wp_enqueue_media_override.php:243
+msgid "Suggested image dimensions:"
+msgstr "Empfohlene Bildgröße:"
+
+#: settings/media/wp_enqueue_media_override.php:241
+msgid "Crop your image"
+msgstr "Schneiden Sie Ihr Bild zu"
+
 #: settings/media/wp_enqueue_media_override.php:240
 msgid "Crop Image"
 msgstr "Bild zuschneiden"
@@ -197,6 +209,14 @@ msgstr "Anhang-Details"
 msgid "No media attachments found."
 msgstr "Es wurden keine Medienanhänge gefunden."
 
+#: settings/media/wp_enqueue_media_override.php:206
+msgid "Filter by type"
+msgstr "Nach Typ filtern"
+
+#: settings/media/wp_enqueue_media_override.php:205
+msgid "Filter by date"
+msgstr "Nach Datum filtern"
+
 #: settings/media/wp_enqueue_media_override.php:204
 msgid "Apply"
 msgstr "Anwenden"
@@ -232,6 +252,10 @@ msgstr "In Beitrag einfügen"
 #: settings/media/wp_enqueue_media_override.php:191
 msgid "Insert into page"
 msgstr "In Seite einfügen"
+
+#: settings/media/wp_enqueue_media_override.php:188
+msgid "All media items"
+msgstr "Alle Medien"
 
 #: settings/media/wp_enqueue_media_override.php:186
 msgid "Create a new video playlist"
@@ -459,6 +483,10 @@ msgstr "Hotjar einbinden"
 #: settings/config/fields/wizard/services.php:128
 msgid "Integrating Hubspot"
 msgstr "Hubspot einbinden"
+
+#: settings/config/fields/wizard/services.php:77
+msgid "Blocking reCaptcha"
+msgstr "reCaptcha blockieren"
 
 #: settings/config/fields/wizard/services.php:20
 msgid "Cookie Shredder"
@@ -1911,7 +1939,7 @@ msgstr "Website-Logo verwenden"
 
 #: cookiebanner/settings.php:348
 msgid "Hide"
-msgstr "Verbergen"
+msgstr "Ausblenden"
 
 #: cookiebanner/settings.php:346
 msgid "Logo"
@@ -3086,7 +3114,7 @@ msgstr "Der Assistent"
 
 #: settings/config/fields/general-settings/settings.php:111
 msgid "Disable all plus ones and warnings on your dashboard."
-msgstr "Deaktivieren Sie alle Warnungen in Ihrem Dashboard."
+msgstr "Deaktivieren Sie alle Pluszeichen und Warnungen in Ihrem Dashboard."
 
 #: settings/config/fields/general-settings/settings.php:110
 msgid "Disable notifications"
@@ -3599,7 +3627,7 @@ msgstr "Da Statistiken anonym nachverfolgt werden, wird keine Erlaubnis zum Setz
 #: config/documents/cookie-policy-za.php:38
 msgctxt "Legal document cookie policy"
 msgid "We ask your permission to place statistics cookies."
-msgstr "Wir bitten Sie um Ihre Erlaubnis, analytische Cookies setzen zu dürfen."
+msgstr "Wir bitten Sie um Ihre Erlaubnis, Cookies für statistische Zwecke zu setzen."
 
 #: config/documents/cookie-policy-br.php:37
 #: config/documents/cookie-policy-ca.php:45
@@ -3849,7 +3877,7 @@ msgstr "Dadurch werden alle Einstellungen auf die Standardwerte zurückgesetzt. 
 
 #: settings/config/fields/tools/data.php:14
 msgid "Export settings"
-msgstr "Einstellungen exportieren"
+msgstr "Export-Einstellungen"
 
 #: settings/config/fields/tools/datarequests.php:75
 msgid "Hi {name}"
@@ -3992,7 +4020,7 @@ msgstr "Werbe-Cookies"
 #: config/documents/cookie-policy-za.php:44
 msgctxt "Legal document cookie policy:paragraph title"
 msgid "Statistics cookies"
-msgstr "Analytische Cookies"
+msgstr "Statistik-Cookies"
 
 #: config/documents/cookie-policy-br.php:31
 #: config/documents/cookie-policy-ca.php:39
@@ -4013,7 +4041,7 @@ msgstr "Cookies"
 #: config/documents/cookie-policy-ca.php:31
 msgctxt "Legal document cookie policy:paragraph title"
 msgid "Third parties"
-msgstr "Drittanbieter"
+msgstr "Drittparteien"
 
 #: config/documents/cookie-policy-br.php:123
 #: config/documents/cookie-policy-br.php:132
@@ -4751,7 +4779,7 @@ msgstr "Wallis und Futuna"
 
 #: config/countries.php:394
 msgid "Virgin Islands, U.S."
-msgstr "Amerikanische Jungferninseln, U.S."
+msgstr "Amerikanische Jungferninseln"
 
 #: config/countries.php:393
 msgid "Virgin Islands, British"

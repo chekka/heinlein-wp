@@ -288,4 +288,181 @@ class Email_Delivery {
         $wpdb->query( "DELETE email_log_entries FROM " . $table_name . " \n                        AS email_log_entries JOIN ( SELECT id FROM " . $table_name . " ORDER BY id DESC LIMIT 1 OFFSET " . $smtp_email_log_entries_amount_to_keep . " ) \n                        AS email_log_entries_limit ON email_log_entries.id <= email_log_entries_limit.id;" );
     }
 
+    /**
+     * Resend email that failed on the first attempt and marked as such
+     * 
+     * @since 7.1.3
+     */
+    public function resend_email() {
+        if ( isset( $_REQUEST['action'] ) && 'resend_email' == $_REQUEST['action'] && isset( $_REQUEST['message_id'] ) && !empty( $_REQUEST['message_id'] ) && is_numeric( $_REQUEST['message_id'] ) && isset( $_REQUEST['resend_to'] ) && !empty( $_REQUEST['resend_to'] ) && isset( $_REQUEST['nonce'] ) && !empty( $_REQUEST['nonce'] ) ) {
+            $db_row_id = intval( sanitize_text_field( $_REQUEST['message_id'] ) );
+            $send_to = sanitize_text_field( $_REQUEST['resend_to'] );
+            $nonce = sanitize_text_field( $_REQUEST['nonce'] );
+            // $nonce_check = wp_verify_nonce( $nonce, 'email-delivery-log' . get_current_user_id() );
+            if ( wp_verify_nonce( $nonce, 'email-delivery-log' . get_current_user_id() ) ) {
+                global $wpdb;
+                $table_name = $wpdb->prefix . 'asenha_email_delivery';
+                $email = $wpdb->get_row( 'SELECT * FROM ' . $table_name . '
+                    WHERE id = "' . $db_row_id . '"', ARRAY_A );
+                // Set conte type to text/html. Default is text/plain.
+                add_filter( 'wp_mail_content_type', array($this, 'return_html_email_type') );
+                // $email_sent = true; // For testing
+                $email_sent = wp_mail(
+                    $send_to,
+                    $email['subject'],
+                    $email['message'],
+                    '',
+                    $email['attachments']
+                );
+                // Reset content-type to avoid conflicts -- https://core.trac.wordpress.org/ticket/23578
+                remove_filter( 'wp_mail_content_type', array($this, 'return_html_email_type') );
+                if ( $email_sent ) {
+                    $response = array(
+                        'resend_status'  => 'successful',
+                        'send_to'        => $send_to,
+                        'notice_message' => '<span class="dashicons dashicons-yes-alt"></span>' . __( 'Email was sent. This page will reload now...', 'admin-site-enhancements' ),
+                    );
+                    echo json_encode( $response );
+                } else {
+                    $response = array(
+                        'resend_status'  => 'failed',
+                        'send_to'        => $send_to,
+                        'notice_message' => '<span class="dashicons dashicons-warning"></span>' . __( 'Something went wrong. Please check the latest log entry for details. This page will reload now...', 'admin-site-enhancements' ),
+                    );
+                    echo json_encode( $response );
+                }
+            }
+        }
+    }
+
+    /**
+     * Return 'text/html' email content type for wp_mail_content_type filter hook
+     * 
+     * @since 7.1.3
+     */
+    public function return_html_email_type() {
+        return 'text/html';
+    }
+
+    /**
+     * Delete individual email archive
+     * 
+     * @since 7.1.4
+     */
+    public function delete_email() {
+        if ( isset( $_REQUEST['action'] ) && 'delete_email' == $_REQUEST['action'] && isset( $_REQUEST['message-id'] ) && !empty( $_REQUEST['message-id'] ) && is_numeric( $_REQUEST['message-id'] ) && isset( $_REQUEST['nonce'] ) && !empty( $_REQUEST['nonce'] ) ) {
+            $db_row_id = intval( sanitize_text_field( $_REQUEST['message-id'] ) );
+            $nonce = sanitize_text_field( $_REQUEST['nonce'] );
+            if ( wp_verify_nonce( $nonce, 'asenha-delete-email-' . $db_row_id ) ) {
+                global $wpdb;
+                $table_name = $wpdb->prefix . 'asenha_email_delivery';
+                // https://developer.wordpress.org/reference/classes/wpdb/delete/
+                $result = $wpdb->delete( $table_name, array(
+                    'id' => $db_row_id,
+                ), array('%d') );
+                if ( 1 === $result ) {
+                    wp_redirect( admin_url( 'tools.php?page=email-delivery-log&email-deletion=successful&message-id=' . $db_row_id ) );
+                } else {
+                    wp_redirect( admin_url( 'tools.php?page=email-delivery-log&email-deletion=failed&message-id=' . $db_row_id ) );
+                }
+            }
+        }
+    }
+
+    /**
+     * Show email deletion notice on deletion success
+     * 
+     * @since 7.1.4
+     */
+    public function maybe_show_email_deletion_notice() {
+        $screen = get_current_screen();
+        if ( 'tools_page_email-delivery-log' === $screen->id ) {
+            if ( isset( $_REQUEST['email-deletion'] ) && in_array( $_REQUEST['email-deletion'], array('successful', 'failed') ) && isset( $_REQUEST['message-id'] ) && is_numeric( intval( $_REQUEST['message-id'] ) ) ) {
+                if ( 'successful' == sanitize_text_field( $_REQUEST['email-deletion'] ) ) {
+                    ?>
+                    <div class="notice notice-success is-dismissible">
+                        <p><?php 
+                    printf( 
+                        /* translators: %s: email message ID */
+                        __( 'Email delivery log entry with the ID %s was successfully deleted.', 'admin-site-enhancements' ),
+                        intval( $_REQUEST['message-id'] )
+                     );
+                    ?>
+                        </p>
+                    </div>
+                    <?php 
+                } else {
+                    if ( 'failed' == sanitize_text_field( $_REQUEST['email-deletion'] ) ) {
+                        ?>
+                    <div class="notice notice-error is-dismissible">
+                        <p><?php 
+                        printf( 
+                            /* translators: %s: email message ID */
+                            __( 'Something went wrong. Unable to delete email delivery log entry with the ID %s.', 'admin-site-enhancements' ),
+                            intval( $_REQUEST['message-id'] )
+                         );
+                        ?>
+                        </p>
+                    </div>
+                    <?php 
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Clear the email delivery log. This will delete all data.
+     * 
+     * @since 7.1.4
+     */
+    public function clear_log() {
+        if ( isset( $_REQUEST['action'] ) && 'clear_log' == $_REQUEST['action'] && isset( $_REQUEST['nonce'] ) && !empty( $_REQUEST['nonce'] ) ) {
+            $nonce = sanitize_text_field( $_REQUEST['nonce'] );
+            if ( wp_verify_nonce( $nonce, 'asenha-clear-log-' . get_current_user_id() ) ) {
+                global $wpdb;
+                $table_name = $wpdb->prefix . 'asenha_email_delivery';
+                // https://developer.wordpress.org/reference/classes/wpdb/query/
+                $result = $wpdb->query( "TRUNCATE {$table_name}" );
+                if ( $result ) {
+                    wp_redirect( admin_url( 'tools.php?page=email-delivery-log&clear-log=successful' ) );
+                } else {
+                    wp_redirect( admin_url( 'tools.php?page=email-delivery-log&clear-log=failed' ) );
+                }
+            }
+        }
+    }
+
+    /**
+     * Show clear log notice on clearing success
+     * 
+     * @since 7.1.4
+     */
+    public function maybe_show_clear_log_notice() {
+        $screen = get_current_screen();
+        if ( 'tools_page_email-delivery-log' === $screen->id ) {
+            if ( isset( $_REQUEST['clear-log'] ) && in_array( $_REQUEST['clear-log'], array('successful', 'failed') ) ) {
+                if ( 'successful' == sanitize_text_field( $_REQUEST['clear-log'] ) ) {
+                    ?>
+                    <div class="notice notice-success is-dismissible">
+                        <p><?php 
+                    echo __( 'Log has been successfully cleared.', 'admin-site-enhancements' );
+                    ?></p>
+                    </div>
+                    <?php 
+                } else {
+                    if ( 'failed' == sanitize_text_field( $_REQUEST['clear-log'] ) ) {
+                        ?>
+                    <div class="notice notice-error is-dismissible">
+                        <p><?php 
+                        echo __( 'Something went wrong. Log was not cleared.', 'admin-site-enhancements' );
+                        ?></p>
+                    </div>
+                    <?php 
+                    }
+                }
+            }
+        }
+    }
+
 }
