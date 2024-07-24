@@ -338,21 +338,32 @@ form {
 }
 
 .wpcf7-form .ui-accordion {
+  * {
+    color: $blau-dunkel;
+  }
+
   .ui-accordion-header {
     padding: 0;
     border: none;
     border-radius: 0;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
+    gap: 20px;
     margin-bottom: 30px;
 
     .ui-accordion-header-icon {
       transform: scale(1.3);
     }
-    
+
     .cf7sg-title {
       font-size: 1em;
       margin: 0;
+
+      & + .toggle {
+        position: initial;
+        margin-top: initial;
+      }
     }
   }
 
@@ -361,6 +372,20 @@ form {
     height: auto !important;
     overflow: auto !important;
     border: none !important;
-    padding: 0 16px 30px !important;
+    padding: 0 0 30px !important;
+  }
+
+  .toggle-slide {
+    box-shadow: none;
+    padding-bottom: 1px;    
+
+    .toggle-inner {
+      font-family: Gotham, sans-serif;
+
+      .toggle-blob {
+        background: #fff;
+        box-shadow: none;
+      }
+    }
   }
 }

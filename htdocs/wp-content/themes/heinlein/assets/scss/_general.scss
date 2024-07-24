@@ -431,6 +431,7 @@ div[id^="sprech-0"] {
 // Social sticky banner
 #block-stickysocialbanner {
   position: fixed;
+  z-index: 123;
   top: 33vh;
   right: 0;
   width: 64px;
