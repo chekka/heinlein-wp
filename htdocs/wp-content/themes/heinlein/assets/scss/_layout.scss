@@ -17,6 +17,8 @@
   }
 }
 
+
+
 .site-footer {
 
   .panel-grid {
@@ -146,6 +148,17 @@ body {
     }
     > .panel-grid:first-child {
       z-index: -1;
+    }
+  }
+}
+
+.panel-layout {
+  .panel-grid:last-child {
+    .loop-item {
+      transition-duration: .3s;
+      &:hover {
+        box-shadow: $box-hover-shadow;
+      }
     }
   }
 }
