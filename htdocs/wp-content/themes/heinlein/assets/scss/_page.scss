@@ -1,37 +1,39 @@
 #page-header {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   
-   position: fixed;
-   top: 0;
-   left: 0;
-   right: 0;
-   height: 67vh;
-   z-index: -1;
-   
-   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-   .header-image,
-   .header-video {
-      flex-shrink: 0;
-      min-width: 100%;
-      min-height: 100%;
-      max-width: initial;
-      width: auto;
-      height: auto;
-   }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 67vh;
+  z-index: -1;
 
-   .header-text {
-      position: absolute;
-      z-index: 1;
-   }
+  overflow: hidden;
 
-   +.panel-layout {
-      margin-top: 67vh;
-   }
+  .header-image,
+  .header-video {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: initial;
+    width: auto;
+    height: auto;
+  }
+
+  .header-text {
+    position: absolute;
+    z-index: 1;
+  }
+
+  + .panel-layout {
+    margin-top: 67vh;
+  }
 }
 
 .page-id-1526 div#page-header {
-   min-height: 90vh;
+  @include media-breakpoint-down(md) {
+    min-height: 90vh;
+  }
 }

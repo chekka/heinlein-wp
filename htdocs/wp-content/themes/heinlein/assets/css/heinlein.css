@@ -26971,7 +26971,7 @@ input[type=tel],
 select,
 textarea {
   color: #3c4c70;
-  border-radius: 0 18px 0 18px;
+  border-radius: 0 18px 0 18px !important;
   border: 1px solid #eae5e1;
   box-shadow: inset 0 3px 9px -7px rgba(0, 0, 0, 0.5);
   padding: 0 0.75rem;
@@ -27213,13 +27213,15 @@ form .section-title {
 }
 
 .cf7sg-response-output {
-  margin: 0 !important;
+  margin: 0 0 30px !important;
   padding: 12px 21px !important;
   border-radius: 0 24px;
   background-color: #fff;
-  border-width: 1px !important;
+  border-width: 0 !important;
+  border-bottom-width: 3px !important;
   position: relative;
   z-index: 3;
+  box-shadow: 0 12px 24px -3px rgba(0, 0, 0, 0.2);
 }
 
 .wpcf7-form .ui-accordion * {
@@ -27255,14 +27257,14 @@ form .section-title {
 }
 .wpcf7-form .ui-accordion .toggle-slide {
   box-shadow: none;
-  padding-bottom: 1px;
 }
-.wpcf7-form .ui-accordion .toggle-slide .toggle-inner {
-  font-family: Gotham, sans-serif;
+.wpcf7-form .ui-accordion .toggle-slide .toggle-inner * {
+  font-weight: 600;
+  color: #001e4b;
 }
 .wpcf7-form .ui-accordion .toggle-slide .toggle-inner .toggle-blob {
   background: #fff;
-  box-shadow: none;
+  box-shadow: inset 0 0 0 1px #001e4b;
 }
 
 * {
@@ -27491,6 +27493,7 @@ img {
 
 .so-widget-sow-accordion * {
   background-color: transparent !important;
+  color: #001e4b;
 }
 .so-widget-sow-accordion .sow-accordion .sow-accordion-panel {
   border-radius: 0 36px 0 36px;
@@ -27510,6 +27513,9 @@ img {
   font-weight: bold;
   color: #001e4b;
   padding: 18px 36px !important;
+}
+.so-widget-sow-accordion .sow-accordion .sow-accordion-panel .sow-accordion-panel-header .sow-accordion-title {
+  color: #001e4b;
 }
 .so-widget-sow-accordion .sow-accordion .sow-accordion-panel .sow-accordion-panel-border {
   padding: 0 36px 21px 36px !important;
@@ -27622,6 +27628,15 @@ img {
   }
   .page-template-page-landingpage #musterboxen .panel-grid-cell .panel-grid-cell > .right .sow-image-container img {
     transform: scale(1.75) translate(25px, -20px);
+  }
+}
+
+.hidden {
+  display: none;
+}
+@media (max-width: 719.98px) {
+  .hidden-mobile {
+    display: none;
   }
 }
 
@@ -28940,8 +28955,10 @@ body {
   margin-top: 67vh;
 }
 
-.page-id-1526 div#page-header {
-  min-height: 90vh;
+@media (max-width: 719.98px) {
+  .page-id-1526 div#page-header {
+    min-height: 90vh;
+  }
 }
 
 .pum-open-overlay {
@@ -30697,7 +30714,7 @@ h3 + h2, .h3 + h2, h3 + .h2, .h3 + .h2 {
   font-family: Gotham;
   font-weight: 300;
   display: block;
-  margin: 30px 0;
+  margin: 70px 0 0 -30px;
   padding: 15px 15px 13px 15px;
   width: calc(100% + 60px);
   max-width: 365px;

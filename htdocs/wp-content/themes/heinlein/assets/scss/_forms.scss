@@ -46,7 +46,7 @@ input[type="tel"],
 select,
 textarea {
   color: $blau-mittel-3;
-  border-radius: 0 $r1 0 $r1;
+  border-radius: 0 $r1 0 $r1 !important;
   border: 1px solid $ivory-hell-2;
   box-shadow: inset 0 3px 9px -7px rgba(0, 0, 0, 0.5);
   padding: 0 0.75rem;
@@ -328,13 +328,15 @@ form {
 }
 
 .cf7sg-response-output {
-  margin: 0 !important;
+  margin: 0 0 30px !important;
   padding: 12px 21px !important;
   border-radius: 0 24px;
   background-color: #fff;
-  border-width: 1px !important;
+  border-width: 0 !important;
+  border-bottom-width: 3px !important;
   position: relative;
   z-index: 3;
+  box-shadow: $box-hover-shadow;
 }
 
 .wpcf7-form .ui-accordion {
@@ -377,14 +379,16 @@ form {
 
   .toggle-slide {
     box-shadow: none;
-    padding-bottom: 1px;    
 
     .toggle-inner {
-      font-family: Gotham, sans-serif;
-
+      * {
+        font-weight: 600;
+        color: $blau-dunkel;
+      }
+      
       .toggle-blob {
         background: #fff;
-        box-shadow: none;
+        box-shadow: inset 0 0 0 1px $blau-dunkel;
       }
     }
   }

@@ -289,6 +289,7 @@ img {
 .so-widget-sow-accordion {
   * {
     background-color: transparent !important;
+    color: $blau-dunkel;
   }
   .sow-accordion {
     .sow-accordion-panel {
@@ -311,6 +312,10 @@ img {
         font-weight: bold;
         color: $blau-dunkel;
         padding: 18px 36px !important;
+
+        .sow-accordion-title {
+          color: $blau-dunkel;
+        }
       }
 
       .sow-accordion-panel-border {
@@ -467,6 +472,16 @@ img {
           }
         }
       }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+  
+  &-mobile {
+    @include media-breakpoint-down(md) {
+      display: none;
     }
   }
 }

@@ -27,7 +27,7 @@
                   $icon = get_sub_field('icon');
                   $icon_top = get_sub_field('icon_position_top');
                   $icon_left = get_sub_field('icon_position_left');
-                  echo wp_get_attachment_image( $icon, 'full', '', ['class' => 'header-icon', 'alt' => get_the_title(), 'style' => 'margin-left: ' . $icon_left . '; margin-top: ' . $icon_top . ';'] ); 
+                  echo wp_get_attachment_image( $icon, 'full', '', ['class' => 'header-icon hidden-mobile', 'alt' => get_the_title(), 'style' => 'margin-left: ' . $icon_left . '; margin-top: ' . $icon_top . ';'] ); 
                endwhile;
             endif;
          ?>

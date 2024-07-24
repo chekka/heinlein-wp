@@ -8,7 +8,7 @@
       document.querySelector('.glider').addEventListener('glider-animated', function() {      
         $('.slider-next.disabled').hide().next().show();
       });
-    }
+    }    
 
   });
 
@@ -18,6 +18,14 @@
   });
 
   $(document).on('ready',function(){
+
+    $('a[data-box-type="lifestyle"]').on('click', function(){
+      $('#pum-647 input[value="LIFESTYLE COLLECTION"]').prop('checked','checked');;
+    });
+
+    $('a[data-box-type="classic"]').on('click', function(){
+      $('#pum-647 input[value="CLASSIC COLLECTION"]').prop('checked','checked');;
+    });
     
     // Popup form in next so-panel
     $('.popup-next').on('click', function(){
