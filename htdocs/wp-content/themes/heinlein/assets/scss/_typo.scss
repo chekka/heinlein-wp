@@ -192,19 +192,19 @@ h3 {
 
   ul {
     margin: 12px 0 0 0 !important;
-    padding: 0 0 0 1.25em;
+    padding: 0 0 0 1.5em;
 
     li {
-      display: block;
+      display: flex;
+      align-items: center;
       position: relative;
+      padding: 0;
     
       &:before {
         content: '+';
         font-family: Gotham !important;
         font-weight: 900;
-        top: -3px;
-        position: absolute;
-        left: -20px;
+        left: -1.5em;
         font-size: 1em;
       }
       &:last-child {

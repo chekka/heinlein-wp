@@ -44,11 +44,15 @@
       padding: 0;
       display: flex;
       justify-content: end;
+      gap: 30px;
+
+      @include media-breakpoint-down(md) {
+        justify-content: center;
+      }
 
       li {
         list-style: none;
         margin: 0;
-        padding: 0 0 0 30px;
       }
     }
   }

@@ -34,7 +34,7 @@
    <?php endwhile; endif; ?> 
    <footer class="news-footer">
       <p><a href="/news"><?php echo _("Zurück zur Übersicht"); ?></a></p>
-      <p><strong>oder gleich den nächsten News-Artikel lesen:</strong></p>
-      <?php // incude('templates/loop--produkt-teaser.php') ?>
+      <p><strong><?php echo _("oder gleich den nächsten News-Artikel lesen:"); ?></strong></p>
+      <?php incude('templates/loop--news-teaser.php'); ?>
    </footer>         
 <?php get_footer(); ?>

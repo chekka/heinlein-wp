@@ -28023,11 +28023,16 @@ div[id^=sprech-0] {
   padding: 0;
   display: flex;
   justify-content: end;
+  gap: 30px;
+}
+@media (max-width: 719.98px) {
+  .site-footer #footer-menu ul {
+    justify-content: center;
+  }
 }
 .site-footer #footer-menu ul li {
   list-style: none;
   margin: 0;
-  padding: 0 0 0 30px;
 }
 
 .content--max {
@@ -28568,6 +28573,7 @@ body {
 .landing-hero-box.muster.no-angle a,
 .hero-box.muster.no-angle a {
   background-color: #EB4D64;
+  margin: 70px 0 0 -30px;
 }
 .landing-hero-box.muster.no-angle a span,
 .hero-box.muster.no-angle a span {
@@ -30606,19 +30612,19 @@ h3 + h2, .h3 + h2, h3 + .h2, .h3 + .h2 {
 }
 .list-plus ul {
   margin: 12px 0 0 0 !important;
-  padding: 0 0 0 1.25em;
+  padding: 0 0 0 1.5em;
 }
 .list-plus ul li {
-  display: block;
+  display: flex;
+  align-items: center;
   position: relative;
+  padding: 0;
 }
 .list-plus ul li:before {
   content: "+";
   font-family: Gotham !important;
   font-weight: 900;
-  top: -3px;
-  position: absolute;
-  left: -20px;
+  left: -1.5em;
   font-size: 1em;
 }
 .list-plus ul li:last-child {
