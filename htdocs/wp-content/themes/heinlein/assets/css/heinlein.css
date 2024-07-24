@@ -27222,6 +27222,29 @@ form .section-title {
   z-index: 3;
 }
 
+.wpcf7-form .ui-accordion .ui-accordion-header {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.wpcf7-form .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+  transform: scale(1.3);
+}
+.wpcf7-form .ui-accordion .ui-accordion-header .cf7sg-title {
+  font-size: 1em;
+  margin: 0;
+}
+.wpcf7-form .ui-accordion .ui-accordion-content {
+  min-height: auto !important;
+  height: auto !important;
+  overflow: auto !important;
+  border: none !important;
+  padding: 0 16px 30px !important;
+}
+
 * {
   -moz-outline-style: none;
   outline-style: none;
