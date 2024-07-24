@@ -26933,7 +26933,7 @@ a[title=Anfrage-Formular]:hover {
 }
 
 span.required {
-  color: #dc3232;
+  color: #dc3232 !important;
 }
 
 label {
@@ -26981,6 +26981,7 @@ textarea {
 }
 
 textarea {
+  padding-top: 0.777em;
   max-height: 150px;
 }
 

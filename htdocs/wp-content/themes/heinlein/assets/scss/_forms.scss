@@ -1,5 +1,5 @@
 span.required {
-  color: #dc3232;
+  color: #dc3232 !important;
 }
 
 label {
@@ -56,6 +56,7 @@ textarea {
 }
 
 textarea {
+  padding-top: .777em;
   max-height: 150px;
 }
 
