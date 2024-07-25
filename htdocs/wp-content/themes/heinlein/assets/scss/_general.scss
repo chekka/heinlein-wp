@@ -170,87 +170,90 @@
 }
 
 /* Fertigunsprozess */
-#unser-fertigungsprozess .grid {
-  & > .panel-layout {
-    & > .panel-grid {
-      & > .panel-grid-cell {
-        display: flex;
-        flex-wrap: wrap;
+#unser-fertigungsprozess,
+#our-manufacturing-process {
+  .grid {
+    & > .panel-layout {
+      & > .panel-grid {
+        & > .panel-grid-cell {
+          display: flex;
+          flex-wrap: wrap;
 
-        & > .widget {
-          background-image: url(../images/prozess-scale.svg);
-          background-repeat: no-repeat;
-          background-size: 100%;
-          background-position: 0 calc(100% + 50px);
-          padding: 0 0 130px 0;
-          margin-bottom: 0 !important;
-          flex: 0 1 33.333%;
+          & > .widget {
+            background-image: url(../images/prozess-scale.svg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: 0 calc(100% + 50px);
+            padding: 0 0 130px 0;
+            margin-bottom: 0 !important;
+            flex: 0 1 33.333%;
 
-          @include media-breakpoint-down(xl) {
-            flex: 0 1 50%;
-          }
+            @include media-breakpoint-down(xl) {
+              flex: 0 1 50%;
+            }
 
-          @include media-breakpoint-down(md) {
-            flex: 0 1 100%;
-          }
+            @include media-breakpoint-down(md) {
+              flex: 0 1 100%;
+            }
 
-          .box {
-            overflow: visible;
-            padding: 0 0 0 25%;
-            position: relative;
+            .box {
+              overflow: visible;
+              padding: 0 0 0 25%;
+              position: relative;
 
-            .widget {
-              background-color: #fff;
-              margin-bottom: 0 !important;
-              box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+              .widget {
+                background-color: #fff;
+                margin-bottom: 0 !important;
+                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
 
-              &:first-child {
-                border-radius: 0 $r2 0 0;
-              }
-
-              &:last-child {
-                border-radius: 0 0 0 $r2;
-              }
-
-              img {
-                border-radius: 0 $r2 0 0;
-              }
-
-              .widget-title {
-                position: absolute;
-                bottom: -50px;
-                left: -90px;
-                width: 69px;
-                text-align: right;
-                font-size: 90px;
-                font-family: Gotham, sans-serif;
-                font-weight: 200;
-                line-height: 0.777;
-                text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.222);
-                padding: 0 15px 77px 0;
-                border-right: 2px solid $blau-dunkel;
-
-                & + div {
-                  padding: 20px 0;
+                &:first-child {
+                  border-radius: 0 $r2 0 0;
                 }
-              }
 
-              p {
-                margin: 0;
-                padding-left: 20px;
-                line-height: 1.5;
+                &:last-child {
+                  border-radius: 0 0 0 $r2;
+                }
 
-                strong {
-                  display: block;
-                  font-family: "Encode Sans", sans-serif;
-                  font-weight: 400;
-                  text-align: left;
-                  text-transform: uppercase;
-                  margin-bottom: 0.333em;
-                  font-size: 1.2rem;
+                img {
+                  border-radius: 0 $r2 0 0;
+                }
+
+                .widget-title {
+                  position: absolute;
+                  bottom: -50px;
+                  left: -90px;
+                  width: 69px;
+                  text-align: right;
+                  font-size: 90px;
+                  font-family: Gotham, sans-serif;
+                  font-weight: 200;
+                  line-height: 0.777;
+                  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.222);
+                  padding: 0 15px 77px 0;
+                  border-right: 2px solid $blau-dunkel;
+
+                  & + div {
+                    padding: 20px 0;
+                  }
+                }
+
+                p {
+                  margin: 0;
+                  padding-left: 20px;
                   line-height: 1.5;
-                  letter-spacing: 0.0777em;
-                  word-spacing: 0.222em;
+
+                  strong {
+                    display: block;
+                    font-family: "Encode Sans", sans-serif;
+                    font-weight: 400;
+                    text-align: left;
+                    text-transform: uppercase;
+                    margin-bottom: 0.333em;
+                    font-size: 1.2rem;
+                    line-height: 1.5;
+                    letter-spacing: 0.0777em;
+                    word-spacing: 0.222em;
+                  }
                 }
               }
             }
@@ -402,7 +405,7 @@
   @include media-breakpoint-down(md) {
     min-width: initial;
     width: 480px;
-    max-width: 100%;  
+    max-width: 100%;
   }
 }
 

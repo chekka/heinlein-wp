@@ -27785,11 +27785,13 @@ img {
 }
 
 /* Fertigunsprozess */
-#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell {
+#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell,
+#our-manufacturing-process .grid > .panel-layout > .panel-grid > .panel-grid-cell {
   display: flex;
   flex-wrap: wrap;
 }
-#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget {
+#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget,
+#our-manufacturing-process .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget {
   background-image: url(../images/prozess-scale.svg);
   background-repeat: no-repeat;
   background-size: 100%;
@@ -27799,35 +27801,43 @@ img {
   flex: 0 1 33.333%;
 }
 @media (max-width: 1199.98px) {
-  #unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget {
+  #unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget,
+  #our-manufacturing-process .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget {
     flex: 0 1 50%;
   }
 }
 @media (max-width: 719.98px) {
-  #unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget {
+  #unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget,
+  #our-manufacturing-process .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget {
     flex: 0 1 100%;
   }
 }
-#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box {
+#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box,
+#our-manufacturing-process .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box {
   overflow: visible;
   padding: 0 0 0 25%;
   position: relative;
 }
-#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget {
+#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget,
+#our-manufacturing-process .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget {
   background-color: #fff;
   margin-bottom: 0 !important;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
 }
-#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget:first-child {
+#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget:first-child,
+#our-manufacturing-process .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget:first-child {
   border-radius: 0 24px 0 0;
 }
-#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget:last-child {
+#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget:last-child,
+#our-manufacturing-process .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget:last-child {
   border-radius: 0 0 0 24px;
 }
-#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget img {
+#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget img,
+#our-manufacturing-process .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget img {
   border-radius: 0 24px 0 0;
 }
-#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget .widget-title {
+#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget .widget-title,
+#our-manufacturing-process .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget .widget-title {
   position: absolute;
   bottom: -50px;
   left: -90px;
@@ -27841,15 +27851,18 @@ img {
   padding: 0 15px 77px 0;
   border-right: 2px solid #001e4b;
 }
-#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget .widget-title + div {
+#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget .widget-title + div,
+#our-manufacturing-process .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget .widget-title + div {
   padding: 20px 0;
 }
-#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget p {
+#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget p,
+#our-manufacturing-process .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget p {
   margin: 0;
   padding-left: 20px;
   line-height: 1.5;
 }
-#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget p strong {
+#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget p strong,
+#our-manufacturing-process .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget p strong {
   display: block;
   font-family: "Encode Sans", sans-serif;
   font-weight: 400;
