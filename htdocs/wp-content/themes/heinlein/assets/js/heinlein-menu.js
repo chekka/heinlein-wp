@@ -68,6 +68,7 @@
 
     $(window).on('scroll', function () {
       $('.hamburger').removeClass('open');
+      $('ul[id^=menu-mobile-menu]').hide();
       
       var t = 50;
       // if ($(window).width() < 575) {
