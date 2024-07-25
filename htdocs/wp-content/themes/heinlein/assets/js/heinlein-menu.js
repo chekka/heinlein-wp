@@ -12,9 +12,9 @@
       $(this).toggleClass('open');
 
       if($(this).hasClass('open')){
-        $('#menu-mobile-menu').slideDown();
+        $('ul[id^=menu-mobile-menu]').slideDown();
       } else {
-        $('#menu-mobile-menu').slideUp();
+        $('ul[id^=menu-mobile-menu]').slideUp();
       }
     });
 
