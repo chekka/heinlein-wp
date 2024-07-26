@@ -74,6 +74,9 @@
 .video-placeholder {
   .sow-image-container {
     position: relative;
+    border-radius: 0 $r3;
+    overflow: hidden;
+    
     a {
       &:before {
         content: "";

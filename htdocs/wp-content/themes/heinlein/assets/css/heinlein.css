@@ -27698,6 +27698,8 @@ img {
 
 .video-placeholder .sow-image-container {
   position: relative;
+  border-radius: 0 36px;
+  overflow: hidden;
 }
 .video-placeholder .sow-image-container a:before {
   content: "";
