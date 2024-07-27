@@ -21,7 +21,10 @@ class SiteOrigin_Premium_WooCommerce_Template_Loop_Product_Thumbnail extends WP_
 			}
 		}
 
-		if ( function_exists( 'woocommerce_template_loop_product_thumbnail' ) ) {
+		if (
+			function_exists( 'woocommerce_template_loop_product_thumbnail' ) &&
+			apply_filters( 'so_woocommerce_templates_display_product_thumbnail', true )
+		) {
 			woocommerce_template_loop_product_link_open();
 			woocommerce_template_loop_product_thumbnail();
 			woocommerce_template_loop_product_link_close();

@@ -1,9 +1,9 @@
 === SiteOrigin Premium ===
 Requires at least: 4.7
-Tested up to: 6.5.5
+Tested up to: 6.6.1
 Requires PHP: 7.0.0
-Stable tag: 1.63.1
-Build time: 2024-06-22T07:41:37-07:00
+Stable tag: 1.64.0
+Build time: 2024-07-26T12:15:08+01:00
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -28,6 +28,12 @@ The SiteOrigin Premium plugin can be downloaded via the link provided in your or
 [Documentation](https://siteorigin.com/premium-documentation/) is available on SiteOrigin.com.
 
 == Changelog ==
+
+= 1.64.0 - 26 July 2024 =
+* Anchor ID: Added repeated hash prevention to the Anything Carousel, Sliders, and Tabs Widget.* Block Animations: Resolved a potential `TypeError` and accounted for elements not setup/loaded.
+* WooCommerce Template Builder: Moved After Archive output below pagination.
+* WooCommerce Template Builder: Added compatibility for the `TP Product Image Flipper for WC` plugin.
+* WooCommerce Template Builder: Added `so_woocommerce_templates_display_before/after_archive` filters.
 
 = 1.63.1 - 22 June 2024 =
 * Anchor ID: Improved Anything Carousel performance.

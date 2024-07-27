@@ -1,0 +1,22 @@
+@related_container_margin_bottom: 0;
+@related_container_margin_top: default;
+@related_title_bottom_margin: default;
+@related_title_color: default;
+@related_title_font_size: default;
+@related_title_font_style: default;
+@related_title_font_weight: default;
+@related_title_font: default;
+
+&:has(div) {
+	margin-bottom: ~"clamp(0px, calc(@{related_container_margin_bottom} - 30px), @{related_container_margin_bottom})";
+	margin-top: @related_container_margin_top;
+}
+
+.sow-blog-title {
+	color: @related_title_color;
+	font-family: @related_title_font;
+	font-size: @related_title_font_size;
+	font-style: @related_title_font_style;
+	font-weight: @related_title_font_weight;
+	margin-bottom: @related_title_bottom_margin;
+}

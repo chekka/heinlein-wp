@@ -4,6 +4,7 @@ var sowb = window.sowb || {};
 jQuery( function( $ ) {
 
 	let initialSetup;
+	let preventAnchorUpdate;
 
 	const $tabWithAnchor = $( '.so-widget-sow-tabs[data-anchor-id], .so-widget-sow-tabs:not([data-anchor-id]):has(.sow-tabs-tab[data-anchor-id])' );
 
@@ -44,17 +45,26 @@ jQuery( function( $ ) {
 		}
 
 		soPremium.anchorIds().temporarilyDisableScrollTo( sowTabs );
+		preventAnchorUpdate = true;
+		setTimeout( function() {
+			preventAnchorUpdate = false;
+		}, 100 );
 
 		$$.find( '> .sow-tabs > .sow-tabs-tab-container .sow-tabs-tab[data-anchor-id="' + anchor + '"]' ).trigger( 'click' );
 	} );
 
 	// Handle external hash changes.
 	$tabWithAnchor.on( 'anchor_id_hash_change', function( event, anchor ) {
+		preventAnchorUpdate = true;
+		setTimeout( function() {
+			preventAnchorUpdate = false;
+		}, 100 );
+
 		$( this ).find( '> .sow-tabs > .sow-tabs-tab-container .sow-tabs-tab[data-anchor-id="' + anchor + '"]' ).trigger( 'click' );
 	} );
 
 	$tabWithAnchor.on( 'tab_change', function( e, $tab, $widget ) {
-		if ( initialSetup ) {
+		if ( initialSetup || preventAnchorUpdate) {
 			return;
 		}
 
@@ -84,7 +94,6 @@ jQuery( function( $ ) {
 		}
 
 		const tabsAnchorId = $widget.data( 'anchor-id' );
-
 		soPremium.anchorIds().update( tabsAnchorId, tabAnchorId );
 	} );
 } );

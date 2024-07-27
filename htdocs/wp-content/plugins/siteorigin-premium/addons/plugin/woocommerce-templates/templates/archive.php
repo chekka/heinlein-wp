@@ -21,7 +21,10 @@ if ( woocommerce_product_loop() ) {
 	// If there's "Before Product Archive Loop data present", output it.
 	$before_archive = get_option( 'so-wc-templates-before-' . (int) get_query_var( 'wctb_template_id' ), true );
 
-	if ( ! empty( $before_archive ) ) {
+	if (
+		apply_filters( 'so_woocommerce_templates_display_before_archive', true) &&
+		! empty( $before_archive )
+	) {
 		echo '<div class="so-wc-before-archive" style="clear: both;">';
 		SiteOrigin_Premium_Plugin_WooCommerce_Templates::single()->before_template_render();
 		echo SiteOrigin_Panels_Renderer::single()->render( uniqid( (int) get_query_var( 'wctb_template_id' ) ) . '-before', true, $before_archive );
@@ -48,7 +51,12 @@ if ( woocommerce_product_loop() ) {
 	// If there's "Before Product Archive Loop data present", output it.
 	$after_archive = get_option( 'so-wc-templates-after-' . (int) get_query_var( 'wctb_template_id' ), true );
 
-	if ( ! empty( $after_archive ) ) {
+	do_action( 'woocommerce_after_shop_loop' );
+
+	if (
+		apply_filters( 'so_woocommerce_templates_display_after_archive', true) &&
+		! empty( $after_archive )
+	) {
 		echo '<div class="so-wc-after-archive" style="clear: both;">';
 		SiteOrigin_Premium_Plugin_WooCommerce_Templates::single()->before_template_render();
 		echo SiteOrigin_Panels_Renderer::single()->render( uniqid( (int) get_query_var( 'wctb_template_id' ) ) . '-after', true, $after_archive );
@@ -56,7 +64,6 @@ if ( woocommerce_product_loop() ) {
 		echo '</div>';
 	}
 
-	do_action( 'woocommerce_after_shop_loop' );
 } else {
 	do_action( 'woocommerce_no_products_found' );
 }

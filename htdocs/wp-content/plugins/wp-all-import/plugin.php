@@ -3,7 +3,7 @@
 Plugin Name: WP All Import
 Plugin URI: https://www.wpallimport.com/wordpress-xml-csv-import/?utm_source=import-plugin-free&utm_medium=wp-plugins-page&utm_campaign=upgrade-to-pro
 Description: The most powerful solution for importing XML and CSV files to WordPress. Create Posts and Pages with content from any XML or CSV file. A paid upgrade to WP All Import Pro is available for support and additional features.
-Version: 3.7.6
+Version: 3.7.7
 Author: Soflyy
 */
 
@@ -25,7 +25,7 @@ define('WP_ALL_IMPORT_ROOT_URL', rtrim(plugin_dir_url(__FILE__), '/'));
  */
 define('WP_ALL_IMPORT_PREFIX', 'pmxi_');
 
-define('PMXI_VERSION', '3.7.6');
+define('PMXI_VERSION', '3.7.7');
 
 define('PMXI_EDITION', 'free');
 
@@ -615,6 +615,9 @@ final class PMXI_Plugin {
 							throw new Exception("Administration page `$page` matches to a wrong controller type.");
 						}
 
+					    $reviewsUI = new \Wpai\Reviews\ReviewsUI();
+					    add_action('admin_notices', [$reviewsUI, 'render']);
+
 						if ($this->_admin_current_screen->is_ajax) { // ajax request
 							$controller->$action();
 							do_action('pmxi_action_after');
@@ -726,6 +729,36 @@ final class PMXI_Plugin {
 					require $pathAlt;
 					return TRUE;
 				}
+			}
+		}
+
+		if(strpos($className, '\\') !== false){
+
+			// project-specific namespace prefix
+			$prefix = 'Wpai\\';
+
+			// base directory for the namespace prefix
+			$base_dir = self::ROOT_DIR . '/src/';
+
+			// does the class use the namespace prefix?
+			$len = strlen($prefix);
+			if (strncmp($prefix, $className, $len) !== 0) {
+				// no, move to the next registered autoloader
+				return false;
+			}
+
+			// get the relative class name
+			$relative_class = substr($className, $len);
+
+			// replace the namespace prefix with the base directory, replace namespace
+			// separators with directory separators in the relative class name, append
+			// with .php
+			$file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+
+			// if the file exists, require it
+			if (file_exists($file)) {
+				require_once $file;
+                return true;
 			}
 		}
 

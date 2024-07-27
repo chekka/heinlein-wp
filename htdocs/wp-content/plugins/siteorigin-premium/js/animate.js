@@ -9,18 +9,28 @@ SiteOriginPremium.setupAnimations = function ( $ ) {
 	const animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
 	const animationWatcher = function( animation, threshold = 0 ) {
-		const element = document.querySelector( animation.selector );
 		const elementHeight = animation.$el.outerHeight();
-		const offset = parseInt( threshold );
 
-		var observer = new IntersectionObserver( function( item ) {
-			if ( item[0].isIntersecting ) {
+		// If the elementHeight is 0. It's likely that the element isn't
+		// visible yet, or hasn't finished setting up. Let's try again shortly.
+		if ( elementHeight === 0 ) {
+			setTimeout( function() {
+				animationWatcher( animation, threshold );
+			}, 100 );
+			return;
+		}
+
+		const element = document.querySelector( animation.selector );
+		const offset = parseInt( threshold, 10);
+
+		// Calculate the threshold as a ratio. This prevents a possible bug where the threshold is outside of the range [0, 1].
+		const thresholdRatio = Math.min( Math.max( offset / elementHeight, 0 ), 1 );
+		var observer = new IntersectionObserver( function( [ entry ], observer ) {
+			if ( entry.isIntersecting ) {
 				animateIn( animation, false );
 				observer.unobserve( element );
 			}
-		}, {
-			threshold: elementHeight !== 0 ? offset / elementHeight : 0
-		} );
+		}, { threshold: thresholdRatio } );
 		observer.observe( element );
 	}
 

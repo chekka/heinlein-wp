@@ -344,7 +344,7 @@ class SiteOrigin_Premium_Options {
 							);
 						} elseif (
 							$installed_version != 'dev' &&
-							version_compare( $required_version, $installed_version, '>=' )
+							version_compare( $required_version, $installed_version, '>' )
 						) {
 							// Prevent activation as the required plugin doesn't meet the minimum version.
 							$data['Active'] = false;

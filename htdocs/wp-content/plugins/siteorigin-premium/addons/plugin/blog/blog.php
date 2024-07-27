@@ -324,53 +324,47 @@ class SiteOrigin_Premium_Plugin_Blog {
 		);
 
 		// Animations.
-		siteorigin_widgets_array_insert(
-			$form_options,
-			'posts',
-			array(
-				'animation' => array(
-					'type' => 'section',
-					'label' => __( 'Animations', 'siteorigin-premium' ),
-					'hide' => true,
-					'fields' => array(
-						'type' => array(
-							'type' => 'select',
-							'label' => __( 'Animation', 'siteorigin-premium' ),
-							'options' => include SiteOrigin_Premium::dir_path() . 'inc/animation-types.php',
-						),
-						'screen_offset' => array(
-							'type' => 'number',
-							'label' => __( 'Screen Offset', 'siteorigin-premium' ),
-							'default' => 0,
-							'unit' => 'px',
-							'description' => __( 'Distance, in pixels, the content must be above the bottom of the screen before animating in.', 'siteorigin-premium' ),
-						),
-						'duration' => array(
-							'type' => 'number',
-							'label' => __( 'Animation Speed', 'siteorigin-premium' ),
-							'default' => 1,
-							'description' => __( 'Time, in seconds, that the incoming animation lasts.', 'siteorigin-premium' ),
-						),
-						'animation_hide' => array(
-							'label' => __( 'Hide Before Animation', 'siteorigin-premium' ),
-							'type' => 'checkbox',
-							'default' => true,
-							'description' => __( 'Hide the element before animating.', 'siteorigin-premium' ),
-						),
-						'delay' => array(
-							'type' => 'number',
-							'label' => __( 'Animation Delay', 'siteorigin-premium' ),
-							'default' => '0',
-							'description' => __( 'Time, in seconds, after the event to start the animation.', 'siteorigin-premium' ),
-						),
-						'disable_mobile' => array(
-							'label' => __( 'Disable Animation on Mobile', 'siteorigin-premium' ),
-							'type' => 'checkbox',
-							'default' => true,
-						),
-					),
+		$form_options['animations'] = array(
+			'type' => 'section',
+			'label' => __( 'Animations', 'siteorigin-premium' ),
+			'hide' => true,
+			'fields' => array(
+				'type' => array(
+					'type' => 'select',
+					'label' => __( 'Animation', 'siteorigin-premium' ),
+					'options' => include SiteOrigin_Premium::dir_path() . 'inc/animation-types.php',
 				),
-			)
+				'screen_offset' => array(
+					'type' => 'number',
+					'label' => __( 'Screen Offset', 'siteorigin-premium' ),
+					'default' => 0,
+					'unit' => 'px',
+					'description' => __( 'Distance, in pixels, the content must be above the bottom of the screen before animating in.', 'siteorigin-premium' ),
+				),
+				'duration' => array(
+					'type' => 'number',
+					'label' => __( 'Animation Speed', 'siteorigin-premium' ),
+					'default' => 1,
+					'description' => __( 'Time, in seconds, that the incoming animation lasts.', 'siteorigin-premium' ),
+				),
+				'animation_hide' => array(
+					'label' => __( 'Hide Before Animation', 'siteorigin-premium' ),
+					'type' => 'checkbox',
+					'default' => true,
+					'description' => __( 'Hide the element before animating.', 'siteorigin-premium' ),
+				),
+				'delay' => array(
+					'type' => 'number',
+					'label' => __( 'Animation Delay', 'siteorigin-premium' ),
+					'default' => '0',
+					'description' => __( 'Time, in seconds, after the event to start the animation.', 'siteorigin-premium' ),
+				),
+				'disable_mobile' => array(
+					'label' => __( 'Disable Animation on Mobile', 'siteorigin-premium' ),
+					'type' => 'checkbox',
+					'default' => true,
+				),
+			),
 		);
 
 		// Allow for Post Content to be removed.

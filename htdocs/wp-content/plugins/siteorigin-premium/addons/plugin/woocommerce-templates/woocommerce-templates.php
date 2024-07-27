@@ -111,6 +111,11 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 		if ( wp_get_theme()->get( 'TextDomain' ) == 'virtue' ) {
 			include __DIR__ . '/compat/virtue.php';
 		}
+
+		// Add compatibility for the TP Product Image Flipper for Woocommerce plugin.
+		if ( function_exists( 'tp_create_flipper_images' ) ) {
+			include __DIR__ . '/compat/tp-plugins.php';
+		}
 	}
 
 	public function init_addon() {
