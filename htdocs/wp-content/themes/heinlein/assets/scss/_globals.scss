@@ -32,6 +32,10 @@ img {
   box-shadow: $box-hover-shadow;
 }
 
+.shadow-small {
+  box-shadow: $box-shadow;
+}
+
 .box {
   border-radius: 0 $r2 0 $r2;
   overflow: hidden;

@@ -37,3 +37,48 @@
     min-height: 90vh;
   }
 }
+
+#tech-grid {
+  .widget-title + .textwidget {
+    background-image: url(../images/icons/icon-x.svg);
+    background-repeat: no-repeat;
+    background-size: 24px;
+    background-position: 95% calc(100% + 7px);
+  }
+
+  .box {
+    &:hover {
+      .panel-layout {
+        border-radius: 0 $r3;
+
+        .widget-title {
+          background: transparent !important;
+
+          & + .textwidget {
+            p:first-child {
+              color: $white !important;
+            }
+            p:last-child {
+              color: $blau-dunkel !important;
+            }
+          }          
+        }
+        
+        .sow-image-container {
+          background-color: $blau-dunkel;
+          border-radius: 0 $r2 0 0;
+          overflow: hidden;
+
+          img {
+            opacity: 0;
+          }
+        }
+
+        .textwidget {
+          background-color: $blau-dunkel;
+          border-radius: 0 0 0 $r2;
+        }
+      }
+    }
+  }
+}

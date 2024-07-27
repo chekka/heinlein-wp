@@ -76,7 +76,7 @@
     position: relative;
     border-radius: 0 $r3;
     overflow: hidden;
-    
+
     a {
       &:before {
         content: "";
@@ -115,6 +115,24 @@
     text-transform: none;
     letter-spacing: 0.025em;
     margin-bottom: 1em;
+  }
+}
+
+.box {
+  .video-placeholder {
+    .sow-image-container {
+      border-radius: 0;
+      overflow: initial;
+    }
+
+    .widget-title {
+      color: $white;
+      font-family: "Encode Sans Expanded", sans-serif !important;
+      font-size: 15px;
+      line-height: 1.5;
+      letter-spacing: 0;
+      font-weight: 400;
+    }
   }
 }
 
@@ -452,6 +470,20 @@ div[id^="sprech-0"] {
 
     img {
       max-width: 36px;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    top: 77vh;
+    width: 48px;
+    border-radius: $r1 0 0 $r1;
+
+    div {
+      margin: 12px 0;
+
+      img {
+        max-width: 28px;
+      }
     }
   }
 }

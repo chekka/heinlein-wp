@@ -322,6 +322,15 @@ form {
     }
   }
 }
+
+.pum-close {
+  transition-duration: .5s;
+
+  &:hover {
+    transform: rotate(-360deg);
+  }
+}
+
 .slider-control.ui-button {
   color: $gold-dunkel !important;
   background-color: transparent !important;
