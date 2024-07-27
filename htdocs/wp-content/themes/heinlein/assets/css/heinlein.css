@@ -26842,10 +26842,7 @@ svg .bg--orange {
        url('../fonts/montserrat/montserrat-v25-latin-600.woff') format('woff');
 }
 */
-.button-link,
-a[title="Virtual showroom"],
-a[title="Look inside"],
-a[title=Anfrage-Formular] {
+.button-link {
   display: inline-block;
   font-size: 1em;
   line-height: 3em !important;
@@ -26857,12 +26854,21 @@ a[title=Anfrage-Formular] {
   border: 1px solid #5c6c90 !important;
   border-radius: 0 18px 0 18px;
 }
-.button-link:hover,
-a[title="Virtual showroom"]:hover,
-a[title="Look inside"]:hover,
-a[title=Anfrage-Formular]:hover {
-  color: #001e4b !important;
+.button-link:hover {
+  background-color: #001e4b !important;
   border-color: #001e4b !important;
+  color: #fff !important;
+}
+.button-link.green {
+  border-color: #00af35 !important;
+}
+.button-link.green:hover {
+  background-color: #00af35 !important;
+  color: #fff !important;
+}
+.button-link.big {
+  transform: scale(1.5, 1.5);
+  letter-spacing: 2px;
 }
 
 a[title="Look inside"],
@@ -26875,17 +26881,6 @@ a[title=Anfrage-Formular]:hover {
   color: #fff;
   border-color: #aa8461;
   background-color: #aa8461;
-}
-
-a[title=Anfrage-Formular] {
-  transform: scale(1.5);
-  padding-left: 3em;
-  padding-right: 3em;
-  text-transform: uppercase;
-  border-color: #fff !important;
-}
-a[title=Anfrage-Formular]:hover {
-  color: #fff !important;
 }
 
 .cta-blue {
@@ -26903,7 +26898,6 @@ a[title=Anfrage-Formular]:hover {
 .cta-blue.outline.green {
   border-color: #00af35 !important;
   color: #00af35 !important;
-  background-color: #fff !important;
 }
 .cta-blue.outline.green:hover {
   background-color: #00af35 !important;
@@ -26914,22 +26908,21 @@ a[title=Anfrage-Formular]:hover {
   color: #fff !important;
 }
 
-#nachhaltigkeit a[title="Mehr erfahren"] {
-  color: #00af35;
-  border-color: #00af35;
-}
-#nachhaltigkeit a[title="Mehr erfahren"]:hover {
-  color: #fff;
-  background-color: #00af35;
-  border-color: #00af35;
-}
-
 .button-link.bg--pink {
   border: none !important;
   color: #fff !important;
   transform: scale(1.5);
   padding: 0 3em;
   margin-top: 3em;
+}
+
+.bg--blau-dunkel .button-link {
+  border-color: #fff !important;
+  color: #fff !important;
+}
+.bg--blau-dunkel .button-link:hover {
+  background-color: #fff !important;
+  color: #001e4b !important;
 }
 
 span.required {
@@ -27186,6 +27179,27 @@ form .section-title {
   color: #001e4b !important;
   line-height: 1.5;
 }
+.popup-form span.close {
+  position: absolute;
+  z-index: 777;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #f4f2ef;
+  background-image: url(../images/icons/icon-x-blank.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  border-radius: 50%;
+  font-size: 0;
+  box-shadow: inset 0 0 0 1px #001e4b;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+.popup-form span.close:hover {
+  transform: rotate(-360deg);
+}
 
 .slider-control.ui-button {
   color: #7f6445 !important;
@@ -27262,6 +27276,17 @@ form .section-title {
 .wpcf7-form .ui-accordion .toggle-slide .toggle-inner * {
   font-weight: 600;
   color: #001e4b;
+  text-shadow: none;
+}
+.wpcf7-form .ui-accordion .toggle-slide .toggle-inner .toggle-on {
+  color: #fff;
+  background-color: #00af35;
+  box-shadow: none !important;
+}
+.wpcf7-form .ui-accordion .toggle-slide .toggle-inner .toggle-off {
+  color: #001e4b;
+  background-color: transparent;
+  box-shadow: none !important;
 }
 .wpcf7-form .ui-accordion .toggle-slide .toggle-inner .toggle-blob {
   background: #fff;
@@ -28635,7 +28660,7 @@ body {
   transform: translateY(-50%);
   width: 55px;
   height: 55px;
-  right: -80px;
+  right: -90px;
   background-image: url(../images/icons/icon-hero-circle-arrow.svg);
 }
 .landing-hero-box p a:after,

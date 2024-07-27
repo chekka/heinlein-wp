@@ -1,7 +1,4 @@
-.button-link,
-a[title="Virtual showroom"],
-a[title="Look inside"],
-a[title="Anfrage-Formular"] {
+.button-link {
   display: inline-block;
   font-size: 1em;
   line-height: 3em !important;
@@ -14,8 +11,22 @@ a[title="Anfrage-Formular"] {
   border-radius: 0 $r1 0 $r1;
 
   &:hover {
-    color: $blau-dunkel !important;
+    background-color: $blau-dunkel !important;
     border-color: $blau-dunkel !important;
+    color: $white !important;
+  }
+
+  &.green {
+    border-color: $green-text !important;
+    &:hover {
+      background-color: $green-text !important;
+      color: $white !important;
+    }
+  }
+
+  &.big {
+    transform: scale(1.5, 1.5);
+    letter-spacing: 2px;
   }
 }
 
@@ -26,19 +37,7 @@ a[title="Anfrage-Formular"] {
   &:hover {
     color: #fff;
     border-color: $gold;
-    background-color: $gold;    
-  }
-}
-
-a[title="Anfrage-Formular"] {
-  transform: scale(1.5);
-  padding-left: 3em;
-  padding-right: 3em;
-  text-transform: uppercase;
-  border-color: #fff !important;
-
-  &:hover {
-    color: #fff !important;
+    background-color: $gold;
   }
 }
 
@@ -48,7 +47,7 @@ a[title="Anfrage-Formular"] {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 1em 0 2em 0;
-  
+
   &.outline {
     background-color: transparent;
     border: 1px solid $blau-dunkel !important;
@@ -57,7 +56,6 @@ a[title="Anfrage-Formular"] {
     &.green {
       border-color: $green-text !important;
       color: $green-text !important;
-      background-color: $white !important;
 
       &:hover {
         background-color: $green-text !important;
@@ -72,20 +70,22 @@ a[title="Anfrage-Formular"] {
   }
 }
 
-#nachhaltigkeit a[title="Mehr erfahren"] {
-  color: $green-text;
-  border-color: $green-text;
-  &:hover {
-    color: #fff;
-    background-color: $green-text;
-    border-color: $green-text;
-  }
-}
-
 .button-link.bg--pink {
   border: none !important;
   color: #fff !important;
   transform: scale(1.5);
   padding: 0 3em;
   margin-top: 3em;
+}
+
+.bg--blau-dunkel {
+  .button-link {
+    border-color: $white !important;
+    color: $white !important;
+    
+    &:hover {
+      background-color: $white !important;
+      color: $blau-dunkel !important;
+    }
+  }
 }

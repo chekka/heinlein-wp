@@ -298,6 +298,29 @@ form {
     color: $blau-dunkel !important;
     line-height: 1.5;
   }
+
+  span.close {
+    position: absolute;
+    z-index: 777;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: $ivory-hell-1;
+    background-image: url(../images/icons/icon-x-blank.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    border-radius: 50%;
+    font-size: 0;
+    box-shadow: inset 0 0 0 1px $blau-dunkel;
+    cursor: pointer;
+    transition-duration: .5s;
+
+    &:hover {
+      transform: rotate(-360deg);
+    }
+  }
 }
 .slider-control.ui-button {
   color: $gold-dunkel !important;
@@ -385,10 +408,23 @@ form {
       * {
         font-weight: 600;
         color: $blau-dunkel;
+        text-shadow: none;
+      }
+
+      .toggle-on {
+        color: $white;
+        background-color: $green-text;
+        box-shadow: none !important;
+      }
+
+      .toggle-off {
+        color: $blau-dunkel;
+        background-color: transparent;
+        box-shadow: none !important;
       }
       
       .toggle-blob {
-        background: #fff;
+        background: $white;
         box-shadow: inset 0 0 0 1px $blau-dunkel;
       }
     }

@@ -34,6 +34,11 @@
       $(next).find('.popup-form').addClass('show');
     });
 
+    // Popup form close
+    $('.popup-form .close').on('click', function(){
+      $(this).parents('.popup-form').removeClass('show');
+    });
+
     // counterUp
     function counter() {
       if ($('body').length > 0 && 'IntersectionObserver' in window) {
@@ -120,30 +125,37 @@
     $('.pum-theme-186').each(function(){
       
       $video_url = $('iframe').attr('src');
-      
-      if($video_url.includes( 'vimeo' )){
-        $(this).on('pumBeforeOpen', function () {
-          var $iframe = $('iframe', $(this));
-          var src = $iframe.prop('src');
-          $iframe.prop('src', '').prop('src', src + '&autoplay=1'); // Add &muted=1 if needed.
-        });
-      }
 
-      $(this).on('pumBeforeOpen', function () {
-        var video_src = $(this).find('video source').attr('src');
-        var video = $('video', $(this));
-        if(video_src){
-          video[0].play();
+      if(!$video_url){
+        return;
+      } else {
+      
+        if($video_url.includes( 'vimeo' )){
+          $(this).on('pumBeforeOpen', function () {
+            var $iframe = $('iframe', $(this));
+            var src = $iframe.prop('src');
+            $iframe.prop('src', '').prop('src', src + '&autoplay=1'); // Add &muted=1 if needed.
+          });
         }
-      });
-      $(this).on('pumBeforeClose', function () {
-        var video_src = $(this).find('video source').attr('src');
-        var video = $('video', $(this));
-        if(video_src){
-          video[0].pause();
-          video[0].currentTime = 0;
-        }
-      });
+
+        $(this).on('pumBeforeOpen', function () {
+          var video_src = $(this).find('video source').attr('src');
+          var video = $('video', $(this));
+          if(video_src){
+            video[0].play();
+          }
+        });
+        $(this).on('pumBeforeClose', function () {
+          var video_src = $(this).find('video source').attr('src');
+          var video = $('video', $(this));
+          if(video_src){
+            video[0].pause();
+            video[0].currentTime = 0;
+          }
+        });
+    
+      }
+    
     });
 
     $('.wpcf7-form').attr({ 'novalidate': 'novalidate' });
