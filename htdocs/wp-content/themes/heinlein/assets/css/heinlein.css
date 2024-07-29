@@ -26909,6 +26909,7 @@ a[title=Anfrage-Formular]:hover {
 }
 .cta-blue.gold {
   background-color: #aa8461 !important;
+  border-color: #aa8461 !important;
 }
 .cta-blue.gold:hover {
   background-color: #7f6445 !important;
@@ -28330,6 +28331,10 @@ body {
   background: radial-gradient(circle farthest-corner at 40% 0, #fff, #e4ecf1);
 }
 
+.stil--mittel {
+  background: linear-gradient(45deg, #ffffff 0%, #ebeff5 30%, #b9c3d0 100%);
+}
+
 .stil--ivory-top {
   background: linear-gradient(to bottom, #ebe7e0, #fff);
 }
@@ -28963,7 +28968,6 @@ body {
   margin: 0 auto;
   padding: 7px 30px 3px;
   text-transform: uppercase;
-  border-radius: 24px 24px 0 0;
   font-family: Gotham, sans-serif;
   font-weight: 800;
 }
@@ -29838,6 +29842,18 @@ svg .bg--orange {
 
 .pipette-overlay img {
   transform: translateX(-17%);
+}
+
+.ov-overlay img {
+  transform: translateX(-23%);
+}
+
+@media (min-width: 1200px) {
+  .flipdropper-awards img {
+    height: 340px !important;
+    margin-top: -340px;
+    transform: translateX(200%);
+  }
 }
 
 #support-boxes .textwidget p {

@@ -71,6 +71,7 @@ a[title="Anfrage-Formular"] {
 
   &.gold {
     background-color: $gold !important;
+    border-color: $gold !important;
 
     &:hover {
       background-color: $gold-dunkel !important;

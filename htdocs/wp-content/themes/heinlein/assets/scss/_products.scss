@@ -246,3 +246,19 @@
     transform: translateX(-17%);
   }
 }
+
+.ov-overlay {
+  img {
+    transform: translateX(-23%);
+  }
+}
+
+.flipdropper-awards {
+  @include media-breakpoint-up(xl) {
+    img {
+      height: 340px !important;
+      margin-top: -340px;
+      transform: translateX(200%);
+    }
+  }
+}
