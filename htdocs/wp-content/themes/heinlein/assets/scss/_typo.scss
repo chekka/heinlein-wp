@@ -69,8 +69,11 @@ a[class^="cta-"] {
 
 .so-widget-sow-editor a {
   color: $blau-dunkel;
-  border-bottom: 1px solid $blau-dunkel;
   padding-bottom: 1px;
+
+  &.text-link {
+    border-bottom: 1px solid $blau-dunkel;
+  }
 }
 
 h2 + p {
@@ -198,9 +201,9 @@ h3 {
       align-items: center;
       position: relative;
       padding: 0;
-    
+
       &:before {
-        content: '+';
+        content: "+";
         font-family: Gotham !important;
         font-weight: 800;
         left: -1.5em;
@@ -210,7 +213,7 @@ h3 {
         margin-bottom: 0;
       }
     }
-  
+
     + p {
       a {
         font-family: Gotham;
@@ -255,7 +258,6 @@ h3 {
     }
   }
 }
-
 
 .bg--blau-dunkel > div > .widget_sow-editor * {
   color: #fff;

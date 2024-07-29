@@ -68,6 +68,14 @@ a[title="Anfrage-Formular"] {
     background-color: $blau-mittel-3;
     color: #fff !important;
   }
+
+  &.gold {
+    background-color: $gold !important;
+
+    &:hover {
+      background-color: $gold-dunkel !important;
+    }
+  }
 }
 
 .button-link.bg--pink {

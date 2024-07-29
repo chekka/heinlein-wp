@@ -182,6 +182,13 @@
           border-left: 1px solid $blau-dunkel;
         }
       }
+      &.lang-item-first {
+        &:last-child {
+          a {
+            border: none;
+          }
+        }
+      }
     }
   }
 }

@@ -23,9 +23,10 @@
             if( have_rows('headericon') ):
                while( have_rows('headericon') ): the_row();
                   $icon = get_sub_field('icon');
+                  $icon_css = get_sub_field('icon_css');
                   $icon_top = get_sub_field('icon_position_top');
-                  $icon_left = get_sub_field('icon_position_left');
-                  echo wp_get_attachment_image( $icon, 'full', '', ['class' => 'header-icon', 'alt' => get_the_title(), 'style' => 'margin-left: ' . $icon_left . '; margin-top: ' . $icon_top . ';'] ); 
+                  $icon_left = get_sub_field('icon_position_left');                  
+                  echo wp_get_attachment_image( $icon, 'full', '', ['class' => 'header-icon', 'alt' => get_the_title(), 'style' => 'margin-left: ' . $icon_left . '; margin-top: ' . $icon_top . ';' . $icon_css] ); 
                endwhile;
             endif;
          ?>
