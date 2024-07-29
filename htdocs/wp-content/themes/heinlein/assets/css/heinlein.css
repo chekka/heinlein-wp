@@ -30240,6 +30240,14 @@ svg .bg--orange {
   font-weight: 700;
 }
 
+.page-template-page-landingpage-gold .site-header {
+  transition-duration: 0.3s;
+}
+.page-template-page-landingpage-gold .site-header.active {
+  background: linear-gradient(to bottom, #7f7264 0%, #d5cdc5 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  box-shadow: none;
+}
+
 .bg--blau-dunkel {
   background-color: #001e4b;
 }

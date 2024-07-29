@@ -370,7 +370,7 @@
         left: 0px;
         top: 10px;
       }
-    }    
+    }
   }
 
   .lang-item {
@@ -386,7 +386,7 @@
     &.lang-item-first {
       margin: 0 8px 0 -8px;
     }
-  }  
+  }
 
   .text-link.gold {
     a {
@@ -394,5 +394,19 @@
       color: $gold;
       font-weight: 700;
     }
-  }  
+  }
+}
+
+.page-template-page-landingpage-gold {
+  .site-header {
+    transition-duration: .3s;
+    &.active {
+      background: linear-gradient(
+        to bottom,
+        #7f7264 0%,
+        #d5cdc5 90%
+      ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      box-shadow: none;
+    }
+  }
 }

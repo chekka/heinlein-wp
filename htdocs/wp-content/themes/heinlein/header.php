@@ -1,3 +1,5 @@
+<?php $template = get_page_template_slug(); ?>
+
 <!DOCTYPE html>
 <html class="no-js" <?php language_attributes(); ?> id="heinlein" data-owner="heinlein">
 
@@ -29,7 +31,9 @@
 <body <?php body_class(); ?>>
 
   <header class="site-header" id="top">
-    
+  <?php if($template == 'page-landingpage-gold.php'): ?>
+    <img src="/wp-content/themes/heinlein/assets/images/landingpage-gold-header-icons.svg" width="230" class="hidden-mobile mt-4 ms-7">
+  <?php endif; ?>
       <?php 
         function contains_partial_class($partial) {
           $body_classes = get_body_class();
@@ -51,10 +55,17 @@
         $current_lang = pll_current_language();
       ?>
       <a href="/<?php if($current_lang != "de"): echo pll_current_language(); endif; ?>" class="site-logo">
+        <?php if($template == 'page-landingpage-gold.php'): ?>
+        <picture>
+          <source srcset="/wp-content/themes/heinlein/assets/images/heinlein-plastiktechnik-signet-dark.svg" media="(max-width: 580px)" width="80" height="110">
+          <img src="/wp-content/themes/heinlein/assets/images/heinlein-plastiktechnik-logo-dark.svg" alt="Heinlein Plastik-Technik Logo" width="240" height="90" loading="eager" decoding="sync">
+        </picture>
+        <?php else: ?>
         <picture>
           <source srcset="/wp-content/themes/heinlein/assets/images/heinlein-plastiktechnik-signet.svg" media="(max-width: 580px)" width="80" height="110">
           <img src="/wp-content/themes/heinlein/assets/images/heinlein-plastiktechnik-logo.svg" alt="Heinlein Plastik-Technik Logo" width="240" height="90" loading="eager" decoding="sync">
         </picture>
+        <?php endif; ?>
       </a>         
     
   </header>
