@@ -30247,6 +30247,16 @@ svg .bg--orange {
   background: linear-gradient(to bottom, #7f7264 0%, #d5cdc5 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   box-shadow: none;
 }
+@media (max-width: 719.98px) {
+  .page-template-page-landingpage-gold #block-stickysocialbanner {
+    top: 58vh;
+  }
+}
+@media (max-width: 719.98px) {
+  .page-template-page-landingpage-gold h1, .page-template-page-landingpage-gold .h1 {
+    hyphens: none;
+  }
+}
 
 .bg--blau-dunkel {
   background-color: #001e4b;
@@ -30954,6 +30964,7 @@ h3 + h2, .h3 + h2, h3 + .h2, .h3 + .h2 {
   font-weight: 900;
   background-color: #7f6445;
   border-radius: 18px 18px 0 0;
+  white-space: nowrap;
 }
 .list-plus ul + p a[href*=classic] {
   background-color: #5c6c90;

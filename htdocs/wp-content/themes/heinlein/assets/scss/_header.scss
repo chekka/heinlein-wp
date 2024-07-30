@@ -399,7 +399,7 @@
 
 .page-template-page-landingpage-gold {
   .site-header {
-    transition-duration: .3s;
+    transition-duration: 0.3s;
     &.active {
       background: linear-gradient(
         to bottom,
@@ -407,6 +407,17 @@
         #d5cdc5 90%
       ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
       box-shadow: none;
+    }
+  }
+  #block-stickysocialbanner {
+    @include media-breakpoint-down(md) {
+      top: 58vh;
+    }
+  }
+
+  h1 {
+    @include media-breakpoint-down(md) {
+      hyphens: none;
     }
   }
 }

@@ -16,10 +16,10 @@
   </defs>
   <path d="M1,1v88.7c0,17.1,14.1,30.9,31.5,30.9h122.5l34.8,27.8-1.7-116.5c0-17.1-14.1-30.9-31.5-30.9H1Z" style="fill: url(#Neues_Verlaufsfeld_1);filter: drop-shadow(0px 0px 12px rgb(0 0 0 / .1))"/>
   <path d="M1,89.7h1c0,16.5,13.7,29.9,30.5,29.9h122.8l33.4,26.7-1.6-114.4h0c0-16.5-13.7-29.9-30.5-29.9H2v87.7H0V0h156.6c17.9,0,32.5,14.3,32.5,31.9h-1,1s1.7,118.6,1.7,118.6l-36.2-28.9H32.5C14.6,121.6,0,107.3,0,89.7h1Z" style="fill: url(#Unbenannter_Verlauf_13); stroke-width: 0px;"/>
-  <text transform="translate(19.3 26.9)" style="fill: #252228; font-family: sans-serif; font-size: 8px; letter-spacing: 0.065em">„Heinlein verfügt über eigene</text>
-  <text transform="translate(19.3 40.9)" style="fill: #252228; font-family: sans-serif; font-size: 8px; letter-spacing: 0.065em">Entwickler, Konstrukteure und einen</text>
-  <text transform="translate(19.3 54.9)" style="fill: #252228; font-family: sans-serif; font-size: 8px; letter-spacing: 0.065em">eigenen Formen- und Maschinenbau.</text>
-  <text transform="translate(19.3 68.9)" style="fill: #252228; font-family: sans-serif; font-size: 8px; letter-spacing: 0.065em">Bei der Umsetzung von neuen</text>
-  <text transform="translate(19.3 82.9)" style="fill: #252228; font-family: sans-serif; font-size: 8px; letter-spacing: 0.065em">Primärpackmitteln sind sie daher</text>
-  <text transform="translate(19.3 96.9)" style="fill: #252228; font-family: sans-serif; font-size: 8px; letter-spacing: 0.065em">unschlagbar.“</text>
+  <text transform="translate(19.3 26.9)" style="fill: #252228; font-family: sans-serif; font-size: 8px; letter-spacing: 0.065em">„Heinlein has its own developers</text>
+  <text transform="translate(19.3 40.9)" style="fill: #252228; font-family: sans-serif; font-size: 8px; letter-spacing: 0.065em">design engineers and its own mold </text>
+  <text transform="translate(19.3 54.9)" style="fill: #252228; font-family: sans-serif; font-size: 8px; letter-spacing: 0.065em">and machine construction. They are</text>
+  <text transform="translate(19.3 68.9)" style="fill: #252228; font-family: sans-serif; font-size: 8px; letter-spacing: 0.065em">therefore unbeatable when it comes </text>
+  <text transform="translate(19.3 82.9)" style="fill: #252228; font-family: sans-serif; font-size: 8px; letter-spacing: 0.065em">to implementing new primary </text>
+  <text transform="translate(19.3 96.9)" style="fill: #252228; font-family: sans-serif; font-size: 8px; letter-spacing: 0.065em">packaging materials.“</text>
 </svg>
