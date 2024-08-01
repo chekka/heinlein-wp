@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Complianz &#8211; GDPR/CCPA Cookie Consent - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-07-23 12:34:10+0000\n"
+"PO-Revision-Date: 2024-07-29 17:14:19+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -119,6 +119,10 @@ msgstr "Beim Zuschneiden Ihres Bildes ist ein Fehler aufgetreten."
 msgid "Suggested image dimensions:"
 msgstr "Empfohlene Bildgröße:"
 
+#: settings/media/wp_enqueue_media_override.php:242
+msgid "Cropping&hellip;"
+msgstr "Wird zugeschnitten &hellip;"
+
 #: settings/media/wp_enqueue_media_override.php:241
 msgid "Crop your image"
 msgstr "Schneiden Sie Ihr Bild zu"
@@ -209,6 +213,10 @@ msgstr "Anhang-Details"
 msgid "No media attachments found."
 msgstr "Es wurden keine Medienanhänge gefunden."
 
+#: settings/media/wp_enqueue_media_override.php:207
+msgid "Search Media"
+msgstr "Medien suchen"
+
 #: settings/media/wp_enqueue_media_override.php:206
 msgid "Filter by type"
 msgstr "Nach Typ filtern"
@@ -244,6 +252,11 @@ msgstr "Zu diesem Beitrag hochgeladen"
 #: settings/media/wp_enqueue_media_override.php:194
 msgid "Uploaded to this page"
 msgstr "Zu dieser Seite hochgeladen"
+
+#: settings/media/wp_enqueue_media_override.php:193
+msgctxt "noun"
+msgid "Trash"
+msgstr "Papierkorb"
 
 #: settings/media/wp_enqueue_media_override.php:191
 msgid "Insert into post"
