@@ -86,6 +86,7 @@ class WP_Optimize_Premium {
 		$this->include_images_trash();
 		$this->include_cache_premium();
 		$this->include_power_tweaks();
+		WP_Optimize_Bulk_Smush::get_instance();
 
 		if (!class_exists('Updraft_Manager_Updater_1_9')) {
 			include_once(WPO_PLUGIN_MAIN_PATH.'vendor/davidanderson684/simba-plugin-manager-updater/class-udm-updater.php');
@@ -526,6 +527,7 @@ class WP_Optimize_Premium {
 			'moving_selected_unused_images_to_trash' => __('Moving selected unused images to trash...', 'wp-optimize'),
 			'deleting_unused_images_from_trash' => __('Deleting unused images from trash...', 'wp-optimize'),
 			'restoring_selected_unused_images_from_trash' => __('Restoring selected unused images from trash...', 'wp-optimize'),
+			'original_if_scaled_version_exist' => __('original - (if scaled version exist)', 'wp-optimize'),
 			'auto_optimizations' => $this->get_auto_optimizations(),
 			'schedule_types' => $this->get_schedule_types(true),
 			'week_days' => $this->get_week_days(),
@@ -684,6 +686,10 @@ class WP_Optimize_Premium {
 	 * @return array
 	 */
 	public function get_wp_roles() {
+		if (!function_exists('get_editable_roles')) {
+			include_once ABSPATH . 'wp-admin/includes/user.php';
+		}
+
 		$roles = array();
 		$wp_roles = get_editable_roles();
 		foreach ($wp_roles as $role => $info) {
@@ -742,6 +748,7 @@ class WP_Optimize_Premium {
 		WPO_Yoast_SEO::instance();
 		WPO_Estatik::instance();
 		WPO_Beaver_Builder::instance();
+		WPO_ACF::instance();
 	}
 	
 	/**

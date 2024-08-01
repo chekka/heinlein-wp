@@ -88,7 +88,9 @@ function wpo_user_cache_filename($filename) {
 	
 	$salt = $GLOBALS['wpo_cache_config']['wp_salt_auth'];
 
-	$encoded_filename = sha1($filename.$salt.$username);
+	// Use the original WordPress regular expression to exclude unwanted characters from the $username variable.
+	$username = preg_replace('|[^a-z0-9 _.\-@]|i', '', $username);
+	$encoded_filename = $filename.'-'.$username.'-'.sha1($filename.$salt.$username);
 	
 	return $encoded_filename;
 }
@@ -134,7 +136,7 @@ function wpo_per_role_cache_filename($filename) {
 
 	$salt = $GLOBALS['wpo_cache_config']['wp_salt_auth'];
 
-	$filename = $filename . sha1($filename.$salt.join('|', $roles));
+	$filename = $filename . '-'.join('-', $roles) .'-'. sha1($filename.$salt.join('-', $roles));
 
 	return $filename;
 }

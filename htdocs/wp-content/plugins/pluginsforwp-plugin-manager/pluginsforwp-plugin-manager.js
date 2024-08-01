@@ -1,5 +1,4 @@
-new Vue({
-  el: '#p4w-updater',
+const pluginManager = Vue.createApp({
   data() {
     return {
       companyName: 'Plugins for WP',
@@ -9,30 +8,35 @@ new Vue({
       purchaseUrl: 'https://pluginsforwp.com/checkout?edd_action=add_to_cart&download_id=DOWNLOAD_ID',
       unlimitedDownloadsId: 3591,
       pluginizer: false,
-
       activeTab: 'plugins',
       isBusy: false,
       isBusyMessage: null,
+
       settings: {
         key: null,
         username: null,
         coupon: null,
         affiliate: null,
       },
+
       products: [],
       pluginCnt: 0,
       themeCnt: 0,
+
       modals: {
+        isProductListError: false,
         isInstallModalActive: false,
         isInstallOk: false,
         isInstallError: false,
         details: false,
         youtube: false,
       },
+
       product: {
         name: null,
         type: null,
       },
+
       user: {
         plugins: null,
         themes: null,
@@ -43,6 +47,7 @@ new Vue({
         allAccessImage: null,
         validCredentials: false,
       },
+
       search: {
         plugins: {
           text: '',
@@ -51,9 +56,16 @@ new Vue({
           text: '',
         },
       },
+
       filter: {
         plugins: 'all',
         themes: 'all',
+      },
+
+      pagination: {
+        pluginPage: 1,
+        themePage: 1,
+        itemsPerPage: 10,
       },
     };
   },
@@ -63,15 +75,18 @@ new Vue({
       this.pluginizer = true;
     }
 
+    let params = new URLSearchParams(window.location.search);
+    let searchParam = params.get('s');
+    this.search.plugins.text = searchParam || '';
+
     this.getInstalledProducts();
   },
 
   computed: {
-    plugins() {
-      var plugins = [];
-      for (var product of this.products) {
+    allPlugins() {
+      let plugins = [];
+      for (const product of this.products) {
         if (product.type === 'plugin' &&
-            product.version &&
             this.canShowProduct(product, this.filter.plugins, this.search.plugins.text)) {
           plugins.push(product);
         }
@@ -80,17 +95,38 @@ new Vue({
       return plugins;
     },
 
-    themes() {
-      var themes = [];
-      for (var product of this.products) {
+    getMaxPluginPages() {
+      return Math.ceil(this.allPlugins.length / this.pagination.itemsPerPage);
+    },
+
+    plugins() {
+      const start = (this.pagination.pluginPage - 1) * this.pagination.itemsPerPage;
+      const end = this.pagination.pluginPage * this.pagination.itemsPerPage;
+
+      return this.allPlugins.slice(start, end);
+    },
+
+    allThemes() {
+      let themes = [];
+      for (const product of this.products) {
         if (product.type === 'theme' &&
-            product.version &&
-            this.canShowProduct(product, this.filter.plugins, this.search.plugins.text)) {
+            this.canShowProduct(product, this.filter.themes, this.search.themes.text)) {
           themes.push(product);
         }
       }
 
       return themes;
+    },
+
+    getMaxThemePages() {
+      return Math.ceil(this.allThemes.length / this.pagination.itemsPerPage);
+    },
+
+    themes() {
+      const start = (this.pagination.themePage - 1) * this.pagination.itemsPerPage;
+      const end = this.pagination.themePage * this.pagination.itemsPerPage;
+
+      return this.allThemes.slice(start, end);
     },
   },
 
@@ -135,13 +171,13 @@ new Vue({
     getBaseUrl() {
       let baseurl = window.location.origin + window.location.pathname;
 
-      return baseurl.replace('/wp-admin/admin.php', '') + '/?rest_route=/p4w/v1';
+      return baseurl.replace('/wp-admin/admin.php', '') + '/?rest_route=/pluginsforwp/v1';
     },
 
     getInstalledProducts() {
       this.isBusy = true;
 
-      axios.get(this.getBaseUrl() + '/products/list').then(response => {
+      axios.get(this.getBaseUrl() + '/products/list', {headers: {'X-WP-Nonce': p4wSPA.nonce}}).then(response => {
         this.settings.username = response.data.username || null;
         this.settings.key = response.data.key || null;
         this.settings.affiliate = response.data.affiliate || null;
@@ -173,7 +209,7 @@ new Vue({
       this.isBusy = true;
       this.isBusyMessage = 'Installing Product ...';
 
-      axios.post(this.getBaseUrl() + '/products/install', product).then(() => {
+      axios.post(this.getBaseUrl() + '/products/install', product, {headers: {'X-WP-Nonce': p4wSPA.nonce}}).then(() => {
         this.modals.isInstallOk = true;
         this.isBusyMessage = null;
 
@@ -187,7 +223,7 @@ new Vue({
      * Update settings (Secret key)
      */
     submitSettings() {
-      axios.post(this.getBaseUrl() + '/settings/save', this.settings).then(() => {
+      axios.post(this.getBaseUrl() + '/settings/save', this.settings, {headers: {'X-WP-Nonce': p4wSPA.nonce}}).then(() => {
         this.checkUpdates();
         this.activeTab = 'plugins';
       });
@@ -236,18 +272,27 @@ new Vue({
         let userThemes = Object.values(this.user.themes);
 
         this.products = response.data.products;
+
         for (let product of this.products) {
           product.installedVersion = null;
 
           for (let plugin of userPlugins) {
-            if (product.name === plugin.Name && product.type === 'plugin') {
-              product.installedVersion = plugin.Version;
+            if (product.name === plugin.name && product.type === 'plugin') {
+              product.installedVersion = plugin.installedVersion;
+              product.active = plugin.active;
+              product.installed = true;
+
+              plugin.matched = true;
             }
           }
 
           for (let theme of userThemes) {
-            if (product.name === theme.Name && product.type === 'theme') {
-              product.installedVersion = theme.Version;
+            if (product.name === theme.name && product.type === 'theme') {
+              product.installedVersion = theme.installedVersion;
+              product.active = theme.active;
+              product.installed = true;
+
+              theme.matched = true;
             }
           }
 
@@ -258,7 +303,30 @@ new Vue({
           }
         }
 
+        userPlugins = userPlugins.filter(item => !item.matched);
+        userThemes = userThemes.filter(item => !item.matched);
+
+        this.products = this.products.concat(userPlugins).concat(userThemes);
+
+        // Use a Set to track unique names
+        let seenNames = new Set();
+
+        // Filter the array to remove duplicates based on the `name` property
+        this.products = this.products.filter(item => {
+          if (seenNames.has(item.name)) {
+            // If the name has already been seen, filter out this item
+            return false;
+          } else {
+            // If it's a new name, add it to the Set and keep this item
+            seenNames.add(item.name);
+            return true;
+          }
+        });
+        this.products.sort((a, b) => a.name.localeCompare(b.name));
+
         this.isBusy = false;
+      }).catch(() => {
+        this.modals.isProductListError = true;
       });
     },
 
@@ -276,16 +344,10 @@ new Vue({
      */
     canShowProduct(product, filter, text) {
       if (filter === 'installed' && !product.installedVersion) {
-        // filter out installed products
         return false;
       }
 
       if (filter === 'purchased' && !product.purchased) {
-        // filter out not purchased products
-        return false;
-      }
-
-      if (filter === 'installed_and_purchased' && (!product.installedVersion && !product.purchased)) {
         return false;
       }
 
@@ -377,11 +439,41 @@ new Vue({
      * Activates a WordPress plugin
      * @param product
      */
-    activate(product) {
+    activatePlugin(product) {
       this.modals.isInstallOk = false;
       this.isBusyMessage = 'Activating ...';
 
-      axios.post(this.getBaseUrl() + '/products/activate', product).then(() => {
+      axios.post(this.getBaseUrl() + '/products/activate-plugin', product, {headers: {'X-WP-Nonce': p4wSPA.nonce}}).then(() => {
+        window.location.reload();
+      }).catch(() => {
+        this.modals.isInstallError = true;
+      });
+    },
+
+    /**
+     * Deactivates a WordPress plugin
+     * @param product
+     */
+    deactivatePlugin(product) {
+      this.modals.isInstallOk = false;
+      this.isBusyMessage = 'Deactivating ...';
+
+      axios.post(this.getBaseUrl() + '/products/deactivate-plugin', product, {headers: {'X-WP-Nonce': p4wSPA.nonce}}).then(() => {
+        window.location.reload();
+      }).catch(() => {
+        this.modals.isInstallError = true;
+      });
+    },
+
+    /**
+     * Activates a WordPress theme
+     * @param product
+     */
+    activateTheme(product) {
+      this.modals.isInstallOk = false;
+      this.isBusyMessage = 'Activating ...';
+
+      axios.post(this.getBaseUrl() + '/products/activate-theme', product, {headers: {'X-WP-Nonce': p4wSPA.nonce}}).then(() => {
         window.location.reload();
       }).catch(() => {
         this.modals.isInstallError = true;
@@ -401,19 +493,59 @@ new Vue({
         return 0;
       }
     },
+
+    stripHTML(value) {
+      let div = document.createElement('div');
+      div.innerHTML = value;
+
+      return div.textContent || div.innerText || '';
+    },
   },
 });
 
-Vue.filter('striphtml', function(value) {
-  let div = document.createElement('div');
-  div.innerHTML = value;
+pluginManager.directive('readmore', {
+  twoWay: true,
+  bind: function (el, bind, vn) {
+    let val_container = bind.value;
 
-  return div.textContent || div.innerText || '';
+    if (bind.value.length > bind.arg) {
+      vn.elm.textContent = bind.value.substring(0, bind.arg);
+      let read_more = document.createElement('a');
+      read_more.href = '#';
+      read_more.text = '... [read more]';
+
+      let read_less = document.createElement('a');
+      read_less.href = '#';
+      read_less.text = '[read less]';
+
+      vn.elm.append(' ', read_more);
+
+      read_more.addEventListener('click', function () {
+        vn.elm.textContent = val_container;
+        vn.elm.append(' ', read_less);
+      });
+
+      read_less.addEventListener('click', function () {
+        vn.elm.textContent = bind.value.substring(0, bind.arg);
+        vn.elm.append(' ', read_more);
+      });
+    } else {
+      vn.elm.textContent = bind.value;
+    }
+  },
 });
 
-// Add handler for close button on admin banner
-jQuery(document).ready(function($) {
-  $('#p4w-admin-banner .notice-dismiss').click(function() {
-    axios.post('/?rest_route=/p4w/v1/settings/update-admin-banner-time').then(function() {});
+// Start the app
+(function() {
+  axios.defaults.withCredentials = true; // Send cookies when making AJAX requests
+
+  pluginManager.use(Quasar); // Use Quasar UI library
+  pluginManager.mount('#p4w-updater'); // Start the app
+
+  // Add handler for close button on admin banner
+  jQuery(document).ready(function ($) {
+    $('#p4w-admin-banner .notice-dismiss').click(function () {
+      axios.post('/?rest_route=/pluginsforwp/v1/settings/update-admin-banner-time', {}, {headers: {'X-WP-Nonce': p4wSPA.nonce}}).then(function () {});
+    });
   });
-});
+})();

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Polylang - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-04-13 20:13:07+0000\n"
+"PO-Revision-Date: 2024-06-20 18:53:05+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1835,15 +1835,15 @@ msgstr "Zeigt Sprachnamen"
 
 #: integrations/wp-importer/wordpress-importer.php:45
 msgid "Import <strong>posts, pages, comments, custom fields, categories, and tags</strong> from a WordPress export file."
-msgstr "Importieren Sie <strong>Beiträge, Seiten, Kommentare, benutzerdefinierte Felder, Kategorien und Schlagwörter</strong> aus einer WordPress Exportdatei."
+msgstr "Importieren Sie <strong>Beiträge, Seiten, Kommentare, individuelle Felder, Kategorien und Schlagwörter</strong> aus einer WordPress-Exportdatei."
 
 #: admin/admin-default-term.php:135
 msgid "Uncategorized"
 msgstr "Unkategorisiert"
 
 #. translators: Hidden accessibility text.
-#: frontend/frontend-filters-search.php:116
-#: frontend/frontend-filters-search.php:118
+#: frontend/frontend-filters-search.php:122
+#: frontend/frontend-filters-search.php:124
 msgid "Search"
 msgstr "Suchen"
 
@@ -2116,7 +2116,7 @@ msgstr "Kommentar-Status"
 
 #: modules/sync/settings-sync.php:103
 msgid "Custom fields"
-msgstr "Benutzerdefinierte Felder"
+msgstr "Individuelle Felder"
 
 #: modules/sync/settings-sync.php:102
 msgid "Taxonomies"

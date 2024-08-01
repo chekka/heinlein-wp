@@ -15,8 +15,8 @@
 }
 
 .p4w-product-list-container {
-    max-height: 1200px;
-    overflow: auto;
+    max-height: 2550px;
+    overflow: hidden;
     border-radius: 0;
 }
 
@@ -222,11 +222,13 @@ a.p4w-link-small {
 .p4w-button {
     background-color: #f14668 !important;
     color: white !important;
+    margin-right: 5px !important;
 }
 
 .pz-button {
     background-color: #f99e06 !important;
     color: black !important;
+    margin-right: 5px !important;
 }
 
 [v-cloak] {

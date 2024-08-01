@@ -613,6 +613,9 @@ class WP_Optimization_images extends WP_Optimization {
 
 		$registered_image_sizes = empty($registered_image_sizes) ? get_intermediate_image_sizes() : $registered_image_sizes;
 
+		// We use this size ID to track original images that have scaled versions.
+		$registered_image_sizes[] = 'wpo-original-unscaled';
+
 		if (in_array($image_size, $registered_image_sizes)) return true;
 
 		// MetaSlider doesn't register sizes correctly and just add tem to meta.
@@ -837,11 +840,6 @@ class WP_Optimization_images extends WP_Optimization {
 		$found_images = array();
 		$plugin_images = array();
 		$plugin_images_from_metadata = array();
-		$acf_images = array();
-		$acf_block_field_names = array();
-		if ($this->is_plugin_acf_active()) {
-			$acf_block_field_names = $this->get_acf_block_field_names();
-		}
 
 		// prevent unwanted output by do_shortcode()
 		ob_start();
@@ -876,10 +874,7 @@ class WP_Optimization_images extends WP_Optimization {
 				}
 			}
 
-			if ($this->is_plugin_acf_active()) {
-				$acf_images = array_merge($acf_images, $this->get_image_ids_from_acf_blocks($post_content, $acf_block_field_names));
-			}
-			$plugin_images = array_unique(array_merge($plugin_images, apply_filters('wpo_get_posts_content_images_from_plugins', $plugin_images, $post->ID)));
+			$plugin_images = array_unique(array_merge($plugin_images, apply_filters('wpo_get_posts_content_images_from_plugins', $plugin_images, $post->ID, $post_content)));
 		}
 
 		ob_end_clean();
@@ -889,9 +884,9 @@ class WP_Optimization_images extends WP_Optimization {
 		if (!empty($found_images)) {
 			// get images attachment ids.
 			$post_content_images = array_values($this->get_image_attachment_id_bulk(array_keys($found_images)));
-			return array_unique(array_merge($post_content_images, $plugin_images_from_metadata, $acf_images, $plugin_images), SORT_NUMERIC);
+			return array_unique(array_merge($post_content_images, $plugin_images_from_metadata, $plugin_images), SORT_NUMERIC);
 		} else {
-			return array_unique(array_merge($found_images, $plugin_images_from_metadata, $acf_images, $plugin_images), SORT_NUMERIC);
+			return array_unique(array_merge($found_images, $plugin_images_from_metadata, $plugin_images), SORT_NUMERIC);
 		}
 	}
 
@@ -1123,7 +1118,7 @@ class WP_Optimization_images extends WP_Optimization {
 	}
 
 	/**
-	 * Get list of attachment ids used in post meta, including Advanced Custom Fields image fields.
+	 * Get a list of attachment IDs used in post meta, including those from third-party plugins' image fields.
 	 * Use this when the post meta is known to only store one ID value
 	 *
 	 * @return array
@@ -1133,8 +1128,7 @@ class WP_Optimization_images extends WP_Optimization {
 
 		$this->log('get_single_image_ids_in_post_meta()');
 
-		$post_meta_names = $this->get_acf_image_field_names();
-
+		$post_meta_names = array();
 		/**
 		 * Filter wpo_find_used_images_in_post_meta - List of post meta fields containing images
 		 *
@@ -1151,31 +1145,7 @@ class WP_Optimization_images extends WP_Optimization {
 	}
 
 	/**
-	 * Get the ACF image fields.
-	 * We need this function as ACF's `acf_get_raw_fields` isn't capable of
-	 * handling nested `image` fields in `repeater` fields
-	 *
-	 * @return array An array of name of image fields
-	 */
-	private function get_acf_image_field_names() {
-		if (!function_exists('acf_get_raw_fields')) return array();
-
-		$acf_fields = acf_get_raw_fields('');
-		$acf_field_names = array();
-		$repeater_fields = array_filter($acf_fields, function($field) {
-			return 'repeater' == $field['type'];
-		});
-	
-		if (count($repeater_fields)) {
-			global $wpdb;
-			$sql = "SELECT DISTINCT meta_key FROM {$wpdb->postmeta} WHERE meta_key LIKE '%image'";
-			$acf_field_names = array_merge($acf_field_names, $wpdb->get_col($sql));
-		}
-		return array_merge($acf_field_names, $this->get_acf_field_names());
-	}
-
-	/**
-	 * Get list of attachment ids used in post meta, including Advanced Custom Fields Gallery fields.
+	 * Get a list of attachment IDs used in post meta, including those from third-party plugins' image fields.
 	 * Use this when the post meta is known to only store an array of IDs
 	 *
 	 * @return array
@@ -1183,15 +1153,16 @@ class WP_Optimization_images extends WP_Optimization {
 	private function get_multiple_image_ids_in_post_meta() {
 		global $wpdb;
 
-		$post_meta_names = apply_filters('wpo_get_multiple_image_ids_in_post_meta', array_merge(
-			$this->get_acf_gallery_field_names(), // ACF
+		$post_meta_names = apply_filters('wpo_get_multiple_image_ids_in_post_meta',
 			array('_eg_in_gallery') // Envira Gallery
-		));
+		);
 
 		if (empty($post_meta_names)) return array();
 
 		// Select meta values where the Key is in $fields_name, and not empty.
-		$sql = $wpdb->prepare("SELECT meta_value FROM {$wpdb->postmeta} WHERE meta_key IN ('%s') AND (meta_value != '')", join("','", $post_meta_names));
+		$placeholders = array_fill(0, count($post_meta_names), '%s');
+		$placeholders_string = implode(', ', $placeholders);
+		$sql = $wpdb->prepare("SELECT meta_value FROM {$wpdb->postmeta} WHERE meta_key IN ({$placeholders_string}) AND (meta_value != '')", $post_meta_names);
 		$posts_meta_values = $wpdb->get_col($sql);
 
 		$found_images_ids = array();
@@ -1204,122 +1175,6 @@ class WP_Optimization_images extends WP_Optimization {
 		}
 
 		return $found_images_ids;
-	}
-
-
-	/**
-	 * Get list of ACF `block` field type
-	 *
-	 * @return array
-	 */
-	private function get_acf_block_field_names() {
-		$field_names = $this->get_acf_image_field_names();
-		return array_filter($field_names, function($field_name) {
-			return 'block_' === substr($field_name, 0, 6);
-		});
-	}
-
-	/**
-	 * Get image ids from acf blocks
-	 *
-	 * @param array $post_content
-	 * @param array $acf_block_field_names
-	 * @return array $acf_image_ids
-	 */
-	private function get_image_ids_from_acf_blocks($post_content, $acf_block_field_names) {
-		$acf_image_ids = array();
-		$acf_blocks = $this->get_acf_blocks_from_post_content($post_content);
-
-		foreach ($acf_blocks as $acf_block) {
-			$acf_block_data = $acf_block['attrs']['data'];
-			foreach ($acf_block_data as $key => $value) {
-				if (array_search($key, $acf_block_field_names)) {
-					$acf_image_ids[] = $value;
-					break;
-				}
-			}
-		}
-		return $acf_image_ids;
-	}
-
-	/**
-	 * Get list of ACF blocks in post content
-	 *
-	 * @param string $post_content
-	 * @return array
-	 */
-	private function get_acf_blocks_from_post_content($post_content) {
-		// Only available from WP 5.0
-		if (!function_exists('parse_blocks')) return array();
-
-		$blocks = parse_blocks($post_content);
-		return array_filter($blocks, function($block) {
-			return substr($block['blockName'], 0, 4) === 'acf/';
-		});
-	}
-
-	/**
-	 * Get the ACF gallery fields.
-	 * We need this function as ACF's `acf_get_raw_fields` isn't capable of
-	 * handling nested `gallery` fields in `repeater` fields
-	 *
-	 * @return array An array of name of gallery fields
-	 */
-	private function get_acf_gallery_field_names() {
-		if (!function_exists('acf_get_raw_fields')) return array();
-		
-		$acf_fields = acf_get_raw_fields('');
-		$repeater_fields = array_filter($acf_fields, function($field) {
-			return 'repeater' == $field['type'];
-		});
-	
-		$gallery_fields = array();
-		foreach ($acf_fields as $field) {
-			if ('gallery' == $field['type']) {
-				$gallery_fields[] = $field['name'];
-			}
-		}
-		if (count($repeater_fields) && count($gallery_fields)) {
-			// Do the nested stuff
-			$where = '';
-			foreach ($gallery_fields as $gallery_field) {
-				$gallery_field = esc_sql($gallery_field);
-				$where .= "meta_key LIKE '%{$gallery_field}%' OR ";
-			}
-			$where = rtrim($where, 'OR ');
-			global $wpdb;
-			$sql = $wpdb->prepare("SELECT DISTINCT meta_key FROM {$wpdb->postmeta} WHERE %s", $where);
-			return $wpdb->get_col($sql);
-		}
-		return $this->get_acf_field_names('gallery');
-	}
-	
-	/**
-	 * Get the acf meta field names
-	 *
-	 * @param string $field_type
-	 * @return array
-	 */
-	private function get_acf_field_names($field_type = 'image') {
-		if (!function_exists('acf_get_raw_fields')) return array();
-		$this->acf_field_type = $field_type;
-		static $acf_image_fields = array();
-		// Get all ACF fields
-		if (empty($acf_image_fields)) $acf_image_fields = acf_get_raw_fields($field_type);
-		if (!is_array($acf_image_fields)) return array();
-		// Pluck the meta names and types
-		return array_keys(array_filter(wp_list_pluck($acf_image_fields, 'type', 'name'), array($this, 'filter_acf_fields_per_type')));
-	}
-
-	/**
-	 * Filters the ACFields array
-	 * Called by in get_acf_field_names byarray_filter
-	 *
-	 * @param string $type
-	 * @return boolean
-	 */
-	public function filter_acf_fields_per_type($type) {
-		return $type == $this->acf_field_type;
 	}
 
 	/**
@@ -2038,13 +1893,19 @@ class WP_Optimization_images extends WP_Optimization {
 						$meta = $_meta = wp_get_attachment_metadata($id, true);
 
 						// if meta data found for attachment then check resized images.
-						if (!empty($meta) && !empty($meta['sizes'])) {
+						if (!empty($meta) && (!empty($meta['sizes']) || !empty($meta['original_image']))) {
 
 							if (!preg_match('/^\d{4}\/\d{2}/', $meta['file'], $sub_dir)) continue;
 
 							$updated = false;
 
 							$file_sub_dir = $base_upload_dir . '/' . $sub_dir[0];
+
+							// if meta has information about original image then we put it with a key wpo-original-unscaled
+							// for the case when user wants to delete original (if scaled version exists) images
+							if (!empty($meta['original_image'])) {
+								$meta['sizes']['wpo-original-unscaled'] = array('file' => $meta['original_image']);
+							}
 
 							foreach ($meta['sizes'] as $size => $info) {
 								if ((!empty($keep_size) && !array_key_exists($size, $keep_size)) || (!empty($remove_size) && array_key_exists($size, $remove_size))) {
@@ -2310,17 +2171,32 @@ class WP_Optimization_images extends WP_Optimization {
 		$thumb_size = 0;
 
 		// get info about original image.
-		if (isset($meta)) {
+		if (isset($meta) && is_array($meta)) {
 			// svg and avif images that don't have a comprehensive attachment metadata
 			// So getting attached file explicitly
 			if (!isset($meta['file'])) {
 				$meta['file'] = get_post_meta( $attachment_id, '_wp_attached_file', true );
 			}
+
 			$pinfo = pathinfo($meta['file']);
 			$sub_dir = $pinfo['dirname'];
 			$file_sub_dir = $base_upload_dir . '/' . $sub_dir;
+			$original_filename = $meta['file'];
+			$original_file = $base_upload_dir . '/' . $original_filename;
+			$original_scaled_file = null;
+			$original_scaled_filename = null;
 
-			$original_file = $base_upload_dir . '/' . $meta['file'];
+			// Get information about the original image if it has been scaled
+			if (!empty($meta['original_image'])) {
+				$pinfo_original = pathinfo($meta['original_image']);
+				if ($pinfo_original['filename'].'-scaled' == $pinfo['filename']) {
+					$original_filename = $sub_dir . '/' . $pinfo_original['filename'] . '.' . $pinfo_original['extension'];
+					$original_file = $base_upload_dir . '/' . $original_filename;
+					$original_scaled_filename = $sub_dir . '/' . $pinfo['filename'] . '.' . $pinfo['extension'];
+					$original_scaled_file = $base_upload_dir . '/' . $original_scaled_filename;
+				}
+			}
+
 			if (is_file($original_file)) {
 				$filesize = filesize($original_file);
 
@@ -2330,6 +2206,11 @@ class WP_Optimization_images extends WP_Optimization {
 				$attachment_info['sizes']['original'] = $filesize;
 				$attachment_info['size'] += $filesize;
 				$attachment_info['files']++;
+			}
+
+			// add information about unscaled file if scaled version exists.
+			if (!is_null($original_scaled_file) && is_file($original_file)) {
+				$attachment_info['sizes']['wpo-original-unscaled'] = $attachment_info['sizes']['original'];
 			}
 
 			// get info about resized images.
@@ -2834,15 +2715,6 @@ class WP_Optimization_images extends WP_Optimization {
 			$this->_logger->debug($message, $context);
 		}
 
-	}
-
-	/**
-	 * Determines whether site is using ACF plugin or not
-	 *
-	 * @return bool
-	 */
-	private function is_plugin_acf_active() {
-		return is_plugin_active('advanced-custom-fields/acf.php') || is_plugin_active('advanced-custom-fields-pro/acf.php');
 	}
 
 	/**

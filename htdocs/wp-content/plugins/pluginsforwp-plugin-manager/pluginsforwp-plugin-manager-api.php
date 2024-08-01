@@ -12,13 +12,13 @@ use WP_REST_Request;
 use WP_REST_Response;
 use WP_Theme;
 
-class Api {
-	const ROUTE_NAMESPACE = 'p4w/v1';
+class Api_PluginsForWP {
+	const ROUTE_NAMESPACE = 'pluginsforwp/v1';
 	const SERVER_ROUTE_NAMESPACE = 'pluginsforwp/v1';
-	const OPTIONS_PREFIX = 'p4w';
+	const OPTIONS_PREFIX = 'pluginsforwp';
 
 	public static function getServerUrl() {
-		return getenv( 'P4W_TEST_SERVER' ) ?: Plugin_Manager::SERVER_URL;
+		return getenv( 'P4W_TEST_SERVER' ) ?: Plugin_Manager_PluginsForWP::SERVER_URL;
 	}
 
 	/**
@@ -27,7 +27,7 @@ class Api {
 	public static function run() {
 		add_action( 'rest_api_init',
 			function () {
-				$controllers = [ My_Products_Controller::class, Settings_Controller::class ];
+				$controllers = [ My_Products_Controller_PluginsForWP::class, Settings_Controller_PluginsForWP::class ];
 				foreach ( $controllers as $controller ) {
 					$instance = new $controller;
 					$instance->register_routes();
@@ -37,10 +37,10 @@ class Api {
 	}
 }
 
-class My_Products_Controller extends WP_REST_Controller {
+class My_Products_Controller_PluginsForWP extends WP_REST_Controller {
 	public function register_routes() {
 		register_rest_route(
-			Api::ROUTE_NAMESPACE,
+			Api_PluginsForWP::ROUTE_NAMESPACE,
 			'/products/install',
 			[
 				[
@@ -52,19 +52,43 @@ class My_Products_Controller extends WP_REST_Controller {
 		);
 
 		register_rest_route(
-			Api::ROUTE_NAMESPACE,
-			'/products/activate',
+			Api_PluginsForWP::ROUTE_NAMESPACE,
+			'/products/activate-plugin',
 			[
 				[
 					'methods'             => 'POST',
-					'callback'            => [ $this, 'activate' ],
-					'permission_callback' => [ $this, 'activate_permissions_check' ],
+					'callback'            => [ $this, 'activate_plugin' ],
+					'permission_callback' => [ $this, 'activate_plugin_permissions_check' ],
 				],
 			]
 		);
 
 		register_rest_route(
-			Api::ROUTE_NAMESPACE,
+			Api_PluginsForWP::ROUTE_NAMESPACE,
+			'/products/deactivate-plugin',
+			[
+				[
+					'methods'             => 'POST',
+					'callback'            => [ $this, 'deactivate_plugin' ],
+					'permission_callback' => [ $this, 'deactivate_plugin_permissions_check' ],
+				],
+			]
+		);
+
+		register_rest_route(
+			Api_PluginsForWP::ROUTE_NAMESPACE,
+			'/products/activate-theme',
+			[
+				[
+					'methods'             => 'POST',
+					'callback'            => [ $this, 'activate_theme' ],
+					'permission_callback' => [ $this, 'activate_theme_permissions_check' ],
+				],
+			]
+		);
+
+		register_rest_route(
+			Api_PluginsForWP::ROUTE_NAMESPACE,
 			'/products/list',
 			[
 				[
@@ -77,40 +101,59 @@ class My_Products_Controller extends WP_REST_Controller {
 	}
 
 	/**
-	 * Install action. Install a plugin
+	 * Get products installed locally
 	 *
 	 * @param WP_REST_Request $request
 	 *
 	 * @return WP_Error|WP_REST_Response
 	 */
 	public function get_installed_products( $request ) {
-		$plugins = get_plugins();
-		foreach ( $plugins as &$plugin ) {
-			$plugin['Name'] = $this->normalize_name( $plugin['Name'] );
-		}
-
-		$theme_objs = wp_get_themes( [ 'errors' => null ] );
-		$themes     = [];
-		foreach ( $theme_objs as $theme_obj ) {
-			/** @var WP_Theme $theme_obj */
-			$themes[] = [
-				'Name'    => $this->normalize_name( $theme_obj->get( 'Name' ) ),
-				'Version' => $theme_obj->get( 'Version' ),
+		$plugins        = [];
+		$active_plugins = get_option( 'active_plugins' );
+		$plugins_raw    = get_plugins();
+		foreach ( $plugins_raw as $path => $plugin ) {
+			$plugins[] = [
+				'name'             => $this->normalize_name( $plugin['Name'] ),
+				'version'          => 'Not Available',
+				'installedVersion' => $plugin['Version'],
+				'description'      => $plugin['Description'],
+				'slug'             => $path,
+				'type'             => 'plugin',
+				'installed'        => true,
+				'active'           => in_array( $path, $active_plugins ),
 			];
 		}
 
-		$serverUrl = Api::getServerUrl();
-		$username  = get_option( Settings_Controller::PLUGINS_FOR_WP_USERNAME, null );
+		$current_theme_name = wp_get_theme()->get( 'Name' );
+		$themes             = [];
+		$theme_objs         = wp_get_themes( [ 'errors' => null ] );
+		foreach ( $theme_objs as $theme_obj ) {
+			/** @var WP_Theme $theme_obj */
+			$theme_name = $theme_obj->get( 'Name' );
+			$themes[]   = [
+				'name'             => $this->normalize_name( $theme_name ),
+				'version'          => 'Not Available',
+				'installedVersion' => $theme_obj->get( 'Version' ),
+				'description'      => $theme_obj->get( 'Description' ),
+				'slug'             => $theme_obj->get_stylesheet(),
+				'type'             => 'theme',
+				'installed'        => true,
+				'active'           => $current_theme_name === $theme_name,
+			];
+		}
+
+		$serverUrl = Api_PluginsForWP::getServerUrl();
+		$username  = get_option( Settings_Controller_PluginsForWP::PLUGINS_FOR_WP_USERNAME, null );
 		if ( $username === '' ) {
 			$username = null;
 		}
 
-		$key = get_option( Settings_Controller::PLUGINS_FOR_WP_SECRET_KEY, null );
+		$key = get_option( Settings_Controller_PluginsForWP::PLUGINS_FOR_WP_SECRET_KEY, null );
 		if ( $key === '' ) {
 			$key = null;
 		}
 
-		$affiliate = get_option( Settings_Controller::PLUGINS_FOR_WP_AFFILIATE, null );
+		$affiliate = get_option( Settings_Controller_PluginsForWP::PLUGINS_FOR_WP_AFFILIATE, null );
 		if ( $affiliate === '' ) {
 			$affiliate = null;
 		}
@@ -244,13 +287,13 @@ class My_Products_Controller extends WP_REST_Controller {
 	 *
 	 * @return array|WP_Error
 	 */
-	public function make_request( string $path ) {
-		$username = get_option( Settings_Controller::PLUGINS_FOR_WP_USERNAME, null );
+	public function make_request( $path ) {
+		$username = get_option( Settings_Controller_PluginsForWP::PLUGINS_FOR_WP_USERNAME, null );
 		if ( $username === '' ) {
 			$username = null;
 		}
 
-		$secret = get_option( Settings_Controller::PLUGINS_FOR_WP_SECRET_KEY, null );
+		$secret = get_option( Settings_Controller_PluginsForWP::PLUGINS_FOR_WP_SECRET_KEY, null );
 		if ( $secret === '' ) {
 			$secret = null;
 		}
@@ -259,8 +302,8 @@ class My_Products_Controller extends WP_REST_Controller {
 			return null;
 		}
 
-		$url        = Api::getServerUrl();
-		$url        .= '/wp-json/' . Api::SERVER_ROUTE_NAMESPACE . $path;
+		$url        = Api_PluginsForWP::getServerUrl();
+		$url        .= '/wp-json/' . Api_PluginsForWP::SERVER_ROUTE_NAMESPACE . $path;
 		$auth_token = base64_encode( $username . ':' . $secret );
 
 		return wp_remote_request(
@@ -283,14 +326,15 @@ class My_Products_Controller extends WP_REST_Controller {
 	 *
 	 * @return WP_REST_Response
 	 */
-	public function activate( $request ) {
-		$plugin = $request->get_params()['slug'];
-		$result = activate_plugin( $plugin, '', is_network_admin() );
+	public function activate_plugin( $request ) {
+		$network_admin = is_network_admin();
+		$plugin        = $request->get_params()['slug'];
+		$result        = activate_plugin( $plugin, '', $network_admin );
 		if ( is_wp_error( $result ) ) {
-			throw new RuntimeException( 'There was an error installing this plugin.' );
+			throw new RuntimeException( 'There was an error activating this plugin.' );
 		}
 
-		if ( ! is_network_admin() ) {
+		if ( ! $network_admin ) {
 			$recent = (array) get_option( 'recently_activated' );
 			unset( $recent[ $plugin ] );
 			update_option( 'recently_activated', $recent );
@@ -304,12 +348,41 @@ class My_Products_Controller extends WP_REST_Controller {
 	}
 
 	/**
+	 * Deactivate a plugin
+	 *
+	 * @param WP_REST_Request $request
+	 *
+	 * @return WP_REST_Response
+	 */
+	public function deactivate_plugin( $request ) {
+		$network_admin = is_network_admin();
+		$plugin        = $request->get_params()['slug'];
+		deactivate_plugins( $plugin, false, $network_admin );
+
+		return new WP_REST_Response( [], 200 );
+	}
+
+	/**
+	 * Activate a theme
+	 *
+	 * @param WP_REST_Request $request
+	 *
+	 * @return WP_REST_Response
+	 */
+	public function activate_theme( $request ) {
+		$theme = $request->get_params()['slug'];
+		switch_theme( $theme );
+
+		return new WP_REST_Response( [], 200 );
+	}
+
+	/**
 	 * @param WP_REST_Request $request
 	 *
 	 * @return bool
 	 */
 	public function install_permissions_check( $request ) {
-		return true;
+		return current_user_can( 'install_plugins' );
 	}
 
 	/**
@@ -318,7 +391,7 @@ class My_Products_Controller extends WP_REST_Controller {
 	 * @return bool
 	 */
 	public function get_installed_products_permissions_check( $request ) {
-		return true;
+		return current_user_can( 'activate_plugins' );
 	}
 
 	/**
@@ -326,19 +399,38 @@ class My_Products_Controller extends WP_REST_Controller {
 	 *
 	 * @return bool
 	 */
-	public function activate_permissions_check( $request ) {
-		return true;
+	public function activate_plugin_permissions_check( $request ) {
+		return current_user_can( 'activate_plugins' );
+	}
+
+	/**
+	 * @param WP_REST_Request $request
+	 *
+	 * @return bool
+	 */
+	public function deactivate_plugin_permissions_check( $request ) {
+		return current_user_can( 'activate_plugins' );
+	}
+
+	/**
+	 * @param WP_REST_Request $request
+	 *
+	 * @return bool
+	 */
+	public function activate_theme_permissions_check( $request ) {
+		return current_user_can( 'switch_themes' );
 	}
 }
 
-class Settings_Controller extends WP_REST_Controller {
-	const PLUGINS_FOR_WP_USERNAME = API::OPTIONS_PREFIX . '_username';
-	const PLUGINS_FOR_WP_SECRET_KEY = API::OPTIONS_PREFIX . '_secret_key';
-	const PLUGINS_FOR_WP_AFFILIATE = API::OPTIONS_PREFIX . '_affiliate';
+class Settings_Controller_PluginsForWP extends WP_REST_Controller {
+	const PLUGINS_FOR_WP_USERNAME = Api_PluginsForWP::OPTIONS_PREFIX . '_username';
+	const PLUGINS_FOR_WP_SECRET_KEY = Api_PluginsForWP::OPTIONS_PREFIX . '_secret_key';
+	const PLUGINS_FOR_WP_AFFILIATE = Api_PluginsForWP::OPTIONS_PREFIX . '_affiliate';
+	const PLUGINS_FOR_WP_BANNER = Api_PluginsForWP::OPTIONS_PREFIX . '_banner';
 
 	public function register_routes() {
 		register_rest_route(
-			Api::ROUTE_NAMESPACE,
+			Api_PluginsForWP::ROUTE_NAMESPACE,
 			'/settings/save',
 			[
 				[
@@ -350,7 +442,7 @@ class Settings_Controller extends WP_REST_Controller {
 		);
 
 		register_rest_route(
-			Api::ROUTE_NAMESPACE,
+			Api_PluginsForWP::ROUTE_NAMESPACE,
 			'/settings/update-admin-banner-time',
 			[
 				[
@@ -381,7 +473,7 @@ class Settings_Controller extends WP_REST_Controller {
 	 * @param $request
 	 */
 	public function update_admin_banner_time( $request ) {
-		update_option( 'p4w_admin_banner', time() );
+		update_option( self::PLUGINS_FOR_WP_BANNER, time() );
 	}
 
 	/**
@@ -390,7 +482,7 @@ class Settings_Controller extends WP_REST_Controller {
 	 * @return bool|true
 	 */
 	public function save_settings_permissions_check( $request ) {
-		return true;
+		return current_user_can('manage_options');
 	}
 
 	/**
@@ -399,6 +491,6 @@ class Settings_Controller extends WP_REST_Controller {
 	 * @return bool
 	 */
 	public function update_admin_banner_time_check( $request ) {
-		return true;
+		return current_user_can('manage_options');
 	}
 }

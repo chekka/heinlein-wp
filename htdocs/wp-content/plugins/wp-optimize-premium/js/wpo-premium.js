@@ -1186,10 +1186,20 @@ var WP_Optimize_Premium = function() {
 	 * @return void
 	 */
 	function show_sizes_list(container, sizes, not_found_message) {
-		var i, empty = true;
+		var i,
+			empty = true,
+			original_unscaled = 'wpo-original-unscaled';
+		
 		container.text('');
 		if (sizes) {
+
+			// if there are any original images with scaled versions, display their information first.
+			if (sizes.hasOwnProperty(original_unscaled)) {
+				container.append(['<label for="chk_',original_unscaled,'" class="unused-image-sizes__label"><input type="checkbox" id="chk_',original_unscaled,'" class="unused-image-sizes" name="',original_unscaled,'">',wpoptimize.original_if_scaled_version_exist,' (',sizes[original_unscaled].size_formatted,' - Total: ',sizes[original_unscaled].files,')</lalbel><br>'].join(''));
+			}
+
 			for (i in sizes) {
+				if (original_unscaled === i) continue;
 				if (sizes.hasOwnProperty(i)) {
 					container.append(['<label for="chk_',i,'" class="unused-image-sizes__label"><input type="checkbox" id="chk_',i,'" class="unused-image-sizes" name="',i,'">',i,' (',sizes[i].size_formatted,' - Total: ',sizes[i].files,')</lalbel><br>'].join(''));
 					empty = false;

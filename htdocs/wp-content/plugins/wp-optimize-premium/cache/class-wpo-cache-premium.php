@@ -319,8 +319,8 @@ class WPO_Cache_Premium {
 		if (isset($config['enable_cache_per_country']) && $config['enable_cache_per_country']) {
 			$cookies[] = 'woocommerce_tax_country';
 		}
-	
-		return $cookies;
+
+		return array_merge($cookies, $this->get_curcy_cookies());
 	}
 
 	/**
@@ -351,6 +351,10 @@ class WPO_Cache_Premium {
 		// WooCommerce geolocation - Selecting 'geolocation_ajax' in WC will add v=location-key to every request.
 		if ('geolocation_ajax' === get_option('woocommerce_default_customer_address') && isset($config['enable_cache_per_country']) && $config['enable_cache_per_country']) {
 			$variables[] = 'v';
+		}
+		
+		if (class_exists('WOOMULTI_CURRENCY_F')) {
+			$variables[] = 'wmc-currency';
 		}
 
 		return $variables;
@@ -486,6 +490,10 @@ class WPO_Cache_Premium {
 	 * Output cache per role option.
 	 */
 	public function output_user_per_role_cache_option() {
+		if (!function_exists('get_editable_roles')) {
+			include_once ABSPATH . 'wp-admin/includes/user.php';
+		}
+
 		$user_roles = array();
 		
 		$wp_roles = get_editable_roles();
@@ -502,6 +510,50 @@ class WPO_Cache_Premium {
 		);
 
 		WP_Optimize()->include_template('cache/page-cache-per-role-cache.php', false, $extract);
+	}
+	
+	/**
+	 * Curcy cookies
+	 */
+	private function get_curcy_cookies() {
+		$cookies = array();
+		
+		if (!class_exists('WOOMULTI_CURRENCY_F') || !class_exists('WOOMULTI_CURRENCY_F_Data')) return $cookies;
+		
+		if (!is_callable(array('WOOMULTI_CURRENCY_F_Data', 'get_ins'))) {
+			error_log('WP-Optimize: Cache - WOOMULTI_CURRENCY_F_Data::get_ins() method not found');
+			return $cookies;
+		} else {
+			$curcy_settings = WOOMULTI_CURRENCY_F_Data::get_ins();
+			if (!is_callable(array($curcy_settings, 'get_params'))) {
+				error_log('WP-Optimize: Cache - WOOMULTI_CURRENCY_F_Data::get_params() method not found');
+				return $cookies;
+			} else {
+				if ($curcy_settings->get_params('use_session')) return $cookies;
+				$cookies[] = 'wmc_current_currency';
+				$cookies[] = 'wmc_current_currency_old';
+				
+				if (!is_callable(array($curcy_settings, 'get_auto_detect'))) {
+					error_log('WP-Optimize: Cache - WOOMULTI_CURRENCY_F_Data::get_auto_detect() method not found');
+					return $cookies;
+				} else {
+					$auto_detect = $curcy_settings->get_auto_detect();
+					if (1 === $auto_detect || 2 === $auto_detect) {
+						$cookies[] = 'wmc_ip_info';
+						if (!is_callable(array($curcy_settings, 'get_geo_api'))) {
+							error_log('WP-Optimize: Cache - WOOMULTI_CURRENCY_F_Data::get_geo_api() method not found');
+							return $cookies;
+						} else {
+							if (2 !== $curcy_settings->get_geo_api()) {
+								$cookies[] = 'wmc_ip_add';
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		return $cookies;
 	}
 }
 endif;
