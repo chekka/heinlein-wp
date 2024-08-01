@@ -27244,7 +27244,7 @@ form .section-title {
 }
 
 .cf7sg-response-output {
-  margin: 0 0 30px !important;
+  margin: 30px 0 -10px !important;
   padding: 12px 21px !important;
   border-radius: 0 24px;
   background-color: #fff;
@@ -27442,24 +27442,31 @@ img {
 }
 
 .rounded-3-0x0x {
-  border-radius: 0 36px 0 36px;
+  border-radius: 0 36px;
 }
 .rounded-3-0x0x img {
-  border-radius: 0 36px 0 36px;
+  border-radius: 0 36px;
 }
 
 .rounded-2-0x0x {
-  border-radius: 0 24px 0 24px;
+  border-radius: 0 24px;
 }
 .rounded-2-0x0x img {
-  border-radius: 0 24px 0 24px;
+  border-radius: 0 24px;
 }
 
 .rounded-3-x0x0 {
-  border-radius: 36px 0 36px 0;
+  border-radius: 36px 0;
 }
 .rounded-3-x0x0 img {
-  border-radius: 36px 0 36px 0;
+  border-radius: 36px 0;
+}
+
+.rounded-1-xx00 {
+  border-radius: 18px 18px 0 0;
+}
+.rounded-1-xx00 img {
+  border-radius: 18px 18px 0 0;
 }
 
 .scale-15 {
