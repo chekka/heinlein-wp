@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-20 -20 197 150.6">
+<svg id="sprech-1" data-name="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-20 -20 197 150.6" width="394" height="421">
   <defs>
     <linearGradient id="Unbenannter_Verlauf" data-name="Unbenannter Verlauf" x1="65.7" y1="8.5" x2="96.4" y2="120.1" gradientTransform="translate(0 109.9) scale(1 -1)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#fff"/>
@@ -16,8 +16,8 @@
   </defs>
   <path d="M.5.5v65.6c0,12.6,10.4,22.9,23.3,22.9h107l25.7,20.6-1.2-86.2c0-12.6-10.4-22.9-23.3-22.9,0,0-131.5,0-131.5,0Z" style="fill: url(#Unbenannter_Verlauf); stroke-width: 0px;filter: drop-shadow(0px 0px 12px rgb(0 0 0 / .1));"/>
   <path d="M.5,66.1h.5c0,12.4,10.2,22.4,22.8,22.4h107.2l25.1,20-1.2-85.1c0-12.4-10.2-22.4-22.8-22.4H1v65.1H0V0h132c13.2,0,23.8,10.5,23.8,23.4l1.2,87.2-26.4-21.1H23.8c-13.1,0-23.8-10.5-23.8-23.4h.5Z" style="fill: url(#Unbenannter_Verlauf_2); stroke-width: 0px;"/>
-  <text transform="translate(15.6 21.1)" style="fill: #252228; font-family: sans-serif; font-size: 8px; isolation: isolate;; letter-spacing: 0.065em">„The responsiveness to</text>
-  <text transform="translate(15.6 35.1)" style="fill: #252228; font-family: sans-serif; font-size: 8px; isolation: isolate;; letter-spacing: 0.065em">requests is very good.</text>
-  <text transform="translate(15.6 49.1)" style="fill: #252228; font-family: sans-serif; font-size: 8px; isolation: isolate;; letter-spacing: 0.065em">The Supply chains are</text>
-  <text transform="translate(15.6 63.1)" style="fill: #252228; font-family: sans-serif; font-size: 8px; isolation: isolate;; letter-spacing: 0.065em">stable and transparent.“</text>
+  <text transform="translate(15.6 21.1)" style="fill: #252228; font-family: 'Encode Sans Expanded', sans-serif; font-size: 8px; isolation: isolate;; letter-spacing: 0.065em">„The responsiveness to</text>
+  <text transform="translate(15.6 35.1)" style="fill: #252228; font-family: 'Encode Sans Expanded', sans-serif; font-size: 8px; isolation: isolate;; letter-spacing: 0.065em">requests is very good.</text>
+  <text transform="translate(15.6 49.1)" style="fill: #252228; font-family: 'Encode Sans Expanded', sans-serif; font-size: 8px; isolation: isolate;; letter-spacing: 0.065em">The Supply chains are</text>
+  <text transform="translate(15.6 63.1)" style="fill: #252228; font-family: 'Encode Sans Expanded', sans-serif; font-size: 8px; isolation: isolate;; letter-spacing: 0.065em">stable and transparent.“</text>
 </svg>
