@@ -27099,6 +27099,8 @@ form .wpcf7-submit {
   cursor: pointer !important;
   min-height: 38px !important;
   margin: 3em 0 2em !important;
+  max-width: 100%;
+  white-space: normal;
 }
 form .wpcf7-submit:hover {
   background-color: #aa8461 !important;
@@ -29097,9 +29099,17 @@ body {
 #page-header .header-text {
   position: absolute;
   z-index: 1;
+  padding-left: 21px;
+  padding-right: 21px;
 }
 #page-header + .panel-layout {
   margin-top: 67vh;
+}
+
+@media (max-width: 719.98px) {
+  #pg-1526-7 > .panel-row-style {
+    background-position: 70% !important;
+  }
 }
 
 @media (max-width: 719.98px) {
@@ -29156,6 +29166,12 @@ body {
 .pum-container {
   border-radius: 0 36px 0 36px !important;
   overflow: hidden !important;
+}
+@media (max-width: 719.98px) {
+  .pum-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 .pum-container .so-widget-sow-editor > p {
   margin: 0;
@@ -30940,11 +30956,13 @@ h3 + h2, .h3 + h2, h3 + .h2, .h3 + .h2 {
   font-weight: 800;
   left: -1.5em;
   font-size: 1em;
+  line-height: 0.5em;
+  top: 6px;
 }
 .list-plus ul li:last-child {
   margin-bottom: 0;
 }
-.list-plus ul + p a {
+.list-plus ul + p a:not([class^=cta]) {
   font-family: Gotham;
   font-weight: 300;
   display: block;
@@ -30958,13 +30976,13 @@ h3 + h2, .h3 + h2, h3 + .h2, .h3 + .h2 {
   position: relative;
   cursor: pointer;
 }
-.list-plus ul + p a:hover {
+.list-plus ul + p a:not([class^=cta]):hover {
   background-color: #7f6445 !important;
 }
-.list-plus ul + p a:before, .list-plus ul + p a:after {
+.list-plus ul + p a:not([class^=cta]):before, .list-plus ul + p a:not([class^=cta]):after {
   content: initial;
 }
-.list-plus ul + p a > span {
+.list-plus ul + p a:not([class^=cta]) > span {
   position: absolute;
   top: -35px;
   left: 50%;
@@ -30977,7 +30995,7 @@ h3 + h2, .h3 + h2, h3 + .h2, .h3 + .h2 {
   border-radius: 18px 18px 0 0;
   white-space: nowrap;
 }
-.list-plus ul + p a[href*=classic] {
+.list-plus ul + p a:not([class^=cta])[href*=classic] {
   background-color: #5c6c90;
 }
 

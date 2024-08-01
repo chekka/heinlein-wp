@@ -141,3 +141,29 @@ function produktfinder_slider_auto_scroll($scroll, $cf7_key){
   return $scroll;
 }
 add_filter( 'cf7sg_slider_auto_scroll','produktfinder_slider_auto_scroll',10,2);
+
+// YOAST content snippet for description
+function custom_generate_meta_description() {
+  if (is_singular('post')) {
+      global $post;
+
+      // Check if Yoast SEO is active
+      if (defined('WPSEO_VERSION')) {
+          $yoast_meta = get_post_meta($post->ID, '_yoast_wpseo_metadesc', true);
+
+          // If Yoast meta description is not set
+          if (empty($yoast_meta)) {
+              // Extract the first 160 characters from the post content
+              $content = wp_strip_all_tags($post->post_content);
+              $meta_description = substr($content, 0, 160);
+
+              // Set the meta description for Yoast SEO dynamically
+              add_filter('wpseo_metadesc', function($desc) use ($meta_description) {
+                  return $meta_description;
+              });
+          }
+      }
+  }
+}
+
+add_action('wp', 'custom_generate_meta_description');

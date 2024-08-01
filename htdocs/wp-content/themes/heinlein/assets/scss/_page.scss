@@ -25,10 +25,18 @@
   .header-text {
     position: absolute;
     z-index: 1;
+    padding-left: 21px;
+    padding-right: 21px;
   }
 
   + .panel-layout {
     margin-top: 67vh;
+  }
+}
+
+#pg-1526-7 > .panel-row-style {
+  @include media-breakpoint-down(md){
+    background-position: 70% !important;
   }
 }
 

@@ -193,6 +193,8 @@ form {
     cursor: pointer !important;
     min-height: 38px !important;
     margin: 3em 0 2em !important;
+    max-width: 100%;
+    white-space: normal;
 
     &:hover {
       background-color: $gold !important;

@@ -215,6 +215,8 @@ h3 {
         font-weight: 800;
         left: -1.5em;
         font-size: 1em;
+        line-height: .5em;
+        top: 6px;
       }
       &:last-child {
         margin-bottom: 0;
@@ -222,7 +224,7 @@ h3 {
     }
 
     + p {
-      a {
+      a:not([class^=cta]) {
         font-family: Gotham;
         font-weight: 300;
         display: block;
