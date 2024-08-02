@@ -1,10 +1,6 @@
 (function ($) {
   ('use strict');
 
-  $( document ).ajaxComplete( function() {
-    $( 'html, body' ).stop();
-  });
-  
   $(window).on('load', function () {
     $('body').addClass('loaded');
 
@@ -22,6 +18,15 @@
   });
 
   $(document).on('ready',function(){
+
+    // Stop autoscrolling cf7
+    $(document).on('wpcf7invalid', function(event) {
+      $.each(event.detail.inputs, function(index, input) {
+          $(input).off('focus');
+      });
+    });
+
+
 
     $('a[data-box-type="lifestyle"]').on('click', function(){
       $('#pum-647 input[value="LIFESTYLE COLLECTION"]').prop('checked','checked');;
