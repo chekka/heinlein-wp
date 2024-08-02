@@ -29747,10 +29747,10 @@ svg .bg--orange {
   z-index: 1;
 }
 .produktdaten .panel-grid-cell .widget .icon .widget-title {
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   margin-top: 1rem;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   text-align: center;
   font-weight: 300;
 }
