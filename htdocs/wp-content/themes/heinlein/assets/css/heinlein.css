@@ -27124,7 +27124,7 @@ form .wpcf7-submit + .wpcf7-spinner:before {
 form span.wpcf7-not-valid-tip {
   font-size: 12px;
   line-height: 1;
-  margin: 0px 0 12px 14px;
+  margin: -21px 0 12px 0;
   display: block;
   font-weight: 700;
   color: #EB4D64 !important;

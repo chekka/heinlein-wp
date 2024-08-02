@@ -11,7 +11,7 @@
    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <?php if($headerimg > 0): ?>
       <div id="page-header">
-         <?php if($headerimg > 0): echo wp_get_attachment_image( $headerimg, 'header', "", ["class" => "header-image", "alt"=>get_the_title()] ); elseif($headervid != ""): ?>
+         <?php if($headerimg > 0): echo wp_get_attachment_image( $headerimg, 'header', "", ["class" => "5120-1600", "alt"=>get_the_title()] ); elseif($headervid != ""): ?>
          <video class="header-video" muted autoplay loop playsinline>
             <source src="<?php echo $headervid; ?>" type="video/mp4">
          </video>
