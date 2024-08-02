@@ -27309,6 +27309,27 @@ form .section-title {
   box-shadow: inset 0 0 0 1px #001e4b;
 }
 
+@media (max-width: 719.98px) {
+  form {
+    font-size: 0.875em;
+  }
+  form p {
+    line-height: 1.4;
+  }
+  form .row .columns .columns {
+    padding: 0 !important;
+  }
+  form .row .field.text label {
+    margin-bottom: -2px;
+  }
+  form .row .field.radio {
+    margin-top: 7px;
+    margin-bottom: 21px;
+  }
+  form .row input {
+    margin-bottom: 3px;
+  }
+}
 * {
   -moz-outline-style: none;
   outline-style: none;
@@ -27334,7 +27355,8 @@ form .section-title {
   border-color: #7f6445;
 }
 
-img {
+img,
+svg {
   max-width: 100%;
   height: auto;
 }
