@@ -3,9 +3,9 @@ Contributors: Benbodhi
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Z9R7JERS82EQQ
 Tags: svg, vector, safesvg, safe svg, sanitization, sanitisation, sanitizer, sanitiser, sanitized, sanitised, sanitize, sanitise, css, style, mime, mime type, embed, img, render, inline, animation, animation, animate, js
 Requires at least: 4.8
-Tested up to: 6.4.1
+Tested up to: 6.6.1
 Requires PHP: 7.2
-Stable tag: 2.5.5
+Stable tag: 2.5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -91,10 +91,10 @@ With a single click, you can spin up a completely free test site to test SVG Sup
 
 As with allowing uploads of any files, there is potential risks involved. So I have added some features to help!
 
-- Optional sanitization to help strip any malicious code form your SVG files upon upload.
+- Optional sanitization to help strip any malicious code from your SVG files upon upload.
 - Restrict uploads to admin only.
 
-Only allow users to upload SVG files if you trust them. You have the option to restrict SVG usage to Administrators only from the settings page plus the ability to enable SVG sanitization to attemnpt to clean up any SVG files uploaded.
+Only allow users to upload SVG files if you trust them. You have the option to restrict SVG usage to Administrators only from the settings page plus the ability to enable SVG sanitization to attempt to clean up any SVG files uploaded.
 
 By default, anyone with Media Library access or upload_files capability will be able to upload SVG files (that is Administrators, Authors and Editors). Please note that SVG files are actually XML which would allow someone to inject malicious code if you're not careful with who has upload privileges.
 
@@ -160,6 +160,9 @@ You need to add the mime type for svg and svgz to: "MLA Settings > Media Library
 
 
 == Changelog ==
+
+= 2.5.6 =
+* Addressed some security concerns.
 
 = 2.5.5 =
 * More error fixes and general clean up.
@@ -392,6 +395,9 @@ You need to add the mime type for svg and svgz to: "MLA Settings > Media Library
 
 
 == Upgrade Notice ==
+= 2.5.6 =
+This update addresses some security concerns.
+
 = 2.5.5 =
 Updating to 2.5+ Adds new features and addresses a number of earlier issues raised. Please take a backup before updating!
 2.5.5 fixes more reported errors in the 2.5 series of updates.
