@@ -1,5 +1,9 @@
 (function ($) {
   ('use strict');
+
+  $( document ).ajaxComplete( function() {
+    $( 'html, body' ).stop();
+  });
   
   $(window).on('load', function () {
     $('body').addClass('loaded');
