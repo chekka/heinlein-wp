@@ -27035,6 +27035,10 @@ a[title=Anfrage-Formular]:hover {
   background-color: #aa8461 !important;
 }
 
+.page-template-page-landingpage-gold a.bg--pink:hover {
+  background-color: #252227 !important;
+}
+
 span.required {
   color: #dc3232 !important;
 }
@@ -27100,6 +27104,17 @@ textarea {
 input[type=radio],
 input[type=checkbox] {
   transform: scale(1.333);
+}
+
+@media (min-width: 720px) {
+  .field.radio .wpcf7-form-control-wrap {
+    margin: 0;
+    padding: 0;
+  }
+  .field.radio .wpcf7-form-control-wrap .wpcf7-form-control {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .wpcf7-list-item-label + input[type=radio],
@@ -27670,6 +27685,10 @@ svg {
     margin-right: auto !important;
     margin-left: 1.16725% !important;
   }
+}
+
+#talk.grid > .panel-layout > .panel-grid > .panel-grid-cell .widget {
+  max-width: 100%;
 }
 
 .boxes .widget {
@@ -29156,7 +29175,7 @@ body {
 
 @media (max-width: 719.98px) {
   .page-id-1526 div#page-header {
-    min-height: 90vh;
+    min-height: 68vh;
   }
 }
 

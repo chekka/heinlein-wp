@@ -27,14 +27,21 @@
     });
 
 
-
+    //
+    //
+    // Form behaviour changes
     $('a[data-box-type="lifestyle"]').on('click', function(){
-      $('#pum-647 input[value="LIFESTYLE COLLECTION"]').prop('checked','checked');;
+      $('#pum-647 input[value="LIFESTYLE COLLECTION"]').prop('checked','checked');
     });
 
     $('a[data-box-type="classic"]').on('click', function(){
-      $('#pum-647 input[value="CLASSIC COLLECTION"]').prop('checked','checked');;
+      $('#pum-647 input[value="CLASSIC COLLECTION"]').prop('checked','checked');
     });
+
+    // No classic box on golden template
+    $('.page-template-page-landingpage-gold span[data-name="BOXTYP"] .wpcf7-list-item.first').parents('.row').find('.columns.one-fourth').remove();
+    $('.page-template-page-landingpage-gold span[data-name="BOXTYP"] .wpcf7-list-item.first').remove();
+    $('.page-template-page-landingpage-gold span[data-name="BOXTYP"] .wpcf7-list-item.last input').attr({ 'checked':'checked', 'disabled':'disabled' });
     
     // Popup form in next so-panel
     $('.popup-next').on('click', function(){

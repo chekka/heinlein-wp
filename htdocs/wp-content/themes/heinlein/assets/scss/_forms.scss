@@ -75,6 +75,19 @@ input[type="checkbox"] {
   transform: scale(1.333);
 }
 
+.field.radio {
+  @include media-breakpoint-up(md) {
+    .wpcf7-form-control-wrap {
+      margin: 0;
+      padding: 0;
+      .wpcf7-form-control {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
 .wpcf7-list-item-label + input[type="radio"],
 .wpcf7-list-item-label + input[type="checkbox"] {
   margin-left: 7px;
@@ -382,7 +395,7 @@ form {
   margin-bottom: 70px !important;
 }
 
-.wpcf7 form.invalid .cf7sg-response-output, 
+.wpcf7 form.invalid .cf7sg-response-output,
 .wpcf7 form.unaccepted .cf7sg-response-output {
   border-color: #f90 !important;
   color: #f90 !important;
@@ -460,13 +473,12 @@ form {
 @include media-breakpoint-down(md) {
   form {
     font-size: 0.875em;
-    
+
     p {
       line-height: 1.4;
     }
 
     .row {
-
       .columns {
         .columns {
           padding: 0 !important;

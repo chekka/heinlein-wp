@@ -237,3 +237,9 @@ a[title="Anfrage-Formular"] {
     }
   }
 }
+
+.page-template-page-landingpage-gold {
+  a.bg--pink:hover {
+    background-color: $dark !important;
+  }
+}
