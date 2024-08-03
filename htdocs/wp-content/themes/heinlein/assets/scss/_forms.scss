@@ -374,6 +374,14 @@ form {
   box-shadow: $box-hover-shadow;
 }
 
+.wpcf7 form.sent .cf7sg-response-output {
+  border-color: #006409;
+  background-color: #46b450;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 70px !important;
+}
+
 .wpcf7-form .ui-accordion {
   * {
     color: $blau-dunkel;

@@ -27255,6 +27255,14 @@ form .section-title {
   box-shadow: 0 12px 24px -3px rgba(0, 0, 0, 0.2);
 }
 
+.wpcf7 form.sent .cf7sg-response-output {
+  border-color: #006409;
+  background-color: #46b450;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 70px !important;
+}
+
 .wpcf7-form .ui-accordion * {
   color: #001e4b;
 }
