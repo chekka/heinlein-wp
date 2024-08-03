@@ -31,11 +31,11 @@
     //
     // Form behaviour changes
     $('a[data-box-type="lifestyle"]').on('click', function(){
-      $('#pum-647 input[value="LIFESTYLE COLLECTION"]').prop('checked','checked');
+      $('.pum-content input[value="LIFESTYLE COLLECTION"]').prop('checked','checked');
     });
 
     $('a[data-box-type="classic"]').on('click', function(){
-      $('#pum-647 input[value="CLASSIC COLLECTION"]').prop('checked','checked');
+      $('.pum-content input[value="CLASSIC COLLECTION"]').prop('checked','checked');
     });
 
     // No classic box on golden template
