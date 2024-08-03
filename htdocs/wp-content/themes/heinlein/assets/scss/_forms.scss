@@ -382,6 +382,13 @@ form {
   margin-bottom: 70px !important;
 }
 
+.wpcf7 form.invalid .cf7sg-response-output, 
+.wpcf7 form.unaccepted .cf7sg-response-output {
+  border-color: #f90 !important;
+  color: #f90 !important;
+  font-weight: 700;
+}
+
 .wpcf7-form .ui-accordion {
   * {
     color: $blau-dunkel;

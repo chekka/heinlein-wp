@@ -26932,6 +26932,109 @@ a[title=Anfrage-Formular]:hover {
   color: #001e4b !important;
 }
 
+.hero-button-orange .textwidget,
+.hero-button-gold .textwidget,
+.hero-button-ivory .textwidget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 101;
+}
+.hero-button-orange .textwidget p:not(p[class*=bg--], p[class*=text-]):first-child,
+.hero-button-gold .textwidget p:not(p[class*=bg--], p[class*=text-]):first-child,
+.hero-button-ivory .textwidget p:not(p[class*=bg--], p[class*=text-]):first-child {
+  background-color: #001e4b;
+  color: #ff6b37;
+}
+.hero-button-orange .textwidget p,
+.hero-button-gold .textwidget p,
+.hero-button-ivory .textwidget p {
+  margin: 0 auto;
+  padding: 7px 30px 3px;
+  text-transform: uppercase;
+  font-family: Gotham, sans-serif;
+  font-weight: 800;
+}
+.hero-button-orange .textwidget p:last-child,
+.hero-button-gold .textwidget p:last-child,
+.hero-button-ivory .textwidget p:last-child {
+  padding: 0;
+  width: 100%;
+}
+.hero-button-orange .textwidget p a,
+.hero-button-gold .textwidget p a,
+.hero-button-ivory .textwidget p a {
+  margin: 0 auto;
+  background-color: #ff6b37;
+  padding: 15px 0;
+  border-radius: 0 36px;
+  font-family: "Gotham";
+  font-weight: 300;
+  width: 100%;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  border: none !important;
+  color: #fff !important;
+  display: block;
+  text-align: center !important;
+}
+.hero-button-orange .textwidget p a:hover,
+.hero-button-gold .textwidget p a:hover,
+.hero-button-ivory .textwidget p a:hover {
+  background-color: #aa8461 !important;
+  border-color: #aa8461 !important;
+}
+.hero-button-orange.outline .textwidget p:last-child a,
+.hero-button-gold.outline .textwidget p:last-child a,
+.hero-button-ivory.outline .textwidget p:last-child a {
+  background-color: transparent !important;
+  border: 1px solid #ff6b37 !important;
+}
+.hero-button-orange.outline .textwidget p:last-child a:hover,
+.hero-button-gold.outline .textwidget p:last-child a:hover,
+.hero-button-ivory.outline .textwidget p:last-child a:hover {
+  background-color: #aa8461 !important;
+  border-color: #aa8461 !important;
+}
+
+.hero-button-orange.outline .textwidget p:last-child a {
+  color: #ff6b37 !important;
+}
+.hero-button-orange.outline .textwidget p:last-child a:hover {
+  color: #fff !important;
+}
+
+.hero-button-gold .textwidget p:last-child a {
+  background-color: #7f6445;
+}
+.hero-button-gold .textwidget p:hover a {
+  background-color: #aa8461 !important;
+  color: #fff !important;
+}
+.hero-button-gold.outline p:last-child {
+  background-color: transparent;
+  border: 1px solid #7f6445;
+}
+
+.hero-button-ivory .textwidget p:last-child a {
+  background-color: #e4d8ce;
+}
+.hero-button-ivory.outline .textwidget p:last-child {
+  background-color: transparent !important;
+}
+.hero-button-ivory.outline .textwidget p:last-child a {
+  text-transform: none;
+  font-weight: 600;
+  color: #e4d8ce !important;
+  border-color: #e4d8ce !important;
+}
+.hero-button-ivory.outline .textwidget p:last-child:hover a {
+  color: #f4f2ef !important;
+  background-color: #aa8461 !important;
+}
+
 span.required {
   color: #dc3232 !important;
 }
@@ -27261,6 +27364,13 @@ form .section-title {
   color: #fff;
   font-weight: 700;
   margin-bottom: 70px !important;
+}
+
+.wpcf7 form.invalid .cf7sg-response-output,
+.wpcf7 form.unaccepted .cf7sg-response-output {
+  border-color: #f90 !important;
+  color: #f90 !important;
+  font-weight: 700;
 }
 
 .wpcf7-form .ui-accordion * {
@@ -28984,111 +29094,6 @@ body {
   background-color: #ff6b37;
   top: -0.16em;
   bottom: -0.15em;
-}
-
-.hero-button-orange .textwidget,
-.hero-button-gold .textwidget,
-.hero-button-ivory .textwidget {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  z-index: 101;
-}
-.hero-button-orange .textwidget p:not(p[class*=bg--], p[class*=text-]):first-child,
-.hero-button-gold .textwidget p:not(p[class*=bg--], p[class*=text-]):first-child,
-.hero-button-ivory .textwidget p:not(p[class*=bg--], p[class*=text-]):first-child {
-  background-color: #001e4b;
-  color: #ff6b37;
-}
-.hero-button-orange .textwidget p,
-.hero-button-gold .textwidget p,
-.hero-button-ivory .textwidget p {
-  margin: 0 auto;
-  padding: 7px 30px 3px;
-  text-transform: uppercase;
-  font-family: Gotham, sans-serif;
-  font-weight: 800;
-}
-.hero-button-orange .textwidget p:last-child,
-.hero-button-gold .textwidget p:last-child,
-.hero-button-ivory .textwidget p:last-child {
-  padding: 0;
-  width: 100%;
-}
-.hero-button-orange .textwidget p a,
-.hero-button-gold .textwidget p a,
-.hero-button-ivory .textwidget p a {
-  margin: 0 auto;
-  background-color: #ff6b37;
-  padding: 15px 0;
-  border-radius: 0 36px;
-  font-family: "Gotham";
-  font-weight: 300;
-  width: 100%;
-  font-size: 1.5em;
-  text-transform: uppercase;
-  text-decoration: none !important;
-  border: none !important;
-  color: #fff !important;
-  display: block;
-  text-align: center !important;
-}
-.hero-button-orange .textwidget p a:hover,
-.hero-button-gold .textwidget p a:hover,
-.hero-button-ivory .textwidget p a:hover {
-  background-color: #aa8461 !important;
-  border-color: #aa8461 !important;
-}
-.hero-button-orange.outline .textwidget p:last-child a,
-.hero-button-gold.outline .textwidget p:last-child a,
-.hero-button-ivory.outline .textwidget p:last-child a {
-  background-color: transparent !important;
-  border: 1px solid #ff6b37 !important;
-}
-.hero-button-orange.outline .textwidget p:last-child a:hover,
-.hero-button-gold.outline .textwidget p:last-child a:hover,
-.hero-button-ivory.outline .textwidget p:last-child a:hover {
-  background-color: #aa8461 !important;
-  border-color: #aa8461 !important;
-}
-
-.hero-button-orange.outline .textwidget p:last-child a {
-  color: #ff6b37 !important;
-}
-.hero-button-orange.outline .textwidget p:last-child a:hover {
-  color: #fff !important;
-}
-
-.hero-button-gold .textwidget p:last-child a {
-  background-color: #7f6445;
-}
-.hero-button-gold .textwidget p:hover a {
-  background-color: #aa8461 !important;
-  color: #fff !important;
-}
-.hero-button-gold.outline p:last-child {
-  background-color: transparent;
-  border: 1px solid #7f6445;
-}
-
-.hero-button-ivory .textwidget p:last-child {
-  background-color: #e4d8ce;
-}
-.hero-button-ivory.outline p:last-child {
-  background-color: transparent;
-  border: 1px solid #e4d8ce;
-}
-.hero-button-ivory.outline p:last-child a {
-  text-transform: none;
-  font-weight: 900;
-  color: #e4d8ce !important;
-}
-.hero-button-ivory.outline p:last-child:hover {
-  background-color: #e4d8ce !important;
-}
-.hero-button-ivory.outline p:last-child:hover a {
-  color: #fff !important;
 }
 
 .page-template-page-landingpage-gold .hero-box.muster.bg--ivory-hell-3 {
