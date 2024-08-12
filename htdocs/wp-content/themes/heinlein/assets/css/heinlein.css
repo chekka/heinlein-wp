@@ -29164,7 +29164,11 @@ body {
 }
 .page-template-page-landingpage-gold .hero-box.muster.bg--ivory-hell-3 a {
   max-width: 340px;
-  margin-left: -24px;
+}
+@media (max-width: 579.98px) {
+  .page-template-page-landingpage-gold .hero-box.muster.bg--ivory-hell-3 a {
+    margin-left: -24px;
+  }
 }
 .page-template-page-landingpage-gold .hero-box.muster.bg--ivory-hell-3 a:hover {
   background-color: #252227 !important;
