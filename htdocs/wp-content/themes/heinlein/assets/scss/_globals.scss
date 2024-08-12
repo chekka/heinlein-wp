@@ -518,4 +518,10 @@ svg {
       display: none;
     }
   }
+
+  &-phone {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
 }

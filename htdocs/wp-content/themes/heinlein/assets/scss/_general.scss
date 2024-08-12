@@ -9,7 +9,7 @@
   transform: translateX(-50%);
   z-index: 3;
 
-  @include media-breakpoint-down(sm){
+  @include media-breakpoint-down(sm) {
     display: none;
   }
 }
@@ -418,38 +418,18 @@
   }
 }
 
-#sprech-01 img {
-  min-width: 355px;
-  max-width: 355px;
-}
-
-#sprech-02 img {
-  min-width: 480px;
-  max-width: 480px;
-
-  @include media-breakpoint-down(md) {
-    min-width: initial;
-    width: 480px;
-    max-width: 100%;
+#sprech-03 svg {
+  @include media-breakpoint-down(sm) {
+    min-width: 240px;
+    max-width: 240px;
   }
 }
 
-#sprech-03 img {
-  min-width: 270px;
-  max-width: 270px;
-  @include media-breakpoint-up(md) {
-    margin-left: -30px;
+#sprech-05 svg {
+  @include media-breakpoint-down(sm) {
+    min-width: 270px;
+    max-width: 270px;
   }
-}
-
-#sprech-04 img {
-  min-width: 405px;
-  max-width: 405px;
-}
-
-#sprech-05 img {
-  min-width: 282px;
-  max-width: 282px;
 }
 
 div[id^="sprech-0"] {
@@ -506,25 +486,32 @@ div[id^="sprech-0"] {
   position: relative;
 }
 
-#panel-1804-5-0-0 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  div {
-    height: 100%;
+#panel-1804-5-0-3,
+#panel-2703-5-0-3 {
+  @include media-breakpoint-down(sm) {
+    background-color: $ivory-hell-1;
   }
 
-  .textwidget {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  @include media-breakpoint-up(sm) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
-    p {
-      max-width: 550px;
+    div {
+      height: 100%;
+    }
+
+    .textwidget {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        max-width: 550px;
+      }
     }
   }
 }
