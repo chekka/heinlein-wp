@@ -109,6 +109,15 @@
       line-height: 1.5;
     }
   }
+
+  .gold {
+    .widget-title {
+      background-color: $gold-dunkel !important;
+    }
+    .so-widget-sow-editor:not(.icon) {
+      background-color: $ivory-hell-1 !important;
+    }
+  }
 }
 
 .kombi {
