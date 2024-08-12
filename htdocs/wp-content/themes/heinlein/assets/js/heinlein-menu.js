@@ -3,6 +3,15 @@
 
   $(document).on('ready', function () {
 
+    var t = 150;
+    if ($(this).scrollTop() > t) {
+      $('body').addClass('scrolled');
+      $('.site-header').addClass('active');
+    } else {
+      $('body').removeClass('scrolled');
+      $('.site-header').removeClass('active');
+    }
+
     // Site header height
     var headerHeight = $('.site-logo').outerHeight() + 20;
     $('.site-header').css({ 'min-height': headerHeight });
@@ -70,7 +79,7 @@
       $('.hamburger').removeClass('open');
       $('ul[id^=menu-mobile-menu]').hide();
       
-      var t = 50;
+      var t = 150;
       // if ($(window).width() < 575) {
       //   $t = 50;
       // }

@@ -19,12 +19,13 @@
     width: 240px;
 
     @include media-breakpoint-down(sm) {
-      right: 50%;
-      transform: translateX(50%);
+      right: 15px;
       width: auto;
 
       img {
-        max-height: 90px;
+        height: 68px;
+        width: 166px;
+        margin-top: -15px;
       }
     }
 

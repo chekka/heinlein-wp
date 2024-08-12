@@ -1,17 +1,19 @@
 <?php /* Template Name: Landingpage */ ?>
 
 <?php
-   $headerimg = get_field('headerimage');
-   $headervid = get_field('headervideo_url');
-   $headertxt = get_field('headertext');
-   $headertop = get_field('headertext_top');
+   $headerimg  = get_field('headerimage');
+   $head_img_m = get_field('headerimage_mobile');
+   $headervid  = get_field('headervideo_url');
+   $headertxt  = get_field('headertext');
+   $headertop  = get_field('headertext_top');
 ?>
 
 <?php get_header(); ?> 
    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-      <?php if($headerimg > 0): ?>
       <div id="page-header">
-         <?php if($headerimg > 0): echo wp_get_attachment_image( $headerimg, 'header', "", ["class" => "header-image", "alt"=>get_the_title()] ); elseif($headervid != ""): ?>
+         <?php // if($headerimg > 0): echo wp_get_attachment_image( $headerimg, 'header', "", ["class" => "header-image", "alt"=>get_the_title()] ); endif; ?>
+         <?php if($head_img_m > 0): echo wp_get_attachment_image( $head_img_m, 'header-mobile', "", ["class" => "header-image-mobile", "alt"=>get_the_title()] ); endif ?>
+         <?php if($headervid != ""): ?>
          <video class="header-video" muted autoplay loop playsinline>
             <source src="<?php echo $headervid; ?>" type="video/mp4">
          </video>
@@ -32,7 +34,6 @@
             endif;
          ?>
       </div>
-      <?php endif; ?>
       <?php the_content(); ?>
    <?php endwhile; endif; ?>          
 <?php get_footer(); ?>

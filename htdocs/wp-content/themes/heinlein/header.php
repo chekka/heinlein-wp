@@ -62,10 +62,7 @@
         <img src="/wp-content/themes/heinlein/assets/images/heinlein-plastiktechnik-logo-dark.svg" alt="Heinlein Plastik-Technik Logo" width="240" height="90" loading="eager" decoding="sync">
       </picture>
       <?php else: ?>
-      <picture>
-        <source srcset="/wp-content/themes/heinlein/assets/images/heinlein-plastiktechnik-signet.svg" media="(max-width: 580px)" width="80" height="110">
         <img src="/wp-content/themes/heinlein/assets/images/heinlein-plastiktechnik-logo.svg" alt="Heinlein Plastik-Technik Logo" width="240" height="90" loading="eager" decoding="sync">
-      </picture>
       <?php endif; ?>
     </a>         
     
