@@ -26849,7 +26849,7 @@ svg .bg--orange {
   text-transform: none;
   color: #5c6c90;
   letter-spacing: 0.05;
-  padding: 0 21px;
+  padding: 0 2vw;
   margin-bottom: 50px;
   border: 1px solid #5c6c90 !important;
   border-radius: 0 18px 0 18px;
@@ -27287,8 +27287,8 @@ form .section-title {
 .popup-form {
   position: fixed;
   top: -200vh;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  right: 0;
   transition-duration: 0.5s;
   z-index: -100;
   padding: 30px;
@@ -27297,7 +27297,12 @@ form .section-title {
   background-color: #f4f2ef;
 }
 .popup-form.show {
-  top: 40%;
+  top: 0;
+  bottom: 0;
+  transform: none;
+  border-radius: 0;
+  height: 100%;
+  overflow-y: auto;
   background-color: #f4f2ef;
   box-shadow: 0px 12px 24px -3px rgba(2, 2, 2, 0.2), 0 0 0 200vmax rgba(234, 229, 225, 0.8);
   z-index: 1000000000;
@@ -27871,6 +27876,11 @@ svg {
   transform: translateX(-50%);
   z-index: 3;
 }
+@media (max-width: 579.98px) {
+  .header-icon {
+    display: none;
+  }
+}
 
 .imagetoggle .panel-last-child {
   display: none;
@@ -28279,7 +28289,8 @@ div[id^=sprech-0] {
 }
 @media (max-width: 719.98px) {
   #block-stickysocialbanner {
-    top: 77vh;
+    top: 50vh;
+    transform: translateY(-50%);
     width: 48px;
     border-radius: 18px 0 0 18px;
   }
@@ -28288,6 +28299,13 @@ div[id^=sprech-0] {
   }
   #block-stickysocialbanner div img {
     max-width: 28px;
+  }
+}
+
+@media (max-width: 719.98px) {
+  .home #block-stickysocialbanner {
+    top: 77vh;
+    transform: none;
   }
 }
 
@@ -29148,6 +29166,11 @@ body {
   z-index: -1;
   overflow: hidden;
 }
+@media (max-width: 579.98px) {
+  #page-header h1, #page-header .h1 {
+    max-width: 300px;
+  }
+}
 #page-header .header-image,
 #page-header .header-video {
   flex-shrink: 0;
@@ -29156,6 +29179,12 @@ body {
   max-width: initial;
   width: auto;
   height: auto;
+}
+@media (max-width: 579.98px) {
+  #page-header .header-image,
+  #page-header .header-video {
+    max-height: 100%;
+  }
 }
 #page-header .header-text {
   position: absolute;
@@ -29748,6 +29777,11 @@ svg .bg--orange {
 }
 .product--header + #produktanfrage svg {
   transform: translateY(-150px);
+}
+@media (max-width: 579.98px) {
+  .product--header + #produktanfrage svg {
+    transform: translateY(-180px);
+  }
 }
 .product--header + #produktanfrage svg polygon {
   fill: #aa8461;

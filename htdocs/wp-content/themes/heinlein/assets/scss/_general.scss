@@ -8,6 +8,10 @@
   top: 15vh;
   transform: translateX(-50%);
   z-index: 3;
+
+  @include media-breakpoint-down(sm){
+    display: none;
+  }
 }
 
 .imagetoggle {
@@ -474,7 +478,8 @@ div[id^="sprech-0"] {
   }
 
   @include media-breakpoint-down(md) {
-    top: 77vh;
+    top: 50vh;
+    transform: translateY(-50%);
     width: 48px;
     border-radius: $r1 0 0 $r1;
 
@@ -484,6 +489,15 @@ div[id^="sprech-0"] {
       img {
         max-width: 28px;
       }
+    }
+  }
+}
+
+.home {
+  #block-stickysocialbanner {
+    @include media-breakpoint-down(md) {
+      top: 77vh;
+      transform: none;
     }
   }
 }

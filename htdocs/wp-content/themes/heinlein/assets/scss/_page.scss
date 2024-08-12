@@ -3,6 +3,12 @@
   justify-content: center;
   align-items: center;
 
+  @include media-breakpoint-down(sm) {
+    h1 {
+      max-width: 300px;
+    }
+  }
+  
   position: fixed;
   top: 0;
   left: 0;
@@ -16,10 +22,15 @@
   .header-video {
     flex-shrink: 0;
     min-width: 100%;
-    min-height: 100%;
+    min-height: 100%;    
     max-width: initial;
     width: auto;
     height: auto;
+    
+    @include media-breakpoint-down(sm){
+      max-height: 100%;
+    }
+
   }
 
   .header-text {

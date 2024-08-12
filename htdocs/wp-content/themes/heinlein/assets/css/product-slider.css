@@ -3,22 +3,11 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
-   font-family: Gotham, sans-serif;
-}
-
-@media (min-width: 1px) and (max-width: 991px) {
-  #product-slider {
-    max-width: 95%;
-  }
-}
-@media (min-width: 1px) and (max-width: 575px) {
-  #product-slider {
-    max-width: 100%;
-  }
+  font-family: Gotham, sans-serif;
 }
 
 #product-slider .slick-track {
-   padding-top: 90px;
+  padding-top: 90px;
 }
 
 #product-slider .slick-slide a {
@@ -29,51 +18,13 @@
   align-items: center;
 }
 
-@media (min-width: 1px) and (max-width: 768px) {
-  #product-slider .slick-slide .widget-title {
-    width: 100% !important;
-    bottom: 0 !important;
-    opacity: 1 !important;
-    font-size: 1rem !important;
-  }
-}
-
-@media (min-width: 1080px) {
-   #product-slider {
-       width: 970px;
-       max-width: 970px;
-   }
-}
-
-#product-slider .slick-slider {
-   min-height: 480px;
-}
-
-@media (min-width: 1px) and (max-width: 991px) {
-   #product-slider {
-       max-width: 90%;
-   }
-}
-
-@media (min-width: 1px) and (max-width: 991px) {
-   #product-slider {
-       width: 75%;
-   }
-}
-
-@media (min-width: 1px) and (max-width: 768px) {
-   #product-slider {
-       width: 73%;
-   }
-}
-
 #product-slider .slick-initialized .slick-slide img {
-   opacity: 1;
-   transition: all 1s cubic-bezier(0.23, 0.375, 0.1, 1);
-   transition-delay: 0s;
+  opacity: 1;
+  transition: all 1s cubic-bezier(0.23, 0.375, 0.1, 1);
+  transition-delay: 0s;
 }
 
-#product-slider .slick-slide[data-slick-index="0"] img,
+/* #product-slider .slick-slide[data-slick-index="0"] img,
 #product-slider .slick-slide[data-slick-index="4"] img,
 #product-slider .slick-slide[data-slick-index="5"] img {
     transform: scale(0.5);
@@ -89,115 +40,141 @@
 #product-slider .slick-slide[data-slick-index="11"] img {
     transform: scale(1.5);
 }
-
+ */
 
 #product-slider .slick-slide {
-   text-align: center;
-   position: relative;
-   height: 420px;
-}
-
-#product-slider .slick-slide a {
-   height: 100%;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-}
-
-@media (min-width: 1px) and (max-width: 768px) {
-   #product-slider .slick-slide img {
-       transform: scale(1) !important;
-   }
+  text-align: center;
+  position: relative;
+  height: 420px;
 }
 
 #product-slider .slick-slide .widget-title {
-   line-height: 1.4;
-   position: absolute;
-   opacity: 0;
-   bottom: -100px;
-   width: 194px;
-   margin-left: 0;
-   z-index: 1;
-   transition: all 1s;
+  line-height: 1.4;
+  position: absolute;
+  opacity: 0;
+  bottom: -100px;
+  width: 194px;
+  margin-left: 0;
+  z-index: 1;
+  transition: all 1s;
 }
 
 #product-slider .slick-slide:hover .widget-title {
-   transition: all 0.3s;
-   opacity: 1;
-   bottom: 0;
+  transition: all 0.3s;
+  opacity: 1;
+  bottom: 0;
 }
 
-#product-slider .slick-slide.slick-current+div+div .widget-title {
-   opacity: 1;
-   bottom: 0;
+#product-slider .slick-slide.slick-current + div + div .widget-title {
+  opacity: 1;
+  bottom: 0;
 }
 
-#product-slider .slick-initialized .slick-current+div .widget-title {
-   margin-left: -15px;
+#product-slider .slick-initialized .slick-current + div .widget-title {
+  margin-left: -15px;
 }
 
-#product-slider .slick-initialized .slick-current+div+div+div .widget-title {
-   margin-left: 15px;
+#product-slider
+  .slick-initialized
+  .slick-current
+  + div
+  + div
+  + div
+  .widget-title {
+  margin-left: 15px;
 }
 
 #product-slider .slick-arrow {
-   position: absolute;
-   top: 220px;
-   border: 1px solid #ced6e4;
-   border-width: 0 3px 3px 0;
-   display: inline-block;
-   width: 50px;
-   height: 50px;
-   padding: 3px;
-   background-color: transparent;
-   font-size: 0;
-}
-
-@media (min-width: 1px) and (max-width: 991px) {
-
-   #product-slider .slick-arrow {
-       top: 110px;
-       width: 42px;
-       height: 42px;       
-   }
-}
-
-@media (min-width: 1px) and (max-width: 768px) {
-
-   #product-slider .slick-arrow {
-       top: 30%;
-       width: 38px;
-       height: 38px;
-   }
-
-   #product-slider .slick-track {
-       padding-top: 20px;
-   }
-
+  position: absolute;
+  top: 220px;
+  border: 1px solid #ced6e4;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  padding: 3px;
+  background-color: transparent;
+  font-size: 0;
 }
 
 #product-slider .slick-next {
-   right: -24px;
-   transform: rotate(-45deg);
-   -webkit-transform: rotate(-45deg);
-}
-
-@media (min-width: 1px) and (max-width: 768px) {
-   #product-slider .slick-next {
-       right: -32px;
-   }
+  right: -24px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
 
 #product-slider .slick-prev {
-   left: -24px;
-   transform: rotate(135deg);
-   -webkit-transform: rotate(135deg);
+  left: -24px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }
 
-@media (min-width: 1px) and (max-width: 768px) {
-   #product-slider .prev {
-       left: -32px;
-   }
+#product-slider .slick-slider {
+  min-height: 480px;
 }
 
+@media (min-width: 1080px) {
+  #product-slider {
+    width: 970px;
+    max-width: 970px;
+  }
+}
+
+@media (max-width: 991px) {
+  #product-slider {
+    max-width: 95%;
+  }
+
+  #product-slider .slick-arrow {
+    top: 110px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  #product-slider {
+    width: 73%;
+  }
+
+  #product-slider .slick-track {
+   padding-top: 20px;
+ }
+
+  #product-slider .slick-slide .widget-title {
+    width: 100% !important;
+    bottom: 0 !important;
+    opacity: 1 !important;
+    font-size: 1rem !important;
+  }
+
+  #product-slider .slick-slide img {
+    max-height: 444px !important;
+    height: 444px !important;
+    width: auto;
+  }
+
+  #product-slider .slick-arrow {
+    top: 48%;
+    width: 38px;
+    height: 38px;
+  }
+  #product-slider .slick-next {
+    right: 30px;
+  }
+  #product-slider .slick-prev {
+    left: 30px;
+  }
+}
+
+@media (max-width: 575px) {
+  #product-slider {
+   width: 100%; 
+   max-width: 100%;
+   overflow: hidden;
+  }
+  .slick-list {
+   max-width: 300px;
+   margin: auto;
+  }
+}
