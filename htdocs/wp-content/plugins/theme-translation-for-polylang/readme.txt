@@ -1,10 +1,10 @@
 === Theme and plugin translation for Polylang (TTfP) ===
 Contributors: marcinkazmierski
-Tags: polylang, multilingual, translate, translation, language, languages, twig, multilanguage, international, localization, timber, theme, translator
+Tags: polylang, translate, translation, languages, multilanguage
 Requires at least: 5.7
-Tested up to: 6.4
+Tested up to: 6.6
 Requires PHP: 7.0
-Stable tag: 3.4.2
+Stable tag: 3.4.6
 License: GPL2
 
 Theme and plugin translation using Polylang for WordPress.
@@ -124,7 +124,7 @@ function custom_ttfp_translation_access(bool $hasAccess):bool
 
 == Installation ==
 This plugin requires to be installed and activated the Polylang plugin,
-This plugin requires PHP 5.0
+This plugin requires PHP 7.0
 
 1. Upload the "Theme and plugin translation for Polylang" folder to the `/wp-content/plugins/` directory on your web server.
 2. Activate the plugin through the Plugins menu in WordPress.
@@ -193,6 +193,22 @@ Then you can use in twig templates polylang functions like this (in templates/ho
 3. Settings - Select area to be scanned in Strigs translations polylang tab.
 
 == Changelog ==
+= 3.4.6 - 2024/08/07 =
+
+* Requires Plugins - by problems with the pro version of Polylang.
+
+= 3.4.5 - 2024/08/07 =
+
+* Requires Plugins - by problems with the pro version of Polylang.
+
+= 3.4.4 - 2024/08/07 =
+
+* Requires Plugins - allow pro version of polylang.
+
+= 3.4.3 - 2024/08/06 =
+
+* Added New Plugin Header -  Requires Plugins.
+
 = 3.4.2 - 2024/02/15 =
 
 * Fixed preg_match_all for pll_.

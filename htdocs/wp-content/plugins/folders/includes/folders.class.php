@@ -2186,6 +2186,7 @@ class WCP_Folders
                 $string   = "";
                 $css_text = "";
                 $customize_folders = get_option('customize_folders');
+                $customize_folders = is_array($customize_folders)?$customize_folders:[];
                 if (!isset($customize_folders['new_folder_color']) || empty($customize_folders['new_folder_color'])) {
                     $customize_folders['new_folder_color'] = "#FA166B";
                 }

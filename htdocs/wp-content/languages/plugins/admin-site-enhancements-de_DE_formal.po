@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Admin and Site Enhancements (ASE) - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-07-06 21:57:09+0000\n"
+"PO-Revision-Date: 2024-08-11 21:48:39+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,19 +11,39 @@ msgstr ""
 "Language: de\n"
 "Project-Id-Version: Plugins - Admin and Site Enhancements (ASE) - Stable (latest release)\n"
 
-#: classes/class-change-login-url.php:256
+#: classes/class-last-login-column.php:32
+msgid "Last Login"
+msgstr "Letzte Anmeldung"
+
+#: classes/class-content-order.php:31 classes/class-content-order.php:45
+msgid "Order"
+msgstr "Sortierung"
+
+#: classes/class-change-login-url.php:272
 #: classes/class-limit-login-attempts.php:222
 #: classes/class-limit-login-attempts.php:329
 msgid "Error:"
 msgstr "Fehler:"
 
-#: includes/password-protected-login.php:84
+#: includes/password-protected-login.php:85
 msgid "View Content"
 msgstr "Inhalte anzeigen"
 
-#: includes/password-protected-login.php:79
+#: includes/password-protected-login.php:80
 msgid "Password"
 msgstr "Passwort"
+
+#: classes/class-settings-sections-fields.php:984
+msgid "Various, smaller enhancements for different parts of the admin interface."
+msgstr "Zahlreiche kleinere Verbesserungen in verschiedenen Bereichen der Administrationsoberfläche."
+
+#: classes/class-settings-sections-fields.php:295
+msgid "AVIF Upload"
+msgstr "Hochladen von AVIF-Dateien"
+
+#: classes/class-settings-sections-fields.php:305
+msgid "Enable uploading <a href=\"https://www.smashingmagazine.com/2021/09/modern-image-formats-avif-webp/\" target=\"_blank\">AVIF</a> files in the Media Library. You can convert your existing PNG, JPG and GIF files using a tool like <a href=\"https://squoosh.app/\" target=\"_blank\">Squoosh</a>."
+msgstr "Aktivieren Sie das Hochladen von <a href=\"https://www.smashingmagazine.com/2021/09/modern-image-formats-avif-webp/\" target=\"_blank\">AVIF</a>-Dateien in die Medienbibliothek. Sie können Ihre vorhandenen PNG-, JPG- und GIF-Dateien mit einem Tool wie <a href=\"https://squoosh.app/\" target=\"_blank\">Squoosh</a> konvertieren."
 
 #: classes/class-admin-menu-organizer.php:160
 msgid "Edit"
@@ -34,21 +54,21 @@ msgstr "Bearbeiten"
 msgid "Add New"
 msgstr "Neu hinzufügen"
 
+#: classes/class-last-login-column.php:55
+msgid "Never"
+msgstr "Niemals"
+
+#: classes/class-admin-menu-organizer.php:162
+msgid "View"
+msgstr "Anzeigen"
+
 #: settings.php:930
 msgid "Configure"
 msgstr "Konfigurieren"
 
-#: classes/class-settings-sections-fields.php:621
+#: classes/class-settings-sections-fields.php:631
 msgid "Welcome to WordPress"
 msgstr "Willkommen bei WordPress"
-
-#: classes/class-password-protection.php:37
-msgid "Password protection is currently enabled for this site."
-msgstr "Der Passwortschutz ist derzeit für diese Website aktiviert."
-
-#: classes/class-maintenance-mode.php:130
-msgid "Maintenance mode is currently enabled for this site."
-msgstr "Der Wartungsmodus ist derzeit für diese Website aktiviert."
 
 #: classes/class-hide-admin-notices.php:68
 msgid "Click to view hidden admin notices"
@@ -81,6 +101,14 @@ msgstr "Weniger anzeigen"
 msgid "Show All"
 msgstr "Alle anzeigen"
 
+#: classes/class-password-protection.php:37
+msgid "Password protection is currently enabled for this site."
+msgstr "Der Passwortschutz für diese Website ist derzeit aktiviert."
+
+#: classes/class-maintenance-mode.php:130
+msgid "Maintenance mode is currently enabled for this site."
+msgstr "Diese Website befindet sich derzeit im Wartungsmodus."
+
 #: classes/class-content-duplication.php:32
 msgid "DUPLICATE"
 msgstr "DUPLIKAT"
@@ -102,13 +130,25 @@ msgid "Share about ASE on:"
 msgstr "Teilen Sie ASE auf:"
 
 #. translators: %s is the default login URL
-#: classes/class-settings-sections-fields.php:1139
+#: classes/class-settings-sections-fields.php:1149
 msgid "Default is %s"
 msgstr "%s ist die Standard-Anmeldeseite"
 
 #: settings.php:685
 msgid "Perform Replacement"
 msgstr "Ersetzen ausführen"
+
+#: classes/class-media-replacement.php:74
+msgid "The current file will be replaced with the uploaded / selected file (of the same type) while retaining the current ID, publish date and file name. Thus, no existing links will break."
+msgstr "Die aktuelle Datei wird durch die hochgeladene / ausgewählte Datei (desselben Typs) ersetzt, wobei die aktuelle ID, das Veröffentlichungsdatum und der Dateiname beibehalten werden. Dadurch werden bestehende Verknüpfungen nicht beeinträchtigt."
+
+#: classes/class-search-engines-visibility.php:44
+msgid "SE Visibility: OFF"
+msgstr "SE-Sichtbarkeit: AUS"
+
+#: classes/class-media-replacement.php:72 settings.php:684
+msgid "Select New Media File"
+msgstr "Neue Mediendatei auswählen"
 
 #: settings.php:142
 msgid "Add Your Review"
@@ -174,6 +214,40 @@ msgstr "Keine passenden Einträge gefunden"
 msgid "Help others discover ASE and maybe <a href=\"https://www.wpase.com/trnslt-plgnndg\" target=\"_blank\">translate</a> to your language."
 msgstr "Helfen Sie anderen, ASE zu entdecken und vielleicht <a href=\"https://www.wpase.com/trnslt-plgnndg\" target=\"_blank\">in Ihre Sprache zu übersetzen</a>."
 
+#: settings.php:138
+msgid "Write a quick, 5-star review for ASE"
+msgstr "Schreiben Sie eine kurze 5-Sterne-Bewertung für ASE"
+
+#: settings.php:629
+msgid "Use Selected Image"
+msgstr "Ausgewähltes Bild verwenden"
+
+#: settings.php:637
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(gefiltert aus _MAX_ Gesamteinträgen)"
+
+#: classes/class-settings-sections-fields.php:2617
+msgid "<span class=\"faded\">(Default is 15 seconds)</span>"
+msgstr "<span class=\"faded\">(Standard sind 15 Sekunden)</span>"
+
+#: settings.php:173
+msgid "I've shared"
+msgstr "Ich habe geteilt"
+
+#: settings.php:635
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "Anzeige von _START_ to _END_ of _TOTAL_ Einträge"
+
+#: settings.php:636
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "Es werden 0 bis 0 von 0 Einträgen angezeigt"
+
+#: classes/class-settings-fields-render.php:647
+#: classes/class-settings-fields-render.php:760
+#: classes/class-settings-fields-render.php:850
+msgid "Hide until toggled"
+msgstr "Ausblenden, bis umgeschaltet wird"
+
 #: classes/class-settings-fields-render.php:937
 msgid "IP Address<br />Last Username"
 msgstr "IP-Adresse<br />Letzter Benutzername"
@@ -181,6 +255,10 @@ msgstr "IP-Adresse<br />Letzter Benutzername"
 #: classes/class-settings-fields-render.php:940
 msgid "Attempts<br />Lockouts"
 msgstr "Versuche<br />Aussperrungen"
+
+#: classes/class-settings-fields-render.php:943
+msgid "Last Attempt On"
+msgstr "Letzter Versuch am"
 
 #: classes/class-settings-fields-render.php:1004
 msgid "with AVIF support"
@@ -199,166 +277,214 @@ msgstr "Nicht verfügbar"
 msgid "AVIF Support Status"
 msgstr "AVIF-Unterstützungsstatus"
 
-#: classes/class-settings-sections-fields.php:162
+#: classes/class-settings-sections-fields.php:172
 msgid "Edit screen"
 msgstr "Bearbeitungsbildschirm"
 
-#: classes/class-settings-sections-fields.php:163
+#: classes/class-settings-sections-fields.php:173
 msgid "List view"
 msgstr "Listenansicht"
 
-#: classes/class-settings-sections-fields.php:659
+#: classes/class-settings-sections-fields.php:536
+msgid "Remove new content menu"
+msgstr "Menü für neue Inhalte entfernen"
+
+#: classes/class-settings-sections-fields.php:669
 msgid "Hide Admin Bar"
 msgstr "Admin-Leiste ausblenden"
 
-#: classes/class-settings-sections-fields.php:1059
+#: classes/class-settings-sections-fields.php:713
+msgid "Wider Admin Menu"
+msgstr "Breiteres Admin-Menü"
+
+#: classes/class-settings-sections-fields.php:893
+msgid "Show ID column"
+msgstr "ID-Spalte anzeigen"
+
+#: classes/class-settings-sections-fields.php:947
+msgid "Remove comments column"
+msgstr "Kommentarspalte entfernen"
+
+#: classes/class-settings-sections-fields.php:1022
+msgid "Display Active Plugins First"
+msgstr "Aktive Plugins zuerst anzeigen"
+
+#: classes/class-settings-sections-fields.php:1069
 msgid "Left Side"
 msgstr "Linke Seite"
 
-#: classes/class-settings-sections-fields.php:1096
+#: classes/class-settings-sections-fields.php:1106
 msgid "Right Side"
 msgstr "Rechte Seite"
 
-#: classes/class-settings-sections-fields.php:1217
+#: classes/class-settings-sections-fields.php:1161
+msgid "New login URL:"
+msgstr "Neue Anmelde-URL:"
+
+#: classes/class-settings-sections-fields.php:1227
 msgid "Username only"
 msgstr "Nur Benutzername"
 
-#: classes/class-settings-sections-fields.php:1316
-#: classes/class-settings-sections-fields.php:1381
+#: classes/class-settings-sections-fields.php:1326
+#: classes/class-settings-sections-fields.php:1391
 msgid "Redirect to:"
 msgstr "Weiterleiten an:"
 
-#: classes/class-settings-sections-fields.php:1327
-#: classes/class-settings-sections-fields.php:1392
+#: classes/class-settings-sections-fields.php:1337
+#: classes/class-settings-sections-fields.php:1402
 msgid "for:"
 msgstr "für:"
 
-#: classes/class-settings-sections-fields.php:1660
+#: classes/class-settings-sections-fields.php:1670
 msgid "Custom Body Class"
 msgstr "Custom Body Class"
 
-#: classes/class-settings-sections-fields.php:1880
+#: classes/class-settings-sections-fields.php:1890
 msgid "Disable Comments"
 msgstr "Kommentare deaktivieren"
 
-#: classes/class-settings-sections-fields.php:2364
+#: classes/class-settings-sections-fields.php:1955
+msgid "Disable Feeds"
+msgstr "Feeds deaktivieren"
+
+#: classes/class-settings-sections-fields.php:1997
+msgid "Disable Smaller Components"
+msgstr "Kleinere Komponenten deaktivieren"
+
+#: classes/class-settings-sections-fields.php:2391
 msgid "Max width:"
 msgstr "Max. Breite:"
 
-#: classes/class-settings-sections-fields.php:2386
+#: classes/class-settings-sections-fields.php:2413
 msgid "Max height:"
 msgstr "Maximale Höhe:"
 
-#: classes/class-settings-sections-fields.php:2444
+#: classes/class-settings-sections-fields.php:2471
 msgid "Limit to"
 msgstr "Begrenzen auf"
 
-#: classes/class-settings-sections-fields.php:2514
-#: classes/class-settings-sections-fields.php:2568
-#: classes/class-settings-sections-fields.php:2621
+#: classes/class-settings-sections-fields.php:2541
+#: classes/class-settings-sections-fields.php:2595
+#: classes/class-settings-sections-fields.php:2648
 msgid "Modify"
 msgstr "Modifizieren"
 
-#: classes/class-settings-sections-fields.php:2515
-#: classes/class-settings-sections-fields.php:2569
-#: classes/class-settings-sections-fields.php:2622
+#: classes/class-settings-sections-fields.php:2542
+#: classes/class-settings-sections-fields.php:2596
+#: classes/class-settings-sections-fields.php:2649
 msgid "Disable"
 msgstr "Deaktivieren"
 
-#: classes/class-settings-sections-fields.php:2538
-#: classes/class-settings-sections-fields.php:2592
-#: classes/class-settings-sections-fields.php:2645
+#: classes/class-settings-sections-fields.php:2565
+#: classes/class-settings-sections-fields.php:2619
+#: classes/class-settings-sections-fields.php:2672
 msgid "15 seconds"
 msgstr "15 Sekunden"
 
-#: classes/class-settings-sections-fields.php:2539
-#: classes/class-settings-sections-fields.php:2593
-#: classes/class-settings-sections-fields.php:2646
+#: classes/class-settings-sections-fields.php:2566
+#: classes/class-settings-sections-fields.php:2620
+#: classes/class-settings-sections-fields.php:2673
 msgid "30 seconds"
 msgstr "30 Sekunden"
 
-#: classes/class-settings-sections-fields.php:2540
-#: classes/class-settings-sections-fields.php:2647
+#: classes/class-settings-sections-fields.php:2567
+#: classes/class-settings-sections-fields.php:2674
 msgid "1 minute"
 msgstr "1 Minute"
 
-#: classes/class-settings-sections-fields.php:2541
-#: classes/class-settings-sections-fields.php:2648
+#: classes/class-settings-sections-fields.php:2568
+#: classes/class-settings-sections-fields.php:2675
 msgid "2 minutes"
 msgstr "2 Minuten"
 
-#: classes/class-settings-sections-fields.php:2542
-#: classes/class-settings-sections-fields.php:2649
+#: classes/class-settings-sections-fields.php:2569
+#: classes/class-settings-sections-fields.php:2676
 msgid "3 minutes"
 msgstr "3 Minuten"
 
-#: classes/class-settings-sections-fields.php:2543
-#: classes/class-settings-sections-fields.php:2650
+#: classes/class-settings-sections-fields.php:2570
+#: classes/class-settings-sections-fields.php:2677
 msgid "5 minutes"
 msgstr "5 Minuten"
 
-#: classes/class-settings-sections-fields.php:2544
-#: classes/class-settings-sections-fields.php:2651
+#: classes/class-settings-sections-fields.php:2571
+#: classes/class-settings-sections-fields.php:2678
 msgid "10 minutes"
 msgstr "10 Minuten"
 
-#: classes/class-settings-sections-fields.php:2594
+#: classes/class-settings-sections-fields.php:2621
 msgid "45 seconds"
 msgstr "45 Sekunden"
 
-#: classes/class-settings-sections-fields.php:2668
+#: classes/class-settings-sections-fields.php:2695
 msgid "Email Delivery"
 msgstr "E-Mail-Zustellung"
 
-#: classes/class-settings-sections-fields.php:2826
+#: classes/class-settings-sections-fields.php:2843
+msgid "<span class=\"field-sublabel sublabel-wide\">Security</span>"
+msgstr "<span class=\"field-sublabel sublabel-wide\">Sicherheit</span>"
+
+#: classes/class-settings-sections-fields.php:2853
 msgid "None"
 msgstr "Nichts"
 
-#: classes/class-settings-sections-fields.php:2827
+#: classes/class-settings-sections-fields.php:2854
 msgid "SSL"
 msgstr "SSL"
 
-#: classes/class-settings-sections-fields.php:2828
+#: classes/class-settings-sections-fields.php:2855
 msgid "TLS"
 msgstr "TLS"
 
-#: classes/class-settings-sections-fields.php:2933
+#: classes/class-settings-sections-fields.php:2865
+msgid "<span class=\"field-sublabel sublabel-wide\">Username</span>"
+msgstr "<span class=\"field-sublabel sublabel-wide\">Benutzername</span>"
+
+#: classes/class-settings-sections-fields.php:2885
+msgid "<span class=\"field-sublabel sublabel-wide\">Password</span>"
+msgstr "<span class=\"field-sublabel sublabel-wide\">Passwort</span>"
+
+#: classes/class-settings-sections-fields.php:2960
 msgid "Send Now"
 msgstr "Jetzt senden"
 
-#: classes/class-settings-sections-fields.php:2960
+#: classes/class-settings-sections-fields.php:2987
 msgid "Multiple User Roles"
 msgstr "Mehrere Rollen"
 
-#: classes/class-settings-sections-fields.php:3043
+#: classes/class-settings-sections-fields.php:3070
 msgid "Password Protection"
 msgstr "Passwortschutz"
 
-#: classes/class-settings-sections-fields.php:3084
+#: classes/class-settings-sections-fields.php:3090
+msgid "Set the password:"
+msgstr "Legen Sie das Passwort fest:"
+
+#: classes/class-settings-sections-fields.php:3111
 msgid "Maintenance Mode"
 msgstr "Wartungsmodus"
 
-#: classes/class-settings-sections-fields.php:3117
+#: classes/class-settings-sections-fields.php:3144
 msgid "Heading"
 msgstr "Überschrift"
 
-#: classes/class-settings-sections-fields.php:3138
+#: classes/class-settings-sections-fields.php:3165
 msgid "Description"
 msgstr "Beschreibung"
 
-#: classes/class-settings-sections-fields.php:3159
+#: classes/class-settings-sections-fields.php:3186
 msgid "Stripes"
 msgstr "Streifen"
 
-#: classes/class-settings-sections-fields.php:3160
+#: classes/class-settings-sections-fields.php:3187
 msgid "Curves"
 msgstr "Kurven"
 
-#: classes/class-settings-sections-fields.php:3161
+#: classes/class-settings-sections-fields.php:3188
 msgid "Lines"
 msgstr "Zeilen"
 
-#: classes/class-settings-sections-fields.php:3165
+#: classes/class-settings-sections-fields.php:3192
 msgid "Background"
 msgstr "Hintergrund"
 
@@ -369,6 +495,10 @@ msgstr "Verbesserungen"
 #: settings.php:106 settings.php:298
 msgid "Save Changes"
 msgstr "Änderungen speichern"
+
+#: settings.php:231
+msgid "Disable Components"
+msgstr "Komponenten deaktivieren"
 
 #: settings.php:235
 msgid "Security"
@@ -382,13 +512,99 @@ msgstr "Optimierungen"
 msgid "Utilities"
 msgstr "Werkzeuge"
 
-#: classes/class-settings-sections-fields.php:2795
+#: classes/class-settings-sections-fields.php:2822
 msgid "<span class=\"field-sublabel sublabel-wide\">Port</span>"
 msgstr "<span class=\"field-sublabel sublabel-wide\">Port</span>"
 
-#: classes/class-settings-sections-fields.php:2775
+#: classes/class-settings-sections-fields.php:2802
 msgid "<span class=\"field-sublabel sublabel-wide\">Host</span>"
 msgstr "<span class=\"field-sublabel sublabel-wide\">Host</span>"
+
+#: classes/class-settings-sections-fields.php:1829
+msgid "Disable Gutenberg"
+msgstr "Gutenberg deaktivieren"
+
+#: classes/class-settings-sections-fields.php:1371
+msgid "Redirect After Logout"
+msgstr "Weiterleitung nach Abmeldung"
+
+#: classes/class-settings-sections-fields.php:1306
+msgid "Redirect After Login"
+msgstr "Weiterleitung nach Anmeldung"
+
+#: classes/class-settings-sections-fields.php:1137
+msgid "Change Login URL"
+msgstr "Anmelde-URL ändern"
+
+#: classes/class-settings-sections-fields.php:581
+msgid "Hide Admin Notices"
+msgstr "Admin-Hinweise verbergen"
+
+#: classes/class-settings-sections-fields.php:184
+msgid "Content Order"
+msgstr "Reihenfolge der Inhalte"
+
+#: classes/class-settings-sections-fields.php:2540
+#: classes/class-settings-sections-fields.php:2594
+#: classes/class-settings-sections-fields.php:2647
+msgid "Keep as is"
+msgstr "Unverändert lassen"
+
+#: classes/class-settings-sections-fields.php:2338
+msgid "Disable XML-RPC"
+msgstr "XML-RPC deaktivieren"
+
+#: classes/class-settings-sections-fields.php:2976
+msgid "Sending test email..."
+msgstr "Versenden einer Test-E-Mail..."
+
+#: settings.php:122
+msgid "Find Out More"
+msgstr "Erfahren Sie mehr"
+
+#: settings.php:227
+msgid "Custom Code"
+msgstr "Individueller Code"
+
+#: classes/class-settings-sections-fields.php:142
+msgid "Content Duplication"
+msgstr "Duplizierung von Inhalten"
+
+#: classes/class-settings-sections-fields.php:1004
+msgid "Re-enable infinite scrolling in the grid view of the media library. Useful for scrolling through a large library."
+msgstr "Aktivieren Sie den unendlichen Bildlauf in der Rasteransicht der Mediathek wieder. Nützlich für das Scrollen durch eine große Bibliothek."
+
+#: classes/class-settings-sections-fields.php:329
+msgid "External Permalinks"
+msgstr "Externe Permalinks"
+
+#: classes/class-settings-sections-fields.php:468
+msgid "Remove WordPress logo/menu"
+msgstr "WordPress-Logo/Menü entfernen"
+
+#: classes/class-settings-sections-fields.php:485
+msgid "Remove customize menu"
+msgstr "Menü \"Anpassen\" entfernen"
+
+#: classes/class-settings-sections-fields.php:502
+msgid "Remove updates counter/link"
+msgstr "Aktualisierungszähler/Link entfernen"
+
+#: classes/class-settings-sections-fields.php:519
+msgid "Remove comments counter/link"
+msgstr "Kommentarzähler/Link entfernen"
+
+#: classes/class-settings-sections-fields.php:2191
+msgid "Limit Login Attempts"
+msgstr "Anmeldeversuche begrenzen"
+
+#: classes/class-settings-sections-fields.php:1173
+msgid "e.g. backend"
+msgstr "z. B. Backend"
+
+#: classes/class-settings-sections-fields.php:251
+msgid "SVG Upload"
+msgstr "SVG hochladen"
 
 #. Plugin URI of the plugin
 #: admin-site-enhancements.php
@@ -418,6 +634,14 @@ msgstr "Speichern ist deaktiviert: %s bearbeitet gerade diesen Beitrag."
 #: classes/class-admin-columns-manager.php:168
 msgid "Saving is disabled: %s is currently editing this page."
 msgstr "Speichern ist deaktiviert: %s bearbeitet gerade diese Seite."
+
+#: classes/class-admin-columns-manager.php:157
+msgid "Sorry, you are not allowed to edit this post."
+msgstr "Sie haben leider nicht die Berechtigung, diesen Beitrag zu bearbeiten."
+
+#: classes/class-admin-columns-manager.php:153
+msgid "Sorry, you are not allowed to edit this page."
+msgstr "Sie haben leider nicht die Berechtigung, diese Seite zu bearbeiten."
 
 #. Plugin Name of the plugin
 #: admin-site-enhancements.php

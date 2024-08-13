@@ -1,9 +1,9 @@
 === LiteSpeed Cache ===
 Contributors: LiteSpeedTech
-Tags: caching, optimize, performance, pagespeed, core web vitals, seo, speed, image optimize, compress, object cache, redis, memcached, database cleaner
+Tags: caching, optimize, performance, pagespeed, seo, image optimize, object cache, redis, memcached, database cleaner
 Requires at least: 4.0
-Tested up to: 6.6
-Stable tag: 6.3.0.1
+Tested up to: 6.6.1
+Stable tag: 6.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -249,6 +249,14 @@ For more detailed information about crawler setup, please see [the Crawler docum
 The vast majority of plugins and themes are compatible with LiteSpeed Cache. The most up-to-date compatibility information can be found [in our documentation](https://docs.litespeedtech.com/lscache/lscwp/thirdparty/)
 
 == Changelog ==
+
+= 6.4 - Aug 13 2024 =
+* **Cache** Corrected QC and LSADC cache hit status.
+* **Cloud** Allow partner info removal in QUIC.cloud notification.
+* **Crawler** Separated CSS preparation validation from crawler validation.
+* **GUI** Moved `WordPress Image Quality Control` setting from `Image Optimization` menu to `Page Optimization` menu.
+* **3rd** Add Elementor Edit button back in ESI. (PR#635)
+* **3rd** Fixed Instant click potential conflict w/ other plugins.
 
 = 6.3.0.1 - Jul 29 2024 =
 * 🔥🐞**Rest** Disabled WP default Editor cache for REST requests to fix editor errors. (Shivam)
