@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Easy FancyBox &#8211; WordPress Lightbox Plugin - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-07-09 03:47:21+0000\n"
+"PO-Revision-Date: 2024-08-13 22:49:02+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,16 @@ msgstr ""
 "X-Generator: GlotPress/4.0.1\n"
 "Language: de\n"
 "Project-Id-Version: Plugins - Easy FancyBox &#8211; WordPress Lightbox Plugin - Stable (latest release)\n"
+
+#: views/pro-landing-page.php:74 views/pro-landing-page.php:118
+#: views/pro-landing-page.php:162
+msgid "Elementor Integration"
+msgstr "Elementor-Integration"
+
+#: views/pro-landing-page.php:65 views/pro-landing-page.php:109
+#: views/pro-landing-page.php:153
+msgid "Fullscreen Display"
+msgstr "Vollbild-Anzeige"
 
 #: inc/fancybox-options.php:1432
 msgid "Enable privacy mode"
@@ -116,7 +126,7 @@ msgstr "Diese Nachricht verbergen"
 msgid "Or you can ignore and %s."
 msgstr "Oder ignorieren und  %s ."
 
-#: inc/class-easyfancybox-admin.php:827
+#: inc/class-easyfancybox-admin.php:815
 msgid "Settings"
 msgstr "Einstellungen"
 
@@ -148,166 +158,141 @@ msgstr "Du benutzt: "
 msgid "Lightbox"
 msgstr "Lightbox"
 
-#: inc/class-easyfancybox-admin.php:787
+#: inc/class-easyfancybox-admin.php:775
 msgid "Easy Fancybox"
 msgstr "Easy Fancybox"
 
-#: inc/class-easyfancybox-admin.php:196 views/pro-landing-page.php:18
+#: inc/class-easyfancybox-admin.php:196 views/pro-landing-page-short.php:18
+#: views/pro-landing-page.php:18
 msgid "Easy Fancybox Pro is launched! Take 30% off this week - use code PRO at checkout."
 msgstr "Easy Fancybox Pro ist da! Diese Woche 30 % Rabatt – verwende den Code PRO beim Bezahlen."
 
-#: views/pro-landing-page.php:124 views/pro-landing-page.php:151
+#: views/pro-landing-page.php:139 views/pro-landing-page.php:171
 msgid "Unlimited Sites"
 msgstr "Unbegrenzte Websites"
 
-#: views/pro-landing-page.php:85
+#: views/pro-landing-page.php:95
 msgid "All Features"
 msgstr "Alle Funktionen"
 
-#: views/pro-landing-page.php:82
+#: views/pro-landing-page.php:92
 msgid "Most Popular!"
 msgstr "Am beliebtesten"
 
-#: views/pro-landing-page.php:78 views/pro-landing-page.php:117
-#: views/pro-landing-page.php:154
+#: views/pro-landing-page-short.php:59 views/pro-landing-page.php:88
+#: views/pro-landing-page.php:132 views/pro-landing-page.php:174
 msgid "Buy Now"
 msgstr "Jetzt kaufen"
 
-#: views/pro-landing-page.php:75 views/pro-landing-page.php:114
+#: views/pro-landing-page-short.php:56 views/pro-landing-page.php:85
+#: views/pro-landing-page.php:129
 msgid "25 Site License"
 msgstr "25 Sites-Lizenz"
 
-#: views/pro-landing-page.php:74 views/pro-landing-page.php:113
+#: views/pro-landing-page-short.php:55 views/pro-landing-page.php:84
+#: views/pro-landing-page.php:128
 msgid "5 Site License"
 msgstr "5 Sites-Lizenz"
 
-#: views/pro-landing-page.php:73 views/pro-landing-page.php:112
+#: views/pro-landing-page-short.php:54 views/pro-landing-page.php:83
+#: views/pro-landing-page.php:127
 msgid "1 Site License"
 msgstr "1 Site-Lizenz"
 
-#: views/pro-landing-page.php:68 views/pro-landing-page.php:107
-#: views/pro-landing-page.php:146
+#: views/pro-landing-page.php:78 views/pro-landing-page.php:122
+#: views/pro-landing-page.php:166
 msgid "Unlimited Site License"
 msgstr "Unbegrenzte Websites Lizenz"
 
-#: views/pro-landing-page.php:67 views/pro-landing-page.php:106
-#: views/pro-landing-page.php:145
-msgid "UNLIMITED"
-msgstr "UNLIMITIERT"
-
-#: views/pro-landing-page.php:66 views/pro-landing-page.php:105
-#: views/pro-landing-page.php:144
+#: views/pro-landing-page.php:76 views/pro-landing-page.php:120
+#: views/pro-landing-page.php:164
 msgid "Performance Optimizations"
 msgstr "Optimierung der Geschwindigkeit"
 
-#: views/pro-landing-page.php:65 views/pro-landing-page.php:104
-#: views/pro-landing-page.php:143
+#: views/pro-landing-page.php:72 views/pro-landing-page.php:116
+#: views/pro-landing-page.php:160
 msgid "Open Maps"
 msgstr "Maps öffnen"
 
-#: views/pro-landing-page.php:64 views/pro-landing-page.php:103
-#: views/pro-landing-page.php:142
+#: views/pro-landing-page.php:71 views/pro-landing-page.php:115
+#: views/pro-landing-page.php:159
 msgid "Open Iframes"
 msgstr "iframes öffnen"
 
-#: views/pro-landing-page.php:63 views/pro-landing-page.php:102
-#: views/pro-landing-page.php:141
+#: views/pro-landing-page.php:70 views/pro-landing-page.php:114
+#: views/pro-landing-page.php:158
 msgid "Open Inline Content"
 msgstr "Inline Content öffnen"
 
-#: views/pro-landing-page.php:62 views/pro-landing-page.php:101
-#: views/pro-landing-page.php:140
-msgid "Create Modals/Popups"
-msgstr "Modale/Popups erstellen"
-
-#: views/pro-landing-page.php:61 views/pro-landing-page.php:100
-#: views/pro-landing-page.php:139
+#: views/pro-landing-page.php:68 views/pro-landing-page.php:112
+#: views/pro-landing-page.php:156
 msgid "Open PDFs"
 msgstr "PDFs öffnen"
 
-#: views/pro-landing-page.php:60 views/pro-landing-page.php:99
-#: views/pro-landing-page.php:138
-msgid "Open Video"
-msgstr "Video öffnen"
-
-#: views/pro-landing-page.php:59 views/pro-landing-page.php:98
-#: views/pro-landing-page.php:137
+#: views/pro-landing-page.php:66 views/pro-landing-page.php:110
+#: views/pro-landing-page.php:154
 msgid "Image Zooming"
 msgstr "Image Zoom"
 
-#: views/pro-landing-page.php:58 views/pro-landing-page.php:97
-#: views/pro-landing-page.php:136
-msgid "Fullscreen"
-msgstr "Vollbild"
-
-#: views/pro-landing-page.php:57 views/pro-landing-page.php:96
-#: views/pro-landing-page.php:135
-msgid "Slidesshow & Transitions"
-msgstr "Slidesshow & Übergänge"
-
-#: views/pro-landing-page.php:56 views/pro-landing-page.php:95
-#: views/pro-landing-page.php:134
+#: views/pro-landing-page.php:63 views/pro-landing-page.php:107
+#: views/pro-landing-page.php:151
 msgid "Toolbar Controls"
 msgstr "Toolbar Kontrollen"
 
-#: views/pro-landing-page.php:55 views/pro-landing-page.php:94
-#: views/pro-landing-page.php:133
+#: views/pro-landing-page.php:60 views/pro-landing-page.php:104
+#: views/pro-landing-page.php:148
 msgid "Thumbnails in Lightbox"
 msgstr "Thumbnails in Lightbox"
 
-#: views/pro-landing-page.php:54 views/pro-landing-page.php:93
-#: views/pro-landing-page.php:132
-msgid "All Customization Options"
-msgstr "Alle Optionen zur Anpassung"
-
-#: views/pro-landing-page.php:53 views/pro-landing-page.php:92
-#: views/pro-landing-page.php:131
+#: views/pro-landing-page.php:58 views/pro-landing-page.php:102
+#: views/pro-landing-page.php:146
 msgid "PRO LIGHTBOX"
 msgstr "PRO LIGHTBOX"
 
-#: views/pro-landing-page.php:52 views/pro-landing-page.php:91
-#: views/pro-landing-page.php:130
+#: views/pro-landing-page.php:57 views/pro-landing-page.php:101
+#: views/pro-landing-page.php:145
 msgid "FancyBox2 - Pro Features"
 msgstr "FancyBox2 - Pro Funktionen"
 
-#: views/pro-landing-page.php:51 views/pro-landing-page.php:90
-#: views/pro-landing-page.php:129
+#: views/pro-landing-page.php:56 views/pro-landing-page.php:100
+#: views/pro-landing-page.php:144
 msgid "Reloaded - Pro Features"
 msgstr "Reloaded - Pro Funktionen"
 
-#: views/pro-landing-page.php:50 views/pro-landing-page.php:89
-#: views/pro-landing-page.php:128
+#: views/pro-landing-page.php:55 views/pro-landing-page.php:99
+#: views/pro-landing-page.php:143
 msgid "Legacy - Pro Features"
 msgstr "Legacy -Pro Funktionen"
 
-#: views/pro-landing-page.php:49 views/pro-landing-page.php:88
-#: views/pro-landing-page.php:127
+#: views/pro-landing-page.php:54 views/pro-landing-page.php:98
+#: views/pro-landing-page.php:142
 msgid "BASIC LIGHTBOXES"
 msgstr "BASIC LIGHTBOXEN"
 
-#: views/pro-landing-page.php:48 views/pro-landing-page.php:87
-#: views/pro-landing-page.php:126
+#: views/pro-landing-page.php:53 views/pro-landing-page.php:97
+#: views/pro-landing-page.php:141
 msgid "PLUGIN UPDATES"
 msgstr "PLUGIN UPDATES"
 
-#: views/pro-landing-page.php:47 views/pro-landing-page.php:86
-#: views/pro-landing-page.php:125
+#: views/pro-landing-page.php:52 views/pro-landing-page.php:96
+#: views/pro-landing-page.php:140
 msgid "PRO SUPPORT"
 msgstr "PRO SUPPORT"
 
-#: views/pro-landing-page.php:46
+#: views/pro-landing-page.php:51
 msgid "Basic Lightboxes"
 msgstr "Basic Lightboxen"
 
-#: views/pro-landing-page.php:32
+#: views/pro-landing-page-short.php:35 views/pro-landing-page.php:32
 msgid "Or buy directly from the WordPress dashboard below!"
 msgstr "Oder kaufen Sie direkt über das WordPress-Dashboard unten!"
 
-#: views/pro-landing-page.php:30 build/index.js:1 src/lightbox-panel.jsx:51
+#: views/pro-landing-page-short.php:33 views/pro-landing-page.php:30
+#: build/index.js:1 src/lightbox-panel.jsx:51
 msgid "See Demos"
 msgstr "Siehe Demos"
 
-#: views/pro-landing-page.php:29
+#: views/pro-landing-page-short.php:32 views/pro-landing-page.php:29
 msgid "Learn More"
 msgstr "Erfahren Sie mehr"
 
@@ -319,7 +304,7 @@ msgstr "Fügen Sie Pro-Funktionen für kostenlose Lightboxen hinzu – Legacy, R
 msgid "Make your media a highlight of your website."
 msgstr "Machen Sie Ihre Medien zum Highlight Ihrer Website."
 
-#: views/pro-landing-page.php:24
+#: views/pro-landing-page-short.php:24 views/pro-landing-page.php:24
 msgid "Easy Fancybox Pro"
 msgstr "Easy Fancybox Pro"
 
@@ -347,23 +332,23 @@ msgstr "Bilder für Retina anpassen"
 msgid "All images"
 msgstr "Alle Bilder"
 
-#: inc/class-easyfancybox-admin.php:328
+#: inc/class-easyfancybox-admin.php:316
 msgid "We work hard to maintain it. Would you do us a BIG favor and give us a 5-star review on WordPress.org? Or share feedback <a %s>here</a>."
 msgstr "Wir arbeiten hart daran, es zu betreiben. Würden Sie uns einen GROSSEN Gefallen tun und uns eine 5-Sterne-Bewertung auf WordPress.org geben? Oder geben Sie <a %s>hier</a> Feedback."
 
-#: inc/class-easyfancybox-admin.php:324
+#: inc/class-easyfancybox-admin.php:312
 msgid "You've been using Easy Fancybox for a long time! Awesome and thanks!"
 msgstr "Sie nutzen Easy Fancybox schon lange! Super und vielen Dank!"
 
-#: inc/class-easyfancybox-admin.php:339
+#: inc/class-easyfancybox-admin.php:327
 msgid "Already did!"
 msgstr "Habe ich bereits gemacht!"
 
-#: inc/class-easyfancybox-admin.php:338
+#: inc/class-easyfancybox-admin.php:326
 msgid "Maybe later"
 msgstr "Später vielleicht"
 
-#: inc/class-easyfancybox-admin.php:336
+#: inc/class-easyfancybox-admin.php:324
 msgid "Ok, you deserve it!"
 msgstr "Ok, Ihr habt es verdient!"
 
@@ -679,7 +664,7 @@ msgstr "FancyBox Classic Reloaded"
 msgid "FancyBox Legacy"
 msgstr "FancyBox Legacy"
 
-#: inc/class-easyfancybox-admin.php:480
+#: inc/class-easyfancybox-admin.php:468
 msgid "Choose Lighbox Version"
 msgstr "Wählen Sie Lightbox-Version"
 
@@ -975,7 +960,7 @@ msgstr "Erster VideoPress Link"
 msgid "VideoPress"
 msgstr "VideoPress"
 
-#: inc/class-easyfancybox-admin.php:842
+#: inc/class-easyfancybox-admin.php:830
 msgid "Rate ★★★★★"
 msgstr "Bewerte ★★★★★"
 
@@ -1592,7 +1577,7 @@ msgstr "Ausschließen"
 msgid "SVG"
 msgstr "SVG"
 
-#: inc/class-easyfancybox-admin.php:841 inc/translation-strings.php:72
+#: inc/class-easyfancybox-admin.php:829 inc/translation-strings.php:72
 #: inc/translation-strings.php:167
 msgid "Support"
 msgstr "Support"
