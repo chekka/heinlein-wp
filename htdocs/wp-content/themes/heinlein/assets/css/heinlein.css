@@ -27870,20 +27870,28 @@ svg {
   }
 }
 
-.header-icon {
-  width: 20vmin;
-  height: 20vmin;
-  max-width: 230px;
-  max-height: 230px;
-  position: absolute;
-  left: 50%;
-  top: 15vh;
-  transform: translateX(-50%);
-  z-index: 3;
-}
-@media (max-width: 579.98px) {
-  .header-icon {
+@media (min-width: 580px) {
+  .show--sm-down {
     display: none;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 1039.98px) {
+  .wrap--lg-down {
+    flex-direction: column !important;
+  }
+  .wrap--lg-down > div {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .wrap--xl-down {
+    flex-direction: column !important;
+  }
+  .wrap--xl-down > div {
+    width: 100% !important;
   }
 }
 
@@ -28856,6 +28864,24 @@ body {
 .hero-box.bg--dark:after {
   border-color: transparent #252227 transparent transparent;
 }
+@media (max-width: 579.98px) {
+  .landing-hero-box.bg--dark,
+  .hero-box.bg--dark {
+    width: 300px;
+    padding: 24px !important;
+  }
+  .landing-hero-box.bg--dark .title,
+  .hero-box.bg--dark .title {
+    max-width: 160px;
+  }
+  .landing-hero-box.bg--dark .link a.pink:before,
+  .hero-box.bg--dark .link a.pink:before {
+    top: 30px;
+    bottom: initial;
+    left: initial;
+    right: -90px;
+  }
+}
 .landing-hero-box.bg--blau-dunkel *,
 .hero-box.bg--blau-dunkel * {
   color: #fff;
@@ -28868,24 +28894,6 @@ body {
   font-weight: 300;
   letter-spacing: 0.05em;
   padding: 1.5em 0 0;
-}
-@media (max-width: 579.98px) {
-  .landing-hero-box,
-  .hero-box {
-    width: 300px;
-    padding: 24px !important;
-  }
-  .landing-hero-box .title,
-  .hero-box .title {
-    max-width: 160px;
-  }
-  .landing-hero-box .link a.pink:before,
-  .hero-box .link a.pink:before {
-    top: 30px;
-    bottom: initial;
-    left: initial;
-    right: -90px;
-  }
 }
 .landing-hero-box ul,
 .hero-box ul {
@@ -29154,6 +29162,7 @@ body {
   box-shadow: 0 12px 24px -3px rgba(0, 0, 0, 0.2);
   min-width: 340px;
   padding-bottom: 0 !important;
+  margin: auto;
 }
 .page-template-page-landingpage-gold .hero-box.muster.bg--ivory-hell-3 ul {
   margin-bottom: 0 !important;
@@ -29165,11 +29174,6 @@ body {
 .page-template-page-landingpage-gold .hero-box.muster.bg--ivory-hell-3 a {
   max-width: 340px;
 }
-@media (max-width: 579.98px) {
-  .page-template-page-landingpage-gold .hero-box.muster.bg--ivory-hell-3 a {
-    margin-left: -24px;
-  }
-}
 .page-template-page-landingpage-gold .hero-box.muster.bg--ivory-hell-3 a:hover {
   background-color: #252227 !important;
 }
@@ -29177,11 +29181,21 @@ body {
   background-color: #252227 !important;
   color: #fff;
 }
+@media (max-width: 579.98px) {
+  .page-template-page-landingpage-gold .hero-box.muster.bg--ivory-hell-3 {
+    padding: 24px;
+  }
+  .page-template-page-landingpage-gold .hero-box.muster.bg--ivory-hell-3 a {
+    margin-left: -24px;
+  }
+}
 
 #page-header {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
+  background-position: center bottom;
   position: fixed;
   top: 0;
   left: 0;
@@ -29195,21 +29209,6 @@ body {
     max-width: 300px;
   }
 }
-#page-header .header-image,
-#page-header .header-video {
-  flex-shrink: 0;
-  min-width: 100%;
-  min-height: 100%;
-  max-width: initial;
-  width: auto;
-  height: auto;
-}
-@media (max-width: 579.98px) {
-  #page-header .header-image,
-  #page-header .header-video {
-    max-height: 100%;
-  }
-}
 #page-header .header-text {
   position: absolute;
   z-index: 1;
@@ -29218,6 +29217,22 @@ body {
 }
 #page-header + .panel-layout {
   margin-top: 67vh;
+}
+#page-header .header-icon {
+  width: 18vmin;
+  height: 18vmin;
+  max-width: 210px;
+  max-height: 210px;
+  position: absolute;
+  left: 50%;
+  top: 15vh;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+@media (max-width: 579.98px) {
+  #page-header .header-icon {
+    display: none;
+  }
 }
 
 @media (max-width: 719.98px) {
@@ -29328,14 +29343,20 @@ body {
   background-size: 36px;
 }
 
+@media (max-width: 1199.98px) {
+  #pg-1526-6 > .panel-row-style {
+    background-position: right center !important;
+  }
+}
+
 @media (max-width: 579.98px) {
   html .page-template-page-landingpage #page-header {
-    min-height: 370px;
-    max-height: 370px;
+    min-height: 400px;
+    max-height: 400px;
     height: auto;
   }
   html .page-template-page-landingpage #page-header + .panel-layout {
-    margin-top: 370px;
+    margin-top: 400px;
   }
   html .page-template-page-landingpage #page-header .header-text {
     top: 15px;

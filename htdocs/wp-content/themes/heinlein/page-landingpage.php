@@ -10,14 +10,24 @@
 
 <?php get_header(); ?> 
    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+      <style>
+         #page-header { 
+            @media (max-width:580px){
+               background-image:url('<?php echo wp_get_attachment_image_url( $head_img_m, 'header-mobile' ); ?>'); 
+            }
+            @media (min-width:580.1px){
+               background-image:url('<?php echo wp_get_attachment_image_url( $headerimg, 'header' ); ?>'); 
+            }
+         }
+      </style>
       <div id="page-header">
-         <?php // if($headerimg > 0): echo wp_get_attachment_image( $headerimg, 'header', "", ["class" => "header-image", "alt"=>get_the_title()] ); endif; ?>
-         <?php if($head_img_m > 0): echo wp_get_attachment_image( $head_img_m, 'header-mobile', "", ["class" => "header-image-mobile", "alt"=>get_the_title()] ); endif ?>
+
          <?php if($headervid != ""): ?>
          <video class="header-video" muted autoplay loop playsinline>
             <source src="<?php echo $headervid; ?>" type="video/mp4">
          </video>
          <?php endif; ?>
+
          <?php if($headertxt != ""): ?>
          <div class="header-text" style="margin-top:<?php echo $headertop; ?>">
             <?php the_field('headertext'); ?>

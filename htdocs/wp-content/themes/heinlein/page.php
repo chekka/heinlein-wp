@@ -1,19 +1,31 @@
 <?php
-   $headerimg = get_field('headerimage');
-   $headervid = get_field('headervideo_url');
-   $headertxt = get_field('headertext');
-   $headertop = get_field('headertext_top');
+   $headerimg  = get_field('headerimage');
+   $head_img_m = get_field('headerimage_mobile');
+   $headervid  = get_field('headervideo_url');
+   $headertxt  = get_field('headertext');
+   $headertop  = get_field('headertext_top');
 ?>
 
 <?php get_header(); ?> 
    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-      
+      <style>
+         #page-header { 
+            @media (max-width:580px){
+               background-image:url('<?php echo wp_get_attachment_image_url( $head_img_m, 'header-mobile' ); ?>'); 
+            }
+            @media (min-width:580.1px){
+               background-image:url('<?php echo wp_get_attachment_image_url( $headerimg, 'header' ); ?>'); 
+            }
+         }
+      </style>
       <div id="page-header">
-         <?php if($headerimg > 0): echo wp_get_attachment_image( $headerimg, 'header', "", ["class" => "header-image", "alt"=>get_the_title()] ); elseif($headervid != ""): ?>
+
+         <?php if($headervid != ""): ?>
          <video class="header-video" muted autoplay loop playsinline>
             <source src="<?php echo $headervid; ?>" type="video/mp4">
          </video>
          <?php endif; ?>
+
          <?php if($headertxt != ""): ?>
          <div class="header-text" style="margin-top:<?php echo $headertop; ?>">
             <?php the_field('headertext'); ?>

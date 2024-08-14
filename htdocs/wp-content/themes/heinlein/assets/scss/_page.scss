@@ -3,6 +3,9 @@
   justify-content: center;
   align-items: center;
 
+  background-size: cover;
+  background-position: center bottom;
+
   @include media-breakpoint-down(sm) {
     h1 {
       max-width: 300px;
@@ -18,20 +21,6 @@
 
   overflow: hidden;
 
-  .header-image,
-  .header-video {
-    flex-shrink: 0;
-    min-width: 100%;
-    min-height: 100%;
-    max-width: initial;
-    width: auto;
-    height: auto;
-
-    @include media-breakpoint-down(sm) {
-      max-height: 100%;
-    }
-  }
-
   .header-text {
     position: absolute;
     z-index: 1;
@@ -41,6 +30,23 @@
 
   + .panel-layout {
     margin-top: 67vh;
+  }
+
+  .header-icon {
+    width: 18vmin;
+    height: 18vmin;
+    
+    max-width: 210px;
+    max-height: 210px;
+    position: absolute;
+    left: 50%;
+    top: 15vh;
+    transform: translateX(-50%);
+    z-index: 3;
+  
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
   }
 }
 
@@ -171,5 +177,11 @@
         background-size: 36px;
       }
     }
+  }
+}
+
+#pg-1526-6> .panel-row-style {
+  @include media-breakpoint-down(xl){
+    background-position: right center !important;
   }
 }

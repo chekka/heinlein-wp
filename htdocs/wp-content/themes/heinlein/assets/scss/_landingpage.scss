@@ -1,12 +1,12 @@
 html .page-template-page-landingpage {
   @include media-breakpoint-down(sm) {
     #page-header {
-      min-height: 370px;
-      max-height: 370px;
+      min-height: 400px;
+      max-height: 400px;
       height: auto;
 
       & + .panel-layout {
-        margin-top: 370px;
+        margin-top: 400px;
       }
 
       .header-text {

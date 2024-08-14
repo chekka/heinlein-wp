@@ -1,16 +1,27 @@
-.header-icon {
-  width: 20vmin;
-  height: 20vmin;
-  max-width: 230px;
-  max-height: 230px;
-  position: absolute;
-  left: 50%;
-  top: 15vh;
-  transform: translateX(-50%);
-  z-index: 3;
-
-  @include media-breakpoint-down(sm) {
+.show--sm-down  { 
+  @include media-breakpoint-up(sm){
     display: none;
+    visibility: hidden;  
+  }
+}
+
+.wrap--lg-down {
+  @include media-breakpoint-down(lg){
+    flex-direction: column !important;
+
+    & > div {
+      width: 100% !important;
+    }
+  }
+}
+
+.wrap--xl-down {
+  @include media-breakpoint-down(xl){
+    flex-direction: column !important;
+
+    & > div {
+      width: 100% !important;
+    }
   }
 }
 
