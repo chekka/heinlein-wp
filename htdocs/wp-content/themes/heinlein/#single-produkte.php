@@ -1,36 +1,25 @@
-<?php /* Template Name: Landingpage */ ?>
-
 <?php
-   $headerimg  = get_field('headerimage');
-   $head_img_m = get_field('headerimage_mobile');
-   if(!$head_img_m){ $head_img_m = $headerimg; }
-   $headervid  = get_field('headervideo_url');
-   $headertxt  = get_field('headertext');
-   $headertop  = get_field('headertext_top');
+   $headerimage = get_field( 'headerimage' );
+   $icon = get_field( 'icon' );
+
+   get_header();   
 ?>
 
-<?php get_header(); ?> 
-   <style>
-      .product--header { 
-         @media (max-width:580px){
-            background-image:url('<?php echo wp_get_attachment_image_url( $head_img_m, 'header-mobile' ); ?>'); 
-         }
-         @media (min-width:580.1px){
-            background-image:url('<?php echo wp_get_attachment_image_url( $headerimg, 'header' ); ?>'); 
-         }
-      }
-   </style>
    <div class="product--header">
-   <?php 
-      if( have_rows('headericon') ):
-         while( have_rows('headericon') ): the_row();
-            $icon = get_sub_field('icon');
-            $icon_top = get_sub_field('icon_position_top');
-            $icon_left = get_sub_field('icon_position_left');
-            echo wp_get_attachment_image( $icon, 'full', '', ['class' => 'header-icon hidden-mobile', 'alt' => get_the_title(), 'style' => 'margin-left: ' . $icon_left . '; margin-top: ' . $icon_top . ';'] ); 
+   <?php
+      if( have_rows('header_icon') ):
+
+         while( have_rows('header_icon') ): the_row();
+         $icon = get_sub_field('icon');
+         $icon_top = get_sub_field('icon_position_top');
+         $icon_left = get_sub_field('icon_position_left');
+         
+         echo wp_get_attachment_image( $icon, 'full', '', ['class' => 'header-icon', 'alt' => get_the_title(), 'style' => 'margin-left: ' . $icon_left . '; margin-top: ' . $icon_top . ';'] );
+
          endwhile;
       endif;
-   ?>
+      ?>
+      <?php echo wp_get_attachment_image( $headerimage, 'header', "", ["class" => "header-image", "alt"=>get_the_title()] ); ?>
    </div>   
    <div class="content--max" id="produktanfrage">
       <a class="pop-produktanfrage" href="#">

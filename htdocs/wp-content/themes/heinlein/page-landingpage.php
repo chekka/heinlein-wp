@@ -3,6 +3,7 @@
 <?php
    $headerimg  = get_field('headerimage');
    $head_img_m = get_field('headerimage_mobile');
+   if(!$head_img_m){ $head_img_m = $headerimg; }
    $headervid  = get_field('headervideo_url');
    $headertxt  = get_field('headertext');
    $headertop  = get_field('headertext_top');

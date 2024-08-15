@@ -1,5 +1,7 @@
 <?php
    $headerimg = get_field('headerimage');
+   $head_img_m = get_field('headerimage_mobile');
+   if(!$head_img_m){ $head_img_m = $headerimg; }
    $headervid = get_field('headervideo_url');
    $headertxt = get_field('headertext');
    $headertop = get_field('headertext_top');
@@ -8,8 +10,22 @@
 <?php get_header(); ?> 
    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       
+      <style>         
+         @media ( max-width: 580px ){
+            #page-header { 
+               background-image: url( '<?php echo wp_get_attachment_image_url( $head_img_m, 'header-mobile' ); ?>' ); 
+               background-position: center center;
+            }
+         }
+         @media ( min-width: 580.1px ){
+            #page-header { 
+               background-image: url( '<?php echo wp_get_attachment_image_url( $headerimg, 'header' ); ?>' ); 
+               background-position: center center;
+            }
+         }
+      </style>
       <div id="page-header">
-         <?php if($headerimg > 0): echo wp_get_attachment_image( $headerimg, 'header', "", ["class" => "header-image", "alt"=>get_the_title()] ); elseif($headervid != ""): ?>
+         <?php if($headervid != ""): ?>
          <video class="header-video" muted autoplay loop playsinline>
             <source src="<?php echo $headervid; ?>" type="video/mp4">
          </video>
