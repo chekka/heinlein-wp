@@ -19,6 +19,8 @@
 
   $(document).on('ready',function(){
 
+    var winW = $(window).innerWidth();
+
     // Stop autoscrolling cf7
     $(document).on('wpcf7invalid', function(event) {
       $.each(event.detail.inputs, function(index, input) {
@@ -175,6 +177,27 @@
     });
 
     $('.wpcf7-form').attr({ 'novalidate': 'novalidate' });
+
+    //
+    //
+    // Products
+    // Padding on kombi
+    $('body.single-produkte .kombi').each(function(){
+      var kombi = $(this);
+      var count = kombi.find('.panel-grid-cell').length;
+      var cellP = parseInt(kombi.find('.panel-grid-cell:nth-child(2) > div').css('padding-right'));
+      if((winW < 1420) && (cellP > 0) && (count == 2)){
+        kombi.find('.panel-grid-cell:nth-child(2) > div').css({ 'padding-right': '19%' });
+        $(window).on('resize', function(){
+          var winW = $(window).innerWidth();
+          if( winW > 1420 ){
+            kombi.find('.panel-grid-cell:nth-child(2) > div').css({ 'padding-right': '25%' });
+          } else {
+            kombi.find('.panel-grid-cell:nth-child(2) > div').css({ 'padding-right': '19%' });
+          }
+        });
+      }
+    });
 
   });
   

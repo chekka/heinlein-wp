@@ -112,6 +112,11 @@
 
 .kombi {
   font-size: 0.85rem;
+
+  @include media-breakpoint-up(md) {
+    flex-wrap: nowrap !important;
+  }
+
   a {
     color: $blau-dunkel;
   }
@@ -152,6 +157,42 @@
   }
 
   .panel-grid-cell {
+    margin-bottom: 0 !important;
+
+    &:nth-child(1) {
+      img {
+        width: 100vw !important;
+      }
+    }
+
+    &:nth-child(2) {
+      @include media-breakpoint-down(md) {
+        margin-top: 24px;
+      }
+      @include media-breakpoint-between(md, xxxl) {
+        padding-right: 12px;
+      }
+    }
+    &:nth-child(3) {
+      @include media-breakpoint-between(md, xxxl) {
+        padding-left: 12px;
+      }
+      @include media-breakpoint-between(sm, md) {
+        display: flex;
+        .so-panel {
+          font-size: 0.8em;
+
+          &:nth-child(2) {
+            margin-left: 21px !important;
+            margin-right: 21px !important;
+          }
+        }
+      }
+      @include media-breakpoint-down(sm){
+        margin-top: 21px;
+      }
+    }
+
     .so-panel:hover a {
       text-decoration: underline;
     }
@@ -177,11 +218,11 @@
       .panel-cell-style {
         display: flex;
         flex-direction: row;
+        font-size: 0.8em;
 
         .so-panel:nth-child(2) {
           margin-left: 21px !important;
-          margin-right: 21px !important;
-          font-size: 0.8em;
+          margin-right: 21px !important;          
         }
       }
 
