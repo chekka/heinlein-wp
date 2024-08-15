@@ -31107,6 +31107,10 @@ svg {
 #our-manufacturing-process .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget .widget-title + div {
   padding: 20px 0;
 }
+#unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget .textwidget,
+#our-manufacturing-process .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget .textwidget {
+  min-height: 120px;
+}
 #unser-fertigungsprozess .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget p,
 #our-manufacturing-process .grid > .panel-layout > .panel-grid > .panel-grid-cell > .widget .box .widget p {
   margin: 0;
