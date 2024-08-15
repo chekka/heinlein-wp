@@ -44,7 +44,7 @@ if ( $btn_type == 'text-arrow'){
 
 		<?php if ($editor != ''){ ?>
 			<div class="card-body pr-4">
-					<?php if ($editor != ''){ echo '<div class="editor hyphens">' . $editor . '</div>'; } ?>
+					<?php if ($editor != ''){ echo '<div class="editor hyphens">' . html_entity_decode($editor) . '</div>'; } ?>
 			</div>
 		<?php } ?>
 
