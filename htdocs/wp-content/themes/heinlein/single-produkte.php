@@ -1,5 +1,3 @@
-<?php /* Template Name: Landingpage */ ?>
-
 <?php
    $headerimg  = get_field('headerimage');
    $head_img_m = get_field('headerimage_mobile');
