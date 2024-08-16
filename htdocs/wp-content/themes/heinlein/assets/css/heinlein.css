@@ -32374,6 +32374,9 @@ body {
     margin-right: -44px;
     padding-bottom: 36px !important;
   }
+  html .page-template-page-landingpage .landing-hero-box a:before {
+    right: -50px;
+  }
   html .page-template-page-landingpage .landing-hero-box * {
     text-align: left !important;
   }

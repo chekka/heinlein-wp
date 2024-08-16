@@ -29,6 +29,10 @@ html .page-template-page-landingpage {
       margin-right: -44px;
       padding-bottom: 36px !important;
 
+      a:before {
+        right: -50px;
+      }
+
       * {
         text-align: left !important;
       }
