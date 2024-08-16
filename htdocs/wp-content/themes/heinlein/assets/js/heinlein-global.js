@@ -50,11 +50,13 @@
       var parent = $(this).parents('.so-panel');
       var next = $(parent).next('.so-panel');
       $(next).find('.popup-form').addClass('show');
+      $('body').addClass('no-scroll');
     });
 
     // Popup form close
     $('.popup-form .close').on('click', function(){
       $(this).parents('.popup-form').removeClass('show');
+      $('body').removeClass('no-scroll');
     });
 
     // counterUp
