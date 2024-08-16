@@ -434,10 +434,6 @@
 }
 
 svg[id^=sprech] {
-  path {
-    filter: drop-shadow(0px 0px 3px rgb(0 0 0 / .5)) !important;
-  }
-
   text {
     fill: #04204c !important;
     font-family: 'Encode Sans Expanded', sans-serif !important;
