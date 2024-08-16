@@ -29879,6 +29879,8 @@ a[title=Anfrage-Formular]:hover {
 }
 
 .cta-blue {
+  font-family: Gotham;
+  font-weight: 300 !important;
   background-color: #001e4b;
   color: #fff !important;
   text-transform: uppercase;
@@ -31237,6 +31239,14 @@ svg {
 }
 .final-row.p-icon-partner p:after {
   background-image: url(../images/icons/icon-partner.svg);
+}
+
+svg[id^=sprech] text {
+  fill: #04204c !important;
+  font-family: "Encode Sans Expanded", sans-serif !important;
+  font-size: 8px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.065em !important;
 }
 
 @media (max-width: 579.98px) {

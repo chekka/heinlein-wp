@@ -1,12 +1,12 @@
-.show--sm-down  { 
-  @include media-breakpoint-up(sm){
+.show--sm-down {
+  @include media-breakpoint-up(sm) {
     display: none;
-    visibility: hidden;  
+    visibility: hidden;
   }
 }
 
 .wrap--lg-down {
-  @include media-breakpoint-down(lg){
+  @include media-breakpoint-down(lg) {
     flex-direction: column !important;
 
     & > div {
@@ -16,7 +16,7 @@
 }
 
 .wrap--xl-down {
-  @include media-breakpoint-down(xl){
+  @include media-breakpoint-down(xl) {
     flex-direction: column !important;
 
     & > div {
@@ -94,7 +94,7 @@
 
     a {
       &:before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         right: 0;
@@ -104,7 +104,7 @@
         opacity: 0.333;
       }
       &:after {
-        content: "";
+        content: '';
         width: 40%;
         height: 40%;
         background-image: url(../images/icon-forward-white.svg);
@@ -123,7 +123,7 @@
   }
 
   .widget-title {
-    font-family: "Encode Sans Semi Expanded", sans-serif;
+    font-family: 'Encode Sans Semi Expanded', sans-serif;
     color: $blau-dunkel;
     font-weight: 600;
     font-size: 1.3em;
@@ -142,7 +142,7 @@
 
     .widget-title {
       color: $white;
-      font-family: "Encode Sans Expanded", sans-serif !important;
+      font-family: 'Encode Sans Expanded', sans-serif !important;
       font-size: 15px;
       line-height: 1.5;
       letter-spacing: 0;
@@ -274,7 +274,7 @@
                 }
 
                 .textwidget {
-                  min-height: 120px
+                  min-height: 120px;
                 }
 
                 p {
@@ -284,7 +284,7 @@
 
                   strong {
                     display: block;
-                    font-family: "Encode Sans", sans-serif;
+                    font-family: 'Encode Sans', sans-serif;
                     font-weight: 400;
                     text-align: left;
                     text-transform: uppercase;
@@ -307,7 +307,7 @@
 #produktanfrage {
   h4 {
     color: $blau-dunkel;
-    font-family: "Encode Sans Expanded", sans-serif;
+    font-family: 'Encode Sans Expanded', sans-serif;
     text-transform: uppercase;
     text-align: center;
     display: block;
@@ -409,7 +409,7 @@
     }
 
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       width: 150px;
       height: 150px;
@@ -433,6 +433,16 @@
   }
 }
 
+svg[id^=sprech] {
+  text {
+    fill: #04204c !important;
+    font-family: 'Encode Sans Expanded', sans-serif !important;
+    font-size: 8px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.065em !important;
+  }
+}
+
 #sprech-03 svg {
   @include media-breakpoint-down(sm) {
     min-width: 240px;
@@ -447,7 +457,7 @@
   }
 }
 
-div[id^="sprech-0"] {
+div[id^='sprech-0'] {
   margin-bottom: -30px;
 }
 
@@ -565,4 +575,3 @@ ul.li-box-white {
     justify-content: center;
   }
 }
-
