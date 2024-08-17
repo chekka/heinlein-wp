@@ -1,4 +1,4 @@
-<div class="d-flex content--xxxl flex-column flex-lg-row m-auto justify-content-between align-items-center">
+<div class="d-flex content--xxxl flex-nowrap m-auto justify-content-between align-items-center">
 <?php 
 if ( have_posts() ):
 	while ( have_posts() ): the_post();
@@ -11,7 +11,7 @@ if ( have_posts() ):
 ?>
    <a href="<?php echo get_permalink(); ?>" class="loop-item d-flex flex-column bg--ivory-hell-2 mb-4 mb-lg-0">
       <?php echo wp_get_attachment_image( $image, 'more-footer', "", ["class" => "header-image", "alt"=>get_the_title()] ); ?>
-      <p class="p-3 ps-4 text-center text-uppercase"><?php the_title(); ?></p>
+      <p class="p-2 p-sm-3 text-center text-uppercase"><?php the_title(); ?></p>
    </a>
    <?php
    endwhile;

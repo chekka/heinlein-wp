@@ -188,7 +188,7 @@
           }
         }
       }
-      @include media-breakpoint-down(sm){
+      @include media-breakpoint-down(sm) {
         margin-top: 21px;
       }
     }
@@ -222,7 +222,7 @@
 
         .so-panel:nth-child(2) {
           margin-left: 21px !important;
-          margin-right: 21px !important;          
+          margin-right: 21px !important;
         }
       }
 
@@ -260,11 +260,23 @@
 }
 
 #product-footer {
+  @include media-breakpoint-down(sm) {
+    padding: 30px 0 !important;
+  }
+
   .loop-item {
     max-width: 350px;
     margin: 15px;
     border-radius: 0 $r3 0 $r3;
     overflow: hidden;
+    @include media-breakpoint-down(sm) {
+      margin: 0 7px !important;
+      border-radius: 0 $r1;
+
+      &:last-child {
+        display: none !important;
+      }
+    }
   }
 }
 

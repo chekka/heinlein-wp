@@ -12,6 +12,7 @@ html .page-template-page-landingpage {
       .header-text {
         top: 15px;
         left: 0;
+        padding-left: 3vw;
 
         h1 {
           font-family: Gotham, sans-serif;
@@ -55,7 +56,8 @@ html .page-template-page-landingpage {
     }
 
     #block-stickysocialbanner {
-      top: 77vh;
+      top: initial;
+      bottom: 0;
     }
 
     .header-icon {

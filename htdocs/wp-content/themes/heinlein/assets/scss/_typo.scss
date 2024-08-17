@@ -110,6 +110,11 @@ p {
   line-height: 1.955rem;
   margin-bottom: 1.5rem;
   letter-spacing: 0.0222em;
+
+  @include media-breakpoint-down(sm) {
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
 }
 
 .line-heigt-low p {

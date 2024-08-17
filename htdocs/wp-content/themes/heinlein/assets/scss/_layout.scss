@@ -122,6 +122,20 @@
   margin-right: auto;
 }
 
+.gap--sm--15 {
+  @include media-breakpoint-down(sm) {
+    &.two-col {
+     .panel-grid-cell {
+        width: calc(50% - ( 0.5 * 15px )) !important;
+
+        > div {
+          margin-bottom: 15px !important;
+        }
+      }
+    }
+  }
+}
+
 html {
   width: 100%;
   min-height: 100vh;

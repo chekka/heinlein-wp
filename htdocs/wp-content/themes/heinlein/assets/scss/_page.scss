@@ -6,12 +6,6 @@
   background-size: cover;
   background-position: center bottom;
 
-  @include media-breakpoint-down(sm) {
-    h1 {
-      max-width: 300px;
-    }
-  }
-
   position: fixed;
   top: 0;
   left: 0;
@@ -46,6 +40,31 @@
   
     @include media-breakpoint-down(sm) {
       display: none;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: 50vh;
+
+    + .panel-layout {
+      margin-top: 50vh;
+    }
+    
+    h1 {
+      max-width: 300px;
+    }
+  }
+}
+
+.home {
+  #page-header {
+    h1 {
+      @include media-breakpoint-down(lg) {
+        max-width: 500px;
+      }
+      @include media-breakpoint-down(sm) {
+        max-width: 360px;
+      }
     }
   }
 }

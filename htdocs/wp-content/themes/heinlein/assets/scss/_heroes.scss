@@ -4,6 +4,12 @@
 
 .landing-hero-box,
 .hero-box {
+  @include media-breakpoint-down(sm) {
+    transform: scale(.825);
+    padding: 20px 65px;
+    width: 310px;
+  }
+
   .title {
     text-transform: uppercase;
     font-family: Gotham;
@@ -277,20 +283,26 @@
   @media (max-width: 1599.99px) {
     margin: 0 auto 12vh;
   }
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 3vh;
+  }
 }
 
 #musterbox-box {
   max-width: 295px;
   margin-top: -100px;
-}
-
-.home #musterbox-box {
-  @media (min-width: 1600px) {
-    margin: -120px auto -120px;
-    transform: translateX(-610px);
+  @include media-breakpoint-down(xl){
+    margin-top: -150px;
+    margin-bottom: 100px;
   }
-  @media (max-width: 1599.99px) {
-    margin: -17vh auto 9vh;
+  @include media-breakpoint-down(sm){
+    transform: scale(.7);
+    margin-bottom: -130px;
+    margin-left: -20px;
+
+    img {
+      margin-top: -120px;
+    }
   }
 }
 

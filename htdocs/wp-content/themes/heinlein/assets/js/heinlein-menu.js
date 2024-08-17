@@ -19,6 +19,7 @@
     // Desktop Menu
     $('.hamburger').on('click', function(){
       $(this).toggleClass('open');
+      $('.site-header').toggleClass('active');
 
       if($(this).hasClass('open')){
         $('ul[id^=menu-mobile-menu]').slideDown();

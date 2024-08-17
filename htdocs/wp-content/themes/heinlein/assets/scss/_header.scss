@@ -19,13 +19,13 @@
     width: 240px;
 
     @include media-breakpoint-down(sm) {
-      right: 15px;
+      left: 50%;
       width: auto;
+      transform: translateX(-29px);
 
       img {
-        height: 68px;
-        width: 166px;
-        margin-top: -15px;
+        height: auto;
+        width: 210px;
       }
     }
 
@@ -34,7 +34,13 @@
     }
   }
 
-  &:hover,
+  &:hover {
+    @include media-breakpoint-up(sm) {
+      background-color: #fff;
+      box-shadow: 0 0 30px -12px rgba(0, 0, 0, 0.3);
+    }
+  }
+
   &.active {
     background-color: #fff;
     box-shadow: 0 0 30px -12px rgba(0, 0, 0, 0.3);
@@ -296,7 +302,7 @@
 
 #mobile-menu {
   line-height: 3em;
-  padding: 30px;
+  padding: 20px 30px 30px;
 
   & * {
     font-size: 16px;

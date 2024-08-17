@@ -80,8 +80,14 @@
 
   .hero {
     img {
-      width: 200px;
-      height: 240px;
+      border-radius: 0;
+      max-width: 200px;
+      max-height: 240px;
+
+      @include media-breakpoint-down(sm) {
+        max-width: 155px;
+      }
+
     }
   }
 }
