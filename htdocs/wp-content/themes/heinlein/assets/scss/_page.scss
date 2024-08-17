@@ -67,6 +67,14 @@
       }
     }
   }
+
+  #nachhaltigkeit {
+    h2 {
+      @include media-breakpoint-down(sm) {
+        max-width: 310px;
+      }
+    }
+  }
 }
 
 #pg-1526-7 > .panel-row-style {

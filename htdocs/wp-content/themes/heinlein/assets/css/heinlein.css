@@ -31868,8 +31868,9 @@ body.no-scroll {
   .landing-hero-box,
   .hero-box {
     transform: scale(0.825);
-    padding: 20px 65px;
-    width: 310px;
+    padding: 20px 50px;
+    width: 280px;
+    margin-left: 40px;
   }
 }
 .landing-hero-box .title,
@@ -32150,8 +32151,8 @@ body.no-scroll {
 }
 @media (max-width: 579.98px) {
   #musterbox-box {
-    transform: scale(0.7);
-    margin-bottom: -130px;
+    transform: scale(0.85);
+    margin-bottom: -110px;
     margin-left: -20px;
   }
   #musterbox-box img {
@@ -32292,6 +32293,11 @@ body.no-scroll {
 @media (max-width: 579.98px) {
   .home #page-header h1, .home #page-header .h1 {
     max-width: 360px;
+  }
+}
+@media (max-width: 579.98px) {
+  .home #nachhaltigkeit h2, .home #nachhaltigkeit .h2 {
+    max-width: 310px;
   }
 }
 
@@ -33275,6 +33281,11 @@ svg .bg--orange {
 }
 #support-boxes .panel-grid-cell:first-child .panel-first-child p {
   border-radius: 0 36px 0 36px;
+}
+@media (max-width: 579.98px) {
+  #support-boxes .panel-grid-cell:first-child .panel-first-child p {
+    hyphens: none;
+  }
 }
 #support-boxes .panel-grid-cell:first-child .panel-last-child p {
   border-radius: 36px 0 36px 0;

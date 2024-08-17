@@ -6,8 +6,9 @@
 .hero-box {
   @include media-breakpoint-down(sm) {
     transform: scale(.825);
-    padding: 20px 65px;
-    width: 310px;
+    padding: 20px 50px;
+    width: 280px;
+    margin-left: 40px;
   }
 
   .title {
@@ -296,8 +297,8 @@
     margin-bottom: 100px;
   }
   @include media-breakpoint-down(sm){
-    transform: scale(.7);
-    margin-bottom: -130px;
+    transform: scale(.85);
+    margin-bottom: -110px;
     margin-left: -20px;
 
     img {
