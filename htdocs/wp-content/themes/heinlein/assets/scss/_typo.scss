@@ -1,7 +1,7 @@
-@import "_variables";
+@import '_variables';
 
 body {
-  font-family: "Encode Sans Expanded", sans-serif !important;
+  font-family: 'Encode Sans Expanded', sans-serif !important;
   color: $blau-mittel-3;
   font-size: $font-size-default;
   line-height: 1.5;
@@ -53,7 +53,7 @@ a {
   color: $blau-dunkel;
 }
 
-a[class^="cta-"] {
+a[class^='cta-'] {
   font-weight: 700;
   color: #fff;
   font-size: 1.5rem;
@@ -127,6 +127,10 @@ p {
   hyphens: auto;
 }
 
+.no-hyphens {
+  hyphens: none;
+}
+
 p:last-child {
   margin-bottom: 0 !important;
 }
@@ -182,6 +186,21 @@ h3 {
   }
 }
 
+h1,
+.h1,
+h2,
+.h2 {
+  @include media-breakpoint-down(sm) {
+    font-size: 1.8rem;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+    margin: 0 auto 1em auto;
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+}
+
 .textwidget ul li {
   margin-bottom: 7px;
 
@@ -215,12 +234,12 @@ h3 {
       padding: 0;
 
       &:before {
-        content: "+";
+        content: '+';
         font-family: Gotham !important;
         font-weight: 800;
         left: -1.5em;
         font-size: 1em;
-        line-height: .5em;
+        line-height: 0.5em;
         top: 6px;
       }
       &:last-child {
@@ -229,7 +248,7 @@ h3 {
     }
 
     + p {
-      a:not([class^=cta]) {
+      a:not([class^='cta']) {
         font-family: Gotham;
         font-weight: 300;
         display: block;
@@ -266,7 +285,7 @@ h3 {
           white-space: nowrap;
         }
 
-        &[href*="classic"] {
+        &[href*='classic'] {
           background-color: $blau-mittel-1;
         }
       }
@@ -277,19 +296,4 @@ h3 {
 .bg--blau-dunkel > div > .widget_sow-editor * {
   color: #fff;
   border-bottom-color: #fff;
-}
-
-@media (max-width: 575px) {
-  h1,
-  .h1,
-  h2,
-  .h2 {
-    font-size: 1.8rem;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    margin: 0 auto 1em auto;
-    line-height: 1.2;
-    letter-spacing: 0;
-    text-transform: uppercase;
-  }
 }

@@ -13,7 +13,11 @@
       <style>         
          @media ( max-width: 580px ){
             #page-header { 
-               background-image: url( '<?php echo wp_get_attachment_image_url( $head_img_m, 'header-mobile' ); ?>' ); 
+               <?php if($head_img_m > 0): ?>
+               background-image:url('<?php echo wp_get_attachment_image_url( $head_img_m, 'header-mobile' ); ?>'); 
+               <?php else: ?>
+               background-image:url('<?php echo wp_get_attachment_image_url( $headerimg, 'header-mobile' ); ?>'); 
+               <?php endif; ?>
                background-position: center center;
             }
          }

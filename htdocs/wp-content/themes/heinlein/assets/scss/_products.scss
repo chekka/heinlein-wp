@@ -18,13 +18,18 @@
   background-size: cover;
   background-position: center bottom;
 
+  @include media-breakpoint-down(sm) {
+    height: 50vh;
+  }
+
   & + #produktanfrage {
     height: 150px;
     svg {
       transform: translateY(-150px);
 
       @include media-breakpoint-down(sm) {
-        transform: translateY(-180px);
+        transform: scale(.7) translateY(-180px);
+        margin-left: -30px;
       }
 
       polygon {
@@ -173,6 +178,9 @@
         padding-right: 12px;
       }
     }
+    &:last-child {
+      margin-top: 0;
+    }
     &:nth-child(3) {
       @include media-breakpoint-between(md, xxxl) {
         padding-left: 12px;
@@ -240,6 +248,35 @@
     }
   }
 
+  @include media-breakpoint-down(sm) {
+    * {
+      font-size: 11.5px !important; 
+    }
+    & > div:last-child {
+      .panel-cell-style {
+        div:nth-child(1) {
+          margin: 0 0 auto !important;
+        }
+        div:nth-child(2) {
+          margin: auto 0 !important;
+        }
+        div:nth-child(3) {
+          margin: auto 0 0 !important;
+        }
+      }
+    }
+    .panel-grid-cell:first-child:after {
+      right: 12px;
+      top: 50%;
+      left: initial;
+      bottom: initial;
+      transform: translate(0%, 0);
+      width: 50px;
+      height: 50px;
+      background-size: 36px;
+    }
+  }
+
   &.no-plus {
     .panel-grid-cell:first-child:after {
       content: none;
@@ -272,6 +309,7 @@
     @include media-breakpoint-down(sm) {
       margin: 0 7px !important;
       border-radius: 0 $r1;
+      font-size: .7em;
 
       &:last-child {
         display: none !important;
