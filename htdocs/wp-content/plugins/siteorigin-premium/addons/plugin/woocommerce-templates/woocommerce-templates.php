@@ -16,6 +16,8 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 	const POST_TYPE = 'so_wc_template';
 	private $so_wc_templates;
 	private $template_widget_groups;
+	private $has_shortcode = false;
+	private $preview_rendered = false;
 
 	public static function single() {
 		static $single;
@@ -87,6 +89,12 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 		add_theme_support( 'wc-product-gallery-zoom' );
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-slider' );
+
+		// WCTB Product Shortcode.
+		add_shortcode( 'sowctb', array( $this, 'shortcode' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'shortcode_enqueue_frontend_scripts' ) );
+		add_filter( 'body_class', array( $this, 'shortcode_add_body_class' ) );
+
 
 		// Add compatibility for the Black Studio TinyMCE plugin.
 		if ( class_exists( 'Black_Studio_TinyMCE_Admin' ) ) {
@@ -887,7 +895,7 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 
 		if ( ! empty( $override ) ) {
 			$so_wc_templates = get_option( 'so-wc-templates' );
-			$is_preview = ! empty( $_GET['siteorigin_premium_template_preview'] );
+			$is_preview = ! empty( $_GET['siteorigin_premium_template_preview'] ) && ! $this->preview_rendered;
 			$tab = ! empty( $_POST['tab'] ) ? $_POST['tab'] : '';
 
 			// If this an archive, we need to determine if should be showing the before/after product data loop.
@@ -915,7 +923,7 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 
 	public function get_woocommerce_template( $template, $template_name, $args, $template_path, $default_path ) {
 		$so_wc_templates = get_option( 'so-wc-templates' );
-		$is_preview = ! empty( $_GET['siteorigin_premium_template_preview'] );
+		$is_preview = ! empty( $_GET['siteorigin_premium_template_preview'] ) && ! $this->preview_rendered;
 
 		if ( is_cart() ) {
 			if ( preg_match( '/cart\/cart\.php/', $template ) ) {
@@ -992,7 +1000,7 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 			$template_id = ! empty( $so_wc_templates[ $template_name ]['active'] );
 		}
 
-		$is_preview = ! empty( $_GET['siteorigin_premium_template_preview'] );
+		$is_preview = ! empty( $_GET['siteorigin_premium_template_preview'] ) && ! $this->preview_rendered;
 
 		if ( file_exists( $template_path ) && ( $template_id || $is_preview ) ) {
 			$panels_data = get_post_meta( $template_id, 'panels_data', true );
@@ -1378,24 +1386,27 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 	 * @throws Exception
 	 */
 	public function create_preview_content( $content ) {
-		if ( ! empty( $_GET['siteorigin_premium_template_preview'] ) ) {
-			if ( isset( $_POST['tab'] ) ) {
-				if ( $_POST['tab'] == 'cart' ) {
-					if ( WC()->cart->is_empty() ) {
-						$products = wc_get_products( array( 'limit' => 1 ) );
+		if (
+			empty( $_GET['siteorigin_premium_template_preview'] ) ||
+			! isset( $_POST['tab'] )
+		) {
+			return $content;
+		}
 
-						if ( count( $products ) > 0 ) {
-							@WC()->cart->add_to_cart( $products[0]->id );
-						}
-						$this->tmp_cart_contents = WC()->cart->get_cart_contents();
-					}
-				} elseif ( $_POST['tab'] == 'cart-empty' ) {
-					$this->tmp_cart_contents = WC()->cart->get_cart_contents();
+		if ( $_POST['tab'] == 'cart' ) {
+			if ( WC()->cart->is_empty() ) {
+				$products = wc_get_products( array( 'limit' => 1 ) );
 
-					foreach ( $this->tmp_cart_contents as $tmp_cart_item_key => $tmp_cart_item ) {
-						WC()->cart->remove_cart_item( $tmp_cart_item_key );
-					}
+				if ( count( $products ) > 0 ) {
+					@WC()->cart->add_to_cart( $products[0]->id );
 				}
+				$this->tmp_cart_contents = WC()->cart->get_cart_contents();
+			}
+		} elseif ( $_POST['tab'] == 'cart-empty' ) {
+			$this->tmp_cart_contents = WC()->cart->get_cart_contents();
+
+			foreach ( $this->tmp_cart_contents as $tmp_cart_item_key => $tmp_cart_item ) {
+				WC()->cart->remove_cart_item( $tmp_cart_item_key );
 			}
 		}
 
@@ -1408,20 +1419,23 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 	 * @return mixed
 	 */
 	public function remove_preview_content( $content ) {
-		if ( ! empty( $_GET['siteorigin_premium_template_preview'] ) ) {
-			if ( isset( $_POST['tab'] ) ) {
-				if ( $_POST['tab'] == 'cart' ) {
-					if ( ! empty( $this->tmp_cart_contents ) ) {
-						foreach ( $this->tmp_cart_contents as $tmp_cart_item_key => $tmp_cart_item ) {
-							WC()->cart->remove_cart_item( $tmp_cart_item_key );
-						}
-					}
-				} elseif ( $_POST['tab'] == 'cart-empty' ) {
-					if ( ! empty( $this->tmp_cart_contents ) ) {
-						foreach ( $this->tmp_cart_contents as $tmp_cart_item_key => $tmp_cart_item ) {
-							WC()->cart->restore_cart_item( $tmp_cart_item_key );
-						}
-					}
+		if (
+			empty( $_GET['siteorigin_premium_template_preview'] ) ||
+			! isset( $_POST['tab'] )
+		) {
+			return $content;
+		}
+
+		if ( $_POST['tab'] == 'cart' ) {
+			if ( ! empty( $this->tmp_cart_contents ) ) {
+				foreach ( $this->tmp_cart_contents as $tmp_cart_item_key => $tmp_cart_item ) {
+					WC()->cart->remove_cart_item( $tmp_cart_item_key );
+				}
+			}
+		} elseif ( $_POST['tab'] == 'cart-empty' ) {
+			if ( ! empty( $this->tmp_cart_contents ) ) {
+				foreach ( $this->tmp_cart_contents as $tmp_cart_item_key => $tmp_cart_item ) {
+					WC()->cart->restore_cart_item( $tmp_cart_item_key );
 				}
 			}
 		}
@@ -1459,8 +1473,13 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 	public function set_active_template( $custom_template_id, $template_data ) {
 		// Check if the user is previewing the template.
 		if ( ! empty( $_GET['siteorigin_premium_template_preview'] ) ) {
-			$template_post_id = $_POST['preview_template_post_id'];
-		} else {
+			if ( ! $this->preview_rendered ) {
+				$this->preview_rendered = true;
+				$template_post_id = $_POST['preview_template_post_id'];
+			}
+		}
+
+		if ( empty( $template_post_id ) ) {
 			// Check if there's a valid custom template set.
 			$template_post_id = ! empty( get_post( $custom_template_id ) ) ? $custom_template_id : 0;
 
@@ -1475,5 +1494,129 @@ class SiteOrigin_Premium_Plugin_WooCommerce_Templates {
 
 			return $template_post_id;
 		}
+	}
+
+	/**
+	 * Detect if the WCTB Product Shortcode is present, and load WooCommerce scripts if necessary.
+	 */
+	public function shortcode_enqueue_frontend_scripts() {
+		// Get page content.
+		global $post;
+		if ( ! has_shortcode( $post->post_content, 'sowctb' ) ) {
+			return;
+		}
+
+		preg_match( '/\[sowctb[^\]]*product="(\d+)"[^\]]*\]/', $post->post_content, $matches );
+
+		if (
+			empty( $matches ) ||
+			empty( $matches[1] ) ||
+			! is_numeric( $matches[1] )
+		) {
+			return;
+		}
+
+		// Ensure the product is valid.
+		$product = wc_get_product( $matches[1] );
+		if ( empty( $product ) ) {
+			return;
+		}
+
+		$this->has_shortcode = true;
+
+		// Trick WC into loading scripts.
+		$post->post_content .= '[product_page';
+		WC_Frontend_Scripts::load_scripts();
+
+		wp_enqueue_style(
+			'so-wc-content-product-single',
+			plugin_dir_url( __FILE__ ) . 'templates/content-single-product/so-wc-content-product-single.css',
+			array(),
+			SITEORIGIN_PREMIUM_VERSION
+		);
+
+		do_action( 'siteorigin_premium_wctb_shortcode', $product );
+
+		// Remove the shortcode.
+		$post->post_content = substr( $post->post_content, 0, -13 );
+	}
+
+	/**
+	 * Add WooCommerce classes to the body tag to help with styling.
+	 *
+	 * @param array $classes The current body classes.
+	 * @return array The modified body classes.
+	 */
+	public function shortcode_add_body_class( $classes ) {
+		if ( $this->has_shortcode ) {
+			$classes[] = 'woocommerce';
+			$classes[] = 'woocommerce-page single';
+			$classes[] = 'single';
+		}
+
+		return $classes;
+	}
+
+	/**
+	 * Add the WooCommerce content product template builder shortcode.
+	 *
+	 * @param array $attr The shortcode attributes.
+	 * @return string The template output.
+	 */
+	public function shortcode( $attr ) {
+		$attributes = shortcode_atts( array(
+			'product' => '',
+			'template' => '',
+		), $attr );
+
+		if ( is_admin() ) {
+			// Return shortcode to help with enqueueing scripts on frontend.
+			return sprintf(
+				'[sowctb product="%d" template="%d"]',
+				(int) $attributes['product'],
+				(int) $attributes['template']
+			);
+		}
+
+		if (
+			empty( $attributes['product'] ) ||
+			! is_numeric( $attributes['product'] )
+		) {
+			return __( 'Please provide a product ID.', 'siteorigin-premium' );
+		}
+
+		if (
+			empty( $attributes['template'] ) ||
+			! is_numeric( $attributes['template'] )
+		) {
+			return __( 'Please provide a WCTB template id.', 'siteorigin-premium' );
+		}
+
+		global $wp_query, $product, $post;
+
+		// Prep template.
+		$initial_product = $product;
+		$initial_post = $post;
+
+		$product = wc_get_product( (int) $attributes['product'] );
+		$post = get_post( (int) $attributes['product'] );
+
+		$original_wp_query = $wp_query;
+		$wp_query = new WP_Query( array(
+			'p' => (int) $attributes['product'],
+			'post_type' => 'product'
+		) );
+
+		set_query_var( 'wctb_template_id', (int) $attributes['template'] );
+
+		ob_start();
+		require SiteOrigin_Premium::dir_path( __FILE__ ) . '/templates/content-single-product.php';
+
+		// Restore previous values.
+		$wp_query = $original_wp_query;
+		$product = $initial_product;
+		$post = $initial_post;
+
+		return ob_get_clean();
 	}
 }

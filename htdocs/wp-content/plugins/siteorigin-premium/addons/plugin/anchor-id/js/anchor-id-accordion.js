@@ -62,20 +62,8 @@ jQuery( function( $ ) {
 		$panel.trigger( 'click' );
 	} );
 
-	// To ensure Maximum Number of Simultaneous Open Panels works,
-	// we need to debounce updating the anchor id.
-	function debounce( func, wait ) {
-		let timeout;
 
-		return function( ...args ) {
-			const context = this;
-			clearTimeout( timeout );
-			timeout = setTimeout( () => func.apply( context, args ), wait );
-		};
-	}
-
-	$accordionPanelsWithAnchor.on( 'accordion_open accordion_close', debounce( async function( e, panel, $widget ) {
-
+	$accordionPanelsWithAnchor.on( 'accordion_open accordion_close', async function( e, panel, $widget ) {
 		if ( preventAnchorUpdate ) {
 			return false;
 		}
@@ -96,6 +84,21 @@ jQuery( function( $ ) {
 				return;
 			}
 
+
+			// Due to this Accordion not having an anchor id, we need to be sure there's no anchors present in the hash that shouldn't be.
+			const allClosedPanels = $panel.siblings( ':not(.sow-accordion-panel-open)' ).toArray();
+			const anchorsToRemove = allClosedPanels.map( function( panel ) {
+				return $( panel ).data( 'anchor-id' );
+			} );
+
+			if (anchorsToRemove.length) {
+				anchorsToRemove.forEach( function( anchor ) {
+					soPremium.anchorIds().delete(
+						anchor
+					);
+				} );
+			}
+
 			soPremium.anchorIds().update(
 				anchorId,
 				anchorId,
@@ -114,7 +117,7 @@ jQuery( function( $ ) {
 			anchorId,
 			anchors
 		);
-	}, 100 ) );
+	} );
 } );
 
 window.sowb = sowb;

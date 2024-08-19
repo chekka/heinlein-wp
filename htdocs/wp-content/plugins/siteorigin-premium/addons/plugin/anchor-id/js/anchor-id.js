@@ -79,6 +79,10 @@ jQuery( function( $ ) {
 			return false;
 		},
 
+		delete: function( anchor ) {
+			delete soPremiumAnchors[ anchor ];
+		},
+
 		update: function( anchor, id = false ) {
 			const anchorId = String( anchor );
 			const IdStr = String( id );
@@ -230,7 +234,7 @@ jQuery( function( $ ) {
 
 				// If we were able to find an active anchor, scroll to it.
 				if ( $firstAnchor ) {
-					let widgetId = $firstAnchor.attr( 'class' ).match( /so-widget-sow-([a-z-]+)/ );
+					let widgetId = $firstAnchor.attr( 'class' ).match( /sow-([a-z]+)-([a-z]+)/ );
 
 					// Determine the target element to scroll to.
 					let target;
@@ -241,7 +245,7 @@ jQuery( function( $ ) {
 							widgetId[1] === 'tabs'
 						)
 					) {
-						target = $firstAnchor.find( '.sow-accordion-panel[data-anchor-id="' + soPremiumAnchors[ firstAnchor ] + '"], .sow-tabs-tab[data-anchor-id="' + soPremiumAnchors[ firstAnchor ] + '"]' )
+						target = $firstAnchor.parent().find( '.sow-accordion-panel[data-anchor-id="' + soPremiumAnchors[ firstAnchor ] + '"], .sow-tabs-tab[data-anchor-id="' + soPremiumAnchors[ firstAnchor ] + '"]' )
 					} else {
 						target = $firstAnchor.parent().parent();
 					}

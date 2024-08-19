@@ -1,9 +1,9 @@
 === LiteSpeed Cache ===
 Contributors: LiteSpeedTech
 Tags: caching, optimize, performance, pagespeed, seo, image optimize, object cache, redis, memcached, database cleaner
-Requires at least: 4.0
+Requires at least: 4.9
 Tested up to: 6.6.1
-Stable tag: 6.4
+Stable tag: 6.4.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -248,7 +248,17 @@ For more detailed information about crawler setup, please see [the Crawler docum
 
 The vast majority of plugins and themes are compatible with LiteSpeed Cache. The most up-to-date compatibility information can be found [in our documentation](https://docs.litespeedtech.com/lscache/lscwp/thirdparty/)
 
+= How can I report security bugs? =
+
+You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team help validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/litespeed-cache)
+
 == Changelog ==
+
+= 6.4.1 - Aug 19 2024 =
+* ❗**Security** This release patches a security issue that may affect previous LSCWP versions since v1.9.
+* 🐞**Page Optimize** Fixed HTML minification returning blank page issue. (#706)
+* 🐞**CDN** Fixed a bug when Cloudflare status option is empty. (#684 #992174)
+* **Core** Minimum required WP version escalated to WP v4.9.
 
 = 6.4 - Aug 13 2024 =
 * **Cache** Corrected QC and LSADC cache hit status.

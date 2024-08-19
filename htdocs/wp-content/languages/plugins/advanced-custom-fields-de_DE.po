@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Advanced Custom Fields (ACF) - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-07-18 07:36:09+0000\n"
+"PO-Revision-Date: 2024-08-18 20:27:03+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -62,6 +62,18 @@ msgstr "Pinterest-Icon"
 #: includes/fields/class-acf-field-icon_picker.php:644
 msgid "Privacy Icon"
 msgstr "Datenschutz-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:686
+msgid "Text Page Icon"
+msgstr "Textseite-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:649
+msgid "Remove Icon"
+msgstr "Entfernen-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:630
+msgid "Pets Icon"
+msgstr "Haustiere-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:605
 msgid "Document Icon"
@@ -124,6 +136,18 @@ msgstr "Standard-Icon"
 msgid "Hourglass Icon"
 msgstr "Sanduhr-Icon"
 
+#: includes/fields/class-acf-field-icon_picker.php:575
+msgid "Crop Icon"
+msgstr "Zuschneiden-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:568
+msgid "Heading Icon"
+msgstr "Überschrift-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:626
+msgid "Palm Tree Icon"
+msgstr "Palme-Icon"
+
 #: includes/fields/class-acf-field-icon_picker.php:405
 msgid "Airplane Icon"
 msgstr "Flugzeug-Icon"
@@ -156,10 +180,6 @@ msgstr "Freunde-Icon"
 msgid "BuddyPress Icon"
 msgstr "BuddyPress-Icon"
 
-#: includes/fields/class-acf-field-icon_picker.php:440
-msgid "BbPress Icon"
-msgstr "BbPress-Icon"
-
 #: includes/fields/class-acf-field-icon_picker.php:434
 msgid "Beer Icon"
 msgstr "Bier-Icon"
@@ -180,16 +200,30 @@ msgstr "Button-Icon"
 msgid "Community Icon"
 msgstr "Community-Icon"
 
-#: includes/ajax/class-acf-ajax-upgrade.php:24
-msgid "Sorry, you don't have permission to do that."
-msgstr "Du bist leider nicht berechtigt, diese Aktion durchzuführen."
+#: includes/fields/class-acf-field-icon_picker.php:497
+msgid "Drumstick Icon"
+msgstr "Hähnchenkeule-Icon"
 
+#: includes/fields/class-acf-field-icon_picker.php:440
+msgid "bbPress Icon"
+msgstr "bbPress-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:480
+msgid "Play Icon"
+msgstr "Abspielen-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:481
+msgid "Repeat Icon"
+msgstr "Wiederholen-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:477
+msgid "Back Icon"
+msgstr "Zurück-Icon"
+
+#: includes/ajax/class-acf-ajax-check-screen.php:37
 #: includes/ajax/class-acf-ajax-local-json-diff.php:37
-msgid "Sorry, you are not allowed to do that."
-msgstr "Du bist leider nicht berechtigt, diese Aktion durchzuführen."
-
-#: includes/ajax/class-acf-ajax-check-screen.php:27
 #: includes/ajax/class-acf-ajax-query-users.php:32
+#: includes/ajax/class-acf-ajax-upgrade.php:24
 #: includes/ajax/class-acf-ajax-user-setting.php:38
 msgid "Sorry, you do not have permission to do that."
 msgstr "Du bist leider nicht berechtigt, diese Aktion durchzuführen."
@@ -691,6 +725,78 @@ msgstr "Dashboard-Icon"
 msgid "Carrot Icon"
 msgstr "Karotte-Icon"
 
+#: includes/fields/class-acf-field-icon_picker.php:397
+msgid "Post Icon"
+msgstr "Beitrag-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:395
+msgid "Page Icon"
+msgstr "Seite-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:23
+msgid "Icon Picker"
+msgstr "Icon-Wähler"
+
+#: includes/fields/class-acf-field-icon_picker.php:600
+msgid "Marker Icon"
+msgstr "Marker-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:593
+msgid "Left Right Icon"
+msgstr "Links-Rechts-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:548
+msgid "Feedback Icon"
+msgstr "Feedback-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:664
+msgid "Smiley Icon"
+msgstr "Smiley-Icon"
+
+#: includes/admin/views/escaped-html-notice.php:25
+msgid "Dismiss permanently"
+msgstr "Dauerhaft verwerfen"
+
+#: includes/fields/class-acf-field-icon_picker.php:531
+msgid "Underline Icon"
+msgstr "Unterstreichen-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:265
+msgid "String"
+msgstr "Zeichenfolge"
+
+#: includes/fields/class-acf-field-icon_picker.php:284
+msgid "No results found for that search term"
+msgstr "Es wurden keine Ergebnisse für diesen Suchbegriff gefunden"
+
+#: includes/fields/class-acf-field-icon_picker.php:194
+msgid "Browse Media Library"
+msgstr "Mediathek durchsuchen"
+
+#: includes/class-acf-site-health.php:689
+msgid "Registered ACF Forms"
+msgstr "Registrierte ACF-Formulare"
+
+#: includes/class-acf-site-health.php:534
+msgid "Registered Taxonomies (JSON)"
+msgstr "Registrierte Taxonomien (JSON)"
+
+#: includes/class-acf-site-health.php:510
+msgid "Registered Post Types (JSON)"
+msgstr "Registrierte Inhaltstypen (JSON)"
+
+#: includes/fields/class-acf-field-icon_picker.php:616
+msgid "Migrate Icon"
+msgstr "Migrieren-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:573
+msgid "ID Icon"
+msgstr "ID-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:596
+msgid "List View Icon"
+msgstr "Listenansicht-Icon"
+
 #: includes/Blocks/Bindings.php:35
 msgctxt "The core ACF block binding source name for fields on the current page"
 msgid "ACF Fields"
@@ -731,6 +837,10 @@ msgstr "Details&nbsp;anzeigen"
 #: includes/admin/views/escaped-html-notice.php:27
 msgid "Please contact your site administrator or developer for more details."
 msgstr "Bitte kontaktiere den Administrator oder Entwickler deiner Website für mehr Details."
+
+#: includes/admin/views/escaped-html-notice.php:5
+msgid "Learn&nbsp;more"
+msgstr "Mehr&nbsp;erfahren"
 
 #. translators: %1$s - The selector used  %2$s The field name  3%$s The parent
 #. function name
@@ -2869,7 +2979,7 @@ msgstr "Modal schließen"
 msgid "Field moved to other group"
 msgstr "Das Feld wurde zu einer anderen Gruppe verschoben"
 
-#: includes/api/api-template.php:1015
+#: includes/api/api-template.php:1027
 msgid "[ACF shortcode value disabled for preview]"
 msgstr "[Die Vorschau des ACF-Shortcodes wurde deaktiviert]"
 
@@ -3802,7 +3912,7 @@ msgstr "Aktualisieren"
 #: includes/admin/views/acf-field-group/conditional-logic.php:182
 #: includes/admin/views/acf-field-group/location-group.php:3
 #: includes/admin/views/acf-field-group/locations.php:35
-#: includes/api/api-helpers.php:2956 assets/build/js/acf-field-group.js:781
+#: includes/api/api-helpers.php:2981 assets/build/js/acf-field-group.js:781
 #: assets/build/js/acf-field-group.js:2427
 #: assets/build/js/acf-field-group.js:946
 #: assets/build/js/acf-field-group.js:2859
@@ -4573,27 +4683,27 @@ msgstr "Lokales JSON"
 msgid "(no title)"
 msgstr "(ohne Titel)"
 
-#: includes/api/api-helpers.php:2895
+#: includes/api/api-helpers.php:2920
 msgid "Image width must be at least %dpx."
 msgstr "Die Breite des Bildes muss mindestens %dpx sein."
 
-#: includes/api/api-helpers.php:2899
+#: includes/api/api-helpers.php:2924
 msgid "Image width must not exceed %dpx."
 msgstr "Die Breite des Bildes darf %dpx nicht überschreiten."
 
-#: includes/api/api-helpers.php:2911
+#: includes/api/api-helpers.php:2936
 msgid "Image height must be at least %dpx."
 msgstr "Die Höhe des Bildes muss mindestens %dpx sein."
 
-#: includes/api/api-helpers.php:2915
+#: includes/api/api-helpers.php:2940
 msgid "Image height must not exceed %dpx."
 msgstr "Die Höhe des Bild darf %dpx nicht überschreiten."
 
-#: includes/api/api-helpers.php:2928
+#: includes/api/api-helpers.php:2953
 msgid "File size must be at least %s."
 msgstr "Die Dateigröße muss mindestens %s sein."
 
-#: includes/api/api-helpers.php:2959
+#: includes/api/api-helpers.php:2984
 msgid "File type must be %s."
 msgstr "Der Dateityp muss %s sein."
 
@@ -4930,7 +5040,7 @@ msgstr "Galerie"
 msgid "Week Starts On"
 msgstr "Die Woche beginnt am"
 
-#: includes/api/api-helpers.php:2932
+#: includes/api/api-helpers.php:2957
 msgid "File size must not exceed %s."
 msgstr "Die Dateigröße darf nicht größer als %s sein."
 

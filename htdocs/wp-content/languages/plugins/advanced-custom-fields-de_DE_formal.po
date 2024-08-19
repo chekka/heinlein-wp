@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Advanced Custom Fields (ACF) - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-08-13 23:29:40+0000\n"
+"PO-Revision-Date: 2024-08-14 16:00:56+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -67,6 +67,18 @@ msgstr "Podio-Icon"
 msgid "Pinterest Icon"
 msgstr "Pinterest-Icon"
 
+#: includes/fields/class-acf-field-icon_picker.php:686
+msgid "Text Page Icon"
+msgstr "Textseite-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:649
+msgid "Remove Icon"
+msgstr "Entfernen-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:630
+msgid "Pets Icon"
+msgstr "Haustiere-Icon"
+
 #: includes/fields/class-acf-field-icon_picker.php:605
 msgid "Document Icon"
 msgstr "Dokument-Icon"
@@ -128,6 +140,14 @@ msgstr "Audio-Icon"
 msgid "PDF Icon"
 msgstr "PDF-Icon"
 
+#: includes/fields/class-acf-field-icon_picker.php:575
+msgid "Crop Icon"
+msgstr "Zuschneiden-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:626
+msgid "Palm Tree Icon"
+msgstr "Palme-Icon"
+
 #: includes/fields/class-acf-field-icon_picker.php:415
 msgid "Amazon Icon"
 msgstr "Amazon-Icon"
@@ -187,6 +207,18 @@ msgstr "bbPress-Icon"
 #: includes/fields/class-acf-field-icon_picker.php:497
 msgid "Drumstick Icon"
 msgstr "Hähnchenkeule-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:480
+msgid "Play Icon"
+msgstr "Abspielen-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:477
+msgid "Back Icon"
+msgstr "Zurück-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:455
+msgid "Calculator Icon"
+msgstr "Rechner-Icon"
 
 #: includes/fields/class-acf-field-icon_picker.php:695
 msgid "Twitter Icon"
@@ -660,6 +692,46 @@ msgstr "Dauerhaft verwerfen"
 #: includes/fields/class-acf-field-icon_picker.php:664
 msgid "Smiley Icon"
 msgstr "Smiley-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:395
+msgid "Page Icon"
+msgstr "Seite-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:265
+msgid "String"
+msgstr "Zeichenfolge"
+
+#: includes/fields/class-acf-field-icon_picker.php:284
+msgid "No results found for that search term"
+msgstr "Es wurden keine Ergebnisse für diesen Suchbegriff gefunden"
+
+#: includes/fields/class-acf-field-icon_picker.php:142
+msgid "Search icons..."
+msgstr "Icons durchsuchen …"
+
+#: includes/class-acf-site-health.php:689
+msgid "Registered ACF Forms"
+msgstr "Registrierte ACF-Formulare"
+
+#: includes/fields/class-acf-field-icon_picker.php:642
+msgid "Pressthis Icon"
+msgstr "Pressthis-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:573
+msgid "ID Icon"
+msgstr "ID-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:548
+msgid "Feedback Icon"
+msgstr "Feedback-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:507
+msgid "Contract Icon"
+msgstr "Vertrag-Icon"
+
+#: includes/fields/class-acf-field-icon_picker.php:430
+msgid "Art Icon"
+msgstr "Kunst-Icon"
 
 #: includes/admin/views/browse-fields-modal.php:8
 msgid "Renew PRO License"

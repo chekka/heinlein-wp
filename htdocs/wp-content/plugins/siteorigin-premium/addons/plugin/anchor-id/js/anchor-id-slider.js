@@ -16,12 +16,18 @@ jQuery( function( $ ) {
 			preventAnchorUpdate = false;
 		}, 200 );
 
-		setTimeout( async function() {
-			const slide = await soPremium.anchorIds().getAnchor( anchorId );
-			if ( slide ) {
-				$slider.cycle( 'goto', slide );
-			}
-		}, 100 );
+		$slidersWithAnchor.each( function() {
+			const $slider = $( this );
+			const anchorId = $slider.data( 'anchor-id' );
+
+			setTimeout( async function() {
+				const slide = await soPremium.anchorIds().getAnchor( anchorId );
+				if ( slide ) {
+					$slider.cycle( 'goto', slide );
+				}
+			}, 100 );
+		} );
+
 	}
 
 	// Handle external hash changes.
@@ -31,8 +37,9 @@ jQuery( function( $ ) {
 			preventAnchorUpdate = false;
 		}, 200 );
 
+		const slider = $( this );
 		setTimeout( function() {
-			$( this ).cycle( 'goto', slide );
+			slider.cycle( 'goto', slide );
 		}, 100 );
 	} );
 

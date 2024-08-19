@@ -76,6 +76,7 @@ class SiteOrigin_Premium_Utility {
 		) {
 			if (
 				isset( $premium_meta['general'] ) &&
+				isset( $premium_meta['general'][ $setting . '_on'] ) &&
 				empty( $premium_meta['general'][ $setting . '_on'] )
 			) {
 				// Post has been disabled via meta.

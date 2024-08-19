@@ -30,17 +30,17 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 
 		if ( class_exists( 'SiteOrigin_Widget_LayoutSlider_Widget' ) ) {
 			add_filter( 'siteorigin_widgets_form_options_sow-layout-slider', array( $this, 'add_slider_form_options' ), 10, 2 );
-			add_filter( 'siteorigin_widgets_frontend_scripts_sow-slider', array( $this, 'register_slider_js' ), 10, 1 );
+			add_filter( 'siteorigin_widgets_enqueue_frontend_scripts_sow-layout-slider', array( $this, 'slider_enqueue_js' ), 10, 1 );
 		}
 
 		if ( class_exists( 'SiteOrigin_Widget_Hero_Widget' ) ) {
 			add_filter( 'siteorigin_widgets_form_options_sow-hero', array( $this, 'add_slider_form_options' ), 10, 2 );
-			add_filter( 'siteorigin_widgets_frontend_scripts_sow-slider', array( $this, 'register_slider_js' ), 10, 1 );
+			add_filter( 'siteorigin_widgets_enqueue_frontend_scripts_sow-hero', array( $this, 'slider_enqueue_js' ), 10, 1 );
 		}
 
 		if ( class_exists( 'SiteOrigin_Widget_Slider_Widget' ) ) {
 			add_filter( 'siteorigin_widgets_form_options_sow-slider', array( $this, 'add_slider_form_options' ), 10, 2 );
-			add_filter( 'siteorigin_widgets_frontend_scripts_sow-slider', array( $this, 'register_slider_js' ), 10, 1 );
+			add_filter( 'siteorigin_widgets_enqueue_frontend_scripts_sow-slider', array( $this, 'slider_enqueue_js' ), 10, 1 );
 		}
 
 		if ( class_exists( 'SiteOrigin_Widget_Accordion_Widget' ) ) {
@@ -110,20 +110,23 @@ class SiteOrigin_Premium_Plugin_Anchor_Id {
 		return $form_options;
 	}
 
-	public function register_slider_js( $frontend_scripts ) {
-		return array_merge(
-			array(
-				'so-premium-anchor-id-slider' => array(
-					'so-premium-anchor-id-slider',
-					plugin_dir_url( __FILE__ ) . 'js/anchor-id-slider' . SITEORIGIN_PREMIUM_JS_SUFFIX . '.js',
-					array(
-						'so-premium-anchor-id',
-					),
-					SITEORIGIN_PREMIUM_VERSION,
+	public function slider_enqueue_js( $instance ) {
+		if (
+			is_array( $instance ) &&
+			! empty( $instance['controls'] ) &&
+			! empty( $instance['controls']['use_anchor_tags'] )
+		) {
+			wp_enqueue_script(
+				'so-premium-anchor-id-slider',
+				plugin_dir_url( __FILE__ ) . 'js/anchor-id-slider' . SITEORIGIN_PREMIUM_JS_SUFFIX . '.js',
+				array(
+					'so-premium-anchor-id',
+					'sow-slider-slider',
+					'sow-slider-slider-cycle2',
 				),
-			),
-			$frontend_scripts
-		);
+				SITEORIGIN_PREMIUM_VERSION
+			);
+		}
 	}
 
 	public function accordion_enqueue_js( $instance ) {

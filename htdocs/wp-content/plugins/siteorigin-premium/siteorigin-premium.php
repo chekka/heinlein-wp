@@ -2,7 +2,7 @@
 /*
 Plugin Name: SiteOrigin Premium
 Description: A collection of powerful addons that enhance every aspect of SiteOrigin plugins and themes.
-Version: 1.64.0
+Version: 1.65.0
 Requires at least: 4.7
 Tested up to: 6.6.1
 Requires PHP: 7.0.0
@@ -15,7 +15,7 @@ License: GPL3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 */
 
-define( 'SITEORIGIN_PREMIUM_VERSION', '1.64.0' );
+define( 'SITEORIGIN_PREMIUM_VERSION', '1.65.0' );
 define( 'SITEORIGIN_PREMIUM_JS_SUFFIX', '.min' );
 define( 'SITEORIGIN_PREMIUM_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SITEORIGIN_PREMIUM_URL', plugin_dir_url( __FILE__ ) );

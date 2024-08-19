@@ -250,6 +250,8 @@
       line-height: 1em;
       margin: 1px auto 1em;
       padding: 7px 12px; }
+      .siteorigin-premium-wrap .page-header .addons-search::placeholder {
+        font-size: 12px; }
       @media screen and (min-width: 960px) {
         .siteorigin-premium-wrap .page-header .addons-search {
           float: right;

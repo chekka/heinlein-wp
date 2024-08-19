@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Admin and Site Enhancements (ASE) - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-08-11 21:48:39+0000\n"
+"PO-Revision-Date: 2024-08-14 16:02:14+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -182,7 +182,7 @@ msgstr "Zuklappen"
 msgid "Expand"
 msgstr "Aufklappen"
 
-#: classes/class-settings-fields-render.php:488 settings.php:628
+#: classes/class-settings-fields-render.php:498 settings.php:628
 msgid "Select an Image"
 msgstr "Bild auswählen"
 
@@ -242,38 +242,38 @@ msgstr "Anzeige von _START_ to _END_ of _TOTAL_ Einträge"
 msgid "Showing 0 to 0 of 0 entries"
 msgstr "Es werden 0 bis 0 von 0 Einträgen angezeigt"
 
-#: classes/class-settings-fields-render.php:647
-#: classes/class-settings-fields-render.php:760
-#: classes/class-settings-fields-render.php:850
+#: classes/class-settings-fields-render.php:657
+#: classes/class-settings-fields-render.php:770
+#: classes/class-settings-fields-render.php:860
 msgid "Hide until toggled"
 msgstr "Ausblenden, bis umgeschaltet wird"
 
-#: classes/class-settings-fields-render.php:937
+#: classes/class-settings-fields-render.php:947
 msgid "IP Address<br />Last Username"
 msgstr "IP-Adresse<br />Letzter Benutzername"
 
-#: classes/class-settings-fields-render.php:940
+#: classes/class-settings-fields-render.php:950
 msgid "Attempts<br />Lockouts"
 msgstr "Versuche<br />Aussperrungen"
 
-#: classes/class-settings-fields-render.php:943
+#: classes/class-settings-fields-render.php:953
 msgid "Last Attempt On"
 msgstr "Letzter Versuch am"
 
-#: classes/class-settings-fields-render.php:1004
+#: classes/class-settings-fields-render.php:1014
 msgid "with AVIF support"
 msgstr "mit AVIF-Unterstützung"
 
-#: classes/class-settings-fields-render.php:1006
+#: classes/class-settings-fields-render.php:1016
 msgid "without AVIF support"
 msgstr "ohne AVIF-Unterstützung"
 
-#: classes/class-settings-fields-render.php:1011
-#: classes/class-settings-fields-render.php:1032
+#: classes/class-settings-fields-render.php:1021
+#: classes/class-settings-fields-render.php:1042
 msgid "Not available"
 msgstr "Nicht verfügbar"
 
-#: classes/class-settings-fields-render.php:1035
+#: classes/class-settings-fields-render.php:1045
 msgid "AVIF Support Status"
 msgstr "AVIF-Unterstützungsstatus"
 
@@ -324,11 +324,6 @@ msgstr "Neue Anmelde-URL:"
 #: classes/class-settings-sections-fields.php:1227
 msgid "Username only"
 msgstr "Nur Benutzername"
-
-#: classes/class-settings-sections-fields.php:1326
-#: classes/class-settings-sections-fields.php:1391
-msgid "Redirect to:"
-msgstr "Weiterleiten an:"
 
 #: classes/class-settings-sections-fields.php:1337
 #: classes/class-settings-sections-fields.php:1402
@@ -448,10 +443,6 @@ msgstr "<span class=\"field-sublabel sublabel-wide\">Passwort</span>"
 msgid "Send Now"
 msgstr "Jetzt senden"
 
-#: classes/class-settings-sections-fields.php:2987
-msgid "Multiple User Roles"
-msgstr "Mehrere Rollen"
-
 #: classes/class-settings-sections-fields.php:3070
 msgid "Password Protection"
 msgstr "Passwortschutz"
@@ -536,10 +527,6 @@ msgstr "Weiterleitung nach Anmeldung"
 msgid "Change Login URL"
 msgstr "Anmelde-URL ändern"
 
-#: classes/class-settings-sections-fields.php:581
-msgid "Hide Admin Notices"
-msgstr "Admin-Hinweise verbergen"
-
 #: classes/class-settings-sections-fields.php:184
 msgid "Content Order"
 msgstr "Reihenfolge der Inhalte"
@@ -605,6 +592,19 @@ msgstr "z. B. Backend"
 #: classes/class-settings-sections-fields.php:251
 msgid "SVG Upload"
 msgstr "SVG hochladen"
+
+#: classes/class-settings-sections-fields.php:1326
+#: classes/class-settings-sections-fields.php:1391
+msgid "Redirect to:"
+msgstr "Weiterleiten zu:"
+
+#: classes/class-settings-sections-fields.php:581
+msgid "Hide Admin Notices"
+msgstr "Administrator-Hinweise ausblenden"
+
+#: classes/class-settings-sections-fields.php:2987
+msgid "Multiple User Roles"
+msgstr "Mehrere Rollen"
 
 #. Plugin URI of the plugin
 #: admin-site-enhancements.php

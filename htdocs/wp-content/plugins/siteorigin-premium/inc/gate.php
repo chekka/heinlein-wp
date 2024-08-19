@@ -11,6 +11,9 @@ class SiteOrigin_Premium_Central_Gate {
 
 	public function add_gate_content() {
 		if ( ! empty( $this->is_panels ) ) {
+			if ( ! class_exists( 'SiteOrigin_Panels' ) ) {
+				esc_html_e( 'SiteOrigin Page Builder is required for this content to output.', 'siteorigin-premium' );
+			}
 			echo $this->content;
 		} else {
 			echo apply_filters( 'the_content', $this->content );
@@ -121,7 +124,7 @@ class SiteOrigin_Premium_Central_Gate {
 							),
 						),
 						'background_image_opacity' => array(
-							'label' => __( 'Background image opacity', 'so-widgets-bundle' ),
+							'label' => __( 'Background image opacity', 'siteorigin-premium' ),
 							'type' => 'slider',
 							'min' => 0,
 							'max' => 100,
@@ -295,7 +298,10 @@ class SiteOrigin_Premium_Central_Gate {
 	private function prepare_gate_content() {
 		// Layout Builder.
 		if ( $this->settings['content_type'] == 'layout' ) {
-			if ( ! class_exists( 'SiteOrigin_Panels' ) ) {
+			if (
+				! class_exists( 'SiteOrigin_Panels' ) ||
+				! class_exists( 'SiteOrigin_Widgets_Bundle' )
+			) {
 				return false;
 			}
 

@@ -175,8 +175,10 @@
 				<?php } ?>
 			</label>
 		</p>
-		<div>
-			<input type="submit" class="button button-primary" id="so-wc-save-template" value="<?php esc_attr_e( 'Save Template', 'siteorigin-premium' ); ?>" />
+		<div class="so-wc-actions">
+			<div>
+
+				<input type="submit" class="button button-primary" id="so-wc-save-template" value="<?php esc_attr_e( 'Save Template', 'siteorigin-premium' ); ?>" />
 			<?php if ( ! empty( $preview_url ) ) { ?>
 				<button
 					id="so-wc-preview-template"
@@ -191,6 +193,13 @@
 					href="<?php echo esc_url( $delete_url ); ?>"
 					class="button action-button"
 					title="<?php esc_attr_e( 'Delete Template', 'siteorigin-premium' ); ?>"><span class="dashicons dashicons-trash"></span></a>
+			<?php } ?>
+			</div>
+			<?php if ( $current_tab === 'content-single-product' ) { ?>
+				<label for="so-wc-shortcode"">
+					<?php esc_html_e( 'Template Shortcode:', 'siteorigin-premium' ); ?>
+					<input type="text" value='[sowctb template="<?php echo esc_attr( (int) $template_post_id ); ?>" product="ProductId"]' onclick="this.select();" readonly>
+				</label>
 			<?php } ?>
 		</div>
 		<input type="hidden" id="post_content" name="post_content"/>

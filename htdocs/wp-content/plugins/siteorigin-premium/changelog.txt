@@ -1,5 +1,37 @@
 == Changelog ==
 
+= 1.64.1 - 08 August 2024 =
+* Anchor ID: Fixed Anchor ID `Maximum Number of Simultaneous Open Panels` behavior.
+* Anchor ID: Improved Accordion and Tab on load scroll.
+* Related Posts: Optimized and improve taxonomy handling.
+* WooCommerce Template Builder: Prevented a potential Cart PHP 8 error.
+
+= 1.64.0 - 26 July 2024 =
+* Anchor ID: Added repeated hash prevention to the Anything Carousel, Sliders, and Tabs Widget.* Block Animations: Resolved a potential `TypeError` and accounted for elements not setup/loaded.
+* WooCommerce Template Builder: Moved After Archive output below pagination.
+* WooCommerce Template Builder: Added compatibility for the `TP Product Image Flipper for WC` plugin.
+* WooCommerce Template Builder: Added `so_woocommerce_templates_display_before/after_archive` filters.
+
+= 1.63.1 - 22 June 2024 =
+* Anchor ID: Improved Anything Carousel performance.
+* 404 Page: Restored theme page settings for the Display > Page option.
+
+= 1.63.0 - 17 June 2024 =
+* New Addon! 404 Page: Create custom 404 error pages with personalized design and content. Guide your user's website experience even during misdirections.
+* Anchor ID: Improved functionality with hash change, Accordion, Tab, and scroll fixes, better placement and loading.
+* Author Box: Added `Margin Top` setting to the built-in Recent Posts Widget.
+* Block Animations: Added min/max as required to prevent a possible console error.
+* Toggle Visibility: Resolved Yoast Open Graph conflict with metabox content block.
+* Updated Google Fonts.
+* Updated SiteOrigin Installer.
+
+= 1.62.1 - 26 May 2024 =
+* Anchor ID: Update to allow for an empty Accordion and Tabs ID field. An ID is recommended.
+* Block Animations: Resolved potential TypeError.
+* Toggle Visibility: Added `siteorigin_premium_toggle_visibility_metabox_block_message` to adjust logged out message.
+* Resolved potential blank addon settings modal.
+* Prevented auto-updates if disabled.
+
 = 1.62.0 - 19 May 2024 =
 * New Addon! Enhance contact form security with the Cloudflare Turnstile Addon, a user-friendly CAPTCHA alternative that helps prevent spam while maintaining seamless user interaction.
 * Anchor ID: Fixed ID detection.

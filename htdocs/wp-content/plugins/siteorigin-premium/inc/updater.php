@@ -76,6 +76,7 @@ class SiteOrigin_Premium_Updater {
 		add_action( 'admin_init', array( $this, 'show_changelog' ) );
 		add_filter( 'upgrader_pre_download', array( $this, 'maybe_shorten_edd_filename' ), 10, 4 );
 		add_filter( 'auto_update_plugin', array( $this, 'bypass_update_cache' ), 20, 2 );
+		add_action( 'upgrader_process_complete', array( $this, 'clear_update_cache_after_update' ), 10, 2 );
 	}
 
 	/**
@@ -727,6 +728,30 @@ class SiteOrigin_Premium_Updater {
 		}
 
 		return $version;
+	}
+
+	/**
+	 * Clears the update cache after an update.
+	 * This will prevent a situation where the plugin could be updated again.
+	 *
+	 * @param object $upgrader_object
+	 * @param array  $options
+	 */
+	public function clear_update_cache_after_update( $upgrader_object, $options ) {
+		if (
+			'update' !== $options['action'] ||
+			'plugin' !== $options['type']
+		) {
+			return;
+		}
+
+
+		foreach ( $options['plugins'] as $plugin ) {
+			if ( $this->name === $plugin ) {
+				$cache_key = $this->get_cache_key();
+				delete_transient( $cache_key );
+			}
+		}
 	}
 
 	/**

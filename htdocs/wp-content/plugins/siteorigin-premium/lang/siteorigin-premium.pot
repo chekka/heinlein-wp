@@ -620,123 +620,131 @@ msgstr ""
 msgid "Scripts and styles for this form are loading."
 msgstr ""
 
-#: inc/gate.php:29, addons/plugin/cpt-builder/cpt-builder.php:650
+#: inc/gate.php:15
+msgid "SiteOrigin Page Builder is required for this content to output."
+msgstr ""
+
+#: inc/gate.php:32, addons/plugin/cpt-builder/cpt-builder.php:650
 msgid "Title"
 msgstr ""
 
-#: inc/gate.php:30
+#: inc/gate.php:33
 msgid "The text used for the browser window title."
 msgstr ""
 
-#: inc/gate.php:38, addons/plugin/toggle-visibility/toggle-visibility.php:200, addons/plugin/toggle-visibility/toggle-visibility.php:572, addons/plugin/woocommerce-templates/templates/content-single-product/wc-template-single-meta.php:19
+#: inc/gate.php:41, addons/plugin/toggle-visibility/toggle-visibility.php:200, addons/plugin/toggle-visibility/toggle-visibility.php:572, addons/plugin/woocommerce-templates/templates/content-single-product/wc-template-single-meta.php:19
 msgid "Display"
 msgstr ""
 
-#: inc/gate.php:40, inc/gate.php:91, inc/gate.php:221, addons/plugin/accordion/accordion.php:124, addons/plugin/carousel/carousel.php:116, addons/plugin/embed-blocker/embed-blocker.php:323, addons/plugin/map-styles/map-styles.php:221, addons/plugin/tabs/tabs.php:122, addons/plugin/toggle-visibility/toggle-visibility.php:616
+#: inc/gate.php:43, inc/gate.php:94, inc/gate.php:224, addons/plugin/accordion/accordion.php:124, addons/plugin/carousel/carousel.php:116, addons/plugin/embed-blocker/embed-blocker.php:323, addons/plugin/map-styles/map-styles.php:221, addons/plugin/tabs/tabs.php:122, addons/plugin/toggle-visibility/toggle-visibility.php:616
 msgid "Text"
 msgstr ""
 
-#: inc/gate.php:41, inc/gate.php:74, addons/plugin/toggle-visibility/toggle-visibility.php:539
+#: inc/gate.php:44, inc/gate.php:77, addons/plugin/toggle-visibility/toggle-visibility.php:539
 msgid "Page"
 msgstr ""
 
-#: inc/gate.php:56, addons/plugin/contact-form-fields/contact-form-fields.php:172, addons/plugin/embed-blocker/embed-blocker.php:85, addons/plugin/toggle-visibility/toggle-visibility.php:617
+#: inc/gate.php:59, addons/plugin/contact-form-fields/contact-form-fields.php:172, addons/plugin/embed-blocker/embed-blocker.php:85, addons/plugin/toggle-visibility/toggle-visibility.php:617
 msgid "Layout Builder"
 msgstr ""
 
-#: inc/gate.php:62, addons/plugin/accordion/accordion.php:135, addons/plugin/carousel/carousel.php:127, addons/plugin/tabs/tabs.php:133, addons/plugin/toggle-visibility/toggle-visibility.php:538, addons/plugin/toggle-visibility/toggle-visibility.php:604, addons/plugin/toggle-visibility/toggle-visibility.php:626, addons/plugin/toggle-visibility/toggle-visibility.php:636
+#: inc/gate.php:65, addons/plugin/accordion/accordion.php:135, addons/plugin/carousel/carousel.php:127, addons/plugin/tabs/tabs.php:133, addons/plugin/toggle-visibility/toggle-visibility.php:538, addons/plugin/toggle-visibility/toggle-visibility.php:604, addons/plugin/toggle-visibility/toggle-visibility.php:626, addons/plugin/toggle-visibility/toggle-visibility.php:636
 msgid "Content"
 msgstr ""
 
-#: inc/gate.php:100, addons/plugin/embed-blocker/embed-blocker.php:267
+#: inc/gate.php:103, addons/plugin/embed-blocker/embed-blocker.php:267
 msgid "Design"
 msgstr ""
 
-#: inc/gate.php:105
+#: inc/gate.php:108
 msgid "Body"
 msgstr ""
 
-#: inc/gate.php:109, addons/plugin/embed-blocker/embed-blocker.php:283, addons/plugin/page-background/page-background.php:34
+#: inc/gate.php:112, addons/plugin/embed-blocker/embed-blocker.php:283, addons/plugin/page-background/page-background.php:34
 msgid "Background Color"
 msgstr ""
 
-#: inc/gate.php:114, addons/plugin/cta/cta.php:77, addons/plugin/embed-blocker/embed-blocker.php:289, addons/plugin/page-background/page-background.php:39
+#: inc/gate.php:117, addons/plugin/cta/cta.php:77, addons/plugin/embed-blocker/embed-blocker.php:289, addons/plugin/page-background/page-background.php:39
 msgid "Background Image"
 msgstr ""
 
-#: inc/gate.php:138
+#: inc/gate.php:127
+msgid "Background image opacity"
+msgstr ""
+
+#: inc/gate.php:141
 msgid "Content Container"
 msgstr ""
 
-#: inc/gate.php:142, addons/plugin/author-box/author-box.php:246, addons/plugin/related-posts/related-posts.php:136, addons/plugin/tabs/tabs.php:360
+#: inc/gate.php:145, addons/plugin/author-box/author-box.php:246, addons/plugin/related-posts/related-posts.php:136, addons/plugin/tabs/tabs.php:360
 msgid "Margin"
 msgstr ""
 
-#: inc/gate.php:145, inc/gate.php:160, inc/gate.php:175, addons/plugin/accordion/accordion.php:178, addons/plugin/accordion/accordion.php:254, addons/plugin/accordion/accordion.php:335, addons/plugin/accordion/accordion.php:384, addons/plugin/blog/blog.php:306, addons/plugin/cta/cta.php:128, addons/plugin/cta/cta.php:140, addons/plugin/embed-blocker/embed-blocker.php:306, addons/plugin/image-overlay/image-overlay.php:86, addons/plugin/image-overlay/image-overlay.php:165, addons/plugin/image-overlay/image-overlay.php:175, addons/plugin/related-posts/related-posts.php:141, addons/plugin/tabs/tabs.php:163, addons/plugin/tabs/tabs.php:199, addons/plugin/tabs/tabs.php:224, addons/plugin/tabs/tabs.php:237, addons/plugin/tabs/tabs.php:271, addons/plugin/tabs/tabs.php:294, addons/plugin/tabs/tabs.php:352, addons/plugin/tabs/tabs.php:364, addons/plugin/tabs/tabs.php:381, addons/plugin/tabs/tabs.php:429, addons/plugin/tooltip/tooltip.php:111
+#: inc/gate.php:148, inc/gate.php:163, inc/gate.php:178, addons/plugin/accordion/accordion.php:178, addons/plugin/accordion/accordion.php:254, addons/plugin/accordion/accordion.php:335, addons/plugin/accordion/accordion.php:384, addons/plugin/blog/blog.php:306, addons/plugin/cta/cta.php:128, addons/plugin/cta/cta.php:140, addons/plugin/embed-blocker/embed-blocker.php:306, addons/plugin/image-overlay/image-overlay.php:86, addons/plugin/image-overlay/image-overlay.php:165, addons/plugin/image-overlay/image-overlay.php:175, addons/plugin/related-posts/related-posts.php:141, addons/plugin/tabs/tabs.php:163, addons/plugin/tabs/tabs.php:199, addons/plugin/tabs/tabs.php:224, addons/plugin/tabs/tabs.php:237, addons/plugin/tabs/tabs.php:271, addons/plugin/tabs/tabs.php:294, addons/plugin/tabs/tabs.php:352, addons/plugin/tabs/tabs.php:364, addons/plugin/tabs/tabs.php:381, addons/plugin/tabs/tabs.php:429, addons/plugin/tooltip/tooltip.php:111
 msgid "Top"
 msgstr ""
 
-#: inc/gate.php:146, inc/gate.php:161, inc/gate.php:176, inc/gate.php:188, addons/plugin/accordion/accordion.php:182, addons/plugin/accordion/accordion.php:203, addons/plugin/accordion/accordion.php:213, addons/plugin/accordion/accordion.php:255, addons/plugin/accordion/accordion.php:295, addons/plugin/accordion/accordion.php:339, addons/plugin/accordion/accordion.php:385, addons/plugin/blog/blog.php:310, addons/plugin/cta/cta.php:144, addons/plugin/embed-blocker/embed-blocker.php:309, addons/plugin/image-overlay/image-overlay.php:87, addons/plugin/image-overlay/image-overlay.php:166, addons/plugin/image-overlay/image-overlay.php:186, addons/plugin/tabs/tabs.php:167, addons/plugin/tabs/tabs.php:200, addons/plugin/tabs/tabs.php:211, addons/plugin/tabs/tabs.php:238, addons/plugin/tabs/tabs.php:275, addons/plugin/tabs/tabs.php:298, addons/plugin/tabs/tabs.php:319, addons/plugin/tabs/tabs.php:353, addons/plugin/tabs/tabs.php:365, addons/plugin/tabs/tabs.php:385, addons/plugin/tabs/tabs.php:430
+#: inc/gate.php:149, inc/gate.php:164, inc/gate.php:179, inc/gate.php:191, addons/plugin/accordion/accordion.php:182, addons/plugin/accordion/accordion.php:203, addons/plugin/accordion/accordion.php:213, addons/plugin/accordion/accordion.php:255, addons/plugin/accordion/accordion.php:295, addons/plugin/accordion/accordion.php:339, addons/plugin/accordion/accordion.php:385, addons/plugin/blog/blog.php:310, addons/plugin/cta/cta.php:144, addons/plugin/embed-blocker/embed-blocker.php:309, addons/plugin/image-overlay/image-overlay.php:87, addons/plugin/image-overlay/image-overlay.php:166, addons/plugin/image-overlay/image-overlay.php:186, addons/plugin/tabs/tabs.php:167, addons/plugin/tabs/tabs.php:200, addons/plugin/tabs/tabs.php:211, addons/plugin/tabs/tabs.php:238, addons/plugin/tabs/tabs.php:275, addons/plugin/tabs/tabs.php:298, addons/plugin/tabs/tabs.php:319, addons/plugin/tabs/tabs.php:353, addons/plugin/tabs/tabs.php:365, addons/plugin/tabs/tabs.php:385, addons/plugin/tabs/tabs.php:430
 msgid "Right"
 msgstr ""
 
-#: inc/gate.php:147, inc/gate.php:162, inc/gate.php:177, addons/plugin/accordion/accordion.php:186, addons/plugin/accordion/accordion.php:256, addons/plugin/accordion/accordion.php:343, addons/plugin/accordion/accordion.php:386, addons/plugin/blog/blog.php:314, addons/plugin/cta/cta.php:130, addons/plugin/cta/cta.php:148, addons/plugin/embed-blocker/embed-blocker.php:312, addons/plugin/image-overlay/image-overlay.php:88, addons/plugin/image-overlay/image-overlay.php:167, addons/plugin/image-overlay/image-overlay.php:176, addons/plugin/related-posts/related-posts.php:144, addons/plugin/tabs/tabs.php:171, addons/plugin/tabs/tabs.php:201, addons/plugin/tabs/tabs.php:225, addons/plugin/tabs/tabs.php:239, addons/plugin/tabs/tabs.php:279, addons/plugin/tabs/tabs.php:302, addons/plugin/tabs/tabs.php:354, addons/plugin/tabs/tabs.php:366, addons/plugin/tabs/tabs.php:389, addons/plugin/tabs/tabs.php:431, addons/plugin/tooltip/tooltip.php:112
+#: inc/gate.php:150, inc/gate.php:165, inc/gate.php:180, addons/plugin/accordion/accordion.php:186, addons/plugin/accordion/accordion.php:256, addons/plugin/accordion/accordion.php:343, addons/plugin/accordion/accordion.php:386, addons/plugin/blog/blog.php:314, addons/plugin/cta/cta.php:130, addons/plugin/cta/cta.php:148, addons/plugin/embed-blocker/embed-blocker.php:312, addons/plugin/image-overlay/image-overlay.php:88, addons/plugin/image-overlay/image-overlay.php:167, addons/plugin/image-overlay/image-overlay.php:176, addons/plugin/related-posts/related-posts.php:144, addons/plugin/tabs/tabs.php:171, addons/plugin/tabs/tabs.php:201, addons/plugin/tabs/tabs.php:225, addons/plugin/tabs/tabs.php:239, addons/plugin/tabs/tabs.php:279, addons/plugin/tabs/tabs.php:302, addons/plugin/tabs/tabs.php:354, addons/plugin/tabs/tabs.php:366, addons/plugin/tabs/tabs.php:389, addons/plugin/tabs/tabs.php:431, addons/plugin/tooltip/tooltip.php:112
 msgid "Bottom"
 msgstr ""
 
-#: inc/gate.php:148, inc/gate.php:163, inc/gate.php:178, inc/gate.php:186, addons/plugin/accordion/accordion.php:190, addons/plugin/accordion/accordion.php:202, addons/plugin/accordion/accordion.php:212, addons/plugin/accordion/accordion.php:257, addons/plugin/accordion/accordion.php:294, addons/plugin/accordion/accordion.php:347, addons/plugin/accordion/accordion.php:387, addons/plugin/blog/blog.php:318, addons/plugin/cta/cta.php:152, addons/plugin/embed-blocker/embed-blocker.php:315, addons/plugin/image-overlay/image-overlay.php:89, addons/plugin/image-overlay/image-overlay.php:168, addons/plugin/image-overlay/image-overlay.php:185, addons/plugin/tabs/tabs.php:175, addons/plugin/tabs/tabs.php:202, addons/plugin/tabs/tabs.php:210, addons/plugin/tabs/tabs.php:240, addons/plugin/tabs/tabs.php:283, addons/plugin/tabs/tabs.php:306, addons/plugin/tabs/tabs.php:318, addons/plugin/tabs/tabs.php:355, addons/plugin/tabs/tabs.php:367, addons/plugin/tabs/tabs.php:393, addons/plugin/tabs/tabs.php:432
+#: inc/gate.php:151, inc/gate.php:166, inc/gate.php:181, inc/gate.php:189, addons/plugin/accordion/accordion.php:190, addons/plugin/accordion/accordion.php:202, addons/plugin/accordion/accordion.php:212, addons/plugin/accordion/accordion.php:257, addons/plugin/accordion/accordion.php:294, addons/plugin/accordion/accordion.php:347, addons/plugin/accordion/accordion.php:387, addons/plugin/blog/blog.php:318, addons/plugin/cta/cta.php:152, addons/plugin/embed-blocker/embed-blocker.php:315, addons/plugin/image-overlay/image-overlay.php:89, addons/plugin/image-overlay/image-overlay.php:168, addons/plugin/image-overlay/image-overlay.php:185, addons/plugin/tabs/tabs.php:175, addons/plugin/tabs/tabs.php:202, addons/plugin/tabs/tabs.php:210, addons/plugin/tabs/tabs.php:240, addons/plugin/tabs/tabs.php:283, addons/plugin/tabs/tabs.php:306, addons/plugin/tabs/tabs.php:318, addons/plugin/tabs/tabs.php:355, addons/plugin/tabs/tabs.php:367, addons/plugin/tabs/tabs.php:393, addons/plugin/tabs/tabs.php:432
 msgid "Left"
 msgstr ""
 
-#: inc/gate.php:153
+#: inc/gate.php:156
 msgid "Container Padding"
 msgstr ""
 
-#: inc/gate.php:157, addons/plugin/blog/blog.php:257, addons/plugin/embed-blocker/embed-blocker.php:297
+#: inc/gate.php:160, addons/plugin/blog/blog.php:257, addons/plugin/embed-blocker/embed-blocker.php:297
 msgid "Border Radius"
 msgstr ""
 
-#: inc/gate.php:168, addons/plugin/blog/blog.php:265, addons/plugin/map-styles/map-styles.php:201
+#: inc/gate.php:171, addons/plugin/blog/blog.php:265, addons/plugin/map-styles/map-styles.php:201
 msgid "Background"
 msgstr ""
 
-#: inc/gate.php:172, addons/plugin/accordion/accordion.php:250, addons/plugin/accordion/accordion.php:380, addons/plugin/blog/blog.php:302, addons/plugin/cta/cta.php:136, addons/plugin/embed-blocker/embed-blocker.php:302, addons/plugin/tabs/tabs.php:195, addons/plugin/tabs/tabs.php:348, addons/plugin/tabs/tabs.php:425
+#: inc/gate.php:175, addons/plugin/accordion/accordion.php:250, addons/plugin/accordion/accordion.php:380, addons/plugin/blog/blog.php:302, addons/plugin/cta/cta.php:136, addons/plugin/embed-blocker/embed-blocker.php:302, addons/plugin/tabs/tabs.php:195, addons/plugin/tabs/tabs.php:348, addons/plugin/tabs/tabs.php:425
 msgid "Padding"
 msgstr ""
 
-#: inc/gate.php:183
+#: inc/gate.php:186
 msgid "Alignment"
 msgstr ""
 
-#: inc/gate.php:187, addons/plugin/accordion/accordion.php:204, addons/plugin/cta/cta.php:129, addons/plugin/image-overlay/image-overlay.php:187, addons/plugin/tabs/tabs.php:212, addons/plugin/tooltip/tooltip.php:110
+#: inc/gate.php:190, addons/plugin/accordion/accordion.php:204, addons/plugin/cta/cta.php:129, addons/plugin/image-overlay/image-overlay.php:187, addons/plugin/tabs/tabs.php:212, addons/plugin/tooltip/tooltip.php:110
 msgid "Center"
 msgstr ""
 
-#: inc/gate.php:193
+#: inc/gate.php:196
 msgid "Width"
 msgstr ""
 
-#: inc/gate.php:200
+#: inc/gate.php:203
 msgid "Heading"
 msgstr ""
 
-#: inc/gate.php:204, inc/gate.php:225, addons/plugin/accordion/accordion.php:357, addons/plugin/blog/blog.php:273, addons/plugin/embed-blocker/embed-blocker.php:327, addons/plugin/related-posts/related-posts.php:111, addons/plugin/tabs/tabs.php:325, addons/plugin/tabs/tabs.php:403
+#: inc/gate.php:207, inc/gate.php:228, addons/plugin/accordion/accordion.php:357, addons/plugin/blog/blog.php:273, addons/plugin/embed-blocker/embed-blocker.php:327, addons/plugin/related-posts/related-posts.php:111, addons/plugin/tabs/tabs.php:325, addons/plugin/tabs/tabs.php:403
 msgid "Font"
 msgstr ""
 
-#: inc/gate.php:209, inc/gate.php:230, addons/plugin/blog/blog.php:277, addons/plugin/related-posts/related-posts.php:115
+#: inc/gate.php:212, inc/gate.php:233, addons/plugin/blog/blog.php:277, addons/plugin/related-posts/related-posts.php:115
 msgid "Font Size"
 msgstr ""
 
-#: inc/gate.php:214, inc/gate.php:235, addons/plugin/carousel/carousel.php:235, addons/plugin/custom-palette/custom-palette.php:38, addons/plugin/custom-palette/custom-palette.php:69, addons/plugin/embed-blocker/embed-blocker.php:331, addons/plugin/image-shape/image-shape.php:86, addons/plugin/image-shape/image-shape.php:155, addons/plugin/related-posts/related-posts.php:120
+#: inc/gate.php:217, inc/gate.php:238, addons/plugin/carousel/carousel.php:235, addons/plugin/custom-palette/custom-palette.php:38, addons/plugin/custom-palette/custom-palette.php:69, addons/plugin/embed-blocker/embed-blocker.php:331, addons/plugin/image-shape/image-shape.php:86, addons/plugin/image-shape/image-shape.php:155, addons/plugin/related-posts/related-posts.php:120
 msgid "Color"
 msgstr ""
 
-#: inc/gate.php:240, addons/plugin/blog/blog.php:292, addons/plugin/embed-blocker/embed-blocker.php:340
+#: inc/gate.php:243, addons/plugin/blog/blog.php:292, addons/plugin/embed-blocker/embed-blocker.php:340
 msgid "Link Color"
 msgstr ""
 
-#: inc/gate.php:244, addons/plugin/blog/blog.php:297, addons/plugin/embed-blocker/embed-blocker.php:345
+#: inc/gate.php:247, addons/plugin/blog/blog.php:297, addons/plugin/embed-blocker/embed-blocker.php:345
 msgid "Link Hover Color"
 msgstr ""
 
@@ -765,40 +773,40 @@ msgid "There was a problem with activating your SiteOrigin Premium license key."
 msgstr ""
 
 #. translators: the plugin name.
-#: inc/updater.php:364
+#: inc/updater.php:365
 msgid "There is a new version of %1$s available."
 msgstr ""
 
-#: inc/updater.php:370
+#: inc/updater.php:371
 msgid "Contact your network administrator to install the update."
 msgstr ""
 
 #. translators: 1. opening anchor tag, do not translate 2. the new plugin version 3. closing anchor tag, do not translate.
-#: inc/updater.php:375
+#: inc/updater.php:376
 msgid "%1$sView version %2$s details%3$s."
 msgstr ""
 
-#: inc/updater.php:383
+#: inc/updater.php:384
 msgid "%1$sView version %2$s details%3$s or %4$supdate now%5$s."
 msgstr ""
 
-#: inc/updater.php:394
+#: inc/updater.php:395
 msgid "Update now."
 msgstr ""
 
-#: inc/updater.php:617
+#: inc/updater.php:618
 msgid "You do not have permission to install plugin updates"
 msgstr ""
 
-#: inc/updater.php:617
+#: inc/updater.php:618
 msgid "Error"
 msgstr ""
 
-#: inc/updater.php:815
+#: inc/updater.php:840
 msgid "Invalid token supplied"
 msgstr ""
 
-#: inc/updater.php:822
+#: inc/updater.php:847
 msgid "License key expired or not activated for this URL. Please contact %s for help."
 msgstr ""
 
@@ -1051,7 +1059,7 @@ msgstr ""
 msgid "Add slide anchor ID in the URL"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:102, addons/plugin/anchor-id/anchor-id.php:194
+#: addons/plugin/anchor-id/anchor-id.php:102, addons/plugin/anchor-id/anchor-id.php:197
 msgid "Anchor ID"
 msgstr ""
 
@@ -1059,23 +1067,23 @@ msgstr ""
 msgid "An ID is required for the anchor to function."
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:183
+#: addons/plugin/anchor-id/anchor-id.php:186
 msgid "Add anchor ID in the URL"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:195
+#: addons/plugin/anchor-id/anchor-id.php:198
 msgid "Set a custom anchor ID."
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:233
+#: addons/plugin/anchor-id/anchor-id.php:236
 msgid "Add item anchor id in the URL"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:245
+#: addons/plugin/anchor-id/anchor-id.php:248
 msgid "Carousel anchor"
 msgstr ""
 
-#: addons/plugin/anchor-id/anchor-id.php:246
+#: addons/plugin/anchor-id/anchor-id.php:249
 msgid "Optionally set a custom anchor id. Required if the widget title field is empty."
 msgstr ""
 
@@ -2878,7 +2886,7 @@ msgstr ""
 msgid "Number of Related Posts"
 msgstr ""
 
-#: addons/plugin/related-posts/related-posts.php:365
+#: addons/plugin/related-posts/related-posts.php:404
 msgid "Display Related Posts"
 msgstr ""
 
@@ -2974,7 +2982,7 @@ msgstr ""
 msgid "Tabs mobile position"
 msgstr ""
 
-#: addons/plugin/tabs/tabs.php:252, addons/plugin/woocommerce-templates/woocommerce-templates.php:1223, addons/plugin/woocommerce-templates/woocommerce-templates.php:1265, addons/plugin/woocommerce-templates/woocommerce-templates.php:1321
+#: addons/plugin/tabs/tabs.php:252, addons/plugin/woocommerce-templates/woocommerce-templates.php:1231, addons/plugin/woocommerce-templates/woocommerce-templates.php:1273, addons/plugin/woocommerce-templates/woocommerce-templates.php:1329
 msgid "Default"
 msgstr ""
 
@@ -3258,148 +3266,156 @@ msgstr ""
 msgid "Create tailored templates for WooCommerce, customizing Product, Archives, and Checkout pages to boost sales and engagement."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:219, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:24, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:68, addons/plugin/woocommerce-templates/templates/thankyou/wc-thankyou-order-details-table.php:34
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:227, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:24, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:69, addons/plugin/woocommerce-templates/templates/thankyou/wc-thankyou-order-details-table.php:34
 msgid "Product"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:223
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:231
 msgid "Product Archive"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:227
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:235
 msgid "Shop"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:231
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:239
 msgid "Cart"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:235
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:243
 msgid "Empty Cart"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:239
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:247
 msgid "Checkout"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:243, addons/plugin/woocommerce-templates/woocommerce-templates.php:261
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:251, addons/plugin/woocommerce-templates/woocommerce-templates.php:269
 msgid "Thank You"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:247
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:255
 msgid "My Account"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:314, addons/plugin/woocommerce-templates/woocommerce-templates.php:741
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:322, addons/plugin/woocommerce-templates/woocommerce-templates.php:749
 msgid "SiteOrigin WooCommerce Layout"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:362
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:370
 msgid "WooCommerce Template"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:376, addons/plugin/woocommerce-templates/woocommerce-templates.php:377, addons/plugin/woocommerce-templates/inc/admin-wc-template-builder.php:19
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:384, addons/plugin/woocommerce-templates/woocommerce-templates.php:385, addons/plugin/woocommerce-templates/inc/admin-wc-template-builder.php:19
 msgid "WooCommerce Template Builder"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:449
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:457
 msgid "Please install and activate %sWooCommerce%s before using this addon."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:466
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:474
 msgid "The SiteOrigin WooCommerce Template Builder addon isn't compatible with this version of WooCommerce. Please update to WooCommerce 3.4.0, or later, before using this addon."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:478
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:486
 msgid "Please install and activate %sSiteOrigin Page Builder%s before using this addon."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:500
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:508
 msgid "Please install and activate the %sSiteOrigin Widgets Bundle%s plugin before using this addon."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:607
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:615
 msgid "The templates to be used when viewing single product pages. Set one as the default and it will be used for all single product pages. Layouts can also be enabled for individual products by going to Products > Edit product and selecting the template from the Product template meta box dropdown."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:610
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:618
 msgid "The templates to be used for each product when viewing an archive page. Set one as the default and it will be used for the Shop page and any other product archive pages. Layouts can also be enabled for individual product archives by going to Products > Categories > Edit category and selecting the template from the Product archive template dropdown."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:613
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:621
 msgid "The template to be used when viewing the Shop page. This layout allows customization of position and size of the product loop, and placing widgets around the product loop."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:616
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:624
 msgid "The template to be used when viewing a cart which contains products."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:619
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:627
 msgid "The template to be used when viewing an empty cart."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:622
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:630
 msgid "The template to be used for the Checkout page."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:625
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:633
 msgid "The template to be used for the Thank you page which appears after an order is submitted."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:628
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:636
 msgid "The template to be used for the My account page."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:674
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:682
 msgid "Permanently delete this template?"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1103
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1111
 msgid "WooCommerce Product"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1110
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1118
 msgid "WooCommerce Product Archive"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1117
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1125
 msgid "WooCommerce Shop"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1124
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1132
 msgid "WooCommerce Cart"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1131
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1139
 msgid "WooCommerce Empty Cart"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1138
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1146
 msgid "WooCommerce Checkout"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1145
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1153
 msgid "WooCommerce Thank You"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1152
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1160
 msgid "WooCommerce My Account"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1200
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1208
 msgid "Clone: WooCommerce Templates"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1209
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1217
 msgid "Product template"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1262
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1270
 msgid "Template:"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1312, addons/plugin/woocommerce-templates/woocommerce-templates.php:1341
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1320, addons/plugin/woocommerce-templates/woocommerce-templates.php:1349
 msgid "Product Archive Template"
+msgstr ""
+
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1585
+msgid "Please provide a product ID."
+msgstr ""
+
+#: addons/plugin/woocommerce-templates/woocommerce-templates.php:1592
+msgid "Please provide a WCTB template id."
 msgstr ""
 
 #: addons/theme/ajax-comments/ajax-comments.php:3
@@ -3690,27 +3706,31 @@ msgstr ""
 msgid "Enable Template"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/inc/admin-wc-template-builder.php:179
+#: addons/plugin/woocommerce-templates/inc/admin-wc-template-builder.php:181
 msgid "Save Template"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/inc/admin-wc-template-builder.php:186
+#: addons/plugin/woocommerce-templates/inc/admin-wc-template-builder.php:188
 msgid "Preview template"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/inc/admin-wc-template-builder.php:193
+#: addons/plugin/woocommerce-templates/inc/admin-wc-template-builder.php:195
 msgid "Delete Template"
 msgstr ""
 
 #: addons/plugin/woocommerce-templates/inc/admin-wc-template-builder.php:200
+msgid "Template Shortcode:"
+msgstr ""
+
+#: addons/plugin/woocommerce-templates/inc/admin-wc-template-builder.php:209
 msgid "This interface requires Javascript"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/inc/admin-wc-template-builder.php:206
+#: addons/plugin/woocommerce-templates/inc/admin-wc-template-builder.php:215
 msgid "SiteOrigin WooCommerce Template Preview"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/inc/admin-wc-template-builder.php:217
+#: addons/plugin/woocommerce-templates/inc/admin-wc-template-builder.php:226
 msgid "Close"
 msgstr ""
 
@@ -3738,39 +3758,39 @@ msgstr ""
 msgid "Display the cart form."
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:25, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:88
+#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:25, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:89
 msgid "Price"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:26, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:94
+#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:26, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:95
 msgid "Quantity"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:27, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:112, addons/plugin/woocommerce-templates/templates/thankyou/wc-thankyou-order-details-table.php:35
+#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:27, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:113, addons/plugin/woocommerce-templates/templates/thankyou/wc-thankyou-order-details-table.php:35
 msgid "Total"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:49
+#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:50
 msgid "Remove this item"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:83
+#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:84
 msgid "Available on backorder"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:130
+#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:132
 msgid "Coupon:"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:130
+#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:132
 msgid "Coupon code"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:130, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:130
+#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:132, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:132
 msgid "Apply coupon"
 msgstr ""
 
-#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:135, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:135
+#: addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:137, addons/plugin/woocommerce-templates/templates/cart/wc-cart-form.php:137
 msgid "Update cart"
 msgstr ""
 

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Complianz &#8211; GDPR/CCPA Cookie Consent - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-08-11 16:28:48+0000\n"
+"PO-Revision-Date: 2024-08-19 17:02:05+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2697,6 +2697,13 @@ msgstr "Aufgrund der französischen CNIL-Richtlinien empfehlen wir die Verwendun
 msgid "Placeholders"
 msgstr "Platzhalter"
 
+#: settings/config/blocks.php:60 settings/build/4570.8ff8044d798586ef5869.js:1
+#: settings/build/7907.d56bd299d045997b6fd9.js:1
+#: settings/build/8596.a0b7995a70aa716dcb7b.js:1
+#: settings/src/Dashboard/OtherPlugins/OtherPluginsHeader.js:6
+msgid "Other Plugins"
+msgstr "Andere Plugins"
+
 #: settings/config/blocks.php:48
 msgid "Tips & Tricks"
 msgstr "Tipps & Tricks"
@@ -2757,6 +2764,12 @@ msgstr "Wenn Sie diese Option aktivieren, wird unsere Methode des Einwilligungsn
 #: settings/config/fields/wizard/general.php:343
 msgid "Extend Proof of Consent with Records of Consent"
 msgstr "Erweitern Sie den Nachweis einer Zustimmung mit Aufzeichnungen über die Zustimmung"
+
+#: cookiebanner/class-cookiebanner.php:853
+#: settings/build/3078.ec6e0b838ee9e21a27ed.js:1
+#: settings/src/Settings/RecordsOfConsent/RecordsOfConsentControl.js:195
+msgid "No Warning"
+msgstr "Keine Warnung"
 
 #: cookiebanner/class-cookiebanner.php:849
 msgid "Do Not Track"
@@ -3801,6 +3814,11 @@ msgstr "Familienstand"
 #: config/purpose.php:28
 msgid "Social Media accounts"
 msgstr "Social-Media-Konten"
+
+#: config/purpose.php:21 settings/build/3078.ec6e0b838ee9e21a27ed.js:1
+#: settings/src/Settings/RecordsOfConsent/RecordsOfConsentControl.js:225
+msgid "IP Address"
+msgstr "IP-Adresse"
 
 #: settings/config/fields/general-settings/settings.php:95
 msgid "Email address"

@@ -214,24 +214,26 @@ class SiteOrigin_Premium_Plugin_Related_Posts {
 			$addon_query['tax_query'] = [];
 
 			foreach ( $taxonomies as $taxonomy ) {
-				$terms = wp_get_post_terms( $post->ID, $taxonomy );
+				$terms = wp_get_post_terms(
+					$post->ID,
+					$taxonomy,
+					array(
+						'fields' => 'ids'
+					)
+				);
 
 				if ( ! empty( $terms ) ) {
 					$addon_query['tax_query'][] = array(
 						'taxonomy' => $taxonomy,
 						'field' => 'term_id',
-						'terms' => wp_list_pluck( $terms, 'term_id' ),
+						'terms' => $terms,
 					);
 				}
 			}
-		}
 
-		if (
-			! empty( $addon_query['tax_query'] ) &&
-			count( $addon_query['tax_query'] ) == 1
-		) {
-			// We have nothing to filter by so far. Let's search for posts with similar titles.
-			$addon_query['s'] = $post->post_title;
+			if ( ! empty( $addon_query['tax_query'] ) ) {
+				$addon_query['tax_query']['relation'] = $query['tax_query_relation'] ?? 'OR';
+			}
 		}
 
 		$query = apply_filters(
@@ -252,6 +254,43 @@ class SiteOrigin_Premium_Plugin_Related_Posts {
 
 		$template_variables['settings']['pagination'] = 'disabled';
 		$template_variables['settings']['read_more'] = true;
+
+		$remaining_posts = count( $template_variables['posts']->posts ) - (int) $template_variables['posts']->query['posts_per_page'];
+		if ( $remaining_posts > 0 ) {
+			// There's still room for more posts. Let's fetch some more using the post title.
+			$post = get_post();
+			$title_search_args = array(
+				'post_type' => $post->post_type,
+				's' => $post->post_title,
+				'posts_per_page' => $remaining_posts,
+				'fields' => 'ids',
+				'post__not_in' => get_option( 'sticky_posts' ),
+			);
+
+			$title_search_query = new WP_Query( $title_search_args );
+			$title_search_posts_ids = $title_search_query->posts;
+
+			// Extract post ids from from original query.
+			$taxonomy_posts_ids = array_map( function( $post ) {
+				return $post->ID;
+			}, $template_variables['posts']->posts );
+
+			$combined_posts_ids = array_unique(
+				array_merge(
+					$taxonomy_posts_ids,
+					$title_search_posts_ids
+				)
+			);
+
+			if ( ! empty( $combined_posts_ids ) ) {
+				// Let's re-query the posts so we can display them using the loop.
+				$template_variables['posts'] = new WP_Query( array(
+					'post_type' => $post->post_type,
+					'post__in' => $combined_posts_ids,
+					'posts_per_page' => -1,
+				) );
+			}
+		}
 
 		return $template_variables;
 	}

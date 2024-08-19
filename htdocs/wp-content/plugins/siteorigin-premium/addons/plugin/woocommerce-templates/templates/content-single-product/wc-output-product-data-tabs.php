@@ -107,8 +107,11 @@ class SiteOrigin_Premium_WooCommerce_Output_Product_Data_Tabs extends SiteOrigin
 
 			foreach ( $tabs as $name => $settings ) {
 				if (
-					isset( $settings['status'] ) &&
-					! $settings['status']
+					! is_array( $settings ) ||
+					(
+						isset( $settings['status'] ) &&
+						! $settings['status']
+					)
 				) {
 					$this->changes['remove'][ $name ] = true;
 					continue;
@@ -118,26 +121,43 @@ class SiteOrigin_Premium_WooCommerce_Output_Product_Data_Tabs extends SiteOrigin
 					$this->changes['rename'][ $name ] = $settings['label'];
 				}
 
-				$this->changes['order'][ $name ] = $settings['order'];
+				if ( ! empty( $settings['order'] ) ) {
+					$this->changes['order'][ $name ] = $settings['order'];
+				}
+
 			}
 		}
 	}
 
 	public function add_changes( $tabs ) {
-		if ( ! empty( $this->changes ) ) {
-			foreach ( $tabs as $name => $data ) {
-				if ( isset( $this->changes['remove'] ) && isset( $this->changes['remove'][ $name ] ) ) {
-					$this->changes['remove'][ $name ] = $tabs[ $name ];
-					unset( $tabs[ $name ] );
-					continue;
-				}
+		if (
+			empty( $tabs ) ||
+			empty( $this->changes )
+		) {
+			return $tabs;
+		}
 
-				if ( isset( $this->changes['rename'] ) && isset( $this->changes['rename'][ $name ] ) ) {
-					$old_title = $tabs[ $name ]['title'];
-					$tabs[ $name ]['title'] = $this->changes['rename'][ $name ];
-					$this->changes['rename'][ $name ] = $old_title;
-				}
+		foreach ( $tabs as $name => $data ) {
+			if (
+				isset( $this->changes['remove'] ) &&
+				is_array( $this->changes['remove'] ) &&
+				isset( $this->changes['remove'][ $name ] )
+			) {
+				$this->changes['remove'][ $name ] = $tabs[ $name ];
+				unset( $tabs[ $name ] );
+				continue;
+			}
 
+			if (
+				isset( $this->changes['rename'] ) &&
+				isset( $this->changes['rename'][ $name ] )
+			) {
+				$old_title = $tabs[ $name ]['title'];
+				$tabs[ $name ]['title'] = $this->changes['rename'][ $name ];
+				$this->changes['rename'][ $name ] = $old_title;
+			}
+
+			if ( isset( $this->changes['order'][ $name ] ) ) {
 				$old_priority = $tabs[ $name ]['priority'];
 				$tabs[ $name ]['priority'] = $this->changes['order'][ $name ];
 				$this->changes['order'][ $name ] = $old_priority;
@@ -148,18 +168,27 @@ class SiteOrigin_Premium_WooCommerce_Output_Product_Data_Tabs extends SiteOrigin
 	}
 
 	public function remove_changes( $tabs ) {
-		if ( ! empty( $this->changes ) ) {
-			foreach ( $this->changes['remove'] as $name => $data ) {
-				if ( isset( $this->changes['remove'] ) && isset( $this->changes['remove'][ $name ] ) ) {
-					$tabs[ $name ] = $this->changes['remove'][ $name ];
-				}
+		if (
+			empty( $tabs ) ||
+			empty( $this->changes ) ||
+			empty( $this->changes['remove'] ) ||
+			! is_array( $this->changes['remove'] )
+		) {
+			return $tabs;
+		}
+
+		foreach ( $this->changes['remove'] as $name => $data ) {
+			if ( isset( $this->changes['remove'] ) && isset( $this->changes['remove'][ $name ] ) ) {
+				$tabs[ $name ] = $this->changes['remove'][ $name ];
+			}
+		}
+
+		foreach ( $tabs as $name => $data ) {
+			if ( isset( $this->changes['rename'] ) && isset( $this->changes['rename'][ $name ] ) ) {
+				$tabs[ $name ]['title'] = $this->changes['rename'][ $name ];
 			}
 
-			foreach ( $tabs as $name => $data ) {
-				if ( isset( $this->changes['rename'] ) && isset( $this->changes['rename'][ $name ] ) ) {
-					$tabs[ $name ]['title'] = $this->changes['rename'][ $name ];
-				}
-
+			if ( isset( $this->changes['order'][ $name ] ) ) {
 				$tabs[ $name ]['priority'] = $this->changes['order'][ $name ];
 			}
 		}

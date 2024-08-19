@@ -172,8 +172,6 @@ class SiteOrigin_Premium_Plugin_Social_Widgets {
 
 			if ( empty( $custom['name'] ) ) {
 				$custom['name'] = $custom['icon_image'];
-			} else {
-
 			}
 
 			$custom_name = preg_replace( '/\s/', '_', $custom['name'] );
@@ -186,8 +184,13 @@ class SiteOrigin_Premium_Plugin_Social_Widgets {
 				$icon_styles[] = 'background-image: url(' . esc_url( $attachment[0] ) . ')';
 				$custom_icon_html .= '<div class="sow-icon-image" style="' . implode( '; ', $icon_styles ) . '"></div>';
 			}
-			$premium_regex = '/<!--\s*premium-' . $custom_name . '\s*-->[\s\S]*?<!--\s*endpremium\s*-->/';
-			$template_html = preg_replace( $premium_regex, $custom_icon_html, $template_html );
+			$premium_regex = '/<!--\s*premium-' . strtolower( $custom_name ) . '\s*-->[\s\S]*?<!--\s*endpremium\s*-->/';
+
+			$template_html = preg_replace(
+				$premium_regex,
+				$custom_icon_html,
+				$template_html
+			);
 		}
 
 		return $template_html;
