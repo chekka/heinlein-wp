@@ -32964,6 +32964,22 @@ svg .bg--orange {
   background-size: cover;
   background-position: center bottom;
 }
+.product--header .header-icon {
+  width: 18vmin;
+  height: 18vmin;
+  max-width: 210px;
+  max-height: 210px;
+  position: absolute;
+  left: 50%;
+  top: 15vh;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+@media (max-width: 579.98px) {
+  .product--header .header-icon {
+    display: none;
+  }
+}
 @media (max-width: 579.98px) {
   .product--header {
     height: 50vh;

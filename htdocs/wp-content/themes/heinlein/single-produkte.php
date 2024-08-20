@@ -5,6 +5,7 @@
    $headervid  = get_field('headervideo_url');
    $headertxt  = get_field('headertext');
    $headertop  = get_field('headertext_top');
+   $icon       = get_field( 'icon' );
 ?>
 
 <?php get_header(); ?> 
@@ -24,8 +25,8 @@
    </style>
    <div class="product--header">
    <?php 
-      if( have_rows('headericon') ):
-         while( have_rows('headericon') ): the_row();
+      if( have_rows('header_icon') ):
+         while( have_rows('header_icon') ): the_row();
             $icon = get_sub_field('icon');
             $icon_top = get_sub_field('icon_position_top');
             $icon_left = get_sub_field('icon_position_left');

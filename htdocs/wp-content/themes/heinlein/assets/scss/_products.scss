@@ -18,6 +18,23 @@
   background-size: cover;
   background-position: center bottom;
 
+  .header-icon {
+    width: 18vmin;
+    height: 18vmin;
+    
+    max-width: 210px;
+    max-height: 210px;
+    position: absolute;
+    left: 50%;
+    top: 15vh;
+    transform: translateX(-50%);
+    z-index: 3;
+  
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+  
   @include media-breakpoint-down(sm) {
     height: 50vh;
   }
