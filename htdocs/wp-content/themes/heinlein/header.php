@@ -10,6 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />   
   <meta name="msapplication-TileColor" content="#17254c">
   <meta name="theme-color" content="#17254c">
+  <meta name="format-detection" content="telephone=no">
   <link rel="profile" href="https://gmpg.org/xfn/11">
   <?php wp_enqueue_script("jquery"); ?>
   <?php wp_head(); ?>
