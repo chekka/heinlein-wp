@@ -33389,6 +33389,10 @@ svg .bg--orange {
   transition: border-radius 0.333s;
 }
 
+.page-template-page-landingpage-gold .site-logo {
+  max-width: 65px;
+}
+
 #nav-row {
   justify-content: flex-start;
 }
