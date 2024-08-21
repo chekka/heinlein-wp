@@ -2,6 +2,6 @@
 
 <?php get_header(); ?> 
    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-      <?php the_content(); ?>
+      <div style="margin-top:270px"><?php the_content(); ?></div>
    <?php endwhile; endif; ?>          
 <?php get_footer(); ?>
