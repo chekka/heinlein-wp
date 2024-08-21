@@ -89,7 +89,6 @@
       @include media-breakpoint-down(sm) {
         max-width: 155px;
       }
-
     }
   }
 }
@@ -441,7 +440,7 @@
   }
 }
 
-svg[id^=sprech] {
+svg[id^='sprech'] {
   text {
     fill: #04204c !important;
     font-family: 'Encode Sans Expanded', sans-serif !important;
@@ -572,5 +571,10 @@ ul.li-box-white {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+}
+.mobile-not {
+  &.rounded {
+    border-radius: 0 !important;
   }
 }

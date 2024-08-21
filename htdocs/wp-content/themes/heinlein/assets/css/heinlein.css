@@ -31373,6 +31373,10 @@ ul.li-box-white li:before {
   justify-content: center;
 }
 
+.mobile-not.rounded {
+  border-radius: 0 !important;
+}
+
 [class*=content--] {
   width: 100%;
   margin: auto !important;
