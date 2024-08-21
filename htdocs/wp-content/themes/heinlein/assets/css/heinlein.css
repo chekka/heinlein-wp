@@ -32220,12 +32220,17 @@ body.no-scroll {
   padding-bottom: 0 !important;
   margin: auto;
 }
+.page-template-page-landingpage-gold .hero-box.muster.bg--ivory-hell-3 p {
+  font-size: 1em;
+}
 .page-template-page-landingpage-gold .hero-box.muster.bg--ivory-hell-3 ul {
   margin-bottom: 0 !important;
 }
 .page-template-page-landingpage-gold .hero-box.muster.bg--ivory-hell-3 strong,
 .page-template-page-landingpage-gold .hero-box.muster.bg--ivory-hell-3 li {
   color: #252227 !important;
+  text-transform: none !important;
+  font-size: 1em !important;
 }
 .page-template-page-landingpage-gold .hero-box.muster.bg--ivory-hell-3 a {
   max-width: 340px;

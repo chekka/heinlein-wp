@@ -365,12 +365,18 @@
     padding-bottom: 0 !important;
     margin: auto;
 
+    p {
+      font-size: 1em;
+    }
+
     ul {
       margin-bottom: 0 !important;
     }
     strong,
     li {
       color: $dark !important;
+      text-transform: none !important;
+      font-size: 1em !important;
     }
 
     a {
