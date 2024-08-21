@@ -1,8 +1,10 @@
 .button-link {
   display: inline-block;
+  font-family: Gotham;
+  font-weight: 300 !important;
   font-size: 1em;
   line-height: 3em !important;
-  text-transform: none;
+  text-transform: uppercase;
   color: $blau-mittel-1;
   letter-spacing: 0.05;
   padding: 0 2vw;
