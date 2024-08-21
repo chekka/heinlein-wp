@@ -1,4 +1,4 @@
-@import "_mixins";
+@import '_mixins';
 
 .site-header {
   position: fixed;
@@ -58,10 +58,6 @@
   }
 }
 
-.page-template-page-landingpage-gold .site-logo {
-  max-width: 65px;
-}
-
 #nav-row {
   justify-content: flex-start;
   > div {
@@ -69,7 +65,7 @@
   }
 }
 
-#nav-row div[class^="menu-hauptmenue"],
+#nav-row div[class^='menu-hauptmenue'],
 .menu-sprachmenue-container {
   position: relative;
   z-index: 12;
@@ -99,7 +95,7 @@
       margin-right: -7px;
 
       &:after {
-        content: "";
+        content: '';
         cursor: pointer;
         position: absolute;
         top: -12px;
@@ -139,7 +135,7 @@
       display: block;
       color: $blau-dunkel;
       text-transform: uppercase;
-      font-family: "Encode Sans", sans-serif;
+      font-family: 'Encode Sans', sans-serif;
       font-weight: 400;
       font-size: 13.75px;
       padding: 7px 12px;
@@ -320,13 +316,13 @@
   }
 
   a {
-    font-family: "Encode Sans", sans-serif;
+    font-family: 'Encode Sans', sans-serif;
     color: $blau-dunkel;
     text-transform: uppercase;
   }
 
   .hamburger {
-    content: "";
+    content: '';
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -342,7 +338,7 @@
     }
   }
 
-  ul[id^="menu-mobile-menu"] {
+  ul[id^='menu-mobile-menu'] {
     display: none;
     margin: 30px 0 0 8px;
   }
@@ -367,7 +363,7 @@
       text-transform: none;
 
       &:before {
-        content: "";
+        content: '';
         display: inline-block;
         position: absolute;
         width: 12px;
@@ -411,6 +407,7 @@
 .page-template-page-landingpage-gold {
   .site-header {
     transition-duration: 0.3s;
+
     &.active {
       background: linear-gradient(
         to bottom,
@@ -418,6 +415,18 @@
         #d5cdc5 90%
       ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
       box-shadow: none;
+    }
+
+    & > img.piktogramme {
+      @include media-breakpoint-down(sm) {
+        width: 33vw;
+      }
+    }
+
+    .site-logo {
+      @include media-breakpoint-down(sm) {
+        max-width: 65px;
+      }
     }
   }
   #block-stickysocialbanner {

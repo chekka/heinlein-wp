@@ -33,7 +33,7 @@
 
   <header class="site-header" id="top">
     <?php if($template == 'page-landingpage-gold.php'): ?>
-      <img src="/wp-content/themes/heinlein/assets/images/landingpage-gold-header-icons.svg" width="230" class="hidden-mobile mt-4 ms-7">
+      <img src="/wp-content/themes/heinlein/assets/images/landingpage-gold-header-icons.svg" width="230" class="mt-4 ms-3 ms-xl-7 piktogramme">
     <?php endif; ?>
     
     <?php 

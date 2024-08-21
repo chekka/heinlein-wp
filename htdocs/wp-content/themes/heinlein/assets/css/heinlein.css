@@ -33400,10 +33400,6 @@ svg .bg--orange {
   transition: border-radius 0.333s;
 }
 
-.page-template-page-landingpage-gold .site-logo {
-  max-width: 65px;
-}
-
 #nav-row {
   justify-content: flex-start;
 }
@@ -33718,6 +33714,16 @@ svg .bg--orange {
 .page-template-page-landingpage-gold .site-header.active {
   background: linear-gradient(to bottom, #7f7264 0%, #d5cdc5 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   box-shadow: none;
+}
+@media (max-width: 579.98px) {
+  .page-template-page-landingpage-gold .site-header > img.piktogramme {
+    width: 33vw;
+  }
+}
+@media (max-width: 579.98px) {
+  .page-template-page-landingpage-gold .site-header .site-logo {
+    max-width: 65px;
+  }
 }
 @media (max-width: 719.98px) {
   .page-template-page-landingpage-gold #block-stickysocialbanner {
