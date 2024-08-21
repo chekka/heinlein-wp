@@ -31275,6 +31275,15 @@ div[id^=sprech-0] {
   margin-bottom: -30px;
 }
 
+@media (max-width: 579.98px) {
+  .page-template-page-landingpage svg[id^=sprech-] {
+    margin-bottom: -20px;
+  }
+  .page-template-page-landingpage svg[id=sprech-4] {
+    margin-bottom: -50px;
+  }
+}
+
 #block-stickysocialbanner {
   position: fixed;
   z-index: 123;

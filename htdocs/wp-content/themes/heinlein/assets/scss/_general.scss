@@ -468,6 +468,17 @@ div[id^='sprech-0'] {
   margin-bottom: -30px;
 }
 
+.page-template-page-landingpage {
+  @include media-breakpoint-down(sm) {
+    svg[id^='sprech-'] {
+      margin-bottom: -20px;
+    }
+    svg[id='sprech-4'] {
+      margin-bottom: -50px;
+    }
+  }
+}
+
 // Social sticky banner
 #block-stickysocialbanner {
   position: fixed;
