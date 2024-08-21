@@ -31865,6 +31865,10 @@ body.no-scroll {
     width: 280px;
     margin-left: 40px;
   }
+  .landing-hero-box.no-scale,
+  .hero-box.no-scale {
+    transform: scale(1);
+  }
 }
 .landing-hero-box .title,
 .hero-box .title {
@@ -32144,7 +32148,7 @@ body.no-scroll {
 }
 @media (max-width: 579.98px) {
   #musterbox-box {
-    transform: scale(0.85);
+    transform: scale(0.825);
     margin-bottom: -110px;
     margin-left: -20px;
   }

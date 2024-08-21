@@ -9,6 +9,10 @@
     padding: 20px 50px;
     width: 280px;
     margin-left: 40px;
+
+    &.no-scale {
+      transform: scale(1);
+    }  
   }
 
   .title {
@@ -297,7 +301,7 @@
     margin-bottom: 100px;
   }
   @include media-breakpoint-down(sm){
-    transform: scale(.85);
+    transform: scale(.825);
     margin-bottom: -110px;
     margin-left: -20px;
 
