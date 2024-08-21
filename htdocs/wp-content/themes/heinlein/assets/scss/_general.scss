@@ -585,7 +585,9 @@ ul.li-box-white {
   }
 }
 .mobile-not {
-  &.rounded {
-    border-radius: 0 !important;
+  @include media-breakpoint-down(sm) {
+    &.rounded {
+      border-radius: 0 !important;
+    }
   }
 }
