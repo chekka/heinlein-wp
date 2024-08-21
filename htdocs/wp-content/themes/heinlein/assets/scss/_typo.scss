@@ -215,14 +215,6 @@ h2,
 }
 
 .list-plus {
-  &.bg--ivory-hell-3 {
-    ul {
-      @include media-breakpoint-up(md) {
-        margin-bottom: 148px !important;
-      }
-    }
-  }
-
   ul {
     margin: 12px 0 0 0 !important;
     padding: 0 0 0 1.5em;
