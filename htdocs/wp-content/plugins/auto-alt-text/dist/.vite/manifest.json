@@ -1,0 +1,11 @@
+{
+  "resources/js/admin.js": {
+    "file": "assets/admin-DbTqePvB.js",
+    "name": "admin",
+    "src": "resources/js/admin.js",
+    "isEntry": true,
+    "css": [
+      "assets/admin-NC5WVlIc.css"
+    ]
+  }
+}
