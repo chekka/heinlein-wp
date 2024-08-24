@@ -32407,6 +32407,118 @@ body.no-scroll {
   }
 }
 
+.page-template-page-blank h1, .page-template-page-blank .h1 {
+  text-align: left;
+}
+.page-template-page-blank h2, .page-template-page-blank .h2 {
+  font-size: 28px;
+  text-align: left;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.7em;
+}
+.page-template-page-blank #cmplz-document {
+  margin-bottom: 7vmax;
+}
+.page-template-page-blank #cmplz-document > div {
+  background-color: #eff2f7;
+  padding: 30px;
+  border-radius: 0 36px;
+  margin-bottom: 3vmin;
+}
+.page-template-page-blank #cmplz-document > div details {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.page-template-page-blank #cmplz-document > div details * {
+  text-align: left;
+}
+.page-template-page-blank #cmplz-document > div details summary {
+  list-style-position: outside;
+  margin-left: 30px;
+  padding: 10px 10px 10px 20px;
+  border-bottom: 1px solid transparent;
+}
+.page-template-page-blank #cmplz-document > div details summary:hover {
+  border-bottom-color: #b7beca;
+}
+.page-template-page-blank #cmplz-document > div details summary > div {
+  display: flex;
+  align-items: center;
+}
+.page-template-page-blank #cmplz-document > div details summary > div h3, .page-template-page-blank #cmplz-document > div details summary > div .h3 {
+  margin: 0;
+  flex: 0 1 50%;
+  margin: 0;
+}
+.page-template-page-blank #cmplz-document > div details summary > div p {
+  flex: 0 1 40%;
+  margin: 0;
+}
+.page-template-page-blank #cmplz-document > div details summary > div label {
+  display: none;
+}
+.page-template-page-blank #cmplz-document > div details summary > div input {
+  margin: 0 0 0 auto;
+}
+.page-template-page-blank #cmplz-document > div details > div {
+  padding: 12px 0 12px 50px;
+}
+.page-template-page-blank #cmplz-document > div details .cookies-per-purpose .name,
+.page-template-page-blank #cmplz-document > div details .cookies-per-purpose .retention,
+.page-template-page-blank #cmplz-document > div details .cookies-per-purpose .function {
+  margin-bottom: 1em;
+}
+.page-template-page-blank #cmplz-document > div .cmplz-categories {
+  width: 100%;
+}
+.page-template-page-blank #cmplz-document > div .cmplz-categories .cmplz-category-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.page-template-page-blank #cmplz-document > div .cmplz-categories .cmplz-category-header > span {
+  display: block;
+  min-width: 150px;
+}
+.page-template-page-blank #cmplz-document > div .cmplz-categories .cmplz-category-header .cmplz-banner-checkbox {
+  font-size: 0;
+  display: flex;
+}
+.page-template-page-blank #cmplz-document > div .cmplz-categories .cmplz-category-header .cmplz-banner-checkbox input {
+  margin-right: 7px;
+}
+.page-template-page-blank #cmplz-document > div .cmplz-categories .cmplz-category-header .cmplz-always-active {
+  font-size: 0;
+}
+.page-template-page-blank #cmplz-document > div .cmplz-categories .cmplz-category-header * {
+  white-space: nowrap;
+}
+.page-template-page-blank h4, .page-template-page-blank .h4 {
+  font-family: Gotham, sans-serif;
+  letter-spacing: normal;
+  text-transform: none;
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.page-template-page-blank h5, .page-template-page-blank .h5 {
+  font-family: "Encode Sans Expanded", sans-serif;
+  letter-spacing: normal;
+  text-transform: none;
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.page-template-page-blank p {
+  line-height: 1.5;
+}
+.page-template-page-blank p.cmplz-subtitle {
+  font-family: Gotham, sans-serif;
+  font-weight: 900;
+  margin-bottom: 0;
+}
+
 @media (max-width: 579.98px) {
   html .page-template-page-landingpage #page-header {
     min-height: 400px;
