@@ -32133,6 +32133,20 @@ body.no-scroll {
   margin-bottom: 1em;
 }
 
+@media (min-width: 720px) {
+  .page-id-1675 .hero-box {
+    min-height: 512px !important;
+  }
+  .page-id-1675 .hero-box .textwidget {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+  .page-id-1675 .hero-box .textwidget p:last-child {
+    margin: auto 0 70px 0;
+  }
+}
+
 .home #produktanfrage-box {
   max-width: 260px;
 }
