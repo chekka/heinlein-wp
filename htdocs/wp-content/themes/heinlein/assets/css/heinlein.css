@@ -32134,15 +32134,18 @@ body.no-scroll {
 }
 
 @media (min-width: 720px) {
-  .page-id-1675 .hero-box {
+  .page-id-1675 .hero-box,
+  .page-id-2747 .hero-box {
     min-height: 512px !important;
   }
-  .page-id-1675 .hero-box .textwidget {
+  .page-id-1675 .hero-box .textwidget,
+  .page-id-2747 .hero-box .textwidget {
     height: 90%;
     display: flex;
     flex-direction: column;
   }
-  .page-id-1675 .hero-box .textwidget p:last-child {
+  .page-id-1675 .hero-box .textwidget p:last-child,
+  .page-id-2747 .hero-box .textwidget p:last-child {
     margin: auto 0 70px 0;
   }
 }
