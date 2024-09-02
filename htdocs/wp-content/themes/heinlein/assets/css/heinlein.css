@@ -32144,6 +32144,11 @@ body.no-scroll {
     display: flex;
     flex-direction: column;
   }
+  .page-id-1675 .hero-box .textwidget p:first-child,
+  .page-id-2747 .hero-box .textwidget p:first-child {
+    text-transform: none !important;
+    font-weight: 700;
+  }
   .page-id-1675 .hero-box .textwidget p:last-child,
   .page-id-2747 .hero-box .textwidget p:last-child {
     margin: auto 0 70px 0;
