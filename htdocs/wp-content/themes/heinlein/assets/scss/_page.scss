@@ -183,7 +183,6 @@
 }
 
 .page-template-page-blank {
-
   h1 {
     text-align: left;
   }
@@ -319,6 +318,27 @@
       font-family: Gotham, sans-serif;
       font-weight: 900;
       margin-bottom: 0;
+    }
+  }
+}
+
+#multiply-shadow {
+  .panel-grid-cell {
+    position: relative;    
+
+    .widget {
+      position: relative;
+      z-index: 1;
+    }
+
+    .widget + .widget {
+      position: absolute;
+      top: 0;
+      z-index: 0;
+
+      img {
+        mix-blend-mode: multiply;
+      }
     }
   }
 }

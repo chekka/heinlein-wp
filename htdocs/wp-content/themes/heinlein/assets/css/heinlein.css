@@ -32545,6 +32545,22 @@ body.no-scroll {
   margin-bottom: 0;
 }
 
+#multiply-shadow .panel-grid-cell {
+  position: relative;
+}
+#multiply-shadow .panel-grid-cell .widget {
+  position: relative;
+  z-index: 1;
+}
+#multiply-shadow .panel-grid-cell .widget + .widget {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
+#multiply-shadow .panel-grid-cell .widget + .widget img {
+  mix-blend-mode: multiply;
+}
+
 @media (max-width: 579.98px) {
   html .page-template-page-landingpage #page-header {
     min-height: 400px;
