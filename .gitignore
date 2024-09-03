@@ -17,3 +17,4 @@ htdocs/wp-content/.litespeed_conf.dat
 htdocs/wp-content/wflogs/*
 htdocs/wp-content/upgrade/*
 htdocs/wp-content/upgrade-temp-backup/*
+htdocs/robots.txt
